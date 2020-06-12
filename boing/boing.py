@@ -3,6 +3,7 @@ from pytch import (
     Stage,
     Sprite,
     Project,
+    when_green_flag_clicked,
 )
 
 
