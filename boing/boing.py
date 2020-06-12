@@ -22,6 +22,11 @@ class Bat(Sprite):
         Sprite.__init__(self)
         self.switch_costume('normal')
 
+    @when_green_flag_clicked
+    def get_ready_to_play(self):
+        self.go_to_xy(-215, 0)
+        self.show()
+
 
 project = Project()
 project.register_stage_class(BoingBackground)
