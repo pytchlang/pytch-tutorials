@@ -14,4 +14,5 @@ class BoingBackground(Stage):
 
 
 project = Project()
+project.register_stage_class(BoingBackground)
 project.go_live()
