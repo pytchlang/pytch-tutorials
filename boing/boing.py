@@ -5,5 +5,13 @@ from pytch import (
 )
 
 
+class BoingBackground(Stage):
+    Backdrops = [('boing', 'images/table.png')]
+
+    def __init__(self):
+        Stage.__init__(self)
+        self.switch_backdrop('boing')
+
+
 project = Project()
 project.go_live()
