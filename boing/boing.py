@@ -24,4 +24,5 @@ class Bat(Sprite):
 
 project = Project()
 project.register_stage_class(BoingBackground)
+project.register_sprite_class(Bat)
 project.go_live()
