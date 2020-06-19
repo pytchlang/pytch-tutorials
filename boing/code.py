@@ -27,6 +27,12 @@ class Bat(Sprite):
         self.go_to_xy(-215, 0)
         self.show()
 
+        while True:
+            if pytch.key_is_pressed('q'):
+                self.change_y(3)
+            if pytch.key_is_pressed('a'):
+                self.change_y(-3)
+
 
 project = Project()
 project.register_stage_class(BoingBackground)
