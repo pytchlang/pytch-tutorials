@@ -1,5 +1,6 @@
 import pytch
 from pytch import (
+    Stage,
     Project,
 )
 
