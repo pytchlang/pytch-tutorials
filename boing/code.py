@@ -1,6 +1,7 @@
 import pytch
 from pytch import (
     Stage,
+    Sprite,
     Project,
 )
 
