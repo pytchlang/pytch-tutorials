@@ -7,4 +7,7 @@ from pytch import (
 class BunnyStage(Stage):
   Backdrops = [ ('world', 'images/bunner-background.png') ]
 
+  def __init__(self):
+      Stage.__init__(self)
+      self.switch_backdrop('world')
 
