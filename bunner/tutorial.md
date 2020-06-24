@@ -14,8 +14,12 @@ Each background has a name that we'll use in our code when we want to switch bac
 
 Every Python object has to have an initialisation function. Pytch will use this to create the Stage as soon as the program is loaded (even before the Green Flag is clicked).
 
-{{< commit Add Stage initialisation >}}
+{{< commit add-stage-initialisation >}}
 
 I've added two steps in this initialisation: the first activates the _standard_ Stage setup which lets Pytch link in the stage object. If you forget this line then the Stage won't work properly.
 
 The second step selects a backdrop to show so that the canvas has something in it right away.
+
+If you build the project now you'll notice that the stage backdrop does not actually appear. That's because there is one more thing we need to do in order to have the Stage hooked up to our project. We need ti _register_ it with Pytch. We will have to do this for each new Sprite class as well, so that the Pytch project knows about them.
+
+{{<register-stage>}}
