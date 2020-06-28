@@ -12,3 +12,9 @@ class Bunny(pytch.Sprite):
     def go_to_starting_position(self):
         self.switch_costume("up")
         self.go_to_xy(0, -160)
+
+    @pytch.when_key_pressed("ArrowUp")
+    def move_up(self):
+        self.switch_costume("up")
+        if self.y_position < 150:
+            self.change_y(40)
