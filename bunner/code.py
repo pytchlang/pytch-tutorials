@@ -2,6 +2,7 @@ import pytch
 from pytch import (
     Project,
     Stage,
+    Sprite,
 )
 
 class BunnyStage(Stage):
