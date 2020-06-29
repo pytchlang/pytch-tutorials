@@ -66,6 +66,7 @@ class Car(Sprite):
 
     def __init__(self):
         Sprite.__init__(self)
+        self.speed = 3
         self.direction = 'nothing'
         self.set_size(0.65)
         self.hide()
