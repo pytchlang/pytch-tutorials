@@ -69,3 +69,13 @@ class Car(Sprite):
         self.set_size(0.65)
         self.hide()
 
+    @when_green_flag_clicked
+    def startTrafficRowOne(self):
+        while True:
+            if random.random() < 0.2:
+                self.go_to_xy(-285,-125)
+                self.direction = 'right'
+                create_clone_of(self)
+                pytch.wait_seconds(0.3)
+            pytch.wait_seconds(0.1)
+
