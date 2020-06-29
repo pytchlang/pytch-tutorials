@@ -114,3 +114,10 @@ class Car(Sprite):
         self.hide()
         self.delete_this_clone()
 
+    @when_I_start_as_a_clone
+    def check_for_collision(self):
+        while True:
+            while not self.touching(Bunny):
+                pass
+            print "Squish the bunny!"
+
