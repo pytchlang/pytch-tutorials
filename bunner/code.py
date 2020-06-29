@@ -32,3 +32,21 @@ class Bunny(Sprite):
         self.switch_costume('up')
         if self.get_y() < 150:
             self.change_y(40)
+
+    @when_key_pressed('ArrowRight')
+    def move_right(self):
+        self.switch_costume('right')
+        if self.get_x() < 210:
+            self.change_x(25)
+
+    @when_key_pressed('ArrowDown')
+    def move_down(self):
+        self.switch_costume('down')
+        if self.get_y() > -150:
+            self.change_y(-40)
+
+    @when_key_pressed('ArrowLeft')
+    def move_left(self):
+        self.switch_costume('left')
+        if self.get_x() > -210:
+            self.change_x(-25)
