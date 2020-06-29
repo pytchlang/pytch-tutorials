@@ -5,7 +5,8 @@ from pytch import (
     Sprite,
     when_key_pressed,
     when_green_flag_clicked,
-    create_clone_of
+    create_clone_of,
+    when_I_start_as_a_clone,
 )
 
 import random
