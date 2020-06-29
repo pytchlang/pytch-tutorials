@@ -72,6 +72,9 @@ class Car(pytch.Sprite):
         if self.direction == "right":
             while self.get_x() < 285:
                 self.change_x(self.speed)
+        else:  # Direction should be "left"
+            while self.get_x() > -285:
+                self.change_x(-self.speed)
         self.hide()
         self.delete_this_clone()
 
