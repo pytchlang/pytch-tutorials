@@ -56,3 +56,11 @@ Now we can create a function that will move the bunny up the screen, and tell Py
 
 {{< commit move-bunny-up >}}
 
+If you haven't already then this is a good place to build the project and make sure it's working. Press the up arrow a few times, make sure that you're happy it works.
+
+Once you are comfortable with it, you could add three more functions for the other directions.  Remember, each function has to have it's own name or Python will not recognise them properly. 
+
+This is my version:
+
+{{< commit move-in-all-directions >}}
+
