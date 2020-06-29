@@ -3,6 +3,7 @@ from pytch import (
     Project,
     Stage,
     Sprite,
+    when_key_pressed
 )
 
 class BunnyStage(Stage):
