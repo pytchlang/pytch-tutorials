@@ -50,3 +50,18 @@ class Bunny(Sprite):
         self.switch_costume('left')
         if self.get_x() > -210:
             self.change_x(-25)
+
+class Car(Sprite):
+    Costumes = [
+        ('left0', 'images/car00.png', 45, 30),
+        ('right0', 'images/car01.png', 45, 30),
+        ('left1', 'images/car20.png', 45, 30),
+        ('right1', 'images/car21.png', 45, 30)
+        ]
+
+    def __init__(self):
+        Sprite.__init__(self)
+        self.direction = 'nothing'
+        self.set_size(0.65)
+        self.hide()
+
