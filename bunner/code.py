@@ -67,3 +67,7 @@ class Car(pytch.Sprite):
         self.switch_costume(self.movement_direction + random.choice(["0", "1"]))
         self.set_size(0.65)
         self.show()
+        if self.movement_direction == "right":
+            while self.x_position < 285:
+                self.change_x(self.speed)
+
