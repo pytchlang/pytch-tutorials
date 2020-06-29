@@ -81,6 +81,26 @@ class Car(Sprite):
                 pytch.wait_seconds(0.3)
             pytch.wait_seconds(0.1)
 
+    @when_green_flag_clicked
+    def startTrafficRowTwo(self):
+        while True:
+            if random.random() < 0.2:
+                self.go_to_xy(285,-80)
+                self.direction = 'left'
+                create_clone_of(self)
+                pytch.wait_seconds(0.3)
+            pytch.wait_seconds(0.1)
+
+    @when_green_flag_clicked
+    def startTrafficRowThree(self):
+        while True:
+            if random.random() < 0.2:
+                self.go_to_xy(-285,-30)
+                self.direction = 'right'
+                create_clone_of(self)
+                pytch.wait_seconds(0.3)
+            pytch.wait_seconds(0.1)
+
     @when_I_start_as_a_clone
     def drive(self):
         self.switch_costume( self.direction + random.choice(['0','1']) )
