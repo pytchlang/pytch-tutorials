@@ -52,3 +52,13 @@ class Car(pytch.Sprite):
     ]
 
     start_shown = False
+
+    @pytch.when_green_flag_clicked
+    def startTrafficRowOne(self):
+        while True:
+            if random.random() < 0.2:
+                self.go_to_xy(-285, -125)
+                self.direction = "right"
+                pytch.create_clone_of(self)
+                pytch.wait_seconds(0.3)
+            pytch.wait_seconds(0.1)
