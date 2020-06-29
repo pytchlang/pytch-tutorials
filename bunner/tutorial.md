@@ -24,6 +24,8 @@ If you build the project now you'll notice that the stage backdrop does not actu
 
 {{< commit register-stage >}}
 
+If you don't register the Stage (or any Sprites) with Pytch then they won't respond to any events (including the program starting), and they won't 
+
 ## Create our hero
 
 There is not much to do in our game yet, so let's add something for the player to control. 
@@ -44,5 +46,13 @@ We select a costume and make sure that the Bunny actor is visible.
 
 Like the stage, we have to connect up our Sprite to the rest of the Pytch system.
 
+### Moving our hero
 
+Now let's give the player a way to move the bunny around. We need to import the Pytch keyboard event.
+
+{{< commit import-when-key-pressed >}}
+
+Now we can create a function that will move the bunny up the screen, and tell Pytch to run that function whenever the up arrow key is pressed on the keyboard. We add a simple check of the bunny Y-coordinate to make sure that it is never moved off the top of the screen.
+
+{{< commit move-bunny-up >}}
 
