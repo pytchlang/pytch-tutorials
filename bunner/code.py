@@ -84,3 +84,7 @@ class Car(Sprite):
     def drive(self):
         self.switch_costume( self.direction + random.choice(['0','1']) )
         self.show()
+        if self.direction == 'right':
+            while self.get_x() < 285:
+                self.change_x( self.speed )
+
