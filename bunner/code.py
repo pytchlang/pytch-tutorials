@@ -1,5 +1,7 @@
 import pytch
 
+import random
+
 
 class BunnyStage(pytch.Stage):
     Backdrops = [("world", "bunner-background.png")]
