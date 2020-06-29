@@ -3,8 +3,12 @@ from pytch import (
     Project,
     Stage,
     Sprite,
-    when_key_pressed
+    when_key_pressed,
+    when_green_flag_clicked,
+    create_clone_of
 )
+
+import random
 
 class BunnyStage(Stage):
   Backdrops = [ ('world', 'images/bunner-background.png') ]
