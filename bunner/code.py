@@ -60,6 +60,7 @@ class Car(pytch.Sprite):
 
     @pytch.when_green_flag_clicked
     def startTrafficRowOne(self):
+        self.speed = 3
         while True:
             if random.random() < 0.2:
                 self.go_to_xy(-285, -125)
