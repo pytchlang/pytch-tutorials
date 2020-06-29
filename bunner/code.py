@@ -67,3 +67,9 @@ class Car(pytch.Sprite):
                 pytch.create_clone_of(self)
                 pytch.wait_seconds(0.3)
             pytch.wait_seconds(0.1)
+
+    @pytch.when_I_start_as_a_clone
+    def drive(self):
+        self.switch_costume(self.direction + random.choice(["0", "1"]))
+        self.set_size(0.65)
+        self.show()
