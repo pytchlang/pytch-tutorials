@@ -137,3 +137,27 @@ This is my version:
 {{< commit define-play-one-life >}}
 
 ## Letting the game end
+
+* Game end screen
+* Start button
+
+## Keeping score
+
+* adding score
+* showing score
+
+## More status displays
+
+* showing lives
+
+## Adding the water hazard
+
+* Basic logs
+* "Touching log" behaviour
+* Tweaks to touching for logs
+* Drowning
+
+## Finishing the level
+
+* Reaching the top
+* Dancing
