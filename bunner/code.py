@@ -40,6 +40,7 @@ class Bunny(Sprite):
         self.go_to_xy(0, -160)
         self.mode = PLAYING
         self.hide()
+        self.mode = WAITING
 
     @when_green_flag_clicked
     def start_game(self):
