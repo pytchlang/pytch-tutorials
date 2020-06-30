@@ -61,6 +61,13 @@ class Bunny(Sprite):
         if self.get_x() > -210:
             self.change_x(-25)
 
+    @when_I_receive('squish bunny')
+    def squish(self):
+      self.switch_costume( self._appearance + "_squished" )
+      pytch.wait_seconds(0.5)
+
+    
+
 class Car(Sprite):
     Costumes = [
         ('left0', 'images/car00.png', 45, 30),
