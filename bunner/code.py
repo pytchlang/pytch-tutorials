@@ -41,6 +41,14 @@ class Bunny(Sprite):
         self.mode = PLAYING
         self.hide()
 
+    @when_green_flag_clicked
+    def start_game(self):
+        self.switch_costume('up')
+        self.go_to_xy(0, -160)
+        self.mode = PLAYING
+        self.show()
+
+
     @when_key_pressed('ArrowUp')
     def move_up(self):
         if self.mode == PLAYING:
