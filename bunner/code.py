@@ -119,7 +119,7 @@ class Car(Sprite):
         while True:
             while not self.hits(Bunny.the_original()):
                 pass
-            print "Squish the bunny!"
+            pytch.broadcast('squish bunny')
 
     def hits(self, other):
         return abs( self.get_y() - other.get_y() ) <= 10 and\
