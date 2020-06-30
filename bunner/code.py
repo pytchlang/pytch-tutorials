@@ -7,6 +7,7 @@ from pytch import (
     when_green_flag_clicked,
     create_clone_of,
     when_I_start_as_a_clone,
+    when_I_receive,
 )
 
 import random
