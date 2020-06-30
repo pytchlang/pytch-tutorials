@@ -104,7 +104,7 @@ class Car(pytch.Sprite):
         while True:
             while not self.hits(Bunny.the_original()):
                 pass
-            print("Squish the bunny!")
+            pytch.broadcast("squish bunny")
 
     def hits(self, other):
         return (
