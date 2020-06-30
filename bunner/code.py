@@ -57,8 +57,10 @@ class Bunny(pytch.Sprite):
 
     @pytch.when_I_receive("squish bunny")
     def squish(self):
-        self.switch_costume(self.costume_name + "_squished")
-        pytch.wait_seconds(0.5)
+        if self.mode != SQUISHED:
+            self.mode = SQUISHED
+            self.switch_costume(self.costume_name + "_squished")
+            pytch.wait_seconds(0.5)
 
 
 class Car(pytch.Sprite):
