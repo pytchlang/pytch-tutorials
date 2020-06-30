@@ -38,6 +38,7 @@ class Bunny(Sprite):
         Sprite.__init__(self)
         self.switch_costume('up')
         self.go_to_xy(0, -160)
+        self.mode = PLAYING
         self.show()
 
     @when_key_pressed('ArrowUp')
