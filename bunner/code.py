@@ -40,6 +40,13 @@ class Bunny(pytch.Sprite):
         self.mode = PLAYING
         self.show()
 
+    def play_one_life(self):
+        self.lives = self.lives - 1
+        self.switch_costume("up")
+        self.go_to_xy(0, -160)
+        self.mode = PLAYING
+        self.show()
+
     @pytch.when_key_pressed("ArrowUp")
     def move_up(self):
         if self.mode == PLAYING:
