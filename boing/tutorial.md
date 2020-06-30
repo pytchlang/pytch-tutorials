@@ -1,5 +1,15 @@
 # Boing from Code The Classics
 
+{{< image-right screenshot.png >}}
+
+In this tutorial, we'll write a version of the classic 'pong' game.
+We'll follow the example in the _Code The Classics, vol.1_ book.
+
+{{< run-finished-project >}}
+
+
+----------------------------------------------------------------
+
 ## Set up the background
 
 We’re going to create our own version of the Stage, so we import the
