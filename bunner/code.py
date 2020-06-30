@@ -102,7 +102,7 @@ class Car(pytch.Sprite):
     @pytch.when_I_start_as_a_clone
     def check_for_collision(self):
         while True:
-            while not self.touching(Bunny):
+            while not self.hits(Bunny.the_original()):
                 pass
             print("Squish the bunny!")
 
