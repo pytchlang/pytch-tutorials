@@ -84,6 +84,7 @@ class Bunny(Sprite):
         self.mode = SQUISHED
         self.switch_costume( self._appearance + "_squished" )
         pytch.wait_seconds(0.5)
+        self.start_game()
 
     
 
