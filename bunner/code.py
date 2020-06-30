@@ -107,3 +107,8 @@ class Car(pytch.Sprite):
                 pass
             print("Squish the bunny!")
 
+    def hits(self, other):
+        return (
+            abs(self.get_y() - other.get_y()) <= 10
+            and abs(self.get_x() - other.get_x()) <= 40
+        )
