@@ -41,6 +41,7 @@ class Bunny(Sprite):
         self.mode = PLAYING
         self.hide()
         self.mode = WAITING
+        self.lives = -1
 
     @when_green_flag_clicked
     def start_game(self):
