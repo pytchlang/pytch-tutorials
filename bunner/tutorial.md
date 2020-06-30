@@ -64,3 +64,48 @@ This is my version:
 
 {{< commit move-in-all-directions >}}
 
+## Create the cars
+
+{{< commit simple-car-sprite >}}
+
+{{< commit register-car-class >}}
+
+{{< commit import-green-flag >}}
+
+{{< commit start-one-traffic-row >}}
+
+{{< commit import-when-i-start-as-a-clone >}}
+
+{{< commit begin-drive-routine >}}
+
+{{< commit drive-to-the-right >}}
+
+{{< commit add-speed-var >}}
+
+{{< commit finish-car-clone >}}
+
+{{< commit drive-to-the-left >}}
+
+{{< start-traffic-two-and-three >}}
+
+## Squish the bunny!
+
+{{< commit check-for-squishing >}}
+
+{{< commit special-hitbox-for-cars >}}
+
+{{< commit create-global-instance}}
+
+{{< commit assign-bunny-global >}}
+
+{{< commit use-new-hits-method >}}
+
+{{< commit broadcast-squish >}}
+
+{{< commit add-squish-costumes >}}
+
+{{< commit import-when-i-receive >}}
+
+{{< commit act-on-squish >}}
+
+
