@@ -3,6 +3,9 @@ import pytch
 import random
 
 
+WAITING, PLAYING, SQUISHED = range(3)
+
+
 class BunnyStage(pytch.Stage):
     Backdrops = [("world", "bunner-background.png")]
 
