@@ -8,7 +8,9 @@ class BunnyStage(pytch.Stage):
 
 
 class Bunny(pytch.Sprite):
-    Costumes = [ "up.png", "right.png", "down.png", "left.png"]
+    Costumes = [ "up.png", "right.png", "down.png", "left.png",
+                 "up_squished.png", "right_squished.png",
+                 "down_squished.png" ]
 
     start_shown = False
 
