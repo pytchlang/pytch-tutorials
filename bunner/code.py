@@ -29,7 +29,7 @@ class Bunny(pytch.Sprite):
         self.switch_costume("up")
         self.go_to_xy(0, -160)
         self.mode = PLAYING
-        self.show()
+        self.hide()
 
     @pytch.when_key_pressed("ArrowUp")
     def move_up(self):
