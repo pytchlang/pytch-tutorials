@@ -108,4 +108,32 @@ This is my version:
 
 {{< commit act-on-squish >}}
 
+## Setting modes for the player
 
+{{< commit add-first-bunny-modes  >}}
+
+{{< commit set-initial-mode-playing >}}
+
+{{< commit guard-squishing-routine >}}
+
+{{< commit dont-move-unless-playing >}}
+
+## Adding a life counter
+
+{{< commit remove-game-specific-setup-from-init >}}
+
+{{< commit set-game-start-code >}}
+
+{{< commit wait-at-the-start >}}
+
+{{< commit restart-game-when-squished >}}
+
+{{< commit add-notion-of-lives >}}
+
+{{< commit set-three-lives >}}
+
+{{< commit call-play-one-life >}}
+
+{{< commit define-play-one-life >}}
+
+## Letting the game end
