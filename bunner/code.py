@@ -10,7 +10,7 @@ class BunnyStage(pytch.Stage):
 class Bunny(pytch.Sprite):
     Costumes = [ "up.png", "right.png", "down.png", "left.png",
                  "up_squished.png", "right_squished.png",
-                 "down_squished.png" ]
+                 "down_squished.png", "left_squished.png" ]
 
     start_shown = False
 
@@ -43,6 +43,11 @@ class Bunny(pytch.Sprite):
         self.switch_costume("left")
         if self.x_position > -210:
             self.change_x(-25)
+
+    @pytch.when_I_receive("squish bunny")
+    def squish(self):
+        self.switch_costume(self.costume_name + "_squished")
+        pytch.wait_seconds(0.5)
 
 
 class Car(pytch.Sprite):
