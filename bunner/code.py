@@ -36,10 +36,7 @@ class Bunny(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def start_game(self):
         self.lives = 3
-        self.switch_costume("up")
-        self.go_to_xy(0, -160)
-        self.mode = PLAYING
-        self.show()
+        self.play_one_life()
 
     @pytch.when_key_pressed("ArrowUp")
     def move_up(self):
