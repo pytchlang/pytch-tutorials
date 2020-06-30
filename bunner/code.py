@@ -67,8 +67,10 @@ class Bunny(Sprite):
 
     @when_I_receive('squish bunny')
     def squish(self):
-      self.switch_costume( self._appearance + "_squished" )
-      pytch.wait_seconds(0.5)
+      if self.mode != SQUISHED:
+        self.mode = SQUISHED
+        self.switch_costume( self._appearance + "_squished" )
+        pytch.wait_seconds(0.5)
 
     
 
