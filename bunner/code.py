@@ -23,7 +23,11 @@ class Bunny(Sprite):
         ('up', 'images/sit0.png', 30, 30),
         ('right', 'images/sit1.png', 30, 30),
         ('down', 'images/sit2.png', 30, 30),
-        ('left', 'images/sit3.png', 30, 30)
+        ('left', 'images/sit3.png', 30, 30),
+        ('up_squished', 'images/splat0.png', 30, 30),
+        ('right_squished', 'images/splat1.png', 30, 30),
+        ('down_squished', 'images/splat2.png', 30, 30),
+        ('left_squished', 'images/splat3.png', 30, 30)
         ]
 
     def __init__(self):
