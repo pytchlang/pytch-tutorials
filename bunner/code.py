@@ -13,6 +13,10 @@ class Bunny(pytch.Sprite):
         ("right", "sit1.png"),
         ("down", "sit2.png"),
         ("left", "sit3.png"),
+        ("up_squished", "splat0.png"),
+        ("right_squished", "splat1.png"),
+        ("down_squished", "splat2.png"),
+        ("left_squished", "splat3.png"),
     ]
 
     start_shown = False
