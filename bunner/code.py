@@ -20,6 +20,7 @@ class Bunny(pytch.Sprite):
         self.switch_costume("up")
         self.go_to_xy(0, -160)
         self.mode = PLAYING
+        self.hide()
 
     @pytch.when_green_flag_clicked
     def start_game(self):
