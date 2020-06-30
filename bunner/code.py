@@ -21,7 +21,7 @@ class Bunny(pytch.Sprite):
     def go_to_starting_position(self):
         self.switch_costume("up")
         self.go_to_xy(0, -160)
-        self.mode = PLAYING
+        self.mode = WAITING
         self.hide()
 
     @pytch.when_green_flag_clicked
