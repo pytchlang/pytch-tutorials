@@ -165,6 +165,10 @@ class Car(Sprite):
                 pass
             pytch.broadcast('squish bunny')
 
+    @when_I_receive('game over')
+    def vanish(self):
+      self.delete_this_clone()
+
     def hits(self, other):
         return abs( self.get_y() - other.get_y() ) <= 10 and\
                abs( self.get_x() - other.get_x() ) <= 40
