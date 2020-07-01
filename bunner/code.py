@@ -24,6 +24,10 @@ class BunnyStage(Stage):
       Stage.__init__(self)
       self.switch_backdrop('world')
 
+  @when_I_receive('game over')
+  def game_over(self):
+    self.switch_backdrop('gameover')
+
 class Bunny(Sprite):
     Costumes = [
         ('up', 'images/sit0.png', 30, 30),
