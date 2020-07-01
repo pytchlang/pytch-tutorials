@@ -18,7 +18,8 @@ game_running = False
 WAITING, PLAYING, SQUISHED = range(3)
 
 class BunnyStage(Stage):
-  Backdrops = [ ('world', 'images/bunner-background.png') ]
+  Backdrops = [ ('world', 'images/bunner-background.png'),
+                ('gameover', 'images/gameover-background.png') ]
 
   def __init__(self):
       Stage.__init__(self)
