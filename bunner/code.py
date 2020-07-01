@@ -246,3 +246,15 @@ class Score_1(Sprite):
         self.switch_costume('digit-%d' % (score % 10) )
         self.show()
 
+class Score_2(Sprite):
+    Costumes = score_costumes
+
+    @when_green_flag_clicked
+    def set_position_and_size(self):
+        self.go_to_xy(175, 162)
+        self.hide()
+
+    @when_I_receive('score changed')
+    def show_correct_digit(self):
+        self.switch_costume('digit-%d' % (score // 10) )
+        self.show()
