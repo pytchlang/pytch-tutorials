@@ -36,6 +36,8 @@ class Bunny(pytch.Sprite):
         self.mode = WAITING
         self.hide()
         self.lives = -1
+        self.highest_row_reached = 0
+        self.current_row = 0
 
     @pytch.when_I_receive("start playing")
     def start_game(self):
