@@ -211,11 +211,17 @@ We should be showing the lives remaining, but before we get to that we can add a
 
 {{< commit broadcast-score-change-message >}}
 
-* showing score
+{{< commit create-score-2-class >}}
+
+{{< commit register-score-2-class >}}
 
 ## More status displays
 
-* showing lives
+{{< commit introduce-live-display >}}
+
+{{< commit register-live-counter >}}
+
+{{< commit update-life-counter >}}
 
 ## Adding the water hazard
 
