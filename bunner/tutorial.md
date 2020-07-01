@@ -209,6 +209,8 @@ We should be showing the lives remaining, but before we get to that we can add a
 
 {{< commit display-digits-on-message1 >}}
 
+{{< commit broadcast-score-change-message >}}
+
 * showing score
 
 ## More status displays
