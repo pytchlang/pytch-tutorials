@@ -165,3 +165,16 @@ class Car(pytch.Sprite):
             abs(self.y_position - other.y_position) <= 10
             and abs(self.x_position - other.x_position) <= 40
         )
+
+
+class StartButton(pytch.Sprite):
+    Costumes = ["start.png"]
+
+    @pytch.when_green_flag_clicked
+    def start(self):
+        self.go_to_xy(0, 120)
+
+    @pytch.when_I_receive("game over")
+    def game_over_try_again(self):
+        pytch.wait_seconds(1)
+        self.show()
