@@ -229,3 +229,10 @@ class StartButton(Sprite):
       pytch.broadcast('start playing')
       self.hide()
 
+class Score_1(Sprite):
+    Costumes = score_costumes
+
+    @when_green_flag_clicked
+    def set_position_and_size(self):
+        self.go_to_xy(200, 162)
+        self.hide()
