@@ -273,3 +273,15 @@ class LivesCounter(Sprite):
         self.switch_costume('digit-%d' % (Bunny.the_original().lives % 10))
         self.show()
 
+class Log(Sprite):
+    Costumes = [ ('log0', 'images/log0.png', 42, 30),
+                  ('log1', 'images/log1.png', 69, 30)
+    ]
+
+    def __init__(self):
+        Sprite.__init__(self)
+        self.speed = 3
+        self.direction = None # 'left' or 'right'
+        self.hide()
+        self.set_size(0.65)
+
