@@ -127,7 +127,7 @@ class Car(Sprite):
         self.set_size(0.65)
         self.hide()
 
-    @when_green_flag_clicked
+    @when_I_receive('start playing')
     def startTrafficRowOne(self):
         global game_running
         while game_running:
