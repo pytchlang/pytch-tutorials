@@ -213,3 +213,10 @@ class Score_1(pytch.Sprite):
     def set_position_and_size(self):
         self.go_to_xy(200, 162)
         self.hide()
+
+    @pytch.when_I_receive("score changed")
+    def show_correct_digit(self):
+        score_units = score % 10
+        self.switch_costume(f"digit-{score_units}")
+        self.show()
+
