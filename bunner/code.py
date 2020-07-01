@@ -333,3 +333,7 @@ class Log(Sprite):
     def vanish(self):
         self.delete_this_clone() # Does nothing on the non-clone original
 
+    def hits(self, other):
+        return abs( self.get_y() - other.get_y() ) <= 10 and\
+          abs( self.get_x() - other.get_x() ) <= 40
+
