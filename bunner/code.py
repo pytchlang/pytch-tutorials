@@ -98,6 +98,7 @@ class Bunny(pytch.Sprite):
             self.switch_costume("down")
             if self.get_y() > -150:
                 self.change_y(-40)
+                self.current_row = self.current_row - 1
 
     @pytch.when_key_pressed("ArrowLeft")
     def move_left(self):
