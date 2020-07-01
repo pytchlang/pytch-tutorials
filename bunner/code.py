@@ -251,3 +251,10 @@ class LivesCounter(pytch.Sprite):
         self.switch_costume(f"digit-{life_number}")
         self.show()
 
+
+class Log(pytch.Sprite):
+    Costumes = ["log0.png", "log1.png"]
+
+    @pytch.when_green_flag_clicked
+    def start_hidden(self):
+        self.hide()
