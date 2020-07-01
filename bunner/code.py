@@ -8,6 +8,7 @@ from pytch import (
     create_clone_of,
     when_I_start_as_a_clone,
     when_I_receive,
+    when_this_sprite_clicked
 )
 
 import random
