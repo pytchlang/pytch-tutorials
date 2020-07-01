@@ -136,7 +136,26 @@ This is my version:
 
 {{< commit define-play-one-life >}}
 
+{{< commit play-another-life-after-death >}}
+
 ## Letting the game end
+
+{{< commit announce-game-over >}}
+
+{{< commit game-over-deletes-clone-cars >}}
+
+{{< commit add-global-running-flag >}}
+
+{{< commit bunny-sets-game-running >}}
+
+{{< commit game-over-unsets-running-flag >}}
+
+{{< commit game-over-end-traffic1 >}}
+
+{{< commit game-over-end-traffic2 >}}
+
+{{< commit game-over-end-traffic3 >}}
+
 
 * Game end screen
 * Start button
