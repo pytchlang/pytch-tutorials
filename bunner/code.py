@@ -319,12 +319,18 @@ class Log(pytch.Sprite):
         if self.movement_direction == "left":
             while self.x_position > -285:
                 self.change_x(-self.speed)
-                if self.hits(Bunny.the_original()):
+                if (
+                    self.hits(Bunny.the_original())
+                    and Bunny.the_original().mode != DROWNING
+                ):
                     Bunny.the_original().change_x(-self.speed)
         else:  # Right
             while self.x_position < 285:
                 self.change_x(self.speed)
-                if self.hits(Bunny.the_original()):
+                if (
+                    self.hits(Bunny.the_original())
+                    and Bunny.the_original().mode != DROWNING
+                ):
                     Bunny.the_original().change_x(self.speed)
         self.hide()
         self.delete_this_clone()
