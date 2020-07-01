@@ -59,10 +59,13 @@ class Bunny(pytch.Sprite):
 
     @pytch.when_key_pressed("ArrowUp")
     def move_up(self):
+        global score
         if self.mode == PLAYING:
             self.switch_costume("up")
             if self.y_position < 150:
                 self.change_y(40)
+                score = score + 1
+                print( "Score is ", score )
 
     @pytch.when_key_pressed("ArrowRight")
     def move_right(self):
