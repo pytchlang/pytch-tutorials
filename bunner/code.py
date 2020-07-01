@@ -48,6 +48,7 @@ class Bunny(pytch.Sprite):
     def play_one_life(self):
         if self.lives > 0:
             self.lives = self.lives - 1
+            pytch.broadcast("lives changed")
             self.switch_costume("up")
             self.go_to_xy(0, -160)
             self.highest_row_reached = 0
