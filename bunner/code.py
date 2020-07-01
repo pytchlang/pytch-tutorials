@@ -59,8 +59,9 @@ class Bunny(Sprite):
 
     @when_I_receive('start playing')
     def start_game(self):
-        global game_running
+        global game_running, score
         self.lives = 3
+        score = 0
         game_running = True
         self.play_one_life()
 
