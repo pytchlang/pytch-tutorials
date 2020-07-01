@@ -123,7 +123,8 @@ class Car(Sprite):
 
     @when_green_flag_clicked
     def startTrafficRowOne(self):
-        while True:
+        global game_running
+        while game_running:
             if random.random() < 0.2:
                 self.go_to_xy(-285,-125)
                 self.direction = 'right'
