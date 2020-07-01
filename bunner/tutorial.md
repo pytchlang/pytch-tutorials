@@ -201,6 +201,14 @@ We should be showing the lives remaining, but before we get to that we can add a
 
 ## Showing score
 
+{{< commit introduce-score1-class >}}
+
+{{< commit register-digit-1-class >}}
+
+{{< commit compute-score-digit-costumes >}}
+
+{{< commit display-digits-on-message1 >}}
+
 * showing score
 
 ## More status displays
