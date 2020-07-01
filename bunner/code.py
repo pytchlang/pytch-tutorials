@@ -72,7 +72,7 @@ class Bunny(pytch.Sprite):
                 if self.current_row > self.highest_row_reached:
                     self.highest_row_reached = self.current_row
                     score = score + 1
-                    print( "Score is ", score )
+                    pytch.broadcast("score changed")
 
     @pytch.when_key_pressed("ArrowRight")
     def move_right(self):
