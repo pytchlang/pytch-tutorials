@@ -258,3 +258,18 @@ class Log(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def start_hidden(self):
         self.hide()
+
+    def start_row(self, direction, y):
+        self.speed = 3
+        if direction == "right":
+            x = -285
+        else:
+            x = 285
+
+        while game_running:
+            if random.random() < 0.05:
+                self.go_to_xy(x, y)
+                self.direction = direction
+                pytch.create_clone_of(self)
+                pytch.wait_seconds(0.3)
+            pytch.wait_seconds(0.1)
