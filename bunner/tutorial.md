@@ -110,7 +110,7 @@ This is my version:
 
 ## Setting modes for the player
 
-{{< commit add-first-bunny-modes  >}}
+{{< commit add-first-bunny-modes >}}
 
 {{< commit set-initial-mode-playing >}}
 
