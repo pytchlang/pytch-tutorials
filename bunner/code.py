@@ -72,6 +72,8 @@ class Bunny(Sprite):
           self.lives = self.lives - 1
           self.switch_costume('up')
           self.go_to_xy(0, -160)
+          self.highest_row_reached = 0
+          self.current_row = 0
           self.mode = PLAYING
           self.show()
         else:
