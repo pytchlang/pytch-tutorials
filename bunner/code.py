@@ -13,6 +13,8 @@ from pytch import (
 import random
 
 
+game_running = False
+
 WAITING, PLAYING, SQUISHED = range(3)
 
 class BunnyStage(Stage):
