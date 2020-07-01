@@ -26,6 +26,10 @@ class BunnyStage(Stage):
       Stage.__init__(self)
       self.switch_backdrop('world')
 
+  @when_I_receive('start playing')
+  def start_game(self):
+    self.switch_backdrop('world')
+
   @when_I_receive('game over')
   def game_over(self):
     self.switch_backdrop('gameover')
