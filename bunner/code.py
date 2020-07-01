@@ -70,6 +70,7 @@ class Bunny(pytch.Sprite):
             self.switch_costume("up")
             if self.y_position < 150:
                 self.change_y(40)
+                self.current_row = self.current_row + 1
                 score = score + 1
                 print( "Score is ", score )
 
