@@ -107,7 +107,7 @@ class Car(pytch.Sprite):
 
     start_shown = False
 
-    @pytch.when_green_flag_clicked
+    @pytch.when_I_receive("start playing")
     def startTrafficRowOne(self):
         global game_running
         self.speed = 3
