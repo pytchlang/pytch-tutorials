@@ -156,8 +156,10 @@ This is my version:
 
 {{< commit game-over-end-traffic3 >}}
 
+{{< commit show-game-over-backdrop >}}
 
-* Game end screen
+{{< commit add-game-over-background >}}
+
 * Start button
 
 ## Keeping score
