@@ -99,7 +99,7 @@ class Car(pytch.Sprite):
     def start_hidden(self):
         self.hide()
 
-    @pytch.when_green_flag_clicked
+    @pytch.when_I_receive("start playing")
     def startTrafficRowOne(self):
         global game_running
         self.speed = 3
@@ -111,7 +111,7 @@ class Car(pytch.Sprite):
                 pytch.wait_seconds(0.3)
             pytch.wait_seconds(0.1)
 
-    @pytch.when_green_flag_clicked
+    @pytch.when_I_receive("start playing")
     def startTrafficRowTwo(self):
         global game_running
         self.speed = 3
@@ -123,7 +123,7 @@ class Car(pytch.Sprite):
                 pytch.wait_seconds(0.3)
             pytch.wait_seconds(0.1)
 
-    @pytch.when_green_flag_clicked
+    @pytch.when_I_receive("start playing")
     def startTrafficRowThree(self):
         global game_running
         self.speed = 3
