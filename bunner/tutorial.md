@@ -181,6 +181,7 @@ This is my version:
 ## Keeping score
 
 We should be showing the lives remaining, but before we get to that we can add another small but important feature.
+
 {{< commit introduce-score-global >}}
 
 {{< commit initialise-score >}}
@@ -197,7 +198,9 @@ We should be showing the lives remaining, but before we get to that we can add a
 
 {{< commit lower-row-count-on-backstep >}}
 
-* adding score
+
+## Showing score
+
 * showing score
 
 ## More status displays
