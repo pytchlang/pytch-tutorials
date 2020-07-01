@@ -258,3 +258,8 @@ class LivesCounter(pytch.Sprite):
         self.switch_costume("digit-%d" % (Bunny.the_original().lives % 10))
         self.show()
 
+
+class Log(pytch.Sprite):
+    Costumes = ["log0.png", "log1.png"]
+
+    start_shown = False
