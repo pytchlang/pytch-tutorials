@@ -243,3 +243,18 @@ class Score_2(pytch.Sprite):
     def show_correct_digit(self):
         self.switch_costume("digit-%d" % (score // 10) )
         self.show()
+
+
+class LivesCounter(pytch.Sprite):
+    Costumes = score_costumes
+
+    @pytch.when_green_flag_clicked
+    def set_position_and_size(self):
+        self.go_to_xy(20, 162)
+        self.hide()
+
+    @pytch.when_I_receive("lives changed")
+    def show_correct_digit(self):
+        self.switch_costume("digit-%d" % (Bunny.the_original().lives % 10))
+        self.show()
+
