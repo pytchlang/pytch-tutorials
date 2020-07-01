@@ -60,6 +60,8 @@ class Bunny(Sprite):
           self.mode = PLAYING
           self.show()
         else:
+          global game_running
+          game_running = False
           pytch.broadcast('game over')
           self.hide()
           self.move = WAITING
