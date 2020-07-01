@@ -9,7 +9,8 @@ WAITING, PLAYING, SQUISHED = range(3)
 
 
 class BunnyStage(pytch.Stage):
-    Backdrops = [("world", "bunner-background.png")]
+    Backdrops = [("world", "bunner-background.png"),
+                 ("gameover", "gameover-background.png")]
 
     @pytch.when_I_receive("game over")
     def game_over(self):
