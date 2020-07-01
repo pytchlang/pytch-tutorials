@@ -305,7 +305,7 @@ class Log(pytch.Sprite):
         else: # Right
             while( self.get_x() < 285):
                 self.change_x( self.speed )
-                if self.hits(the_bunny):
+                if self.hits( Bunny.the_original() ) and Bunny.the_original().mode != DROWNING:
                     Bunny.the_original().change_x( self.speed )
         self.hide()
         self.delete_this_clone()
