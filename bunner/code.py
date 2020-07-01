@@ -129,7 +129,7 @@ class Bunny(Sprite):
         pytch.wait_seconds(0.5)
         self.play_one_life()
 
-    
+
 
 class Car(Sprite):
     Costumes = [
