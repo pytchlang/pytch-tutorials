@@ -254,3 +254,8 @@ class LivesCounter(pytch.Sprite):
         self.switch_costume(f"digit-{life_number}")
         self.show()
 
+
+class Log(pytch.Sprite):
+    Costumes = ["log0.png", "log1.png"]
+
+    start_shown = False
