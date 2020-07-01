@@ -56,6 +56,8 @@ class Bunny(Sprite):
         self.hide()
         self.mode = WAITING
         self.lives = -1
+        self.highest_row_reached = 0
+        self.current_row = 0
 
     @when_I_receive('start playing')
     def start_game(self):
