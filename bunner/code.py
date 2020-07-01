@@ -143,6 +143,10 @@ class Car(pytch.Sprite):
                 pass
             pytch.broadcast("squish bunny")
 
+    @pytch.when_I_receive("game over")
+    def vanish(self):
+        self.delete_this_clone()
+
     def hits(self, other):
         return (
             abs(self.y_position - other.y_position) <= 10
