@@ -187,3 +187,8 @@ class StartButton(pytch.Sprite):
     def game_over_try_again(self):
         pytch.wait_seconds(1)
         self.show()
+
+    @pytch.when_this_sprite_clicked
+    def start_new_game(self):
+        pytch.broadcast("start playing")
+        self.hide()
