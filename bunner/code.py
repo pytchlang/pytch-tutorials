@@ -9,7 +9,7 @@ WAITING, PLAYING, SQUISHED = range(3)
 
 
 class BunnyStage(pytch.Stage):
-    Backdrops = ["world.png"]
+    Backdrops = ["world.png", "gameover.png"]
 
 
 class Bunny(pytch.Sprite):
