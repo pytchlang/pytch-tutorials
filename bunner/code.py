@@ -307,3 +307,9 @@ class Log(pytch.Sprite):
     @pytch.when_I_receive("game over")
     def vanish(self):
         self.delete_this_clone()  # Does nothing on the non-clone original
+
+    def hits(self, other):
+        return (
+            abs(self.y_position - other.y_position) <= 10
+            and abs(self.x_position - other.x_position) <= 40
+        )
