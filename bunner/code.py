@@ -285,3 +285,16 @@ class Log(Sprite):
         self.hide()
         self.set_size(0.65)
 
+
+    def start_row(self, direction, y):
+        if direction == 'right':
+          x = -285
+        else:
+          x = 285
+        while game_running:
+            if random.random() < 0.05:
+                self.go_to_xy( x, y )
+                self.direction = direction
+                create_clone_of(self)
+                pytch.wait_seconds(0.3)
+            pytch.wait_seconds(0.1)
