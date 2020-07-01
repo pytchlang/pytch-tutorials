@@ -291,3 +291,21 @@ class Log(pytch.Sprite):
                 pytch.create_clone_of(self)
                 pytch.wait_seconds(0.3)
             pytch.wait_seconds(0.1)
+
+    @pytch.when_I_start_as_a_clone
+    def start_log(self):
+        self.switch_costume("log" + random.choice(["0", "1"]))
+        self.set_size(0.65)
+        self.show()
+        if self.direction == "left":
+            while( self.get_x() > -285):
+                self.change_x( -self.speed )
+                if self.hits( Bunny.the_original() ):
+                    Bunny.the_original().change_x( -self.speed )
+        else: # Right
+            while( self.get_x() < 285):
+                self.change_x( self.speed )
+                if self.hits(the_bunny):
+                    Bunny.the_original().change_x( self.speed )
+        self.hide()
+        self.delete_this_clone()
