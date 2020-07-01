@@ -187,3 +187,21 @@ class Car(Sprite):
         return abs( self.get_y() - other.get_y() ) <= 10 and\
                abs( self.get_x() - other.get_x() ) <= 40
 
+class StartButton(Sprite):
+    Costumes = [ ('start', 'images/start.png', 135, 30) ]
+
+    def __init__(self):
+      Sprite.__init__(self)
+      self.hide()
+      self.go_to_xy(0,120)
+      self.switch_costume('start')
+
+    @when_green_flag_clicked
+    def start(self):
+      self.show()
+
+    @when_I_receive('game over')
+    def game_over_try_again(self):
+      pytch.wait_seconds(1)
+      self.show()
+
