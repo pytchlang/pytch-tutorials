@@ -229,6 +229,10 @@ class StartButton(Sprite):
       pytch.broadcast('start playing')
       self.hide()
 
+score_costumes = [('digit-%d' % n, 'images/digit-%d.png' % n, 14, 14)
+                  for n in range(10)]
+
+
 class Score_1(Sprite):
     Costumes = score_costumes
 
