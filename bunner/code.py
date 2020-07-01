@@ -260,6 +260,18 @@ class Log(pytch.Sprite):
 
     start_shown = False
 
+    @pytch.when_I_receive("start playing")
+    def start_row_1(self):
+        self.start_row("right", 30)
+
+    @pytch.when_I_receive("start playing")
+    def start_row_2(self):
+        self.start_row("left", 80)
+
+    @pytch.when_I_receive("start playing")
+    def start_row_3(self):
+        self.start_row("right", 130)
+
     def start_row(self, direction, y):
         self.speed = 3
         if direction == "right":
