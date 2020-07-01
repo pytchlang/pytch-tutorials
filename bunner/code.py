@@ -3,6 +3,8 @@ import pytch
 import random
 
 
+game_running = False
+
 WAITING, PLAYING, SQUISHED = range(3)
 
 
