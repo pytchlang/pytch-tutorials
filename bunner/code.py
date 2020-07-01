@@ -308,3 +308,7 @@ class Log(pytch.Sprite):
                     Bunny.the_original().change_x( self.speed )
         self.hide()
         self.delete_this_clone()
+
+    @pytch.when_I_receive("game over")
+    def vanish(self):
+        self.delete_this_clone() # Does nothing on the non-clone original
