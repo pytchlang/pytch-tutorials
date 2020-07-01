@@ -149,7 +149,7 @@ class Car(Sprite):
                 pytch.wait_seconds(0.3)
             pytch.wait_seconds(0.1)
 
-    @when_green_flag_clicked
+    @when_I_receive('start playing')
     def startTrafficRowThree(self):
         global game_running
         while game_running:
