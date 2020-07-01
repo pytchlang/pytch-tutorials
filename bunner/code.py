@@ -16,6 +16,8 @@ import random
 
 game_running = False
 
+score = 0
+
 WAITING, PLAYING, SQUISHED = range(3)
 
 class BunnyStage(Stage):
