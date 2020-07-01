@@ -40,7 +40,7 @@ class Bunny(pytch.Sprite):
         self.mode = WAITING
         self.lives = -1
 
-    @pytch.when_green_flag_clicked
+    @pytch.when_I_receive("start playing")
     def start_game(self):
         global game_running
         self.lives = 3
