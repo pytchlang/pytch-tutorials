@@ -178,9 +178,24 @@ This is my version:
 
 {{< commit start-traffic-on-message3 >}}
 
-* Start button
-
 ## Keeping score
+
+We should be showing the lives remaining, but before we get to that we can add another small but important feature.
+{{< commit introduce-score-global >}}
+
+{{< commit initialise-score >}}
+
+{{< commit increment-the-score-every-time-we-move-up >}}
+
+{{< commit introduce-current-row-counters >}}
+
+{{< commit init-row-counters-at-start >}}
+
+{{< commit increment-current-row-counter >}}
+
+{{< commit only-score-if-new-row-record >}}
+
+{{< commit lower-row-count-on-backstep >}}
 
 * adding score
 * showing score
