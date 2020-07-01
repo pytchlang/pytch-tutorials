@@ -47,7 +47,9 @@ class Bunny(Sprite):
 
     @when_green_flag_clicked
     def start_game(self):
+        global game_running
         self.lives = 3
+        game_running = True
         self.play_one_life()
 
     def play_one_life(self):
