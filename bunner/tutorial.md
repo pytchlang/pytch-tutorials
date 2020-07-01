@@ -160,6 +160,24 @@ This is my version:
 
 {{< commit add-game-over-background >}}
 
+## The start button
+
+{{< commit create-start-button >}}
+
+{{< commit register-start-button >}}
+
+{{< commit import-when-this-sprite-clicked >}}
+
+{{< commit make-start-button-clickable >}}
+
+{{< commit make-bunny-start-game-on-message >}}
+
+{{< commit start-traffic-on-message1 >}}
+
+{{< commit start-traffic-on-message2 >}}
+
+{{< commit start-traffic-on-message3 >}}
+
 * Start button
 
 ## Keeping score
