@@ -206,3 +206,8 @@ class StartButton(Sprite):
       pytch.wait_seconds(1)
       self.show()
 
+    @when_this_sprite_clicked
+    def start_new_game(self):
+      pytch.broadcast('start playing')
+      self.hide()
+
