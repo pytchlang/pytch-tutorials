@@ -77,6 +77,8 @@ class Bunny(pytch.Sprite):
 
     @pytch.when_I_receive("start playing")
     def watch_for_water(self):
+        while self.mode != PLAYING:
+            pass
         while game_running:
             if (self.get_y() > 30 and self.get_y() < 160 and
                     not self.touching(Log)):
