@@ -94,6 +94,7 @@ class Bunny(Sprite):
           for i in range(7):
             self.switch_costume('splash-' + str(i))
             pytch.wait_seconds(0.1)
+          pytch.wait_seconds(0.5)
 
     @when_key_pressed('ArrowUp')
     def move_up(self):
