@@ -141,6 +141,10 @@ class Bunny(pytch.Sprite):
                     pytch.wait_seconds(0.125)
                     score = score + 1
                     pytch.broadcast("score changed")
+            self.go_to_xy(0, -160)
+            self.current_row = 0
+            self.highest_row_reached = 0
+            self.mode = PLAYING
 
 
 class Car(pytch.Sprite):
