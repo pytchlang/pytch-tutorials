@@ -90,7 +90,7 @@ This is my version:
 
 {{< commit drive-to-the-left >}}
 
-{{< start-traffic-two-and-three >}}
+{{< commit start-traffic-two-and-three >}}
 
 ## Squish the bunny!
 
@@ -229,7 +229,34 @@ We should be showing the lives remaining, but before we get to that we can add a
 
 ## Adding the water hazard
 
-* Basic logs
+{{< commit introduce-log-class >}}
+
+{{< commit start-a-single-row >}}
+
+{{< commit start-3-rows-of-logs >}}
+
+{{< commit drive-log-along-row >}}
+
+{{< commit check-bunny-alive-on-log >}}
+
+{{< commit add-drowning-state >}}
+
+{{< commit remove-logs-at-end-of-game >}}
+
+{{< commit register-log-class >}}
+
+{{< commit fuzzy-hit-detection-for-logs >}}
+
+{{< commit add-drowning-costumes >}}
+
+{{< commit regularly-scan-for-drowning >}}
+
+{{< commit play-drowning-animation >}}
+
+{{< commit lose-a-life-to-drowning >}}
+
+{{< commit play-after-drowning >}}
+
 * "Touching log" behaviour
 * Tweaks to touching for logs
 * Drowning
