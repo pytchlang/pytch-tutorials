@@ -142,6 +142,16 @@ class Bunny(Sprite):
         self.play_one_life()
 
 
+    def check_victory(self):
+      global score
+      if self.get_y() > 159:
+        self.mode = DANCING
+        for _ in range(4):
+          for facing in ['right', 'down', 'left', 'up']:
+            self.switch_costume(facing)
+            pytch.wait_seconds(0.125)
+            score = score + 1
+            pytch.broadcast('score changed')
 
 class Car(Sprite):
     Costumes = [
