@@ -7,7 +7,7 @@ game_running = False
 
 score = 0
 
-WAITING, PLAYING, SQUISHED, DROWNING = range(4)
+WAITING, PLAYING, SQUISHED, DROWNING, DANCING = range(5)
 
 
 class BunnyStage(pytch.Stage):
