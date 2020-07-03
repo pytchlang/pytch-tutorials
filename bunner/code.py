@@ -81,6 +81,9 @@ class Bunny(pytch.Sprite):
             if (self.get_y() > 30 and self.get_y() < 160 and
                     not self.touching(Log)):
                 self.mode = DROWNING
+                for i in range(8):
+                    self.switch_costume("splash-" + str(i))
+                    pytch.wait_seconds(0.1)
 
     @pytch.when_key_pressed("ArrowUp")
     def move_up(self):
