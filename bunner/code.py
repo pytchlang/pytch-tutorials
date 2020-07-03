@@ -25,7 +25,8 @@ class BunnyStage(pytch.Stage):
 class Bunny(pytch.Sprite):
     Costumes = [ "up.png", "right.png", "down.png", "left.png",
                  "up_squished.png", "right_squished.png",
-                 "down_squished.png", "left_squished.png" ]
+                 "down_squished.png", "left_squished.png",
+    ] + [f"splash-{n}.png" for n in range(8)]
 
     @pytch.when_green_flag_clicked
     def go_to_starting_position(self):
