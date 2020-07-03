@@ -30,7 +30,7 @@ If you build the project now you'll notice that the stage backdrop does not actu
 
 {{< commit register-stage >}}
 
-If you don't register the Stage (or any Sprites) with Pytch then they won't respond to any events (including the program starting), and they won't 
+If you don't register the Stage (or any Sprites) with Pytch then they won't respond to any events (including the program starting), and sprites won't ever appear on the stage. 
 
 ## Create our hero
 
