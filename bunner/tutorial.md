@@ -2,7 +2,9 @@
 
 In this tutorial we will make a complete [Frogger](https://en.wikipedia.org/wiki/Frogger)-style arcade game.
 
-{{< run-finished-project >}} 
+{{< run-finished-project >}}
+
+
 
 --- 
 
@@ -257,11 +259,12 @@ We should be showing the lives remaining, but before we get to that we can add a
 
 {{< commit play-after-drowning >}}
 
-* "Touching log" behaviour
-* Tweaks to touching for logs
-* Drowning
-
 ## Finishing the level
 
-* Reaching the top
-* Dancing
+{{< commit check-if-we-won >}}
+
+{{< commit detect-final-row >}}
+
+{{< commit new-dancing-state >}}
+
+{{< commit start-another-round >}}
