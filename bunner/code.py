@@ -46,7 +46,7 @@ class Bunny(Sprite):
         ('right_squished', 'images/splat1.png', 30, 30),
         ('down_squished', 'images/splat2.png', 30, 30),
         ('left_squished', 'images/splat3.png', 30, 30)
-        ]
+        ] + [('splash-%d' % n, 'images/splash%d.png' % n, 30, 30) for n in range(7)]
 
     def __init__(self):
         Sprite.__init__(self)
