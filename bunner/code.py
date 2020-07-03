@@ -33,6 +33,8 @@ class Bunny(pytch.Sprite):
         ("right_squished", "splat1.png"),
         ("down_squished", "splat2.png"),
         ("left_squished", "splat3.png"),
+    ] + [
+        ("splash-%d" % n, "splash%d.png" % n) for n in range(8)
     ]
 
     start_shown = False
