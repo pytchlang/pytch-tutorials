@@ -65,25 +65,67 @@ This is my version:
 
 ## Create the cars
 
+The next step is to create some obstacles to make it harder to reach the top of the screen. Our first obstacles are the cars that will travel left and right in three lanes of traffic that the bunny will have to cross.
+
+So that there is some variety in how they look I have chosen two different images for each car, each of which could be driving left or right. Later on we will select at random the between the two different versions of cars driving to the left (or right, depending on the lane) for each car.
+
+The images are a bit big for our canvas, so I set the size to 65%. The 'direction' variable will be used to note whether each car is travelling left or right, but for now I just set it to something unimportant.
+
 {{< commit simple-car-sprite >}}
+
+We want to start the cars moving when the green flag is clicked, so I want to make that name available. I will import the Python random number code as wel because we will use that to select the different costumes.
 
 {{< commit import-green-flag >}}
 
+Now the business. We will create a series of _clones_ of the Car sprite, one for each car that's driving. 
+
+As soon as the green flag is clicked the Car clone starts a loop to manage the cars in the first lane of traffic (that's going to be the lane closest to the bunny's start position). The loop runs ten times a second (that is controlled by the ``wait_seconds(0.1)`` at the end of the loop). 
+
+Each time the loop goes around we create a random number between 0 and 1, and if it's below 0.2 then we move the Car sprite to just off the screen to the left of the first lane, and create a clone at this position. 
+
+Because we might create another car in this lane the next time around we wait a little longer after creating the clone so that it has time to drive along the lane. Without this there's a chance the clones could overlap a bit which would look silly.
+
 {{< commit start-one-traffic-row >}}
+
+We want the clone to run some special code when it's created, so first we import the ``when_I_start_as_a_clone`` event.
 
 {{< commit import-when-i-start-as-a-clone >}}
 
+Now I will buid up the loop that drives the car from left-to-right along the lane. First, I want the clone to choose a costume, either 'right0' or 'right1' (they are two different colours of cars, and it keeps the lane of traffic from looking too monotonous if there's a mix). 
+
+Python's ``random.choice`` function will return one of the items from the list we give it, randomly chosen.
+
+The clone got it's own copy of the ``direction`` variable containing whatever the Car sprite had in it at the moment the clone was created. It contains the string 'right', so combining that with either '0' or '1' gets us one of the costume names.
+
 {{< commit begin-drive-routine >}}
+
+Once the sprite has appeared we start a loop that drives the car to the right. 
+
+You might wonder why I'm are checking the 'direction' variable, since it has to contain 'right'. The answer is that if we get this code correct for moving right we'll be able to use it for the left-moving lane as well.
+
+In order to allow us to tweak how fast the lane of traffic moves I'll use a variable to change how much it moves. That way if I wanted to speed it up later on I can just change what's stored in the variable.
 
 {{< commit drive-to-the-right >}}
 
+The speed variable needs to be set up somewhere, so I add it to the class and set it up in ``__init__``. 
+
 {{< commit add-speed-var >}}
+
+Once the car has moved far enough to be off the right-hand side of the screen I hide it and then delete the clone. Deleting the clone keeps things tidy and means there are not lots of useless clones lying around just off the stage edge.
 
 {{< commit finish-car-clone >}}
 
+Now, back to my idea of using the same code to control cars in the left-hand lane. If the direction is not 'right' then I suppose it must be 'left'. Those cars just move a _negative_ amount (and have moved far enough once their `x`-coordinate has moved off the left edge of the stage)
+
 {{< commit drive-to-the-left >}}
 
+Once we have that we can add two more loops that start on green flag. They are modelled on the loop that creates `Car`` clones for lane 1, but they move to different x and y positions before cloning the car.
+
 {{< commit start-traffic-two-and-three >}}
+
+There's an important point to think about here. What if the row two loop moved the car, but before it got to set the `direction` or create the clone the row one loop ran a bit and altered the x and y position? We could end up with a car that was positioned off to the left of the screen, but which had it's direction set to drive to the left, and it would just vanish right away!
+
+In fact, this can't happen, but it's worth knowing why. Pytch will only allow another function to run at specific places. One of those places is at the end of a loop (another is when a function does ``wait_seconds``). The manual has more information about this, but it's enough for now to know we are safe!
 
 ## Squish the bunny!
 
