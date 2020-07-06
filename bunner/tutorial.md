@@ -28,10 +28,6 @@ The second step selects a backdrop to show so that the canvas has something in i
 
 If you build the project now you'll notice that the stage backdrop does not actually appear. That's because there is one more thing we need to do in order to have the Stage hooked up to our project. We need to _register_ it with Pytch. We will have to do this for each new Sprite class as well, so that the Pytch project knows about them.
 
-{{< commit register-stage >}}
-
-If you don't register the Stage (or any Sprites) with Pytch then they won't respond to any events (including the program starting), and sprites won't ever appear on the stage. 
-
 ## Create our hero
 
 There is not much to do in our game yet, so let's add something for the player to control. 
@@ -48,9 +44,6 @@ Each costume has two numbers after it - these are the position of the _centre_ o
 
 We select a costume and make sure that the Bunny actor is visible.
 
-{{< commit register-player-sprite >}}
-
-Like the stage, we have to connect up our Sprite to the rest of the Pytch system.
 
 ### Moving our hero
 
@@ -73,8 +66,6 @@ This is my version:
 ## Create the cars
 
 {{< commit simple-car-sprite >}}
-
-{{< commit register-car-class >}}
 
 {{< commit import-green-flag >}}
 
@@ -99,10 +90,6 @@ This is my version:
 {{< commit check-for-squishing >}}
 
 {{< commit special-hitbox-for-cars >}}
-
-{{< commit create-global-instance}}
-
-{{< commit assign-bunny-global >}}
 
 {{< commit use-new-hits-method >}}
 
@@ -170,8 +157,6 @@ This is my version:
 
 {{< commit create-start-button >}}
 
-{{< commit register-start-button >}}
-
 {{< commit import-when-this-sprite-clicked >}}
 
 {{< commit make-start-button-clickable >}}
@@ -209,8 +194,6 @@ We should be showing the lives remaining, but before we get to that we can add a
 
 {{< commit introduce-score1-class >}}
 
-{{< commit register-digit-1-class >}}
-
 {{< commit compute-score-digit-costumes >}}
 
 {{< commit display-digits-on-message1 >}}
@@ -219,13 +202,9 @@ We should be showing the lives remaining, but before we get to that we can add a
 
 {{< commit create-score-2-class >}}
 
-{{< commit register-score-2-class >}}
-
 ## More status displays
 
-{{< commit introduce-live-display >}}
-
-{{< commit register-live-counter >}}
+{{< commit introduce-life-display >}}
 
 {{< commit update-life-counter >}}
 
@@ -244,8 +223,6 @@ We should be showing the lives remaining, but before we get to that we can add a
 {{< commit add-drowning-state >}}
 
 {{< commit remove-logs-at-end-of-game >}}
-
-{{< commit register-log-class >}}
 
 {{< commit fuzzy-hit-detection-for-logs >}}
 
