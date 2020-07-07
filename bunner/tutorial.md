@@ -65,7 +65,7 @@ This is my version:
 
 ## Create the cars
 
-The next step is to create some obstacles to make it harder to reach the top of the screen. Our first obstacles are the cars that will travel left and right in three lanes of traffic that the bunny will have to cross.
+The next step is to create some obstacles to make it harder to reach the top of the screen. Our first obstacles are the cars that will travel left and right in three lanes of traffic that the bunny will have to cross. There is room for three lanes in the background, but we'll design our solution so that we could easily add more lanes of traffic if we want.
 
 So that there is some variety in how they look I have chosen two different images for each car, each of which could be driving left or right. Later on we will select at random the between the two different versions of cars driving to the left (or right, depending on the lane) for each car.
 
@@ -77,23 +77,33 @@ We want to start the cars moving when the green flag is clicked, so I want to ma
 
 {{< commit import-green-flag >}}
 
-Now the business. We will create a series of _clones_ of the Car sprite, one for each car that's driving. 
+### Designing the traffic
 
-As soon as the green flag is clicked the Car clone starts a loop to manage the cars in the first lane of traffic (that's going to be the lane closest to the bunny's start position). The loop runs ten times a second (that is controlled by the ``wait_seconds(0.1)`` at the end of the loop). 
+My plan is to use the original ``Car`` sprite as a template. Every time I want to add a new car to a lane of traffic I'll move the hidden Car sprite to the starting position for that lane and then make a clone. The clone will then show itself and drive across the screen.
 
-Each time the loop goes around we create a random number between 0 and 1, and if it's below 0.2 then we move the Car sprite to just off the screen to the left of the first lane, and create a clone at this position. 
+The original ``Car`` sprite will have three scripts running, one for each lane, that will act as a kind of car factory, adding new cars with a bit of randomness to keep the gaps between the cars unpredictable.
 
-Because we might create another car in this lane the next time around we wait a little longer after creating the clone so that it has time to drive along the lane. Without this there's a chance the clones could overlap a bit which would look silly.
+### Making the first car factory script
+
+I'll start with the lane closest to the bottom of the screen. Once we have this working we will be able to copy it to get the other lanes working.
+
+As soon as the green flag is clicked the Car sprite starts a loop to manage the cars in the first lane of traffic. There's no need to have the loop running as fast as possible - that would make far too many cars - so I put in a little delay using ``wait_seconds`` so that the loop only runs ten times a second.
+
+Each time the loop goes around I ask for a random number between 0 and 1, and if it's below 0.2 then the Car sprite moves to just off the screen, left of the first lane, and makes a clone at this position. 
+
+Because we might create another car in this lane the next time around we wait a little longer after creating the clone so that it has time to drive along the lane.
 
 {{< commit start-one-traffic-row >}}
 
-We want the clone to run some special code when it's created, so first we import the ``when_I_start_as_a_clone`` event.
+### Controlling the clone
+
+We want the clone to run it's own script when it's created, so we want to use the ``when_I_start_as_a_clone`` event.
 
 {{< commit import-when-i-start-as-a-clone >}}
 
-Now I will buid up the loop that drives the car from left-to-right along the lane. First, I want the clone to choose a costume, either 'right0' or 'right1' (they are two different colours of cars, and it keeps the lane of traffic from looking too monotonous if there's a mix). 
+Now I will buid up the loop that drives the car from left-to-right along the lane. First, I want the clone to choose a costume, either 'right0' or 'right1' (they are two different colours of cars, and it keeps the lane of traffic from looking too boring if there's a mix of costumes). 
 
-Python's ``random.choice`` function will return one of the items from the list we give it, randomly chosen.
+Python's has a handy ``random.choice`` function will return one of the items from the list we give it, randomly chosen.
 
 The clone got it's own copy of the ``direction`` variable containing whatever the Car sprite had in it at the moment the clone was created. It contains the string 'right', so combining that with either '0' or '1' gets us one of the costume names.
 
@@ -119,6 +129,8 @@ Now, back to my idea of using the same code to control cars in the left-hand lan
 
 {{< commit drive-to-the-left >}}
 
+### Making the rest of the car factories
+
 Once we have that we can add two more loops that start on green flag. They are modelled on the loop that creates `Car`` clones for lane 1, but they move to different x and y positions before cloning the car.
 
 {{< commit start-traffic-two-and-three >}}
@@ -129,27 +141,81 @@ In fact, this can't happen, but it's worth knowing why. Pytch will only allow an
 
 ## Squish the bunny!
 
+You'll notice that the cars don't actually present any sort of challenge at the moment, because the bunny can just hop through the lanes without being touched.
+
+### Checking for collisions
+
+Checking every time something moves will mean changes in lots of places in the code -- I'd need to check when cars move _and_ when the bunny moves. Instead I'll create a new script that runs in each ``Car`` clone constantly checking for collisions. Writing ``while True`` means the loop will run forever (actually, just until the clone is deleted when it reaches the end of the lane).
+
+I'll decide later what to actually do when there is a collision. So I can test my code I'll print out a message whenever there is a collision.
+
 {{< commit check-for-squishing >}}
+
+As soon as I test this I find there is a problem (try it out now). The car reports it's squishing a bunny when it drives past the bunny, even if it's not in the lane? What's going on?
+
+The answer is in our costumes. The very nice costumes we're using (courtesy of the [Code The Classics](https://wireframe.raspberrypi.org/books/code-the-classics1) book) are actually bigger than they look. Pytch checks for 'touching' by checking whether rectangles drawn around the entire costume of each sprite overlap. The ``Car`` costume and the ``Bunny`` costume overlap when the bunny is _next_ to the lane (you can see that the car costumes have some shadows under them that stick out into the lane below. It looks nice but it messes up how ``touching`` works).
+
+The easiest thing to do is write a special bit of code to check whether a clone is hitting another sprite. If we check that the ``y`` coordinates are close together (say, within 10 pixels) and the ``x`` coordinates are within 40 then it works pretty well.
+
+This function works by comparing the coordinates of the clone (``self``) and some other sprite that we provide as input.
 
 {{< commit special-hitbox-for-cars >}}
 
+When pytch sees me say ``touching(Bunny)`` it interprets it as "if this sprite is touching _any_ Bunny sprite", original _or_ clone. 
+
+In order to use this in place of ``touching`` we can't pass ``Bunny``, because that's a sprite _class_. We need to supply the _instance_. The Pytch ``the_original`` function lets us get the sprite from a sprite class (there is another function to get a list of all the clones, which we will see later) 
+
 {{< commit use-new-hits-method >}}
+
+This works much better at printing messages for the bunny and car colliding, when I try it out I only see the "Squish the bunny!" message printed when the sprites actually _look_ like they are overlapping now.
+
+Now that this is working I'd like to get the bunny to react to being squished. This is really something for the ``Bunny`` sprite to take care of. I can send a message that something has happened using the ``broadcast`` system. 
 
 {{< commit broadcast-squish >}}
 
+### Responding to being squished
+
+Back in the ``Bunny`` sprite I want to add some costumes to show when the bunny gets driven on. I'm making sure the names of these match up with the names of the "main" costumes so that I can easily pick the right one to show.
+
 {{< commit add-squish-costumes >}}
+
+To respond to a broadcast a Sprite has to use ``when_I_receive``. 
 
 {{< commit import-when-i-receive >}}
 
+When the bunny sprite sees the squishing broadcast I want to change to a costume that matches the direction that the bunny was already facing. I can look up the name of the current costume and then add "_squished" to get the name of a new costume. 
+
 {{< commit act-on-squish >}}
+
+There's still a problem, though. The car clone broadcasts 'squish bunny' and we change costume... but then a moment later the car sprite runs it's hit checking again and broadcasts squish _again_, and we run through this code again (choosing a costume like "up_squished_squished"). That's a problem! 
+
+To fix it I'll introduce a way for the bunny to know that it has already acted on the message (I'll have other uses for this idea soon). 
 
 ## Setting modes for the player
 
+I'll create a set of three variables to describe three "states" the bunny could be in: 
+
+* Waiting for the game to start
+* Letting the player control it
+* Sitting squished on the road
+
+I just want these variables so that I have three _names_ I can use for these states, because it'll make my program easier to read. A neat Python trick to set up a set of variables so that they have different values looks like this:
+
 {{< commit add-first-bunny-modes >}}
+
+This sets ``WAITING`` is zero, ``PLAYING`` is 1, and so on.
+
+Later on I plan to add a title screen (and the bunny will start out waiting), but for now the bunny starts out playing.
 
 {{< commit set-initial-mode-playing >}}
 
+Now I can set up the squashing code so that the bunny won't squash _again_ if it's already showing as squashed.
+
 {{< commit guard-squishing-routine >}}
+
+You might not have tried this, but if you press the arrow keys when the bunny is squashed on the road the moving functions still run (of course they do, we didn't do anything to switch them off). That's not great!
+
+Now that the bunny knows when it's supposed to be letting the player play and when it's supposed to be squished, we can add a check ot each of the moving routines to skip through them if the bunny isn't supposed to move.
 
 {{< commit dont-move-unless-playing >}}
 
