@@ -90,6 +90,8 @@ class Bunny(Sprite):
       while self.mode != PLAYING:
         pass
       while game_running:
+        logs = Log.all_clones()
+        touching_log = False
         if self.get_y() > 30 and self.get_y() < 160\
            and not self.touching(Log):
           self.mode = DROWNING
