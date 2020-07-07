@@ -87,7 +87,7 @@ class Bunny(pytch.Sprite):
                     touching_log = True
 
             if (self.get_y() > 30 and self.get_y() < 160 and
-                    not self.touching(Log)):
+                    not touching_log):
                 self.mode = DROWNING
                 for i in range(8):
                     self.switch_costume("splash-" + str(i))
