@@ -74,6 +74,12 @@ class Bunny(pytch.Sprite):
             self.hide()
             self.mode = WAITING
 
+    def touching_any_log(self):
+        for log in Log.all_clones():
+            if log.hits(self):
+                return True
+        return False
+
     @pytch.when_I_receive("start playing")
     def watch_for_water(self):
         while self.mode != PLAYING:
