@@ -431,38 +431,83 @@ Why not just update this when we see the 'bunny squished' message, which is what
 
 ## Adding the water hazard
 
+The final obstacle to add to the game is the water hazard. At the moment once the bunny has passed the three lanes of traffic all it has to do is make it's way to the top of the screen to reach the goal. 
+
+I'm going to add a new check that makes the bunny drown (and lose a life) if it's on the water. But first I want to add some way to get across the water!
+
+Based on the same design as the ``Car`` sprite, I make a ``Log`` sprite:
+
 {{< commit introduce-log-class >}}
+
+I could copy the ``Car`` factory approach exactly, but I want to show how to reduce the amount of code a little. So I create a function for a "log factory" that takes the direction and the y-coordinate of the lane. This is the factory:
 
 {{< commit start-a-single-row >}}
 
+Then I start three separate factory scripts, each providing different inputs to the factory. This will get me three different factory scripts running, all based on the same ``start_row`` code:
+
 {{< commit start-3-rows-of-logs >}}
+
+Each ``Log`` clone drives along the lane just as the cars do. But instead of checking to see if they have "squished" a bunny they check to see if the bunny is standing on the clone. If it is then the bunny is carried along with the log.
 
 {{< commit drive-log-along-row >}}
 
-{{< commit check-bunny-alive-on-log >}}
-
-{{< commit add-drowning-state >}}
+Just as with the ``Car`` we will remove the clone logs when the game ends 
 
 {{< commit remove-logs-at-end-of-game >}}
 
+And just like the ``Car`` we need to have a special collision detection function (otherwise the slightly-too-large sprite costumes will detect collisions at times that don't really look good to the player)
+
 {{< commit fuzzy-hit-detection-for-logs >}}
+
+### Drowning in the water
+
+Now we are ready to make the water hazardous. I'll add a new stage for the bunny. Just like when the bunny is squished, I don't want the movement keys to work while the bunny is drowning. 
+
+{{< commit add-drowning-state >}}
+
+There is a set of seven costumes showing different frames of a splash. I want to add all of them. To avoid having to write out the names of them all I use the same trick I used in making the digit costumes, and then add that list of new costumes onto the end of the bunny's costume list:
 
 {{< commit add-drowning-costumes >}}
 
+When the game is running the bunny will regularly scan to see if it's in the water section of the canvas (that's checked using the ``y`` coordinate). If it is then unless it's touching one of the ``Log`` clones it starts drowning.
+
+This code is a not quite right, because I'm using the ``touching`` routine and as we know it's possible for the bunny to be on a row below or above a log and stil register as touching it. We really want to use the custom ``hits`` routine.
+
 {{< commit regularly-scan-for-drowning >}}
+
+Once we have determined that the bunny is drowning we play the frames of the 'splash' animation one after the other:
 
 {{< commit play-drowning-animation >}}
 
+Then ####TODO#### take a life
+
 {{< commit lose-a-life-to-drowning >}}
+
+and play another life
 
 {{< commit play-after-drowning >}}
 
+Finally, if you try this you might find that while the animation is playing a log comes along and seems to "push" the splash animation along. That's because the log is pushing the bunny sprite with it! I  add a simple check to the code that handles this so that the bunny is only moved if it is really sitting on the log, and not if it's already under water.
+
+{{< commit check-bunny-alive-on-log >}}
+
+
 ## Finishing the level
+
+The final part of the game is to give the player a reward for reaching the goal at the top of the screen. Every time we move up to a new highest row I'll check to see whether that was the top of the screen
 
 {{< commit check-if-we-won >}}
 
+If it is then I run a loop that moves the bunny through facing it's four directions (so that it looks like it's dancing). 
+
 {{< commit detect-final-row >}}
+
+I added a new ``DANCING`` mode as well so that the bunny isn't ``PLAYING`` (I don't want the player to be able to move the bunny during the victory dance and it felt wrong to pretend the bunny was in a ``SQUISHED`` or ``WAITING`` mode )
 
 {{< commit new-dancing-state >}}
 
+Once the dance is complete the buny moves back to the bottom of the stage and the level starts again.
+
 {{< commit start-another-round >}}
+
+As a challenge, you could add a broadcast that told the logs and cars that this was a new round, and use that to have them move faster, or have more cars and fewer logs appear by adjusting the numbers in the car and log factories. But this is where the tutorial ends.
