@@ -219,43 +219,91 @@ Now that the bunny knows when it's supposed to be letting the player play and wh
 
 {{< commit dont-move-unless-playing >}}
 
-## Adding a life counter
+Once we have done that the game seems to be over once the bunny is squished. The next step is to give the player a number of lives and let the game end and restart.
 
-{{< commit remove-game-specific-setup-from-init >}}
+## End and restart the game when the bunny is squished
+
+I'm going to rearrange the code in the Bunny sprite so that it will be easier to reset the game when the player loses all their lives. The first step is to have the bunny set itself up when the green flag is clicked instead of in the ``__init__`` (which only runs when the project is first loaded) 
 
 {{< commit set-game-start-code >}}
 
+I will switch the bunny from visible to invisible when the project first loads (this is paving the way for a splash screen at the start)
+
+{{< commit remove-game-specific-setup-from-init >}}
+
+Now I have a use for the ``WAITING`` mode we created recently. Before the game actually begins the bunny is neither squished nor playing.
+
 {{< commit wait-at-the-start >}}
+
+Now I can add a use of this setup function to the code that handled the bunny being squished. We pause for a while to let the player see the costume of the squished bunny, and then reset the game. 
 
 {{< commit restart-game-when-squished >}}
 
-{{< commit add-notion-of-lives >}}
+The ``start_game`` function is run by Pytch when the green flag is clicked, but I can run it whenever I want by using it's name. 
+
+It doesn't affect what I'm doing here, but it's worth pointing out the difference between running ``start_game`` from the green flag event and running it by using it's name. The second way doesn't run ``start_game``  alongside ``squish``, so if there was another statement in ``squish`` it wouldn't run until ``start_game`` had finished.
+
+## Adding a life counter
+
+Restarting the game after the bunny has been squished once is a bit unfair, it would be better to give the player a few attempts (say, the traditional three lives).
+
+At the start of the game I'll set a new variable in the bunny sprite
 
 {{< commit set-three-lives >}}
 
-{{< commit call-play-one-life >}}
+Each time the bunny gets squished I'll reduce that counter by one
+
+{{< commit add-notion-of-lives >}}
+
+Moving some code around again, I want to separate the idea of _starting the game_ from the idea of _playing a life_. So I'll create a new function that has the code relevant to playing a life (moving back to the start row and selecting a costume). 
 
 {{< commit define-play-one-life >}}
 
+I can run this function in the ``start_game`` routine
+
+{{< commit call-play-one-life >}}
+
+And I can also call it when the bunny is squished: 
+
 {{< commit play-another-life-after-death >}}
 
-## Letting the game end
+## Running out of lives
+
+The next thing I want to do is end the game when the player has used up all their lives. That means that after the player is asked to play a life I'll check whether it's actually possible to do that. If there aren't then the bunny will go into it's "waiting" state until a new game starts, and we'll announce to all the other sprites and clones that the game has ended.
 
 {{< commit announce-game-over >}}
 
+When the clone cars see that the game has ended I want them all to vanish (even if they haven't reached the edge of the canvas yet). When a clone is deleted all of it's running scripts stop, of course.
+
 {{< commit game-over-deletes-clone-cars >}}
+
+The original ``Car`` sprite is still running it's traffic factory scripts, of course, and they will just create more cars unless they are stopped.
+
+Although the original ``Car`` sprite will receive the game over broadcast and run the ``vanish`` script that won't stop the car factories. The original sprite is immune to ``delete_this_clone`` actions (because it's not a clone!). So I'll have to do something else to stop those scripts.
+
+One way to handle this would be to change the loop in those factory scripts so that instead of running forever they only ran as long as the game was playing. Something like this:
+
+{{< commit game-over-end-traffic1 >}}
+
+To make this work I add a new global variable. I could try to use the bunny state for this, but the question of whether the bunny can be moved is different to whether the game is playing or not so I decided to track them separately.
 
 {{< commit add-global-running-flag >}}
 
+The bunny notes that the game is running by setting this variable to ``True``.
+
 {{< commit bunny-sets-game-running >}}
+
+When the bunny runs out of lives it notes that the game should be over by setting this variable to false (I could have chosen to set this to false in a function that is run when the "game over" broadcast is received, that would work too) 
 
 {{< commit game-over-unsets-running-flag >}}
 
-{{< commit game-over-end-traffic1 >}}
+Now I can make the same changes I made to the first factory script to the other two:
 
 {{< commit game-over-end-traffic2 >}}
 
 {{< commit game-over-end-traffic3 >}}
+
+Once all of the treaffic has been stopped and the clones have vanished I decided to add a new backdrop with a game over message and switch to showing that.
 
 {{< commit show-game-over-backdrop >}}
 
