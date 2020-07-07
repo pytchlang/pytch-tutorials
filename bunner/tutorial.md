@@ -476,7 +476,7 @@ When the game is running the bunny will regularly scan to see if it's in the wat
 
 This code is a not quite right, because I'm using the ``touching`` routine and as we know it's possible for the bunny to be on a row below or above a log and stil register as touching it. We really want to use the custom ``hits`` routine.
 
-To do that I need a list of all of the log clones (so that I can one-by-one check to see if the bunny is touching them). 
+To do that I need a list of all of the log clones (so that I can one-by-one check to see if the bunny is touching them). This uses ``all_clones``, the counterpart to the ``the_original`` function we used back when we wanted to access the Bunny sprite.
 
 {{< commit get-log-clones >}}
 
