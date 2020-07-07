@@ -471,15 +471,30 @@ There is a set of seven costumes showing different frames of a splash. I want to
 
 When the game is running the bunny will regularly scan to see if it's in the water section of the canvas (that's checked using the ``y`` coordinate). If it is then unless it's touching one of the ``Log`` clones it starts drowning.
 
-This code is a not quite right, because I'm using the ``touching`` routine and as we know it's possible for the bunny to be on a row below or above a log and stil register as touching it. We really want to use the custom ``hits`` routine.
 
 {{< commit regularly-scan-for-drowning >}}
+
+This code is a not quite right, because I'm using the ``touching`` routine and as we know it's possible for the bunny to be on a row below or above a log and stil register as touching it. We really want to use the custom ``hits`` routine.
+
+To do that I need a list of all of the log clones (so that I can one-by-one check to see if the bunny is touching them). 
+
+{{< commit get-log-clones >}}
+
+I also set a boolean variable to False, because I haven't proved that I am touching a log yet.
+
+Now I loop along all of the log clones, checking each one in turn to see if the bunny is touching it. If I ever find the bunny touching one then I set the booolean to True, otherwise it stays false.
+
+{{< commit check-bunny-touching-log-clone }}
+
+Once we've checked each log the boolean variable is only true if we are touching a log, so we can rely on it to tell us the bunny is safely floating on a log:
+
+{{< commit bunny-touching-log-via-custom-hit }}
 
 Once we have determined that the bunny is drowning we play the frames of the 'splash' animation one after the other:
 
 {{< commit play-drowning-animation >}}
 
-Then ####TODO#### take a life
+We pause for a moment to let the player gather themselves:
 
 {{< commit lose-a-life-to-drowning >}}
 
