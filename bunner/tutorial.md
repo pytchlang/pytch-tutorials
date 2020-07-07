@@ -311,19 +311,33 @@ Once all of the treaffic has been stopped and the clones have vanished I decided
 
 ## The start button
 
+When the game is over I would like a way to start it again. This is where the rearranging of code I did earlier on will pay off. 
+
+First I make a new sprite that will act as a 'start game' button
+
 {{< commit create-start-button >}}
+
+I want it to react to being clicked with the mouse
 
 {{< commit import-when-this-sprite-clicked >}}
 
+When it's clicked it announces to the rest of the project that it's time to start a new game, then the button hides itself.
+
 {{< commit make-start-button-clickable >}}
 
+The bunny should start a new game when this message is received, not when the green flag is clicked
+
 {{< commit make-bunny-start-game-on-message >}}
+
+The traffic factories should also begin making cars when the game starts, not when the green flag is clicked.
 
 {{< commit start-traffic-on-message1 >}}
 
 {{< commit start-traffic-on-message2 >}}
 
 {{< commit start-traffic-on-message3 >}}
+
+Now we have a whole game that can be started by the player, runs through the players 3 lives, ends, and can be started again!
 
 ## Keeping score
 
