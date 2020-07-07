@@ -525,4 +525,17 @@ Once the dance is complete the buny moves back to the bottom of the stage and th
 
 {{< commit start-another-round >}}
 
-As a challenge, you could add a broadcast that told the logs and cars that this was a new round, and use that to have them move faster, or have more cars and fewer logs appear by adjusting the numbers in the car and log factories. But this is where the tutorial ends.
+
+## Challenges
+
+You have reached the end of this tutorial, but there's lots more that you could do with this project. Here are some ideas:
+
+* Make the game more challenging for the player. Add a broadcast that goes out when the player reaches the goal. This broadcast could tell the logs and cars that this was a new round, and use that to have them move faster, or have more cars and fewer logs appear by adjusting the numbers in the car and log factories. 
+
+* Improve the accuracy of the ``hits`` routines (the log one, especially, is a bit over-sensitive, it's easy for the bunny to fall off the smaller logs without it looking like it should have)
+
+* Add some different types of obstacles (longer cars, using a lorry costume, for example)
+
+* Vary the speed of the logs and cars in different lanes (you probably don't want to vary the speed within a lane unless you can account for the possibility of cars or logs hitting each other!)
+
+* It's easy to dodge over the road at the start of the game because all the cars drive in from the edges but the bunny starts in the middle. Have the car factories create some cars in the middle of the road at the start of the game so that there isn't a time when the roads are totally clear.
