@@ -337,46 +337,97 @@ The traffic factories should also begin making cars when the game starts, not wh
 
 {{< commit start-traffic-on-message3 >}}
 
+When the game starts the stage needs to switch to the world costume (it might have been showing the 'game over' screen)
+
+{{< commit show-world-on-game-start >}}
+
 Now we have a whole game that can be started by the player, runs through the players 3 lives, ends, and can be started again!
 
 ## Keeping score
 
-We should be showing the lives remaining, but before we get to that we can add another small but important feature.
+We should be showing the lives remaining somewhere on the stage, but before we get to that we can add another small but important feature.
+
+Most games are more fun if there's a way to keep track of how well the player is doing. I'm going to introduce a score that increases as the player heads up the screen.
+
+First I'll add a new global variable to track the score (I'm using a global variable because there are going to be several parts of the project that will access the score, but I could have made it a variable in the Bunny sprite and used ``Bunny.the_original`` to access it from other parts of the project) 
 
 {{< commit introduce-score-global >}}
 
+The score starts at zero at the start of the game
+
 {{< commit initialise-score >}}
+
+We could let the player earn a point every time they manage to move up the stage towards the goal at the top:
 
 {{< commit increment-the-score-every-time-we-move-up >}}
 
+The problem with this is that if the player just taps 'up' then 'down' then 'up' they get two points. They could run up a very high score just hopping from the start onto the first row of traffic and then back down again and never really making any progress.
+
+So I decided that I would change it so that they only earn a point if they are making progress up the stage. I created a variable to keep track of how high up the stage the bunny is, and another to count the highest row the bunny has reached.
+
 {{< commit introduce-current-row-counters >}}
+
+These both start at zero:
 
 {{< commit init-row-counters-at-start >}}
 
+Every time the bunny moves up the stage I add one to the current row 
+
 {{< commit increment-current-row-counter >}}
 
-{{< commit only-score-if-new-row-record >}}
+And lower it when the bunny moves down 
 
 {{< commit lower-row-count-on-backstep >}}
 
+Every time we move up I check if this is a new 'highest ever reached' row. If it is then the player gets a point (but I also remember that the highest rows reached has gone up, so the player has to go even further up the stage to get another point).
+
+{{< commit only-score-if-new-row-record >}}
+
+Now we have a way to count score, it would be nice to display it on the stage instead of just printing it.
 
 ## Showing score
 
+To show the score I'm going to create two new sprites that will be used to show the digits of the score (I'll only track scores up to 99)
+
 {{< commit introduce-score1-class >}}
+
+There are ten costumes, which I want to name "digit-0" to "digit-9". Instead of typing each of the ten costumes out by hand I decided to use a Python shortcut for making lists with this kind of pattern. There are two parts to this:
+
+The first is writing a ``range`` statement inside the list definition, for example ``[ n for n in range(10) ]`` creates the list ``[0,2,3,4,5,6,7,8,9]`` (`n` in this is just a temporary variable that is created for setting up the list only).
+
+The second trick is that we can fill in "placeholders" in a string using the ``%`` string operator. By writing ``"digit-%d" % n`` we tell python to splice in the value of the variable "n" in place of the "%d" in the string. 
 
 {{< commit compute-score-digit-costumes >}}
 
+When the score changes I'll get the bunny sprite to send out a broadcast message. When this score sprite receives that it will look up the score, calculate the _first digit_ of the score, and set the costume to the corresponding digit.
+
+I'm using ``%`` in two different ways in this: one is the "string splicing" trick I described above. The second is doing remainder arithmetic. When ``%``is used with a string on the left you get the string splicing function, when it's used with a number on the left Python calculates the remainder of dividing by the number on the right.
+
+Using the same symbol to mean two different things can be a little confusing at first, this is just Python's way of getting around the fact that there are only a few symbols available on the keyboard. If we didn't do this then many more things would need to be functions with long names.
+
 {{< commit display-digits-on-message1 >}}
 
+I get the bunny to announce score changes using a broadcast:
+
 {{< commit broadcast-score-change-message >}}
+
+To show the 'tens' digit of the score I make a second sprite that's almost identical. The only differences are where on the screen it appears, and the calculation done in ``show_correct_digit``, where I use the ``\\`` operator (which divides a number and throws away any decimal part).
+
+Notice in this class that I was able to re-use the ``score_costumes`` variable.
 
 {{< commit create-score-2-class >}}
 
 ## More status displays
 
+Now that we have a way to show some digits we could also use this to show the number of lives remaining. A third sprite that has the same costumes and which updates whenever the lives change can do this:
+
 {{< commit introduce-life-display >}}
 
+I also add a 'lives changed' broadcast to tell this when to update.
+
 {{< commit update-life-counter >}}
+
+Why not just update this when we see the 'bunny squished' message, which is what causes the lives to change? Because the very next thing in this tutorial is to add a new way for the bunny to lose a life!
 
 ## Adding the water hazard
 
