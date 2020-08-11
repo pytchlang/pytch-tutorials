@@ -57,6 +57,9 @@ class Ball(pytch.Sprite):
                     self.y_speed = int(position_on_bat / 10)
                     self.change_x(-self.x_speed)
                     self.x_speed = -self.x_speed
+                else:
+                    self.hide()
+                    break
 
             self.change_y(self.y_speed)
 
