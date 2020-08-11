@@ -65,6 +65,7 @@ class Ball(pytch.Sprite):
                 self.change_x(-x_velocity)
                 x_velocity = -x_velocity
                 y_velocity = random.randint(-4, 4)
+                self.broadcast("robot-hit")
 
             if self.x_position < -195:
                 if self.touching(PlayerBat):
