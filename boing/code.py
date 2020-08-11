@@ -24,6 +24,12 @@ class PlayerBat(pytch.Sprite):
                 self.change_y(-3)
 
 
+class RobotBat(pytch.Sprite):
+    Costumes = [
+        ('normal', 'images/bat10.png', 60, 60),
+    ]
+
+
 class Ball(pytch.Sprite):
     Costumes = [
         ('ball', 'images/ball.png', 12, 12),
