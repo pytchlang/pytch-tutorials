@@ -73,3 +73,4 @@ class Ball(pytch.Sprite):
             if self.y_position > 158 or self.y_position < -158:
                 self.change_y(-y_speed)
                 y_speed = -y_speed
+                self.start_sound("bounce")
