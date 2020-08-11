@@ -34,6 +34,7 @@ class PlayerBat(pytch.Sprite):
 class RobotBat(pytch.Sprite):
     Costumes = [
         ('normal', 'images/bat10.png', 60, 60),
+        ('hit-flash', 'images/bat11.png', 60, 60),
     ]
 
     @pytch.when_green_flag_clicked
