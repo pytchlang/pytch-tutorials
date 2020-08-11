@@ -49,3 +49,5 @@ class Ball(pytch.Sprite):
                 if self.touching(PlayerBat):
                     self.change_x(-x_velocity)
                     x_velocity = -x_velocity
+
+            self.change_y(y_velocity)
