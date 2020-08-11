@@ -28,6 +28,10 @@ class RobotBat(pytch.Sprite):
     def play(self):
         self.go_to_xy(212, 0)
 
+        while True:
+            target_y = Ball.y_position
+            self.set_y(target_y)
+
 
 class Ball(pytch.Sprite):
     Costumes = ["yellow-ball.png"]
