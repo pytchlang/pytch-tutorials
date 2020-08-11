@@ -68,6 +68,7 @@ class Ball(pytch.Sprite):
                     self.y_speed = int(position_on_bat / 10)
                     self.change_x(-self.x_speed)
                     self.x_speed = -self.x_speed
+                    self.start_sound("hit")
                 else:
                     for i in range(10):
                         self.change_x(self.x_speed)
