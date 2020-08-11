@@ -24,6 +24,10 @@ class PlayerBat(pytch.Sprite):
 class RobotBat(pytch.Sprite):
     Costumes = ["robot-normal.png", "robot-flash.png"]
 
+    @pytch.when_green_flag_clicked
+    def play(self):
+        self.go_to_xy(215, 0)
+
 
 class Ball(pytch.Sprite):
     Costumes = ["ball.png"]
