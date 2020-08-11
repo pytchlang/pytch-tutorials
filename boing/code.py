@@ -37,3 +37,7 @@ class Ball(pytch.Sprite):
         x_speed = 3
         while True:
             self.change_x(x_speed)
+
+            if self.x_position > 203:
+                self.change_x(-x_speed)
+                x_speed = -x_speed
