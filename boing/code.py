@@ -28,3 +28,8 @@ class Ball(pytch.Sprite):
     Costumes = [
         ('ball', 'images/ball.png', 12, 12),
     ]
+
+    @pytch.when_green_flag_clicked
+    def play(self):
+        self.go_to_xy(0, 0)
+        self.show()
