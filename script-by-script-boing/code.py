@@ -65,6 +65,7 @@ class Ball(pytch.Sprite):
                     self.change_x(-x_velocity)
                     x_velocity = -x_velocity
                     y_velocity = random.randint(-4, 4)
+                    self.broadcast("player-hit")
                 else:
                     self.hide()
                     break
