@@ -49,3 +49,5 @@ class Ball(pytch.Sprite):
                 if (position_on_bat >= -45) and (position_on_bat <= 45):
                     self.change_x(-x_speed)
                     x_speed = -x_speed
+
+            self.change_y(y_speed)
