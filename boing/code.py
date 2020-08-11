@@ -59,6 +59,7 @@ class Ball(pytch.Sprite):
             if self.x_position > 203:
                 self.change_x(-self.x_speed)
                 self.x_speed = -self.x_speed
+                self.start_sound("hit")
 
             if self.x_position < -203:
                 player_y = PlayerBat.the_original().y_position
