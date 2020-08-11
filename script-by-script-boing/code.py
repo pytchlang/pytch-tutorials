@@ -53,3 +53,7 @@ class Ball(pytch.Sprite):
                     y_velocity = random.randint(-4, 4)
 
             self.change_y(y_velocity)
+
+            if self.y_position > 158 or self.y_position < -158:
+                self.change_y(-y_velocity)
+                y_velocity = -y_velocity
