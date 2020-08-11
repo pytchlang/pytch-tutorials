@@ -20,3 +20,7 @@ class PlayerBat(pytch.Sprite):
                 self.change_y(3)
             if pytch.key_pressed("s") and self.y_position > -117:
                 self.change_y(-3)
+
+
+class Ball(pytch.Sprite):
+    Costumes = ["ball.png"]
