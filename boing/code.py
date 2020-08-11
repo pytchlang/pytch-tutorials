@@ -29,3 +29,6 @@ class Ball(pytch.Sprite):
     def play(self):
         self.go_to_xy(0, 0)
         self.show()
+
+        while True:
+            self.change_x(3)
