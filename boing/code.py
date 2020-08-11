@@ -25,3 +25,6 @@ class Ball(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def play(self):
         self.go_to_xy(0, 0)
+
+        while True:
+            self.change_x(3)
