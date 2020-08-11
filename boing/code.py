@@ -6,7 +6,7 @@ class BoingBackground(pytch.Stage):
 
 
 class PlayerBat(pytch.Sprite):
-    Costumes = ["player-normal.png"]
+    Costumes = ["player-normal.png", "player-flash.png"]
 
     @pytch.when_green_flag_clicked
     def play(self):
