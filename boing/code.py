@@ -59,3 +59,7 @@ class Ball(pytch.Sprite):
                     self.x_speed = -self.x_speed
 
             self.change_y(self.y_speed)
+
+            if self.get_y() > 158 or self.get_y() < -158:
+                self.change_y(-self.y_speed)
+                self.y_speed = -self.y_speed
