@@ -34,6 +34,10 @@ class RobotBat(pytch.Sprite):
         self.go_to_xy(215, 0)
         self.show()
 
+        while True:
+            target_y = Ball.the_original().get_y()
+            self.set_y(target_y)
+
 
 class Ball(pytch.Sprite):
     Costumes = [
