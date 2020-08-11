@@ -20,6 +20,12 @@ class PlayerBat(pytch.Sprite):
             if pytch.key_pressed("s") and self.y_position > -112:
                 self.change_y(-3)
 
+    @pytch.when_I_receive("player-hit")
+    def flash_briefly(self):
+        self.switch_costume("player-bat-wince.png")
+        pytch.wait_seconds(0.3)
+        self.switch_costume("player-bat-smile.png")
+
 
 class RobotBat(pytch.Sprite):
     Costumes = ["robot-bat-smile.png", "robot-bat-wince.png"]
