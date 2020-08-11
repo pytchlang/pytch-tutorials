@@ -74,6 +74,7 @@ class Ball(pytch.Sprite):
                         self.change_x(self.x_speed)
                         self.change_y(self.y_speed)
                     self.hide()
+                    self.start_sound("lost")
                     break
 
             self.change_y(self.y_speed)
