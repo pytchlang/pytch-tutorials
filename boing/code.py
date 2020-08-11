@@ -82,6 +82,10 @@ class Ball(pytch.Sprite):
             if self.get_x() > 203:
                 self.change_x(-self.x_speed)
                 self.x_speed = -self.x_speed
+
+                if self.y_speed == 0:
+                    self.y_speed = random.choice([-1, 1])
+
                 pytch.broadcast("robot-hit")
                 self.start_sound('hit')
 
