@@ -30,5 +30,6 @@ class Ball(pytch.Sprite):
         self.go_to_xy(0, 0)
         self.show()
 
+        self.x_speed = 3
         while True:
-            self.change_x(3)
+            self.change_x(self.x_speed)
