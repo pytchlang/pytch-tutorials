@@ -48,6 +48,12 @@ class Ball(pytch.Sprite):
         ('ball', 'images/ball.png', 12, 12),
     ]
 
+    Sounds = [
+        ('hit', 'sounds/hit.mp3'),
+        ('bounce', 'sounds/bounce.mp3'),
+        ('lost', 'sounds/lost.mp3'),
+    ]
+
     @pytch.when_green_flag_clicked
     def play(self):
         self.go_to_xy(0, 0)
