@@ -42,6 +42,12 @@ class RobotBat(pytch.Sprite):
                 target_y = -120
             self.set_y(target_y)
 
+    @pytch.when_I_receive("robot-hit")
+    def flash_briefly(self):
+        self.switch_costume("robot-flash.png")
+        pytch.wait_seconds(0.1)
+        self.switch_costume("robot-normal.png")
+
 
 class Ball(pytch.Sprite):
     Costumes = ["ball.png"]
