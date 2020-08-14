@@ -1,3 +1,5 @@
+![Screenshot](summary-screenshot.png)
+
 # Boing — a Pong-like game
 
 This tutorial shows you how to make a game like the classic Pong.  You
