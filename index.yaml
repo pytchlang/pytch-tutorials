@@ -1,0 +1,6 @@
+# Which tutorials to present in the start-up "List of tutorials" tab.
+
+- name: Bunner
+  tip-commit: gs/bunner-01
+- name: Boing
+  tip-commit: bn/boing-01
