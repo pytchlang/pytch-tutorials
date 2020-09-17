@@ -115,7 +115,7 @@ flag you should see a giant bird appear!
 
 The bird is very big because the image we are using is big. We can fix
 that by setting the size of the Sprite. We can do this by adding
-another line to the "start" function. This line has to be indented
+another line to the "start" function that sets the size to 30%. This line has to be indented
 exactly as much as the other line that is _inside_ the function:
 
 {{< commit set-bird-size >}}
