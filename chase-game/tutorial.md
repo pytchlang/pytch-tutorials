@@ -103,19 +103,73 @@ sprite appear we use this line:
 
 There is still one thing missing, which is that we haven't told Pytch
 _when_ this function should happen. The easiest thing is to have it
-run when we click the green flag. To do that we need to put a "hat" on
-the function, like this:
+run when we click the green flag. To do that we need to put a "hat"
+(can I say it's a "h@"? No? OK). on the function, like this:
 
 {{< commit green-flag-show >}}
 
 Finally, we can see the results of our work! Press the Build button
 (nothing seems to happen on the stage at first, because the Sprite
 hasn't done the "start" function yet. But when you press the Green
-flag you should see a giant bird appear!
+Flag you should see a giant bird appear!
 
 The bird is very big because the image we are using is big. We can fix
 that by setting the size of the Sprite. We can do this by adding
-another line to the "start" function that sets the size to 30%. This line has to be indented
-exactly as much as the other line that is _inside_ the function:
+another line to the "start" function that sets the size to 30%. This
+line has to be indented exactly as much as the other line that is
+_inside_ the function:
 
 {{< commit set-bird-size >}}
+
+Try this out by pressing Build and then the Green Flag.
+
+It's probably good to have our Sprite return to the centre of the
+stage at the start of every new game, so we'll add that as a thing
+that happens when the green flag is pressed.
+
+{{< commit set-bird-position >}}
+
+
+## Movement
+
+Sketchy descriptions from here on down, fix up tomorrow...
+
+Next we add a function that can move us to the right
+
+{{< commit add-move-right-fn >}}
+
+This needs to be activated with a "hat" on the function that will run
+it when we press a key.
+
+{{< commit add-key-decorator-right >}}
+
+With this done it's obvious how to add actions for the other
+directions. It's tempting to cut and paste the existing function and
+just change the key that's mentioned in the decorator (that's the
+Python name for the hat), but be careful! If a Sprite has two
+functions with the same name then it won't work correctly, so you have
+to give each one a separate name.
+
+{{< commit add-other-movement-directions >}}
+
+Try it out now, you should be able to move the bird around the stage
+by pressing the arrow keys.
+
+## Something to chase
+
+Let's add another Sprite.
+
+{{< commit add-star-sprite >}}
+
+When the game starts the Star sprite will start to move randomly
+around the stage. That will give the bird something to chase.
+
+To do this we'll add a second function that starts running on a green
+flag. This function will have a _loop_ that runs forever, selecting a
+point on the screen and moving towards it.
+
+The first step is to define the function, picking a name for it.
+
+{{< commit add-star-start-function >}}
+
+The next step is to pick two random points on the stage. Python has a handy feature already available that picks a random number between two numbers. To get it we have to add a new line to the top of the program:
