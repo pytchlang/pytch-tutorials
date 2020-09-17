@@ -24,3 +24,12 @@ class Bird(pytch.Sprite):
     @when_key_pressed('ArrowDown')
     def move_down(self):
         self.change_y( -5 )
+
+ class Star(pytch.Sprite):
+     Costumes = [('star', 'images/SpriteSheet.png', 66, 51)]
+
+     @when_green_flag_clicked
+     def start(self):
+         self.switch_costume('star')
+         self.go_to_xy(-100,100)
+         self.show()
