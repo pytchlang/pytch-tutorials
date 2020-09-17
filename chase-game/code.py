@@ -8,3 +8,6 @@ class Bird(pytch.Sprite):
         self.show()
         self.set_size(0.3)
         self.go_to_xy(0,0)
+
+    def move_right(self):
+        self.change_x( 5 )
