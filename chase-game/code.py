@@ -38,3 +38,5 @@ class Bird(pytch.Sprite):
 
     @when_green_flag_clicked
     def play(self):
+        destination_x = random.randint( -320, 320)
+        destination_y = randint.randint( -240, 240)
