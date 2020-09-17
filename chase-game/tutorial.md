@@ -16,14 +16,12 @@ programs without Sprites, so the Pytch web site puts that line in for
 you when you make a new project.
 
 
-Next we will tell Python that we want _all_ the pytch features (later on we'll see why it's useful to sometimes only include some features).
+In the rest of this tutorial when you see a block of code like this,
+with some lines of text shown in green with "+" symbols in front of
+them, it's telling you to change your project so that it has the new
+lines in green added to it. Add them in exactly the places where they
+are shown.
 
-When you see a block of code like this, with some lines of text shown
-in green with "+" symbols in front of them, it's telling you to change
-your project so that it has the new lines in green added to it. Add
-them in exactly the places where they are shown.
-
-{{< commit import specifics >}}
 
 ---
 
@@ -172,4 +170,33 @@ The first step is to define the function, picking a name for it.
 
 {{< commit add-star-start-function >}}
 
-The next step is to pick two random points on the stage. Python has a handy feature already available to pick a number between
+The next step is to pick two random points on the stage. Python has a
+handy feature already available to pick a number between two
+points. To get this we need to add something at the _top_ of the
+program first:
+
+{{< import random >}}
+
+Now we use two variables within this function to hold two random
+numbers which are the X and Y positions of a point on the stage.
+
+{{< commit select-random-dest-1 >}}
+
+Then we tell the Sprite to move to that place (taking two seconds to do so).
+
+{{< commit glide-to-destination >}}
+
+Try this out now. The star should move smoothly to a position on the
+screen taking a couple of seconds to do it.
+
+But this isn't enough, we want the star to keep moving, picking a new
+location as soon as it has found a place. To do this we will wrap the
+existing instructions in the "play" function so that they are repeated
+over and over.
+
+We can use the Python "while" command to do this. A "while" is an instruction that checks something to see if it us true, and repeats some other instructions _while_ it is. If we just say it's always true then it will repeat forever!
+
+
+This code example looks a bit different -- the red lines with a "-" should be removed and the new lines with a "+" added. What is really happening here is three of the lines have _changed_ because they now have more indentation, pushing them inside
+
+{{< commit loop-play >}}
