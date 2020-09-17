@@ -36,13 +36,25 @@ creating a new "thing" in the project, give the thing a name, and say
 that it is a Sprite (rather than a Background or some other sort of
 thing). In Pytch we can do that by making a new "class" and giving it a name.
 
-For this example I've chosen the name "Bird" but really you could name it
-nearly anything you like.
+For this example I've chosen the name "Bird" but really you could name
+it nearly anything you like. It has to be a single word, but Python
+will count "_" as a letter so you can use a name like "Fancy_Bird" if
+you like, and it can't be a name that Python or Pytch are already
+using (so you can't call it "Sprite" for example, because Pytch
+already uses that). Finally, Python treats capital letters and lower
+case letters as different, so if you call it "bird" that's a different
+name to "Bird" (this always trips people up at first).
+
+Did you notice that the line ends with a ":" symbol? This signals to Python
+that we will be adding more lines inside this class, which we will do
+in a moment.
 
 {{< commit create-bird-class >}}
 
 Once we have created the new Sprite the next job is to say what it
-looks like and how it behaves. In this tutorial we have already added some graphics for the bird costume to the project, so let's connect them to the sprite.
+looks like and how it behaves. In this tutorial we have already added
+some graphics for the bird costume to the project, so let's connect
+them to the sprite.
 
 We need to write a line that set up a _variable_
 in the new Sprite that will hold a list of the costumes.
@@ -66,18 +78,44 @@ We put this together with a line like this:
 
 {{< commit bird-costume >}}
 
-In Pytch Sprites start out invisible, so we need to add some
-instructions to select the costume and show the sprite.
+Usually sprites need a few instructions to set them up when the
+project first loads. For example, Sprites in Pytch start out hidden
+and we would like to see our bird!
 
-These lines add a new script (Python calls these "functions" instead
-of scripts) to the Sprite. The word "def" followed by the name of the
-function makes it, and the lines that are indented more than the first
-line are the instructions that are contained within the script.
+In Python these instructions are organised together into functions,
+which are like stacks of instructions. You use the functions
+contained inside a Sprite to control it.
 
-The name "__init__" is special -- that function is started
-automatically when the project loads, so we can use it to set some
-things up.
+These lines add a new script called "start". The word "def" (short for
+"define")begins it. Like the class there is a ":" at the end of the
+line to say that there will be more lines after that will be part of
+this function. Between the function's name and the ":" there is a list
+of _variable_ names in brackets. Pytch needs at least one. The name
+doesn't matter, but it's traditional to call it "self".
 
-{{< commit init-bird-1 >}}
+{{< commit add-start-def >}}
 
-Finally, we can press the "Build" button and see the results of this work!
+Now we can add the instructions that are part of the function. Each
+line is indented so that it is inside the definition. To make the
+sprite appear we use this line:
+
+{{< commit show-bird >}}
+
+There is still one thing missing, which is that we haven't told Pytch
+_when_ this function should happen. The easiest thing is to have it
+run when we click the green flag. To do that we need to put a "hat" on
+the function, like this:
+
+{{< commit green-flag-show >}}
+
+Finally, we can see the results of our work! Press the Build button
+(nothing seems to happen on the stage at first, because the Sprite
+hasn't done the "start" function yet. But when you press the Green
+flag you should see a giant bird appear!
+
+The bird is very big because the image we are using is big. We can fix
+that by setting the size of the Sprite. We can do this by adding
+another line to the "start" function. This line has to be indented
+exactly as much as the other line that is _inside_ the function:
+
+{{< commit set-bird-size >}}
