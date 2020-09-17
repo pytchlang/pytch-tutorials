@@ -7,3 +7,4 @@ class Bird(pytch.Sprite):
     def start(self):
         self.show()
         self.set_size(0.3)
+        self.go_to_xy(0,0)
