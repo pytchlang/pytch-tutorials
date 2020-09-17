@@ -40,3 +40,4 @@ class Bird(pytch.Sprite):
     def play(self):
         destination_x = random.randint( -320, 320)
         destination_y = randint.randint( -240, 240)
+        self.glide_to( destination_x, destination_y )
