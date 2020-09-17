@@ -33,3 +33,6 @@ class Bird(pytch.Sprite):
          self.switch_costume('star')
          self.go_to_xy(-100,100)
          self.show()
+
+    @when_green_flag_clicked
+    def play(self):
