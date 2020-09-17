@@ -172,4 +172,4 @@ The first step is to define the function, picking a name for it.
 
 {{< commit add-star-start-function >}}
 
-The next step is to pick two random points on the stage. Python has a handy feature already available that picks a random number between two numbers. To get it we have to add a new line to the top of the program:
+The next step is to pick two random points on the stage. Python has a handy feature already available to pick a number between
