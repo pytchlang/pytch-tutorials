@@ -6,3 +6,4 @@ class Bird(pytch.Sprite):
     @when_green_flag_clicked
     def start(self):
         self.show()
+        self.set_size(0.3)
