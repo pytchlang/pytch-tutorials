@@ -226,9 +226,6 @@ centre at the start of the game and stays there.  We want it to then
 keep its vertical position (_y_ coordinate) matching the ball's.  This
 will make it follow the ball up and down:
 
-**TODO: automatically provide a context in the "change the code"
-header, like "change the code like this, in the BAR method of the FOO sprite"?**
-
 {{< commit make-Robot-track-Ball >}}
 
 This is much better, but still not quite right.  The robot can go off
