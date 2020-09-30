@@ -15,10 +15,9 @@ published by the Raspberry Pi organisation.
 We first set up the _Stage_, which, like Scratch, is where the action takes
 place.  We're going to use the same image as the version in _Code the Classics_.
 We define a `class` which is based on the built-in `pytch.Stage`, and say what
-_Backdrops_ we want it to have.  In Pytch we do this by giving a _list_ of
-pairs.  The first thing in each pair is the name we want to be able to use to
-talk about this backdrop in our code.  The second thing is where Pytch can find
-the image file.
+_Backdrops_ we want it to have.  In Pytch we can do this by giving a _list_ of
+backdrop filenames.  Here we only have one backdrop, so our list just has one
+entry.
 
 {{< commit add-stage-with-background >}}
 
@@ -28,20 +27,16 @@ the image file.
 Now we have the background, we want to put the player's bat into the
 game.  The first part of this is similar to how we introduced the
 _BoingBackground_.  We define _PlayerBat_, which we say is a kind of
-_Sprite_.  To say what _Costumes_ it has, we need to give more
-information than for a _Backdrop_ for a _Stage_.  As well as the name
-we want to call it in our code (here, ``normal``), and the image file
-we want to use (here, ``images/bat00.png``), we need to say where the
-_centre_ is.  When we tell a sprite to go to a particular place on the
-stage, it's the Sprite's _centre_ which actually ends up exactly at
-that point.  Our image is 60 pixels square (it has some clear
-background), and we want its actual centre to be the 'centre' as Pytch
-sees it.  So we need:
+_Sprite_.  To say what _Costumes_ it has, we will give more
+information than for a _Backdrop_ for a _Stage_.  We will choose the name
+we want to call it in our code (here, `normal`), and the image file
+we want to use (here, `bat00.png`).  We lay the code out in a way which
+leaves us room to add other bat costumes later.
 
 {{< commit add-Player-with-costume >}}
 
 When the green flag is clicked, we want the player's bat to go to its
-starting position, and become visible:
+starting position, and be visible:
 
 {{< commit init-Player-on-green-flag >}}
 
@@ -64,8 +59,7 @@ We'll make the same change to the 'move down' part of the code:
 
 The next thing to add is the ball.  We do this in a very similar way
 to how we added the player's bat.  The ball only has one costume, and
-we tell Pytch what we want to call it (``ball``), the file to use, and
-where the centre is:
+we tell Pytch which file to use:
 
 {{< commit add-Ball-with-costume >}}
 
@@ -257,8 +251,8 @@ We want to bring in some sounds for the game:
 * Make a sound when the player loses.  (The robot never loses!)
 
 We define these in a similar way to costumes.  We say what the
-``Sounds`` for a sprite are.  Each sound needs a name we'll call it in
-our code, and a filename for the sound file:
+`Sounds` for a sprite are.  We say which filename each sound comes
+from:
 
 {{< commit define-Sounds-for-Ball >}}
 
