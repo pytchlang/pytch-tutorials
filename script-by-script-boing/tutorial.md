@@ -42,14 +42,14 @@ starting position, and be visible:
 
 Once the game has started, the person playing the game needs to be
 able to move the bat.  We do this by continually checking whether the
-person is pressing the ``W`` key to move up, or the ``S`` key to move
+person is pressing the `W` key to move up, or the `S` key to move
 down.  If they are, we change the bat's _y_ coordinate:
 
 {{< commit move-Player-with-W-and-S >}}
 
 If you play the game now, you'll see a problem.  You can move the bat
 right off the top of the stage.  To stop this, we'll only move if
-you're pressing ``W`` and you're low enough that moving up is allowed.
+you're pressing `W` and you're low enough that moving up is allowed.
 We'll make the same change to the 'move down' part of the code:
 
 {{< commit limit-Player-y-coord >}}
@@ -106,7 +106,7 @@ return to making the ball bounce.
 The ball can tell if it's moved far enough to the right that it should
 bounce off the robot.  Straight after the ball has moved, we want
 check if it's moved too far.  If it has, we want to move _back_ the
-same amount we just moved, and then change our ``x_speed`` to be the
+same amount we just moved, and then change our `x_speed` to be the
 _opposite_ of what it just was:
 
 {{< commit bounce-Ball-off-Robot >}}
@@ -152,7 +152,7 @@ for the bottom of their bat.
 
 To let us work with this, the ball needs to remember how quickly it's
 moving _vertically_, i.e., in the _y_ direction.  So we add a local
-variable ``y_speed``.  It starts off as zero, because the ball is
+variable `y_speed`.  It starts off as zero, because the ball is
 moving neither up nor down, just straight across:
 
 {{< commit add-Ball-state-y-speed >}}
@@ -166,10 +166,10 @@ zero leaves it alone.
 
 We can now make the ball fly off in different directions, depending on
 where on the bat the player hit it.  We worked out that the 'position
-on bat' goes from about ``-45`` at the bottom to ``45`` at the top.
+on bat' goes from about `-45` at the bottom to `45` at the top.
 We'll divide this by ten to get the ball's new _y_-speed, but ignoring
 any remainder by telling Pytch to turn the answer of the division into
-an _integer_ (whole number) using ``int()``:
+an _integer_ (whole number) using `int()`:
 
 {{< commit make-Ball-y-speed-depend-on-Player-position >}}
 
@@ -203,9 +203,9 @@ We'll fix these things next.
 The code we added to bounce the ball off the player's bat checked if
 the _position on the bat_ was not too high or too low, and then
 bounced the ball if it was OK.  But it did nothing if the ball _was_
-too high or too low.  We need to add an ``else`` clause, saying that
+too high or too low.  We need to add an `else` clause, saying that
 if the player misses, that's the end of the game.  The ball should
-hide, and we ``break`` out of the ``while True`` loop:
+hide, and we `break` out of the `while True` loop:
 
 {{< commit hide-Ball-if-Player-misses >}}
 
