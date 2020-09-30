@@ -31,7 +31,7 @@ _Sprite_.  To say what _Costumes_ it has, we will give more
 information than for a _Backdrop_ for a _Stage_.  We will choose the name
 we want to call it in our code (here, `normal`), and the image file
 we want to use (here, `bat00.png`).  We lay the code out in a way which
-leaves us room to add other bat costumes later.
+leaves us room to add another bat costume later.
 
 {{< commit add-Player-with-costume >}}
 
@@ -124,12 +124,12 @@ the player misses it.  We'll fix this next.
 
 ## Bounce properly off the player's bat
 
-What we want to do is find where on the player's bat the ball has
-hit.  We'll call the centre of the bat 'zero', and then positive
-positions are towards the top of the bat, and negative positions are
-towards the bottom.  We can work this out by finding the vertical
-position — the _y_ coordinate — of the player's bat, and subtracting
-that from the ball's _y_ coordinate:
+What we want to do is find where on the player's bat the ball has hit,
+if it hits the bat at all.  We'll call the centre of the bat 'zero',
+and then positive positions are towards the top of the bat, and
+negative positions are towards the bottom.  We can work this out by
+finding the vertical position — the _y_ coordinate — of the player's
+bat, and subtracting that from the ball's _y_ coordinate:
 
 {{< commit compute-position-on-Player >}}
 
@@ -302,7 +302,8 @@ Define what needs to happen to make the robot bat flash:
 
 {{< commit define-Robot-hit-handler >}}
 
-And then trigger it when the ball bounces off the robot's bat:
+And then trigger this action when the ball bounces off the robot's
+bat:
 
 {{< commit trigger-Robot-flash-on-hit >}}
 
@@ -313,8 +314,8 @@ And then trigger it when the ball bounces off the robot's bat:
 
 The game can get 'stuck' with the ball bouncing just straight left and
 right between the bats.  This is boring.  We'll make it so that if the
-ball bounces off the robot bat and is going horizontally, we'll change
-it to go either gently up or gently down at random.
+ball bounces off the robot bat and is going purely horizontally, we'll
+change it to go either gently up or gently down at random.
 
 To do this, we need to use the random number part of Pytch, by
 bringing in the `random` module:
