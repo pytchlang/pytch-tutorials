@@ -297,9 +297,6 @@ the ball bounces off the  player's bat:
 
 {{< commit trigger-Player-flash-on-hit >}}
 
-**TODO: Move the broadcast to just before the start-sound?  That keeps
-'effects' together, after the state changes to make the game actually work.**
-
 Now we do something very similar for the robot.  First add a costume:
 
 {{< commit declare-Robot-hit-flash-costume >}}
