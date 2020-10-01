@@ -238,8 +238,6 @@ be at the top of the court instead.  And similary for the bottom:
 
 ## Make some noise
 
-{{< work-in-progress >}}
-
 We want to bring in some sounds for the game:
 
 * Different bounce noises for bouncing off a bat compared to the top
@@ -309,8 +307,6 @@ bat:
 
 
 ## Avoid a stalemate
-
-{{< work-in-progress >}}
 
 The game can get 'stuck' with the ball bouncing just straight left and
 right between the bats.  This is boring.  We'll make it so that if the
