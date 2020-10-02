@@ -59,9 +59,9 @@ The images are a bit big for our canvas, so I set the size to 65%. The 'directio
 
 {{< commit simple-car-sprite >}}
 
-We want to start the cars moving when the green flag is clicked, so I want to make that name available. I will import the Python random number code as wel because we will use that to select the different costumes.
+We want to start the cars moving when the green flag is clicked.  I import the Python random number code, because we will use that to select the different costumes.
 
-{{< commit import-green-flag >}}
+{{< commit import-random-module >}}
 
 ### Designing the traffic
 
