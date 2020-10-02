@@ -28,7 +28,7 @@ The graphics are already there for the players sprite, all we have to do is crea
 
 {{< commit simple-player-sprite >}}
 
-Each costume has two numbers after it - these are the position of the _centre_ of the costume. The Bunny graphics are 60 pixels wide and 60 pixels tall, so that puts it right in the centre of the costume. When we issue a ```go_to_xy``` command it's that point on the costume that will be at exactly the ```x``` and ```y``` coordinates.
+The Bunny graphics are 60 pixels wide and 60 pixels tall, and when we issue a ```go_to_xy``` command, it's the centre of the costume that will be at exactly the ```x``` and ```y``` coordinates.
 
 We select a costume and make sure that the Bunny actor is visible.
 
