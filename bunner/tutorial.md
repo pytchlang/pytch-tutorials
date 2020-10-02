@@ -30,7 +30,7 @@ The graphics are already there for the players sprite, all we have to do is crea
 
 The Bunny graphics are 60 pixels wide and 60 pixels tall, and when we issue a ```go_to_xy``` command, it's the centre of the costume that will be at exactly the ```x``` and ```y``` coordinates.
 
-We select a costume and make sure that the Bunny actor is visible.
+When green flag is clicked, we select the starting costume, and make sure that the Bunny actor is in the right place, and visible.
 
 
 ### Moving our hero
