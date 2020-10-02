@@ -83,13 +83,9 @@ Because we might create another car in this lane the next time around we wait a 
 
 ### Controlling the clone
 
-We want the clone to run its own script when it's created, so we want to use the ``when_I_start_as_a_clone`` event.
+We want the clone to run its own script when it's created, so we will use the ``when_I_start_as_a_clone`` event.  I will buid up the loop that drives the car from left-to-right along the lane. First, I want the clone to choose a costume, either 'right0' or 'right1' (they are two different colours of cars, and it keeps the lane of traffic from looking too boring if there's a mix of costumes).
 
-{{< commit import-when-i-start-as-a-clone >}}
-
-Now I will buid up the loop that drives the car from left-to-right along the lane. First, I want the clone to choose a costume, either 'right0' or 'right1' (they are two different colours of cars, and it keeps the lane of traffic from looking too boring if there's a mix of costumes).
-
-Python's has a handy ``random.choice`` function will return one of the items from the list we give it, randomly chosen.
+Python has a handy ``random.choice`` function will return one of the items from the list we give it, randomly chosen.
 
 The clone got its own copy of the ``direction`` variable containing whatever the Car sprite had in it at the moment the clone was created. It contains the string 'right', so combining that with either '0' or '1' gets us one of the costume names.
 
