@@ -161,11 +161,7 @@ Back in the ``Bunny`` sprite I want to add some costumes to show when the bunny 
 
 {{< commit add-squish-costumes >}}
 
-To respond to a broadcast a Sprite has to use ``when_I_receive``.
-
-{{< commit import-when-i-receive >}}
-
-When the bunny sprite sees the squishing broadcast I want to change to a costume that matches the direction that the bunny was already facing. I can look up the name of the current costume and then add "_squished" to get the name of a new costume.
+To respond to a broadcast, a Sprite uses ``when_I_receive``.  When the bunny sprite sees the squishing broadcast I want to change to a costume that matches the direction that the bunny was already facing. I can look up the name of the current costume and then add "_squished" to get the name of a new costume.
 
 {{< commit act-on-squish >}}
 
