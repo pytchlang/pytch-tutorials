@@ -295,11 +295,7 @@ First I make a new sprite that will act as a 'start game' button
 
 {{< commit create-start-button >}}
 
-I want it to react to being clicked with the mouse
-
-{{< commit import-when-this-sprite-clicked >}}
-
-When it's clicked it announces to the rest of the project that it's time to start a new game, then the button hides itself.
+I want it to react to being clicked with the mouse.  When it's clicked it announces to the rest of the project that it's time to start a new game, then the button hides itself.
 
 {{< commit make-start-button-clickable >}}
 
