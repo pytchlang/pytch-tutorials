@@ -24,11 +24,7 @@ If you build the project now, you'll see our backdrop appear.
 
 There is not much to do in our game yet, so let's add something for the player to control.
 
-We want to talk about Sprites:
-
-{{< commit import-Sprite >}}
-
-The graphics are already there for the players sprite, all we have to do is create a class and set up the names of the costumes. Like the stage, the name of our new class is up to us, but we have to declare that it's a kind of ```Sprite```.
+The graphics are already there for the players sprite, all we have to do is create a class and set up the names of the costumes. Like the stage, the name of our new class is up to us, but we have to declare that it's a kind of ```pytch.Sprite```.
 
 {{< commit simple-player-sprite >}}
 
