@@ -315,7 +315,7 @@ When the game starts the stage needs to switch to the world costume (it might ha
 
 {{< commit show-world-on-game-start >}}
 
-Now we have a whole game that can be started by the player, runs through the players 3 lives, ends, and can be started again!
+Now we have a whole game that can be started by the player, runs through the player's 3 lives, ends, and can be started again!
 
 ## Keeping score
 
