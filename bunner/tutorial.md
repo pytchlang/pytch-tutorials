@@ -43,7 +43,7 @@ We will create a function that will move the bunny up the screen, and tell Pytch
 
 If you haven't already then this is a good place to build the project and make sure it's working. Press the up arrow a few times, make sure that you're happy it works.
 
-Once you are comfortable with it, you could add three more functions for the other directions.  Remember, each function has to have it's own name or Python will not recognise them properly.
+Once you are comfortable with it, you could add three more functions for the other directions.  Remember, each function has to have its own name or Python will not recognise them properly.
 
 This is my version:
 
@@ -83,7 +83,7 @@ Because we might create another car in this lane the next time around we wait a 
 
 ### Controlling the clone
 
-We want the clone to run it's own script when it's created, so we want to use the ``when_I_start_as_a_clone`` event.
+We want the clone to run its own script when it's created, so we want to use the ``when_I_start_as_a_clone`` event.
 
 {{< commit import-when-i-start-as-a-clone >}}
 
@@ -91,7 +91,7 @@ Now I will buid up the loop that drives the car from left-to-right along the lan
 
 Python's has a handy ``random.choice`` function will return one of the items from the list we give it, randomly chosen.
 
-The clone got it's own copy of the ``direction`` variable containing whatever the Car sprite had in it at the moment the clone was created. It contains the string 'right', so combining that with either '0' or '1' gets us one of the costume names.
+The clone got its own copy of the ``direction`` variable containing whatever the Car sprite had in it at the moment the clone was created. It contains the string 'right', so combining that with either '0' or '1' gets us one of the costume names.
 
 {{< commit begin-drive-routine >}}
 
@@ -121,7 +121,7 @@ Once we have that we can add two more loops that start on green flag. They are m
 
 {{< commit start-traffic-two-and-three >}}
 
-There's an important point to think about here. What if the row two loop moved the car, but before it got to set the `direction` or create the clone the row one loop ran a bit and altered the x and y position? We could end up with a car that was positioned off to the left of the screen, but which had it's direction set to drive to the left, and it would just vanish right away!
+There's an important point to think about here. What if the row two loop moved the car, but before it got to set the `direction` or create the clone the row one loop ran a bit and altered the x and y position? We could end up with a car that was positioned off to the left of the screen, but which had its direction set to drive to the left, and it would just vanish right away!
 
 In fact, this can't happen, but it's worth knowing why. Pytch will only allow another function to run at specific places. One of those places is at the end of a loop (another is when a function does ``wait_seconds``). The manual has more information about this, but it's enough for now to know we are safe!
 
@@ -173,7 +173,7 @@ When the bunny sprite sees the squishing broadcast I want to change to a costume
 
 {{< commit act-on-squish >}}
 
-There's still a problem, though. The car clone broadcasts 'squish bunny' and we change costume... but then a moment later the car sprite runs it's hit checking again and broadcasts squish _again_, and we run through this code again (choosing a costume like "up_squished_squished"). That's a problem!
+There's still a problem, though. The car clone broadcasts 'squish bunny' and we change costume... but then a moment later the car sprite runs its hit checking again and broadcasts squish _again_, and we run through this code again (choosing a costume like "up_squished_squished"). That's a problem!
 
 To fix it I'll introduce a way for the bunny to know that it has already acted on the message (I'll have other uses for this idea soon).
 
@@ -225,9 +225,9 @@ Now I can add a use of this setup function to the code that handled the bunny be
 
 {{< commit restart-game-when-squished >}}
 
-The ``start_game`` function is run by Pytch when the green flag is clicked, but I can run it whenever I want by using it's name.
+The ``start_game`` function is run by Pytch when the green flag is clicked, but I can run it whenever I want by using its name.
 
-It doesn't affect what I'm doing here, but it's worth pointing out the difference between running ``start_game`` from the green flag event and running it by using it's name. The second way doesn't run ``start_game``  alongside ``squish``, so if there was another statement in ``squish`` it wouldn't run until ``start_game`` had finished.
+It doesn't affect what I'm doing here, but it's worth pointing out the difference between running ``start_game`` from the green flag event and running it by using its name. The second way doesn't run ``start_game``  alongside ``squish``, so if there was another statement in ``squish`` it wouldn't run until ``start_game`` had finished.
 
 ## Adding a life counter
 
@@ -255,15 +255,15 @@ And I can also call it when the bunny is squished:
 
 ## Running out of lives
 
-The next thing I want to do is end the game when the player has used up all their lives. That means that after the player is asked to play a life I'll check whether it's actually possible to do that. If there aren't then the bunny will go into it's "waiting" state until a new game starts, and we'll announce to all the other sprites and clones that the game has ended.
+The next thing I want to do is end the game when the player has used up all their lives. That means that after the player is asked to play a life I'll check whether it's actually possible to do that. If there aren't then the bunny will go into its "waiting" state until a new game starts, and we'll announce to all the other sprites and clones that the game has ended.
 
 {{< commit announce-game-over >}}
 
-When the clone cars see that the game has ended I want them all to vanish (even if they haven't reached the edge of the canvas yet). When a clone is deleted all of it's running scripts stop, of course.
+When the clone cars see that the game has ended I want them all to vanish (even if they haven't reached the edge of the canvas yet). When a clone is deleted all of its running scripts stop, of course.
 
 {{< commit game-over-deletes-clone-cars >}}
 
-The original ``Car`` sprite is still running it's traffic factory scripts, of course, and they will just create more cars unless they are stopped.
+The original ``Car`` sprite is still running its traffic factory scripts, of course, and they will just create more cars unless they are stopped.
 
 Although the original ``Car`` sprite will receive the game over broadcast and run the ``vanish`` script that won't stop the car factories. The original sprite is immune to ``delete_this_clone`` actions (because it's not a clone!). So I'll have to do something else to stop those scripts.
 
@@ -417,7 +417,7 @@ Why not just update this when we see the 'bunny squished' message, which is what
 
 ## Adding the water hazard
 
-The final obstacle to add to the game is the water hazard. At the moment once the bunny has passed the three lanes of traffic all it has to do is make it's way to the top of the screen to reach the goal.
+The final obstacle to add to the game is the water hazard. At the moment once the bunny has passed the three lanes of traffic all it has to do is make its way to the top of the screen to reach the goal.
 
 I'm going to add a new check that makes the bunny drown (and lose a life) if it's on the water. But first I want to add some way to get across the water!
 
@@ -499,7 +499,7 @@ The final part of the game is to give the player a reward for reaching the goal 
 
 {{< commit check-if-we-won >}}
 
-If it is then I run a loop that moves the bunny through facing it's four directions (so that it looks like it's dancing).
+If it is then I run a loop that moves the bunny through facing its four directions (so that it looks like it's dancing).
 
 {{< commit detect-final-row >}}
 
