@@ -6,7 +6,7 @@ In this tutorial we will make a complete [Frogger](https://en.wikipedia.org/wiki
 
 
 
---- 
+---
 
 ## Making the stage
 
@@ -14,7 +14,7 @@ Let's start by getting a nice backdrop up. I've drawn one already, so we can jus
 
 First, we make a Stage class. We can call it anything we want so long as it is declared as being a Stage. The second line of the class sets up a Python variable with the list of background images that we can use (there's only one for now but we will add more).
 
-Each background has a name that we'll use in our code when we want to switch backgrounds. We also have to list the file name from the Pytch examples folder that we want to use. 
+Each background has a name that we'll use in our code when we want to switch backgrounds. We also have to list the file name from the Pytch examples folder that we want to use.
 
 {{< commit background-hollow-class >}}
 
@@ -30,7 +30,7 @@ If you build the project now you'll notice that the stage backdrop does not actu
 
 ## Create our hero
 
-There is not much to do in our game yet, so let's add something for the player to control. 
+There is not much to do in our game yet, so let's add something for the player to control.
 
 We want to talk about Sprites:
 
@@ -57,7 +57,7 @@ Now we can create a function that will move the bunny up the screen, and tell Py
 
 If you haven't already then this is a good place to build the project and make sure it's working. Press the up arrow a few times, make sure that you're happy it works.
 
-Once you are comfortable with it, you could add three more functions for the other directions.  Remember, each function has to have it's own name or Python will not recognise them properly. 
+Once you are comfortable with it, you could add three more functions for the other directions.  Remember, each function has to have it's own name or Python will not recognise them properly.
 
 This is my version:
 
@@ -89,7 +89,7 @@ I'll start with the lane closest to the bottom of the screen. Once we have this 
 
 As soon as the green flag is clicked the Car sprite starts a loop to manage the cars in the first lane of traffic. There's no need to have the loop running as fast as possible - that would make far too many cars - so I put in a little delay using ``wait_seconds`` so that the loop only runs ten times a second.
 
-Each time the loop goes around I ask for a random number between 0 and 1, and if it's below 0.2 then the Car sprite moves to just off the screen, left of the first lane, and makes a clone at this position. 
+Each time the loop goes around I ask for a random number between 0 and 1, and if it's below 0.2 then the Car sprite moves to just off the screen, left of the first lane, and makes a clone at this position.
 
 Because we might create another car in this lane the next time around we wait a little longer after creating the clone so that it has time to drive along the lane.
 
@@ -101,7 +101,7 @@ We want the clone to run it's own script when it's created, so we want to use th
 
 {{< commit import-when-i-start-as-a-clone >}}
 
-Now I will buid up the loop that drives the car from left-to-right along the lane. First, I want the clone to choose a costume, either 'right0' or 'right1' (they are two different colours of cars, and it keeps the lane of traffic from looking too boring if there's a mix of costumes). 
+Now I will buid up the loop that drives the car from left-to-right along the lane. First, I want the clone to choose a costume, either 'right0' or 'right1' (they are two different colours of cars, and it keeps the lane of traffic from looking too boring if there's a mix of costumes).
 
 Python's has a handy ``random.choice`` function will return one of the items from the list we give it, randomly chosen.
 
@@ -109,7 +109,7 @@ The clone got it's own copy of the ``direction`` variable containing whatever th
 
 {{< commit begin-drive-routine >}}
 
-Once the sprite has appeared we start a loop that drives the car to the right. 
+Once the sprite has appeared we start a loop that drives the car to the right.
 
 You might wonder why I'm are checking the 'direction' variable, since it has to contain 'right'. The answer is that if we get this code correct for moving right we'll be able to use it for the left-moving lane as well.
 
@@ -117,7 +117,7 @@ In order to allow us to tweak how fast the lane of traffic moves I'll use a vari
 
 {{< commit drive-to-the-right >}}
 
-The speed variable needs to be set up somewhere, so I add it to the class and set it up in ``__init__``. 
+The speed variable needs to be set up somewhere, so I add it to the class and set it up in ``__init__``.
 
 {{< commit add-speed-var >}}
 
@@ -161,15 +161,15 @@ This function works by comparing the coordinates of the clone (``self``) and som
 
 {{< commit special-hitbox-for-cars >}}
 
-When pytch sees me say ``touching(Bunny)`` it interprets it as "if this sprite is touching _any_ Bunny sprite", original _or_ clone. 
+When pytch sees me say ``touching(Bunny)`` it interprets it as "if this sprite is touching _any_ Bunny sprite", original _or_ clone.
 
-In order to use this in place of ``touching`` we can't pass ``Bunny``, because that's a sprite _class_. We need to supply the _instance_. The Pytch ``the_original`` function lets us get the sprite from a sprite class (there is another function to get a list of all the clones, which we will see later) 
+In order to use this in place of ``touching`` we can't pass ``Bunny``, because that's a sprite _class_. We need to supply the _instance_. The Pytch ``the_original`` function lets us get the sprite from a sprite class (there is another function to get a list of all the clones, which we will see later)
 
 {{< commit use-new-hits-method >}}
 
 This works much better at printing messages for the bunny and car colliding, when I try it out I only see the "Squish the bunny!" message printed when the sprites actually _look_ like they are overlapping now.
 
-Now that this is working I'd like to get the bunny to react to being squished. This is really something for the ``Bunny`` sprite to take care of. I can send a message that something has happened using the ``broadcast`` system. 
+Now that this is working I'd like to get the bunny to react to being squished. This is really something for the ``Bunny`` sprite to take care of. I can send a message that something has happened using the ``broadcast`` system.
 
 {{< commit broadcast-squish >}}
 
@@ -179,21 +179,21 @@ Back in the ``Bunny`` sprite I want to add some costumes to show when the bunny 
 
 {{< commit add-squish-costumes >}}
 
-To respond to a broadcast a Sprite has to use ``when_I_receive``. 
+To respond to a broadcast a Sprite has to use ``when_I_receive``.
 
 {{< commit import-when-i-receive >}}
 
-When the bunny sprite sees the squishing broadcast I want to change to a costume that matches the direction that the bunny was already facing. I can look up the name of the current costume and then add "_squished" to get the name of a new costume. 
+When the bunny sprite sees the squishing broadcast I want to change to a costume that matches the direction that the bunny was already facing. I can look up the name of the current costume and then add "_squished" to get the name of a new costume.
 
 {{< commit act-on-squish >}}
 
-There's still a problem, though. The car clone broadcasts 'squish bunny' and we change costume... but then a moment later the car sprite runs it's hit checking again and broadcasts squish _again_, and we run through this code again (choosing a costume like "up_squished_squished"). That's a problem! 
+There's still a problem, though. The car clone broadcasts 'squish bunny' and we change costume... but then a moment later the car sprite runs it's hit checking again and broadcasts squish _again_, and we run through this code again (choosing a costume like "up_squished_squished"). That's a problem!
 
-To fix it I'll introduce a way for the bunny to know that it has already acted on the message (I'll have other uses for this idea soon). 
+To fix it I'll introduce a way for the bunny to know that it has already acted on the message (I'll have other uses for this idea soon).
 
 ## Setting modes for the player
 
-I'll create a set of three variables to describe three "states" the bunny could be in: 
+I'll create a set of three variables to describe three "states" the bunny could be in:
 
 * Waiting for the game to start
 * Letting the player control it
@@ -223,7 +223,7 @@ Once we have done that the game seems to be over once the bunny is squished. The
 
 ## End and restart the game when the bunny is squished
 
-I'm going to rearrange the code in the Bunny sprite so that it will be easier to reset the game when the player loses all their lives. The first step is to have the bunny set itself up when the green flag is clicked instead of in the ``__init__`` (which only runs when the project is first loaded) 
+I'm going to rearrange the code in the Bunny sprite so that it will be easier to reset the game when the player loses all their lives. The first step is to have the bunny set itself up when the green flag is clicked instead of in the ``__init__`` (which only runs when the project is first loaded)
 
 {{< commit set-game-start-code >}}
 
@@ -235,11 +235,11 @@ Now I have a use for the ``WAITING`` mode we created recently. Before the game a
 
 {{< commit wait-at-the-start >}}
 
-Now I can add a use of this setup function to the code that handled the bunny being squished. We pause for a while to let the player see the costume of the squished bunny, and then reset the game. 
+Now I can add a use of this setup function to the code that handled the bunny being squished. We pause for a while to let the player see the costume of the squished bunny, and then reset the game.
 
 {{< commit restart-game-when-squished >}}
 
-The ``start_game`` function is run by Pytch when the green flag is clicked, but I can run it whenever I want by using it's name. 
+The ``start_game`` function is run by Pytch when the green flag is clicked, but I can run it whenever I want by using it's name.
 
 It doesn't affect what I'm doing here, but it's worth pointing out the difference between running ``start_game`` from the green flag event and running it by using it's name. The second way doesn't run ``start_game``  alongside ``squish``, so if there was another statement in ``squish`` it wouldn't run until ``start_game`` had finished.
 
@@ -255,7 +255,7 @@ Each time the bunny gets squished I'll reduce that counter by one
 
 {{< commit add-notion-of-lives >}}
 
-Moving some code around again, I want to separate the idea of _starting the game_ from the idea of _playing a life_. So I'll create a new function that has the code relevant to playing a life (moving back to the start row and selecting a costume). 
+Moving some code around again, I want to separate the idea of _starting the game_ from the idea of _playing a life_. So I'll create a new function that has the code relevant to playing a life (moving back to the start row and selecting a costume).
 
 {{< commit define-play-one-life >}}
 
@@ -263,7 +263,7 @@ I can run this function in the ``start_game`` routine
 
 {{< commit call-play-one-life >}}
 
-And I can also call it when the bunny is squished: 
+And I can also call it when the bunny is squished:
 
 {{< commit play-another-life-after-death >}}
 
@@ -293,7 +293,7 @@ The bunny notes that the game is running by setting this variable to ``True``.
 
 {{< commit bunny-sets-game-running >}}
 
-When the bunny runs out of lives it notes that the game should be over by setting this variable to false (I could have chosen to set this to false in a function that is run when the "game over" broadcast is received, that would work too) 
+When the bunny runs out of lives it notes that the game should be over by setting this variable to false (I could have chosen to set this to false in a function that is run when the "game over" broadcast is received, that would work too)
 
 {{< commit game-over-unsets-running-flag >}}
 
@@ -311,7 +311,7 @@ Once all of the treaffic has been stopped and the clones have vanished I decided
 
 ## The start button
 
-When the game is over I would like a way to start it again. This is where the rearranging of code I did earlier on will pay off. 
+When the game is over I would like a way to start it again. This is where the rearranging of code I did earlier on will pay off.
 
 First I make a new sprite that will act as a 'start game' button
 
@@ -349,7 +349,7 @@ We should be showing the lives remaining somewhere on the stage, but before we g
 
 Most games are more fun if there's a way to keep track of how well the player is doing. I'm going to introduce a score that increases as the player heads up the screen.
 
-First I'll add a new global variable to track the score (I'm using a global variable because there are going to be several parts of the project that will access the score, but I could have made it a variable in the Bunny sprite and used ``Bunny.the_original`` to access it from other parts of the project) 
+First I'll add a new global variable to track the score (I'm using a global variable because there are going to be several parts of the project that will access the score, but I could have made it a variable in the Bunny sprite and used ``Bunny.the_original`` to access it from other parts of the project)
 
 {{< commit introduce-score-global >}}
 
@@ -371,11 +371,11 @@ These both start at zero:
 
 {{< commit init-row-counters-at-start >}}
 
-Every time the bunny moves up the stage I add one to the current row 
+Every time the bunny moves up the stage I add one to the current row
 
 {{< commit increment-current-row-counter >}}
 
-And lower it when the bunny moves down 
+And lower it when the bunny moves down
 
 {{< commit lower-row-count-on-backstep >}}
 
@@ -395,7 +395,7 @@ There are ten costumes, which I want to name "digit-0" to "digit-9". Instead of 
 
 The first is writing a ``range`` statement inside the list definition, for example ``[ n for n in range(10) ]`` creates the list ``[0,2,3,4,5,6,7,8,9]`` (`n` in this is just a temporary variable that is created for setting up the list only).
 
-The second trick is that we can fill in "placeholders" in a string using the ``%`` string operator. By writing ``"digit-%d" % n`` we tell python to splice in the value of the variable "n" in place of the "%d" in the string. 
+The second trick is that we can fill in "placeholders" in a string using the ``%`` string operator. By writing ``"digit-%d" % n`` we tell python to splice in the value of the variable "n" in place of the "%d" in the string.
 
 {{< commit compute-score-digit-costumes >}}
 
@@ -431,7 +431,7 @@ Why not just update this when we see the 'bunny squished' message, which is what
 
 ## Adding the water hazard
 
-The final obstacle to add to the game is the water hazard. At the moment once the bunny has passed the three lanes of traffic all it has to do is make it's way to the top of the screen to reach the goal. 
+The final obstacle to add to the game is the water hazard. At the moment once the bunny has passed the three lanes of traffic all it has to do is make it's way to the top of the screen to reach the goal.
 
 I'm going to add a new check that makes the bunny drown (and lose a life) if it's on the water. But first I want to add some way to get across the water!
 
@@ -451,7 +451,7 @@ Each ``Log`` clone drives along the lane just as the cars do. But instead of che
 
 {{< commit drive-log-along-row >}}
 
-Just as with the ``Car`` we will remove the clone logs when the game ends 
+Just as with the ``Car`` we will remove the clone logs when the game ends
 
 {{< commit remove-logs-at-end-of-game >}}
 
@@ -461,7 +461,7 @@ And just like the ``Car`` we need to have a special collision detection function
 
 ### Drowning in the water
 
-Now we are ready to make the water hazardous. I'll add a new stage for the bunny. Just like when the bunny is squished, I don't want the movement keys to work while the bunny is drowning. 
+Now we are ready to make the water hazardous. I'll add a new stage for the bunny. Just like when the bunny is squished, I don't want the movement keys to work while the bunny is drowning.
 
 {{< commit add-drowning-state >}}
 
@@ -513,7 +513,7 @@ The final part of the game is to give the player a reward for reaching the goal 
 
 {{< commit check-if-we-won >}}
 
-If it is then I run a loop that moves the bunny through facing it's four directions (so that it looks like it's dancing). 
+If it is then I run a loop that moves the bunny through facing it's four directions (so that it looks like it's dancing).
 
 {{< commit detect-final-row >}}
 
@@ -530,7 +530,7 @@ Once the dance is complete the buny moves back to the bottom of the stage and th
 
 You have reached the end of this tutorial, but there's lots more that you could do with this project. Here are some ideas:
 
-* Make the game more challenging for the player. Add a broadcast that goes out when the player reaches the goal. This broadcast could tell the logs and cars that this was a new round, and use that to have them move faster, or have more cars and fewer logs appear by adjusting the numbers in the car and log factories. 
+* Make the game more challenging for the player. Add a broadcast that goes out when the player reaches the goal. This broadcast could tell the logs and cars that this was a new round, and use that to have them move faster, or have more cars and fewer logs appear by adjusting the numbers in the car and log factories.
 
 * Improve the accuracy of the ``hits`` routines (the log one, especially, is a bit over-sensitive, it's easy for the bunny to fall off the smaller logs without it looking like it should have)
 
