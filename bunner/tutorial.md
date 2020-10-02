@@ -14,7 +14,7 @@ Let's start by getting a nice backdrop up. I've drawn one already, so we can jus
 
 First, we make a Stage class. We can call it anything we want so long as it is declared as being a Stage. The second line of the class sets up a Python variable with the list of background images that we can use (there's only one for now but we will add more).
 
-Each background has a name that we'll use in our code when we want to switch backgrounds. We also have to list the file name from the Pytch examples folder that we want to use.
+Each background has a name that we'll use in our code when we want to switch backgrounds. We also give the filename from the Pytch examples folder that we want to use.
 
 {{< commit background-hollow-class >}}
 
