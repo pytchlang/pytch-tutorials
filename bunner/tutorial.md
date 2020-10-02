@@ -35,11 +35,9 @@ When green flag is clicked, we select the starting costume, and make sure that t
 
 ### Moving our hero
 
-Now let's give the player a way to move the bunny around. We need to import the Pytch keyboard event.
+Now let's give the player a way to move the bunny around.
 
-{{< commit import-when-key-pressed >}}
-
-Now we can create a function that will move the bunny up the screen, and tell Pytch to run that function whenever the up arrow key is pressed on the keyboard. We add a simple check of the bunny Y-coordinate to make sure that it is never moved off the top of the screen.
+We will create a function that will move the bunny up the screen, and tell Pytch to run that function whenever the up arrow key is pressed on the keyboard. We add a simple check of the bunny Y-coordinate to make sure that it is never moved off the top of the screen.
 
 {{< commit move-bunny-up >}}
 
