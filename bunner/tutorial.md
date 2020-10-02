@@ -41,9 +41,9 @@ We will create a function that will move the bunny up the screen, and tell Pytch
 
 {{< commit move-bunny-up >}}
 
-If you haven't already then this is a good place to build the project and make sure it's working. Press the up arrow a few times, make sure that you're happy it works.
+If you haven't already then this is a good place to build the project and make sure it's working. Press the up arrow a few times, and make sure that you're happy it works.
 
-Once you are comfortable with it, you could add three more functions for the other directions.  Remember, each function has to have its own name or Python will not recognise them properly.
+Once you are comfortable with it, you could add three more functions for the other directions.  Remember, each function has to have its own name or Python will not recognise it properly.
 
 This is my version:
 
