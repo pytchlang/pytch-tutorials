@@ -132,7 +132,7 @@ You'll notice that the cars don't actually present any sort of challenge at the 
 
 ### Checking for collisions
 
-Checking every time something moves will mean changes in lots of places in the code -- I'd need to check when cars move _and_ when the bunny moves. Instead I'll create a new script that runs in each ``Car`` clone constantly checking for collisions. Writing ``while True`` means the loop will run forever (actually, just until the clone is deleted when it reaches the end of the lane).
+Checking every time something moves will mean changes in lots of places in the code — I'd need to check when cars move _and_ when the bunny moves. Instead I'll create a new script that runs in each ``Car`` clone constantly checking for collisions. Writing ``while True`` means the loop will run forever (actually, just until the clone is deleted when it reaches the end of the lane).
 
 I'll decide later what to actually do when there is a collision. So I can test my code I'll print out a message whenever there is a collision.
 
