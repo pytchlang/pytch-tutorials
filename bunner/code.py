@@ -8,6 +8,8 @@ class BunnyStage(pytch.Stage):
 class Bunny(pytch.Sprite):
     Costumes = [ "up.png", "right.png", "down.png", "left.png"]
 
+    start_shown = False
+
     @pytch.when_green_flag_clicked
     def go_to_starting_position(self):
         self.switch_costume("up")
