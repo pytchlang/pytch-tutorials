@@ -150,7 +150,7 @@ This function works by comparing the coordinates of the clone (``self``) and som
 
 When pytch sees me say ``touching(Bunny)`` it interprets it as "if this sprite is touching _any_ Bunny sprite", original _or_ clone.
 
-In order to use this in place of ``touching`` we can't pass ``Bunny``, because that's a sprite _class_. We need to supply the _instance_. The Pytch ``the_original`` function lets us get the sprite from a sprite class (there is another function to get a list of all the clones, which we will see later)
+In order to use this in place of ``touching`` we can't pass ``Bunny``, because that's a sprite _class_. We need to supply the _instance_. The Pytch ``the_original`` function lets us get the sprite from a sprite class. (There is another function to get a list of all the clones, which we will see later.)
 
 {{< commit use-new-hits-method >}}
 
@@ -186,7 +186,7 @@ I just want these variables so that I have three _names_ I can use for these sta
 
 {{< commit add-first-bunny-modes >}}
 
-This sets ``WAITING`` is zero, ``PLAYING`` is 1, and so on.
+This sets ``WAITING`` to be zero, ``PLAYING`` to be 1, and so on.
 
 Later on I plan to add a title screen (and the bunny will start out waiting), but for now the bunny starts out playing.
 
