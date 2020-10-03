@@ -13,6 +13,8 @@ class Bunny(pytch.Sprite):
         ("left", "sit3.png"),
     ]
 
+    start_shown = False
+
     @pytch.when_green_flag_clicked
     def go_to_starting_position(self):
         self.switch_costume("up")
