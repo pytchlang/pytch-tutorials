@@ -60,9 +60,9 @@ So that there is some variety in how they look I have chosen two different image
 
 {{< commit Car-with-costumes >}}
 
-The images are a bit big for our canvas, so I'll set the starting size to 65%.  And the original car is going to remain hidden, because we'll use *clones* for the actual traffic.  I'll set these things up like this:
+The original car is going to remain hidden, because we'll use *clones* for the actual traffic.
 
-{{< commit Car-start-smaller-and-not-shown >}}
+{{< commit Car-start-not-shown >}}
 
 I import the Python random number code, because we will use that to select the different costumes.
 
@@ -92,7 +92,7 @@ We want the clone to run its own script when it's created, so we will use the ``
 
 Python has a handy ``random.choice`` function will return one of the items from the list we give it, randomly chosen.
 
-The clone got its own copy of the ``direction`` variable containing whatever the Car sprite had in it at the moment the clone was created. It contains the string 'right', so combining that with either '0' or '1' gets us one of the costume names.
+The clone got its own copy of the ``direction`` variable containing whatever the Car sprite had in it at the moment the clone was created. It contains the string 'right', so combining that with either '0' or '1' gets us one of the costume names.  Also, the images are a bit big, so I'll shrink the clone to 65% of its original size.
 
 {{< commit begin-drive-routine >}}
 
