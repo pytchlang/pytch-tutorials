@@ -44,3 +44,12 @@ class Bunny(pytch.Sprite):
         self.switch_costume("left")
         if self.get_x() > -210:
             self.change_x(-25)
+
+
+class Car(pytch.Sprite):
+    Costumes = [
+        ("left0", "car00.png"),
+        ("right0", "car01.png"),
+        ("left1", "car20.png"),
+        ("right1", "car21.png"),
+    ]
