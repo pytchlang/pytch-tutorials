@@ -45,3 +45,7 @@ class Car(pytch.Sprite):
         ("left1", "car20.png"),
         ("right1", "car21.png"),
     ]
+
+    @pytch.when_green_flag_clicked
+    def start_hidden(self):
+        self.hide()
