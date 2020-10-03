@@ -26,12 +26,15 @@ There is not much to do in our game yet, so let's add something for the player t
 
 The graphics are already there for the player's sprite, all we have to do is create a class and set up the names of the costumes. Like the stage, the name of our new class is up to us, but we have to declare that it's a kind of ```pytch.Sprite```.
 
-{{< commit simple-player-sprite >}}
+{{< commit Bunny-with-costumes >}}
 
-The Bunny graphics files are 60 pixels wide and 60 pixels tall and have a bit of transparent padding around the actual bunny.  When we issue a ```go_to_xy``` command, it's the centre of the costume that will be at exactly the ```x``` and ```y``` coordinates.
+When green flag is clicked, we select the starting costume, and make sure that the Bunny actor is in the right place and visible:
 
-When green flag is clicked, we select the starting costume, and make sure that the Bunny actor is in the right place and visible.
+{{< commit Bunny-green-flag-go-to-start >}}
 
+If you build the project, you'll see that the Bunny appears in the middle of the stage, and only goes to the correct place when you click the green flag.  This is a bit messy, so we'll tell Pytch to start off *not* showing the Bunny:
+
+{{< commit start-Bunny-not-shown >}}
 
 ### Moving our hero
 
