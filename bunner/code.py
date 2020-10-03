@@ -48,3 +48,5 @@ class Car(pytch.Sprite):
         ("left1", "car20.png"),
         ("right1", "car21.png"),
     ]
+
+    start_shown = False
