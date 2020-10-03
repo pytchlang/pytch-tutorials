@@ -58,11 +58,13 @@ The next step is to create some obstacles to make it harder to reach the top of 
 
 So that there is some variety in how they look I have chosen two different images for each car, each of which could be driving left or right. Later on we will select at random the between the two different versions of cars driving to the left (or right, depending on the lane) for each car.
 
-The images are a bit big for our canvas, so I set the size to 65%. The 'direction' variable will be used to note whether each car is travelling left or right, but for now I just set it to something unimportant.
+{{< commit Car-with-costumes >}}
 
-{{< commit simple-car-sprite >}}
+The images are a bit big for our canvas, so I'll set the starting size to 65%.  And the original car is going to remain hidden, because we'll use *clones* for the actual traffic.  I'll set these things up like this:
 
-We want to start the cars moving when the green flag is clicked.  I import the Python random number code, because we will use that to select the different costumes.
+{{< commit Car-start-smaller-and-not-shown >}}
+
+I import the Python random number code, because we will use that to select the different costumes.
 
 {{< commit import-random-module >}}
 
@@ -102,7 +104,7 @@ In order to allow us to tweak how fast the lane of traffic moves I'll use a vari
 
 {{< commit drive-to-the-right >}}
 
-The speed variable needs to be set up somewhere, so I add it to the class and set it up in ``__init__``.
+The speed variable needs to be set up somewhere, which I do at the start of the `startTrafficRowOne` method.
 
 {{< commit add-speed-var >}}
 
@@ -116,7 +118,7 @@ Now, back to my idea of using the same code to control cars in the left-hand lan
 
 ### Making the rest of the car factories
 
-Once we have that we can add two more loops that start on green flag. They are modelled on the loop that creates `Car`` clones for lane 1, but they move to different x and y positions before cloning the car.
+Once we have that we can add two more loops that start on green flag. They are modelled on the loop that creates `Car`` clones for lane 1, but they move to different x and y positions before cloning the car.  I'll set the lanes of traffic to all move at the same speed for now.
 
 {{< commit start-traffic-two-and-three >}}
 
