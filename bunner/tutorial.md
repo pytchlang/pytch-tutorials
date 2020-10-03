@@ -170,7 +170,7 @@ To respond to a broadcast, a Sprite uses ``when_I_receive``.  When the bunny spr
 
 {{< commit act-on-squish >}}
 
-There's still a problem, though. The car clone broadcasts 'squish bunny' and we change costume... but then a moment later the car sprite runs its hit checking again and broadcasts squish _again_, and we run through this code again (choosing a costume like "up_squished_squished"). That's a problem!
+There's still a problem, though. The car clone broadcasts 'squish bunny' and we change costume... but then a moment later the car sprite runs its hit checking again and broadcasts squish _again_, and we run through this code again (choosing a costume like `"up_squished_squished"`). That's a problem!  If you try it, and get squished, you'll see an error pop up in the *Errors* tab.  You can come back to this tutorial by clicking on the *Tutorial* tab.
 
 To fix it I'll introduce a way for the bunny to know that it has already acted on the message (I'll have other uses for this idea soon).
 
