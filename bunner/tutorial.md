@@ -78,7 +78,7 @@ The original ``Car`` sprite will have three scripts running, one for each lane, 
 
 I'll start with the lane closest to the bottom of the screen. Once we have this working we will be able to copy it to get the other lanes working.
 
-As soon as the green flag is clicked the Car sprite starts a loop to manage the cars in the first lane of traffic. There's no need to have the loop running as fast as possible - that would make far too many cars - so I put in a little delay using ``wait_seconds`` so that the loop only runs ten times a second.
+As soon as the green flag is clicked the Car sprite starts a loop to manage the cars in the first lane of traffic. There's no need to have the loop running as fast as possible — that would make far too many cars — so I put in a little delay using ``wait_seconds`` so that the loop only runs ten times a second.
 
 Each time the loop goes around I ask for a random number between 0 and 1, and if it's below 0.2 then the Car sprite moves to just off the screen, left of the first lane, and makes a clone at this position.
 
