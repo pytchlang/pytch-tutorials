@@ -192,11 +192,11 @@ Later on I plan to add a title screen (and the bunny will start out waiting), bu
 
 {{< commit set-initial-mode-playing >}}
 
-Now I can set up the squashing code so that the bunny won't squash _again_ if it's already showing as squashed.
+Now I can set up the squishing code so that the bunny won't squish _again_ if it's already showing as squished.
 
 {{< commit guard-squishing-routine >}}
 
-You might not have tried this, but if you press the arrow keys when the bunny is squashed on the road the moving functions still run (of course they do, we didn't do anything to switch them off). That's not great!
+You might not have tried this, but if you press the arrow keys when the bunny is squished on the road the moving functions still run (of course they do, we didn't do anything to switch them off). That's not great!
 
 Now that the bunny knows when it's supposed to be letting the player play and when it's supposed to be squished, we can add a check ot each of the moving routines to skip through them if the bunny isn't supposed to move.
 
