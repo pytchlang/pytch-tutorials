@@ -257,6 +257,16 @@ calculation we did to find where to place each Block clone.
 
 {{< commit method-to-compute-pyramid-coords >}}
 
+This method *returns a value*, a bit like blocks such as
+*(mouse&nbsp;x)* in Scratch.  The value here is a pair of numbers.
+The first one is the row, and the second the block within that row.
+
+Nothing is using this method yet, though, so it's hard to tell if it's
+working correctly.  We'll make it so pressing `"w"` (for 'where') will
+print out where on the pyramid this code thinks we are:
+
+{{< commit add-diagnostics-for-coordinates >}}
+
 
 {{< work-in-progress >}}
 
