@@ -25,3 +25,4 @@ class Block(pytch.Sprite):
 
 class Qbert(pytch.Sprite):
     Costumes = ["qbert0.png", "qbert1.png", "qbert2.png", "qbert3.png"]
+    start_shown = False
