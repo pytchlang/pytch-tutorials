@@ -27,6 +27,7 @@ class Block(pytch.Sprite):
     def appear(self):
         self.set_size(0.875)
         self.switch_costume("block0")
+        self.is_lit_up = False
         self.show()
 
     @pytch.when_I_receive("check-block")
