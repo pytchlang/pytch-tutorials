@@ -62,6 +62,12 @@ class Qbert(pytch.Sprite):
 
         self.jumping = False
 
+    @pytch.when_I_receive("fall-off")
+    def disappear(self):
+        for i in range(100, 10, -5):
+            self.set_size(i / 100.0)
+        self.hide()
+
     @pytch.when_key_pressed("ArrowUp")
     def jump_up(self):
         self.jump(2, 3, "qbert0")
