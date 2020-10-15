@@ -33,4 +33,5 @@ class Qbert(pytch.Sprite):
     def go_to_starting_position(self):
         self.go_to_xy(-150 + 3 * 56, -145 + (6 * 42) + 28)
         self.switch_costume("qbert1")
+        self.go_to_front_layer()
         self.show()
