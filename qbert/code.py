@@ -53,6 +53,8 @@ class Qbert(pytch.Sprite):
         self.show()
         self.jumping = False
         self.fallen_off = False
+        global blocks_left
+        blocks_left = len(Block.all_clones())
 
     def pyramid_coordinates(self):
         y_on_stage = self.y_position
