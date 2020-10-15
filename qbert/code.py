@@ -25,3 +25,9 @@ class Qbert(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def start_hidden(self):
         self.hide()
+
+    @pytch.when_I_receive("set-up-qbert")
+    def go_to_starting_position(self):
+        self.go_to_xy(-150 + 3 * 56, -145 + (6 * 42) + 28)
+        self.switch_costume("qbert1")
+        self.show()
