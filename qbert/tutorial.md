@@ -128,8 +128,42 @@ The player will control Q\*bert with the arrow keys.  We'll start with
 the *down* arrow key, which will move Q\*bert 'southwest' on the
 screen.
 
-{{< work-in-progress >}}
+We want Q\*bert to face in the correct direction.  We can check in the
+*Images and sounds* tab to see which image this is — it's `"qbert2"`.
+We want Q\*bert to move 28 pixels to the left and 42 pixels up, which
+we'll do in 14 steps of "2 left, 3 up" to make the movement smoother.
 
+{{< commit move-down-on-arrow >}}
+
+And moving Q\*bert up is very similar:
+
+{{< commit move-up-on-arrow >}}
+
+If you try this now, it mostly works.  Q\*bert can move up and down
+(northeast and southwest on the screen), but there are two problems:
+
+- Q\*bert can go off the top or the bottom of the pyramid.
+- If you press the up-arrow key twice quickly, Q\*bert moves at twice
+  the speed.
+
+Because these problems affect moving up and moving down, it will make
+sense to fix them just in once place in the code.  Our first step is
+to *refactor* the code so the jumping logic only appears once.  That's
+what we'll do next.
+
+## Refactor
+
+If you compare the `jump_down()` and `jump_up()` methods, you'll
+notice they are very similar.  The differences are:
+
+- the costume is different
+- the amount we change *x* by is different
+- the amount we change *y* by is different
+
+
+{{< commit define-jump-method >}}
+
+{{< work-in-progress >}}
 
 Note that if you go down then back up, it says "25 left" which is
 wrong.  Double-count the original block.
