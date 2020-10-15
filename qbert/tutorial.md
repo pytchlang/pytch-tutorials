@@ -136,8 +136,8 @@ screen.
 
 We want Q\*bert to face in the correct direction.  We can check in the
 *Images and sounds* tab to see which image this is — it's `"qbert2"`.
-We want Q\*bert to move 28 pixels to the left and 42 pixels up, which
-we'll do in 14 steps of "2 left, 3 up" to make the movement smoother.
+We want Q\*bert to move 28 pixels to the left and 42 pixels down, which
+we'll do in 14 steps of "2 left, 3 down" to make the movement smoother.
 
 {{< commit move-down-on-arrow >}}
 
@@ -240,10 +240,13 @@ the extra *y* speeds:
 
 {{< commit define-bounce-list-of-y-speeds >}}
 
+Those extra bits of speed all add up to zero, so Q\*bert will still
+end up in the right place at the end of their jump.
+
 Again, we'll now see that it was worth our time to not have the
 jumping code copied out four times, because we only need to change the
-`jump()` method to include the right bounce amount, depending on what
-frame we're on:
+`jump()` method.  We include the right bounce amount when changing
+*y*, depending on what frame we're on:
 
 {{< commit bounce-when-moving >}}
 
@@ -261,9 +264,9 @@ calculation we did to find where to place each Block clone.
 
 {{< commit method-to-compute-pyramid-coords >}}
 
-This method *returns a value*, a bit like blocks such as
-*(mouse&nbsp;x)* in Scratch.  The value here is a pair of numbers.
-The first one is the row, and the second the block within that row.
+This method *returns a value*, like blocks such as *(mouse&nbsp;x)* in
+Scratch.  The value here is a pair of numbers.  The first one is the
+row, and the second the block within that row.
 
 Nothing is using this method yet, though, so it's hard to tell if it's
 working correctly.  We'll make it so pressing `"w"` (for 'where') will
@@ -494,6 +497,9 @@ already lit:
 This is now a playable game, although quite easy once you get the hang
 of it!  There's lots more you could do with it:
 
+- The player can keep making Q\*bert jump around the pyramid after
+  clearing the level, which looks odd.  What's the best way to handle
+  this?
 - Add challenges like were in the original, such as bouncy balls which
   you have to avoid.
 - Make there be more than one level.  Different levels could have
