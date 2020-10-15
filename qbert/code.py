@@ -52,6 +52,8 @@ class Block(pytch.Sprite):
 
                 global blocks_left
                 blocks_left -= 1
+                if blocks_left == 0:
+                    pytch.broadcast("level-cleared")
 
 
 class Qbert(pytch.Sprite):
