@@ -16,6 +16,8 @@ class Block(pytch.Sprite):
                 block_x = -150 + (b * 56) + (r * 28)
                 block_y = -145 + (r * 42)
                 self.go_to_xy(block_x, block_y)
+                self.pyramid_r = r
+                self.pyramid_b = b
                 pytch.create_clone_of(self)
         pytch.broadcast("set-up-qbert")
 
