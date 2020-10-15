@@ -17,3 +17,8 @@ class Block(pytch.Sprite):
                 block_y = -145 + (r * 42)
                 self.go_to_xy(block_x, block_y)
                 pytch.create_clone_of(self)
+
+    @pytch.when_I_start_as_a_clone
+    def appear(self):
+        self.set_size(0.875)
+        self.show()
