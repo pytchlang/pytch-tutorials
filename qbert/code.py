@@ -36,6 +36,8 @@ class Qbert(pytch.Sprite):
         self.jumping = False
 
     def jump(self, x_speed, y_speed, costume):
+        if self.jumping:
+            return
         self.jumping = True
         self.switch_costume(costume)
         for frame in range(14):
