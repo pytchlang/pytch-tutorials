@@ -17,6 +17,7 @@ class Block(pytch.Sprite):
                 self.go_to_xy(block_x, block_y)
                 pytch.create_clone_of(self)
         self.hide()
+        pytch.broadcast("set-up-qbert")
 
 
 class Qbert(pytch.Sprite):
