@@ -497,5 +497,3 @@ of it!  There's lots more you could do with it:
 - Add the safety discs of the original, which transport Q\*bert back
   to the top of the pyramid.
 
-{{< work-in-progress >}}
-
