@@ -25,6 +25,7 @@ class LevelClearedText(pytch.Sprite):
 
 class Block(pytch.Sprite):
     Costumes = ["block-unlit.png", "block-lit.png"]
+    Sounds = ["pop.mp3", "bell-ping.mp3"]
 
     @pytch.when_green_flag_clicked
     def create_pyramid(self):
