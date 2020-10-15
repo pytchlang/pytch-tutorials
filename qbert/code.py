@@ -47,6 +47,7 @@ class Block(pytch.Sprite):
         qbert_r, qbert_b = Qbert.the_original().pyramid_coordinates()
         if self.pyramid_r == qbert_r and self.pyramid_b == qbert_b:
             if self.costume_name == "block-unlit":
+                self.start_sound("bell-ping")
                 self.switch_costume("block-lit")
                 global blocks_left
                 blocks_left -= 1
