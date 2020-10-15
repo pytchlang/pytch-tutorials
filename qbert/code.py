@@ -47,7 +47,4 @@ class Qbert(pytch.Sprite):
 
     @pytch.when_key_pressed("ArrowDown")
     def jump_down(self):
-        self.switch_costume("qbert2")
-        for frame in range(14):
-            self.change_x(-2)
-            self.change_y(-3)
+        self.jump(-2, -3, "qbert2")
