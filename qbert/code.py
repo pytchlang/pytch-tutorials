@@ -58,3 +58,7 @@ class Qbert(pytch.Sprite):
     @pytch.when_key_pressed("ArrowLeft")
     def jump_left(self):
         self.jump(-2, 3, "qbert3")
+
+    @pytch.when_key_pressed("ArrowRight")
+    def jump_right(self):
+        self.jump(2, -3, "qbert1")
