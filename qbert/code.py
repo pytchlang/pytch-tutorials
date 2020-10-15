@@ -34,6 +34,7 @@ class Qbert(pytch.Sprite):
         self.switch_costume("qbert1")
         self.move_to_front_layer()
         self.show()
+        self.jumping = False
 
     def jump(self, x_speed, y_speed, costume):
         self.switch_costume(costume)
