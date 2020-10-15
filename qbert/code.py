@@ -10,6 +10,7 @@ class Background(pytch.Stage):
 
 class LevelClearedText(pytch.Sprite):
     Costumes = ["level-cleared-text.png"]
+    Sounds = ["fanfare.mp3"]
 
     @pytch.when_green_flag_clicked
     def start_hidden(self):
