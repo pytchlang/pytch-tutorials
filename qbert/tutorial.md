@@ -267,6 +267,18 @@ print out where on the pyramid this code thinks we are:
 
 {{< commit add-diagnostics-for-coordinates >}}
 
+Try this:
+
+- Switch to the *Output* tab.
+- Build and green-flag the project.
+- Move Q\*bert around, and press the `"w"` key to check the code is
+  working out Q\*bert's position correctly.
+
+Remember, row zero is the bottom row, and block zero is the far-left
+block on each row.
+
+You can come back to the tutorial by clicking on the *Tutorial* tab
+header.
 
 {{< work-in-progress >}}
 
