@@ -67,6 +67,7 @@ class Qbert(pytch.Sprite):
             pytch.broadcast("fall-off")
         else:
             self.jumping = False
+            pytch.broadcast_and_wait("check-block")
 
     @pytch.when_I_receive("fall-off")
     def disappear(self):
