@@ -10,6 +10,7 @@ class Background(pytch.Stage):
 
 class LevelClearedText(pytch.Sprite):
     Costumes = ["level-cleared-text.png"]
+    Sounds = ["fanfare.mp3"]
     start_shown = False
 
     @pytch.when_I_receive("level-cleared")
