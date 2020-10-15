@@ -53,6 +53,11 @@ class Qbert(pytch.Sprite):
         for frame in range(14):
             self.change_x(x_speed)
             self.change_y(y_speed + self.bounce[frame])
+
+        r, b = self.pyramid_coordinates()
+        if r < 0 or r >= 7 or b < 0 or b >= (7 - r):
+            pytch.broadcast("fall-off")
+
         self.jumping = False
 
     @pytch.when_key_pressed("ArrowUp")
