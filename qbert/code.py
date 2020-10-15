@@ -38,6 +38,9 @@ class Block(pytch.Sprite):
                 self.switch_costume("block1")
                 self.is_lit_up = True
 
+                global blocks_left
+                blocks_left -= 1
+
 
 class Qbert(pytch.Sprite):
     Costumes = ["qbert0.png", "qbert1.png", "qbert2.png", "qbert3.png"]
