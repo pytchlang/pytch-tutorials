@@ -20,6 +20,7 @@ class LevelClearedText(pytch.Sprite):
     def congratulate_player(self):
         self.go_to_xy(-150, 80)
         self.show()
+        self.start_sound("fanfare")
 
 
 class Block(pytch.Sprite):
