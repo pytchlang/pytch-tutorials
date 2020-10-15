@@ -58,6 +58,7 @@ class Qbert(pytch.Sprite):
 
         r, b = self.pyramid_coordinates()
         if r < 0 or r >= 7 or b < 0 or b >= (7 - r):
+            self.fallen_off = True
             pytch.broadcast("fall-off")
 
         self.jumping = False
