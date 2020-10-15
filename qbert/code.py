@@ -75,6 +75,7 @@ class Qbert(pytch.Sprite):
             pytch.broadcast("fall-off")
         else:
             pytch.broadcast_and_wait("check-block")
+            self.say("%d left" % blocks_left)
             self.jumping = False
 
     @pytch.when_I_receive("fall-off")
