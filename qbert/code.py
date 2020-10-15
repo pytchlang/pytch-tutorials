@@ -12,6 +12,11 @@ class LevelClearedText(pytch.Sprite):
     Costumes = ["level-cleared-text.png"]
     start_shown = False
 
+    @pytch.when_I_receive("level-cleared")
+    def congratulate_player(self):
+        self.go_to_xy(-150, 80)
+        self.show()
+
 
 class Block(pytch.Sprite):
     Costumes = ["block0.png", "block1.png"]
