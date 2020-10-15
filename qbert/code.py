@@ -23,6 +23,7 @@ class Block(pytch.Sprite):
     @pytch.when_I_start_as_a_clone
     def appear(self):
         self.set_size(0.875)
+        self.switch_costume("block0")
         self.show()
 
     @pytch.when_I_receive("check-block")
