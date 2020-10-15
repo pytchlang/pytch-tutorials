@@ -280,6 +280,60 @@ block on each row.
 You can come back to the tutorial by clicking on the *Tutorial* tab
 header.
 
+## Make Q\*bert fall off the pyramid
+
+Now we know what row and block Q\*bert is on, it's easy to tell
+whether they are actually on the pyramid or not.  If the row number is
+smaller than zero then Q\*bert has fallen off the bottom.  If the row
+number is seven or more, then Q\*bert has fallen off the top.  If
+the block number is less than zero, then Q\*bert has fallen off to the
+left.  The only slightly tricky one is telling whether Q\*bert has
+fallen off to the right — this happens if the block number is equal to
+or greater than the number of blocks in the row, which, as we worked
+out above, is (7&nbsp;−&nbsp;*r*).  We'll broadcast a message if
+Q\*bert falls off the pyramid at the end of their jump:
+
+{{< commit check-for-falling-off >}}
+
+If Q\*bert falls off, we'll make it so they disappear into the
+distance, by shrinking and then hiding altogether.  Here we're using a
+version of the Python `range()` function where we give the starting
+value as a percentage (here, 100), the stopping value as a percentage
+(here, 10), and the 'step', which here has to be negative to work down
+from 100 to 10 in steps of 5.  (In fact, Python stops just *before*
+the 'stop' value, but this will look fine for our use.)  In the loop,
+we'll turn the percentage into a value by dividing by 100.
+
+{{< commit define-disappear-method >}}
+
+If you try this now, you'll see that you can still jump around in a
+strange way while falling off.  We'll fix this by keeping track of
+whether Q\*bert is in the middle of falling off the pyramid, with
+another 'instance variable' which we'll initialise in the green-flag
+method:
+
+{{< commit initialise-fallen-off >}}
+
+Then we set the variable to `True` if we work out that Q\*bert has
+fallen off the pyramid:
+
+{{< commit record-when-falling-off >}}
+
+And finally, we abandon the `jump()` method early if we've fallen off,
+by extending the *am I already jumping?* test to *am I already
+jumping, or falling off?*, like this:
+
+{{< commit forbid-movement-when-falling-off >}}
+
+If you play the game, fall off, then click green-flag to try again,
+you'll see that Q\*bert is the wrong size.  We need to set their size
+correctly in the green-flag method `go_to_starting_position()`:
+
+{{< commit set-Qbert-full-size-when-starting >}}
+
+
+## NEXT
+
 {{< work-in-progress >}}
 
 Note that if you go down then back up, it says "25 left" which is
