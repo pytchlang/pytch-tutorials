@@ -285,7 +285,10 @@ Remember, row zero is the bottom row, and block zero is the far-left
 block on each row.
 
 You can come back to the tutorial by clicking on the *Tutorial* tab
-header.
+header.  Once you're happy that the calculations are correct, you can
+remove the temporary code:
+
+{{< commit remove-pyramid-coords-diagnostics >}}
 
 ## Make Q\*bert fall off the pyramid
 
