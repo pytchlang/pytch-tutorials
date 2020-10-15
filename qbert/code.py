@@ -16,6 +16,7 @@ class Block(pytch.Sprite):
                 self.go_to_xy(-150 + (b * 56) + (r * 28),
                               -145 + (r * 42))
                 pytch.create_clone_of(self)
+        pytch.broadcast("set-up-qbert")
 
     @pytch.when_I_start_as_a_clone
     def appear(self):
