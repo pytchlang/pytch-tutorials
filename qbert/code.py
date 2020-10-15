@@ -22,6 +22,7 @@ class LevelClearedText(pytch.Sprite):
 
 class Block(pytch.Sprite):
     Costumes = ["block0.png", "block1.png"]
+    Sounds = ["pop.mp3", "bell-ping.mp3"]
     start_shown = False
 
     @pytch.when_green_flag_clicked
