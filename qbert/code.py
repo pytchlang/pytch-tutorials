@@ -58,6 +58,8 @@ class Block(pytch.Sprite):
                 blocks_left -= 1
                 if blocks_left == 0:
                     pytch.broadcast("level-cleared")
+            else:
+                self.start_sound("pop")
 
 
 class Qbert(pytch.Sprite):
