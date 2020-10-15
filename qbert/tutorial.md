@@ -361,9 +361,141 @@ broadcast the message:
 We use `broadcast_and_wait()` to make sure the block checking has
 happened before allowing Q\*bert to move again.
 
-## NEXT
+If you try this now, it seems to work OK, but if you fall off then try
+again with green-flag, all the blocks are lit up already!  We need to
+make sure each blocks starts off in its un-lit-up costume:
+
+{{< commit start-Block-with-unjumped-costume >}}
+
+## Checking Q\*bert's progress
+
+This is now working quite well, but we need a way to tell whether
+Q\*bert has cleared the level.  We'll track the number of un-lit-up
+blocks Q\*bert still has left to jump on.  We'll store this number in
+a *global variable*, which is one that all sprites have access to.  We
+define it at the start of the code, outside any `class`:
+
+{{< commit initialise-blocks-left-counter >}}
+
+This might look strange, since at the start of the game there are
+definitely *not* zero un-lit-up blocks.  What we'll do is make Q\*bert
+count the blocks as soon as the pyramid has been made:
+
+{{< commit count-initial-number-blocks-left >}}
+
+There are a couple of things to notice here:
+
+- We need to tell Python that it's the global variable `blocks_left`
+  we want to set the value of, not make a new local variable.
+- We use the `all_clones()` method on the `Block` *class*, which is a
+  Pytch built-in giving us a list of all the live clones of that
+  class.  We're only interested in how many clones there are, so we
+  find the length of that list with the Python built-in `len()`.
+
+We're now going to make each block clone keep track of whether it's
+lit up.  We'll set the value of a new instance variable `is_lit_up`
+when the clone starts up:
+
+{{< commit record-whether-block-lit-up >}}
+
+Now, when a block works out that it's the one Q\*bert has landed on,
+we'll first check whether we're already lit up, and only if *not*, do
+we switch costume to the lit-up one.  We also then record the fact
+that this clone has lit up.
+
+{{< commit only-light-up-if-not-already >}}
+
+When lighting up a block, we can decrease by one the number of blocks
+left to light up.  Again, we have to tell Python that it's the global
+`blocks_left` variable we want to work with:
+
+{{< commit decrement-blocks-left-when-newly-lit-up >}}
+
+To check this is working, we'll make Q\*bert say the number of blocks
+which are left to light up:
+
+{{< commit temporarily-say-blocks-left-count >}}
+
+If you run this now, it mostly works, except that when you land on the
+very top block, the count drops by *two* instead of one.  What's
+happening is that the *original* instance of *Block* is updating the
+count, as well as the clone which was created there.  We'll fix this
+by making the original *Block* think it's in a nonsense position.
+This isn't a very elegant way of solving this problem, but it will
+work:
+
+{{< commit set-original-Block-coords-to-invalid-values >}}
+
+Once you're happy this is working, you can remove the diagnostic
+speech bubble:
+
+{{< commit remove-blocks-left-diagnostic >}}
+
+## Winning the game!
+
+When Q\*bert has lit up all the blocks, we want to congratulate the
+player.  We'll do this with a sprite with a message as its costume:
+
+{{< commit add-LevelClearedText-with-costume >}}
+
+This Sprite should start off not shown:
+
+{{< commit start-LevelClearedText-not-shown >}}
+
+And we'll define a simple method which puts the sprite in a useful
+place and shows it when a message is broadcast:
+
+{{< commit define-show-LevelClearedText-method >}}
+
+The only time the level might have been cleared is just after a new
+block has been lit up, so at that point we'll check whether there are
+zero blocks left, and send the `"level-cleared"` message if so:
+
+{{< commit check-for-level-cleared-then-announce >}}
+
+
+## Making some noise
+
+The game is now playable, but to make it more interesting we'll
+include some sounds.  We'll start with a victory sound, which will be
+a trumpet fanfare.  The 'level cleared' announcement sprite is a
+reasonable one for this sound to belong to:
+
+{{< commit define-LevelClearedText-fanfare-sound >}}
+
+And we want to play this sound at the same time as showing the
+message:
+
+{{< commit play-fanfare-when-level-cleared >}}
+
+The other sounds will belong to the *Block* sprite, and will play when
+a block is landed on by Q\*bert.  We'll make different noises
+depending on whether the block was already lit up, so we declare two
+sounds for the *Block* sprite:
+
+{{< commit define-pop-ping-sounds >}}
+
+If a block is lighting up, then we'll play the bell:
+
+{{< commit play-ping-for-newly-lit-up >}}
+
+and if a block is already lit up, we'll play the pop.  We do this by
+adding an `else` clause to the `if` test for whether the block is
+already lit:
+
+{{< commit play-pop-for-already-lit-up >}}
+
+## Challenges
+
+This is now a playable game, although quite easy once you get the hang
+of it!  There's lots more you could do with it:
+
+- Add challenges like were in the original, such as bouncy balls which
+  you have to avoid.
+- Make there be more than one level.  Different levels could have
+  different colour schemes.
+- Add the safety discs of the original, which transport Q\*bert back
+  to the top of the pyramid.
 
 {{< work-in-progress >}}
 
-Note that if you go down then back up, it says "25 left" which is
-wrong.  Double-count the original block.
