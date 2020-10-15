@@ -11,6 +11,10 @@ class Background(pytch.Stage):
 class LevelClearedText(pytch.Sprite):
     Costumes = ["level-cleared-text.png"]
 
+    @pytch.when_green_flag_clicked
+    def start_hidden(self):
+        self.hide()
+
 
 class Block(pytch.Sprite):
     Costumes = ["block-unlit.png", "block-lit.png"]
