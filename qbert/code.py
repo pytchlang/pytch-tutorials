@@ -22,6 +22,8 @@ class Block(pytch.Sprite):
                 self.pyramid_b = b
                 pytch.create_clone_of(self)
         self.hide()
+        self.pyramid_r = -1
+        self.pyramid_b = -1
         pytch.broadcast("set-up-qbert")
 
     @pytch.when_I_receive("check-block")
