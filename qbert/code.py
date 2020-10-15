@@ -28,6 +28,9 @@ class Qbert(pytch.Sprite):
     Costumes = ["qbert0.png", "qbert1.png", "qbert2.png", "qbert3.png"]
     start_shown = False
 
+    # This list must have exactly 14 entries.
+    bounce = [6, 4, 2, 1, 0, 0, 0, 0, 0, 0, -1, -2, -4, -6]
+
     @pytch.when_I_receive("set-up-qbert")
     def go_to_starting_position(self):
         self.go_to_xy(-150 + 3 * 56, -145 + (6 * 42) + 28)
