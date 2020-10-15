@@ -162,8 +162,101 @@ notice they are very similar.  The differences are:
 - the amount we change *x* by is different
 - the amount we change *y* by is different
 
+We'll create a `jump()` method which can work with different values
+for these three things.  This is very much like a custom block in
+Scratch.
 
 {{< commit define-jump-method >}}
+
+And now we can simplify the original `jump_up()` method, by calling
+our new method with the right values for the *x*-speed, *y*-speed, and
+costume name:
+
+{{< commit simplify-jump-up-method >}}
+
+We can simplify the `jump_down()` method in the same way:
+
+{{< commit simplify-jump-down-method >}}
+
+## Fix the 'double speed jump' problem
+
+Now there's only one place we'll need to look at to fix the first of
+our problems, which was that quickly pressing an arrow key twice makes
+Q\*bert move at double speed.  We only need to look at the `jump()`
+method.
+
+The problem is that the player might press an arrow key while we're in
+the middle of doing the jump.  We'll fix this by recording whether
+we're in the middle of a jump, and ignoring arrow key presses if we
+are.
+
+The first step is to create an *instance variable*, which is very much
+like a 'for this sprite only' variable in Scratch.  When we're setting
+Q\*bert up (in response to the `"set-up-qbert"` message), we'll set
+this variable to say we are *not* currently jumping:
+
+{{< commit initialise-jumping-slot >}}
+
+Then the first thing we'll do when jumping is to record that we are
+jumping, and then record that we're *not* jumping once we've finished
+that jump:
+
+{{< commit note-when-jumping >}}
+
+Now we can just leave the `jump()` method early, without doing
+anything, if we're already mid-jump:
+
+{{< commit do-not-jump-if-already-jumping >}}
+
+(There's still the problem of being able to go off the top or bottom
+of the pyramid.  We'll get to that later.)
+
+## Finish the movement controls: left and right
+
+With this done, it's now quite easy to let the player move in the
+other two directions.
+
+We handle the `ArrowLeft` keypress to let the player move Q\*bert
+left, which is northwest on the screen:
+
+{{< commit move-left-on-arrow >}}
+
+and the `ArrowRight` keypress to let the player move Q\*bert right,
+which is southeast on the screen:
+
+{{< commit move-right-on-arrow >}}
+
+## Add a little bounce to the jump
+
+To make the game look better, we'll add a bounce to Q\*bert's
+movement.  We want a bit of extra upwards speed in the *y* direction
+at the start of a jump, and a bit of extra downwards speed at the end
+of a jump.  Each jump is 14 frames long, so we'll define a *list* of
+the extra *y* speeds:
+
+{{< commit define-bounce-list-of-y-speeds >}}
+
+Again, we'll now see that it was worth our time to not have the
+jumping code copied out four times, because we only need to change the
+`jump()` method to include the right bounce amount, depending on what
+frame we're on:
+
+{{< commit bounce-when-moving >}}
+
+With this, the movement looks a lot better.
+
+## Work out where on the pyramid we are
+
+We'll now work on the second problem we noticed, which was that
+Q\*bert can jump right off the top, bottom, or sides of the pyramid.
+We'll make a method which works out which row we're on, and which
+block within that row.  There's more maths here, to 'undo' the
+calculation we did to find where to place each Block clone.
+
+**TODO: Do we need to explain that?**
+
+{{< commit method-to-compute-pyramid-coords >}}
+
 
 {{< work-in-progress >}}
 
