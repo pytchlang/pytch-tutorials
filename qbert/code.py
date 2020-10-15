@@ -7,3 +7,4 @@ class Background(pytch.Stage):
 
 class Block(pytch.Sprite):
     Costumes = ["block0.png", "block1.png"]
+    start_shown = False
