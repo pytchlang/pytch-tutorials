@@ -48,7 +48,7 @@ class Qbert(pytch.Sprite):
         return (pyramid_r, pyramid_b)
 
     def jump(self, x_speed, y_speed, costume):
-        if self.jumping:
+        if self.jumping or self.fallen_off:
             return
         self.jumping = True
         self.switch_costume(costume)
