@@ -47,6 +47,8 @@ class Block(pytch.Sprite):
                 self.switch_costume("block-lit")
                 global blocks_left
                 blocks_left -= 1
+                if blocks_left == 0:
+                    pytch.broadcast("level-cleared")
 
 
 class Qbert(pytch.Sprite):
