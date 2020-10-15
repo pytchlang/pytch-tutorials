@@ -151,7 +151,7 @@ sense to fix them just in once place in the code.  Our first step is
 to *refactor* the code so the jumping logic only appears once.  That's
 what we'll do next.
 
-## Refactor
+## Refactor the jumping code
 
 If you compare the `jump_down()` and `jump_up()` methods, you'll
 notice they are very similar.  The differences are:
