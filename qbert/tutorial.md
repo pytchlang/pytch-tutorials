@@ -108,6 +108,8 @@ so we'll define a method which will listen out for a `"set-up-qbert"`
 message.  This method will make Q\*bert move to the top block, face
 downhill, and show themselves:
 
+**TODO: Explain extra offset of 28.**
+
 {{< commit initialise-Qbert-position >}}
 
 This should happen once the pyramid is ready for Q\*bert, so we'll go
