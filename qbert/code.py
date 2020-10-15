@@ -8,6 +8,10 @@ class Background(pytch.Stage):
     Backdrops = ["background.png"]
 
 
+class LevelClearedText(pytch.Sprite):
+    Costumes = ["level-cleared-text.png"]
+
+
 class Block(pytch.Sprite):
     Costumes = ["block0.png", "block1.png"]
     start_shown = False
