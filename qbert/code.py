@@ -35,6 +35,13 @@ class Qbert(pytch.Sprite):
         self.move_to_front_layer()
         self.show()
 
+    @pytch.when_key_pressed("ArrowUp")
+    def jump_up(self):
+        self.switch_costume("qbert0")
+        for frame in range(14):
+            self.change_x(2)
+            self.change_y(3)
+
     @pytch.when_key_pressed("ArrowDown")
     def jump_down(self):
         self.switch_costume("qbert2")
