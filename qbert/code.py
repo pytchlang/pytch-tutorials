@@ -1,6 +1,9 @@
 import pytch
 
 
+blocks_left = 0
+
+
 class Background(pytch.Stage):
     Backdrops = ["background.png"]
 
