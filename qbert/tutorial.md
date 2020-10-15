@@ -331,6 +331,35 @@ correctly in the green-flag method `go_to_starting_position()`:
 
 {{< commit set-Qbert-full-size-when-starting >}}
 
+## Lighting up the blocks Q\*bert lands on
+
+Since the block is the actor which is going to need to do something
+when it's landed on, we'll do this work in the *Block* class.  We're
+going to define a method which checks whether the clone's position is
+equal to Q\*bert's.  If it is, that block has been landed on and
+should switch to the lit-up costume.
+
+But first, we need to make each *Block* clone know its own position.
+We'll set new instance variables in the original *Block* just before
+making the clone:
+
+{{< commit record-row-block-for-clone >}}
+
+Now each *Block* clone has this information, we can define a method
+which tests whether that *Block* is the one Q\*bert is on.  We'll find
+the original (in fact, only) Q\*bert instance, and ask it for its
+coordinates in pyramid row/block terms, then check whether the Block's
+row-number and block-number match.  If so, light up!
+
+{{< commit define-Block-check-landed-on-method >}}
+
+All we need to do now is launch this method by making Q\*bert
+broadcast the message:
+
+{{< commit check-block-if-not-fallen-off >}}
+
+We use `broadcast_and_wait()` to make sure the block checking has
+happened before allowing Q\*bert to move again.
 
 ## NEXT
 
