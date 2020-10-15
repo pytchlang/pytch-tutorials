@@ -30,6 +30,8 @@ class Block(pytch.Sprite):
         if self.pyramid_r == qbert_r and self.pyramid_b == qbert_b:
             if self.costume_name == "block-unlit":
                 self.switch_costume("block-lit")
+                global blocks_left
+                blocks_left -= 1
 
 
 class Qbert(pytch.Sprite):
