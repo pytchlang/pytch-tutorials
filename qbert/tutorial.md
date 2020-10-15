@@ -17,7 +17,11 @@ Many thanks to the Raspberry Pi Press for making the contents of their
 *Wireframe* magazine available under a Creative Commons licence.  We
 have used their code for inspiration, and also the images.
 
-TODO: asset-credits shortcode
+Many thanks to Freesound users *greenvwbeetle*, *Robinhood76*, and
+*InspectorJ* for making their sound effects available under friendly
+licences.
+
+TODO: Make an `asset-credits` shortcode, to generate full details.
 
 {{< run-finished-project >}}
 
