@@ -503,6 +503,9 @@ of it!  There's lots more you could do with it:
 - The player can keep making Q\*bert jump around the pyramid after
   clearing the level, which looks odd.  What's the best way to handle
   this?
+- When Q\*bert falls off the pyramid, they just get smaller.  It would
+  look better if they looked like they carried on falling, at an
+  increasing speed.
 - Add challenges like were in the original, such as bouncy balls which
   you have to avoid.
 - Make there be more than one level.  Different levels could have
