@@ -50,6 +50,7 @@ class Block(pytch.Sprite):
         qbert_r, qbert_b = Qbert.the_original().pyramid_coordinates()
         if self.pyramid_r == qbert_r and self.pyramid_b == qbert_b:
             if not self.is_lit_up:
+                self.start_sound("bell-ping")
                 self.switch_costume("block1")
                 self.is_lit_up = True
 
