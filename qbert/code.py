@@ -21,3 +21,7 @@ class Block(pytch.Sprite):
 
 class Qbert(pytch.Sprite):
     Costumes = ["qbert0.png", "qbert1.png", "qbert2.png", "qbert3.png"]
+
+    @pytch.when_green_flag_clicked
+    def start_hidden(self):
+        self.hide()
