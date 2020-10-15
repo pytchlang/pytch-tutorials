@@ -491,7 +491,7 @@ If a block is lighting up, then we'll play the bell:
 
 and if a block is already lit up, we'll play the pop.  We do this by
 adding an `else` clause to the `if` test for whether the block is
-already lit:
+newly lit:
 
 {{< commit play-pop-for-already-lit-up >}}
 
