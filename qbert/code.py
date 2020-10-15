@@ -40,6 +40,13 @@ class Qbert(pytch.Sprite):
         self.show()
         self.jumping = False
 
+    def pyramid_coordinates(self):
+        y_on_stage = self.get_y()
+        pyramid_r = (y_on_stage + 145 - 28) / 42
+        x_on_stage = self.get_x()
+        pyramid_b = (x_on_stage + 150 - pyramid_r * 28) / 56
+        return (pyramid_r, pyramid_b)
+
     def jump(self, x_speed, y_speed, costume):
         if self.jumping:
             return
