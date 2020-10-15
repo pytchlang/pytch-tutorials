@@ -25,6 +25,12 @@ class Block(pytch.Sprite):
         self.set_size(0.875)
         self.show()
 
+    @pytch.when_I_receive("check-block")
+    def check_whether_landed_on(self):
+        qbert_r, qbert_b = Qbert.the_original().pyramid_coordinates()
+        if self.pyramid_r == qbert_r and self.pyramid_b == qbert_b:
+            self.switch_costume("block1")
+
 
 class Qbert(pytch.Sprite):
     Costumes = ["qbert0.png", "qbert1.png", "qbert2.png", "qbert3.png"]
