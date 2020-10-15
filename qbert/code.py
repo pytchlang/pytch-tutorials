@@ -36,10 +36,12 @@ class Qbert(pytch.Sprite):
         self.jumping = False
 
     def jump(self, x_speed, y_speed, costume):
+        self.jumping = True
         self.switch_costume(costume)
         for frame in range(14):
             self.change_x(x_speed)
             self.change_y(y_speed)
+        self.jumping = False
 
     @pytch.when_key_pressed("ArrowUp")
     def jump_up(self):
