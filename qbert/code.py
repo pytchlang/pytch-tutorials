@@ -22,3 +22,7 @@ class Block(pytch.Sprite):
     def appear(self):
         self.set_size(0.875)
         self.show()
+
+
+class Qbert(pytch.Sprite):
+    Costumes = ["qbert0.png", "qbert1.png", "qbert2.png", "qbert3.png"]
