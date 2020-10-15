@@ -70,6 +70,8 @@ class Qbert(pytch.Sprite):
         if r < 0 or r >= 7 or b < 0 or b >= (7 - r):
             self.fallen_off = True
             pytch.broadcast("fall-off")
+        else:
+            pytch.broadcast_and_wait("check-block")
 
         self.jumping = False
 
