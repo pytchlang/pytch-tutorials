@@ -35,7 +35,9 @@ class Block(pytch.Sprite):
     def check_whether_landed_on(self):
         qbert_r, qbert_b = Qbert.the_original().pyramid_coordinates()
         if self.pyramid_r == qbert_r and self.pyramid_b == qbert_b:
-            self.switch_costume("block1")
+            if not self.is_lit_up:
+                self.switch_costume("block1")
+                self.is_lit_up = True
 
 
 class Qbert(pytch.Sprite):
