@@ -21,7 +21,9 @@ Many thanks to Freesound users *greenvwbeetle*, *Robinhood76*, and
 *InspectorJ* for making their sound effects available under friendly
 licences.
 
-TODO: Make an `asset-credits` shortcode, to generate full details.
+### Detailed credits
+
+{{< asset-credits >}}
 
 {{< run-finished-project >}}
 
