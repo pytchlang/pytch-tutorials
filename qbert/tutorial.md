@@ -1,6 +1,7 @@
 # Q*bert: Recreate the cube-hopping action
 
-As Mark Vanstone explains in issue 42 of Wireframe:
+As Mark Vanstone explains in [Issue 42 of Wireframe
+magazine](https://wireframe.raspberrypi.org/issues/42):
 
 > Late in 1982, a funny little orange character with a big nose landed
 > in arcades.  The titular Q*bert’s task was to jump around a network of
