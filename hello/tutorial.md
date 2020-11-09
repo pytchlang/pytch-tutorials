@@ -39,6 +39,8 @@ thing). In Pytch we can do that by making a new "class" and giving it a name.
 For this example I've chosen the name "Snake" but really you could name it
 nearly anything you like.
 
+Notice that the line ends with a ":" marker. There is more to come in the definition of Snake, and this symbol is how we tell Pytch that there will be more to the Snake class.
+
 {{< commit create-snake-class >}}
 
 ## Adding a costume
@@ -85,6 +87,8 @@ Now, we haven't yet told Pytch when it should run this script. We need
 to attach a "hat" block to it, something that tells Pytch to run the
 script at the right time. We can set this script to run when the Snake
 sprite is clicked on.
+
+{{< commit when-clicked >}}
 
 ## Running the Project
 
