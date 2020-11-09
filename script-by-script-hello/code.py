@@ -7,4 +7,4 @@ class Stage(pytch.Stage):
 
 
 class Snake(pytch.Sprite):
-    Costumes = []
+    Costumes = ["Pytch-hello-snake.png"]
