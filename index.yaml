@@ -1,5 +1,7 @@
 # Which tutorials to present in the start-up "List of tutorials" tab.
 
+- name: Hello world!
+  tip-commit: bn/hello-01
 - name: Q*bert
   tip-commit: bn/qbert-02
 - name: Bunner
