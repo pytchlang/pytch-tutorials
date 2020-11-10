@@ -4,6 +4,8 @@ In this tutorial we will learn about how to create and run a Pytch project with 
 
 ---
 
+## Writing a Pytch program
+
 Pytch programs are written in a programming language called Python, to
 which we have added extra commands for Sprites, sounds, and other
 things. You make a Pytch project by writing a Python program using the
