@@ -27,8 +27,6 @@ them in exactly the places where they are shown.
 
 {{< commit import-specifics >}}
 
----
-
 ## Creating the Sprite
 
 We'll start with the sprite that the player will control.
