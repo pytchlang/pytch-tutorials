@@ -7,6 +7,7 @@ class Bird(pytch.Sprite):
     Costumes = ['Bird.png']
 
     start_shown = False
+    speed = 3
 
     @pytch.when_green_flag_clicked
     def start(self):
