@@ -7,6 +7,7 @@ class Sky(pytch.Stage):
 
 class Bird(pytch.Sprite):
     Costumes = ["bird.png"]
+    speed = 3
 
     @pytch.when_green_flag_clicked
     def start(self):
