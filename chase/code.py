@@ -43,3 +43,5 @@ class Star(pytch.Sprite):
         self.go_to_xy(-100,100)
         while True:
             self.show()
+            destination_x = random.randint(-320+66,320-66)
+            destination_y = random.randint(-240+51,240-51)
