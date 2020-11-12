@@ -64,3 +64,9 @@ class Star(pytch.Sprite):
             self.change_x(stepx)
             self.change_y(stepy)
             pytch.wait_seconds(wait)
+
+    @pytch.when_green_flag_clicked
+    def check_caught(self):
+        while True:
+            if self.touching(Bird):
+                self.hide()
