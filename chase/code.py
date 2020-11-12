@@ -34,6 +34,12 @@ class Bird(pytch.Sprite):
     def move_down(self):
         self.change_y(-self.speed)
 
+    @pytch.when_green_flag_clicked
+    def check_catch(self):
+        while True:
+            if self.touching(Star):
+                self.say_for_seconds("Got you!", 2)
+
 
 class Star(pytch.Sprite):
     Costumes = ["star.png"]
