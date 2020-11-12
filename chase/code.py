@@ -5,3 +5,5 @@ class Sky(pytch.Stage):
 
 class Bird(pytch.Sprite):
     Costumes = ['Bird.png']
+
+    start_shown = False
