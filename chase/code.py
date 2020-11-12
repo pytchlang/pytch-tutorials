@@ -54,3 +54,7 @@ class Star(pytch.Sprite):
         wait = 1.0 / steps_per_sec
         stepx = (x - self.get_x()) / float(steps)
         stepy = (y - self.get_y()) / float(steps)
+        for _ in range(steps):
+            self.change_x(stepx)
+            self.change_y(stepy)
+            pytch.wait_seconds(wait)
