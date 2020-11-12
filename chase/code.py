@@ -13,3 +13,7 @@ class Bird(pytch.Sprite):
     def start(self):
         self.go_to_xy(0, 0)
         self.set_size(0.3)
+
+    @pytch.when_key_pressed("ArrowRight")
+    def move_right(self):
+        self.change_x(self.speed)
