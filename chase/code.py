@@ -36,3 +36,8 @@ class Star(pytch.Sprite):
     Costumes = ['Star.png']
 
     start_shown = False
+
+    @pytch.when_green_flag_clicked
+    def play(self):
+        self.set_size(0.4)
+        self.go_to_xy(-100,100)
