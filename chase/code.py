@@ -18,3 +18,15 @@ class Bird(pytch.Sprite):
     @pytch.when_key_pressed('ArrowRight')
     def move_right(self):
         self.change_x( self.speed )
+
+    @pytch.when_key_pressed('ArrowLeft')
+    def move_left(self):
+        self.change_x( -self.speed )
+
+    @pytch.when_key_pressed('ArrowUp')
+    def move_up(self):
+        self.change_y( +self.speed )
+
+    @pytch.when_key_pressed('ArrowDown')
+    def move_down(self):
+        self.change_y( -self.speed )
