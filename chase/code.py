@@ -8,6 +8,7 @@ class Sky(pytch.Stage):
 
 class Bird(pytch.Sprite):
     Costumes = ["bird.png"]
+    Sounds = ["honk.wav"]
 
     start_shown = False
     speed = 3
