@@ -50,3 +50,5 @@ class Star(pytch.Sprite):
 
     def glide_to(self, x, y, seconds):
         steps_per_sec = 25
+        steps = seconds * steps_per_sec
+        wait = 1.0 / steps_per_sec
