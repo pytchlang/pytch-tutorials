@@ -43,3 +43,5 @@ class Star(pytch.Sprite):
     def play(self):
         self.go_to_xy(-100, 100)
         self.set_size(0.4)
+        while True:
+            self.show()
