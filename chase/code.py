@@ -30,3 +30,9 @@ class Bird(pytch.Sprite):
     @pytch.when_key_pressed('ArrowDown')
     def move_down(self):
         self.change_y( -self.speed )
+
+
+class Star(pytch.Sprite):
+    Costumes = ['Star.png']
+
+    start_shown = False
