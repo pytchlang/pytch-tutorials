@@ -50,3 +50,9 @@ class Star(pytch.Sprite):
             destination_x = random.randint(-240, 240)
             destination_y = random.randint(-180, 180)
             self.glide_to_xy(destination_x, destination_y, 2)
+
+    @pytch.when_green_flag_clicked
+    def check_caught(self):
+        while True:
+            if self.touching(Bird):
+                self.hide()
