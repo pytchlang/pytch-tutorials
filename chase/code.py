@@ -37,6 +37,7 @@ class Bird(pytch.Sprite):
         pytch.wait_seconds(0.1)
         while True:
             if self.touching(Star):
+                self.start_sound("honk")
                 self.say_for_seconds("Got you!", 2)
 
 
