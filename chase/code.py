@@ -49,3 +49,6 @@ class Star(pytch.Sprite):
             destination_x = random.randint(-320 + 66, 320 - 66)
             destination_y = random.randint(-240 + 51, 240 - 51)
             self.glide_to(destination_x, destination_y, 2)
+
+    def glide_to(self, x, y, seconds):
+        steps_per_sec = 25
