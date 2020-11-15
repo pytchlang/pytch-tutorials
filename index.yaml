@@ -2,6 +2,8 @@
 
 - name: Hello world!
   tip-commit: bn/hello-01
+- name: Chase!
+  tip-commit: gs/chase-02
 - name: Q*bert
   tip-commit: bn/qbert-02
 - name: Bunner
