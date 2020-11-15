@@ -74,7 +74,8 @@ size, from 1 (full size) to 0 (so small you can't see it).
 ### Making the bird move
 
 The next job is to let the bird move around the stage so that it can
-chase something. I will let the player use the arrow keys to move it around.
+chase something. I will let the player use the arrow keys to move it
+around.
 
 Before I do that I am going to set up a variable that I will use to
 control the speed the bird moves at. I don't _have_ to set my project
@@ -92,9 +93,9 @@ make a script (I have to give it a name, Python needs that), and I
 mark it with some code that lets Pytch know this script gets run when
 the right-arrow key is pressed.
 
-I can make the Bird sprite move using the ``change_x``
-function. Notice how I'm using the ``speed`` variable that's defined
-as part of the Bird to say how far the bird will move.
+I can make the Bird sprite move using the ``change_x`` function.
+Notice how I'm using the ``speed`` variable that's defined as part of
+the Bird to say how far the bird will move.
 
 {{< commit bird-move-right >}}
 
@@ -157,7 +158,8 @@ command. A ``while`` loop has something it checks each time, and it
 will repeat its code as long as that thing is true. Normally you put
 something that could be different each time it's checked (for example,
 something that checks the ``x`` position of a Sprite) but if you want
-the code to repeat forever you can just write ``True`` there and it will always be true!
+the code to repeat forever you can just write ``True`` there and it
+will always be true!
 
 Notice the ``:`` at the end of the line. Like classes and script
 definitions, this loop will have more commands inside it (which will
@@ -165,7 +167,10 @@ be the stuff to be repeated over and over).
 
 {{< commit add-infinite-loop >}}
 
-Now I want to pick a random location on the stage. Python has a way to make random numbers, so if I just pick two x and y numbers they can be the destination for the star to move towards. When the star gets there the loop will repeat and a new destination will be chosen.
+Now I want to pick a random location on the stage. Python has a way to
+make random numbers, so if I just pick two x and y numbers they can be
+the destination for the star to move towards. When the star gets there
+the loop will repeat and a new destination will be chosen.
 
 The ``random.randint()`` function in Python selects a random number
 between two points (so ``random.randint(10, 20)`` will pick a number
@@ -227,8 +232,8 @@ number by guessing!)
 
 {{< commit define-glide-to-with-steps-per-sec >}}
 
-then we can calculate some other variables. First, the number of total times
-we will move, and the number of seconds that we have to wait
+then we can calculate some other variables. First, the number of total
+times we will move, and the number of seconds that we have to wait
 in-between steps.
 
 {{< commit define-steps-and-wait >}}
@@ -264,7 +269,7 @@ the bird catches the Star!
 ## Catching the Star
 
 Pytch has a method called ``touching`` that checkes to see if two
-Sprites are touching each other. 
+Sprites are touching each other.
 
 We could check this every time the Bird moves to see if it has caught
 up with the Star. But we would also have to check it every time the
@@ -278,7 +283,7 @@ code. I'll use the same idea that the ``play`` method had to keep
 checking.
 
 This script should start up as soon as the game begins, so I give it
-the same "green flag" hat as the ``start`` and ``play`` methods. 
+the same "green flag" hat as the ``start`` and ``play`` methods.
 
 {{< commit bird-checks-for-catching-says-gotcha >}}
 
