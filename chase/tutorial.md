@@ -41,7 +41,7 @@ backdrop.
 Next we will make the bird character that the player will control. The
 first step is to make a new Sprite and give it a costume. The costume
 we are using is already in the project assets so we just need to make
-sure pytch knows which costume is for this Sprite.
+sure Pytch knows which costume is for this Sprite.
 
 {{< commit add-Bird-with-costumes >}}
 
@@ -169,7 +169,7 @@ Now I want to pick a random location on the stage. Python has a way to make rand
 
 The ``random.randint()`` function in Python selects a random number
 between two points (so ``random.randint(10,20)`` will pick a number
-between 10 and 20). The pytch Stage has x coordinates from -320 to
+between 10 and 20). The Pytch Stage has x coordinates from -320 to
 +320, but because it's the _center_ of the star that will move to the
 chosen point I do a little arithmetic so that the _edge_ of the star
 is never off the stage. By measuring the costume I know that the
