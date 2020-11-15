@@ -90,7 +90,7 @@ working nicely we can copy it to move in the other directions. I want
 this code to run whenever the player presses the right-arrow key, so I
 make a script (I have to give it a name, Python needs that), and I
 mark it with some code that lets Pytch know this script gets run when
-the left-arrow key is pressed.
+the right-arrow key is pressed.
 
 I can make the Bird sprite move using the ``change_x``
 function. Notice how I'm using the ``speed`` variable that's defined
