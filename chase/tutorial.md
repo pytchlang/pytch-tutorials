@@ -98,7 +98,7 @@ as part of the Bird to say how far the bird will move.
 
 {{< commit bird-move-right >}}
 
-if you try the project now then you will be able to make the bird move
+If you try the project now then you will be able to make the bird move
 in one direction by pressing the right arrow key. Excellent, we are
 well on the way!
 
@@ -111,7 +111,7 @@ Sprite.
 One thing to watch out for is that each method needs to have a
 different name, or the later ones replace the earlier ones in the
 Sprite (which would mean there is only one of them left, and some
-directions wouldn't work!)
+directions wouldn't work!).
 
 {{< commit move-bird-three-other-directions >}}
 
@@ -127,7 +127,7 @@ build and run the project after making any changes.
 ## Giving the Bird something to chase
 
 Now that the bird can move around the screen let's give it something
-to chase. Make a new Sprite and set it's costume to the "star"
+to chase. Make a new Sprite and set its costume to the "star"
 image. Like the Bird we don't want it to appear on the stage until the
 game begins.
 
@@ -135,7 +135,7 @@ game begins.
 
 ### Moving the Star randomly
 
-We want the star to move about, but not under the players control
+We want the star to move about, but not under the player's control
 (that would make it a bit easy to catch!). The plan is to pick a
 location on the stage at random and then head towards it for a
 while. Once the star gets there we will pick a new location and move
@@ -154,13 +154,13 @@ moved to so that the bird can continue to chase it.
 
 To make some code that repeats I can use the Python ``while``
 command. A ``while`` loop has something it checks each time, and it
-will repeat it's code as long as that thing is true. Normally you put
+will repeat its code as long as that thing is true. Normally you put
 something that could be different each time it's checked (for example,
 something that checks the ``x`` position of a Sprite) but if you want
 the code to repeat forever you can just write ``True`` there and it will always be true!
 
 Notice the ``:`` at the end of the line. Like classes and script
-definitions, this loop will have more commends inside it (which will
+definitions, this loop will have more commands inside it (which will
 be the stuff to be repeated over and over).
 
 {{< commit add-infinite-loop >}}
@@ -168,7 +168,7 @@ be the stuff to be repeated over and over).
 Now I want to pick a random location on the stage. Python has a way to make random numbers, so if I just pick two x and y numbers they can be the destination for the star to move towards. When the star gets there the loop will repeat and a new destination will be chosen.
 
 The ``random.randint()`` function in Python selects a random number
-between two points (so ``random.randint(10,20)`` will pick a number
+between two points (so ``random.randint(10, 20)`` will pick a number
 between 10 and 20). The Pytch Stage has x coordinates from -320 to
 +320, but because it's the _center_ of the star that will move to the
 chosen point I do a little arithmetic so that the _edge_ of the star
@@ -186,7 +186,7 @@ won't have any chance to catch it. Instead I want it to move smoothly
 to the point over a few seconds.
 
 Scratch has a handy block called "glide to" which does this. Pytch
-doesn't have that build it, but we can make it!
+doesn't have that built in, but we can make it!
 
 I'll add the code that uses it, and then we will go and create the
 actual ``glide_to`` method. Once we've created ``glide_to`` this code
@@ -210,10 +210,10 @@ part of Star. That method will calculate how many steps we have to
 take to get to the destination in the available time, and then loop
 making little movements in the right direction each time.
 
-We define a new method to do this work (notice that this method
+We define a new method to do this work. (Notice that this method
 doesn't have any hat block. It doesn't run when the player does
 something, instead it runs when some _other_ script uses it, the way
-we did in ``play``). Each variable that is sent in to the method (the
+we did in ``play``.) Each variable that is sent in to the method (the
 destination x and y, and the time the method should take) gets listed
 in the definition so that Python knows what names to use for them
 inside the method.
@@ -256,8 +256,8 @@ like this:
 
 {{< commit define-glide-for >}}
 
-That's the end of our glide code. If you try to project out now you'll
-see it'a slmost complete! The Star glides around and the Bird can
+That's the end of our glide code. If you try the project out now you'll
+see it's almost complete! The Star glides around and the Bird can
 chase it. The only thing we need to do is have something happen when
 the bird catches the Star!
 
@@ -272,7 +272,7 @@ Star moved, in case the bird was standing still and the Star ran into
 it!
 
 Instead I will write a Script that does nothing except continuously
-check to see if the Start has collided with the bird. That may no
+check to see if the Start has collided with the bird. That way no
 matter which Sprite was moving we will detect it in one bit of
 code. I'll use the same idea that the ``play`` method had to keep
 checking.
@@ -291,7 +291,7 @@ catch it.
 One way we could do this is to have the Star also constantly check to
 see whether it's been caught, and hide itself as soon as it
 is. Because the loop in ``play`` starts with ``show`` the Star will
-reappear when it has finished gliding to it's destination, and the
+reappear when it has finished gliding to its destination, and the
 game can continue.
 
 {{< commit star-checks-for-catching >}}
@@ -321,7 +321,7 @@ to it every time the star is caught. You can use a variable called
 str(score))``. The ``str`` command converts a number to a string so
 that it can be joined with another string using ``+``.
 
-2. You could add a second Sprite to chase, which moves faster
+2. You could add a second Sprite to chase, which moves faster.
 
 3. You could make the game harder by having the Bird slow down a
    little after it catches 5 stars (by changing the ``speed``
