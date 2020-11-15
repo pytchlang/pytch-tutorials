@@ -30,7 +30,7 @@ only one stage, no matter how many Sprites there are), but it can have
 different backdrops if you need that. This project will only have one,
 so Pytch will automatically select it when the project starts.
 
-{< commit add-Stage-with-backdrop >}
+{{< commit add-Stage-with-backdrop >}}
 
 You can try the project now and you should see the clouds as a nice
 backdrop.
@@ -280,7 +280,7 @@ checking.
 This script should start up as soon as the game begins, so I give it
 the same "green flag" hat as the ``start`` and ``play`` methods. 
 
-{{< commit bird-checks-for-catching-says-gotcha }}
+{{< commit bird-checks-for-catching-says-gotcha >}}
 
 If you try the project now you'll see that this is _almost_ perfect,
 but after the bird catches the star we want the star to vanish for a
