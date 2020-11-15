@@ -312,8 +312,6 @@ wait for about the right amount of time for the sound to finish.
 
 {{< commit play-caught-sound >}}
 
----
-
 ## Challenges
 
 1. You could add a score to the game so that the bird says things like
