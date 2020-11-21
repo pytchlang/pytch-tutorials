@@ -197,17 +197,16 @@ destination.
 
 {{< commit call-glide-to >}}
 
-There is one bit of housekeeping to
-attend to. The ``random`` functions are not actually built-in to
-Python, like Pytch they are a kind of add-on (called a "library"). We
-need to add a line to the top of the project to get them included:
+There is one bit of housekeeping to attend to. The ``random``
+functions are not actually built-in to Python, like Pytch they are a
+kind of add-on (called a "library"). We need to add a line to the top
+of the project to get them included:
 
 {{< commit import-random >}}
 
-If you try the project out now you'll
-see it's almost complete! The Star glides around and the Bird can
-chase it. The only thing we need to do is have something happen when
-the bird catches the Star!
+If you try the project out now you'll see it's almost complete! The
+Star glides around and the Bird can chase it. The only thing we need
+to do is have something happen when the bird catches the Star!
 
 ## Catching the Star
 
