@@ -204,61 +204,7 @@ need to add a line to the top of the project to get them included:
 
 {{< commit import-random >}}
 
-### Creating a glide method
-
-Since ``glide_to`` doesn't exist we shall simply have to create
-it. The basic idea isn't too hard. We will make a new method that's
-part of Star. That method will calculate how many steps we have to
-take to get to the destination in the available time, and then loop
-making little movements in the right direction each time.
-
-We define a new method to do this work. (Notice that this method
-doesn't have any hat block. It doesn't run when the player does
-something, instead it runs when some _other_ script uses it, the way
-we did in ``play``.) Each variable that is sent in to the method (the
-destination x and y, and the time the method should take) gets listed
-in the definition so that Python knows what names to use for them
-inside the method.
-
-The first thing this method does is calculate how many steps it will
-run. We have to decide how many times per second we will move, and
-then multiply by the number of seconds that we are asked to take. To
-make the calculation easy to read I've created a variable to store the
-number of steps per second that we want. I set this to 25 (I got that
-number by guessing!)
-
-{{< commit define-glide-to-with-steps-per-sec >}}
-
-then we can calculate some other variables. First, the number of total
-times we will move, and the number of seconds that we have to wait
-in-between steps.
-
-{{< commit define-steps-and-wait >}}
-
-Next we can calculate just how far we move on each step. The ``float``
-command in python is needed to make sure the division uses "floating
-point" numbers (that is, decimals) instead of whole numbers. If we
-used whole numbers here then the rounding would mean we don't move
-quite the right amount each time.
-
-{{< commit define-step-deltas >}}
-
-Now we are ready to make all the little movements and pause inbetween
-them.
-
-The Pytch ``wait_seconds`` code will pause a script for an amount of
-time, and we have already seen ``change_x`` and ``change_y`` that will
-let us move a Sprite. We just need to repeat them ``steps`` many times.
-
-We used a ``While`` loop in ``play``, which is suitable for
-repeating code based on a true/false decision, but there is a
-different kind of loop in Python that is more suited to repeating code
-an exact number of times. It's called a ``for`` loop, and you write it
-like this:
-
-{{< commit define-glide-for >}}
-
-That's the end of our glide code. If you try the project out now you'll
+If you try the project out now you'll
 see it's almost complete! The Star glides around and the Bird can
 chase it. The only thing we need to do is have something happen when
 the bird catches the Star!
