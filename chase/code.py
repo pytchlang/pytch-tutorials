@@ -40,3 +40,5 @@ class Star(pytch.Sprite):
         self.set_size(0.4)
         while True:
             self.show()
+            destination_x = random.randint(-240, 240)
+            destination_y = random.randint(-180, 180)
