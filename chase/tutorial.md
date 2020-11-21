@@ -190,13 +190,10 @@ stage as fast as possible. It will just flicker around and the Bird
 won't have any chance to catch it. Instead I want it to move smoothly
 to the point over a few seconds.
 
-Scratch has a handy block called "glide to" which does this. Pytch
-doesn't have that built in, but we can make it!
-
-I'll add the code that uses it, and then we will go and create the
-actual ``glide_to`` method. Once we've created ``glide_to`` this code
-will make the Star move to the selected x and y point taking 2 seconds
-to get there:
+Scratch has a handy block called "glide to" which does this. Pytch has
+the same thing, in a method called ``glide_to_xy()``.  We'll use this,
+asking Pytch to make the Star take 2 seconds to glide to its
+destination.
 
 {{< commit call-glide-to >}}
 
