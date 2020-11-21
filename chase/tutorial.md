@@ -255,7 +255,7 @@ We can add _sounds_ to a Sprite using the Sounds variable.
 
 And we can add a line to the bird's ``check_catch`` method that plays
 this sound when the star is caught. The script will go on to the next
-command immediately, but because that's the ``say`` command it will
+command immediately, but because of the ``say`` command it will
 wait for about the right amount of time for the sound to finish.
 
 {{< commit play-caught-sound >}}
@@ -274,5 +274,5 @@ that it can be joined with another string using ``+``.
 3. You could make the game harder by having the Bird slow down a
    little after it catches 5 stars (by changing the ``speed``
    variable). After a while you might like to have the Bird speed up
-   again (maybe after some time passes, or after it catches the bird
+   again (maybe after some time passes, or after it catches the star
    again).
