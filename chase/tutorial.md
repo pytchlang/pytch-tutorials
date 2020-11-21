@@ -197,7 +197,7 @@ destination.
 
 {{< commit call-glide-to >}}
 
-Before we create ``glide_to`` we have one bit of housekeeping to
+There is one bit of housekeeping to
 attend to. The ``random`` functions are not actually built-in to
 Python, like Pytch they are a kind of add-on (called a "library"). We
 need to add a line to the top of the project to get them included:
