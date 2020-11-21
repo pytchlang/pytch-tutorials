@@ -174,11 +174,11 @@ the loop will repeat and a new destination will be chosen.
 
 The ``random.randint()`` function in Python selects a random number
 between two points (so ``random.randint(10, 20)`` will pick a number
-between 10 and 20). The Pytch Stage has x coordinates from -320 to
-+320, but because it's the _center_ of the star that will move to the
-chosen point I do a little arithmetic so that the _edge_ of the star
-is never off the stage. By measuring the costume I know that the
-center is 66 pixels from the left and right of the costume.
+between 10 and 20). The Pytch Stage has x coordinates from -240 to
++240, so we'll choose a random number in that range for `x`.  This
+will allow the Star to stick out beyond the edge of the stage
+slightly, but that's OK.  And we'll do a similar thing for `y`, which
+we'll choose between -180 and +180.
 
 Using this I set up two variables inside the loop:
 
