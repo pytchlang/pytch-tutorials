@@ -42,3 +42,4 @@ class Star(pytch.Sprite):
             self.show()
             destination_x = random.randint(-240, 240)
             destination_y = random.randint(-180, 180)
+            self.glide_to_xy(destination_x, destination_y, 2)
