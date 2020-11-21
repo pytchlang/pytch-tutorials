@@ -6,6 +6,11 @@ chases a star around the stage.
 In this project you will learn about making multiple Sprites, making
 them move, and detecting when they come close together.
 
+### Detailed credits
+
+{{< asset-credits >}}
+
+
 ---
 
 ## Setting up Pytch
