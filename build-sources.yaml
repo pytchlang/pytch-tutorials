@@ -1,7 +1,7 @@
 - name: Hello world!
   branch_name: bn/hello-01
   dir_name: hello
-  commit_id: b5d7e34fc52eee694b143236ff7a8d7fa24dcad4
+  commit_id: 5d89042e75d9d934739474382c7ec5643cf95d78
 - name: Chase!
   branch_name: gs/chase-03
   dir_name: chase
