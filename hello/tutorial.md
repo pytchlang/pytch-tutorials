@@ -59,11 +59,11 @@ looking in the right place when it goes to find the costumes.
 
 This variable contains a list of the images in the project that will
 be used by this Sprite as costumes. In Python we create lists by
-writing things between square brackets ([ and ] characters). When we
+writing things between square brackets (`[` and `]` characters). When we
 mention the file name we need to put it between double-quote
 characters (these: "). 
 
-Finally, so that the instruction is contained _within_ the Sprite - that
+Finally, so that the instruction is contained _within_ the Sprite — that
 is, it's pushed in from the left of the program a bit. This is how
 Python knows that this variable is part of the Sprite. Everything
 that's part of the Sprite has to be "indented" (pushed in) the same
