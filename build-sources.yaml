@@ -1,0 +1,20 @@
+- name: Hello world!
+  branch_name: bn/hello-01
+  dir_name: hello
+  commit_id: b5d7e34fc52eee694b143236ff7a8d7fa24dcad4
+- name: Chase!
+  branch_name: gs/chase-03
+  dir_name: chase
+  commit_id: 2c5f07d8f3dcc62501507912dce1a4156d4a985f
+- name: Q*bert
+  branch_name: bn/qbert-02
+  dir_name: qbert
+  commit_id: 1c048379e851f78839d581eb4afa2545c3f1fa57
+- name: Bunner
+  branch_name: gs/bunner-02
+  dir_name: bunner
+  commit_id: a282e97efcc384f3f2c2df6bdaef98e0feef48e8
+- name: Boing
+  branch_name: bn/boing-04
+  dir_name: boing
+  commit_id: 20e0506a4a821532fb2d8c20ca4db331dbae7931
