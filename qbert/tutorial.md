@@ -81,7 +81,9 @@ has (7&nbsp;−&nbsp;*r*) blocks in it.
 To work out where to put each block, we need to work out its *x* and
 *y* coordinates.
 
+**
 TODO: Finish this explanation, possibly with the aid of a picture.
+**
 
 Putting this altogether, we can create our clones with this code:
 
@@ -117,7 +119,9 @@ so we'll define a method which will listen out for a `"set-up-qbert"`
 message.  This method will make Q\*bert move to the top block, face
 downhill, and show themselves:
 
-**TODO: Explain extra offset of 28.**
+**
+TODO: Explain extra offset of 28.
+**
 
 {{< commit initialise-Qbert-position >}}
 
