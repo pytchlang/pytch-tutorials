@@ -1,7 +1,7 @@
 - name: Hello world!
   branch_name: bn/hello-01
   dir_name: hello
-  commit_id: 5d89042e75d9d934739474382c7ec5643cf95d78
+  commit_id: a3a3c7814bb1f572199d5ccd065b543b75677f96
 - name: Chase!
   branch_name: gs/chase-03
   dir_name: chase
@@ -9,7 +9,7 @@
 - name: Q*bert
   branch_name: bn/qbert-02
   dir_name: qbert
-  commit_id: 1c048379e851f78839d581eb4afa2545c3f1fa57
+  commit_id: 06f6c4b0b2723cf5769e01473014e6cce4e0507a
 - name: Bunner
   branch_name: gs/bunner-02
   dir_name: bunner
