@@ -1,3 +1,5 @@
+# You're the player on the left --- use the W/S keys to move your bat!
+
 import pytch
 import random
 
