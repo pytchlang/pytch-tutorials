@@ -1,3 +1,5 @@
+# Move the bird using the arrow keys and try to catch the star!
+
 import pytch
 import random
 
