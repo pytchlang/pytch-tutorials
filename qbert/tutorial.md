@@ -504,6 +504,19 @@ newly lit:
 
 {{< commit play-pop-for-already-lit-up >}}
 
+
+## Add instructions
+
+To tell the player how to use our game, we'll add some instructions at
+the top of our code.  We'll do this using a Python *comment*, which is
+a part of your program meant just for human readers — Python ignores
+it.  In Python, a line starting with the `#` character is a comment.
+We'll add a short explanation of the aim of the game, and how you move
+Q\*bert, using two comment lines:
+
+{{< commit add-player-instructions >}}
+
+
 ## Challenges
 
 This is now a playable game, although quite easy once you get the hang
