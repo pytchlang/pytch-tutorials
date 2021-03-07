@@ -335,3 +335,14 @@ so, use the `random.choice()` function to make Pytch randomly choose
 between the two `y_speed` values we want:
 
 {{< commit ensure-nonzero-y-speed-on-Robot-hit >}}
+
+
+## Add instructions
+
+To tell the player how to use our game, we'll add some instructions at
+the top of our code.  We'll do this using a Python *comment*, which is
+a part of your program meant just for human readers — Python ignores
+it.  In Python, a line starting with the `#` character is a comment.
+We'll add a short comment explaining how to play Boing:
+
+{{< commit add-player-instructions >}}
