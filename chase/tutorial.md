@@ -266,6 +266,19 @@ wait for about the right amount of time for the sound to finish.
 
 {{< commit play-caught-sound >}}
 
+
+## Add instructions
+
+To tell the player how to use our game, we'll add some instructions at
+the top of our code.  We'll do this using a Python *comment*, which is
+a part of your program meant just for human readers — Python ignores
+it.  In Python, a line starting with the `#` character is a comment.
+We'll add a short explanation of the aim of the game, and how you move
+the bird, using a comment line:
+
+{{< commit add-player-instructions >}}
+
+
 ## Challenges
 
 1. You could add a score to the game so that the bird says things like
