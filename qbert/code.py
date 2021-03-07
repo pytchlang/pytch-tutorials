@@ -1,3 +1,6 @@
+# Turn all the blocks yellow by jumping with the arrow keys,
+# but don't fall off the pyramid!
+
 import pytch
 
 
