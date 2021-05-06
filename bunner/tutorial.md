@@ -465,7 +465,15 @@ Now in the original ``watch_for_water`` function I can replace the built-in ``to
 
 {{< commit check-bunny-touching-log-clone >}}
 
-There's one final tweak to this hit check, though. When Pytch is 
+There's one final tweak to this hit check, though. When we were talking about the traffic started I said that we didn't have to worry about two pieces of code that were running at the same time interfering, because they would only give way to each other at specific places, like at the end of a loop.
+
+This is a problem for us now -- in ``touching_any_log`` it could happen that the code checks the first couple of logs in the list, and then the code that moves the first log gets to run and moves the log a bit so that it's under the bunny. Then ``touching_any_log`` gets to run some more, but it has already moved past that first log in it's checking. The result would be that our hit check says the bunny isn't touching a log (so we decide the bunny is drowning), but to the player it looks like the bunny was under the log.
+
+This can't normally happen because the built in Pytch ``touching`` function doesn't let anything else run while it's checking to see if you touch anything. We can tell Pytch that we want it to treat our function the same way. We can add a special kind of "hat block" to a function that orders this (you can have this along with a normal hat block, just list one after the other).
+
+Pytch will still let other code run if this function takes too long about getting through it's loops (about a second, by default). That will be just fine for us.
+
+{{< commit non-yielding-hit-check-loop >}}
 
 
 Once we have determined that the bunny is drowning we play the frames of the 'splash' animation one after the other:
@@ -499,7 +507,7 @@ I added a new ``DANCING`` mode as well so that the bunny isn't ``PLAYING`` (I do
 
 {{< commit new-dancing-state >}}
 
-Once the dance is complete the buny moves back to the bottom of the stage and the level starts again.
+Once the dance is complete the bunny moves back to the bottom of the stage and the level starts again.
 
 {{< commit start-another-round >}}
 
