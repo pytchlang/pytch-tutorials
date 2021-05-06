@@ -86,7 +86,7 @@ class Bunny(pytch.Sprite):
             pass
         while game_running:
             if (self.get_y() > 30 and self.get_y() < 160 and
-                    not self.touching(Log)):
+                    not self.touching_any_log() ):
                 self.mode = DROWNING
 
     @pytch.when_key_pressed("ArrowUp")
