@@ -463,11 +463,11 @@ I also set a boolean variable to False, because I haven't proved that I am touch
 
 Now I loop along all of the log clones, checking each one in turn to see if the bunny is touching it. If I ever find the bunny touching one then I set the booolean to True, otherwise it stays false.
 
-{{< commit check-bunny-touching-log-clone }}
+{{< commit check-bunny-touching-log-clone >}}
 
 Once we've checked each log the boolean variable is only true if we are touching a log, so we can rely on it to tell us the bunny is safely floating on a log:
 
-{{< commit bunny-touching-log-via-custom-hit }}
+{{< commit bunny-touching-log-via-custom-hit >}}
 
 Once we have determined that the bunny is drowning we play the frames of the 'splash' animation one after the other:
 
