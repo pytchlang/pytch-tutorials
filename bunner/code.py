@@ -79,7 +79,7 @@ class Bunny(pytch.Sprite):
             if (
                 self.get_y() > 30
                 and self.get_y() < 160
-                and not self.touching(Log)
+                and not self.touching_any_log()
             ):
                 self.mode = DROWNING
 
