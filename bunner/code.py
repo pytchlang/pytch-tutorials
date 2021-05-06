@@ -65,6 +65,7 @@ class Bunny(pytch.Sprite):
             self.hide()
             self.mode = WAITING
 
+    @pytch.non_yielding_loops
     def touching_any_log(self):
         for log in Log.all_clones():
             if log.hits(self):
