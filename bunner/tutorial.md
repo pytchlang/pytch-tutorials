@@ -88,7 +88,7 @@ Because we might create another car in this lane the next time around we wait a 
 
 ### Controlling the clone
 
-We want the clone to run its own script when it's created, so we will use the ``when_I_start_as_a_clone`` event.  I will buid up the loop that drives the car from left-to-right along the lane. First, I want the clone to choose a costume, either 'right0' or 'right1' (they are two different colours of cars, and it keeps the lane of traffic from looking too boring if there's a mix of costumes).
+We want the clone to run its own script when it's created, so we will use the ``when_I_start_as_a_clone`` event.  I will build up the loop that drives the car from left-to-right along the lane. First, I want the clone to choose a costume, either 'right0' or 'right1' (they are two different colours of cars, and it keeps the lane of traffic from looking too boring if there's a mix of costumes).
 
 Python has a handy ``random.choice`` function will return one of the items from the list we give it, randomly chosen.
 
@@ -148,7 +148,7 @@ This function works by comparing the coordinates of the clone (``self``) and som
 
 {{< commit special-hitbox-for-cars >}}
 
-When pytch sees me say ``touching(Bunny)`` it interprets it as "if this sprite is touching _any_ Bunny sprite", original _or_ clone.
+When Pytch sees me say ``touching(Bunny)`` it interprets it as "if this sprite is touching _any_ Bunny sprite", original _or_ clone.
 
 In order to use this in place of ``touching`` we can't pass ``Bunny``, because that's a sprite _class_. We need to supply the _instance_. The Pytch ``the_original`` function lets us get the sprite from a sprite class. (There is another function to get a list of all the clones, which we will see later.)
 
@@ -206,7 +206,9 @@ Once we have done that the game seems to be over once the bunny is squished. The
 
 ## End and restart the game when the bunny is squished
 
-I'm going to rearrange the code in the Bunny sprite so that it will be easier to reset the game when the player loses all their lives. The first step is to have the bunny set itself up when the green flag is clicked instead of in the ``__init__`` (which only runs when the project is first loaded)
+I'm going to rearrange the code in the Bunny sprite so that it will be easier to reset the game when the player loses all their lives. The first step is to split out the things that we want to do at the start of the game from the things that we do every time we play one life. Right now they are all mixed together in ``go_to_starting_position`` and it runs when the green flag is clicked.
+
+So I'll make a new function that has the stuff we want to run at the start of each game.
 
 {{< commit set-game-start-code >}}
 
@@ -453,21 +455,18 @@ When the game is running the bunny will regularly scan to see if it's in the wat
 
 {{< commit regularly-scan-for-drowning >}}
 
-This code is a not quite right, because I'm using the ``touching`` routine and as we know it's possible for the bunny to be on a row below or above a log and stil register as touching it. We really want to use the custom ``hits`` routine.
+This code is a not quite right, because I'm using the ``touching`` routine and as we know it's possible for the bunny to be on a row below or above a log and stil register as touching it. We really want to use the custom ``hits`` routine. I'm going to make a custom version of the ``touching`` routine that solves this. The plan is to get a list containing all the clones, and then check them one-by-one to see if the the bunny is touching them.
 
-To do that I need a list of all of the log clones (so that I can one-by-one check to see if the bunny is touching them). This uses ``all_clones``, the counterpart to the ``the_original`` function we used back when we wanted to access the Bunny sprite.
+This uses ``all_clones``, the counterpart to the ``the_original`` function we used back when we wanted to access the Bunny sprite. I use the Python ``for`` loop to check each one in turn, using my ``hits`` function. If ``hits`` ever returns ``True`` to say that that particular log has hit the bunny then I return from the ``touching_any_log`` function immediately. I can't return ``False`` until I have checked _every_ log, of course, because even if the first log we check returns ``False`` for the hit checking one we check later in the list might still return ``True``.
 
-{{< commit get-log-clones >}}
+{{< commit make-custom-check-all-hits-function >}}
 
-I also set a boolean variable to False, because I haven't proved that I am touching a log yet.
-
-Now I loop along all of the log clones, checking each one in turn to see if the bunny is touching it. If I ever find the bunny touching one then I set the booolean to True, otherwise it stays false.
+Now in the original ``watch_for_water`` function I can replace the built-in ``touching`` with a call to my custom ``touching_any_log``.
 
 {{< commit check-bunny-touching-log-clone >}}
 
-Once we've checked each log the boolean variable is only true if we are touching a log, so we can rely on it to tell us the bunny is safely floating on a log:
+There's one final tweak to this hit check, though. When Pytch is 
 
-{{< commit bunny-touching-log-via-custom-hit >}}
 
 Once we have determined that the bunny is drowning we play the frames of the 'splash' animation one after the other:
 
