@@ -455,7 +455,11 @@ When the game is running the bunny will regularly scan to see if it's in the wat
 
 {{< commit regularly-scan-for-drowning >}}
 
-This code is a not quite right, because I'm using the ``touching`` routine and as we know it's possible for the bunny to be on a row below or above a log and stil register as touching it. We really want to use the custom ``hits`` routine. I'm going to make a custom version of the ``touching`` routine that solves this. The plan is to get a list containing all the clones, and then check them one-by-one to see if the the bunny is touching them.
+Now, there are two things to fix here. The first is easy, we need to make sure that we run this and ``start_playing`` in the correct order. They both run when a ``start playing`` message is received, but we can't be sure which of them runs first, and if ``watch_for_water`` were to run first then ``start_playing`` would not have had a chance to set ``game_running`` yet and so the loop in ``watch_for_water`` would end and the bunny wouldn't be checking if it should drown. We can fix that easily, because we made sure that  ``start_playing`` sets ``game_running`` before it sets the mode. So we just do an extra loop that will stall for a while if ``start_playing`` hasn't set things up yet.
+
+{{< commit wait-until-game-really-starts >}}
+
+This code is not quite right, because I'm using the ``touching`` routine and as we know it's possible for the bunny to be on a row below or above a log and stil register as touching it. We really want to use the custom ``hits`` routine. I'm going to make a custom version of the ``touching`` routine that solves this. The plan is to get a list containing all the clones, and then check them one-by-one to see if the the bunny is touching them.
 
 This uses ``all_clones``, the counterpart to the ``the_original`` function we used back when we wanted to access the Bunny sprite. I use the Python ``for`` loop to check each one in turn, using my ``hits`` function. If ``hits`` ever returns ``True`` to say that that particular log has hit the bunny then I return from the ``touching_any_log`` function immediately. I can't return ``False`` until I have checked _every_ log, of course, because even if the first log we check returns ``False`` for the hit checking one we check later in the list might still return ``True``.
 
