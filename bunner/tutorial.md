@@ -236,9 +236,11 @@ At the start of the game I'll set a new variable in the bunny sprite
 
 {{< commit set-three-lives >}}
 
-Each time the bunny gets squished I'll reduce that counter by one
+In the initialization for the bunny I'll set this to a number that suggests the game hasn't started yet (it'll be set to something else when the bunny is ready to play).
 
 {{< commit add-notion-of-lives >}}
+
+Each time the bunny gets squished I'll reduce that counter by one
 
 Moving some code around again, I want to separate the idea of _starting the game_ from the idea of _playing a life_. So I'll create a new function that has the code relevant to playing a life (moving back to the start row and selecting a costume).
 
