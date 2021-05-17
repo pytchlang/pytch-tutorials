@@ -60,3 +60,4 @@ class ScoreKeeper(pytch.Sprite):
         self.set_size(0.6)
         self.go_to_xy(-260, -105)
         self.score = 0
+        self.say(self.score)
