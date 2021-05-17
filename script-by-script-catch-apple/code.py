@@ -37,7 +37,7 @@ class Apple(pytch.Sprite):
         "Strawberry-1.png"
     ]
 
-    @pytch.when_green_flag_clicked
+    @pytch.when_I_receive("drop-apple")
     def move_down_stage(self):
         self.set_size(0.25)
         drop_x = random.randint(-145, 190)
