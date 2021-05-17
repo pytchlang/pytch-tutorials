@@ -47,3 +47,5 @@ class ScoreKeeper(pytch.Sprite):
         self.say(self.score)
 
     def drop_apples(self):
+        while True:
+            pytch.broadcast_and_wait("drop-apple")
