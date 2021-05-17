@@ -46,7 +46,7 @@ class Apple(pytch.Sprite):
     def move_down_stage(self):
         self.set_size(0.25)
         drop_x = random.randint(-145, 190)
-        self.go_to_xy(100, 200)
+        self.go_to_xy(drop_x, 200)
         while self.y_position > -140:
             self.change_y(-3)
             if self.touching(Bowl):
