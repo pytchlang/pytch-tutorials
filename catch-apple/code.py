@@ -48,3 +48,5 @@ class ScoreKeeper(pytch.Sprite):
         self.say(self.score)
 
     def launch_apples(self):
+        while True:
+            pytch.broadcast_and_wait("launch-apple")
