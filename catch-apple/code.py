@@ -37,3 +37,4 @@ class ScoreKeeper(pytch.Sprite):
     def initialise(self):
         self.go_to_xy(-215, -115)
         self.score = 0
+        self.say(self.score)
