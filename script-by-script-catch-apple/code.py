@@ -17,3 +17,7 @@ class Bowl(pytch.Sprite):
             if pytch.key_pressed("d"):
                 if self.x_position < 190:
                     self.change_x(2)
+
+
+class Apple(pytch.Sprite):
+    Costumes = []
