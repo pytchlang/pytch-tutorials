@@ -16,6 +16,9 @@ class Bowl(pytch.Sprite):
         self.go_to_xy(0, -145)
 
         while True:
+            if self.key_pressed("a"):
+                if self.x_position > -145:
+                    self.change_x(-2)
             if self.key_pressed("d"):
                 if self.x_position < 190:
                     self.change_x(2)
