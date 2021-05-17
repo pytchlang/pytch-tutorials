@@ -24,7 +24,7 @@ If you build the project now, you'll see our backdrop appear.
 
 There is not much to do in our game yet, so let's add something for the player to control.
 
-The graphics are already there for the player's sprite, all we have to do is create a class and set up the names of the costumes. Like the stage, the name of our new class is up to us, but we have to declare that it's a kind of ```pytch.Sprite```.
+The graphics are already there for the player's sprite, all we have to do is create a class and set up the names of the costumes. Like the stage, the name of our new class is up to us, but we have to declare that it's a kind of `pytch.Sprite`.
 
 {{< commit Bunny-with-costumes >}}
 
@@ -70,15 +70,15 @@ I import the Python random number code, because we will use that to select the d
 
 ### Designing the traffic
 
-My plan is to use the original ``Car`` sprite as a template. Every time I want to add a new car to a lane of traffic I'll move the hidden Car sprite to the starting position for that lane and then make a clone. The clone will then show itself and drive across the screen.
+My plan is to use the original `Car` sprite as a template. Every time I want to add a new car to a lane of traffic I'll move the hidden Car sprite to the starting position for that lane and then make a clone. The clone will then show itself and drive across the screen.
 
-The original ``Car`` sprite will have three scripts running, one for each lane, that will act as a kind of car factory, adding new cars with a bit of randomness to keep the gaps between the cars unpredictable.
+The original `Car` sprite will have three scripts running, one for each lane, that will act as a kind of car factory, adding new cars with a bit of randomness to keep the gaps between the cars unpredictable.
 
 ### Making the first car factory script
 
 I'll start with the lane closest to the bottom of the screen. Once we have this working we will be able to copy it to get the other lanes working.
 
-As soon as the green flag is clicked the Car sprite starts a loop to manage the cars in the first lane of traffic. There's no need to have the loop running as fast as possible — that would make far too many cars — so I put in a little delay using ``wait_seconds`` so that the loop only runs ten times a second.
+As soon as the green flag is clicked the Car sprite starts a loop to manage the cars in the first lane of traffic. There's no need to have the loop running as fast as possible — that would make far too many cars — so I put in a little delay using `wait_seconds` so that the loop only runs ten times a second.
 
 Each time the loop goes around I ask for a random number between 0 and 1, and if it's below 0.2 then the Car sprite moves to just off the screen, left of the first lane, and makes a clone at this position.
 
@@ -88,11 +88,11 @@ Because we might create another car in this lane the next time around we wait a 
 
 ### Controlling the clone
 
-We want the clone to run its own script when it's created, so we will use the ``when_I_start_as_a_clone`` event.  I will build up the loop that drives the car from left-to-right along the lane. First, I want the clone to choose a costume, either 'right0' or 'right1' (they are two different colours of cars, and it keeps the lane of traffic from looking too boring if there's a mix of costumes).
+We want the clone to run its own script when it's created, so we will use the `when_I_start_as_a_clone` event.  I will build up the loop that drives the car from left-to-right along the lane. First, I want the clone to choose a costume, either 'right0' or 'right1' (they are two different colours of cars, and it keeps the lane of traffic from looking too boring if there's a mix of costumes).
 
-Python has a handy ``random.choice`` function will return one of the items from the list we give it, randomly chosen.
+Python has a handy `random.choice` function will return one of the items from the list we give it, randomly chosen.
 
-The clone got its own copy of the ``direction`` variable containing whatever the Car sprite had in it at the moment the clone was created. It contains the string 'right', so combining that with either '0' or '1' gets us one of the costume names.  Also, the images are a bit big, so I'll shrink the clone to 65% of its original size.
+The clone got its own copy of the `direction` variable containing whatever the Car sprite had in it at the moment the clone was created. It contains the string 'right', so combining that with either '0' or '1' gets us one of the costume names.  Also, the images are a bit big, so I'll shrink the clone to 65% of its original size.
 
 {{< commit begin-drive-routine >}}
 
@@ -118,13 +118,13 @@ Now, back to my idea of using the same code to control cars in the left-hand lan
 
 ### Making the rest of the car factories
 
-Once we have that we can add two more loops that start on green flag. They are modelled on the loop that creates `Car`` clones for lane 1, but they move to different x and y positions before cloning the car.  I'll set the lanes of traffic to all move at the same speed for now.
+Once we have that we can add two more loops that start on green flag. They are modelled on the loop that creates `Car` clones for lane 1, but they move to different x and y positions before cloning the car.  I'll set the lanes of traffic to all move at the same speed for now.
 
 {{< commit start-traffic-two-and-three >}}
 
 There's an important point to think about here. What if the row two loop moved the car, but before it got to set the `direction` or create the clone the row one loop ran a bit and altered the x and y position? We could end up with a car that was positioned off to the left of the screen, but which had its direction set to drive to the left, and it would just vanish right away!
 
-In fact, this can't happen, but it's worth knowing why. Pytch will only allow another function to run at specific places. One of those places is at the end of a loop (another is when a function does ``wait_seconds``). The manual has more information about this, but it's enough for now to know we are safe!
+In fact, this can't happen, but it's worth knowing why. Pytch will only allow another function to run at specific places. One of those places is at the end of a loop (another is when a function does `wait_seconds`). The manual has more information about this, but it's enough for now to know we are safe!
 
 ## Squish the bunny!
 
@@ -132,7 +132,7 @@ You'll notice that the cars don't actually present any sort of challenge at the 
 
 ### Checking for collisions
 
-Checking every time something moves will mean changes in lots of places in the code — I'd need to check when cars move _and_ when the bunny moves. Instead I'll create a new script that runs in each ``Car`` clone constantly checking for collisions. Writing ``while True`` means the loop will run forever (actually, just until the clone is deleted when it reaches the end of the lane).
+Checking every time something moves will mean changes in lots of places in the code — I'd need to check when cars move _and_ when the bunny moves. Instead I'll create a new script that runs in each `Car` clone constantly checking for collisions. Writing `while True` means the loop will run forever (actually, just until the clone is deleted when it reaches the end of the lane).
 
 I'll decide later what to actually do when there is a collision. So I can test my code I'll print out a message whenever there is a collision.  To see these messages, click on the *Output* tab.  You can come back to this tutorial by clicking on the *Tutorial* tab.
 
@@ -140,33 +140,33 @@ I'll decide later what to actually do when there is a collision. So I can test m
 
 As soon as I test this I find there is a problem (try it out now). The car reports it's squishing a bunny when it drives past the bunny, even if it's not in the lane? What's going on?
 
-The answer is in our costumes. The very nice costumes we're using (courtesy of the [Code The Classics](https://wireframe.raspberrypi.org/books/code-the-classics1) book) are actually bigger than they look. Pytch checks for 'touching' by checking whether rectangles drawn around the entire costume of each sprite overlap. The ``Car`` costume and the ``Bunny`` costume overlap when the bunny is _next_ to the lane (you can see that the car costumes have some shadows under them that stick out into the lane below. It looks nice but it messes up how ``touching`` works).
+The answer is in our costumes. The very nice costumes we're using (courtesy of the [Code The Classics](https://wireframe.raspberrypi.org/books/code-the-classics1) book) are actually bigger than they look. Pytch checks for 'touching' by checking whether rectangles drawn around the entire costume of each sprite overlap. The `Car` costume and the `Bunny` costume overlap when the bunny is _next_ to the lane (you can see that the car costumes have some shadows under them that stick out into the lane below. It looks nice but it messes up how `touching` works).
 
-The easiest thing to do is write a special bit of code to check whether a clone is hitting another sprite. If we check that the ``y`` coordinates are close together (say, within 10 pixels) and the ``x`` coordinates are within 40 then it works pretty well.
+The easiest thing to do is write a special bit of code to check whether a clone is hitting another sprite. If we check that the `y` coordinates are close together (say, within 10 pixels) and the `x` coordinates are within 40 then it works pretty well.
 
-This function works by comparing the coordinates of the clone (``self``) and some other sprite that we provide as input.
+This function works by comparing the coordinates of the clone (`self`) and some other sprite that we provide as input.
 
 {{< commit special-hitbox-for-cars >}}
 
-When Pytch sees me say ``touching(Bunny)`` it interprets it as "if this sprite is touching _any_ Bunny sprite", original _or_ clone.
+When Pytch sees me say `touching(Bunny)` it interprets it as "if this sprite is touching _any_ Bunny sprite", original _or_ clone.
 
-In order to use this in place of ``touching`` we can't pass ``Bunny``, because that's a sprite _class_. We need to supply the _instance_. The Pytch ``the_original`` function lets us get the sprite from a sprite class. (There is another function to get a list of all the clones, which we will see later.)
+In order to use this in place of `touching` we can't pass `Bunny`, because that's a sprite _class_. We need to supply the _instance_. The Pytch `the_original` function lets us get the sprite from a sprite class. (There is another function to get a list of all the clones, which we will see later.)
 
 {{< commit use-new-hits-method >}}
 
 This works much better at printing messages for the bunny and car colliding, when I try it out I only see the "Squish the bunny!" message printed when the sprites actually _look_ like they are overlapping now.
 
-Now that this is working I'd like to get the bunny to react to being squished. This is really something for the ``Bunny`` sprite to take care of. I can send a message that something has happened using the ``broadcast`` system.
+Now that this is working I'd like to get the bunny to react to being squished. This is really something for the `Bunny` sprite to take care of. I can send a message that something has happened using the `broadcast` system.
 
 {{< commit broadcast-squish >}}
 
 ### Responding to being squished
 
-Back in the ``Bunny`` sprite I want to add some costumes to show when the bunny gets driven on. I'm making sure the names of these match up with the names of the "main" costumes so that I can easily pick the right one to show.
+Back in the `Bunny` sprite I want to add some costumes to show when the bunny gets driven on. I'm making sure the names of these match up with the names of the "main" costumes so that I can easily pick the right one to show.
 
 {{< commit add-squish-costumes >}}
 
-To respond to a broadcast, a Sprite uses ``when_I_receive``.  When the bunny sprite sees the squishing broadcast I want to change to a costume that matches the direction that the bunny was already facing. I can look up the name of the current costume and then add "_squished" to get the name of a new costume.
+To respond to a broadcast, a Sprite uses `when_I_receive`.  When the bunny sprite sees the squishing broadcast I want to change to a costume that matches the direction that the bunny was already facing. I can look up the name of the current costume and then add "_squished" to get the name of a new costume.
 
 {{< commit act-on-squish >}}
 
@@ -186,7 +186,7 @@ I just want these variables so that I have three _names_ I can use for these sta
 
 {{< commit add-first-bunny-modes >}}
 
-This sets ``WAITING`` to be zero, ``PLAYING`` to be 1, and so on.
+This sets `WAITING` to be zero, `PLAYING` to be 1, and so on.
 
 Later on I plan to add a title screen (and the bunny will start out waiting), but for now the bunny starts out playing.
 
@@ -206,7 +206,7 @@ Once we have done that the game seems to be over once the bunny is squished. The
 
 ## End and restart the game when the bunny is squished
 
-I'm going to rearrange the code in the Bunny sprite so that it will be easier to reset the game when the player loses all their lives. The first step is to split out the things that we want to do at the start of the game from the things that we do every time we play one life. Right now they are all mixed together in ``go_to_starting_position`` and it runs when the green flag is clicked.
+I'm going to rearrange the code in the Bunny sprite so that it will be easier to reset the game when the player loses all their lives. The first step is to split out the things that we want to do at the start of the game from the things that we do every time we play one life. Right now they are all mixed together in `go_to_starting_position` and it runs when the green flag is clicked.
 
 So I'll make a new function that has the stuff we want to run at the start of each game.
 
@@ -216,7 +216,7 @@ I will switch the bunny from visible to invisible when the project first loads (
 
 {{< commit remove-game-specific-setup-from-init >}}
 
-Now I have a use for the ``WAITING`` mode we created recently. Before the game actually begins the bunny is neither squished nor playing.
+Now I have a use for the `WAITING` mode we created recently. Before the game actually begins the bunny is neither squished nor playing.
 
 {{< commit wait-at-the-start >}}
 
@@ -224,9 +224,9 @@ Now I can add a use of this setup function to the code that handled the bunny be
 
 {{< commit restart-game-when-squished >}}
 
-The ``start_game`` function is run by Pytch when the green flag is clicked, but I can run it whenever I want by using its name.
+The `start_game` function is run by Pytch when the green flag is clicked, but I can run it whenever I want by using its name.
 
-It doesn't affect what I'm doing here, but it's worth pointing out the difference between running ``start_game`` from the green flag event and running it by using its name. The second way doesn't run ``start_game``  alongside ``squish``, so if there was another statement in ``squish`` it wouldn't run until ``start_game`` had finished.
+It doesn't affect what I'm doing here, but it's worth pointing out the difference between running `start_game` from the green flag event and running it by using its name. The second way doesn't run `start_game`  alongside `squish`, so if there was another statement in `squish` it wouldn't run until `start_game` had finished.
 
 ## Adding a life counter
 
@@ -246,7 +246,7 @@ Moving some code around again, I want to separate the idea of _starting the game
 
 {{< commit define-play-one-life >}}
 
-I can run this function in the ``start_game`` routine
+I can run this function in the `start_game` routine
 
 {{< commit call-play-one-life >}}
 
@@ -264,9 +264,9 @@ When the clone cars see that the game has ended I want them all to vanish (even 
 
 {{< commit game-over-deletes-clone-cars >}}
 
-The original ``Car`` sprite is still running its traffic factory scripts, of course, and they will just create more cars unless they are stopped.
+The original `Car` sprite is still running its traffic factory scripts, of course, and they will just create more cars unless they are stopped.
 
-Although the original ``Car`` sprite will receive the game over broadcast and run the ``vanish`` script that won't stop the car factories. The original sprite is immune to ``delete_this_clone`` actions (because it's not a clone!). So I'll have to do something else to stop those scripts.
+Although the original `Car` sprite will receive the game over broadcast and run the `vanish` script that won't stop the car factories. The original sprite is immune to `delete_this_clone` actions (because it's not a clone!). So I'll have to do something else to stop those scripts.
 
 One way to handle this would be to change the loop in those factory scripts so that instead of running forever they only ran as long as the game was playing. Something like this:
 
@@ -276,7 +276,7 @@ To make this work I add a new global variable. I could try to use the bunny stat
 
 {{< commit add-global-running-flag >}}
 
-The bunny notes that the game is running by setting this variable to ``True``.
+The bunny notes that the game is running by setting this variable to `True`.
 
 {{< commit bunny-sets-game-running >}}
 
@@ -332,7 +332,7 @@ We should be showing the lives remaining somewhere on the stage, but before we g
 
 Most games are more fun if there's a way to keep track of how well the player is doing. I'm going to introduce a score that increases as the player heads up the screen.
 
-First I'll add a new global variable to track the score (I'm using a global variable because there are going to be several parts of the project that will access the score, but I could have made it a variable in the Bunny sprite and used ``Bunny.the_original`` to access it from other parts of the project)
+First I'll add a new global variable to track the score (I'm using a global variable because there are going to be several parts of the project that will access the score, but I could have made it a variable in the Bunny sprite and used `Bunny.the_original` to access it from other parts of the project)
 
 {{< commit introduce-score-global >}}
 
@@ -376,15 +376,15 @@ To show the score I'm going to create two new sprites that will be used to show 
 
 There are ten costumes, which I want to name "digit-0" to "digit-9". Instead of typing each of the ten costumes out by hand I decided to use a Python shortcut for making lists with this kind of pattern. There are two parts to this:
 
-The first is writing a ``range`` statement inside the list definition, for example ``[ n for n in range(10) ]`` creates the list ``[0,2,3,4,5,6,7,8,9]`` (`n` in this is just a temporary variable that is created for setting up the list only).
+The first is writing a `range` statement inside the list definition, for example `[ n for n in range(10) ]` creates the list `[0,2,3,4,5,6,7,8,9]` (`n` in this is just a temporary variable that is created for setting up the list only).
 
-The second trick is that we can fill in "placeholders" in a string using the ``%`` string operator. By writing ``"digit-%d" % n`` we tell python to splice in the value of the variable "n" in place of the "%d" in the string.
+The second trick is that we can fill in "placeholders" in a string using the `%` string operator. By writing `"digit-%d" % n` we tell python to splice in the value of the variable "n" in place of the "%d" in the string.
 
 {{< commit compute-score-digit-costumes >}}
 
 When the score changes I'll get the bunny sprite to send out a broadcast message. When this score sprite receives that it will look up the score, calculate the _first digit_ of the score, and set the costume to the corresponding digit.
 
-I'm using ``%`` in two different ways in this: one is the "string splicing" trick I described above. The second is doing remainder arithmetic. When ``%``is used with a string on the left you get the string splicing function, when it's used with a number on the left Python calculates the remainder of dividing by the number on the right.
+I'm using `%` in two different ways in this: one is the "string splicing" trick I described above. The second is doing remainder arithmetic. When `%` is used with a string on the left you get the string splicing function, when it's used with a number on the left Python calculates the remainder of dividing by the number on the right.
 
 Using the same symbol to mean two different things can be a little confusing at first, this is just Python's way of getting around the fact that there are only a few symbols available on the keyboard. If we didn't do this then many more things would need to be functions with long names.
 
@@ -394,9 +394,9 @@ I get the bunny to announce score changes using a broadcast:
 
 {{< commit broadcast-score-change-message >}}
 
-To show the 'tens' digit of the score I make a second sprite that's almost identical. The only differences are where on the screen it appears, and the calculation done in ``show_correct_digit``, where I use the ``\\`` operator (which divides a number and throws away any decimal part).
+To show the 'tens' digit of the score I make a second sprite that's almost identical. The only differences are where on the screen it appears, and the calculation done in `show_correct_digit`, where I use the `\\` operator (which divides a number and throws away any decimal part).
 
-Notice in this class that I was able to re-use the ``score_costumes`` variable.
+Notice in this class that I was able to re-use the `score_costumes` variable.
 
 {{< commit create-score-2-class >}}
 
@@ -418,27 +418,27 @@ The final obstacle to add to the game is the water hazard. At the moment once th
 
 I'm going to add a new check that makes the bunny drown (and lose a life) if it's on the water. But first I want to add some way to get across the water!
 
-Based on the same design as the ``Car`` sprite, I make a ``Log`` sprite:
+Based on the same design as the `Car` sprite, I make a `Log` sprite:
 
 {{< commit introduce-log-class >}}
 
-I could copy the ``Car`` factory approach exactly, but I want to show how to reduce the amount of code a little. So I create a function for a "log factory" that takes the direction and the y-coordinate of the lane. This is the factory:
+I could copy the `Car` factory approach exactly, but I want to show how to reduce the amount of code a little. So I create a function for a "log factory" that takes the direction and the y-coordinate of the lane. This is the factory:
 
 {{< commit start-a-single-row >}}
 
-Then I start three separate factory scripts, each providing different inputs to the factory. This will get me three different factory scripts running, all based on the same ``start_row`` code:
+Then I start three separate factory scripts, each providing different inputs to the factory. This will get me three different factory scripts running, all based on the same `start_row` code:
 
 {{< commit start-3-rows-of-logs >}}
 
-Each ``Log`` clone drives along the lane just as the cars do. But instead of checking to see if they have "squished" a bunny they check to see if the bunny is standing on the clone. If it is then the bunny is carried along with the log.
+Each `Log` clone drives along the lane just as the cars do. But instead of checking to see if they have "squished" a bunny they check to see if the bunny is standing on the clone. If it is then the bunny is carried along with the log.
 
 {{< commit drive-log-along-row >}}
 
-Just as with the ``Car`` we will remove the clone logs when the game ends
+Just as with the `Car` we will remove the clone logs when the game ends
 
 {{< commit remove-logs-at-end-of-game >}}
 
-And just like the ``Car`` we need to have a special collision detection function (otherwise the slightly-too-large sprite costumes will detect collisions at times that don't really look good to the player)
+And just like the `Car` we need to have a special collision detection function (otherwise the slightly-too-large sprite costumes will detect collisions at times that don't really look good to the player)
 
 {{< commit fuzzy-hit-detection-for-logs >}}
 
@@ -452,30 +452,30 @@ There is a set of seven costumes showing different frames of a splash. I want to
 
 {{< commit add-drowning-costumes >}}
 
-When the game is running the bunny will regularly scan to see if it's in the water section of the canvas (that's checked using the ``y`` coordinate). If it is then unless it's touching one of the ``Log`` clones it starts drowning.
+When the game is running the bunny will regularly scan to see if it's in the water section of the canvas (that's checked using the `y` coordinate). If it is then unless it's touching one of the `Log` clones it starts drowning.
 
 
 {{< commit regularly-scan-for-drowning >}}
 
-Now, there are two things to fix here. The first is easy, we need to make sure that we run this and ``start_playing`` in the correct order. They both run when a ``start playing`` message is received, but we can't be sure which of them runs first, and if ``watch_for_water`` were to run first then ``start_playing`` would not have had a chance to set ``game_running`` yet and so the loop in ``watch_for_water`` would end and the bunny wouldn't be checking if it should drown. We can fix that easily, because we made sure that  ``start_playing`` sets ``game_running`` before it sets the mode. So we just do an extra loop that will stall for a while if ``start_playing`` hasn't set things up yet.
+Now, there are two things to fix here. The first is easy, we need to make sure that we run this and `start_playing` in the correct order. They both run when a `start playing` message is received, but we can't be sure which of them runs first, and if `watch_for_water` were to run first then `start_playing` would not have had a chance to set `game_running` yet and so the loop in `watch_for_water` would end and the bunny wouldn't be checking if it should drown. We can fix that easily, because we made sure that  `start_playing` sets `game_running` before it sets the mode. So we just do an extra loop that will stall for a while if `start_playing` hasn't set things up yet.
 
 {{< commit wait-until-game-really-starts >}}
 
-This code is not quite right, because I'm using the ``touching`` routine and as we know it's possible for the bunny to be on a row below or above a log and stil register as touching it. We really want to use the custom ``hits`` routine. I'm going to make a custom version of the ``touching`` routine that solves this. The plan is to get a list containing all the clones, and then check them one-by-one to see if the the bunny is touching them.
+This code is not quite right, because I'm using the `touching` routine and as we know it's possible for the bunny to be on a row below or above a log and stil register as touching it. We really want to use the custom `hits` routine. I'm going to make a custom version of the `touching` routine that solves this. The plan is to get a list containing all the clones, and then check them one-by-one to see if the the bunny is touching them.
 
-This uses ``all_clones``, the counterpart to the ``the_original`` function we used back when we wanted to access the Bunny sprite. I use the Python ``for`` loop to check each one in turn, using my ``hits`` function. If ``hits`` ever returns ``True`` to say that that particular log has hit the bunny then I return from the ``touching_any_log`` function immediately. I can't return ``False`` until I have checked _every_ log, of course, because even if the first log we check returns ``False`` for the hit checking one we check later in the list might still return ``True``.
+This uses `all_clones`, the counterpart to the `the_original` function we used back when we wanted to access the Bunny sprite. I use the Python `for` loop to check each one in turn, using my `hits` function. If `hits` ever returns `True` to say that that particular log has hit the bunny then I return from the `touching_any_log` function immediately. I can't return `False` until I have checked _every_ log, of course, because even if the first log we check returns `False` for the hit checking one we check later in the list might still return `True`.
 
 {{< commit make-custom-check-all-hits-function >}}
 
-Now in the original ``watch_for_water`` function I can replace the built-in ``touching`` with a call to my custom ``touching_any_log``.
+Now in the original `watch_for_water` function I can replace the built-in `touching` with a call to my custom `touching_any_log`.
 
 {{< commit check-bunny-touching-log-clone >}}
 
 There's one final tweak to this hit check, though. When we were talking about the traffic started I said that we didn't have to worry about two pieces of code that were running at the same time interfering, because they would only give way to each other at specific places, like at the end of a loop.
 
-This is a problem for us now -- in ``touching_any_log`` it could happen that the code checks the first couple of logs in the list, and then the code that moves the first log gets to run and moves the log a bit so that it's under the bunny. Then ``touching_any_log`` gets to run some more, but it has already moved past that first log in it's checking. The result would be that our hit check says the bunny isn't touching a log (so we decide the bunny is drowning), but to the player it looks like the bunny was under the log.
+This is a problem for us now -- in `touching_any_log` it could happen that the code checks the first couple of logs in the list, and then the code that moves the first log gets to run and moves the log a bit so that it's under the bunny. Then `touching_any_log` gets to run some more, but it has already moved past that first log in it's checking. The result would be that our hit check says the bunny isn't touching a log (so we decide the bunny is drowning), but to the player it looks like the bunny was under the log.
 
-This can't normally happen because the built in Pytch ``touching`` function doesn't let anything else run while it's checking to see if you touch anything. We can tell Pytch that we want it to treat our function the same way. We can add a special kind of "hat block" to a function that orders this (you can have this along with a normal hat block, just list one after the other).
+This can't normally happen because the built in Pytch `touching` function doesn't let anything else run while it's checking to see if you touch anything. We can tell Pytch that we want it to treat our function the same way. We can add a special kind of "hat block" to a function that orders this (you can have this along with a normal hat block, just list one after the other).
 
 Pytch will still let other code run if this function takes too long about getting through it's loops (about a second, by default). That will be just fine for us.
 
@@ -509,7 +509,7 @@ If it is then I run a loop that moves the bunny through facing its four directio
 
 {{< commit detect-final-row >}}
 
-I added a new ``DANCING`` mode as well so that the bunny isn't ``PLAYING`` (I don't want the player to be able to move the bunny during the victory dance and it felt wrong to pretend the bunny was in a ``SQUISHED`` or ``WAITING`` mode )
+I added a new `DANCING` mode as well so that the bunny isn't `PLAYING` (I don't want the player to be able to move the bunny during the victory dance and it felt wrong to pretend the bunny was in a `SQUISHED` or `WAITING` mode )
 
 {{< commit new-dancing-state >}}
 
@@ -524,7 +524,7 @@ You have reached the end of this tutorial, but there's lots more that you could 
 
 * Make the game more challenging for the player. Add a broadcast that goes out when the player reaches the goal. This broadcast could tell the logs and cars that this was a new round, and use that to have them move faster, or have more cars and fewer logs appear by adjusting the numbers in the car and log factories.
 
-* Improve the accuracy of the ``hits`` routines (the log one, especially, is a bit over-sensitive, it's easy for the bunny to fall off the smaller logs without it looking like it should have)
+* Improve the accuracy of the `hits` routines (the log one, especially, is a bit over-sensitive, it's easy for the bunny to fall off the smaller logs without it looking like it should have)
 
 * Add some different types of obstacles (longer cars, using a lorry costume, for example)
 
@@ -532,4 +532,4 @@ You have reached the end of this tutorial, but there's lots more that you could 
 
 * It's easy to dodge over the road at the start of the game because all the cars drive in from the edges but the bunny starts in the middle. Have the car factories create some cars in the middle of the road at the start of the game so that there isn't a time when the roads are totally clear.
 
-* At the moment the bunny sprite is drawn so that it appears _under_ a car when it's squished, but on top of the logs when it jumps onto them. But we didn't do anything special to make that happen, it's just how it worked out, and you might have noticed that it looks wrong if the we're drawing the bunny drowning animation and a log passes over it (the "splash" animation draws on top of the log!). You can fix this by using the Pytch _layers_ to move the bunny under and over other sprites as needed (use ``self.move_to_front_layer()`` and ``self.move_to_back_layer()``). Fix this drawing problem by moving the bunny back and forward through the layers.
+* At the moment the bunny sprite is drawn so that it appears _under_ a car when it's squished, but on top of the logs when it jumps onto them. But we didn't do anything special to make that happen, it's just how it worked out, and you might have noticed that it looks wrong if the we're drawing the bunny drowning animation and a log passes over it (the "splash" animation draws on top of the log!). You can fix this by using the Pytch _layers_ to move the bunny under and over other sprites as needed (use `self.move_to_front_layer()` and `self.move_to_back_layer()`). Fix this drawing problem by moving the bunny back and forward through the layers.
