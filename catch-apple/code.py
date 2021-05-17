@@ -28,3 +28,7 @@ class Apple(pytch.Sprite):
             self.change_y(-3)
             if self.touching(Bowl):
                 self.hide()
+
+
+class ScoreKeeper(pytch.Sprite):
+    Costumes = []
