@@ -21,7 +21,7 @@ class Bowl(pytch.Sprite):
 class Apple(pytch.Sprite):
     Costumes = ["apple.png"]
 
-    @pytch.when_green_flag_clicked
+    @pytch.when_I_receive("launch-apple")
     def move_down_screen(self):
         drop_x = random.randint(-145, 190)
         self.go_to_xy(drop_x, 200)
