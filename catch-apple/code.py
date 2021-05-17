@@ -25,3 +25,5 @@ class Apple(pytch.Sprite):
         self.go_to_xy(100, 200)
         while self.get_y() > -140:
             self.change_y(-3)
+            if self.touching(Bowl):
+                return
