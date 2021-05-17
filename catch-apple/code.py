@@ -15,3 +15,6 @@ class Bowl(pytch.Sprite):
             if pytch.key_is_pressed("d"):
                 if self.get_x() <= 190:
                     self.change_x(2)
+
+
+class Apple(pytch.Sprite):
