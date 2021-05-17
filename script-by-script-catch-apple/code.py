@@ -14,3 +14,7 @@ class Bowl(pytch.Sprite):
     def move_with_keys(self):
         self.set_size(0.3)
         self.go_to_xy(0, -145)
+
+        while True:
+            if self.key_pressed("d"):
+                self.change_x(2)
