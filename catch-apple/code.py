@@ -10,4 +10,5 @@ class Bowl(pytch.Sprite):
 
         while True:
             if pytch.key_is_pressed("d"):
-                self.change_x(2)
+                if self.get_x() <= 190:
+                    self.change_x(2)
