@@ -9,6 +9,9 @@ class Bowl(pytch.Sprite):
         self.go_to_xy(0, -145)
 
         while True:
+            if pytch.key_is_pressed("a"):
+                if self.get_x() >= -145:
+                    self.change_x(-2)
             if pytch.key_is_pressed("d"):
                 if self.get_x() <= 190:
                     self.change_x(2)
