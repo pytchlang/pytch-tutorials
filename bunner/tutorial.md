@@ -240,7 +240,7 @@ In the initialization for the bunny I'll set this to a number that suggests the 
 
 {{< commit add-notion-of-lives >}}
 
-Each time the bunny gets squished I'll reduce that counter by one
+Each time the bunny gets squished I'll reduce that counter by one.
 
 Moving some code around again, I want to separate the idea of _starting the game_ from the idea of _playing a life_. So I'll create a new function that has the code relevant to playing a life (moving back to the start row and selecting a costume).
 
@@ -394,7 +394,7 @@ I get the bunny to announce score changes using a broadcast:
 
 {{< commit broadcast-score-change-message >}}
 
-To show the 'tens' digit of the score I make a second sprite that's almost identical. The only differences are where on the screen it appears, and the calculation done in `show_correct_digit`, where I use the `\\` operator (which divides a number and throws away any decimal part).
+To show the 'tens' digit of the score I make a second sprite that's almost identical. The only differences are where on the screen it appears, and the calculation done in `show_correct_digit`, where I use the `//` operator (which divides a number and throws away any decimal part).
 
 Notice in this class that I was able to re-use the `score_costumes` variable.
 
@@ -477,7 +477,7 @@ This is a problem for us now -- in `touching_any_log` it could happen that the c
 
 This can't normally happen because the built in Pytch `touching` function doesn't let anything else run while it's checking to see if you touch anything. We can tell Pytch that we want it to treat our function the same way. We can add a special kind of "hat block" to a function that orders this (you can have this along with a normal hat block, just list one after the other).
 
-Pytch will still let other code run if this function takes too long about getting through it's loops (about a second, by default). That will be just fine for us.
+Pytch will still let other code run if this function takes too long about getting through its loops (about a second, by default). That will be just fine for us.
 
 {{< commit non-yielding-hit-check-loop >}}
 
