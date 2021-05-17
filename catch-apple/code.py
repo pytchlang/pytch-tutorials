@@ -41,3 +41,4 @@ class ScoreKeeper(pytch.Sprite):
 
     def award_point(self):
         self.score += 1
+        self.say(self.score)
