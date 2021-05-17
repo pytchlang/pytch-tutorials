@@ -53,4 +53,9 @@ class Apple(pytch.Sprite):
 
 
 class ScoreKeeper(pytch.Sprite):
-    Costumes = []
+    Costumes = [
+        "Pytch-snake-1.png",
+        "Pytch-snake-2.png",
+        "Pytch-snake-3.png",
+        "Pytch-snake-4.png"
+    ]
