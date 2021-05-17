@@ -19,4 +19,4 @@ class Bowl(pytch.Sprite):
 
 
 class Apple(pytch.Sprite):
-    Costumes = []
+    Costumes = ["apple.png"]
