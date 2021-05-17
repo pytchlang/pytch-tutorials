@@ -28,3 +28,6 @@ class Apple(pytch.Sprite):
             if self.touching(Bowl):
                 self.hide()
                 return
+
+
+class ScoreKeeper(pytch.Sprite):
