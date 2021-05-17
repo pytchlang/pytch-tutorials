@@ -30,3 +30,4 @@ class Apple(pytch.Sprite):
 
 
 class ScoreKeeper(pytch.Sprite):
+    Costumes = ["Dani.png"]
