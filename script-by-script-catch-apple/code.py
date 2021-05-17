@@ -3,4 +3,4 @@ import random
 
 
 class Bowl(pytch.Sprite):
-    Costumes = []
+    Costumes = ["bowl.png"]
