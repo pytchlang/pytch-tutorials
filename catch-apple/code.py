@@ -23,3 +23,5 @@ class Apple(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def move_down_screen(self):
         self.go_to_xy(100, 200)
+        while self.get_y() > -140:
+            self.change_y(-3)
