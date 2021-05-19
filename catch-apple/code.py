@@ -26,4 +26,5 @@ class Apple(pytch.Sprite):
         while self.y_position > -140:
             self.change_y(-3)
             if self.touching(Bowl):
+                self.hide()
                 return
