@@ -378,15 +378,15 @@ There are ten costumes, which I want to name "digit-0" to "digit-9". Instead of 
 
 The first is writing a `range` statement inside the list definition, for example `[ n for n in range(10) ]` creates the list `[0,2,3,4,5,6,7,8,9]` (`n` in this is just a temporary variable that is created for setting up the list only).
 
-The second trick is that we can fill in "placeholders" in a string using the `%` string operator. By writing `"digit-%d" % n` we tell python to splice in the value of the variable "n" in place of the "%d" in the string.
+The second trick is that we can fill in "placeholders" in a string using Python's special "f-strings" (formatted string literals). The basic idea of these is that you write a string that mentions some variables in it, within curly braces and Python will fill in the value of the variable.
+
+For example, if you write `f"digit-{n}"` when the variable `n` has the number `3` in it then the final string would be `"digit-3"`. The `f` in front of the first double-quote is what tells Python that it should look for variables marked by curly braces inside the string.
+
+We can combine this with a range loop to get several strings that follow some pattern. 
 
 {{< commit compute-score-digit-costumes >}}
 
 When the score changes I'll get the bunny sprite to send out a broadcast message. When this score sprite receives that it will look up the score, calculate the _first digit_ of the score, and set the costume to the corresponding digit.
-
-I'm using `%` in two different ways in this: one is the "string splicing" trick I described above. The second is doing remainder arithmetic. When `%` is used with a string on the left you get the string splicing function, when it's used with a number on the left Python calculates the remainder of dividing by the number on the right.
-
-Using the same symbol to mean two different things can be a little confusing at first, this is just Python's way of getting around the fact that there are only a few symbols available on the keyboard. If we didn't do this then many more things would need to be functions with long names.
 
 {{< commit display-digits-on-message1 >}}
 
