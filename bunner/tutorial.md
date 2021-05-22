@@ -382,11 +382,11 @@ The second trick is that we can fill in "placeholders" in a string using Python'
 
 For example, if you write `f"digit-{n}"` when the variable `n` has the number `3` in it then the final string would be `"digit-3"`. The `f` in front of the first double-quote is what tells Python that it should look for variables marked by curly braces inside the string.
 
-We can combine this with a range loop to get several strings that follow some pattern. 
+We can combine this with a range loop to get several strings that follow some pattern.
 
 {{< commit compute-score-digit-costumes >}}
 
-When the score changes I'll get the bunny sprite to send out a broadcast message. When this score sprite receives that it will look up the score, calculate the _first digit_ of the score, and set the costume to the corresponding digit.
+When the score changes I'll get the bunny sprite to send out a broadcast message. When this score sprite receives that it will look up the score, calculate the _first digit_ of the score, and set the costume to the corresponding digit. I use the f-string trick in this to select the right costume name based on the "tens" value of the score.
 
 {{< commit display-digits-on-message1 >}}
 
