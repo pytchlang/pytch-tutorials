@@ -1,20 +1,29 @@
 # Bunner: make a frogger-like game
 
-In this tutorial we will make a complete [Frogger](https://en.wikipedia.org/wiki/Frogger)-style arcade game.
+In this tutorial we will make a complete
+[Frogger](https://en.wikipedia.org/wiki/Frogger)-style arcade game.
 
 {{< run-finished-project >}}
-
-
 
 ---
 
 ## Making the stage
 
-Let's start by getting a nice backdrop up. I've drawn one already, so we can just load the image.
+Let's start by getting a nice backdrop up. I've drawn one already, so
+we can just load the image.
 
-First, we make a Stage class. We can call it anything we want so long as it is declared as being a Stage. The second line of the class sets up a Python variable with the list of background images that we can use (there's only one for now but we will add more).
+Begin by making a class to represent the stage. We can call it
+anything we want so long as it is declared as being a `Stage`. The
+second line of the class sets up a Python variable with the list of
+background images that we can use (there's only one for now but we
+will add more).
 
-Each background has a name that we'll use in our code when we want to switch backgrounds. We also give the filename of the image file that we want to use.  You can see these by clicking the *Images and sounds* tab, then click on the *Tutorial* tab to get back here.
+Each background has a name that we'll use in our code when we want to
+switch backgrounds. When we just give the filename of the image file
+that we want to use Pytch will use that (without the `.png` extension)
+as the name of the costume.  You can see these files by clicking the
+*Images and sounds* tab, then click on the *Tutorial* tab to get back
+here.
 
 {{< commit background-hollow-class >}}
 
