@@ -316,47 +316,82 @@ of. I can send a message that something has happened using the
 
 ### Responding to being squished
 
-Back in the `Bunny` sprite I want to add some costumes to show when the bunny gets driven on. I'm making sure the names of these match up with the names of the "main" costumes so that I can easily pick the right one to show.
+Back in the `Bunny` sprite I want to add some costumes to show when
+the bunny gets driven on. I'm making sure the names of these match up
+with the names of the "main" costumes so that I can easily pick the
+right one to show.
 
 {{< commit add-squish-costumes >}}
 
-To respond to a broadcast, a Sprite uses `when_I_receive`.  When the bunny sprite sees the squishing broadcast I want to change to a costume that matches the direction that the bunny was already facing. I can look up the name of the current costume and then add "_squished" to get the name of a new costume.
+To respond to a broadcast, a Sprite uses `when_I_receive`.  When the
+bunny sprite sees the squishing broadcast I want to change to a
+costume that matches the direction that the bunny was already
+facing. I can look up the name of the current costume and then add
+"_squished" to get the name of a new costume.
 
 {{< commit act-on-squish >}}
 
-There's still a problem, though. The car clone broadcasts 'squish bunny' and we change costume... but then a moment later the car sprite runs its hit checking again and broadcasts squish _again_, and we run through this code again (choosing a costume like `"up_squished_squished"`). That's a problem!  If you try it, and get squished, you'll see an error pop up in the *Errors* tab.  You can come back to this tutorial by clicking on the *Tutorial* tab.
+There's still a problem, though. The car clone broadcasts 'squish
+bunny' and we change costume... but then a moment later the car sprite
+runs its hit checking again and broadcasts squish _again_, and we run
+through this code again (choosing a costume like
+`"up_squished_squished"`). That's a problem!  If you try it, and get
+squished, you'll see an error pop up in the *Errors* tab.  You can
+come back to this tutorial by clicking on the *Tutorial* tab.
 
-To fix it I'll introduce a way for the bunny to know that it has already acted on the message (I'll have other uses for this idea soon).
+To fix it I'll introduce a way for the bunny to know that it has
+already acted on the message (I'll have other uses for this idea
+soon).
 
 ## Setting modes for the player
 
-I'll create a set of three variables to describe three "states" the bunny could be in:
+I'll create a set of three variables to describe three "states" the
+bunny could be in:
 
 * Waiting for the game to start
 * Letting the player control it
 * Sitting squished on the road
 
-I just want these variables so that I have three _names_ I can use for these states, because it'll make my program easier to read. A neat Python trick to set up a set of variables so that they have different values looks like this:
+The bunny reacts differently to some broadcasts depending on what
+state it's in (for example, when it's sitting squished it doesn't want
+to get squished _again_ while a car drives over it, that would cost
+another life!)
+
+I just want these variables so that I have three _names_ I can use for
+these states, because it'll make my program easier to read. A neat
+Python trick to set up a set of variables so that they have different
+values looks like this:
 
 {{< commit add-first-bunny-modes >}}
 
 This sets `WAITING` to be zero, `PLAYING` to be 1, and so on.
 
-Later on I plan to add a title screen (and the bunny will start out waiting), but for now the bunny starts out playing.
+Later on I plan to add a title screen (and the bunny will start out
+waiting), but for now the bunny starts out playing.
 
 {{< commit set-initial-mode-playing >}}
 
-Now I can set up the squishing code so that the bunny won't squish _again_ if it's already showing as squished.
+Now I can set up the squishing code so that the bunny won't squish
+_again_ if it's already showing as squished. I just move the actual
+costume-change code inside a test:
 
 {{< commit guard-squishing-routine >}}
 
-You might not have tried this, but if you press the arrow keys when the bunny is squished on the road the moving functions still run (of course they do, we didn't do anything to switch them off). That's not great!
+You might not have tried this, but if you press the arrow keys when
+the bunny is squished on the road the moving functions still run (of
+course they do, we didn't do anything to switch them off). That's not
+great!
 
-Now that the bunny knows when it's supposed to be letting the player play and when it's supposed to be squished, we can add a check to each of the moving routines to skip through them if the bunny isn't supposed to move.
+Now that the bunny knows when it's supposed to be letting the player
+play and when it's supposed to be squished, we can add a check to each
+of the moving routines to skip through them if the bunny isn't
+supposed to move.
 
 {{< commit dont-move-unless-playing >}}
 
-Once we have done that the game seems to be over once the bunny is squished. The next step is to give the player a number of lives and let the game end and restart.
+Once we have done that the game seems to be over once the bunny is
+squished. The next step is to give the player a number of lives and
+let the game end and restart.
 
 ## End and restart the game when the bunny is squished
 
