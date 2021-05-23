@@ -138,10 +138,10 @@ cars — so I put in a little delay using `wait_seconds` so that the
 loop only runs ten times a second.
 
 Each time the loop goes around I ask for a random number between 0 and
-1, and if it's below 0.2 then the Car sprite moves to just off the
-screen, left of the first lane, and makes a clone at this position (so
-instead of making a clone every time around the loop we make one
-*about* one time in five).
+1 (that's what `random.random()` does), and if it's below 0.2 then the
+Car sprite moves to just off the screen, left of the first lane, and
+makes a clone at this position (so instead of making a clone every
+time around the loop we make one *about* one time in five).
 
 I guessed at the timing of the delay, and at the frequency with which
 cars were created, and then ran the program a few times tinkering with
@@ -155,31 +155,60 @@ clone so that it has time to drive along the lane.
 
 ### Controlling the clone
 
-We want the clone to run its own script when it's created, so we will use the `when_I_start_as_a_clone` event.  I will build up the loop that drives the car from left-to-right along the lane. First, I want the clone to choose a costume, either 'right0' or 'right1' (they are two different colours of cars, and it keeps the lane of traffic from looking too boring if there's a mix of costumes).
+We want the clone to run its own script when it's created, so we will
+use the `when_I_start_as_a_clone` event.  I will build up the loop
+that drives the car from left-to-right along the lane. First, I want
+the clone to choose a costume, either 'right0' or 'right1' (they are
+two different colours of cars, and it keeps the lane of traffic from
+looking too boring if there's a mix of costumes).
 
-Python has a handy `random.choice` function will return one of the items from the list we give it, randomly chosen.
+Python has a handy `random.choice` function that will return one of
+the items from the list we give it, randomly chosen.
 
-The clone got its own copy of the `direction` variable containing whatever the Car sprite had in it at the moment the clone was created. It contains the string 'right', so combining that with either '0' or '1' gets us one of the costume names.  Also, the images are a bit big, so I'll shrink the clone to 65% of its original size.
+The clone got its own copy of the `direction` variable containing
+whatever the Car sprite had in it at the moment the clone was
+created. It contains the string 'right' (because that's what
+`StartTrafficRowOne` stored just before creating the clone), so
+combining that with either '0' or '1' gets us one of the `Car` costume
+names we set up earlier.  Also, the images are a bit big, so I'll
+shrink the clone to 65% of its original size.
 
 {{< commit begin-drive-routine >}}
 
-Once the sprite has appeared we start a loop that drives the car to the right.
+Once the sprite has appeared we start a loop that drives the car to
+the right.
 
-You might wonder why I'm are checking the 'direction' variable, since it has to contain 'right'. The answer is that if we get this code correct for moving right we'll be able to use it for the left-moving lane as well.
+You might wonder why I'm are checking the 'direction' variable, since
+it has to contain 'right'. The answer is that if we get this code
+correct for moving right we'll be able to use it for the left-moving
+lane as well.
 
-In order to allow us to tweak how fast the lane of traffic moves I'll use a variable to change how much it moves. That way if I wanted to speed it up later on I can just change what's stored in the variable.
+In order to allow us to tweak how fast the lane of traffic moves I'll
+use a variable to change how much it moves. That way if I wanted to
+speed it up later on I can just change what's stored in the variable.
 
 {{< commit drive-to-the-right >}}
 
-The speed variable needs to be set up somewhere, which I do at the start of the `startTrafficRowOne` method.
+The speed variable needs to be set up somewhere, which I do at the
+start of the `startTrafficRowOne` method.
 
 {{< commit add-speed-var >}}
 
-Once the car has moved far enough to be off the right-hand side of the screen I hide it and then delete the clone. Deleting the clone keeps things tidy and means there are not lots of useless clones lying around just off the stage edge.
+Once the car has moved far enough to be off the right-hand side of the
+screen I hide it and then delete the clone. Deleting the clone keeps
+things tidy and means there are not lots of useless clones lying
+around just off the stage edge.
 
 {{< commit finish-car-clone >}}
 
-Now, back to my idea of using the same code to control cars in the left-hand lane. If the direction is not 'right' then I suppose it must be 'left'. Those cars just move a _negative_ amount (and have moved far enough once their `x`-coordinate has moved off the left edge of the stage)
+Now, back to my idea of using the same code to control cars in the
+left-hand lane. If the direction is not 'right' then I suppose it must
+be 'left'. Those cars just move a _negative_ amount (and have moved
+far enough once their `x`-coordinate has moved off the left edge of
+the stage)
+
+I'll add the code to handle the 'left' direction, and then move on to
+making actual clones that want to move that way.
 
 {{< commit drive-to-the-left >}}
 
