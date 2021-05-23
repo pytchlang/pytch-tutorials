@@ -78,21 +78,40 @@ This is my version:
 
 ## Create the cars
 
-The next step is to create some obstacles to make it harder to reach the top of the screen. Our first obstacles are the cars that will travel left and right in three lanes of traffic that the bunny will have to cross. There is room for three lanes in the background, but we'll design our solution so that we could easily add more lanes of traffic if we want.
+The next step is to create some obstacles to make it harder to reach
+the top of the screen. Our first obstacles are the cars that will
+travel left and right in three lanes of traffic that the bunny will
+have to cross. There is room for three lanes in the background, but
+we'll design our solution so that we could easily add more lanes of
+traffic if we want.
 
-So that there is some variety in how they look I have chosen two different images for each car, each of which could be driving left or right. Later on we will select at random the between the two different versions of cars driving to the left (or right, depending on the lane) for each car.
+So that there is some variety in how they look I have chosen two
+different images for each car, each of which could be driving left or
+right. Later on we will select at random the between the two different
+versions of cars driving to the left (or right, depending on the lane)
+for each car.
+
+The file names for these graphics don't describe which direction they
+show the cars facing so I have told Pytch I'd like to use my own
+labels for the costumes (`left0`, `right0` and so on) instead of using
+the file name.
 
 {{< commit Car-with-costumes >}}
 
-The original car is going to remain hidden, because we'll use *clones* for the actual traffic.
+The original car is going to remain hidden, because we'll use *clones*
+for the actual traffic. If a Sprite has a `start_shown` variable Pytch
+will use it to decide if the sprite is visible immediately or not.
 
 {{< commit Car-start-not-shown >}}
 
-I import the Python random number code, because we will use that to select the different costumes.
+### Designing the traffic
+
+For the next section of code I want to select the different costumes
+at random so that there is some variety. Python has some random
+number code available, we just need to import it so that it's
+available
 
 {{< commit import-random-module >}}
-
-### Designing the traffic
 
 My plan is to use the original `Car` sprite as a template. Every time I want to add a new car to a lane of traffic I'll move the hidden Car sprite to the starting position for that lane and then make a clone. The clone will then show itself and drive across the screen.
 
