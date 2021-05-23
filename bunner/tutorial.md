@@ -436,8 +436,6 @@ wouldn't run until `start_game` had finished.
 
 ## Adding a life counter
 
-{{< work-in-progress >}}
-
 Restarting the game after the bunny has been squished once is a bit
 unfair, it would be better to give the player a few attempts (say, the
 traditional three lives).
@@ -454,7 +452,10 @@ when the bunny is ready to play).
 
 Each time the bunny gets squished I'll reduce that counter by one.
 
-Moving some code around again, I want to separate the idea of _starting the game_ from the idea of _playing a life_. So I'll create a new function that has the code relevant to playing a life (moving back to the start row and selecting a costume).
+Moving some code around again, I want to separate the idea of
+_starting the game_ from the idea of _playing a life_. So I'll create
+a new function that has the code relevant to playing a life (moving
+back to the start row and selecting a costume).
 
 {{< commit define-play-one-life >}}
 
@@ -468,41 +469,68 @@ And I can also call it when the bunny is squished:
 
 ## Running out of lives
 
-The next thing I want to do is end the game when the player has used up all their lives. That means that after the player is asked to play a life I'll check whether it's actually possible to do that. If there aren't then the bunny will go into its "waiting" state until a new game starts, and we'll announce to all the other sprites and clones that the game has ended.
+The next thing I want to do is end the game when the player has used
+up all their lives. That means that after the player is asked to play
+a life I'll check whether it's actually possible to do that. If there
+aren't then the bunny will go into its "waiting" state until a new
+game starts, and we'll announce to all the other sprites and clones
+that the game has ended.
 
 {{< commit announce-game-over >}}
 
-When the clone cars see that the game has ended I want them all to vanish (even if they haven't reached the edge of the canvas yet). When a clone is deleted all of its running scripts stop, of course.
+When the clone cars see that the game has ended I want them all to
+vanish (even if they haven't reached the edge of the canvas yet). When
+a clone is deleted all of its running scripts stop so everything is
+cleaned up for the clones that are driving.
 
 {{< commit game-over-deletes-clone-cars >}}
 
-The original `Car` sprite is still running its traffic factory scripts, of course, and they will just create more cars unless they are stopped.
+The original `Car` sprite is still running its traffic factory
+scripts, of course, and they will just create more cars unless they
+are stopped.
 
-Although the original `Car` sprite will receive the game over broadcast and run the `vanish` script that won't stop the car factories. The original sprite is immune to `delete_this_clone` actions (because it's not a clone!). So I'll have to do something else to stop those scripts.
+Although the original `Car` sprite will receive the game over
+broadcast and run the `vanish` script that won't stop the car
+factories. The original sprite is immune to `delete_this_clone`
+actions (because it's not a clone!). So I'll have to do something else
+to stop those scripts.
 
-One way to handle this would be to change the loop in those factory scripts so that instead of running forever they only ran as long as the game was playing. Something like this:
+One way to handle this would be to change the loop in those factory
+scripts so that instead of running forever they only ran as long as
+the game was playing. Something like this:
 
 {{< commit game-over-end-traffic1 >}}
 
-To make this work I add a new global variable. I could try to use the bunny state for this, but the question of whether the bunny can be moved is different to whether the game is playing or not so I decided to track them separately.
+To make this work I add a new global variable. I could try to use the
+bunny state for this, but the question of whether the bunny can be
+moved is different to whether the game is playing or not so I decided
+to track them separately.
 
 {{< commit add-global-running-flag >}}
 
-The bunny notes that the game is running by setting this variable to `True`.
+The bunny notes that the game is running by setting this variable to
+`True`.
 
 {{< commit bunny-sets-game-running >}}
 
-When the bunny runs out of lives it notes that the game should be over by setting this variable to false (I could have chosen to set this to false in a function that is run when the "game over" broadcast is received, that would work too)
+When the bunny runs out of lives it notes that the game should be over
+by setting this variable to false (I could have chosen to set this to
+false in a function that is run when the "game over" broadcast is
+received, that would work too)
 
 {{< commit game-over-unsets-running-flag >}}
 
-Now I can make the same changes I made to the first factory script to the other two:
+Now I can make the same changes I made to the first factory script to
+the other two so that every row or traffic is stopped when the game
+ends:
 
 {{< commit game-over-end-traffic2 >}}
 
 {{< commit game-over-end-traffic3 >}}
 
-Once all of the treaffic has been stopped and the clones have vanished I decided to add a new backdrop with a game over message and switch to showing that.
+Once all of the treaffic has been stopped and the clones have vanished
+I decided to add a new backdrop with a game over message and switch to
+showing that.
 
 {{< commit show-game-over-backdrop >}}
 
@@ -510,21 +538,33 @@ Once all of the treaffic has been stopped and the clones have vanished I decided
 
 ## The start button
 
-When the game is over I would like a way to start it again. This is where the rearranging of code I did earlier on will pay off.
+When the game is over I would like a way to start it again. This is
+where the rearranging of code I did earlier on will pay off.
 
-First I make a new sprite that will act as a 'start game' button
+The plan is to change things around so that starting to play a game
+and clicking the green flag are separate things. The green flag will
+start off the whole project, and playing a game is something the
+project manages for itself.
+
+First I make a new sprite that will act as a 'start game' button that
+appears when the green flag is clicked, and when the game ends (so
+that you can use it to start the game over).
 
 {{< commit create-start-button >}}
 
-I want it to react to being clicked with the mouse.  When it's clicked it announces to the rest of the project that it's time to start a new game, then the button hides itself.
+I want it to react to being clicked with the mouse.  When it's clicked
+it announces to the rest of the project that it's time to start a new
+game, then the button hides itself.
 
 {{< commit make-start-button-clickable >}}
 
-The bunny should start a new game when this message is received, not when the green flag is clicked
+The bunny should start a new game when this message is received, not
+when the green flag is clicked
 
 {{< commit make-bunny-start-game-on-message >}}
 
-The traffic factories should also begin making cars when the game starts, not when the green flag is clicked.
+The traffic factories should also begin making cars when the game
+starts, not when the green flag is clicked.
 
 {{< commit start-traffic-on-message1 >}}
 
@@ -532,13 +572,18 @@ The traffic factories should also begin making cars when the game starts, not wh
 
 {{< commit start-traffic-on-message3 >}}
 
-When the game starts the stage needs to switch to the world costume (it might have been showing the 'game over' screen)
+When the game starts the stage needs to switch to the world costume
+(it might have been showing the 'game over' screen)
 
 {{< commit show-world-on-game-start >}}
 
-Now we have a whole game that can be started by the player, runs through the player's 3 lives, ends, and can be started again!
+Now we have a whole game that can be started by the player, runs
+through the player's 3 lives, ends, and can be started again, without
+having to restart the whole project using the green flag!
 
 ## Keeping score
+
+{{< work-in-progress >}}
 
 We should be showing the lives remaining somewhere on the stage, but before we get to that we can add another small but important feature.
 
