@@ -724,25 +724,35 @@ in this tutorial is to add a new way for the bunny to lose a life!
 
 ## Adding the water hazard
 
-{{< work-in-progress >}}
+The final obstacle to add to the game is the water hazard. At the
+moment once the bunny has passed the three lanes of traffic all it has
+to do is make its way to the top of the screen to reach the goal.
 
-The final obstacle to add to the game is the water hazard. At the moment once the bunny has passed the three lanes of traffic all it has to do is make its way to the top of the screen to reach the goal.
-
-I'm going to add a new check that makes the bunny drown (and lose a life) if it's on the water. But first I want to add some way to get across the water!
+I'm going to add a new check that makes the bunny drown (and lose a
+life) if it's on the water. But first I want to add some way to get
+across the water!
 
 Based on the same design as the `Car` sprite, I make a `Log` sprite:
 
 {{< commit introduce-log-class >}}
 
-I could copy the `Car` factory approach exactly, but I want to show how to reduce the amount of code a little. So I create a function for a "log factory" that takes the direction and the y-coordinate of the lane. This is the factory:
+I could copy the `Car` factory approach exactly, but I want to show
+how to reduce the amount of code a little. So I create a function for
+a "log factory" that takes the direction and the y-coordinate of the
+lane. This is the factory:
 
 {{< commit start-a-single-row >}}
 
-Then I start three separate factory scripts, each providing different inputs to the factory. This will get me three different factory scripts running, all based on the same `start_row` code:
+Then I start three separate factory scripts, each providing different
+inputs to the factory. This will get me three different factory
+scripts running, all based on the same `start_row` code:
 
 {{< commit start-3-rows-of-logs >}}
 
-Each `Log` clone drives along the lane just as the cars do. But instead of checking to see if they have "squished" a bunny they check to see if the bunny is standing on the clone. If it is then the bunny is carried along with the log.
+Each `Log` clone drives along the lane just as the cars do. But
+instead of checking to see if they have "squished" a bunny they check
+to see if the bunny is standing on the clone. If it is then the bunny
+is carried along with the log.
 
 {{< commit drive-log-along-row >}}
 
@@ -750,51 +760,116 @@ Just as with the `Car` we will remove the clone logs when the game ends
 
 {{< commit remove-logs-at-end-of-game >}}
 
-And just like the `Car` we need to have a special collision detection function (otherwise the slightly-too-large sprite costumes will detect collisions at times that don't really look good to the player)
+And just like the `Car` we need to have a special collision detection
+function (otherwise the slightly-too-large sprite costumes will detect
+collisions at times that don't really look good to the player)
 
 {{< commit fuzzy-hit-detection-for-logs >}}
 
 ### Drowning in the water
 
-Now we are ready to make the water hazardous. I'll add a new stage for the bunny. Just like when the bunny is squished, I don't want the movement keys to work while the bunny is drowning.
+Now we are ready to make the water hazardous. I'll add a new mode for
+the bunny. Just like when the bunny is squished, I don't want the
+movement keys to work while the bunny is drowning.
 
 {{< commit add-drowning-state >}}
 
-There is a set of seven costumes showing different frames of a splash. I want to add all of them. To avoid having to write out the names of them all I use the same trick I used in making the digit costumes, and then add that list of new costumes onto the end of the bunny's costume list:
+There is a set of seven costumes showing different frames of a
+splash. I want to add all of them. To avoid having to write out the
+names of them all I use the same trick I used in making the digit
+costumes, and then add that list of new costumes onto the end of the
+bunny's costume list:
 
 {{< commit add-drowning-costumes >}}
 
-When the game is running the bunny will regularly scan to see if it's in the water section of the canvas (that's checked using the `y` coordinate). If it is then unless it's touching one of the `Log` clones it starts drowning.
+When the game is running the bunny will regularly scan to see if it's
+in the water section of the canvas (that's checked using the `y`
+coordinate). If it is then unless it's touching one of the `Log`
+clones it starts drowning.
 
 
 {{< commit regularly-scan-for-drowning >}}
 
-Now, there are two things to fix here. The first is easy, we need to make sure that we run this and `start_playing` in the correct order. They both run when a `start playing` message is received, but we can't be sure which of them runs first, and if `watch_for_water` were to run first then `start_playing` would not have had a chance to set `game_running` yet and so the loop in `watch_for_water` would end and the bunny wouldn't be checking if it should drown. We can fix that easily, because we made sure that  `start_playing` sets `game_running` before it sets the mode. So we just do an extra loop that will stall for a while if `start_playing` hasn't set things up yet.
+Now, there are two things to fix here.
+
+The first is easy, we need to make sure that we run this and
+`start_playing` in the correct order. They both run when a `start
+playing` message is received, but we can't be sure which of them runs
+first, and if `watch_for_water` were to run first then `start_playing`
+would not have had a chance to set the `game_running` variable yet.
+
+If that happens then the loop in `watch_for_water` could end before
+the `game_playing` gets set, and the bunny wouldn't be checking if it
+should drown.
+
+We can fix that easily, because we made sure that `start_playing` sets
+`game_running` before it sets the bunny mode. So we just do an extra
+loop that will stall for a while if `start_playing` hasn't set things
+up yet.
 
 {{< commit wait-until-game-really-starts >}}
 
-This code is not quite right, because I'm using the `touching` routine and as we know it's possible for the bunny to be on a row below or above a log and stil register as touching it. We really want to use the custom `hits` routine. I'm going to make a custom version of the `touching` routine that solves this. The plan is to get a list containing all the clones, and then check them one-by-one to see if the the bunny is touching them.
+This code is not quite right, because I'm using the `touching` routine
+and as we know it's possible for the bunny to be on a row below or
+above a log and stil register as touching it. We really want to use
+the custom `hits` routine, in the same way as we did for the `Car`
+clones.
 
-This uses `all_clones`, the counterpart to the `the_original` function we used back when we wanted to access the Bunny sprite. I use the Python `for` loop to check each one in turn, using my `hits` function. If `hits` ever returns `True` to say that that particular log has hit the bunny then I return from the `touching_any_log` function immediately. I can't return `False` until I have checked _every_ log, of course, because even if the first log we check returns `False` for the hit checking one we check later in the list might still return `True`.
+But the logs have the opposite effect to the cars; instead of killing
+the bunny (by squishing) they keep it alive (not drowning).
+
+I'm going to make a custom version of the `touching` routine that
+deals with this. The plan is to get a list containing all the clones,
+and then check them one-by-one to see if the the bunny is touching
+them.
+
+This uses `all_clones`, the counterpart to the `the_original` function
+we used back when we wanted to access the Bunny sprite. I use the
+Python `for` loop to check each one in turn, using my `hits`
+function. If `hits` ever returns `True` to say that that particular
+log has hit the bunny then I return from the `touching_any_log`
+function immediately. I can't return `False` until I have checked
+_every_ log, of course, because even if the first log we check returns
+`False` for the hit checking one we check later in the list might
+still return `True`.
 
 {{< commit make-custom-check-all-hits-function >}}
 
-Now in the original `watch_for_water` function I can replace the built-in `touching` with a call to my custom `touching_any_log`.
+Now in the original `watch_for_water` function I can replace the
+built-in `touching` with a call to my custom `touching_any_log`.
 
 {{< commit check-bunny-touching-log-clone >}}
 
-There's one final tweak to this hit check, though. When we were talking about the traffic started I said that we didn't have to worry about two pieces of code that were running at the same time interfering, because they would only give way to each other at specific places, like at the end of a loop.
+There's one final tweak to this hit check, though. When we were
+talking about the traffic started I said that we didn't have to worry
+about two pieces of code that were running at the same time
+interfering, because they would only give way to each other at
+specific places, like at the end of a loop.
 
-This is a problem for us now — in `touching_any_log` it could happen that the code checks the first couple of logs in the list, and then the code that moves the first log gets to run and moves the log a bit so that it's under the bunny. Then `touching_any_log` gets to run some more, but it has already moved past that first log in it's checking. The result would be that our hit check says the bunny isn't touching a log (so we decide the bunny is drowning), but to the player it looks like the bunny was under the log.
+This is a problem for us now — in `touching_any_log` it could happen
+that the code checks the first couple of logs in the list, and then
+the code that moves the first log gets to run and moves the log a bit
+so that it's under the bunny. Then `touching_any_log` gets to run some
+more, but it has already moved past that first log in it's
+checking. The result would be that our hit check says the bunny isn't
+touching a log (so we decide the bunny is drowning), but to the player
+it looks like the bunny was under the log.
 
-This can't normally happen because the built in Pytch `touching` function doesn't let anything else run while it's checking to see if you touch anything. We can tell Pytch that we want it to treat our function the same way. We can add a special kind of "hat block" to a function that orders this (you can have this along with a normal hat block, just list one after the other).
+This can't normally happen because the built in Pytch `touching`
+function doesn't let anything else run while it's checking to see if
+you touch anything. We can tell Pytch that we want it to treat our
+function the same way. We can add a special kind of "hat block" to a
+function that orders this (you can have this along with a normal hat
+block, just list one after the other).
 
-Pytch will still let other code run if this function takes too long about getting through its loops (about a second, by default). That will be just fine for us.
+Pytch will still let other code run if this function takes too long
+about getting through its loops (about a second, by default). That
+will be just fine for us.
 
 {{< commit non-yielding-hit-check-loop >}}
 
-
-Once we have determined that the bunny is drowning we play the frames of the 'splash' animation one after the other:
+Once we have determined that the bunny is drowning we play the frames
+of the 'splash' animation one after the other:
 
 {{< commit play-drowning-animation >}}
 
@@ -812,6 +887,8 @@ Finally, if you try this you might find that while the animation is playing a lo
 
 
 ## Finishing the level
+
+{{< work-in-progress >}}
 
 The final part of the game is to give the player a reward for reaching the goal at the top of the screen. Every time we move up to a new highest row I'll check to see whether that was the top of the screen
 
