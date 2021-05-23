@@ -646,25 +646,48 @@ the stage instead of just printing it.
 
 ## Showing score
 
-{{< work-in-progress >}}
-
-To show the score I'm going to create two new sprites that will be used to show the digits of the score (I'll only track scores up to 99)
+To show the score I'm going to create two new sprites that will be
+used to show the digits of the score (I'll only track scores up to 99)
 
 {{< commit introduce-score1-class >}}
 
-There are ten costumes, which I want to name "digit-0" to "digit-9". Instead of typing each of the ten costumes out by hand I decided to use a Python shortcut for making lists with this kind of pattern. There are two parts to this:
+There are ten costumes, which I want to name "digit-0" to
+"digit-9". Instead of typing each of the ten costumes out by hand I
+decided to use a Python shortcut for making lists with this kind of
+pattern. There are two parts to this:
 
-The first is writing a `range` statement inside the list definition, for example `[ n for n in range(10) ]` creates the list `[0,2,3,4,5,6,7,8,9]` (`n` in this is just a temporary variable that is created for setting up the list only).
+The first is writing a `range` statement inside the list definition.
+Writing a bit of Python like: `[ n for n in range(10) ]` creates the
+list `[0,2,3,4,5,6,7,8,9]` (`n` in this is just a temporary variable
+that is created for setting up the list only). So I can use this to
+make the "varying" part of each costume's name.
 
-The second trick is that we can fill in "placeholders" in a string using Python's special "f-strings" (formatted string literals). The basic idea of these is that you write a string that mentions some variables in it, within curly braces and Python will fill in the value of the variable.
+The second trick is that we can fill in "placeholders" in a string
+using Python's special "f-strings" (formatted string literals). The
+basic idea of these is that you write a string that mentions some
+variables in it, within curly braces and Python will fill in the value
+of the variable.
 
-For example, if you write `f"digit-{n}"` when the variable `n` has the number `3` in it then the final string would be `"digit-3"`. The `f` in front of the first double-quote is what tells Python that it should look for variables marked by curly braces inside the string.
+For example, if you write `f"digit-{n}"` when the variable `n` has the
+number `3` in it then the final string would be `"digit-3"`. The `f`
+in front of the first double-quote is what tells Python that it should
+look for variables marked by curly braces inside the string.
 
-We can combine this with a range loop to get several strings that follow some pattern.
+We can combine this with a range loop to get several strings that
+follow some pattern.
 
 {{< commit compute-score-digit-costumes >}}
 
-When the score changes I'll get the bunny sprite to send out a broadcast message. When this score sprite receives that it will look up the score, calculate the _first digit_ of the score, and set the costume to the corresponding digit. I use the f-string trick in this to select the right costume name based on the "tens" value of the score.
+When the score changes I'll get the bunny sprite to send out a
+broadcast message. When this score sprite receives that it will look
+up the score, calculate the _first digit_ of the score, and set the
+costume to the corresponding digit. I use the f-string trick in this
+to select the right costume name based on the "tens" value of the
+score.
+
+Calculating the first digit is easy if we assume the score is never
+more than 99. We divide the score by ten and _take the
+remainder_. This is what the Python `%` operator does.
 
 {{< commit display-digits-on-message1 >}}
 
@@ -672,13 +695,20 @@ I get the bunny to announce score changes using a broadcast:
 
 {{< commit broadcast-score-change-message >}}
 
-To show the 'tens' digit of the score I make a second sprite that's almost identical. The only differences are where on the screen it appears, and the calculation done in `show_correct_digit`, where I use the `//` operator (which divides a number and throws away any decimal part).
+To show the 'tens' digit of the score I make a second sprite that's
+almost identical. The only differences are where on the screen it
+appears, and the calculation done in `show_correct_digit`, where I use
+the `//` operator (which divides a number and throws away any decimal
+part).
 
-Notice in this class that I was able to re-use the `score_costumes` variable.
+Notice in this class that I was able to re-use the `score_costumes`
+variable, which I had made as a global variable.
 
 {{< commit create-score-2-class >}}
 
 ## More status displays
+
+{{< work-in-progress >}}
 
 Now that we have a way to show some digits we could also use this to show the number of lives remaining. A third sprite that has the same costumes and which updates whenever the lives change can do this:
 
