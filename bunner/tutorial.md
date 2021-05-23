@@ -395,37 +395,59 @@ let the game end and restart.
 
 ## End and restart the game when the bunny is squished
 
-I'm going to rearrange the code in the Bunny sprite so that it will be easier to reset the game when the player loses all their lives. The first step is to split out the things that we want to do at the start of the game from the things that we do every time we play one life. Right now they are all mixed together in `go_to_starting_position` and it runs when the green flag is clicked.
+I'm going to rearrange the code in the Bunny sprite so that it will be
+easier to reset the game when the player loses all their lives. The
+first step is to split out the things that we want to do at the start
+of the game from the things that we do every time we play one
+life. Right now they are all mixed together in
+`go_to_starting_position` which runs when the green flag is clicked.
 
-So I'll make a new function that has the stuff we want to run at the start of each game.
+So I'll make a new function, `start_game`, that has the stuff we want
+to run at the start of each game.
 
 {{< commit set-game-start-code >}}
 
-I will switch the bunny from visible to invisible when the project first loads (this is paving the way for a splash screen at the start)
+I will switch the bunny from visible to invisible when the green flag
+is clicked (this is paving the way for a splash screen at the start of
+the game)
 
 {{< commit remove-game-specific-setup-from-init >}}
 
-Now I have a use for the `WAITING` mode we created recently. Before the game actually begins the bunny is neither squished nor playing.
+Now I have a use for the `WAITING` mode we created recently. Before
+the game actually begins the bunny is neither squished nor playing.
 
 {{< commit wait-at-the-start >}}
 
-Now I can add a use of this setup function to the code that handled the bunny being squished. We pause for a while to let the player see the costume of the squished bunny, and then reset the game.
+Now I can add a use of this setup function to the code that handled
+the bunny being squished. We pause for a while to let the player see
+the costume of the squished bunny, and then reset the game.
 
 {{< commit restart-game-when-squished >}}
 
-The `start_game` function is run by Pytch when the green flag is clicked, but I can run it whenever I want by using its name.
+The `start_game` function is run by Pytch when the green flag is
+clicked, but I can _also_ run it whenever I want by using its name.
 
-It doesn't affect what I'm doing here, but it's worth pointing out the difference between running `start_game` from the green flag event and running it by using its name. The second way doesn't run `start_game`  alongside `squish`, so if there was another statement in `squish` it wouldn't run until `start_game` had finished.
+It doesn't affect what I'm doing here, but it's worth pointing out the
+difference between running `start_game` from the green flag event and
+running it by using its name. The second way doesn't run `start_game`
+*alongside* `squish`, so if there was another statement in `squish` it
+wouldn't run until `start_game` had finished.
 
 ## Adding a life counter
 
-Restarting the game after the bunny has been squished once is a bit unfair, it would be better to give the player a few attempts (say, the traditional three lives).
+{{< work-in-progress >}}
+
+Restarting the game after the bunny has been squished once is a bit
+unfair, it would be better to give the player a few attempts (say, the
+traditional three lives).
 
 At the start of the game I'll set a new variable in the bunny sprite
 
 {{< commit set-three-lives >}}
 
-In the initialization for the bunny I'll set this to a number that suggests the game hasn't started yet (it'll be set to something else when the bunny is ready to play).
+In the initialization for the bunny I'll set this to a number that
+suggests the game hasn't started yet (it'll be set to something else
+when the bunny is ready to play).
 
 {{< commit add-notion-of-lives >}}
 
