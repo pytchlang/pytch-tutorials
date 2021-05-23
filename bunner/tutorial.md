@@ -57,13 +57,20 @@ Pytch to start off *not* showing the Bunny:
 
 Now let's give the player a way to move the bunny around.
 
-We will create a function that will move the bunny up the screen, and tell Pytch to run that function whenever the up arrow key is pressed on the keyboard. We add a simple check of the bunny Y-coordinate to make sure that it is never moved off the top of the screen.
+We will create a function that will move the bunny up the screen, and
+tell Pytch to run that function whenever the up arrow key is pressed
+on the keyboard. We add a simple check of the bunny Y-coordinate to
+make sure that it is never moved off the top of the screen.
 
 {{< commit move-bunny-up >}}
 
-If you haven't already then this is a good place to build the project and make sure it's working. Press the up arrow a few times, and make sure that you're happy it works.
+If you haven't already then this is a good place to build the project
+and make sure it's working. Press the up arrow a few times, and make
+sure that you're happy it works.
 
-Once you are comfortable with it, you could add three more functions for the other directions.  Remember, each function has to have its own name or Python will not recognise it properly.
+Once you are comfortable with it, you could add three more functions
+for the other directions.  Remember, each function has to have its own
+name or Python will not recognise it properly.
 
 This is my version:
 
