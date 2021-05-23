@@ -881,7 +881,12 @@ and play another life
 
 {{< commit play-after-drowning >}}
 
-Finally, if you try this you might find that while the animation is playing a log comes along and seems to "push" the splash animation along. That's because the log is pushing the bunny sprite with it! I  add a simple check to the code that handles this so that the bunny is only moved if it is really sitting on the log, and not if it's already under water.
+Finally, if you try this you might find that while the animation is
+playing a log comes along and seems to "push" the splash animation
+along. That's because the log is pushing the bunny sprite with it! I
+add a simple check to the code that handles this so that the bunny is
+only moved if it is really sitting on the log, and not if it's already
+under water.
 
 {{< commit check-bunny-alive-on-log >}}
 
@@ -890,19 +895,26 @@ Finally, if you try this you might find that while the animation is playing a lo
 
 {{< work-in-progress >}}
 
-The final part of the game is to give the player a reward for reaching the goal at the top of the screen. Every time we move up to a new highest row I'll check to see whether that was the top of the screen
+The final part of the game is to give the player a reward for reaching
+the goal at the top of the screen. Every time we move up to a new
+highest row I'll check to see whether that was the top of the screen
 
 {{< commit check-if-we-won >}}
 
-If it is then I run a loop that moves the bunny through facing its four directions (so that it looks like it's dancing).
+If it is then I run a loop that moves the bunny through facing its
+four directions (so that it looks like it's dancing).
 
 {{< commit detect-final-row >}}
 
-I added a new `DANCING` mode as well so that the bunny isn't `PLAYING` (I don't want the player to be able to move the bunny during the victory dance and it felt wrong to pretend the bunny was in a `SQUISHED` or `WAITING` mode )
+I added a new `DANCING` mode as well so that the bunny isn't `PLAYING`
+(I don't want the player to be able to move the bunny during the
+victory dance and it felt wrong to pretend the bunny was in a
+`SQUISHED` or `WAITING` mode )
 
 {{< commit new-dancing-state >}}
 
-Once the dance is complete the bunny moves back to the bottom of the stage and the level starts again.
+Once the dance is complete the bunny moves back to the bottom of the
+stage and the level starts again.
 
 {{< commit start-another-round >}}
 
