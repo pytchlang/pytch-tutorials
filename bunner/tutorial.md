@@ -127,13 +127,29 @@ unpredictable.
 
 ### Making the first car factory script
 
-I'll start with the lane closest to the bottom of the screen. Once we have this working we will be able to copy it to get the other lanes working.
+I'll start with the lane closest to the bottom of the screen. Once we
+have this working we will be able to copy it to get the other lanes
+working.
 
-As soon as the green flag is clicked the Car sprite starts a loop to manage the cars in the first lane of traffic. There's no need to have the loop running as fast as possible — that would make far too many cars — so I put in a little delay using `wait_seconds` so that the loop only runs ten times a second.
+As soon as the green flag is clicked the Car sprite starts a loop to
+manage the cars in the first lane of traffic. There's no need to have
+the loop running as fast as possible — that would make far too many
+cars — so I put in a little delay using `wait_seconds` so that the
+loop only runs ten times a second.
 
-Each time the loop goes around I ask for a random number between 0 and 1, and if it's below 0.2 then the Car sprite moves to just off the screen, left of the first lane, and makes a clone at this position.
+Each time the loop goes around I ask for a random number between 0 and
+1, and if it's below 0.2 then the Car sprite moves to just off the
+screen, left of the first lane, and makes a clone at this position (so
+instead of making a clone every time around the loop we make one
+*about* one time in five).
 
-Because we might create another car in this lane the next time around we wait a little longer after creating the clone so that it has time to drive along the lane.
+I guessed at the timing of the delay, and at the frequency with which
+cars were created, and then ran the program a few times tinkering with
+the numbers until I was happy with the number of cars created.
+
+One final tweak I put in: because we might create another car in this
+lane the next time around we wait a little longer after creating the
+clone so that it has time to drive along the lane.
 
 {{< commit start-one-traffic-row >}}
 
