@@ -708,9 +708,9 @@ variable, which I had made as a global variable.
 
 ## More status displays
 
-{{< work-in-progress >}}
-
-Now that we have a way to show some digits we could also use this to show the number of lives remaining. A third sprite that has the same costumes and which updates whenever the lives change can do this:
+Now that we have a way to show some digits we could also use this to
+show the number of lives remaining. A third sprite that has the same
+costumes and which updates whenever the lives change can do this:
 
 {{< commit introduce-life-display >}}
 
@@ -718,9 +718,13 @@ I also add a 'lives changed' broadcast to tell this when to update.
 
 {{< commit update-life-counter >}}
 
-Why not just update this when we see the 'bunny squished' message, which is what causes the lives to change? Because the very next thing in this tutorial is to add a new way for the bunny to lose a life!
+Why not just update this when we see the 'bunny squished' message,
+which is what causes the lives to change? Because the very next thing
+in this tutorial is to add a new way for the bunny to lose a life!
 
 ## Adding the water hazard
+
+{{< work-in-progress >}}
 
 The final obstacle to add to the game is the water hazard. At the moment once the bunny has passed the three lanes of traffic all it has to do is make its way to the top of the screen to reach the goal.
 
