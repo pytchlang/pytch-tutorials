@@ -893,8 +893,6 @@ under water.
 
 ## Finishing the level
 
-{{< work-in-progress >}}
-
 The final part of the game is to give the player a reward for reaching
 the goal at the top of the screen. Every time we move up to a new
 highest row I'll check to see whether that was the top of the screen
@@ -921,16 +919,40 @@ stage and the level starts again.
 
 ## Challenges
 
-You have reached the end of this tutorial, but there's lots more that you could do with this project. Here are some ideas:
+You have reached the end of this tutorial, but there's lots more that
+you could do with this project. Here are some ideas:
 
-* Make the game more challenging for the player. Add a broadcast that goes out when the player reaches the goal. This broadcast could tell the logs and cars that this was a new round, and use that to have them move faster, or have more cars and fewer logs appear by adjusting the numbers in the car and log factories.
+* Make the game more challenging for the player. Add a broadcast that
+  goes out when the player reaches the goal. This broadcast could tell
+  the logs and cars that this was a new round, and use that to have
+  them move faster, or have more cars and fewer logs appear by
+  adjusting the numbers in the car and log factories.
 
-* Improve the accuracy of the `hits` routines (the log one, especially, is a bit over-sensitive, it's easy for the bunny to fall off the smaller logs without it looking like it should have)
+* Improve the accuracy of the `hits` routines (the log one,
+  especially, is a bit over-sensitive, it's easy for the bunny to fall
+  off the smaller logs without it looking like it should have)
 
-* Add some different types of obstacles (longer cars, using a lorry costume, for example)
+* Add some different types of obstacles (longer cars, using a lorry
+  costume, for example)
 
-* Vary the speed of the logs and cars in different lanes (you probably don't want to vary the speed within a lane unless you can account for the possibility of cars or logs hitting each other!)
+* Vary the speed of the logs and cars in different lanes (you probably
+  don't want to vary the speed within a lane unless you can account
+  for the possibility of cars or logs hitting each other!)
 
-* It's easy to dodge over the road at the start of the game because all the cars drive in from the edges but the bunny starts in the middle. Have the car factories create some cars in the middle of the road at the start of the game so that there isn't a time when the roads are totally clear.
+* It's easy to dodge over the road at the start of the game because
+  all the cars drive in from the edges but the bunny starts in the
+  middle. Have the car factories create some cars in the middle of the
+  road at the start of the game so that there isn't a time when the
+  roads are totally clear.
 
-* At the moment the bunny sprite is drawn so that it appears _under_ a car when it's squished, but on top of the logs when it jumps onto them. But we didn't do anything special to make that happen, it's just how it worked out, and you might have noticed that it looks wrong if the we're drawing the bunny drowning animation and a log passes over it (the "splash" animation draws on top of the log!). You can fix this by using the Pytch _layers_ to move the bunny under and over other sprites as needed (use `self.move_to_front_layer()` and `self.move_to_back_layer()`). Fix this drawing problem by moving the bunny back and forward through the layers.
+* At the moment the bunny sprite is drawn so that it appears _under_ a
+  car when it's squished, but on top of the logs when it jumps onto
+  them. But we didn't do anything special to make that happen, it's
+  just how it worked out, and you might have noticed that it looks
+  wrong if the we're drawing the bunny drowning animation and a log
+  passes over it (the "splash" animation draws on top of the
+  log!). You can fix this by using the Pytch _layers_ to move the
+  bunny under and over other sprites as needed (use
+  `self.move_to_front_layer()` and `self.move_to_back_layer()`). Fix
+  this drawing problem by moving the bunny back and forward through
+  the layers.
