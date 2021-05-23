@@ -237,35 +237,80 @@ enough for now to know we are safe!
 
 ## Squish the bunny!
 
-You'll notice that the cars don't actually present any sort of challenge at the moment, because the bunny can just hop through the lanes without being touched.
+You'll notice that the cars don't actually present any sort of
+challenge at the moment, because the bunny can just hop through the
+lanes without being touched. Time to fix that.
 
 ### Checking for collisions
 
-Checking every time something moves will mean changes in lots of places in the code — I'd need to check when cars move _and_ when the bunny moves. Instead I'll create a new script that runs in each `Car` clone constantly checking for collisions. Writing `while True` means the loop will run forever (actually, just until the clone is deleted when it reaches the end of the lane).
+Checking every time something moves will mean changes in lots of
+places in the code — I'd need to check for the same thing when cars
+move _and_ when the bunny moves. Instead I'll create a new script that
+runs in each `Car` clone constantly checking for collisions. Writing
+`while True` means the loop will run forever (actually, just until the
+clone is deleted when it reaches the end of the lane).
 
-I'll decide later what to actually do when there is a collision. So I can test my code I'll print out a message whenever there is a collision.  To see these messages, click on the *Output* tab.  You can come back to this tutorial by clicking on the *Tutorial* tab.
+The loop that checks if the `Car` clone is touching the bunny might
+look a little odd, since it just has a `pass` statement in it (`pass`
+is a Python instruction that does nothing). What we need here is a
+loop that waits until the clone is touching the `Bunny` sprite to move
+on to the print. Python needs there to be a statement inside the loop,
+but there isn't actually anything to do if they are not touching, we
+just want to loop around and check again until they are. This is the
+sort of thing `pass` is useful for.
+
+I'll decide later what to actually do when there is a collision. So I
+can test my code I'll print out a message whenever there is a
+collision.  To see these messages, click on the *Output* tab.  You can
+come back to this tutorial by clicking on the *Tutorial* tab.
 
 {{< commit check-for-squishing >}}
 
-As soon as I test this I find there is a problem (try it out now). The car reports it's squishing a bunny when it drives past the bunny, even if it's not in the lane? What's going on?
+As soon as I test this I find there is a problem (try it out now). The
+car reports it's squishing a bunny when it drives past the bunny, even
+if it's not in the lane? What's going on?
 
-The answer is in our costumes. The very nice costumes we're using (courtesy of the [Code The Classics](https://wireframe.raspberrypi.org/books/code-the-classics1) book) are actually bigger than they look. Pytch checks for 'touching' by checking whether rectangles drawn around the entire costume of each sprite overlap. The `Car` costume and the `Bunny` costume overlap when the bunny is _next_ to the lane (you can see that the car costumes have some shadows under them that stick out into the lane below. It looks nice but it messes up how `touching` works).
+The answer is in our costumes. The very nice costumes we're using
+(courtesy of the [Code The
+Classics](https://wireframe.raspberrypi.org/books/code-the-classics1)
+book) are actually bigger than they look. Pytch checks for 'touching'
+by checking whether rectangles drawn around the entire costume of each
+sprite overlap. The `Car` costume and the `Bunny` costume overlap when
+the bunny is _next_ to the lane (you can see that the car costumes
+have some shadows under them that stick out into the lane below. It
+looks nice but it messes up how `touching` works).
 
-The easiest thing to do is write a special bit of code to check whether a clone is hitting another sprite. If we check that the `y` coordinates are close together (say, within 10 pixels) and the `x` coordinates are within 40 then it works pretty well.
+The easiest thing to do is write a special bit of code to check
+whether a clone is hitting another sprite. If we check that the `y`
+coordinates are close together (say, within 10 pixels) and the `x`
+coordinates are within 40 then it works pretty well. I got those
+numbers by looking at the costume images, and a bit of trial-and-error.
 
-This function works by comparing the coordinates of the clone (`self`) and some other sprite that we provide as input.
+This function works by comparing the coordinates of the clone (`self`)
+and some other sprite that we provide as input.
 
 {{< commit special-hitbox-for-cars >}}
 
-When Pytch sees me say `touching(Bunny)` it interprets it as "if this sprite is touching _any_ Bunny sprite", original _or_ clone.
+When Pytch sees me say `touching(Bunny)` it interprets it as "if this
+sprite is touching _any_ Bunny sprite", original _or_ clone.
 
-In order to use this in place of `touching` we can't pass `Bunny`, because that's a sprite _class_. We need to supply the _instance_. The Pytch `the_original` function lets us get the sprite from a sprite class. (There is another function to get a list of all the clones, which we will see later.)
+In order to use this in place of `touching` we can't pass `Bunny`,
+because that's a sprite _class_. We need to supply the _instance_. The
+Pytch `the_original` function lets us get the sprite from a sprite
+class. (There is another function to get a list of all the clones,
+which we will see later.)
 
 {{< commit use-new-hits-method >}}
 
-This works much better at printing messages for the bunny and car colliding, when I try it out I only see the "Squish the bunny!" message printed when the sprites actually _look_ like they are overlapping now.
+This works much better at printing messages for the bunny and car
+colliding, when I try it out I only see the "Squish the bunny!"
+message printed when the sprites actually _look_ like they are
+overlapping now.
 
-Now that this is working I'd like to get the bunny to react to being squished. This is really something for the `Bunny` sprite to take care of. I can send a message that something has happened using the `broadcast` system.
+Now that this is working I'd like to get the bunny to react to being
+squished. This is really something for the `Bunny` sprite to take care
+of. I can send a message that something has happened using the
+`broadcast` system.
 
 {{< commit broadcast-squish >}}
 
