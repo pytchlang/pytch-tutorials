@@ -13,10 +13,10 @@ Let's start by getting a nice backdrop up. I've drawn one already, so
 we can just load the image.
 
 Begin by making a class to represent the stage. We can call it
-anything we want so long as it is declared as being a `Stage`. The
-second line of the class sets up a Python variable with the list of
-background images that we can use (there's only one for now but we
-will add more).
+anything we want so long as it is declared as being a
+`pytch.Stage`. The second line of the class sets up a Python variable
+with the list of background images that we can use (there's only one
+for now but we will add more).
 
 Each background has a name that we'll use in our code when we want to
 switch backgrounds. When we just give the filename of the image file
@@ -31,17 +31,25 @@ If you build the project now, you'll see our backdrop appear.
 
 ## Create our hero
 
-There is not much to do in our game yet, so let's add something for the player to control.
+There is not much to do in our game yet, so let's add something for
+the player to control.
 
-The graphics are already there for the player's sprite, all we have to do is create a class and set up the names of the costumes. Like the stage, the name of our new class is up to us, but we have to declare that it's a kind of `pytch.Sprite`.
+The graphics are already there for the player's sprite, all we have to
+do is create a class and set up the names of the costumes. Like the
+stage, the name of our new class is up to us, but we have to declare
+that it's a kind of `pytch.Sprite`.
 
 {{< commit Bunny-with-costumes >}}
 
-When green flag is clicked, we select the starting costume, and make sure that the Bunny actor is in the right place and visible:
+When green flag is clicked, we select the starting costume, and make
+sure that the Bunny actor is in the right place and visible:
 
 {{< commit Bunny-green-flag-go-to-start >}}
 
-If you build the project, you'll see that the Bunny appears in the middle of the stage, and only goes to the correct place when you click the green flag.  This is a bit messy, so we'll tell Pytch to start off *not* showing the Bunny:
+If you build the project, you'll see that the Bunny appears in the
+middle of the stage, and only goes to the correct place when you click
+the green flag.  This is a bit messy, so we'll change this to tell
+Pytch to start off *not* showing the Bunny:
 
 {{< commit start-Bunny-not-shown >}}
 
