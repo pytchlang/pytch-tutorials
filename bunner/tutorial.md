@@ -113,9 +113,17 @@ available
 
 {{< commit import-random-module >}}
 
-My plan is to use the original `Car` sprite as a template. Every time I want to add a new car to a lane of traffic I'll move the hidden Car sprite to the starting position for that lane and then make a clone. The clone will then show itself and drive across the screen.
+My plan is to use the original `Car` sprite as a sort of
+*template*. Every time I want to add a new car to a lane of traffic
+I'll move the hidden Car sprite to the starting position for that lane
+and then make a clone of it. The clone will then show itself and drive
+across the screen. In this way I can make as many moving car *objects*
+as I want from just one `Car` class.
 
-The original `Car` sprite will have three scripts running, one for each lane, that will act as a kind of car factory, adding new cars with a bit of randomness to keep the gaps between the cars unpredictable.
+The original `Car` sprite will have three scripts running, one for
+each lane, that will act as a kind of car factory, adding new cars
+with a bit of randomness to keep the gaps between the cars
+unpredictable.
 
 ### Making the first car factory script
 
