@@ -403,7 +403,8 @@ life. Right now they are all mixed together in
 `go_to_starting_position` which runs when the green flag is clicked.
 
 So I'll make a new function, `start_game`, that has the stuff we want
-to run at the start of each game.
+to run at the start of each game. At first this is the same as the
+stuff we do on green flag.
 
 {{< commit set-game-start-code >}}
 
