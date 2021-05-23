@@ -214,13 +214,26 @@ making actual clones that want to move that way.
 
 ### Making the rest of the car factories
 
-Once we have that we can add two more loops that start on green flag. They are modelled on the loop that creates `Car` clones for lane 1, but they move to different x and y positions before cloning the car.  I'll set the lanes of traffic to all move at the same speed for now.
+Once we have that we can add two more loops that start on green
+flag. They are modelled on the loop that creates `Car` clones for lane
+1, but they move to different x and y positions before cloning the
+car.  I'll set the lanes of traffic to all move at the same speed for
+now.
 
 {{< commit start-traffic-two-and-three >}}
 
-There's an important point to think about here. What if the row two loop moved the car, but before it got to set the `direction` or create the clone the row one loop ran a bit and altered the x and y position? We could end up with a car that was positioned off to the left of the screen, but which had its direction set to drive to the left, and it would just vanish right away!
+There's an important point to think about here. What if the row two
+loop moved the car, but before it got to set the `direction` or create
+the clone the row one loop ran a bit and altered the x and y position?
+We could end up with a car that was positioned off to the left of the
+screen, but which had its direction set to drive to the left, and it
+would just vanish right away!
 
-In fact, this can't happen, but it's worth knowing why. Pytch will only allow another function to run at specific places. One of those places is at the end of a loop (another is when a function does `wait_seconds`). The manual has more information about this, but it's enough for now to know we are safe!
+In fact, this can't happen, and it's worth knowing why. Pytch will
+only allow another function to run at specific places. One of those
+places is at the end of a loop (another is when a function does
+`wait_seconds`). The manual has more information about this, but it's
+enough for now to know we are safe!
 
 ## Squish the bunny!
 
