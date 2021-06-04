@@ -11,8 +11,7 @@ WAITING, PLAYING, SQUISHED, DROWNING, DANCING = range(5)
 
 
 class BunnyStage(pytch.Stage):
-    Backdrops = [("world", "bunner-background.png"),
-                 ("gameover", "gameover-background.png")]
+    Backdrops = ["world.png", "gameover.png"]
 
     @pytch.when_I_receive("start playing")
     def start_game(self):
@@ -24,18 +23,10 @@ class BunnyStage(pytch.Stage):
 
 
 class Bunny(pytch.Sprite):
-    Costumes = [
-        ("up", "sit0.png"),
-        ("right", "sit1.png"),
-        ("down", "sit2.png"),
-        ("left", "sit3.png"),
-        ("up_squished", "splat0.png"),
-        ("right_squished", "splat1.png"),
-        ("down_squished", "splat2.png"),
-        ("left_squished", "splat3.png"),
-    ] + [
-        ("splash-%d" % n, "splash%d.png" % n) for n in range(8)
-    ]
+    Costumes = [ "up.png", "right.png", "down.png", "left.png",
+                 "up_squished.png", "right_squished.png",
+                 "down_squished.png", "left_squished.png",
+    ] + [f"splash-{n}.png" for n in range(8)]
 
     start_shown = False
 
@@ -43,9 +34,8 @@ class Bunny(pytch.Sprite):
     def go_to_starting_position(self):
         self.switch_costume("up")
         self.go_to_xy(0, -160)
-        self.mode = PLAYING
-        self.hide()
         self.mode = WAITING
+        self.hide()
         self.lives = -1
         self.highest_row_reached = 0
         self.current_row = 0
@@ -75,22 +65,26 @@ class Bunny(pytch.Sprite):
             self.hide()
             self.mode = WAITING
 
+    @pytch.non_yielding_loops
+    def touching_any_log(self):
+        for log in Log.all_clones():
+            if log.hits(self):
+                return True
+        return False
+
     @pytch.when_I_receive("start playing")
     def watch_for_water(self):
         while self.mode != PLAYING:
             pass
         while game_running:
-            logs = Log.all_clones()
-            touching_log = False
-            for l in logs:
-                if l.hits(self):
-                    touching_log = True
-
-            if (self.get_y() > 30 and self.get_y() < 160 and
-                    not touching_log):
+            if (
+                self.get_y() > 30
+                and self.get_y() < 160
+                and not self.touching_any_log()
+            ):
                 self.mode = DROWNING
                 for i in range(8):
-                    self.switch_costume("splash-" + str(i))
+                    self.switch_costume(f"splash-{i}")
                     pytch.wait_seconds(0.1)
                 pytch.wait_seconds(0.5)
                 self.play_one_life()
@@ -135,7 +129,7 @@ class Bunny(pytch.Sprite):
     def squish(self):
         if self.mode != SQUISHED:
             self.mode = SQUISHED
-            self.switch_costume(self._appearance + "_squished")
+            self.switch_costume(self.costume_name + "_squished")
             pytch.wait_seconds(0.5)
             self.play_one_life()
 
@@ -149,7 +143,7 @@ class Bunny(pytch.Sprite):
                     pytch.wait_seconds(0.125)
                     score = score + 1
                     pytch.broadcast("score changed")
-            self.go_to_xy(0,-160)
+            self.go_to_xy(0, -160)
             self.current_row = 0
             self.highest_row_reached = 0
             self.mode = PLAYING
@@ -208,10 +202,10 @@ class Car(pytch.Sprite):
         self.show()
         if self.direction == "right":
             while self.get_x() < 285:
-                self.change_x( self.speed )
-        else: # Direction should be "left"
+                self.change_x(self.speed)
+        else:  # Direction should be "left"
             while self.get_x() > -285:
-                self.change_x( -self.speed )
+                self.change_x(-self.speed)
         self.hide()
         self.delete_this_clone()
 
@@ -227,8 +221,10 @@ class Car(pytch.Sprite):
         self.delete_this_clone()
 
     def hits(self, other):
-        return (abs(self.get_y() - other.get_y()) <= 10 and
-                abs(self.get_x() - other.get_x()) <= 40)
+        return (
+            abs(self.get_y() - other.get_y()) <= 10
+            and abs(self.get_x() - other.get_x()) <= 40
+        )
 
 
 class StartButton(pytch.Sprite):
@@ -238,7 +234,7 @@ class StartButton(pytch.Sprite):
 
     @pytch.when_green_flag_clicked
     def start(self):
-        self.go_to_xy(0,120)
+        self.go_to_xy(0, 120)
         self.show()
 
     @pytch.when_I_receive("game over")
@@ -252,8 +248,7 @@ class StartButton(pytch.Sprite):
         self.hide()
 
 
-score_costumes = [("digit-%d" % n, "digit-%d.png" % n, 14, 14)
-                  for n in range(10)]
+score_costumes = [(f"digit-{n}.png", 14, 14) for n in range(10)]
 
 
 class Score_1(pytch.Sprite):
@@ -266,7 +261,8 @@ class Score_1(pytch.Sprite):
 
     @pytch.when_I_receive("score changed")
     def show_correct_digit(self):
-        self.switch_costume("digit-%d" % (score % 10) )
+        score_units = score % 10
+        self.switch_costume(f"digit-{score_units}")
         self.show()
 
 
@@ -280,7 +276,8 @@ class Score_2(pytch.Sprite):
 
     @pytch.when_I_receive("score changed")
     def show_correct_digit(self):
-        self.switch_costume("digit-%d" % (score // 10) )
+        score_tens = score // 10
+        self.switch_costume(f"digit-{score_tens}")
         self.show()
 
 
@@ -294,7 +291,8 @@ class LivesCounter(pytch.Sprite):
 
     @pytch.when_I_receive("lives changed")
     def show_correct_digit(self):
-        self.switch_costume("digit-%d" % (Bunny.the_original().lives % 10))
+        life_number = Bunny.the_original().lives % 10
+        self.switch_costume(f"digit-{life_number}")
         self.show()
 
 
@@ -324,7 +322,7 @@ class Log(pytch.Sprite):
 
         while game_running:
             if random.random() < 0.05:
-                self.go_to_xy( x, y )
+                self.go_to_xy(x, y)
                 self.direction = direction
                 pytch.create_clone_of(self)
                 pytch.wait_seconds(0.3)
@@ -336,22 +334,30 @@ class Log(pytch.Sprite):
         self.set_size(0.65)
         self.show()
         if self.direction == "left":
-            while( self.get_x() > -285):
-                self.change_x( -self.speed )
-                if self.hits( Bunny.the_original() ):
-                    Bunny.the_original().change_x( -self.speed )
-        else: # Right
-            while( self.get_x() < 285):
-                self.change_x( self.speed )
-                if self.hits( Bunny.the_original() ) and Bunny.the_original().mode != DROWNING:
-                    Bunny.the_original().change_x( self.speed )
+            while self.get_x() > -285:
+                self.change_x(-self.speed)
+                if (
+                    self.hits(Bunny.the_original())
+                    and Bunny.the_original().mode != DROWNING
+                ):
+                    Bunny.the_original().change_x(-self.speed)
+        else:  # Right
+            while self.get_x() < 285:
+                self.change_x(self.speed)
+                if (
+                    self.hits(Bunny.the_original())
+                    and Bunny.the_original().mode != DROWNING
+                ):
+                    Bunny.the_original().change_x(self.speed)
         self.hide()
         self.delete_this_clone()
 
     @pytch.when_I_receive("game over")
     def vanish(self):
-        self.delete_this_clone() # Does nothing on the non-clone original
+        self.delete_this_clone()  # Does nothing on the non-clone original
 
     def hits(self, other):
-        return (abs(self.get_y() - other.get_y()) <= 10 and
-                abs(self.get_x() - other.get_x()) <= 40)
+        return (
+            abs(self.get_y() - other.get_y()) <= 10
+            and abs(self.get_x() - other.get_x()) <= 40
+        )

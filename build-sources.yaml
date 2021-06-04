@@ -11,9 +11,9 @@
   dir_name: qbert
   commit_id: 2a428ef15a5f12353e746113ec6fb8a46a512a0e
 - name: Bunner
-  branch_name: gs/bunner-02
+  branch_name: gs/bunner-03
   dir_name: bunner
-  commit_id: a282e97efcc384f3f2c2df6bdaef98e0feef48e8
+  commit_id: 128b81254ebaa6e0ae3248875fed548fe92208a3
 - name: Boing
   branch_name: bn/boing-04
   dir_name: boing
