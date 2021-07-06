@@ -78,7 +78,7 @@ class Qbert(pytch.Sprite):
         self.go_to_xy(-150 + 3 * 56, -145 + (6 * 42) + 28)
         self.set_size(1.0)
         self.switch_costume("qbert1")
-        self.move_to_front_layer()
+        self.go_to_front_layer()
         self.show()
         self.jumping = False
         self.fallen_off = False
@@ -86,9 +86,9 @@ class Qbert(pytch.Sprite):
         blocks_left = len(Block.all_clones())
 
     def pyramid_coordinates(self):
-        y_on_stage = self.get_y()
+        y_on_stage = self.y_position
         pyramid_r = (y_on_stage + 145 - 28) / 42
-        x_on_stage = self.get_x()
+        x_on_stage = self.x_position
         pyramid_b = (x_on_stage + 150 - pyramid_r * 28) / 56
         return (pyramid_r, pyramid_b)
 

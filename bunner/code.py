@@ -78,8 +78,8 @@ class Bunny(pytch.Sprite):
             pass
         while game_running:
             if (
-                self.get_y() > 30
-                and self.get_y() < 160
+                self.y_position > 30
+                and self.y_position < 160
                 and not self.touching_any_log()
             ):
                 self.mode = DROWNING
@@ -94,7 +94,7 @@ class Bunny(pytch.Sprite):
         global score
         if self.mode == PLAYING:
             self.switch_costume("up")
-            if self.get_y() < 150:
+            if self.y_position < 150:
                 self.change_y(40)
                 self.current_row = self.current_row + 1
                 if self.current_row > self.highest_row_reached:
@@ -107,14 +107,14 @@ class Bunny(pytch.Sprite):
     def move_right(self):
         if self.mode == PLAYING:
             self.switch_costume("right")
-            if self.get_x() < 210:
+            if self.x_position < 210:
                 self.change_x(25)
 
     @pytch.when_key_pressed("ArrowDown")
     def move_down(self):
         if self.mode == PLAYING:
             self.switch_costume("down")
-            if self.get_y() > -150:
+            if self.y_position > -150:
                 self.change_y(-40)
                 self.current_row = self.current_row - 1
 
@@ -122,7 +122,7 @@ class Bunny(pytch.Sprite):
     def move_left(self):
         if self.mode == PLAYING:
             self.switch_costume("left")
-            if self.get_x() > -210:
+            if self.x_position > -210:
                 self.change_x(-25)
 
     @pytch.when_I_receive("squish bunny")
@@ -135,7 +135,7 @@ class Bunny(pytch.Sprite):
 
     def check_victory(self):
         global score
-        if self.get_y() > 159:
+        if self.y_position > 159:
             self.mode = DANCING
             for _ in range(4):
                 for facing in ["right", "down", "left", "up"]:
@@ -201,10 +201,10 @@ class Car(pytch.Sprite):
         self.set_size(0.65)
         self.show()
         if self.direction == "right":
-            while self.get_x() < 285:
+            while self.x_position < 285:
                 self.change_x(self.speed)
         else:  # Direction should be "left"
-            while self.get_x() > -285:
+            while self.x_position > -285:
                 self.change_x(-self.speed)
         self.hide()
         self.delete_this_clone()
@@ -222,8 +222,8 @@ class Car(pytch.Sprite):
 
     def hits(self, other):
         return (
-            abs(self.get_y() - other.get_y()) <= 10
-            and abs(self.get_x() - other.get_x()) <= 40
+            abs(self.y_position - other.y_position) <= 10
+            and abs(self.x_position - other.x_position) <= 40
         )
 
 
@@ -334,7 +334,7 @@ class Log(pytch.Sprite):
         self.set_size(0.65)
         self.show()
         if self.direction == "left":
-            while self.get_x() > -285:
+            while self.x_position > -285:
                 self.change_x(-self.speed)
                 if (
                     self.hits(Bunny.the_original())
@@ -342,7 +342,7 @@ class Log(pytch.Sprite):
                 ):
                     Bunny.the_original().change_x(-self.speed)
         else:  # Right
-            while self.get_x() < 285:
+            while self.x_position < 285:
                 self.change_x(self.speed)
                 if (
                     self.hits(Bunny.the_original())
@@ -358,6 +358,6 @@ class Log(pytch.Sprite):
 
     def hits(self, other):
         return (
-            abs(self.get_y() - other.get_y()) <= 10
-            and abs(self.get_x() - other.get_x()) <= 40
+            abs(self.y_position - other.y_position) <= 10
+            and abs(self.x_position - other.x_position) <= 40
         )

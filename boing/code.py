@@ -20,9 +20,9 @@ class PlayerBat(pytch.Sprite):
         self.show()
 
         while True:
-            if pytch.key_is_pressed("w") and self.get_y() < 117:
+            if pytch.key_pressed("w") and self.y_position < 117:
                 self.change_y(3)
-            if pytch.key_is_pressed("s") and self.get_y() > -117:
+            if pytch.key_pressed("s") and self.y_position > -117:
                 self.change_y(-3)
 
     @pytch.when_I_receive("player-hit")
@@ -44,7 +44,7 @@ class RobotBat(pytch.Sprite):
         self.show()
 
         while True:
-            target_y = Ball.the_original().get_y()
+            target_y = Ball.the_original().y_position
             if target_y < -117:
                 target_y = -117
             if target_y > 117:
@@ -73,7 +73,7 @@ class Ball(pytch.Sprite):
         while True:
             self.change_x(self.x_speed)
 
-            if self.get_x() > 203:
+            if self.x_position > 203:
                 self.change_x(-self.x_speed)
                 self.x_speed = -self.x_speed
 
@@ -83,9 +83,9 @@ class Ball(pytch.Sprite):
                 pytch.broadcast("robot-hit")
                 self.start_sound("hit")
 
-            if self.get_x() < -203:
-                player_y = PlayerBat.the_original().get_y()
-                position_on_bat = self.get_y() - player_y
+            if self.x_position < -203:
+                player_y = PlayerBat.the_original().y_position
+                position_on_bat = self.y_position - player_y
                 if (position_on_bat >= -45) and (position_on_bat <= 45):
                     self.y_speed = int(position_on_bat / 10)
                     self.change_x(-self.x_speed)
@@ -102,7 +102,7 @@ class Ball(pytch.Sprite):
 
             self.change_y(self.y_speed)
 
-            if self.get_y() > 158 or self.get_y() < -158:
+            if self.y_position > 158 or self.y_position < -158:
                 self.change_y(-self.y_speed)
                 self.y_speed = -self.y_speed
                 self.start_sound("bounce")
