@@ -953,6 +953,6 @@ you could do with this project. Here are some ideas:
   passes over it (the "splash" animation draws on top of the
   log!). You can fix this by using the Pytch _layers_ to move the
   bunny under and over other sprites as needed (use
-  `self.move_to_front_layer()` and `self.move_to_back_layer()`). Fix
+  `self.go_to_front_layer()` and `self.go_to_back_layer()`). Fix
   this drawing problem by moving the bunny back and forward through
   the layers.
