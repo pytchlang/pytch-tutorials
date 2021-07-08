@@ -43,6 +43,7 @@ class Money(pytch.Sprite):
     def start_hidden(self):
         self.hide()
 
+    @pytch.when_I_receive("show-money")
     def show_money(self):
         self.switch_costume("coin-1")
         self.go_to_xy(-165, -50)
