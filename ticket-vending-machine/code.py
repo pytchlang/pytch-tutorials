@@ -11,3 +11,6 @@ class Ticket(pytch.Sprite):
         pytch.create_clone_of(self)
         self.switch_costume("adult")
         self.go_to_xy(0, 0)
+        pytch.create_clone_of(self)
+        self.switch_costume("family")
+        self.go_to_xy(0, -120)
