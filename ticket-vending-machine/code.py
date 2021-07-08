@@ -25,7 +25,9 @@ class Ticket(pytch.Sprite):
     def choose_ticket(self):
         global ticket_cost
         ticket_cost = self.cost
+        pytch.broadcast_and_wait("hide-non-chosen")
 
+    @pytch.when_I_receive("hide-non-chosen")
     def hide_if_not_chosen(self):
         if self.cost != ticket_cost:
             self.hide()
