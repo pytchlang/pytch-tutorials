@@ -41,3 +41,14 @@ class Money(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def start_hidden(self):
         self.hide()
+
+    def show_money(self):
+        self.switch_costume("coin-1")
+        self.go_to_xy(-165, -50)
+        self.show()
+        pytch.create_clone_of(self)
+        self.switch_costume("coin-2")
+        self.go_to_xy(-45, -50)
+        pytch.create_clone_of(self)
+        self.switch_costume("note-5")
+        self.go_to_xy(120, -50)
