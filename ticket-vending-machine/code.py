@@ -25,3 +25,4 @@ class Ticket(pytch.Sprite):
     def choose_ticket(self):
         global ticket_cost
         ticket_cost = self.cost
+        pytch.show_variable(None, "ticket_cost")
