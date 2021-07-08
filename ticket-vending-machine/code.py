@@ -33,3 +33,7 @@ class Ticket(pytch.Sprite):
             self.hide()
         else:
             self.glide_to_xy(135, 125, 0.75)
+
+
+class Money(pytch.Sprite):
+    Costumes = ["coin-1.png", "coin-2.png", "note-5.png"]
