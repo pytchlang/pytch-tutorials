@@ -37,3 +37,7 @@ class Ticket(pytch.Sprite):
 
 class Money(pytch.Sprite):
     Costumes = ["coin-1.png", "coin-2.png", "note-5.png"]
+
+    @pytch.when_green_flag_clicked
+    def start_hidden(self):
+        self.hide()
