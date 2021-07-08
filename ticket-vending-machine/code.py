@@ -2,6 +2,7 @@ import pytch
 
 
 ticket_cost = None
+money_received = 0
 
 
 class Ticket(pytch.Sprite):
