@@ -58,6 +58,7 @@ class Money(pytch.Sprite):
         self.switch_costume("note-5")
         self.value = 5
         self.go_to_xy(120, -50)
+        pytch.show_variable(None, "money_received")
 
     @pytch.when_this_sprite_clicked
     def insert_money(self):
