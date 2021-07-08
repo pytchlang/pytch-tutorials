@@ -46,11 +46,14 @@ class Money(pytch.Sprite):
     @pytch.when_I_receive("show-money")
     def show_money(self):
         self.switch_costume("coin-1")
+        self.value = 1
         self.go_to_xy(-165, -50)
         self.show()
         pytch.create_clone_of(self)
         self.switch_costume("coin-2")
+        self.value = 2
         self.go_to_xy(-45, -50)
         pytch.create_clone_of(self)
         self.switch_costume("note-5")
+        self.value = 5
         self.go_to_xy(120, -50)
