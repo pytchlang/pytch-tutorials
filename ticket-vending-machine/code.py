@@ -1,6 +1,9 @@
 import pytch
 
 
+ticket_cost = None
+
+
 class Ticket(pytch.Sprite):
     Costumes = ["child.png", "adult.png", "family.png"]
 
