@@ -31,3 +31,5 @@ class Ticket(pytch.Sprite):
     def hide_if_not_chosen(self):
         if self.cost != ticket_cost:
             self.hide()
+        else:
+            self.glide_to_xy(135, 125, 0.75)
