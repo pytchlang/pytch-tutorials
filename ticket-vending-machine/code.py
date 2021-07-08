@@ -20,3 +20,8 @@ class Ticket(pytch.Sprite):
         self.switch_costume("family")
         self.cost = 20
         self.go_to_xy(0, -120)
+
+    @pytch.when_this_sprite_clicked
+    def choose_ticket(self):
+        global ticket_cost
+        ticket_cost = self.cost
