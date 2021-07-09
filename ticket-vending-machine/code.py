@@ -3,6 +3,7 @@ import pytch
 
 ticket_cost = None
 money_received = 0
+change_needed = None
 
 
 class Ticket(pytch.Sprite):
