@@ -70,3 +70,6 @@ class Money(pytch.Sprite):
             change_needed = money_received - ticket_cost
             pytch.hide_variable(None, "money_received")
             pytch.show_variable(None, "change_needed")
+
+    def hide_money(self):
+        self.hide()
