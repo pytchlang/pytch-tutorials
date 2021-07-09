@@ -65,3 +65,6 @@ class Money(pytch.Sprite):
     def insert_money(self):
         global money_received
         money_received += self.value
+        if money_received >= ticket_cost:
+            global change_needed
+            change_needed = money_received - ticket_cost
