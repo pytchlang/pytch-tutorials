@@ -71,5 +71,6 @@ class Money(pytch.Sprite):
             pytch.hide_variable(None, "money_received")
             pytch.show_variable(None, "change_needed")
 
+    @pytch.when_I_receive("hide-money")
     def hide_money(self):
         self.hide()
