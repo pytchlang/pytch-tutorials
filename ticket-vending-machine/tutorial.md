@@ -253,10 +253,11 @@ to do if the clone *is* the chosen one:
 
 {{< commit glide-chosen-ticket-to-top-right >}}
 
-The *x* number (135) and *y* number (125) here took some experimenting
-to make the ticket go to a sensible place.  You can adjust them if you
-prefer the ticket to be a bit closer to or further from the corner of
-the stage.  Experiment until you're happy with how it looks.
+The *x* number (`135`) and *y* number (`125`) here took some
+experimenting to make the ticket go to a sensible place.  You can
+adjust them if you prefer the ticket to be a bit closer to or further
+from the corner of the stage.  Experiment until you're happy with how
+it looks.
 
 What would happen if you changed the third number (`0.75`) in this
 code?  Try it and see.
