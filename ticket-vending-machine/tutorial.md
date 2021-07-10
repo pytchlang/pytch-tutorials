@@ -25,8 +25,8 @@ display how much change the customer is owed.
 
 Before we start writing any code, our first job is to think about how
 to break down the program into smaller chunks.  We will then write
-code for the parts one at a time, probably breaking each one into
-smaller parts as we go long.
+code for the parts one at a time, breaking each part down further as
+we go long.
 
 From the task description, we can see that there are three main parts,
 which happen in this order:
@@ -37,34 +37,33 @@ which happen in this order:
 
 1. Give the customer their ticket and show their change.
 
-We will now say a bit more about each of these steps, and then start
-work.
+We will now think a bit more about what has to happen in each of these
+steps, and then start work.
 
 #### Choosing the ticket
 
 We will show the three tickets, and let the customer click on the one
-they want.
+they want.  We'll have to remember which ticket they chose.
 
 #### Paying for the ticket
 
 Once we know what ticket the customer wants, we will show the two
 coins and one note, and let the customer click on them until they have
-added enough money.
+added enough money.  We'll have to keep track of how much money has
+been received by the machine.
 
 #### Showing the change
 
 Once the customer has put enough (or maybe too much) money in, the
-machine should deliver the chosen ticket, and also show the customer
-how much change to expect.
+machine should work out how much change the customer needs (if any),
+and show this amount.
 
 
 ## Add a Sprite for the tickets
 
 We want the customer to see the three ticket types, and be able to
-click on one of them to make their choice.  The screen will look like
-this:
-
-TODO: Screenshot **PICTURE**.
+click on one of them to make their choice.  The screen will show the
+three tickets in a column.
 
 We will create a Sprite for the tickets.  We could make three Sprites,
 one for each sort of ticket, but that would lead to a lot of copied
@@ -72,21 +71,17 @@ code.  Instead we will make just one Sprite, and use *clones* to show
 the different types of ticket.
 
 Our first job is to create a `Ticket` Sprite, and say that its
-costumes are the provided images of the three types of ticket:
+costumes are the images (already available as part of this tutorial)
+of the three types of ticket:
 
 {{< commit add-Ticket-sprite >}}
-
-Can you predict what will happen if you build the project now?  Once
-you've made your prediction, run the code and see if you were right.
 
 
 ## Show all ticket types
 
 We will write code to display the ticket types when the green flag is
-clicked.
-
-We will start by moving the `Ticket` sprite to the right place for the
-child ticket.  This is in the centre, left-to-right, and quite near
+clicked.  We start by moving the `Ticket` sprite to the right place
+for the child ticket.  This is centred left-to-right, and quite near
 the top.
 
 {{< commit show-child-ticket >}}
@@ -107,9 +102,9 @@ move to the middle of the stage), and
 
     pytch.create_clone_of(self)
 
-(which will make a clone of the `Ticket` exactly as it is when the
-`create_clone_of()` function is called).  We need to decide the
-right order for these two snippets.  Should we
+(which will make a clone of the `Ticket`, exactly as it is when the
+`create_clone_of()` function is called).  We need to decide the right
+order for these two snippets.  Should we
 
 * Make the clone and then move the original to the new position with
   the new costume?
@@ -122,14 +117,18 @@ to see whether you were right:
 
 {{< commit show-adult-ticket >}}
 
-We need to make a clone of the `Ticket` while it's still showing the
-`child` costume, and then move it to its new position and make it
-change to the `adult` costume.
+The right order is to make a clone of the `Ticket` while it's still
+showing the `child`-ticket costume, and then move it to its new
+position and make it change to the `adult`-ticket costume.
+
+(Try to predict what would happen if you had the `create_clone_of()`
+call after the `switch_costume()` and `go_to_xy()` calls.  Then
+temporarily change the code, run it, and see if you were right.)
 
 Finally, we can do the same thing to show the `family` ticket.  We
 create a clone of the `Ticket` which is showing the adult ticket, and
-then move to the right place to show the `family` ticket and switch to
-that costume:
+then move the original `Ticket` to the correct place to show the
+`family` ticket, and switch to the correct costume:
 
 {{< commit show-family-ticket >}}
 
@@ -138,15 +137,15 @@ that costume:
 
 As well as being in different places on the screen, there is another
 way we need the tickets to be different — they should all cost
-different amounts.  We will do this by storing the cost of each ticket
-in a variable belonging to that clone.  We will put these code lines
-in just below the ones which switch the costume, to make sure we get
-the right cost with the right costume.
+different amounts.  We will store the cost of each ticket in a
+variable belonging to that clone.  We will put the lines of code which
+set this variable just below the lines which switch the costume, to
+make sure we get the right cost with the right costume.
 
 {{< commit store-ticket-costs >}}
 
 
-## Store cost of chosen ticket
+## Remember cost of chosen ticket
 
 Once the customer clicks on one of the tickets, our program needs to
 remember the cost of that ticket.  We will use a global variable for
@@ -157,23 +156,23 @@ way of saying 'no value'.
 {{< commit declare-global-ticket-cost >}}
 
 We now want each ticket clone to react to being clicked, by storing
-its own cost into that global variable.  We can do this by writing a
-method and asking Pytch to run it when the sprite is clicked.  We can
-do this because each clone knows its own cost.  One wrinkle here is
-that we need to tell Python that we want to set the value of the
-global `ticket_cost` variable, by saying `global ticket_cost`.
-Without this, the code would set a new variable `ticket_cost` just
-for use inside our method.
+its own cost into that global variable — remember we stored each
+ticket's cost into its own `cost` variable.  We will write a method
+and ask Pytch to run it when the sprite is clicked.
 
 {{< commit set-cost-when-chosen >}}
 
+One detail in this code is that we need to tell Python that we want to
+set the value of the *global* `ticket_cost` variable, by saying
+`global ticket_cost`.  Without this, the code would set a new variable
+`ticket_cost` which would exist just inside our method.
 
 ## Test the program so far
 
-When we were showing the ticket types, it was obvious whether our
-program was working — we could tell just by looking at the screen
-whether the tickets were appearing in the right places with the right
-costumes.  But we can't tell whether we're setting the global
+When we were writing code to show the ticket types, it was obvious
+whether our program was working — we could just look at the screen to
+see whether the tickets were appearing in the right places with the
+right costumes.  But we can't tell whether we're setting the global
 `ticket_cost` variable correctly.
 
 Temporarily, we will *show* this variable once we've set it, just to
@@ -182,11 +181,19 @@ be able to test our program.  We'll add this line to the
 
 {{< commit show-ticket-cost-value >}}
 
+Using `None` for the first argument to `show_variable()` means that we
+want to show a global variable.
+
 If you now build and green-flag your program, and click on one of the
 tickets, you should see the correct `ticket_cost` shown in the watcher
 at the top-left of the stage.
 
-It's a good idea to do this for each of the three tickets, to make
+(As an experiment, temporarily take out, or comment out, the `global
+ticket_cost` line.  Try to predict what will happen when you click on
+a ticket.  Then run the code and see if you were right.  Put the line
+back after you have investigated this.)
+
+It's a good idea to do the test for each of the three tickets, to make
 sure everything's working.
 
 Once you're happy, take out that line again:
@@ -205,12 +212,18 @@ when a ticket is chosen.  The question is:
 
 * How does a clone know whether it is the chosen one?
 
-By the time our program has to ask this question, it can assume that
-the global `ticket_cost` variable has been set to the cost of the
-chosen ticket.  So each clone can compare its own cost to the chosen
-cost.  If they're the same, that clone was the chosen one.
+By the time our program has to ask this question, the global
+`ticket_cost` variable will be set to the cost of the chosen ticket.
+So each clone can compare its own cost to the chosen cost.  If they're
+the same, that clone was the chosen one.  Flipping this round, a
+`Ticket` clone is *not* the chosen one if its own cost is *not equal
+to* the chosen ticket's cost.  In code, this test is
 
-We can now write the code which hides a ticket clone if it is *not*
+    self.cost != ticket_cost
+
+because `!=` is the Python operator for 'not equal to'.
+
+We can now write the code which hides a ticket clone if it is not
 the chosen one:
 
 {{< commit define-hide-if-not-chosen-method >}}
@@ -221,16 +234,20 @@ a ticket?  Try it and see, then read on.
 The program does in fact *not* yet hide the other tickets, because we
 have not said when we want our new `hide_if_not_chosen()` method to
 run.  We'll fix that now, by using a broadcast message.  When a ticket
-is chosen, it will broadcast a message, which *all ticket clones* will
-listen for:
+is chosen, it will broadcast a message, which we will make *all ticket
+clones* listen for with a `when_I_receive()` decorator:
 
 {{< commit broadcast-hide-non-chosen >}}
+
+### Test the code!
+
+Run the code now to check it does what it should.
 
 
 ## Move the chosen ticket into the corner
 
-To make room to show the money, we want to animate the chosen ticket
-into the corner of the stage.  We can do this within the same
+To make room to show the coins and note, we will animate the chosen
+ticket into the corner of the stage.  We can do this within the same
 `hide_if_not_chosen()` method, by adding an `else` clause saying what
 to do if the clone *is* the chosen one:
 
@@ -239,9 +256,12 @@ to do if the clone *is* the chosen one:
 The *x* number (135) and *y* number (125) here took some experimenting
 to make the ticket go to a sensible place.  You can adjust them if you
 prefer the ticket to be a bit closer to or further from the corner of
-the stage.
+the stage.  Experiment until you're happy with how it looks.
 
-We've now completed the first part of the task: Let the customer
+What would happen if you changed the third number (`0.75`) in this
+code?  Try it and see.
+
+We've now completed the first part of the task: The customer can
 choose the ticket they want.  Next we'll let the customer insert coins
 or notes to pay for their ticket.
 
@@ -263,15 +283,20 @@ sprite hide itself when the simulation starts:
 
 {{< commit hide-money-on-green-flag >}}
 
-Our next job will be to write code to show the money.
+Our next job will be to write code to show the money at the right
+time.
 
 
 ## Show the different sorts of money
 
 To show the different sorts of money (two coins and one note), we can
 re-use the ideas we used for showing the ticket types.  Copying the
-way that code did it, we can write a method `show_money()` for our
-`Money` sprite:
+way that code did it, we add a method `show_money()` to our `Money`
+sprite.  The method sets costumes, moves, and makes clones exactly as
+the `Ticket` sprite did.  This time, we arrange the money horizontally
+across the centre of the stage.
+
+Because we've done this before, here is the code all in one piece:
 
 {{< commit show-coins-and-note >}}
 
@@ -280,17 +305,22 @@ We now need to think about this question:
 * When should the money appear?
 
 And the answer is that it should appear once the chosen ticket has
-finished its behaviour in reponse to the `"hide-non-chosen"` message.
-We can give the `Ticket` sprite's `choose_ticket()` method the job of
-sending a message for the `Money` sprite to respond to.  First we go
-back to the `Ticket` sprite and add code to send a suitable message:
+finished moving to the corner.  We can give the `Ticket` sprite's
+`choose_ticket()` method the job of sending a message for the `Money`
+sprite to respond to.  First we go back to the `Ticket` sprite and add
+code to broadcast a suitable message:
 
 {{< commit broadcast-send-money >}}
 
-And the other part is to tell Pytch that the `show_money()` method
-inside our `Money` sprite should run when it hears this message:
+And we also tell Pytch that the `show_money()` method inside our
+`Money` sprite should run when it hears this message:
 
 {{< commit receive-show-money >}}
+
+### Test the code!
+
+Run the program now, choose a ticket, and check that the money appears
+in the right place once the chosen ticket has moved to the corner.
 
 
 ## Make each Money clone know its value
@@ -308,15 +338,17 @@ represents:
 
 We now need to let the customer click on the coins or note, and keep
 track of how much money (in euro) the machine has received from the
-customer.  We will use another global variable — `money_received` —
-for this.  We'll declare it near the top of our program.  At the start
-of the program, no money has been received, so we initialise it to
+customer.  A global variable — `money_received` — will let us do this.
+We'll declare it near the top of our program.  When the program starts
+running, no money has been received, so we initialise the variable to
 zero:
 
 {{< commit declare-global-money-received >}}
 
 And then when a `Money` clone is clicked, it should increase this
-`money_received` variable by that clone's own `value`:
+`money_received` variable by that clone's own `value`.  Remember we
+need to declare `global money_received` to tell Python we want to
+update a global variable.
 
 {{< commit accumulate-money-received >}}
 
@@ -327,26 +359,33 @@ after we've arranged the `Money` clones correctly:
 
 {{< commit show-money-received >}}
 
-Before, we took this code out once we were happy the code was working,
-but we'll keep this code in, to simulate the machine having a display
-showing money received.
+Before, we took this code out once we were happy the rest of the code
+code was working, but this time we'll leave the `money_received`
+variable shown, to simulate the machine having a display showing how
+much money has been received.
 
-Now **test your code**!  Click build, then green-flag, then choose a
-ticket and check the `money_received` display updates correctly as
-you click on the coins or note.
+### Test the code!
+
+Click build, then green-flag, then choose a Ticket.  Now check the
+`money_received` display updates correctly as you click on the coins
+or note.  Each time you click on a coin or note, the display should
+update by the right amount.
+
+Have we finished the whole task now?  If not, what's the next step?
 
 
 ## Detect when enough money received
 
-As the program is now, the customer keeps putting in more and more
-money and never gets their ticket or their change.  We need to fix
-this.
+We've mostly done the second part of the task — the customer can pay
+for their ticket.  But it isn't quite done yet.  As the program is
+now, the customer keeps putting in more and more money and never gets
+their ticket or their change.
 
 We need our program to check whether the amount of money received is
 at least as much as the cost of the chosen ticket.  The only place
 that this can become true is just after the customer has inserted more
 money.  So we can add code to the `insert_money()` method of the
-`Money` sprite to check this.
+`Money` sprite to check whether the customer has now paid enough.
 
 What do we want to happen when the customer has inserted enough money?
 
@@ -360,7 +399,9 @@ What do we want to happen when the customer has inserted enough money?
 * The `Money` clones should all disappear.
 
 One way to do this will be to use a new variable to store the amount
-of change needed.  We'll declare this at the top of our program:
+of change needed.  We'll declare this at the top of our program,
+initialising it to `None` because when the program starts running, we
+don't know how much change will be needed.
 
 {{< commit declare-global-change-needed >}}
 
@@ -368,9 +409,9 @@ And now we can add the `if` logic.  We need to ask the question
 
 * Has enough money been received?
 
-in terms of the variables of our program.  In words, we ask
+In terms of the variables of our program, we ask
 
-* Is 'money received' greater than (or equal to) 'ticket cost'?
+* Is `money_received` greater than (or equal to) `ticket_cost`?
 
 which translates into code as
 
@@ -419,21 +460,14 @@ enough money has been received:
 
 {{< commit broadcast-hide-money >}}
 
+
+## Challenge
+
 {{< work-in-progress >}}
-
-
-## Extra challenge
-
 
 Instead of just showing the change as a number, show the coins that
 the customer should get back.  We know that the most change a customer
 will ever need is €4, so it will be easiest to just write code for
-each of the five cases (no change, €1, €2, €3, €4), rather than try to
-work out a general change-giving algorithm.
-
-
-## Notes to self
-
-State of which ticket is chosen is in two parts: the global
-`ticket_cost` variable, and the "shown" state of the matching
-clone.
+each of the four cases where change is needed (€1, €2, €3, €4), rather
+than try to work out a general change-giving algorithm.  How would you
+do this?
