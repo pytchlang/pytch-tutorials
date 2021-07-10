@@ -21,7 +21,7 @@ display how much change the customer is owed.
 
 ---
 
-## Main parts of the program
+## Planning: Main parts of the program
 
 Before we start writing any code, our first job is to think about how
 to break down the program into smaller chunks.  We will then write
@@ -374,7 +374,7 @@ update by the right amount.
 Have we finished the whole task now?  If not, what's the next step?
 
 
-## Detect when enough money received
+## Planning: Detect when enough money received
 
 We've mostly done the second part of the task — the customer can pay
 for their ticket.  But it isn't quite done yet.  As the program is
@@ -397,6 +397,13 @@ What do we want to happen when the customer has inserted enough money?
   with a display of how much change the customer is owed.
 
 * The `Money` clones should all disappear.
+
+Think about how you might make check whether the customer has given
+the machine enough money, and how you might make the above things
+happen, before reading on.
+
+
+## Compute amount of change needed
 
 One way to do this will be to use a new variable to store the amount
 of change needed.  We'll declare this at the top of our program,
