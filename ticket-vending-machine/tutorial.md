@@ -19,6 +19,11 @@ or €5 notes, until they have inserted enough money to pay for the
 ticket.  If they have put in more than required, the machine will
 display how much change the customer is owed.
 
+(This project was suggested as part of the course [*Programming
+Pedagogy in Secondary Schools: Inspiring Computing
+Teaching*](https://www.futurelearn.com/courses/secondary-programming-pedagogy)
+published by the Raspberry Pi Foundation on the FutureLearn platform.)
+
 ---
 
 ## Planning: Main parts of the program
