@@ -31,7 +31,7 @@ published by the Raspberry Pi Foundation on the FutureLearn platform.)
 Before we start writing any code, our first job is to think about how
 to break down the program into smaller chunks.  We will then write
 code for the parts one at a time, breaking each part down further as
-we go long.
+we go along.
 
 From the task description, we can see that there are three main parts,
 which happen in this order:
@@ -40,7 +40,7 @@ which happen in this order:
 
 1. Let the customer pay for that ticket.
 
-1. Give the customer their ticket and show their change.
+1. Show how much change the customer needs.
 
 We will now think a bit more about what has to happen in each of these
 steps, and then start work.
@@ -168,17 +168,17 @@ and ask Pytch to run it when the sprite is clicked.
 {{< commit set-cost-when-chosen >}}
 
 One detail in this code is that we need to tell Python that we want to
-set the value of the *global* `ticket_cost` variable, by saying
-`global ticket_cost`.  Without this, the code would set a new variable
-`ticket_cost` which would exist just inside our method.
+set the value of the *global* `ticket_cost` variable.  We tell Python
+this by saying `global ticket_cost`.  Without this, the code would set
+a new variable `ticket_cost` which would exist just inside our method.
 
 ## Test the program so far
 
 When we were writing code to show the ticket types, it was obvious
 whether our program was working — we could just look at the screen to
-see whether the tickets were appearing in the right places with the
-right costumes.  But we can't tell whether we're setting the global
-`ticket_cost` variable correctly.
+see whether the right tickets were appearing in the right places.  But
+we can't tell whether we're setting the global `ticket_cost` variable
+correctly.
 
 Temporarily, we will *show* this variable once we've set it, just to
 be able to test our program.  We'll add this line to the
@@ -201,7 +201,7 @@ back after you have investigated this.)
 It's a good idea to do the test for each of the three tickets, to make
 sure everything's working.
 
-Once you're happy, take out that line again:
+Once you're happy, take out the `show_variable()` line again:
 
 {{< commit undo-show-ticket-cost-value >}}
 
@@ -228,6 +228,10 @@ to* the chosen ticket's cost.  In code, this test is
 
 because `!=` is the Python operator for 'not equal to'.
 
+**TODO:** Or:  Initially set `was_chosen` to false on all clones.
+Inside on-click, set that clone's `was_chosen` to True.  Test
+`was_chosen` in `hide_if_not_chosen()`.  Better/worse?
+
 We can now write the code which hides a ticket clone if it is not
 the chosen one:
 
@@ -246,7 +250,8 @@ clones* listen for with a `when_I_receive()` decorator:
 
 ### Test the code!
 
-Run the code now to check it does what it should.
+Run the code now to check it does what it should.  To be thorough,
+check that the program works correctly for all choices of ticket.
 
 
 ## Move the chosen ticket into the corner
@@ -334,8 +339,7 @@ in the right place once the chosen ticket has moved to the corner.
 Each `Money` clone needs to know the value of the coin or note it
 represents.  This is a very similar problem to when we had to make
 sure each `Ticket` clone knew how much it costs.  So we will give each
-`Money` clone a `value` variable, set to the number of euro it
-represents:
+`Money` clone a `value` variable, set to the number of euro it's worth:
 
 {{< commit assign-value-to-money >}}
 
@@ -351,10 +355,10 @@ zero:
 
 {{< commit declare-global-money-received >}}
 
-And then when a `Money` clone is clicked, it should increase this
-`money_received` variable by that clone's own `value`.  Remember we
-need to declare `global money_received` to tell Python we want to
-update a global variable.
+When a `Money` clone is clicked, it should increase this
+`money_received` variable by the clicked clone's own `value`.
+Remember we need to declare `global money_received` to tell Python we
+want to update a global variable.
 
 {{< commit accumulate-money-received >}}
 
@@ -474,13 +478,21 @@ enough money has been received:
 {{< commit broadcast-hide-money >}}
 
 
-## Challenge
+## Challenges
 
 {{< work-in-progress >}}
 
+When the customer has inserted enough money, our vending machine shows
+them the change they need.  The chosen ticket stays at the top of the
+screen.  Can you simulate giving the customer the ticket, maybe by
+smoothly moving the ticket to the centre of the screen?  Experiment
+with the sequencing of hiding the coins and note, hiding the 'money
+received' display, showing the change, and dispensing the ticket.
+Which sequence looks best?
+
 Instead of just showing the change as a number, show the coins that
-the customer should get back.  We know that the most change a customer
-will ever need is €4, so it will be easiest to just write code for
-each of the four cases where change is needed (€1, €2, €3, €4), rather
-than try to work out a general change-giving algorithm.  How would you
-do this?
+the customer should get back.  The most change a customer will ever
+need is €4 — can you see a good argument why this is true?  So it will
+be easiest to just write code for each of the four cases where change
+is needed (€1, €2, €3, €4), rather than try to work out a general
+change-giving algorithm.
