@@ -1,10 +1,10 @@
 # A vending machine for tickets
 
-We will make a simulation of a vending machine which sells tickets for
-a theme park.  The customer chooses between three sorts of tickets,
-which have different prices.  The customer then pays using coins or
-notes.  The machine displays how much change the customer should
-receive.
+Our task is to make a simulation of a vending machine selling
+tickets for a theme park.  The customer chooses between three sorts of
+tickets, which have different prices.  The customer then pays using
+coins or notes.  Finally, the machine displays how much change the
+customer should receive.
 
 The available tickets are:
 
@@ -15,9 +15,7 @@ The available tickets are:
 * A family ticket (€20)
 
 Once a ticket has been chosen, the customer can insert €1 or €2 coins,
-or €5 notes, until they have inserted enough money to pay for the
-ticket.  If they have put in more than required, the machine will
-display how much change the customer is owed.
+or €5 notes.
 
 (This project was suggested as part of the course [*Programming
 Pedagogy in Secondary Schools: Inspiring Computing
@@ -48,92 +46,136 @@ steps, and then start work.
 #### Choosing the ticket
 
 We will show the three tickets, and let the customer click on the one
-they want.  We'll have to remember which ticket they chose.
+they want.  We'll need to remember which ticket they chose.
 
 #### Paying for the ticket
 
 Once we know what ticket the customer wants, we will show the two
 coins and one note, and let the customer click on them until they have
-added enough money.  We'll have to keep track of how much money has
+added enough money.  We'll need to keep track of how much money has
 been received by the machine.
 
 #### Showing the change
 
-Once the customer has put enough (or maybe too much) money in, the
-machine should work out how much change the customer needs (if any),
-and show this amount.
+Once the customer has put enough (or maybe too much) money in, we'll
+need to work out how much change the customer needs (if any), and show
+this amount.
 
 
 ## Add a Sprite for the tickets
 
 We want the customer to see the three ticket types, and be able to
 click on one of them to make their choice.  The screen will show the
-three tickets in a column.
+three tickets in a column, like this:
 
-We will create a Sprite for the tickets.  We could make three Sprites,
-one for each sort of ticket, but that would lead to a lot of copied
-code.  Instead we will make just one Sprite, and use *clones* to show
-the different types of ticket.
+![Ticket menu](ticket-type-menu.png#img-float-left)
+
+Just as we would do in Scratch, we will create a Sprite to be the
+tickets.  We could make three Sprites, one for each sort of ticket,
+but that would lead to a lot of copied code.  Instead we will make
+just one Sprite, and use *clones* to show the different types of
+ticket.
 
 Our first job is to create a `Ticket` Sprite, and say that its
-costumes are the images (already available as part of this tutorial)
-of the three types of ticket:
+costumes are the three types of ticket.  Images for these tickets are
+supplied as part of this tutorial — you can switch over to the "Images
+and sounds" tab to see, and then switch back to this "Tutorial" tab.
+
+In Pytch, you create a Sprite by *defining a `class`* for that Sprite,
+with code like:
+
+    class Ticket(pytch.Sprite):
+
+then the code for that Sprite goes next.  You'll see this shortly.
+
+In Pytch, you say what costumes a Sprite has by setting a `Costumes`
+variable inside that Sprite.  You set `Costumes` to a Python list of
+the images you want to use for costumes.  (You can do more advanced
+things with costumes, but we won't need that for this project.)
+
+Putting that all together, the starting code for our `Ticket` sprite
+looks like this:
 
 {{< commit add-Ticket-sprite >}}
+
+Add those lines to your code, and try to predict what will happen when
+you build it.  Then click `BUILD` and see whether you were right.
 
 
 ## Show all ticket types
 
-We will write code to display the ticket types when the green flag is
-clicked.  We start by moving the `Ticket` sprite to the right place
-for the child ticket.  This is centred left-to-right, and quite near
-the top.
+We will write code to display all three ticket types when the green
+flag is clicked.
+
+### Child ticket
+
+We start by moving the `Ticket` sprite to a good place for the child
+ticket.  This is centred left-to-right, and quite near the top.  This
+should happen when the green flag is clicked.  In Scratch, we would
+put together a script like this:
+
+![When-green-flag-clicked for child ticket](child-ticket-green-flag.png#img-center)
+
+And in Pytch we do something very similar — add this code to your
+program:
 
 {{< commit show-child-ticket >}}
+
+The main difference is that in Pytch we have to give the method a
+name; `show_tickets()` is short and describes what the method does.
 
 You can adjust the `120` in that piece of code if you think the ticket
 should be a bit higher or lower.  Experiment until you're happy with
 it.
 
+### Adult ticket
+
 To also show the adult ticket, we need to make a *clone* of the
-`Ticket` sprite, and make the original `Ticket` move to where we want
-the adult ticket to be.  There will be two snippets of code:
+`Ticket` sprite, and change the original `Ticket`'s costume to the
+adult ticket, and move it to where we want the adult ticket to be.
+
+There will be two snippets of code, which should look familiar
+compared to the blocks you would use in Scratch.
+
+One snippet will make the `Ticket` change to the adult-ticket costume and
+move to the middle of the stage:
 
     self.switch_costume("adult")
     self.go_to_xy(0, 0)
 
-(which will make the `Ticket` change to the adult-ticket costume and
-move to the middle of the stage), and
+And the other snippet will make a clone of the `Ticket`, exactly as it
+is when the snippet runs:
 
     pytch.create_clone_of(self)
 
-(which will make a clone of the `Ticket`, exactly as it is when the
-`create_clone_of()` function is called).  We need to decide the right
-order for these two snippets.  Should we
+We need to decide the right order for these two snippets.  Should we
 
-* Make the clone and then move the original to the new position with
-  the new costume?
+* Make a clone and then move the original to the new position with the
+  new costume?
 
-* Move the original to the new position with the new costume and
-  then make the clone?
+* Move the original to the new position with the new costume and then
+  make a clone?
 
-Decide which order you think is correct, then look at the change below
-to see whether you were right:
+Decide which order you think is correct, then look at the new code
+below to see whether you were right:
 
 {{< commit show-adult-ticket >}}
 
 The right order is to make a clone of the `Ticket` while it's still
-showing the `child`-ticket costume, and then move it to its new
-position and make it change to the `adult`-ticket costume.
+showing the `child`-ticket costume, and then make the original
+`Ticket` change to the `adult`-ticket costume and move to its new
+position.
 
 (Try to predict what would happen if you had the `create_clone_of()`
 call after the `switch_costume()` and `go_to_xy()` calls.  Then
 temporarily change the code, run it, and see if you were right.)
 
+### Family ticket
+
 Finally, we can do the same thing to show the `family` ticket.  We
 create a clone of the `Ticket` which is showing the adult ticket, and
-then move the original `Ticket` to the correct place to show the
-`family` ticket, and switch to the correct costume:
+then switch the original `Ticket` to the `family`-ticket costume and
+move it to the correct place.
 
 {{< commit show-family-ticket >}}
 
@@ -143,27 +185,46 @@ then move the original `Ticket` to the correct place to show the
 As well as being in different places on the screen, there is another
 way we need the tickets to be different — they should all cost
 different amounts.  We will store the cost of each ticket in a
-variable belonging to that clone.  We will put the lines of code which
-set this variable just below the lines which switch the costume, to
-make sure we get the right cost with the right costume.
+variable belonging to that clone.  These variables work very like
+Scratch's "for this Sprite only" variables.  In Python, though, you
+just assign to a variable.  There is no separate step to create the
+variable.
+
+We will put the lines of code which set this variable just below the
+lines which switch the costume, to make sure we get the right cost
+with the right costume.
 
 {{< commit store-ticket-costs >}}
 
+When each clone is created, part of the cloning process is to copy the
+`cost` variable, with its value at the moment the clone was created.
+This way we end up with three `Ticket`s, each having their own `cost`
+variable.
 
 ## Remember cost of chosen ticket
 
 Once the customer clicks on one of the tickets, our program needs to
 remember the cost of that ticket.  We will use a global variable for
-this.  When the program starts, the customer hasn't chosen a ticket
-yet, so we will set the initial value to `None`, which is the Python
-way of saying 'no value'.
+this.  Global variables in Pytch are very like Scratch's "for all
+Sprites" variables.  In Python, we can assign to a variable at the
+"top level" of our program, which means outside any function, class,
+or method.  Often we put this assignment near the top of the program.
+
+When our program starts, the customer hasn't chosen a ticket yet, so
+we will set the variable's initial value to `None`, which is the
+Python way of saying 'no value'.  The code looks like this:
 
 {{< commit declare-global-ticket-cost >}}
 
 We now want each ticket clone to react to being clicked, by storing
-its own cost into that global variable — remember we stored each
-ticket's cost into its own `cost` variable.  We will write a method
-and ask Pytch to run it when the sprite is clicked.
+its own cost into that global variable.  We can use the value of each
+ticket's own `cost` variable.  We will write a method and ask Pytch to
+run it when the sprite is clicked.  In Scratch, this would look like:
+
+![Set global ticket-cost when Ticket clicked](set-ticket-cost.png#img-center)
+
+And in Pytch, we have to give this method a name, and then the idea is
+the same:
 
 {{< commit set-cost-when-chosen >}}
 
@@ -181,8 +242,13 @@ we can't tell whether we're setting the global `ticket_cost` variable
 correctly.
 
 Temporarily, we will *show* this variable once we've set it, just to
-be able to test our program.  We'll add this line to the
-`choose_ticket()` method:
+be able to test our program.  In Scratch we would either tick the box
+next to the variable, or include the block
+
+![Show global ticket-cost](show-ticket-cost.png#img-center)
+
+in a script.  In Pytch, we'll add this line to the `choose_ticket()`
+method:
 
 {{< commit show-ticket-cost-value >}}
 
@@ -242,8 +308,14 @@ a ticket?  Try it and see, then read on.
 
 The program does in fact *not* yet hide the other tickets, because we
 have not said when we want our new `hide_if_not_chosen()` method to
-run.  We'll fix that now, by using a broadcast message.  When a ticket
-is chosen, it will broadcast a message, which we will make *all ticket
+run.  It is exactly as if we had built this Scratch script:
+
+![Hide Ticket if not chosen](hide-ticket-if-not-chosen.png#img-center)
+
+but not put a 'hat block' on top.
+
+We'll fix this now, by using a broadcast message.  When a ticket is
+chosen, it will broadcast a message, which we will make *all ticket
 clones* listen for with a `when_I_receive()` decorator:
 
 {{< commit broadcast-hide-non-chosen >}}
@@ -300,18 +372,21 @@ time.
 
 ## Show the different sorts of money
 
+![Money types in row](money-types-in-row.png#img-float-right)
+
 To show the different sorts of money (two coins and one note), we can
 re-use the ideas we used for showing the ticket types.  Copying the
 way that code did it, we add a method `show_money()` to our `Money`
 sprite.  The method sets costumes, moves, and makes clones exactly as
-the `Ticket` sprite did.  This time, we arrange the money horizontally
-across the centre of the stage.
+the `Ticket` sprite did.  This time, we'll arrange the money
+horizontally across the centre of the stage, as shown to the right:
 
 Because we've done this before, here is the code all in one piece:
 
 {{< commit show-coins-and-note >}}
 
-We now need to think about this question:
+We have *not* yet put a decorator ('hat block') on this method,
+because we first need to think about this question:
 
 * When should the money appear?
 
@@ -356,7 +431,12 @@ zero:
 {{< commit declare-global-money-received >}}
 
 When a `Money` clone is clicked, it should increase this
-`money_received` variable by the clicked clone's own `value`.
+`money_received` variable by the clicked clone's own `value`.  In
+Scratch, we could use a 'change variable' block, like:
+
+![Accumulate value into money-received](accumulate-value-into-money-received.png#img-center)
+
+In Python, we can use the `+=` operator, which does the same job.
 Remember we need to declare `global money_received` to tell Python we
 want to update a global variable.
 
@@ -365,7 +445,8 @@ want to update a global variable.
 We're now facing another familiar problem — we don't know whether our
 code is working, because we can't see the value of the
 `money_received` variable.  As earlier, we'll *show* this variable,
-after we've arranged the `Money` clones correctly:
+after we've arranged the `Money` clones correctly in the
+`show_money()` method:
 
 {{< commit show-money-received >}}
 
@@ -408,9 +489,9 @@ What do we want to happen when the customer has inserted enough money?
 
 * The `Money` clones should all disappear.
 
-Think about how you might make check whether the customer has given
-the machine enough money, and how you might make the above things
-happen, before reading on.
+Think about how you can check whether the customer has given the
+machine enough money, and how you can make the above things happen,
+before reading on.
 
 
 ## Compute amount of change needed
@@ -430,10 +511,16 @@ In terms of the variables of our program, we ask
 
 * Is `money_received` greater than (or equal to) `ticket_cost`?
 
-which translates into code as
+In Scratch, you cannot ask 'greater than or equal to' in one step.
+You would have to use one of these two pieces of code:
+
+![money-received >= ticket-cost](money-received-GE-ticket-cost.png#img-center)
+
+Python has the `>=` operator to mean 'greater than or equal to', so we
+can translate the question into Python code as
 
     if money_received >= ticket_cost:
-        # ... Code to run if enough money inserted ...
+        # ... Code to run if enough money has been inserted ...
 
 The first task from our list above is to work out the amount of change
 needed.  To find this, we subtract the cost of the ticket from the
@@ -478,9 +565,19 @@ enough money has been received:
 {{< commit broadcast-hide-money >}}
 
 
+## Test the complete program
+
+Think about how you can thoroughly test your program.  Does it always
+compute the right amount of change?  Does it work if you give the
+machine the exact money, as well as too much money?  What other ways
+can you test it?
+
 ## Challenges
 
-{{< work-in-progress >}}
+Here are some ideas you could use to make the program better.  Can you
+think of others?
+
+### Simulate dispensing the ticket
 
 When the customer has inserted enough money, our vending machine shows
 them the change they need.  The chosen ticket stays at the top of the
@@ -490,9 +587,11 @@ with the sequencing of hiding the coins and note, hiding the 'money
 received' display, showing the change, and dispensing the ticket.
 Which sequence looks best?
 
+### Show the change in coins
+
 Instead of just showing the change as a number, show the coins that
 the customer should get back.  The most change a customer will ever
-need is €4 — can you see a good argument why this is true?  So it will
-be easiest to just write code for each of the four cases where change
-is needed (€1, €2, €3, €4), rather than try to work out a general
-change-giving algorithm.
+need is €4.  (Can you see a good argument why this is true?)  So it
+will be easiest to just write code for each of the four cases where
+change is needed (€1, €2, €3, €4), rather than try to work out a
+general change-giving algorithm.
