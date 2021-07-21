@@ -294,10 +294,6 @@ to* the chosen ticket's cost.  In code, this test is
 
 because `!=` is the Python operator for 'not equal to'.
 
-**TODO:** Or:  Initially set `was_chosen` to false on all clones.
-Inside on-click, set that clone's `was_chosen` to True.  Test
-`was_chosen` in `hide_if_not_chosen()`.  Better/worse?
-
 We can now write the code which hides a ticket clone if it is not
 the chosen one:
 
