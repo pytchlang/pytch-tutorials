@@ -568,12 +568,45 @@ compute the right amount of change?  Does it work if you give the
 machine the exact money, as well as too much money?  What other ways
 can you test it?
 
-## Challenges
 
-Here are some ideas you could use to make the program better.  Can you
-think of others?
+## Questions and challenges
 
-### Simulate dispensing the ticket
+Here are some questions to investigate, and also some ideas you could
+use to make the program better.  Can you think of others?
+
+### Investigate: Sequencing techniques
+
+This program uses two ways of making things happen in the right
+sequence:
+
+* Within a single method, we just arrange the Python statements in the
+  sequence which will give the right result.  A good example of this
+  is the care we had to take when creating the `Ticket` clones while
+  moving, changing costumes and storing each one's cost.
+
+* The major parts of the program — choose ticket, insert money,
+  display change — were sequenced by responding to the user's clicks,
+  and by broadcasting and receiving messages.
+
+Which do you find easier to think about?  When might you have to use
+one particular technique?  Are there other ways of sequencing
+different parts of a program?
+
+### Investigate: Interaction with the user
+
+If you have done other Python programming, you might have seen
+programs which use Python's built-in `input()` function.  For example,
+allowing the user to choose a ticket type might be done with code like
+
+    print("What ticket type?")
+    chosen_ticket = input("[C]hild, [A]dult, or [F]amily? ")
+
+In our program, the user instead chooses a ticket type by clicking.
+
+Which is easier for the user?  Which is easier for you, the
+programmer?
+
+### Improvement: Simulate dispensing the ticket
 
 When the customer has inserted enough money, our vending machine shows
 them the change they need.  The chosen ticket stays at the top of the
@@ -583,7 +616,7 @@ with the sequencing of hiding the coins and note, hiding the 'money
 received' display, showing the change, and dispensing the ticket.
 Which sequence looks best?
 
-### Show the change in coins
+### Improvement: Show the change in coins
 
 Instead of just showing the change as a number, show the coins that
 the customer should get back.  The most change a customer will ever
