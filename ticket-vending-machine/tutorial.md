@@ -624,3 +624,18 @@ need is €4.  (Can you see a good argument why this is true?)  So it
 will be easiest to just write code for each of the four cases where
 change is needed (€1, €2, €3, €4), rather than try to work out a
 general change-giving algorithm.
+
+### Improvement: Add sound effects
+
+Find some suitably-licensed sounds on the web for clicking buttons,
+inserting money, accepting money, and so on.  Add them to the project,
+and play the sounds at appropriate times in the program.  You can use
+the Pytch methods
+
+    self.start_sound("button-click")
+
+and/or
+
+    self.play_sound_until_done("coin-insertion")
+
+to do this.
