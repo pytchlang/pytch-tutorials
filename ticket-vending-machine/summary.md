@@ -1,3 +1,5 @@
+![Screenshot](screenshot.png)
+
 # A vending machine for tickets
 
 We will make a simulation of a vending machine which sells tickets for
