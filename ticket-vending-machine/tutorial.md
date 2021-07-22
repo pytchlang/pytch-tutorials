@@ -606,6 +606,37 @@ In our program, the user instead chooses a ticket type by clicking.
 Which is easier for the user?  Which is easier for you, the
 programmer?
 
+### Investigate: Knowing which is the chosen ticket
+
+In the `Ticket` method `hide_if_not_chosen()`, each clone decides
+whether it's the chosen ticket based on whether its own cost is equal
+to the chosen ticket's cost.  If there were different tickets at the
+same price (for example, a student ticket also costing €6), this would
+not work.
+
+A different way would be to give each clone a `was_chosen` variable,
+and assign `False` to it at the very start of the method
+`show_tickets()`.  Then, in the method `choose_ticket()` (which runs
+for a particular clone when that clone is clicked), you would assign
+`True` to that clone's copy of `was_chosen`.  Finally, inside
+`hide_if_not_chosen()`, the `if` statement would become
+
+    if not self.was_chosen:
+        self.hide()
+    else:
+        self.glide_to_xy(135, 125, 0.75)
+
+Try making this change.  Which approach do you prefer?  Would the `if`
+statement be clearer (to a human reader of the program) the other way
+round —
+
+    if self.was_chosen:
+        self.glide_to_xy(135, 125, 0.75)
+    else:
+        self.hide()
+
+— instead?
+
 ### Improvement: Simulate dispensing the ticket
 
 When the customer has inserted enough money, our vending machine shows
