@@ -20,7 +20,12 @@ or €5 notes.
 (This project was suggested as part of the course [*Programming
 Pedagogy in Secondary Schools: Inspiring Computing
 Teaching*](https://www.futurelearn.com/courses/secondary-programming-pedagogy)
-published by the Raspberry Pi Foundation on the FutureLearn platform.)
+published by the Raspberry Pi Foundation on the FutureLearn platform.
+The project summary text above and the concept of the project as a
+whole are adapted from material in that course, which was created by
+the [Raspberry Pi Foundation](https://www.raspberrypi.org/) and is
+licensed under the [Open Government Licence
+v3.0](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).)
 
 ---
 

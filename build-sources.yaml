@@ -21,4 +21,4 @@
 - name: Ticket vending machine
   branch_name: bn/ticket-vending-machine-01
   dir_name: ticket-vending-machine
-  commit_id: b1b04b0fbfab8621250f22815e20447d4b5dfd58
+  commit_id: 06ef480d641cef8a693e081dd780f94697324060
