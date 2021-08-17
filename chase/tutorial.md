@@ -39,8 +39,8 @@ so Pytch will automatically select it when the project starts.
 
 {{< commit add-Stage-with-backdrop >}}
 
-You can try the project now and you should see the clouds as a nice
-backdrop.
+You can try the project now — click the *green flag* to run your
+program — and you should see the clouds as a nice backdrop.
 
 
 ## Making the Bird character
@@ -70,11 +70,12 @@ will be run.
 
 {{< commit show-bird >}}
 
-If you try this code now you will see that the bird costume is
-actually rather too big for the stage. I can fix this by telling the
-sprite to pick a smaller size before it appears, using the
-``set_size`` command. The number given to ``set_size`` controls the
-size, from 1 (full size) to 0 (so small you can't see it).
+If you try this code now — click the green flag to run your program —
+you will see that the bird costume is actually rather too big for the
+stage. I can fix this by telling the sprite to pick a smaller size
+before it appears, using the ``set_size`` command. The number given to
+``set_size`` controls the size, from 1 (full size) to 0 (so small you
+can't see it).
 
 {{< commit set-bird-size >}}
 
