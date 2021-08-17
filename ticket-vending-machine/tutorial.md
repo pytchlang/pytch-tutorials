@@ -104,7 +104,8 @@ looks like this:
 {{< commit add-Ticket-sprite >}}
 
 Add those lines to your code, and try to predict what will happen when
-you build it.  Then click `BUILD` and see whether you were right.
+you run your program.  Then click the green flag and see if you were
+right.
 
 
 ## Show all ticket types
@@ -116,8 +117,8 @@ flag is clicked.
 
 We start by moving the `Ticket` sprite to a good place for the child
 ticket.  This is centred left-to-right, and quite near the top.  This
-should happen when the green flag is clicked.  In Scratch, we would
-put together a script like this:
+should happen when the program starts.  In Scratch, we would put
+together a script like this:
 
 ![When-green-flag-clicked for child ticket](child-ticket-green-flag.png#img-center)
 
@@ -260,9 +261,9 @@ method:
 Using `None` for the first argument to `show_variable()` means that we
 want to show a global variable.
 
-If you now build and green-flag your program, and click on one of the
-tickets, you should see the correct `ticket_cost` shown in the watcher
-at the top-left of the stage.
+If you now run your program (by clicking the green flag), and click on
+one of the tickets, you should see the correct `ticket_cost` shown in
+the watcher at the top-left of the stage.
 
 (As an experiment, temporarily take out, or comment out, the `global
 ticket_cost` line.  Try to predict what will happen when you click on
@@ -358,7 +359,7 @@ Sprite for the money, giving it three costumes:
 
 {{< commit add-Money-sprite >}}
 
-There will be a problem if you build your program now, though.  Can
+There will be a problem if you run your program now, though.  Can
 you predict what will go wrong?
 
 The problem is that a €1 coin will be in the middle of the stage, in
@@ -458,10 +459,10 @@ much money has been received.
 
 ### Test the code!
 
-Click build, then green-flag, then choose a Ticket.  Now check the
-`money_received` display updates correctly as you click on the coins
-or note.  Each time you click on a coin or note, the display should
-update by the right amount.
+Click the green flag to run your program, then choose a Ticket.  Now
+check the `money_received` display updates correctly as you click on
+the coins or note.  Each time you click on a coin or note, the display
+should update by the right amount.
 
 Have we finished the whole task now?  If not, what's the next step?
 
