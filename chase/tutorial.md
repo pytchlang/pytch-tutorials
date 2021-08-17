@@ -163,7 +163,10 @@ will always be true!
 
 Notice the ``:`` at the end of the line. Like classes and script
 definitions, this loop will have more commands inside it (which will
-be the stuff to be repeated over and over).
+be the stuff to be repeated over and over).  For now, we'll just make
+sure the Star is visible, because we know that our program soon will
+hide the Star when it gets caught, and we want to make sure it's
+visible at the start of each movement across the stage.
 
 {{< commit add-infinite-loop >}}
 
