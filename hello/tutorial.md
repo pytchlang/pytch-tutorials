@@ -16,10 +16,6 @@ add-ons. If you leave this out then you can only write ordinary Python
 programs without Sprites, so the Pytch web site puts that line in for
 you when you make a new project.
 
-
-Next we will tell Python that we want _all_ the pytch features (later
-on we'll see why it's useful to sometimes only include some features).
-
 When you see a block of code like this, with some lines of text shown
 in green with "+" symbols in front of them, it's telling you to change
 your project so that it has the new lines in green added to it. Add
