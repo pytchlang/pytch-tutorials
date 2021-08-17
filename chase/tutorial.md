@@ -52,7 +52,7 @@ sure Pytch knows which costume is for this Sprite.
 
 {{< commit add-Bird-with-costumes >}}
 
-### Making the bird appear
+### Moving the bird to its starting position
 
 The game will start when the player presses the green flag. As soon as
 that happens I want the bird to move right to the middle of the
@@ -61,7 +61,7 @@ green flag is clicked. I'm going to name this "start", but the name
 isn't really important, it's the hat block that controls when this
 will be run.
 
-{{< commit show-bird >}}
+{{< commit initialise-bird-position >}}
 
 If you try this code now — click the green flag to run your program —
 you will see that the bird costume is actually rather too big for the
