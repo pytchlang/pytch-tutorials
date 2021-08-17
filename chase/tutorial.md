@@ -233,7 +233,11 @@ the same "green flag" hat as the ``start`` and ``play`` methods.
 {{< commit bird-checks-for-catching-says-gotcha >}}
 
 If you try the project now you'll see that this is _almost_ perfect,
-but after the bird catches the star we want the star to vanish for a
+but there are two problems:
+
+### Hiding the star when it's caught
+
+After the bird catches the star we want the star to vanish for a
 time. Otherwise after the bird says "Got you" the star will be very
 nearby (maybe even still touching the bird!) and it's too easy to
 catch it.
@@ -246,8 +250,7 @@ game can continue.
 
 {{< commit star-checks-for-catching >}}
 
-
-## Fixing a start-up bug
+### Fixing a start-up bug
 
 You might notice that the bird catches the star as soon as we start
 the program.  This is because the star hasn't had a chance to move
