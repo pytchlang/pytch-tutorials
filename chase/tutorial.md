@@ -130,8 +130,7 @@ build and run the project after making any changes.
 
 Now that the bird can move around the screen let's give it something
 to chase. Make a new Sprite and set its costume to the "star"
-image. Like the Bird we don't want it to appear on the stage until the
-game begins.
+image.
 
 {{< commit create-Star-with-costumes >}}
 
