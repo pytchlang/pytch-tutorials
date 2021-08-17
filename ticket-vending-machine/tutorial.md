@@ -143,8 +143,8 @@ adult ticket, and move it to where we want the adult ticket to be.
 There will be two snippets of code, which should look familiar
 compared to the blocks you would use in Scratch.
 
-One snippet will make the `Ticket` change to the adult-ticket costume and
-move to the middle of the stage:
+One snippet will make the `Ticket` change to the adult-ticket costume
+and move to the middle of the stage:
 
     self.switch_costume("adult")
     self.go_to_xy(0, 0)
