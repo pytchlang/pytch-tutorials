@@ -227,7 +227,7 @@ Star moved, in case the bird was standing still and the Star ran into
 it!
 
 Instead I will write a Script that does nothing except continuously
-check to see if the Start has collided with the bird. That way no
+check to see if the Star has collided with the bird. That way no
 matter which Sprite was moving we will detect it in one bit of
 code. I'll use the same idea that the ``play`` method had to keep
 checking.
