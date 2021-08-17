@@ -62,7 +62,7 @@ show the Sprite. When the game starts we will make it appear.
 ### Making the bird appear
 
 The game will start when the player presses the green flag. As soon as
-that happens I want the bird to appear right in the middle of the
+that happens I want the bird to move right to the middle of the
 stage. So I *def*ine a new bit of code that will run when when the
 green flag is clicked. I'm going to name this "start", but the name
 isn't really important, it's the hat block that controls when this
