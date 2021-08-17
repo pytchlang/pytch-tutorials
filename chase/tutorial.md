@@ -243,6 +243,18 @@ game can continue.
 
 {{< commit star-checks-for-catching >}}
 
+
+## Fixing a start-up bug
+
+You might notice that the bird catches the star as soon as we start
+the program.  This is because the star hasn't had a chance to move
+before the bird checks whether it's caught the star.  We'll work round
+this problem by making the Bird wait for a tiny delay before starting
+checking for touching the star:
+
+{{< commit delay-detect-star-loop >}}
+
+
 ## Adding some sound
 
 To make the game a bit more fun we'll have the bird make an excited
