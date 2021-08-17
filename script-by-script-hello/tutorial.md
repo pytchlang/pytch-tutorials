@@ -91,9 +91,9 @@ sprite is clicked on.
 
 ## Running the Project
 
-Finally, we can press the "Build" button and see the results of this
-work! When You press Build the Snake should appear on the stage, and
-when you click on it a speech balloon will appear. 
+Finally, we can press the *green flag* and see the results of this
+work! When you click the green flag, the Snake should appear on the
+stage, and when you click on it, a speech balloon will appear.
 
 Congratulations on your first Pytch project!
 
