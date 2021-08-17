@@ -33,6 +33,7 @@ class Bird(pytch.Sprite):
 
     @pytch.when_green_flag_clicked
     def check_catch(self):
+        pytch.wait_seconds(0.1)
         while True:
             if self.touching(Star):
                 self.say_for_seconds("Got you!", 2)
