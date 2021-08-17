@@ -171,9 +171,9 @@ visible at the start of each movement across the stage.
 {{< commit add-infinite-loop >}}
 
 Now I want to pick a random location on the stage. Python has a way to
-make random numbers, so if I just pick two x and y numbers they can be
-the destination for the star to move towards. When the star gets there
-the loop will repeat and a new destination will be chosen.
+make random numbers, so if I just pick two `x` and `y` numbers they
+can be the destination for the star to move towards. When the star
+gets there the loop will repeat and a new destination will be chosen.
 
 The ``random.randint()`` function in Python selects a random number
 between two points (so ``random.randint(10, 20)`` will pick a number
