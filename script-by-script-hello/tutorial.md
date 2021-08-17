@@ -30,12 +30,15 @@ We'll start with the sprite that the player will control.
 To create a new sprite we need to say three things: that we are
 creating a new "thing" in the project, give the thing a name, and say
 that it is a Sprite (rather than a Background or some other sort of
-thing). In Pytch we can do that by making a new "class" and giving it a name.
+thing). In Pytch we can do that by making a new "class" and giving it
+a name.
 
-For this example I've chosen the name "Snake" but really you could name it
-nearly anything you like.
+For this example I've chosen the name "Snake" but really you could
+name it nearly anything you like.
 
-Notice that the line ends with a ":" marker. There is more to come in the definition of Snake, and this symbol is how we tell Pytch that there will be more to the Snake class.
+Notice that the line ends with a ":" marker. There is more to come in
+the definition of Snake, and this symbol is how we tell Pytch that
+there will be more to the Snake class.
 
 {{< commit create-snake-class >}}
 
@@ -43,15 +46,15 @@ Notice that the line ends with a ":" marker. There is more to come in the defini
 
 Once we have created the new Sprite the next job is to say what it
 looks like and how it behaves. In this tutorial we have already added
-a picture for the snake costume to the project, so let's connect
-it to the sprite.
+a picture for the snake costume to the project, so let's connect it to
+the sprite.
 
 We need to write a line that sets up a _variable_ in the new Sprite
 that will hold a list of the costumes.
 
-Pytch needs to find the list in a variable named ```Costumes``` (with
-a capital ```C```). If we call it anything else then Pytch won't be
-looking in the right place when it goes to find the costumes.
+Pytch needs to find the list in a variable named `Costumes` (with a
+capital `C`). If we call it anything else then Pytch won't be looking
+in the right place when it goes to find the costumes.
 
 This variable contains a list of the images in the project that will
 be used by this Sprite as costumes. In Python we create lists by
@@ -59,13 +62,13 @@ writing things between square brackets (`[` and `]` characters). When we
 mention the file name we need to put it between double-quote
 characters (these: `"`).
 
-Finally, so that the instruction is contained _within_ the Sprite — that
-is, it's pushed in from the left of the program a bit. This is how
-Python knows that this variable is part of the Sprite. Everything
+Finally, so that the instruction is contained _within_ the Sprite —
+that is, it's pushed in from the left of the program a bit. This is
+how Python knows that this variable is part of the Sprite. Everything
 that's part of the Sprite has to be "indented" (pushed in) the same
 amount.
 
-So, to create our Costumes variable we need a line like this.
+So, to create our `Costumes` variable we need a line like this.
 
 {{< commit snake-costume >}}
 
