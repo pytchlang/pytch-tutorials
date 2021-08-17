@@ -52,13 +52,6 @@ sure Pytch knows which costume is for this Sprite.
 
 {{< commit add-Bird-with-costumes >}}
 
-I don't want the bird to appear on the stage until we are ready to
-play. Normally every Sprite appears on the stage, at the center. I
-don't want both our sprites to appear there, so I tell Pytch not to
-show the Sprite. When the game starts we will make it appear.
-
-{{< commit set-bird-hidden >}}
-
 ### Making the bird appear
 
 The game will start when the player presses the green flag. As soon as
