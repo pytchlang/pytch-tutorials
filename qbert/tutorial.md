@@ -85,16 +85,8 @@ Putting this altogether, we can create our clones with this code:
 
 {{< commit create-block-pyramid >}}
 
-If you try the project now, by building it and then clicking the green
-flag, nothing happens.  This is because all the clones we've made are
-still not shown.  We can fix this by giving *Block* a
-`when_I_start_as_a_clone` handler, which will shrink the clone
-slightly and then show itself:
-
-{{< commit block-clone-set-size-show >}}
-
-If you build and green-flag the project now, you'll see the pyramid
-appear block by block.
+If you green-flag the project now, you'll see the pyramid appear block
+by block.
 
 ## Introduce the Q*bert character
 
