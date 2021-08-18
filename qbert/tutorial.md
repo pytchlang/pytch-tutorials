@@ -251,7 +251,10 @@ end up in the right place at the end of their jump.
 Again, we'll now see that it was worth our time to not have the
 jumping code copied out four times, because we only need to change the
 `jump()` method.  We include the right bounce amount when changing
-*y*, depending on what frame we're on:
+*y*, depending on what frame we're on.  In Python, to get a particular
+entry out of a list, we use square brackets `[]`, and we also have to
+know that Python starts counting at *zero*.  This fits nicely with the
+values `0`, `1`, ..., `13` that `range(14)` gives us.
 
 {{< commit bounce-when-moving >}}
 
