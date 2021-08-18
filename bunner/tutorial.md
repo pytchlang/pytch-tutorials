@@ -27,7 +27,8 @@ here.
 
 {{< commit background-hollow-class >}}
 
-If you build the project now, you'll see our backdrop appear.
+If you run your project now, by clicking the green flag, you'll see
+our backdrop appear.
 
 ## Create our hero
 
@@ -41,17 +42,17 @@ that it's a kind of `pytch.Sprite`.
 
 {{< commit Bunny-with-costumes >}}
 
-When green flag is clicked, we select the starting costume, and make
-sure that the Bunny actor is in the right place and visible:
+When green flag is clicked, we:
+
+* select the starting costume (in fact Pytch will start a Sprite off
+  wearing its first costume, but it's a good idea to be explicit about
+  this, in case you change the order of the `Costumes` list);
+
+* move the Bunny actor to the right place:
 
 {{< commit Bunny-green-flag-go-to-start >}}
 
-If you build the project, you'll see that the Bunny appears in the
-middle of the stage, and only goes to the correct place when you click
-the green flag.  This is a bit messy, so we'll change this to tell
-Pytch to start off *not* showing the Bunny:
-
-{{< commit start-Bunny-not-shown >}}
+Run the project by clicking the green flag to check this works.
 
 ### Moving our hero
 
@@ -64,7 +65,7 @@ make sure that it is never moved off the top of the screen.
 
 {{< commit move-bunny-up >}}
 
-If you haven't already then this is a good place to build the project
+If you haven't already then this is a good place to run the project
 and make sure it's working. Press the up arrow a few times, and make
 sure that you're happy it works.
 
