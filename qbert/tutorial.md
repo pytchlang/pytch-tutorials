@@ -452,8 +452,8 @@ zero blocks left, and send the `"level-cleared"` message if so:
 
 The game is now playable, but to make it more interesting we'll
 include some sounds.  We'll start with a victory sound, which will be
-a trumpet fanfare.  The 'level cleared' announcement sprite is a
-reasonable one for this sound to belong to:
+a trumpet fanfare.  The 'level cleared' announcement sprite is a good
+one for this sound to belong to:
 
 {{< commit define-LevelClearedText-fanfare-sound >}}
 
@@ -503,7 +503,7 @@ of it!  There's lots more you could do with it:
 - When Q\*bert falls off the pyramid, they just get smaller.  It would
   look better if they looked like they carried on falling, at an
   increasing speed.
-- Add challenges like were in the original, such as bouncy balls which
+- Add enemies, like were in the original, such as bouncy balls which
   you have to avoid.
 - Make there be more than one level.  Different levels could have
   different colour schemes.
