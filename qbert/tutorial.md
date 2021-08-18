@@ -96,9 +96,9 @@ Now let's bring in our hero!  We'll define a *Sprite* for Q\*bert:
 
 Q\*bert has four costumes, one for each direction they might face.
 
-If you build now, you'll see Q\*bert appear in the middle of the
-stage.  We don't want this to happen in the real game, so we'll tell
-Pytch to start Q\*bert off not shown:
+If you run the program now, Q\*bert will straight away appear in the
+middle of the stage, in an odd place as the pyramid gets built
+underneath.  We'll tell Q\*bert to hide as soon as the game starts:
 
 {{< commit start-Qbert-not-shown >}}
 
