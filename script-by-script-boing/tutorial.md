@@ -39,11 +39,7 @@ entry.
 Now we have the background, we want to put the player's bat into the
 game.  The first part of this is similar to how we introduced the
 _BoingBackground_.  We define _PlayerBat_, which we say is a kind of
-_Sprite_.  To say what _Costumes_ it has, we will give more
-information than for a _Backdrop_ for a _Stage_.  We will choose the name
-we want to call it in our code (here, `normal`), and the image file
-we want to use (here, `bat00.png`).  We lay the code out in a way which
-leaves us room to add another bat costume later.
+_Sprite_.  Again, its _Costumes_ list only has one entry.
 
 {{< commit add-Player-with-costume >}}
 
