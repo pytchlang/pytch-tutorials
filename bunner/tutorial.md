@@ -20,8 +20,9 @@ have used their code for inspiration, and also the images and sounds.
 
 ## Making the stage
 
-Let's start by getting a nice backdrop up. I've drawn one already, so
-we can just load the image.
+Let's start by getting a nice backdrop up. I've drawn one already
+(using images from *Code The Classics* kindly made available by
+Raspberry Pi Trading Ltd), so we can just load the image.
 
 Begin by making a class to represent the stage. We can call it
 anything we want so long as it is declared as being a
