@@ -84,8 +84,8 @@ ball's _x_ coordinate:
 
 The problem here is that the ball of course just keeps going right
 off the edge of the screen.  We know we're going to need to keep track
-of which direction the ball is going, so we bring in a variable
-`x_speed` belonging just to the _Ball_:
+of which direction the ball is going, so we bring in a *local variable*
+`x_speed`.  This variable only exists inside the `play()` method.
 
 {{< commit add-Ball-state-x-speed >}}
 
@@ -159,8 +159,8 @@ the top of their bat, the ball will bounce off upwards, and similarly
 for the bottom of their bat.
 
 To let us work with this, the ball needs to remember how quickly it's
-moving _vertically_, i.e., in the _y_ direction.  So we add a local
-variable `y_speed`.  It starts off as zero, because the ball is
+moving _vertically_, i.e., in the _y_ direction.  So we add another
+local variable, `y_speed`.  It starts off as zero, because the ball is
 moving neither up nor down, just straight across:
 
 {{< commit add-Ball-state-y-speed >}}
