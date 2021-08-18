@@ -328,23 +328,12 @@ we'll turn the percentage into a value by dividing by 100.
 {{< commit define-disappear-method >}}
 
 If you try this now, you'll see that you can still jump around in a
-strange way while falling off.  We'll fix this by keeping track of
-whether Q\*bert is in the middle of falling off the pyramid, with
-another 'instance variable' which we'll initialise in the green-flag
-method:
+strange way while falling off.  We can fix this by pretending that
+Q\*bert is still jumping.  We'll only set the `jumping` variable to
+`False` if Q\*bert *didn't* fall off, by moving that assignment into
+an `else`:
 
-{{< commit initialise-fallen-off >}}
-
-Then we set the variable to `True` if we work out that Q\*bert has
-fallen off the pyramid:
-
-{{< commit record-when-falling-off >}}
-
-And finally, we abandon the `jump()` method early if we've fallen off,
-by extending the *am I already jumping?* test to *am I already
-jumping, or falling off?*, like this:
-
-{{< commit forbid-movement-when-falling-off >}}
+{{< commit only-record-jump-finished-if-not-fallen-off >}}
 
 ## Lighting up the blocks Q\*bert lands on
 
