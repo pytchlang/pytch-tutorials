@@ -100,8 +100,8 @@ the file name.
 {{< commit Car-with-costumes >}}
 
 The original car is going to remain hidden, because we'll use *clones*
-for the actual traffic. If a Sprite has a `start_shown` variable Pytch
-will use it to decide if the sprite is visible immediately or not.
+for the actual traffic. So we'll hide the original Car when the
+program starts:
 
 {{< commit Car-start-not-shown >}}
 
