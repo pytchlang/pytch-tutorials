@@ -88,6 +88,12 @@ Putting this altogether, we can create our clones with this code:
 If you green-flag the project now, you'll see the pyramid appear block
 by block.
 
+One tiny detail is that the *original* `Block` sprite is still there,
+and this will complicate things.  We'll work round this by hiding the
+original once all the clones have been made:
+
+{{< commit hide-original-block >}}
+
 ## Introduce the Q*bert character
 
 Now let's bring in our hero!  We'll define a *Sprite* for Q\*bert:
