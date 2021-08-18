@@ -584,11 +584,7 @@ when the green flag is clicked
 The traffic factories should also begin making cars when the game
 starts, not when the green flag is clicked.
 
-{{< commit start-traffic-on-message1 >}}
-
-{{< commit start-traffic-on-message2 >}}
-
-{{< commit start-traffic-on-message3 >}}
+{{< commit start-traffic-on-message >}}
 
 When the game starts the stage needs to switch to the world costume
 (it might have been showing the 'game over' screen)
