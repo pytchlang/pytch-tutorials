@@ -305,11 +305,14 @@ whether they are actually on the pyramid or not.  If the row number is
 smaller than zero then Q\*bert has fallen off the bottom.  If the row
 number is seven or more, then Q\*bert has fallen off the top.  If
 the block number is less than zero, then Q\*bert has fallen off to the
-left.  The only slightly tricky one is telling whether Q\*bert has
-fallen off to the right — this happens if the block number is equal to
-or greater than the number of blocks in the row, which, as we worked
-out above, is (7&nbsp;−&nbsp;*r*).  We'll broadcast a message if
-Q\*bert falls off the pyramid at the end of their jump:
+left.
+
+The only slightly tricky one is telling whether Q\*bert has fallen off
+to the right.  This happens if the block number (which starts at
+*zero* for the left-most block, remember) is equal to or greater than
+the number of blocks in the row, which, as we worked out above, is
+(7&nbsp;−&nbsp;*r*).  We'll broadcast a message if Q\*bert falls off
+the pyramid at the end of their jump:
 
 {{< commit check-for-falling-off >}}
 
