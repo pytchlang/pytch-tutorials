@@ -125,9 +125,11 @@ we've created all the clones:
 
 {{< commit tell-Qbert-to-set-up >}}
 
-If you try this, it doesn't look right.  Q\*bert is behind the pyramid
-of blocks.  We need to tell Pytch to bring Q\*bert to the *front* of
-the drawing:
+There's another detail we should make sure is right.  Q\*bert needs to
+appear "in front of" the pyramid of blocks.  More or less by chance,
+this is what happens at the moment, but it's a good idea to make sure,
+in case we rearrange our code later.  So we'll bring Q\*bert to the
+*front* of the drawing:
 
 {{< commit move-Qbert-to-front >}}
 
