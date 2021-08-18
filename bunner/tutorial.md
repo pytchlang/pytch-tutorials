@@ -541,15 +541,18 @@ ends:
 
 {{< commit game-over-end-traffic2 >}}
 
+And:
+
 {{< commit game-over-end-traffic3 >}}
 
 Once all of the treaffic has been stopped and the clones have vanished
-I decided to add a new backdrop with a game over message and switch to
-showing that.
-
-{{< commit show-game-over-backdrop >}}
+I decided to add a new backdrop with a game over message —
 
 {{< commit add-game-over-background >}}
+
+— and switch to showing it:
+
+{{< commit show-game-over-backdrop >}}
 
 ## The start button
 
