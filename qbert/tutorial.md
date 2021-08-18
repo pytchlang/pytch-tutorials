@@ -346,12 +346,6 @@ jumping, or falling off?*, like this:
 
 {{< commit forbid-movement-when-falling-off >}}
 
-If you play the game, fall off, then click green-flag to try again,
-you'll see that Q\*bert is the wrong size.  We need to set their size
-correctly in the green-flag method `go_to_starting_position()`:
-
-{{< commit set-Qbert-full-size-when-starting >}}
-
 ## Lighting up the blocks Q\*bert lands on
 
 Since the block is the actor which is going to need to do something
