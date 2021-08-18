@@ -399,22 +399,18 @@ There are a couple of things to notice here:
   class.  We're only interested in how many clones there are, so we
   find the length of that list with the Python built-in `len()`.
 
-We're now going to make each block clone keep track of whether it's
-lit up.  We'll set the value of a new instance variable `is_lit_up`
-when the clone starts up:
-
-{{< commit record-whether-block-lit-up >}}
-
 Now, when a block works out that it's the one Q\*bert has landed on,
-we'll first check whether we're already lit up, and only if *not*, do
-we switch costume to the lit-up one.  We also then record the fact
-that this clone has lit up.
+it will first test whether it's already lit up, by checking what
+costume it's wearing.  Only if it's *not* already lit up do we switch
+its costume to the lit-up one.
 
 {{< commit only-light-up-if-not-already >}}
 
-When lighting up a block, we can decrease by one the number of blocks
-left to light up.  Again, we have to tell Python that it's the global
-`blocks_left` variable we want to work with:
+This small change hasn't made any difference, but we can now do the
+other job required when a block goes from unlit to lit — we can
+decrease by one the number of blocks left to light up.  Again, we have
+to tell Python that it's the global `blocks_left` variable we want to
+work with:
 
 {{< commit decrement-blocks-left-when-newly-lit-up >}}
 
