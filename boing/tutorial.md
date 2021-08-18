@@ -44,7 +44,7 @@ _Sprite_.  Again, its _Costumes_ list only has one entry.
 {{< commit add-Player-with-costume >}}
 
 When the green flag is clicked, we want the player's bat to go to its
-starting position, and be visible:
+starting position:
 
 {{< commit init-Player-on-green-flag >}}
 
@@ -72,7 +72,7 @@ we tell Pytch which file to use:
 {{< commit add-Ball-with-costume >}}
 
 When the green flag is clicked, the ball should go to the very centre
-of the screen and show itself:
+of the screen:
 
 {{< commit centre-Ball-on-green-flag >}}
 
