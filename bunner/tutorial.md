@@ -35,7 +35,7 @@ our backdrop appear.
 There is not much to do in our game yet, so let's add something for
 the player to control.
 
-The graphics are already there for the player's sprite, all we have to
+The graphics are already there for the player's sprite; all we have to
 do is create a class and set up the names of the costumes. Like the
 stage, the name of our new class is up to us, but we have to declare
 that it's a kind of `pytch.Sprite`.
