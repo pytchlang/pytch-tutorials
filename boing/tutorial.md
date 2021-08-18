@@ -134,10 +134,10 @@ the player misses it.  We'll fix this next.
 
 What we want to do is measure how far up or down on the player's bat
 the ball has hit, if it hits the bat at all.  We'll call the centre of
-the bat 'zero', and then positive positions are towards the top of the
-bat, and negative positions are towards the bottom.  We can work this
-out by finding the vertical position — the _y_ coordinate — of the
-player's bat, and subtracting that from the ball's _y_ coordinate:
+the bat 'zero', with positive positions towards the top of the bat,
+and negative positions towards the bottom.  We can work this out by
+finding the vertical position — the _y_ coordinate — of the player's
+bat, and subtracting that from the ball's _y_ coordinate:
 
 {{< commit compute-position-on-Player >}}
 
