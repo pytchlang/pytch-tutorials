@@ -638,7 +638,7 @@ highest row the bunny has reached.
 
 {{< commit introduce-current-row-counters >}}
 
-These both start at zero:
+These both start at zero when playing a life:
 
 {{< commit init-row-counters-at-start >}}
 
