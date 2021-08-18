@@ -285,7 +285,7 @@ print out where on the pyramid this code thinks we are:
 Try this:
 
 - Switch to the *Output* tab.
-- Build and green-flag the project.
+- Green-flag the project.
 - Move Q\*bert around, and press the `"w"` key to check the code is
   working out Q\*bert's position correctly.
 
