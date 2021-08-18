@@ -413,10 +413,10 @@ which are left to light up:
 If you run this now, it mostly works, except that when you land on the
 very top block, the count drops by *two* instead of one.  What's
 happening is that the *original* instance of *Block* is updating the
-count, as well as the clone which was created there.  We'll fix this
-by making the original *Block* think it's in a nonsense position.
-This isn't a very elegant way of solving this problem, but it will
-work:
+count (even though it's hidden), as well as the clone which was
+created there.  We'll fix this by making the original *Block* think
+it's in a nonsense position.  This isn't a very elegant way of solving
+this problem, but it will work:
 
 {{< commit set-original-Block-coords-to-invalid-values >}}
 
