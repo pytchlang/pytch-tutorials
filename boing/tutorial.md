@@ -211,9 +211,9 @@ We'll fix these things next.
 The code we added to bounce the ball off the player's bat checked if
 the _position on the bat_ was not too high or too low, and then
 bounced the ball if it was OK.  But it did nothing if the ball _was_
-too high or too low.  We need to add an `else` clause, saying that
-if the player misses, that's the end of the game.  The ball should
-hide, and we `break` out of the `while True` loop:
+too high or too low.  We need to add an `else` clause, saying that if
+the player misses, that's the end of the game.  The ball should hide,
+and we `break` out of the `while True` loop, to finish the game:
 
 {{< commit hide-Ball-if-Player-misses >}}
 
