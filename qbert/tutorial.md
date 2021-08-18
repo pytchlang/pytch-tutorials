@@ -56,9 +56,10 @@ has landed on that cube.
 
 {{< commit add-Block-with-costumes >}}
 
-If you try the project now, you can see a single block appear in the
-middle of the stage.  We won't want this to happen once we're using
-clones, so we'll tell Pytch not to show this sprite on start-up:
+If you try the project now (click the green flag), you can see a
+single block appear in the middle of the stage.  We won't want this to
+happen once we're using clones, so we'll tell Pytch not to show this
+sprite on start-up:
 
 {{< commit start-original-Block-not-shown >}}
 
