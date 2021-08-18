@@ -374,12 +374,6 @@ broadcast the message:
 We use `broadcast_and_wait()` to make sure the block checking has
 happened before allowing Q\*bert to move again.
 
-If you try this now, it seems to work OK, but if you fall off then try
-again with green-flag, all the blocks are lit up already!  We need to
-make sure each blocks starts off in its un-lit-up costume:
-
-{{< commit start-Block-with-unjumped-costume >}}
-
 ## Checking Q\*bert's progress
 
 This is now working quite well, but we need a way to tell whether
