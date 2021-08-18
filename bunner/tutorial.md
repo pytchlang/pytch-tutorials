@@ -725,7 +725,9 @@ variable, which I had made as a global variable.
 
 Now that we have a way to show some digits we could also use this to
 show the number of lives remaining. A third sprite that has the same
-costumes and which updates whenever the lives change can do this:
+costumes and which updates whenever the lives change can do this.  The
+number of lives is always less than 10, so we don't have to do the
+'divide and take remainder' trick this time:
 
 {{< commit introduce-life-display >}}
 
