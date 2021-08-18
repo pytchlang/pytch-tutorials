@@ -696,14 +696,13 @@ follow some pattern.
 
 When the score changes I'll get the bunny sprite to send out a
 broadcast message. When this score sprite receives that it will look
-up the score, calculate the _first digit_ of the score, and set the
+up the score, calculate the _units digit_ of the score, and set the
 costume to the corresponding digit. I use the f-string trick in this
-to select the right costume name based on the "tens" value of the
+to select the right costume name based on the "units" value of the
 score.
 
-Calculating the first digit is easy if we assume the score is never
-more than 99. We divide the score by ten and _take the
-remainder_. This is what the Python `%` operator does.
+Calculating the units digit is easy. We divide the score by ten and
+_take the remainder_. This is what the Python `%` operator does.
 
 {{< commit display-digits-on-message1 >}}
 
