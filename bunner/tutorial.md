@@ -617,7 +617,9 @@ The score starts at zero at the start of the game
 {{< commit initialise-score >}}
 
 We could let the player earn a point every time they manage to move up
-the stage towards the goal at the top:
+the stage towards the goal at the top.  For now we'll put in a
+`print()` statement so we can see what's going on in the *Output*
+panel:
 
 {{< commit increment-the-score-every-time-we-move-up >}}
 
