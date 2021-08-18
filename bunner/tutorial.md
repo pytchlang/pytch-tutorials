@@ -60,7 +60,9 @@ When green flag is clicked, we:
   wearing its first costume, but it's a good idea to be explicit about
   this, in case you change the order of the `Costumes` list);
 
-* move the Bunny actor to the right place:
+* move the Bunny actor to the right place,
+
+like this:
 
 {{< commit Bunny-green-flag-go-to-start >}}
 
