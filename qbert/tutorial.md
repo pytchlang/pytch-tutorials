@@ -42,7 +42,8 @@ define the sort of *Stage* we will be using in this game:
 
 {{< commit add-Stage-with-backdrop >}}
 
-If you build the project now, you'll see the background.
+If you run the project now, by clicking the *green flag*, you'll see
+the background.
 
 ## Define the blocks for making the pyramid
 
