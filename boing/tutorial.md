@@ -132,20 +132,20 @@ the player misses it.  We'll fix this next.
 
 ## Bounce properly off the player's bat
 
-What we want to do is find where on the player's bat the ball has hit,
-if it hits the bat at all.  We'll call the centre of the bat 'zero',
-and then positive positions are towards the top of the bat, and
-negative positions are towards the bottom.  We can work this out by
-finding the vertical position — the _y_ coordinate — of the player's
-bat, and subtracting that from the ball's _y_ coordinate:
+What we want to do is measure how far up or down on the player's bat
+the ball has hit, if it hits the bat at all.  We'll call the centre of
+the bat 'zero', and then positive positions are towards the top of the
+bat, and negative positions are towards the bottom.  We can work this
+out by finding the vertical position — the _y_ coordinate — of the
+player's bat, and subtracting that from the ball's _y_ coordinate:
 
 {{< commit compute-position-on-Player >}}
 
-By experimenting with the '45', we can see what a fair number to use
-so the ball bounces when it looks like it should bounce, and misses
-when it looks like it should miss.  The ball only bounces if the
-position on the bat is 'higher than the bottom of the bat' and also
-'lower than the top of the bat':
+By experimenting with the '45' in the following code, we can see what
+a fair number to use so the ball bounces when it looks like it should
+bounce, and misses when it looks like it should miss.  The ball only
+bounces if the position on the bat is 'higher than the bottom of the
+bat' and also 'lower than the top of the bat':
 
 {{< commit check-Player-has-hit-Ball >}}
 
