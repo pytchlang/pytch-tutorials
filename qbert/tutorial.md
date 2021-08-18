@@ -57,14 +57,8 @@ has landed on that cube.
 {{< commit add-Block-with-costumes >}}
 
 If you try the project now (click the green flag), you can see a
-single block appear in the middle of the stage.  We won't want this to
-happen once we're using clones, so we'll tell Pytch not to show this
-sprite on start-up:
-
-{{< commit start-original-Block-not-shown >}}
-
-The block is also a bit big for the size of the Pytch stage.  We'll
-fix that when we come to making the pyramid.
+single block appear in the middle of the stage.  Our next job will be
+to arrange lots of *clones* of this block into a pyramid.
 
 ## Make the pyramid
 
