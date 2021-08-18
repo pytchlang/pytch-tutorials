@@ -243,7 +243,7 @@ will make it follow the ball up and down:
 This is much better, but still not quite right.  The robot can go off
 the top of the court or off the bottom.  If moving to the ball's
 position has taken the bat off the top of the court, we set the bat to
-be at the top of the court instead.  And similary for the bottom:
+be at the top of the court instead.  And similarly for the bottom:
 
 {{< commit ensure-Robot-stays-in-court >}}
 
