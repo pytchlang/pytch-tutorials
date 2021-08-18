@@ -16,3 +16,4 @@ class Block(pytch.Sprite):
                 block_y = -145 + (r * 42)
                 self.go_to_xy(block_x, block_y)
                 pytch.create_clone_of(self)
+        self.hide()
