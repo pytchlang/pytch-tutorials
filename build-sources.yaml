@@ -3,9 +3,9 @@
   dir_name: hello
   commit_id: ab85a3e804d58ba83ed2944facbc87eb265fd156
 - name: Chase!
-  branch_name: gs/chase-03
+  branch_name: gs/chase-04
   dir_name: chase
-  commit_id: 538fb08e27a157b44fefede62dc73d586f3d0d52
+  commit_id: c003bea15ae1ff85b20f27ea9bd2ffc18ef3046c
 - name: Q*bert
   branch_name: bn/qbert-04
   dir_name: qbert

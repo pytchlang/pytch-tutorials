@@ -39,8 +39,8 @@ so Pytch will automatically select it when the project starts.
 
 {{< commit add-Stage-with-backdrop >}}
 
-You can try the project now and you should see the clouds as a nice
-backdrop.
+You can try the project now — click the *green flag* to run your
+program — and you should see the clouds as a nice backdrop.
 
 
 ## Making the Bird character
@@ -52,29 +52,23 @@ sure Pytch knows which costume is for this Sprite.
 
 {{< commit add-Bird-with-costumes >}}
 
-I don't want the bird to appear on the stage until we are ready to
-play. Normally every Sprite appears on the stage, at the center. I
-don't want both our sprites to appear there, so I tell Pytch not to
-show the Sprite. When the game starts we will make it appear.
-
-{{< commit set-bird-hidden >}}
-
-### Making the bird appear
+### Moving the bird to its starting position
 
 The game will start when the player presses the green flag. As soon as
-that happens I want the bird to appear right in the middle of the
+that happens I want the bird to move right to the middle of the
 stage. So I *def*ine a new bit of code that will run when when the
 green flag is clicked. I'm going to name this "start", but the name
 isn't really important, it's the hat block that controls when this
 will be run.
 
-{{< commit show-bird >}}
+{{< commit initialise-bird-position >}}
 
-If you try this code now you will see that the bird costume is
-actually rather too big for the stage. I can fix this by telling the
-sprite to pick a smaller size before it appears, using the
-``set_size`` command. The number given to ``set_size`` controls the
-size, from 1 (full size) to 0 (so small you can't see it).
+If you try this code now — click the green flag to run your program —
+you will see that the bird costume is actually rather too big for the
+stage. I can fix this by telling the sprite to pick a smaller size
+before it appears, using the ``set_size`` command. The number given to
+``set_size`` controls the size, from 1 (full size) to 0 (so small you
+can't see it).
 
 {{< commit set-bird-size >}}
 
@@ -136,8 +130,7 @@ build and run the project after making any changes.
 
 Now that the bird can move around the screen let's give it something
 to chase. Make a new Sprite and set its costume to the "star"
-image. Like the Bird we don't want it to appear on the stage until the
-game begins.
+image.
 
 {{< commit create-Star-with-costumes >}}
 
@@ -170,14 +163,17 @@ will always be true!
 
 Notice the ``:`` at the end of the line. Like classes and script
 definitions, this loop will have more commands inside it (which will
-be the stuff to be repeated over and over).
+be the stuff to be repeated over and over).  For now, we'll just make
+sure the Star is visible, because we know that our program soon will
+hide the Star when it gets caught, and we want to make sure it's
+visible at the start of each movement across the stage.
 
 {{< commit add-infinite-loop >}}
 
 Now I want to pick a random location on the stage. Python has a way to
-make random numbers, so if I just pick two x and y numbers they can be
-the destination for the star to move towards. When the star gets there
-the loop will repeat and a new destination will be chosen.
+make random numbers, so if I just pick two `x` and `y` numbers they
+can be the destination for the star to move towards. When the star
+gets there the loop will repeat and a new destination will be chosen.
 
 The ``random.randint()`` function in Python selects a random number
 between two points (so ``random.randint(10, 20)`` will pick a number
@@ -226,7 +222,7 @@ Star moved, in case the bird was standing still and the Star ran into
 it!
 
 Instead I will write a Script that does nothing except continuously
-check to see if the Start has collided with the bird. That way no
+check to see if the Star has collided with the bird. That way no
 matter which Sprite was moving we will detect it in one bit of
 code. I'll use the same idea that the ``play`` method had to keep
 checking.
@@ -237,7 +233,11 @@ the same "green flag" hat as the ``start`` and ``play`` methods.
 {{< commit bird-checks-for-catching-says-gotcha >}}
 
 If you try the project now you'll see that this is _almost_ perfect,
-but after the bird catches the star we want the star to vanish for a
+but there are two problems:
+
+### Hiding the star when it's caught
+
+After the bird catches the star we want the star to vanish for a
 time. Otherwise after the bird says "Got you" the star will be very
 nearby (maybe even still touching the bird!) and it's too easy to
 catch it.
@@ -249,6 +249,17 @@ reappear when it has finished gliding to its destination, and the
 game can continue.
 
 {{< commit star-checks-for-catching >}}
+
+### Fixing a start-up bug
+
+You might notice that the bird catches the star as soon as we start
+the program.  This is because the star hasn't had a chance to move
+before the bird checks whether it's caught the star.  We'll work round
+this problem by making the Bird wait for a tiny delay before starting
+checking for touching the star:
+
+{{< commit delay-detect-star-loop >}}
+
 
 ## Adding some sound
 
