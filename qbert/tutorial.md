@@ -42,7 +42,8 @@ define the sort of *Stage* we will be using in this game:
 
 {{< commit add-Stage-with-backdrop >}}
 
-If you build the project now, you'll see the background.
+If you run the project now, by clicking the *green flag*, you'll see
+the background.
 
 ## Define the blocks for making the pyramid
 
@@ -55,14 +56,9 @@ has landed on that cube.
 
 {{< commit add-Block-with-costumes >}}
 
-If you try the project now, you can see a single block appear in the
-middle of the stage.  We won't want this to happen once we're using
-clones, so we'll tell Pytch not to show this sprite on start-up:
-
-{{< commit start-original-Block-not-shown >}}
-
-The block is also a bit big for the size of the Pytch stage.  We'll
-fix that when we come to making the pyramid.
+If you try the project now (click the green flag), you can see a
+single block appear in the middle of the stage.  Our next job will be
+to arrange lots of *clones* of this block into a pyramid.
 
 ## Make the pyramid
 
@@ -89,16 +85,14 @@ Putting this altogether, we can create our clones with this code:
 
 {{< commit create-block-pyramid >}}
 
-If you try the project now, by building it and then clicking the green
-flag, nothing happens.  This is because all the clones we've made are
-still not shown.  We can fix this by giving *Block* a
-`when_I_start_as_a_clone` handler, which will shrink the clone
-slightly and then show itself:
+If you green-flag the project now, you'll see the pyramid appear block
+by block.
 
-{{< commit block-clone-set-size-show >}}
+One tiny detail is that the *original* `Block` sprite is still there,
+and this will complicate things.  We'll work round this by hiding the
+original once all the clones have been made:
 
-If you build and green-flag the project now, you'll see the pyramid
-appear block by block.
+{{< commit hide-original-block >}}
 
 ## Introduce the Q*bert character
 
@@ -108,9 +102,9 @@ Now let's bring in our hero!  We'll define a *Sprite* for Q\*bert:
 
 Q\*bert has four costumes, one for each direction they might face.
 
-If you build now, you'll see Q\*bert appear in the middle of the
-stage.  We don't want this to happen in the real game, so we'll tell
-Pytch to start Q\*bert off not shown:
+If you run the program now, Q\*bert will straight away appear in the
+middle of the stage, in an odd place as the pyramid gets built
+underneath.  We'll tell Q\*bert to hide as soon as the game starts:
 
 {{< commit start-Qbert-not-shown >}}
 
@@ -131,9 +125,11 @@ we've created all the clones:
 
 {{< commit tell-Qbert-to-set-up >}}
 
-If you try this, it doesn't look right.  Q\*bert is behind the pyramid
-of blocks.  We need to tell Pytch to bring Q\*bert to the *front* of
-the drawing:
+There's another detail we should make sure is right.  Q\*bert needs to
+appear "in front of" the pyramid of blocks.  More or less by chance,
+this is what happens at the moment, but it's a good idea to make sure,
+in case we rearrange our code later.  So we'll bring Q\*bert to the
+*front* of the drawing:
 
 {{< commit move-Qbert-to-front >}}
 
@@ -255,7 +251,10 @@ end up in the right place at the end of their jump.
 Again, we'll now see that it was worth our time to not have the
 jumping code copied out four times, because we only need to change the
 `jump()` method.  We include the right bounce amount when changing
-*y*, depending on what frame we're on:
+*y*, depending on what frame we're on.  In Python, to get a particular
+entry out of a list, we use square brackets `[]`, and we also have to
+know that Python starts counting at *zero*.  This fits nicely with the
+values `0`, `1`, ..., `13` that `range(14)` gives us.
 
 {{< commit bounce-when-moving >}}
 
@@ -286,7 +285,7 @@ print out where on the pyramid this code thinks we are:
 Try this:
 
 - Switch to the *Output* tab.
-- Build and green-flag the project.
+- Green-flag the project.
 - Move Q\*bert around, and press the `"w"` key to check the code is
   working out Q\*bert's position correctly.
 
@@ -306,11 +305,14 @@ whether they are actually on the pyramid or not.  If the row number is
 smaller than zero then Q\*bert has fallen off the bottom.  If the row
 number is seven or more, then Q\*bert has fallen off the top.  If
 the block number is less than zero, then Q\*bert has fallen off to the
-left.  The only slightly tricky one is telling whether Q\*bert has
-fallen off to the right — this happens if the block number is equal to
-or greater than the number of blocks in the row, which, as we worked
-out above, is (7&nbsp;−&nbsp;*r*).  We'll broadcast a message if
-Q\*bert falls off the pyramid at the end of their jump:
+left.
+
+The only slightly tricky one is telling whether Q\*bert has fallen off
+to the right.  This happens if the block number (which starts at
+*zero* for the left-most block, remember) is equal to or greater than
+the number of blocks in the row, which, as we worked out above, is
+(7&nbsp;−&nbsp;*r*).  We'll broadcast a message if Q\*bert falls off
+the pyramid at the end of their jump:
 
 {{< commit check-for-falling-off >}}
 
@@ -326,29 +328,12 @@ we'll turn the percentage into a value by dividing by 100.
 {{< commit define-disappear-method >}}
 
 If you try this now, you'll see that you can still jump around in a
-strange way while falling off.  We'll fix this by keeping track of
-whether Q\*bert is in the middle of falling off the pyramid, with
-another 'instance variable' which we'll initialise in the green-flag
-method:
+strange way while falling off.  We can fix this by pretending that
+Q\*bert is still jumping.  We'll only set the `jumping` variable to
+`False` if Q\*bert *didn't* fall off, by moving that assignment into
+an `else`:
 
-{{< commit initialise-fallen-off >}}
-
-Then we set the variable to `True` if we work out that Q\*bert has
-fallen off the pyramid:
-
-{{< commit record-when-falling-off >}}
-
-And finally, we abandon the `jump()` method early if we've fallen off,
-by extending the *am I already jumping?* test to *am I already
-jumping, or falling off?*, like this:
-
-{{< commit forbid-movement-when-falling-off >}}
-
-If you play the game, fall off, then click green-flag to try again,
-you'll see that Q\*bert is the wrong size.  We need to set their size
-correctly in the green-flag method `go_to_starting_position()`:
-
-{{< commit set-Qbert-full-size-when-starting >}}
+{{< commit only-record-jump-finished-if-not-fallen-off >}}
 
 ## Lighting up the blocks Q\*bert lands on
 
@@ -380,12 +365,6 @@ broadcast the message:
 We use `broadcast_and_wait()` to make sure the block checking has
 happened before allowing Q\*bert to move again.
 
-If you try this now, it seems to work OK, but if you fall off then try
-again with green-flag, all the blocks are lit up already!  We need to
-make sure each blocks starts off in its un-lit-up costume:
-
-{{< commit start-Block-with-unjumped-costume >}}
-
 ## Checking Q\*bert's progress
 
 This is now working quite well, but we need a way to tell whether
@@ -411,22 +390,18 @@ There are a couple of things to notice here:
   class.  We're only interested in how many clones there are, so we
   find the length of that list with the Python built-in `len()`.
 
-We're now going to make each block clone keep track of whether it's
-lit up.  We'll set the value of a new instance variable `is_lit_up`
-when the clone starts up:
-
-{{< commit record-whether-block-lit-up >}}
-
 Now, when a block works out that it's the one Q\*bert has landed on,
-we'll first check whether we're already lit up, and only if *not*, do
-we switch costume to the lit-up one.  We also then record the fact
-that this clone has lit up.
+it will first test whether it's already lit up, by checking what
+costume it's wearing.  Only if it's *not* already lit up do we switch
+its costume to the lit-up one.
 
 {{< commit only-light-up-if-not-already >}}
 
-When lighting up a block, we can decrease by one the number of blocks
-left to light up.  Again, we have to tell Python that it's the global
-`blocks_left` variable we want to work with:
+This small change hasn't made any difference, but we can now do the
+other job required when a block goes from unlit to lit — we can
+decrease by one the number of blocks left to light up.  Again, we have
+to tell Python that it's the global `blocks_left` variable we want to
+work with:
 
 {{< commit decrement-blocks-left-when-newly-lit-up >}}
 
@@ -438,10 +413,10 @@ which are left to light up:
 If you run this now, it mostly works, except that when you land on the
 very top block, the count drops by *two* instead of one.  What's
 happening is that the *original* instance of *Block* is updating the
-count, as well as the clone which was created there.  We'll fix this
-by making the original *Block* think it's in a nonsense position.
-This isn't a very elegant way of solving this problem, but it will
-work:
+count (even though it's hidden), as well as the clone which was
+created there.  We'll fix this by making the original *Block* think
+it's in a nonsense position.  This isn't a very elegant way of solving
+this problem, but it will work:
 
 {{< commit set-original-Block-coords-to-invalid-values >}}
 
@@ -477,8 +452,8 @@ zero blocks left, and send the `"level-cleared"` message if so:
 
 The game is now playable, but to make it more interesting we'll
 include some sounds.  We'll start with a victory sound, which will be
-a trumpet fanfare.  The 'level cleared' announcement sprite is a
-reasonable one for this sound to belong to:
+a trumpet fanfare.  The 'level cleared' announcement sprite is a good
+one for this sound to belong to:
 
 {{< commit define-LevelClearedText-fanfare-sound >}}
 
@@ -528,7 +503,7 @@ of it!  There's lots more you could do with it:
 - When Q\*bert falls off the pyramid, they just get smaller.  It would
   look better if they looked like they carried on falling, at an
   increasing speed.
-- Add challenges like were in the original, such as bouncy balls which
+- Add enemies, like were in the original, such as bouncy balls which
   you have to avoid.
 - Make there be more than one level.  Different levels could have
   different colour schemes.

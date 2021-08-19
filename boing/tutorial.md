@@ -39,16 +39,12 @@ entry.
 Now we have the background, we want to put the player's bat into the
 game.  The first part of this is similar to how we introduced the
 _BoingBackground_.  We define _PlayerBat_, which we say is a kind of
-_Sprite_.  To say what _Costumes_ it has, we will give more
-information than for a _Backdrop_ for a _Stage_.  We will choose the name
-we want to call it in our code (here, `normal`), and the image file
-we want to use (here, `bat00.png`).  We lay the code out in a way which
-leaves us room to add another bat costume later.
+_Sprite_.  Again, its _Costumes_ list only has one entry.
 
 {{< commit add-Player-with-costume >}}
 
 When the green flag is clicked, we want the player's bat to go to its
-starting position, and be visible:
+starting position:
 
 {{< commit init-Player-on-green-flag >}}
 
@@ -76,7 +72,7 @@ we tell Pytch which file to use:
 {{< commit add-Ball-with-costume >}}
 
 When the green flag is clicked, the ball should go to the very centre
-of the screen and show itself:
+of the screen:
 
 {{< commit centre-Ball-on-green-flag >}}
 
@@ -88,8 +84,8 @@ ball's _x_ coordinate:
 
 The problem here is that the ball of course just keeps going right
 off the edge of the screen.  We know we're going to need to keep track
-of which direction the ball is going, so we bring in a variable
-`x_speed` belonging just to the _Ball_:
+of which direction the ball is going, so we bring in a *local variable*
+`x_speed`.  This variable only exists inside the `play()` method.
 
 {{< commit add-Ball-state-x-speed >}}
 
@@ -136,20 +132,20 @@ the player misses it.  We'll fix this next.
 
 ## Bounce properly off the player's bat
 
-What we want to do is find where on the player's bat the ball has hit,
-if it hits the bat at all.  We'll call the centre of the bat 'zero',
-and then positive positions are towards the top of the bat, and
-negative positions are towards the bottom.  We can work this out by
+What we want to do is measure how far up or down on the player's bat
+the ball has hit, if it hits the bat at all.  We'll call the centre of
+the bat 'zero', with positive positions towards the top of the bat,
+and negative positions towards the bottom.  We can work this out by
 finding the vertical position — the _y_ coordinate — of the player's
 bat, and subtracting that from the ball's _y_ coordinate:
 
 {{< commit compute-position-on-Player >}}
 
-By experimenting with the '45', we can see what a fair number to use
-so the ball bounces when it looks like it should bounce, and misses
-when it looks like it should miss.  The ball only bounces if the
-position on the bat is 'higher than the bottom of the bat' and also
-'lower than the top of the bat':
+By experimenting with the '45' in the following code, we can see what
+a fair number to use so the ball bounces when it looks like it should
+bounce, and misses when it looks like it should miss.  The ball only
+bounces if the position on the bat is 'higher than the bottom of the
+bat' and also 'lower than the top of the bat':
 
 {{< commit check-Player-has-hit-Ball >}}
 
@@ -163,8 +159,8 @@ the top of their bat, the ball will bounce off upwards, and similarly
 for the bottom of their bat.
 
 To let us work with this, the ball needs to remember how quickly it's
-moving _vertically_, i.e., in the _y_ direction.  So we add a local
-variable `y_speed`.  It starts off as zero, because the ball is
+moving _vertically_, i.e., in the _y_ direction.  So we add another
+local variable, `y_speed`.  It starts off as zero, because the ball is
 moving neither up nor down, just straight across:
 
 {{< commit add-Ball-state-y-speed >}}
@@ -215,9 +211,9 @@ We'll fix these things next.
 The code we added to bounce the ball off the player's bat checked if
 the _position on the bat_ was not too high or too low, and then
 bounced the ball if it was OK.  But it did nothing if the ball _was_
-too high or too low.  We need to add an `else` clause, saying that
-if the player misses, that's the end of the game.  The ball should
-hide, and we `break` out of the `while True` loop:
+too high or too low.  We need to add an `else` clause, saying that if
+the player misses, that's the end of the game.  The ball should hide,
+and we `break` out of the `while True` loop, to finish the game:
 
 {{< commit hide-Ball-if-Player-misses >}}
 
@@ -243,7 +239,7 @@ will make it follow the ball up and down:
 This is much better, but still not quite right.  The robot can go off
 the top of the court or off the bottom.  If moving to the ball's
 position has taken the bat off the top of the court, we set the bat to
-be at the top of the court instead.  And similary for the bottom:
+be at the top of the court instead.  And similarly for the bottom:
 
 {{< commit ensure-Robot-stays-in-court >}}
 

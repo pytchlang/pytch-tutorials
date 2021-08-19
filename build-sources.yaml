@@ -1,24 +1,24 @@
 - name: Hello world!
   branch_name: bn/hello-01
   dir_name: hello
-  commit_id: a3a3c7814bb1f572199d5ccd065b543b75677f96
+  commit_id: ab85a3e804d58ba83ed2944facbc87eb265fd156
 - name: Chase!
   branch_name: gs/chase-03
   dir_name: chase
   commit_id: 538fb08e27a157b44fefede62dc73d586f3d0d52
 - name: Q*bert
-  branch_name: bn/qbert-03
+  branch_name: bn/qbert-04
   dir_name: qbert
-  commit_id: 05a8301c4875be2d702331d08903c537e26e1f20
+  commit_id: 7163ed0c2a23ed8d9c275843100e61afe738d4f0
 - name: Bunner
   branch_name: gs/bunner-04
   dir_name: bunner
-  commit_id: c599f4cfd417ae38036235369ddd26a5ff9c3777
+  commit_id: 10df029a462c8df8f0ac21db586216be21c1ebfb
 - name: Boing
   branch_name: bn/boing-05
   dir_name: boing
-  commit_id: 926707badf4495e4c57b0fbbcfc4f8759f4b7cff
+  commit_id: 5c7e35d43e423271be7f9a8730eb452e54c01888
 - name: Ticket vending machine
   branch_name: bn/ticket-vending-machine-01
   dir_name: ticket-vending-machine
-  commit_id: 06ef480d641cef8a693e081dd780f94697324060
+  commit_id: 157ff89db4b322397d22adeb66db7b7d63a96557

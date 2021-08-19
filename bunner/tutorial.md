@@ -5,12 +5,24 @@ In this tutorial we will make a complete
 
 {{< run-finished-project >}}
 
+## Credits
+
+Many thanks to the Raspberry Pi Press for making the contents of their
+*Code The Classics* book available under a Creative Commons licence.  We
+have used their code for inspiration, and also the images and sounds.
+
+### Detailed credits
+
+{{< asset-credits >}}
+
+
 ---
 
 ## Making the stage
 
-Let's start by getting a nice backdrop up. I've drawn one already, so
-we can just load the image.
+Let's start by getting a nice backdrop up. I've drawn one already
+(using images from *Code The Classics* kindly made available by
+Raspberry Pi Trading Ltd), so we can just load the image.
 
 Begin by making a class to represent the stage. We can call it
 anything we want so long as it is declared as being a
@@ -27,31 +39,34 @@ here.
 
 {{< commit background-hollow-class >}}
 
-If you build the project now, you'll see our backdrop appear.
+If you run your project now, by clicking the green flag, you'll see
+our backdrop appear.
 
 ## Create our hero
 
 There is not much to do in our game yet, so let's add something for
 the player to control.
 
-The graphics are already there for the player's sprite, all we have to
+The graphics are already there for the player's sprite; all we have to
 do is create a class and set up the names of the costumes. Like the
 stage, the name of our new class is up to us, but we have to declare
 that it's a kind of `pytch.Sprite`.
 
 {{< commit Bunny-with-costumes >}}
 
-When green flag is clicked, we select the starting costume, and make
-sure that the Bunny actor is in the right place and visible:
+When green flag is clicked, we:
+
+* select the starting costume (in fact Pytch will start a Sprite off
+  wearing its first costume, but it's a good idea to be explicit about
+  this, in case you change the order of the `Costumes` list);
+
+* move the Bunny actor to the right place,
+
+like this:
 
 {{< commit Bunny-green-flag-go-to-start >}}
 
-If you build the project, you'll see that the Bunny appears in the
-middle of the stage, and only goes to the correct place when you click
-the green flag.  This is a bit messy, so we'll change this to tell
-Pytch to start off *not* showing the Bunny:
-
-{{< commit start-Bunny-not-shown >}}
+Run the project by clicking the green flag to check this works.
 
 ### Moving our hero
 
@@ -64,7 +79,7 @@ make sure that it is never moved off the top of the screen.
 
 {{< commit move-bunny-up >}}
 
-If you haven't already then this is a good place to build the project
+If you haven't already then this is a good place to run the project
 and make sure it's working. Press the up arrow a few times, and make
 sure that you're happy it works.
 
@@ -99,8 +114,8 @@ the file name.
 {{< commit Car-with-costumes >}}
 
 The original car is going to remain hidden, because we'll use *clones*
-for the actual traffic. If a Sprite has a `start_shown` variable Pytch
-will use it to decide if the sprite is visible immediately or not.
+for the actual traffic. So we'll hide the original Car when the
+program starts:
 
 {{< commit Car-start-not-shown >}}
 
@@ -158,16 +173,16 @@ clone so that it has time to drive along the lane.
 We want the clone to run its own script when it's created, so we will
 use the `when_I_start_as_a_clone` event.  I will build up the loop
 that drives the car from left-to-right along the lane. First, I want
-the clone to choose a costume, either 'right0' or 'right1' (they are
-two different colours of cars, and it keeps the lane of traffic from
-looking too boring if there's a mix of costumes).
+the clone to choose a costume, either `"right0"` or `"right1"` (they
+are two different colours of cars, and it keeps the lane of traffic
+from looking too boring if there's a mix of costumes).
 
 Python has a handy `random.choice` function that will return one of
 the items from the list we give it, randomly chosen.
 
 The clone got its own copy of the `direction` variable containing
 whatever the Car sprite had in it at the moment the clone was
-created. It contains the string 'right' (because that's what
+created. It contains the string `"right"` (because that's what
 `StartTrafficRowOne` stored just before creating the clone), so
 combining that with either '0' or '1' gets us one of the `Car` costume
 names we set up earlier.  Also, the images are a bit big, so I'll
@@ -526,15 +541,18 @@ ends:
 
 {{< commit game-over-end-traffic2 >}}
 
+And:
+
 {{< commit game-over-end-traffic3 >}}
 
 Once all of the treaffic has been stopped and the clones have vanished
-I decided to add a new backdrop with a game over message and switch to
-showing that.
-
-{{< commit show-game-over-backdrop >}}
+I decided to add a new backdrop with a game over message —
 
 {{< commit add-game-over-background >}}
+
+— and switch to showing it:
+
+{{< commit show-game-over-backdrop >}}
 
 ## The start button
 
@@ -566,11 +584,7 @@ when the green flag is clicked
 The traffic factories should also begin making cars when the game
 starts, not when the green flag is clicked.
 
-{{< commit start-traffic-on-message1 >}}
-
-{{< commit start-traffic-on-message2 >}}
-
-{{< commit start-traffic-on-message3 >}}
+{{< commit start-traffic-on-message >}}
 
 When the game starts the stage needs to switch to the world costume
 (it might have been showing the 'game over' screen)
@@ -603,7 +617,9 @@ The score starts at zero at the start of the game
 {{< commit initialise-score >}}
 
 We could let the player earn a point every time they manage to move up
-the stage towards the goal at the top:
+the stage towards the goal at the top.  For now we'll put in a
+`print()` statement so we can see what's going on in the *Output*
+panel:
 
 {{< commit increment-the-score-every-time-we-move-up >}}
 
@@ -622,7 +638,7 @@ highest row the bunny has reached.
 
 {{< commit introduce-current-row-counters >}}
 
-These both start at zero:
+These both start at zero when playing a life:
 
 {{< commit init-row-counters-at-start >}}
 
@@ -680,14 +696,13 @@ follow some pattern.
 
 When the score changes I'll get the bunny sprite to send out a
 broadcast message. When this score sprite receives that it will look
-up the score, calculate the _first digit_ of the score, and set the
+up the score, calculate the _units digit_ of the score, and set the
 costume to the corresponding digit. I use the f-string trick in this
-to select the right costume name based on the "tens" value of the
+to select the right costume name based on the "units" value of the
 score.
 
-Calculating the first digit is easy if we assume the score is never
-more than 99. We divide the score by ten and _take the
-remainder_. This is what the Python `%` operator does.
+Calculating the units digit is easy. We divide the score by ten and
+_take the remainder_. This is what the Python `%` operator does.
 
 {{< commit display-digits-on-message1 >}}
 
@@ -710,7 +725,9 @@ variable, which I had made as a global variable.
 
 Now that we have a way to show some digits we could also use this to
 show the number of lives remaining. A third sprite that has the same
-costumes and which updates whenever the lives change can do this:
+costumes and which updates whenever the lives change can do this.  The
+number of lives is always less than 10, so we don't have to do the
+'divide and take remainder' trick this time:
 
 {{< commit introduce-life-display >}}
 

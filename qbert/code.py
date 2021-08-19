@@ -14,7 +14,10 @@ class Background(pytch.Stage):
 class LevelClearedText(pytch.Sprite):
     Costumes = ["level-cleared-text.png"]
     Sounds = ["fanfare.mp3"]
-    start_shown = False
+
+    @pytch.when_green_flag_clicked
+    def start_hidden(self):
+        self.hide()
 
     @pytch.when_I_receive("level-cleared")
     def congratulate_player(self):
@@ -24,9 +27,8 @@ class LevelClearedText(pytch.Sprite):
 
 
 class Block(pytch.Sprite):
-    Costumes = ["block0.png", "block1.png"]
+    Costumes = ["block-unlit.png", "block-lit.png"]
     Sounds = ["pop.mp3", "bell-ping.mp3"]
-    start_shown = False
 
     @pytch.when_green_flag_clicked
     def create_pyramid(self):
@@ -38,26 +40,18 @@ class Block(pytch.Sprite):
                 self.pyramid_r = r
                 self.pyramid_b = b
                 pytch.create_clone_of(self)
+        self.hide()
         self.pyramid_r = -1
         self.pyramid_b = -1
         pytch.broadcast("set-up-qbert")
-
-    @pytch.when_I_start_as_a_clone
-    def appear(self):
-        self.set_size(0.875)
-        self.switch_costume("block0")
-        self.is_lit_up = False
-        self.show()
 
     @pytch.when_I_receive("check-block")
     def check_whether_landed_on(self):
         qbert_r, qbert_b = Qbert.the_original().pyramid_coordinates()
         if self.pyramid_r == qbert_r and self.pyramid_b == qbert_b:
-            if not self.is_lit_up:
+            if self.costume_name == "block-unlit":
                 self.start_sound("bell-ping")
-                self.switch_costume("block1")
-                self.is_lit_up = True
-
+                self.switch_costume("block-lit")
                 global blocks_left
                 blocks_left -= 1
                 if blocks_left == 0:
@@ -68,7 +62,10 @@ class Block(pytch.Sprite):
 
 class Qbert(pytch.Sprite):
     Costumes = ["qbert0.png", "qbert1.png", "qbert2.png", "qbert3.png"]
-    start_shown = False
+
+    @pytch.when_green_flag_clicked
+    def start_hidden(self):
+        self.hide()
 
     # This list must have exactly 14 entries.
     bounce = [6, 4, 2, 1, 0, 0, 0, 0, 0, 0, -1, -2, -4, -6]
@@ -76,12 +73,10 @@ class Qbert(pytch.Sprite):
     @pytch.when_I_receive("set-up-qbert")
     def go_to_starting_position(self):
         self.go_to_xy(-150 + 3 * 56, -145 + (6 * 42) + 28)
-        self.set_size(1.0)
         self.switch_costume("qbert1")
         self.go_to_front_layer()
         self.show()
         self.jumping = False
-        self.fallen_off = False
         global blocks_left
         blocks_left = len(Block.all_clones())
 
@@ -93,7 +88,7 @@ class Qbert(pytch.Sprite):
         return (pyramid_r, pyramid_b)
 
     def jump(self, x_speed, y_speed, costume):
-        if self.jumping or self.fallen_off:
+        if self.jumping:
             return
         self.jumping = True
         self.switch_costume(costume)
@@ -103,12 +98,10 @@ class Qbert(pytch.Sprite):
 
         r, b = self.pyramid_coordinates()
         if r < 0 or r >= 7 or b < 0 or b >= (7 - r):
-            self.fallen_off = True
             pytch.broadcast("fall-off")
         else:
+            self.jumping = False
             pytch.broadcast_and_wait("check-block")
-
-        self.jumping = False
 
     @pytch.when_I_receive("fall-off")
     def disappear(self):

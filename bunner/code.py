@@ -28,8 +28,6 @@ class Bunny(pytch.Sprite):
                  "down_squished.png", "left_squished.png",
     ] + [f"splash-{n}.png" for n in range(8)]
 
-    start_shown = False
-
     @pytch.when_green_flag_clicked
     def go_to_starting_position(self):
         self.switch_costume("up")
@@ -157,7 +155,9 @@ class Car(pytch.Sprite):
         ("right1", "car21.png"),
     ]
 
-    start_shown = False
+    @pytch.when_green_flag_clicked
+    def start_hidden(self):
+        self.hide()
 
     @pytch.when_I_receive("start playing")
     def startTrafficRowOne(self):
@@ -230,12 +230,9 @@ class Car(pytch.Sprite):
 class StartButton(pytch.Sprite):
     Costumes = ["start.png"]
 
-    start_shown = False
-
     @pytch.when_green_flag_clicked
     def start(self):
         self.go_to_xy(0, 120)
-        self.show()
 
     @pytch.when_I_receive("game over")
     def game_over_try_again(self):
@@ -291,7 +288,7 @@ class LivesCounter(pytch.Sprite):
 
     @pytch.when_I_receive("lives changed")
     def show_correct_digit(self):
-        life_number = Bunny.the_original().lives % 10
+        life_number = Bunny.the_original().lives
         self.switch_costume(f"digit-{life_number}")
         self.show()
 
@@ -299,7 +296,9 @@ class LivesCounter(pytch.Sprite):
 class Log(pytch.Sprite):
     Costumes = ["log0.png", "log1.png"]
 
-    start_shown = False
+    @pytch.when_green_flag_clicked
+    def start_hidden(self):
+        self.hide()
 
     @pytch.when_I_receive("start playing")
     def start_row_1(self):
