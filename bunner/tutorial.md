@@ -545,7 +545,7 @@ And:
 
 {{< commit game-over-end-traffic3 >}}
 
-Once all of the treaffic has been stopped and the clones have vanished
+Once all of the traffic has been stopped and the clones have vanished
 I decided to add a new backdrop with a game over message —
 
 {{< commit add-game-over-background >}}
