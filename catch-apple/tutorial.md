@@ -29,7 +29,7 @@ to simplify?**
 
 {{< commit add-empty-Bowl >}}
 
-You will get an error if you try to build this now **\[TODO: The error
+You will get an error if you try to run this now **\[TODO: The error
 is pretty unhelpful, too: "bad input", with a reference to a line just
 beyond the end of the code.  How big of a job would it be to make
 Skulpt be more helpful?\]**, because we haven't said anything at all
@@ -59,7 +59,7 @@ with just that in it:
 
 {{< commit add-Bowl-costume >}}
 
-Now, if you click the `BUILD` button, you should see the player's bowl
+Now, if you click the green flag, you should see the player's bowl
 appear in the middle of the stage.  Test that now!
 
 
@@ -88,7 +88,7 @@ say "just type it")?**
 
 {{< commit define-skeleton-move-with-keys >}}
 
-If you build this now, our new code does not run.  This is because
+If you click the green flag now, our new code does not run.  This is because
 what we've done so far is like making a script in Scratch with _no hat
 block_ on top.  In Scratch we would attach a _when green flag clicked_
 hat block on top of our script.  In Pytch, we do something very
@@ -99,7 +99,7 @@ this?**
 
 {{< commit trigger-move-with-keys-on-green-flag >}}
 
-Now if you build the project and click the green flag, the bowl should
+Now if you click the green flag, the bowl should
 move to its starting position at the bottom of the stage.
 
 ## Let the player move the bowl
@@ -138,7 +138,7 @@ less than or equal to 190.  We add a test for this, and only do the
 
 {{< commit clamp-bowl-at-right >}}
 
-Test this now — build the project, click green-flag, then check you
+Test this now — click the green flag, then check you
 can still move right, but only as far as the edge of the stage.
 
 **TODO: Explain - vs + diffs lines.**
@@ -168,14 +168,14 @@ our new _Apple_ Sprite:
 
 {{< commit add-empty-Apple-class >}}
 
-Before we can build this code, we need to put some code into the Apple
+Before we can run this code, we need to put some code into the Apple
 Sprite — we'll say what costume we want the Apple to have.  We're
 taking the same steps here as what we did when we made the player's
 bowl sprite.
 
 {{< commit give-Apple-costume >}}
 
-If you build the project now, an apple should appear in the middle of
+If you run the project now, an apple should appear in the middle of
 the Stage.
 
 
@@ -196,7 +196,7 @@ we did with the Bowl, we'll add this code all in one go.  We will:
 
 {{< commit define-skeleton-apple-move-down-screen >}}
 
-If you try this now (build then green-flag), you should just be able
+If you try this now (click green flag), you should just be able
 to see the bottom of the apple at the top of the stage.
 
 ### Actually move down the screen
@@ -392,7 +392,7 @@ we just said `drop_x`.  By not saying `self`, Python makes the
 Since we won't need `drop_x` anywhere else, this way avoids cluttering
 up our code with variables.
 
-Now the game is better — each time you Build and green-flag it, the
+Now the game is better — each time click the green flag, the
 apple falls from a different place.
 
 **TODO: Would just one RUN button be better?**
