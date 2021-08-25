@@ -395,8 +395,6 @@ up our code with variables.
 Now the game is better — each time click the green flag, the
 apple falls from a different place.
 
-**TODO: Would just one RUN button be better?**
-
 ## Make apples keep falling
 
 {{< work-in-progress >}}
@@ -516,13 +514,6 @@ Some scattered throughout, but also:
 
 * Any more "now you try this" ideas?  Add hints?  Put them in sensible
   order?  Add something say how hard each challenge is?
-
-* Bigger question: At point where student has got the code to start
-  the apple off at random `x` coord, but before they have repeated
-  apples falling, it's annoying that the student has to do BUILD then
-  GREEN-FLAG to see the effect of their work.  I'm leaning more
-  towards getting rid of separate BUILD vs green-flag, and having just
-  a RUN button instead.
 
 * The collision detection is generous to the player because it's based
   on bounding boxes.  Do we need to explain that?  (Don't think so.)
