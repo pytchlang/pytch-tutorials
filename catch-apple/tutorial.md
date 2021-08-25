@@ -481,7 +481,8 @@ Here are some ideas on how you could make this game more fun:
 
 * Add a pause between one apple being caught / missed and the next one
   appearing.  _Show phrase-book entry `wait (0.5) seconds` vs
-  `wait_seconds(0.5)`._
+  `wait_seconds(0.5)`.  Or advise student to refer to pull-out cheat
+  sheet to find this out for themself._
 
 
 ## TODOs for tutorial author
@@ -508,7 +509,7 @@ Some scattered throughout, but also:
   the 'holes' in Scratch blocks.
 
 * For clamp rightward movement, say what the red(-) and green(+)
-  blocks are.  (In _Keep the bowl on the stage_.)
+  diff blocks are.  (In _Keep the bowl on the stage_.)
 
 * Change transitive verb "launch" to "drop" throughout.
 
