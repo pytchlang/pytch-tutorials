@@ -9,7 +9,7 @@
 - name: Q*bert
   branch_name: bn/qbert-04
   dir_name: qbert
-  commit_id: 7163ed0c2a23ed8d9c275843100e61afe738d4f0
+  commit_id: 060c9e5c579cd6b43a43af7b12c753c5fab25dad
 - name: Bunner
   branch_name: gs/bunner-04
   dir_name: bunner
