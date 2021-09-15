@@ -757,7 +757,7 @@ I could copy the `Car` factory approach exactly, but I want to show
 how to reduce the amount of code a little. So I create a function for
 a "log factory" that takes the movement direction and the y-coordinate
 of the lane. I called the input variable to the function
-'chosen_direction' because it's the direction that whoever starts this
+`chosen_direction` because it's the direction that whoever starts this
 log with has chosen for it. This is the factory:
 
 {{< commit start-a-single-row >}}
