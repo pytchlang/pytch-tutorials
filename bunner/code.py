@@ -166,7 +166,7 @@ class Car(pytch.Sprite):
         while game_running:
             if random.random() < 0.2:
                 self.go_to_xy(-285, -125)
-                self.direction = "right"
+                self.movement_direction = "right"
                 pytch.create_clone_of(self)
                 pytch.wait_seconds(0.3)
             pytch.wait_seconds(0.1)
@@ -178,7 +178,7 @@ class Car(pytch.Sprite):
         while game_running:
             if random.random() < 0.2:
                 self.go_to_xy(285, -80)
-                self.direction = "left"
+                self.movement_direction = "left"
                 pytch.create_clone_of(self)
                 pytch.wait_seconds(0.3)
             pytch.wait_seconds(0.1)
@@ -190,17 +190,17 @@ class Car(pytch.Sprite):
         while game_running:
             if random.random() < 0.2:
                 self.go_to_xy(-285, -30)
-                self.direction = "right"
+                self.movement_direction = "right"
                 pytch.create_clone_of(self)
                 pytch.wait_seconds(0.3)
             pytch.wait_seconds(0.1)
 
     @pytch.when_I_start_as_a_clone
     def drive(self):
-        self.switch_costume(self.direction + random.choice(["0", "1"]))
+        self.switch_costume(self.movement_direction + random.choice(["0", "1"]))
         self.set_size(0.65)
         self.show()
-        if self.direction == "right":
+        if self.movement_direction == "right":
             while self.x_position < 285:
                 self.change_x(self.speed)
         else:  # Direction should be "left"
@@ -312,9 +312,9 @@ class Log(pytch.Sprite):
     def start_row_3(self):
         self.start_row("right", 130)
 
-    def start_row(self, direction, y):
+    def start_row(self, chosen_direction, y):
         self.speed = 3
-        if direction == "right":
+        if chosen_direction == "right":
             x = -285
         else:
             x = 285
@@ -322,7 +322,7 @@ class Log(pytch.Sprite):
         while game_running:
             if random.random() < 0.05:
                 self.go_to_xy(x, y)
-                self.direction = direction
+                self.movement_direction = chosen_direction
                 pytch.create_clone_of(self)
                 pytch.wait_seconds(0.3)
             pytch.wait_seconds(0.1)
@@ -332,7 +332,7 @@ class Log(pytch.Sprite):
         self.switch_costume("log" + random.choice(["0", "1"]))
         self.set_size(0.65)
         self.show()
-        if self.direction == "left":
+        if self.movement_direction == "left":
             while self.x_position > -285:
                 self.change_x(-self.speed)
                 if (

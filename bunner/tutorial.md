@@ -180,7 +180,7 @@ from looking too boring if there's a mix of costumes).
 Python has a handy `random.choice` function that will return one of
 the items from the list we give it, randomly chosen.
 
-The clone got its own copy of the `direction` variable containing
+The clone got its own copy of the `movement_direction` variable containing
 whatever the Car sprite had in it at the moment the clone was
 created. It contains the string `"right"` (because that's what
 `StartTrafficRowOne` stored just before creating the clone), so
@@ -193,7 +193,7 @@ shrink the clone to 65% of its original size.
 Once the sprite has appeared we start a loop that drives the car to
 the right.
 
-You might wonder why I'm are checking the 'direction' variable, since
+You might wonder why I'm are checking the 'movement_direction' variable, since
 it has to contain 'right'. The answer is that if we get this code
 correct for moving right we'll be able to use it for the left-moving
 lane as well.
@@ -217,12 +217,12 @@ around just off the stage edge.
 {{< commit finish-car-clone >}}
 
 Now, back to my idea of using the same code to control cars in the
-left-hand lane. If the direction is not 'right' then I suppose it must
+left-hand lane. If the movement direction is not 'right' then I suppose it must
 be 'left'. Those cars just move a _negative_ amount (and have moved
 far enough once their `x`-coordinate has moved off the left edge of
 the stage)
 
-I'll add the code to handle the 'left' direction, and then move on to
+I'll add the code to handle the 'left' movement direction, and then move on to
 making actual clones that want to move that way.
 
 {{< commit drive-to-the-left >}}
@@ -238,10 +238,10 @@ now.
 {{< commit start-traffic-two-and-three >}}
 
 There's an important point to think about here. What if the row two
-loop moved the car, but before it got to set the `direction` or create
+loop moved the car, but before it got to set the `movement_direction` or create
 the clone the row one loop ran a bit and altered the x and y position?
 We could end up with a car that was positioned off to the left of the
-screen, but which had its direction set to drive to the left, and it
+screen, but which had its movement direction set to drive to the left, and it
 would just vanish right away!
 
 In fact, this can't happen, and it's worth knowing why. Pytch will
@@ -755,8 +755,10 @@ Based on the same design as the `Car` sprite, I make a `Log` sprite:
 
 I could copy the `Car` factory approach exactly, but I want to show
 how to reduce the amount of code a little. So I create a function for
-a "log factory" that takes the direction and the y-coordinate of the
-lane. This is the factory:
+a "log factory" that takes the movement direction and the y-coordinate
+of the lane. I called the input variable to the function
+`chosen_direction` because it's the direction that whoever starts this
+log with has chosen for it. This is the factory:
 
 {{< commit start-a-single-row >}}
 

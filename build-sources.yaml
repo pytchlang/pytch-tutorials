@@ -13,7 +13,7 @@
 - name: Bunner
   branch_name: gs/bunner-04
   dir_name: bunner
-  commit_id: bd09cd2429bc264bc2423aca5ec6506f7f3c4f11
+  commit_id: 240ddd140e7eb8ac9ff48f899f0d83dd654e02f1
 - name: Boing
   branch_name: bn/boing-05
   dir_name: boing
