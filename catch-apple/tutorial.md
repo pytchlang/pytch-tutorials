@@ -87,9 +87,10 @@ In Python, you provide these extra pieces of information (called
 self.go_to_xy(0, -145)
 ```
 
-The ``self`` means we want to act on the Sprite.  The `x`-coordinate
-of `0` puts the bowl in the middle, left-to-right.  I picked `-145`
-for the `y`-coordinate by trial and error.
+The "`self.`" part at the start means we want the Sprite to do
+something.  The `x`-coordinate of `0` puts the bowl in the middle,
+left-to-right.  I picked `-145` for the `y`-coordinate by trial and
+error.
 
 If you click the green flag now, our new code does not run.  This is because
 what we've done so far is like making a script in Scratch with _no hat
@@ -506,8 +507,6 @@ Some scattered throughout, but also:
 * Do we need something less "babyish" for the graphics?  But avoid
   being "stereotypically boyish", which, e.g., spaceships catching
   asteroids might be seen as.
-
-* Where to talk about SELF. in front of built-ins?
 
 * Say how params in ()s are like putting values/variables into
   the 'holes' in Scratch blocks.
