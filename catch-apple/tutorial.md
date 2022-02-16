@@ -481,12 +481,12 @@ Here are some ideas on how you could make this game more fun:
   documentation](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings))
   to get the scorekeeper to say this.
 
-* Change the speed of the bowl.  _The speed appears in two places
-  (left/right).  Could suggest a top-level variable for this and
-  invite the student to **Investigate** (as per PRIMM) whether it's
-  worth the effort of having a variable — it makes it easier to change
-  the player's speed, but is a bit more work to write the code in the
-  first place._
+* Change the speed of the bowl.  A bit quicker would make the game
+  easier; a bit slower would make the game harder.  The speed appears
+  in two places: for moving left and for moving right.  Investigate
+  whether it’s worth setting a variable to hold the speed.  A variable
+  makes it easier to experiment with the player's speed, but it is a
+  bit more work to write the code in the first place.
 
 * Add a pause between one apple being caught / missed and the next one
   appearing.  _Show phrase-book entry `wait (0.5) seconds` vs
