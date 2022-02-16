@@ -338,9 +338,7 @@ receives the message `"award-point"`:
 
 And then we make the apple broadcast this message when it's caught.
 
-**TODO: This is a good example of where more context in the diff would
-be very useful.  We've leapt back to the `Apple` sprite for this
-bit:**
+This change needs to be made inside your `Apple` sprite:
 
 {{< commit broadcast-when-apple-caught >}}
 
