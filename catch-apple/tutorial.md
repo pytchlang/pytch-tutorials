@@ -71,15 +71,25 @@ method's name.
 
 Pytch uses the same way of describing positions on the stage as
 Scratch does, so we'll start off by making our method just move the
-bowl to a sensible place at the bottom of the stage.  The
-`x`-coordinate of `0` puts the bowl in the middle, left-to-right.  I
-picked `-145` for the `y`-coordinate by trial and error.
-
-**TODO: Say about params in ()s vs values in Scratch's block's
-"holes".  Equivalent Scratch fragment?  Explain the "SELF." bit (or
-say "just type it")?**
+bowl to a sensible place at the bottom of the stage.
 
 {{< commit define-skeleton-move-with-keys >}}
+
+In Scratch, you give a block the information it needs by filling in
+the ‘holes’ in the block:
+
+![Scratch: go-to-xy](go-to-xy.png)
+
+In Python, you provide these extra pieces of information (called
+“arguments”) in brackets “`()`” after the function name:
+
+```
+self.go_to_xy(0, -145)
+```
+
+The ``self`` means we want to act on the Sprite.  The `x`-coordinate
+of `0` puts the bowl in the middle, left-to-right.  I picked `-145`
+for the `y`-coordinate by trial and error.
 
 If you click the green flag now, our new code does not run.  This is because
 what we've done so far is like making a script in Scratch with _no hat
