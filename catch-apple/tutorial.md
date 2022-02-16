@@ -508,9 +508,6 @@ Some scattered throughout, but also:
   being "stereotypically boyish", which, e.g., spaceships catching
   asteroids might be seen as.
 
-* Say how params in ()s are like putting values/variables into
-  the 'holes' in Scratch blocks.
-
 * Change transitive verb "launch" to "drop" throughout.
 
 * Any more "now you try this" ideas?  Add hints?  Put them in sensible
