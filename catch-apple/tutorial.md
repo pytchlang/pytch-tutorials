@@ -514,7 +514,4 @@ Some scattered throughout, but also:
 * Any more "now you try this" ideas?  Add hints?  Put them in sensible
   order?  Add something say how hard each challenge is?
 
-* The collision detection is generous to the player because it's based
-  on bounding boxes.  Do we need to explain that?  (Don't think so.)
-
 * Any terms-of-art we need to introduce?  "Function"?
