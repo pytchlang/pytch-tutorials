@@ -95,10 +95,7 @@ If you click the green flag now, our new code does not run.  This is because
 what we've done so far is like making a script in Scratch with _no hat
 block_ on top.  In Scratch we would attach a _when green flag clicked_
 hat block on top of our script.  In Pytch, we do something very
-similar, by attaching a special marker to the method:
-
-**TODO: Is "special marker" the best we can do as an explanation for
-this?**
+similar, by attaching a special marker to the top of the method:
 
 {{< commit trigger-move-with-keys-on-green-flag >}}
 
