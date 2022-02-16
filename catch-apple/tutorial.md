@@ -322,7 +322,10 @@ message.
 Just like in Scratch, we have to choose a good message.  In Pytch, a
 message can be any string — we'll use `"award-point"`.
 
-**TODO: More Scratch fragments showing broadcast and when-I-receive.**
+This is just like in Scratch, where we would use a `broadcast` block
+and a `when I receive` hat-block:
+
+![Scratch: broadcast and receive](broadcast-and-receive.png)
 
 And just like in Scratch, we have to choose a
 good message.  In Pytch, a message can be any string — we'll use
