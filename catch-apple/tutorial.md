@@ -108,8 +108,7 @@ Now we're going to let the player move the bowl.  We'll start by
 letting them move it to the right.  We'll keep checking whether the
 player is pressing the `d` key, and if so, change the bowl's
 `x`-coordinate.  In Scratch we would do this with a _forever_ block.
-Python does not have this; it uses a `while True` statement to do the
-same job.
+Python has the `while True` statement to do the same job.
 
 In Scratch, the blocks we want to run forever are _inside_ the
 _forever_ block.  In Python, the code we want to run forever is
@@ -118,7 +117,7 @@ _indented_ to the right.
 Python's _if_ statements work in the same way.  The code you want to
 run only if the condition is true is indented to the right.
 
-Putting this all together:
+Putting this all together, we get this new code:
 
 {{< commit move-bowl-right >}}
 
@@ -134,7 +133,7 @@ to move the bowl right.  We do this be checking the bowl's
 `x`-coordinate is `190` — I found this value by trial and error in the
 code below.  It's OK to move right as long as the `x`-coordinate is
 less than or equal to 190.  We add a test for this, and only do the
-`self.change_x(2)` if the test passes:
+`self.change_x(2)` if the test passes.
 
 Maybe you can guess what the red line, marked with “⊖”, means — if
 not, you can click on the blue “``i``” to get an explanation.
@@ -238,7 +237,7 @@ so what we're doing is the Pytch equivalent of the Scratch script
 
 ![Scratch: if-touching-Bowl stop-this-script](if-touching-Bowl-stop-this-script.png)
 
-In Pytch, the code to add is:
+In Pytch, the code we need is:
 
 {{< commit stop-falling-if-caught-in-bowl >}}
 
@@ -293,8 +292,8 @@ If you run this now, the score-keeper should say "`0`".
 
 ## Give a point for catching an apple
 
-As the game is right now, the player can catch the apple in the bowl,
-but the score stays as zero.  We will fix this next.
+The player can catch the apple in the bowl, but the score stays as
+zero.  We will fix this next.
 
 We'll define another method in the `ScoreKeeper` sprite.  That
 method's job is to give the player a point and announce the new score.
@@ -313,13 +312,14 @@ new value of the `score` variable:
 
 Our code is correct, but we haven't said when to run it.  We want to
 run this method whenever the apple lands in the bowl.  In our code,
-it's the Apple's job to check whether it's landed in the bowl, so
-we're going to make the Apple _broadcast a message_ when it knows that
-it's landed in the bowl.  We'll tell Pytch to run our score-keeper's
-`award_point` method when it receives that message.
+it's the Apple's job to check whether it's landed in the bowl.  So,
+just like in Scratch, we're going to make the Apple _broadcast a
+message_ when it knows that it's landed in the bowl.  We'll tell Pytch
+to run our score-keeper's `award_point` method when it *receives* that
+message.
 
-This is just like in Scratch with its `broadcast` block and its `when
-I receive` hat-block.
+Just like in Scratch, we have to choose a good message.  In Pytch, a
+message can be any string — we'll use `"award-point"`.
 
 **TODO: More Scratch fragments showing broadcast and when-I-receive.**
 
