@@ -457,6 +457,11 @@ and this is now a playable game written in Python — congratulations!
 
 Here are some ideas on how you could make this game more fun:
 
+* Add a pause between one apple being caught / missed and the next one
+  appearing.  Use the help sidebar to find the Pytch version of
+  Scratch’s `wait () seconds` block.  (Hint: just after doing
+  `pytch.broadcast_and_wait("drop-apple")` is a good place to pause.)
+
 * The `x`-coordinate where the apple starts is already random.  Make
   the starting `y`-coordinate be random too.  If an apple starts lower
   down the stage, the player has less time to get the bowl under the
@@ -469,9 +474,12 @@ Here are some ideas on how you could make this game more fun:
   the slide-out help panel to find the Pytch function for playing the
   sound.
 
-* Make the referee jump up and down in celebration when the player
-  catches an apple.  In Scratch you might use the `repeat` block.  Use
-  the slide-out help panel to find how to do this in Pytch.
+* Change the speed of the bowl.  A bit quicker would make the game
+  easier; a bit slower would make the game harder.  The speed appears
+  in two places: for moving left and for moving right.  Investigate
+  whether it’s worth setting a variable to hold the speed.  A variable
+  makes it easier to experiment with the player's speed, but it is a
+  bit more work to write the code in the first place.
 
 * Add the provided `orange.png` costume to the Apple.  Its `Costumes`
   list will then have two things in it.  (Your code will be clearer if
@@ -482,22 +490,15 @@ Here are some ideas on how you could make this game more fun:
   help panel will tell you the Pytch version of Scratch’s `switch
   costume` block.
 
+* Make the referee jump up and down in celebration when the player
+  catches an apple.  In Scratch you might use the `repeat` block.  Use
+  the slide-out help panel to find how to do this in Pytch.
+
 * Make there be a fixed number of apples — maybe 8.  Advanced: At the
   end of the game, make the referee say something like "You got 5 out
   of 8".  You can use "f-strings" ([read about them in the Python
   documentation](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings))
   to get the scorekeeper to say this.
-
-* Change the speed of the bowl.  A bit quicker would make the game
-  easier; a bit slower would make the game harder.  The speed appears
-  in two places: for moving left and for moving right.  Investigate
-  whether it’s worth setting a variable to hold the speed.  A variable
-  makes it easier to experiment with the player's speed, but it is a
-  bit more work to write the code in the first place.
-
-* Add a pause between one apple being caught / missed and the next one
-  appearing.  Use the help sidebar to find the Pytch version of
-  Scratch’s `wait () seconds` block.
 
 
 ## TODOs for tutorial author
