@@ -474,12 +474,13 @@ Here are some ideas on how you could make this game more fun:
   the slide-out help panel to find the Pytch function for playing the
   sound.
 
-* Change the speed of the bowl.  A bit quicker would make the game
-  easier; a bit slower would make the game harder.  The speed appears
-  in two places: for moving left and for moving right.  Investigate
-  whether it’s worth setting a variable to hold the speed.  A variable
-  makes it easier to experiment with the player's speed, but it is a
-  bit more work to write the code in the first place.
+* Change how quickly the player can move the bowl.  A bit quicker
+  would make the game easier; a bit slower would make the game harder.
+  The speed appears in two places: for moving left and for moving
+  right.  Investigate whether it’s worth setting a variable to hold
+  the speed.  A variable makes it easier to experiment with the
+  player's speed, but it is a bit more work to write the code in the
+  first place.
 
 * Add the provided `orange.png` costume to the Apple.  Its `Costumes`
   list will then have two things in it.  (Your code will be clearer if
