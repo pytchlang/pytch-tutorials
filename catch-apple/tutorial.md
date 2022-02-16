@@ -500,11 +500,3 @@ Here are some ideas on how you could make this game more fun:
   of 8".  You can use "f-strings" ([read about them in the Python
   documentation](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings))
   to get the scorekeeper to say this.
-
-
-## TODOs for tutorial author
-
-Some scattered throughout, but also:
-
-* Any more "now you try this" ideas?  Add hints?  Put them in sensible
-  order?  Add something say how hard each challenge is?
