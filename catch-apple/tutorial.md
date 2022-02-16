@@ -18,14 +18,9 @@ We'll start with the Bowl which the player controls.  Just like in
 Scratch, we make a _Sprite_.  In Pytch, we create a Sprite by adding
 code to our program.
 
-You need to make the following change to your program.  The numbers at
-the left are the line-number of your program.  The `+` signs mean that
-those lines need to be _added_, and the background is green as another
-way to show this.  The `import pytch` you can see at the top is to
-help you find the right place in your program to add the new lines.
-
-**TODO: That feels a bit clunky as an explanation for diffs.  Any way
-to simplify?**
+You need to make the following change to your program.  Clicking on
+the blue "`i`" will show some help about understanding the changes
+you need to make.
 
 {{< commit add-empty-Bowl >}}
 
@@ -136,12 +131,13 @@ code below.  It's OK to move right as long as the `x`-coordinate is
 less than or equal to 190.  We add a test for this, and only do the
 `self.change_x(2)` if the test passes:
 
+Maybe you can guess what the red line, marked with “⊖”, means — if
+not, you can click on the blue “``i``” to get an explanation.
+
 {{< commit clamp-bowl-at-right >}}
 
 Test this now — click the green flag, then check you
 can still move right, but only as far as the edge of the stage.
-
-**TODO: Explain - vs + diffs lines.**
 
 ### Let the player move left too
 
@@ -382,7 +378,8 @@ and in Python it looks like this:
 Now we need to use the value of our `drop_x` variable instead of the
 fixed `100` for the `x`-coordinate of where the apple falls from:
 
-**TODO: Explain `-` vs `+` diff lines.**
+We’re changing a line of code here — the “i” button will help explain
+the ⊖ and ⊕ lines.
 
 {{< commit drop-from-random-abscissa >}}
 
