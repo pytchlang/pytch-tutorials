@@ -81,7 +81,7 @@ the ‘holes’ in the block:
 ![Scratch: go-to-xy](go-to-xy.png)
 
 In Python, you provide these extra pieces of information (called
-“arguments”) in brackets “`()`” after the function name:
+“arguments”) in brackets “`()`” after the method name:
 
 ```
 self.go_to_xy(0, -145)
@@ -512,5 +512,3 @@ Some scattered throughout, but also:
 
 * Any more "now you try this" ideas?  Add hints?  Put them in sensible
   order?  Add something say how hard each challenge is?
-
-* Any terms-of-art we need to introduce?  "Function"?
