@@ -24,12 +24,10 @@ you need to make.
 
 {{< commit add-empty-Bowl >}}
 
-You will get an error if you try to run this now **\[TODO: The error
-is pretty unhelpful, too: "bad input", with a reference to a line just
-beyond the end of the code.  How big of a job would it be to make
-Skulpt be more helpful?\]**, because we haven't said anything at all
-about the _Bowl_.  We'll do that now, by saying what the bowl should
-look like.
+You will get an error if you try to run this now — then click back to
+this _Tutorial_ tab.  The problem is that we haven't said anything at
+all about the _Bowl_.  We'll do that now, by saying what the bowl
+should look like.
 
 ### Add a costume for the Sprite
 
