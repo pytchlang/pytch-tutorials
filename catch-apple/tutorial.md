@@ -412,16 +412,16 @@ We're going to change the game so that the score-keeper is in charge
 of making the apple fall from the sky.  We're going to take away the
 'hat block' `@pytch.when_green_flag_clicked` on the Apple's
 `move_down_stage` method, and replace it with a hat block listening
-for the broadcast of the message `"launch-apple"`:
+for the broadcast of the message `"drop-apple"`:
 
 {{< commit launch-apple-on-message-not-green-flag >}}
 
 Right now, the game won't work, because nothing is broadcasting the
-`"launch-apple"` message.  We'll give that job to the score-keeper
+`"drop-apple"` message.  We'll give that job to the score-keeper
 now.
 
 We'll make a new method in the ScoreKeeper sprite which will keep
-launching apples.  A good name for this is `launch_apples`, so we
+dropping apples.  A good name for this is `drop_apples`, so we
 start defining that method:
 
 {{< commit define-launch-apples-method >}}
@@ -429,12 +429,12 @@ start defining that method:
 We want to keep making apples drop from the top of the stage forever.
 Just like in the code which lets the player move the bowl, we do this
 with a `while True:` loop in Python.  Inside that loop, we want to
-keep broadcasting `"launch-apple"`.  But here, we will use the
+keep broadcasting `"drop-apple"`.  But here, we will use the
 `broadcast_and_wait` function, because we don't want to drop the next
 Apple until the current one has either been caught or reached the
 bottom of the stage.  In Scratch, the code would be
 
-![Scratch: forever-launch-apple](forever-launch-apple.png)
+![Scratch: forever-drop-apple](forever-drop-apple.png)
 
 and in Pytch it's
 
@@ -507,8 +507,6 @@ Some scattered throughout, but also:
 * Do we need something less "babyish" for the graphics?  But avoid
   being "stereotypically boyish", which, e.g., spaceships catching
   asteroids might be seen as.
-
-* Change transitive verb "launch" to "drop" throughout.
 
 * Any more "now you try this" ideas?  Add hints?  Put them in sensible
   order?  Add something say how hard each challenge is?
