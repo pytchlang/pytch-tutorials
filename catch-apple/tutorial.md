@@ -2,7 +2,7 @@
 
 This tutorial will show you how to make a simple game in Pytch.  The
 player will move a basket to try to catch apples which fall down the
-screen.
+stage.
 
 **TODO: Animation of gameplay here?**
 
@@ -179,7 +179,7 @@ If you run the project now, an apple should appear in the middle of
 the Stage.
 
 
-## Make the apple fall down the screen
+## Make the apple fall down the stage
 
 To give the Apple its behaviour, we define a method — remember this is
 like making a script in Scratch.  Because this is very similar to what
@@ -188,18 +188,18 @@ we did with the Bowl, we'll add this code all in one go.  We will:
 * Say that we want this code to run when the green flag is clicked —
   this is like the 'hat block' in Scratch.
 * Give the method a short name to say what it does — we're using
-  `move_down_screen`.  The code doesn't yet move the apple down the
-  screen but it will!  **TODO: Would "move down STAGE" be better?**
+  `move_down_stage`.  The code doesn't yet move the apple down the
+  stage but it will!
 * Start the code off with a line which moves the Apple to a good
-  starting point on the screen — I chose just off the top of the
-  screen, and off-centre to the right a bit.
+  starting point on the stage — I chose just off the top of the
+  stage, and off-centre to the right a bit.
 
 {{< commit define-skeleton-apple-move-down-screen >}}
 
 If you try this now (click green flag), you should just be able
 to see the bottom of the apple at the top of the stage.
 
-### Actually move down the screen
+### Actually move down the stage
 
 What we want the apple to do is keep moving down, as long as it is
 above the bottom of the stage.  In Scratch we could use a `repeat
@@ -220,10 +220,10 @@ method:
 {{< commit make-apple-fall-down-screen >}}
 
 We're changing the `y`-coordinate by the negative number `-3` to make
-the apple move _down_ the screen a small amount each time round the
+the apple move _down_ the stage a small amount each time round the
 `while` loop.
 
-If you run this code, the apple should fall down the screen, and stop
+If you run this code, the apple should fall down the stage, and stop
 at the bottom.
 
 ## Catch the apple in the bowl
@@ -390,7 +390,7 @@ the ⊖ and ⊕ lines.
 
 One thing you might notice is that we didn't say `self.drop_x` here,
 we just said `drop_x`.  By not saying `self`, Python makes the
-`drop_x` variable only exist inside the `move_down_screen` method.
+`drop_x` variable only exist inside the `move_down_stage` method.
 Since we won't need `drop_x` anywhere else, this way avoids cluttering
 up our code with variables.
 
@@ -402,7 +402,7 @@ apple falls from a different place.
 We're going to change the game so that the score-keeper is in charge
 of making the apple fall from the sky.  We're going to take away the
 'hat block' `@pytch.when_green_flag_clicked` on the Apple's
-`move_down_screen` method, and replace it with a hat block listening
+`move_down_stage` method, and replace it with a hat block listening
 for the broadcast of the message `"launch-apple"`:
 
 {{< commit launch-apple-on-message-not-green-flag >}}
@@ -417,13 +417,13 @@ start defining that method:
 
 {{< commit define-launch-apples-method >}}
 
-We want to keep making apples drop from the top of the screen forever.
+We want to keep making apples drop from the top of the stage forever.
 Just like in the code which lets the player move the bowl, we do this
 with a `while True:` loop in Python.  Inside that loop, we want to
 keep broadcasting `"launch-apple"`.  But here, we will use the
 `broadcast_and_wait` function, because we don't want to drop the next
 Apple until the current one has either been caught or reached the
-bottom of the screen.  In Scratch, the code would be
+bottom of the stage.  In Scratch, the code would be
 
 ![Scratch: forever-drop-apple](forever-drop-apple.png)
 
@@ -450,7 +450,7 @@ Here are some ideas on how you could make this game more fun:
 
 * The `x`-coordinate where the apple starts is already random.  Make
   the starting `y`-coordinate be random too.  If an apple starts lower
-  down the screen, the player has less time to get the bowl under the
+  down the stage, the player has less time to get the bowl under the
   apple, making the game more challenging.
 
 * Play a sound when the player catches an apple.  _Would have
