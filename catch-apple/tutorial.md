@@ -497,10 +497,6 @@ Here are some ideas on how you could make this game more fun:
 
 Some scattered throughout, but also:
 
-* The game would look better with a background of some kind, even just
-  a solid colour, but is that adding too much work for too little
-  benefit?
-
 * Do we need something less "babyish" for the graphics?  But avoid
   being "stereotypically boyish", which, e.g., spaceships catching
   asteroids might be seen as.
@@ -522,7 +518,3 @@ Some scattered throughout, but also:
   on bounding boxes.  Do we need to explain that?  (Don't think so.)
 
 * Any terms-of-art we need to introduce?  "Function"?
-
-* Would `drop_start_x` be better variable name?  The x stays the same
-  throughout the drop, but if student does the challenge where y is
-  chosen randomly, `drop_start_y` is better than `drop_y`.
