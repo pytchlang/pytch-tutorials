@@ -475,9 +475,11 @@ Here are some ideas on how you could make this game more fun:
   help panel will tell you the Pytch version of Scratch’s `switch
   costume` block.
 
-* Make there be only a fixed number of apples instead of infinite.  At
-  the end of the game, make the referee say something like "You got 5
-  out of 8".  _Student would need to be told about f-strings._
+* Make there be a fixed number of apples — maybe 8.  Advanced: At the
+  end of the game, make the referee say something like "You got 5 out
+  of 8".  You can use "f-strings" ([read about them in the Python
+  documentation](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings))
+  to get the scorekeeper to say this.
 
 * Change the speed of the bowl.  _The speed appears in two places
   (left/right).  Could suggest a top-level variable for this and
