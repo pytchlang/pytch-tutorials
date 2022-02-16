@@ -399,8 +399,6 @@ apple falls from a different place.
 
 ## Make apples keep falling
 
-{{< work-in-progress >}}
-
 We're going to change the game so that the score-keeper is in charge
 of making the apple fall from the sky.  We're going to take away the
 'hat block' `@pytch.when_green_flag_clicked` on the Apple's
