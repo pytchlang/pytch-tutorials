@@ -226,6 +226,12 @@ the apple move _down_ the stage a small amount each time round the
 If you run this code, the apple should fall down the stage, and stop
 at the bottom.
 
+The `while` here might look different to when we used `while True` to
+mean "forever", but it's really just different ways of using the same
+thing.  When we want something to happen forever, the `True` in `while
+True` acts as a test which always passes, so the indented code keeps
+running again and again forever.
+
 ## Catch the apple in the bowl
 
 Finally, we want to let the player catch the apple.  Each time the
@@ -502,9 +508,6 @@ Some scattered throughout, but also:
   asteroids might be seen as.
 
 * Where to talk about SELF. in front of built-ins?
-
-* Do we need more explanation over `forever` vs `while True:`, or can
-  WHILE TRUE be a magic spell for now?
 
 * Say how params in ()s are like putting values/variables into
   the 'holes' in Scratch blocks.
