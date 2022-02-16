@@ -463,8 +463,8 @@ Here are some ideas on how you could make this game more fun:
   sound.
 
 * Make the referee jump up and down in celebration when the player
-  catches an apple.  _Show hint of equivalent of Scratch `repeat(4)`
-  because `for i in range(4)` is a bit of a magic spell._
+  catches an apple.  In Scratch you might use the `repeat` block.  Use
+  the slide-out help panel to find how to do this in Pytch.
 
 * Change the apple's costume to be an orange once the player has
   caught five apples.  _(Idea of lists is already there because
