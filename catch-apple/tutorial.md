@@ -489,9 +489,8 @@ Here are some ideas on how you could make this game more fun:
   bit more work to write the code in the first place.
 
 * Add a pause between one apple being caught / missed and the next one
-  appearing.  _Show phrase-book entry `wait (0.5) seconds` vs
-  `wait_seconds(0.5)`.  Or advise student to refer to pull-out cheat
-  sheet to find this out for themself._
+  appearing.  Use the help sidebar to find the Pytch version of
+  Scratch’s `wait () seconds` block.
 
 
 ## TODOs for tutorial author
