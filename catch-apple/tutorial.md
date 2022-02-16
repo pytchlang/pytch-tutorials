@@ -455,8 +455,12 @@ Here are some ideas on how you could make this game more fun:
   down the stage, the player has less time to get the bowl under the
   apple, making the game more challenging.
 
-* Play a sound when the player catches an apple.  _Would have
-  to provide a sound asset._
+* Play a sound when the player catches an apple.  There is an
+  apple-crunching sound as part of this tutorial.  Make this sound
+  part of the `Apple` sprite, by setting a `Sounds` variable just
+  under the `Costumes` variable: `Sounds = ["apple-crunch.wav"]`.  Use
+  the slide-out help panel to find the Pytch function for playing the
+  sound.
 
 * Make the referee jump up and down in celebration when the player
   catches an apple.  _Show hint of equivalent of Scratch `repeat(4)`
