@@ -504,9 +504,5 @@ Here are some ideas on how you could make this game more fun:
 
 Some scattered throughout, but also:
 
-* Do we need something less "babyish" for the graphics?  But avoid
-  being "stereotypically boyish", which, e.g., spaceships catching
-  asteroids might be seen as.
-
 * Any more "now you try this" ideas?  Add hints?  Put them in sensible
   order?  Add something say how hard each challenge is?
