@@ -280,7 +280,8 @@ the starting value of a new `score` variable to zero:
 
 {{< commit add-ScoreKeeper-score-attribute >}}
 
-**TODO: Say that "SELF." is like the "For this sprite only"?**
+The “`self.`” is what makes this variable like Scratch’s _For this
+sprite only_.
 
 The job of the score-keeper is to announce the score, so we add a line
 to say the value of the `score` variable:
