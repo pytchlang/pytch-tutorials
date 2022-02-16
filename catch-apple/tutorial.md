@@ -304,7 +304,7 @@ increase the `score` variable by `1`:
 
 {{< commit define-skeleton-award-point >}}
 
-**TODO: Say "+=" is like "change () by ()"?**
+The `+=` is like Scratch’s `change (score) by (1)`.
 
 And then we need to change what the score-keeper is saying to be the
 new value of the `score` variable:
