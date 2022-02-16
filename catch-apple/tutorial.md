@@ -466,13 +466,14 @@ Here are some ideas on how you could make this game more fun:
   catches an apple.  In Scratch you might use the `repeat` block.  Use
   the slide-out help panel to find how to do this in Pytch.
 
-* Change the apple's costume to be an orange once the player has
-  caught five apples.  _(Idea of lists is already there because
-  Costumes is always a list even if with only one element; but useful
-  extra exposure to this idea.)  The student could be encouraged to
-  change the sprite name to "Fruit" too.  If coins or gems, have
-  different colours or shapes.  Could be random rather than determined
-  by score.  Would need other assets to be provided._
+* Add the provided `orange.png` costume to the Apple.  Its `Costumes`
+  list will then have two things in it.  (Your code will be clearer if
+  you also change the name of the sprite to `Fruit`!)  Each time the
+  `Fruit` appears, choose randomly which costume to wear.  (Hint: a
+  good place for this code is in the first part of the
+  `move_down_stage()` method, before the `while` loop.)  The slide-out
+  help panel will tell you the Pytch version of Scratch’s `switch
+  costume` block.
 
 * Make there be only a fixed number of apples instead of infinite.  At
   the end of the game, make the referee say something like "You got 5
