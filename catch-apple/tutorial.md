@@ -510,14 +510,8 @@ Some scattered throughout, but also:
 * Do we need more explanation over `forever` vs `while True:`, or can
   WHILE TRUE be a magic spell for now?
 
-* Are the Scratch fragments useful?  Some way to automate their
-  creation?
-
 * Say how params in ()s are like putting values/variables into
   the 'holes' in Scratch blocks.
-
-* For clamp rightward movement, say what the red(-) and green(+)
-  diff blocks are.  (In _Keep the bowl on the stage_.)
 
 * Change transitive verb "launch" to "drop" throughout.
 
@@ -532,6 +526,3 @@ Some scattered throughout, but also:
 * Would `drop_start_x` be better variable name?  The x stays the same
   throughout the drop, but if student does the challenge where y is
   chosen randomly, `drop_start_y` is better than `drop_y`.
-
-* "Change to use an orange not an apple" would be an easier challenge.
-  (We provide an orange costume.)
