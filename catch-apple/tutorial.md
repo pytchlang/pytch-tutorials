@@ -4,7 +4,7 @@ This tutorial will show you how to make a simple game in Pytch.  The
 player will move a basket to try to catch apples which fall down the
 stage.
 
-**TODO: Animation of gameplay here?**
+![Screenshot](screenshot-w480.png)
 
 We'll develop the game in stages, showing how knowledge of Scratch
 helps with understanding how things work in Python.
