@@ -334,9 +334,8 @@ and a `when I receive` hat-block:
 
 ![Scratch: broadcast and receive](broadcast-and-receive.png)
 
-And just like in Scratch, we have to choose a
-good message.  In Pytch, a message can be any string — we'll use
-`"award-point"`.
+And just like in Scratch, we have to choose a good message.  In Pytch,
+a message can be any string — we'll use `"award-point"`.
 
 First we tell Pytch to run `award_point` whenever the score-keeper
 receives the message `"award-point"`:
