@@ -136,7 +136,7 @@ code below.  It's OK to move right as long as the `x`-coordinate is
 less than or equal to 190.  We add a test for this, and only do the
 `self.change_x(2)` if the test passes.
 
-Maybe you can guess what the red line, marked with “⊖”, means — if
+Maybe you can guess what the red line, marked with “`-`”, means — if
 not, you can click on the blue “`?`” to get an explanation.
 
 {{< commit clamp-bowl-at-right >}}
@@ -392,7 +392,7 @@ Now we need to use the value of our `drop_x` variable instead of the
 fixed `100` for the `x`-coordinate of where the apple falls from:
 
 We’re changing a line of code here — the blue “`?`” button will help
-explain the ⊖ and ⊕ lines.
+explain the “`-`” and “`+`” lines.
 
 {{< commit drop-from-random-abscissa >}}
 
