@@ -6,6 +6,10 @@
   branch_name: gs/chase-04
   dir_name: chase
   commit_id: c003bea15ae1ff85b20f27ea9bd2ffc18ef3046c
+- name: Catch the apple
+  branch_name: bn/catch-apple-02
+  dir_name: catch-apple
+  commit_id: 212e9d22dd4efd7b5b41bd2a101df4486929e5fc
 - name: Q*bert
   branch_name: bn/qbert-04
   dir_name: qbert
