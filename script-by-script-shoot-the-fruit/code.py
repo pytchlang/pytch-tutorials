@@ -8,4 +8,4 @@ class Stage(pytch.Stage):
 
 
 class Fruit(pytch.Sprite):
-    Costumes = []
+    Costumes = ["apple.png"]
