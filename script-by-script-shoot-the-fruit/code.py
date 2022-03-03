@@ -37,6 +37,9 @@ class Fruit(pytch.Sprite):
     @pytch.when_this_sprite_clicked
     def hit_fruit(self):
         self.hide()
+
+        Stage.score += 1
+
         self.wait_seconds(1)
 
         appear_x = random.randint(-200, 200)
