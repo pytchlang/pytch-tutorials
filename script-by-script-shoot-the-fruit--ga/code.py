@@ -33,4 +33,5 @@ class Fruit(pytch.Sprite):
     def hit_fruit(self):
         self.hide()
         self.wait_seconds(1)
+        self.go_to_random_position()
         self.show()
