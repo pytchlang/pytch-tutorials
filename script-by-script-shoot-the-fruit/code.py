@@ -11,6 +11,10 @@ class Stage(pytch.Stage):
         Stage.score = 0
         pytch.show_variable(Stage, "score")
 
+    @pytch.when_stage_clicked
+    def missed_fruit(self):
+        pass
+
 
 class Fruit(pytch.Sprite):
     Costumes = ["apple.png"]
