@@ -13,3 +13,5 @@ class Fruit(pytch.Sprite):
     @pytch.when_this_sprite_clicked
     def hit_fruit(self):
         self.hide()
+        pytch.wait_seconds(1)
+        self.show()
