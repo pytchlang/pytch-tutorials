@@ -17,5 +17,6 @@ class Fruit(pytch.Sprite):
 
         appear_x = random.randint(-200, 200)
         appear_y = random.randint(-140, 140)
+        self.go_to_xy(appear_x, appear_y)
 
         self.show()
