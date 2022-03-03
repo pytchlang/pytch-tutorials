@@ -8,6 +8,8 @@ score = 0
 class GameBackground(pytch.Stage):
     Backdrops = ["solid-green.png"]
 
+    @pytch.when_green_flag_clicked
+
 
 class Fruit(pytch.Sprite):
     Costumes = ["apple.png"]
