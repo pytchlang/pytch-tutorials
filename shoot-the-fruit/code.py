@@ -36,4 +36,6 @@ class Fruit(pytch.Sprite):
         appear_y = random.randint(-140, 140)
         self.go_to_xy(appear_x, appear_y)
 
+        new_costume = random.choice(["apple", "orange"])
+
         self.show()
