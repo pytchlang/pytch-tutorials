@@ -13,6 +13,7 @@ class GameBackground(pytch.Stage):
         pytch.show_variable(None, "score")
 
     @pytch.when_stage_clicked
+    def missed_fruit(self):
 
 
 class Fruit(pytch.Sprite):
