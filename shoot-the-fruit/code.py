@@ -9,6 +9,8 @@ class GameBackground(pytch.Stage):
     Backdrops = ["solid-green.png"]
 
     @pytch.when_green_flag_clicked
+    def show_score(self):
+        pytch.show_variable(None, "score")
 
 
 class Fruit(pytch.Sprite):
