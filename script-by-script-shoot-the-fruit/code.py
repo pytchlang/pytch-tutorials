@@ -13,7 +13,7 @@ class Stage(pytch.Stage):
 
     @pytch.when_stage_clicked
     def missed_fruit(self):
-        pass
+        Stage.score -= 5
 
 
 class Fruit(pytch.Sprite):
