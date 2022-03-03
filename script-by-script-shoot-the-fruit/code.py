@@ -14,6 +14,8 @@ class Stage(pytch.Stage):
     @pytch.when_stage_clicked
     def missed_fruit(self):
         Stage.score -= 5
+        if Stage.score < 0:
+            Stage.score = 0
 
 
 class Fruit(pytch.Sprite):
