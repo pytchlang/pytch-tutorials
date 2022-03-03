@@ -28,3 +28,7 @@ class Fruit(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def init_size(self):
         self.set_size(0.25)
+
+    @pytch.when_this_sprite_clicked
+    def hit_fruit(self):
+        pass
