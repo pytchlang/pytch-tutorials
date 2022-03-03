@@ -12,4 +12,4 @@ class Fruit(pytch.Sprite):
 
     @pytch.when_this_sprite_clicked
     def hit_fruit(self):
-        pass
+        self.hide()
