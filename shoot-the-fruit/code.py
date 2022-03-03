@@ -16,6 +16,8 @@ class GameBackground(pytch.Stage):
     def missed_fruit(self):
         global score
         score -= 5
+        if score < 0:
+            score = 0
 
 
 class Fruit(pytch.Sprite):
