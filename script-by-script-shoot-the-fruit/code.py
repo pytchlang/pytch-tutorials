@@ -9,6 +9,7 @@ class Stage(pytch.Stage):
     @pytch.when_green_flag_clicked
     def setup(self):
         Stage.score = 0
+        pytch.show_variable(Stage, "score")
 
 
 class Fruit(pytch.Sprite):
