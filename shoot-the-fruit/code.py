@@ -12,6 +12,8 @@ class GameBackground(pytch.Stage):
     def show_score(self):
         pytch.show_variable(None, "score")
 
+    @pytch.when_stage_clicked
+
 
 class Fruit(pytch.Sprite):
     Costumes = ["apple.png"]
