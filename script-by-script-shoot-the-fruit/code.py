@@ -48,4 +48,9 @@ class Fruit(pytch.Sprite):
 
         self.wait_seconds(1)
         self.go_to_random_position()
+
+        new_costume = random.choice(
+            ["Apple-1.png", "Orange-1.png"]
+        )
+
         self.show()
