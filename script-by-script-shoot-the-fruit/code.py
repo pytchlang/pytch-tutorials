@@ -14,4 +14,7 @@ class Fruit(pytch.Sprite):
     def hit_fruit(self):
         self.hide()
         pytch.wait_seconds(1)
+
+        appear_x = random.randint(-200, 200)
+
         self.show()
