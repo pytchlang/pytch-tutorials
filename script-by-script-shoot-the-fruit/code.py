@@ -35,5 +35,6 @@ class Fruit(pytch.Sprite):
         self.wait_seconds(1)
 
         appear_x = random.randint(-200, 200)
+        appear_y = random.randint(-140, 140)
 
         self.show()
