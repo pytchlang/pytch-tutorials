@@ -6,3 +6,4 @@ class GameBackground(pytch.Stage):
 
 
 class Fruit(pytch.Sprite):
+    Costumes = ["apple.png"]
