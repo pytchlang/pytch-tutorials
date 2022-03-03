@@ -21,7 +21,7 @@ class GameBackground(pytch.Stage):
 
 
 class Fruit(pytch.Sprite):
-    Costumes = ["apple.png"]
+    Costumes = ["apple.png", "orange.png"]
 
     @pytch.when_this_sprite_clicked
     def hit_fruit(self):
