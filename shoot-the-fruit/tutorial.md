@@ -192,8 +192,8 @@ random.randint(1, 6)
 
 ### Picking a random place to appear
 
-We want to pick a random `x` number and a random `y` number which will
-say where the apple should reappear.  We will store these values in
+We want to pick a random `x` number and a random `y` number to say
+where the apple should reappear.  We will store these values in
 *variables*.  These work very much like Scratch variables.  In Python,
 you don't need to explicitly 'make a variable' — you just set a
 variable to something and it is created for you.
