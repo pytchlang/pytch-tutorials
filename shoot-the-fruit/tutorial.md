@@ -399,6 +399,10 @@ Can you change your program to solve these challenges?
 
 * Give the player 10 points for every fruit they hit instead of 1.
 
+* Give the player 5 points for an apple and 10 points for an orange.
+  (*Hint:* You can use the code `self.costume_name` to find out what
+  costume the sprite is currently wearing.)
+
 * Make the fruit smaller, so it's harder to hit.  (*Hint:* You can use
   the code `self.set_size(0.5)` to shrink a Sprite to half its normal
   size.)
