@@ -336,8 +336,9 @@ Scratch's *if* block.  This is the code we need:
 {{< commit clamp-score-at-zero >}}
 
 The `score < 0` part is the test — it asks whether the `score`
-variable is less than zero.  If it is, the indented code runs.  Here,
-there is only one indented line, which sets `score` to zero.
+variable is less than zero.  If it is, the *indented* (pushed to the
+right) code runs.  Here, there is only one indented line, which sets
+`score` to zero.
 
 
 ## Game complete!
