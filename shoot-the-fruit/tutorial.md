@@ -205,7 +205,8 @@ apple to reappear:
 
 The `-200` and `200` don't go all the way to the edges of the stage,
 because we want the apple to always definitely be completely on the
-stage.
+stage — it's the centre of the apple which we are picking a location
+for.
 
 We will set another variable to hold the `y` number:
 
