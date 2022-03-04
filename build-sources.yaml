@@ -2,6 +2,10 @@
   branch_name: bn/hello-01
   dir_name: hello
   commit_id: ab85a3e804d58ba83ed2944facbc87eb265fd156
+- name: Shoot the fruit
+  branch_name: bn/shoot-the-fruit-01
+  dir_name: shoot-the-fruit
+  commit_id: f1f22cc1613a70fada526553cdc35ea0b2008a11
 - name: Chase!
   branch_name: gs/chase-04
   dir_name: chase
