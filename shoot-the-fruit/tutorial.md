@@ -179,7 +179,7 @@ will need to tell `randint` the smallest and biggest possible numbers
 we want.
 
 In Scratch you would put this information into the 'holes' of
-the block:
+the block.  For example, to roll a dice you might say:
 
 ![Scratch: pick-random-1-to-6](pick-random-minus-1-to-6.png#img-center)
 
