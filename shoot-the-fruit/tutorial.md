@@ -395,13 +395,14 @@ to the costume we just randomly picked:
 
 ## Challenges
 
-Can you:
+Can you change your program to solve these challenges?
 
-* Give the player 10 points for every fruit they hit instead of 1?
+* Give the player 10 points for every fruit they hit instead of 1.
 
-* Make the fruit smaller, so it's harder to hit?  (*Hint:* You can use
-  `self.set_size(0.5)` to shrink a Sprite to half its normal size.)
+* Make the fruit smaller, so it's harder to hit.  (*Hint:* You can use
+  the code `self.set_size(0.5)` to shrink a Sprite to half its normal
+  size.)
 
 * Harder challenge: Make the fruit smaller if the player has more
-  points?  This makes the game get more difficult as the player gets
+  points.  This makes the game get more difficult as the player gets
   better at it.
