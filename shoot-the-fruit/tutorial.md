@@ -198,8 +198,8 @@ where the apple should reappear.  We will store these values in
 you don't need to explicitly 'make a variable' — you just set a
 variable to something and it is created for you.
 
-We will make a variable to hold the `x` number for where we want the
-apple to reappear:
+We will make a variable called `appear_x` to hold the `x` number for
+where we want the apple to reappear:
 
 {{< commit assign-new-x >}}
 
@@ -208,7 +208,7 @@ because we want the apple to always definitely be completely on the
 stage — it's the centre of the apple which we are picking a location
 for.
 
-We will set another variable to hold the `y` number:
+We will set another variable, `appear_y`, to hold the `y` number:
 
 {{< commit assign-new-y >}}
 
