@@ -160,9 +160,8 @@ numbers, `x` and `y`:
 
 ### Picking a random number
 
-We'll first pick an `x` number for how far left or right the apple
-will reappear.  We want the apple to be completely on the stage, so we
-want a random `x` number between, let's say, -200 and 200.
+We'll need to randomly pick `x` and `y` numbers for where the apple
+reappears.
 
 To do this, we will use some code that the Python team have written
 which picks random numbers.  We first need to say that we want to use
