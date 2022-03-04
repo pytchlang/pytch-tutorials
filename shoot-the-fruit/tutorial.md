@@ -356,9 +356,10 @@ To make the game look more interesting, we can add another fruit.
 
 At the moment, the `Fruit` sprite only has one costume.  We want to
 add another one.  There is an image `"orange.png"` included with this
-tutorial, so we just need to tell Pytch about it.  In Python, the
-different things in a list are written with commas between them.  So
-we need to change the line which sets the Fruit's costumes:
+tutorial, so we just need to tell Pytch to use it, by adding it to the
+Fruit's `Costumes` list.  In Python, the things in a list are written
+with commas between them.  So we need to change the line which sets
+the Fruit's costumes:
 
 {{< commit add-orange-costume >}}
 
