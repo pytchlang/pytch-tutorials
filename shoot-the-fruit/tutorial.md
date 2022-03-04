@@ -261,8 +261,8 @@ green flag clicked" hat block.  We'll put this in the `GameBackground`
 
 {{< commit GameBackground-when-green-flag-decorator >}}
 
-The code to display the variable is a bit complicated, so for this
-tutorial, we won't go into details.  The code we need is:
+Showing a variable in Pytch uses a couple of more advanced ideas, so
+for this tutorial, we won't go into the details.  The code we need is:
 
 {{< commit show-score >}}
 
