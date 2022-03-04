@@ -276,7 +276,8 @@ To increase the player's score, in Scratch we would do
 
 ![Scratch: change-score-by-1](change-score-by-1.png#img-center)
 
-Python has `+=`, which works very much the same.  The code we want is
+Python has `+=` ('change by adding'), which works very much the same.
+The code we want is
 
 ```
 score += 1
@@ -315,8 +316,8 @@ And now we can knock off points if a click gets through to the stage.
 Just as when we gave the player points, we need to tell Python that we
 want to change the global `score` variable.  And this time, instead of
 *adding* to `score` by using `+=`, we want to *subtract* from `score`,
-so we use `-=`.  This code knocks off five points when the player
-misses:
+so we use `-=` ('change by subtracting').  This code knocks off five
+points when the player misses:
 
 {{< commit lose-points-on-miss >}}
 
