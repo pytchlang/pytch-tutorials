@@ -22,13 +22,14 @@ In Scratch, there is automatically a Stage for your project.  In
 Pytch, we have to create it.  We're going to call it `GameBackground`,
 and we need to say that it's the `Stage` for our game.
 
-In this tutorial, we'll show the code we need in boxes like this:
+In this tutorial, we'll show the code we need in boxes like this — the
+blue `?` will show help on what to do:
 
 {{< commit empty-GameBackground >}}
 
-The blue `?` will show help on what to do.  Here, we need to add two
-blank lines under the `import pytch` line which is already there, and
-then the line starting `class GameBackground`.
+Here, we need to add two blank lines under the `import pytch` line
+which is already there, and then the line starting `class
+GameBackground`.
 
 Python ignores the blank lines, but they keep our code tidy and easy
 to read.
