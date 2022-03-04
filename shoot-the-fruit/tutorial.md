@@ -181,7 +181,7 @@ we want.
 In Scratch you would put this information into the 'holes' of
 the block.  For example, to roll a dice you might say:
 
-![Scratch: pick-random-1-to-6](pick-random-minus-1-to-6.png#img-center)
+![Scratch: pick-random-1-to-6](pick-random-1-to-6.png#img-center)
 
 In Python, we put the pieces of information between brackets `(` and
 `)`.  This Scratch block would look like this in Python:
