@@ -46,7 +46,8 @@ code to our program:
 {{< commit Backdrop-for-GameBackground >}}
 
 The square brackets `[` and `]` mean that this is a *list* of
-backdrops, even though it only has one backdrop in it.
+backdrops.  Our stage here only has one backdrop, but we still
+need to write `Backdrops` as a list.
 
 Try your program now — click the green flag.  You should see the dark
 green backdrop appear.
