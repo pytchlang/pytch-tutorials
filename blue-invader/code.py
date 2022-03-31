@@ -46,6 +46,7 @@ class Galaxy(pytch.Stage):
     @pytch.when_green_flag_clicked
     def run(self):
         pytch.show_variable(None, "score")
+        pytch.show_variable(None, "lives", right=236)
         pytch.broadcast_and_wait("make-clones")
         pytch.broadcast("play-game")
 
