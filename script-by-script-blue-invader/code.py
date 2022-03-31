@@ -46,7 +46,7 @@ class Alien(pytch.Sprite):
         self.create_clone()
         self.go_to_xy(150, 180)
 
-    @pytch.when_green_flag_clicked
+    @pytch.when_I_receive("play-game")
     def drift_down_screen(self):
         self.set_size(0.15)
         while True:
