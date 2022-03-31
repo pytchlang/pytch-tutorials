@@ -55,4 +55,4 @@ class Alien(pytch.Sprite):
             self.switch_costume(costume_index)
             self.set_y(180)
             glide_time = random.uniform(3.0, 5.0)
-            self.glide_to_xy(self.x_position, -180, 3.0)
+            self.glide_to_xy(self.x_position, -180, glide_time)
