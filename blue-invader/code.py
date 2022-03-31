@@ -12,13 +12,13 @@ class Alien(pytch.Sprite):
     def make_clones(self):
         self.go_to_xy(-150, 180)
         pytch.create_clone_of(self)
-        self.go_to_xy(-90, 180)
+        self.go_to_xy(-150 + 60, 180)
         pytch.create_clone_of(self)
-        self.go_to_xy(-30, 180)
+        self.go_to_xy(-150 + 2 * 60, 180)
         pytch.create_clone_of(self)
-        self.go_to_xy(30, 180)
+        self.go_to_xy(-150 + 3 * 60, 180)
         pytch.create_clone_of(self)
-        self.go_to_xy(90, 180)
+        self.go_to_xy(-150 + 4 * 60, 180)
         pytch.create_clone_of(self)
         self.go_to_xy(150, 180)
 
