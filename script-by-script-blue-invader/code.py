@@ -68,5 +68,7 @@ class Alien(pytch.Sprite):
             Stage.score += 10
         if self.costume_number == 2:
             Stage.lives -= 1
+            if Stage.lives == 0:
+                pytch.broadcast("game-over")
 
         self.hide()
