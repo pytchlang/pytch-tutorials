@@ -46,3 +46,7 @@ class Galaxy(pytch.Stage):
     def run(self):
         pytch.broadcast_and_wait("make-clones")
         pytch.broadcast("play-game")
+
+    @pytch.when_stage_clicked
+    def make_miss_sound(self):
+        self.start_sound("fizz")
