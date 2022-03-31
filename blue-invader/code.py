@@ -19,7 +19,7 @@ class Alien(pytch.Sprite):
         pytch.create_clone_of(self)
         self.go_to_xy(150, 180)
 
-    @pytch.when_green_flag_clicked
+    @pytch.when_I_receive("play-game")
     def drift_down_screen(self):
         while True:
             self.switch_costume(random.choice([0, 1]))
