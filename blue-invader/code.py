@@ -25,7 +25,7 @@ class Alien(pytch.Sprite):
             self.switch_costume(random.choice([0, 1]))
             self.set_y(180)
             glide_time = random.uniform(3.0, 5.0)
-            self.glide_to_xy(self.x_position, -180, 3.0)
+            self.glide_to_xy(self.x_position, -180, glide_time)
 
 
 class Galaxy(pytch.Stage):
