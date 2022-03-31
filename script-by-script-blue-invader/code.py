@@ -72,3 +72,7 @@ class Alien(pytch.Sprite):
                 self.broadcast("game-over")
 
         self.hide()
+
+    @pytch.when_I_receive("game-over")
+    def do_game_over(self):
+        self.hide()
