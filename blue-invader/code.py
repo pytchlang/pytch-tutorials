@@ -10,16 +10,9 @@ class Alien(pytch.Sprite):
 
     @pytch.when_I_receive("make-clones")
     def make_clones(self):
-        self.go_to_xy(-150 + 0 * 60, 180)
-        pytch.create_clone_of(self)
-        self.go_to_xy(-150 + 1 * 60, 180)
-        pytch.create_clone_of(self)
-        self.go_to_xy(-150 + 2 * 60, 180)
-        pytch.create_clone_of(self)
-        self.go_to_xy(-150 + 3 * 60, 180)
-        pytch.create_clone_of(self)
-        self.go_to_xy(-150 + 4 * 60, 180)
-        pytch.create_clone_of(self)
+        for i in range(5):
+            self.go_to_xy(-150 + i * 60, 180)
+            pytch.create_clone_of(self)
         self.go_to_xy(150, 180)
 
     @pytch.when_I_receive("play-game")
