@@ -41,6 +41,8 @@ class Alien(pytch.Sprite):
 
     def lose_life(self):
         self.start_sound("scream")
+        global lives
+        lives -= 1
 
 
 class Galaxy(pytch.Stage):
