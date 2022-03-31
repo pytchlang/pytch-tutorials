@@ -40,6 +40,7 @@ class Alien(pytch.Sprite):
 
 class Galaxy(pytch.Stage):
     Backdrops = ["starry-sky.jpg"]
+    Sounds = ["fizz.mp3"]
 
     @pytch.when_green_flag_clicked
     def run(self):
