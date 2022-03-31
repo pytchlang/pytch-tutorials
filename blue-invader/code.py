@@ -20,7 +20,7 @@ class Alien(pytch.Sprite):
 
     @pytch.when_I_receive("play-game")
     def drift_down_screen(self):
-        while True:
+        while not game_over:
             self.switch_costume(random.choice([0, 1]))
             self.set_y(180)
             self.show()
