@@ -5,6 +5,20 @@ import random
 class Alien(pytch.Sprite):
     Costumes = ["enemy-alien.png", "friendly-alien.png"]
 
+    @pytch.when_I_receive("make-clones")
+    def make_clones(self):
+        self.go_to_xy(-150, 180)
+        pytch.create_clone_of(self)
+        self.go_to_xy(-90, 180)
+        pytch.create_clone_of(self)
+        self.go_to_xy(-30, 180)
+        pytch.create_clone_of(self)
+        self.go_to_xy(30, 180)
+        pytch.create_clone_of(self)
+        self.go_to_xy(90, 180)
+        pytch.create_clone_of(self)
+        self.go_to_xy(150, 180)
+
     @pytch.when_green_flag_clicked
     def drift_down_screen(self):
         while True:
