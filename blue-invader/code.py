@@ -41,6 +41,9 @@ class Alien(pytch.Sprite):
         self.start_sound("scream")
         global lives
         lives -= 1
+        if lives == 0:
+            global game_over
+            game_over = True
 
 
 class Galaxy(pytch.Stage):
