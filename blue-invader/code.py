@@ -4,6 +4,8 @@ import random
 score = 0
 lives = 3
 
+game_over = False
+
 
 class Alien(pytch.Sprite):
     Costumes = ["Invader_Navy_1.png", "Invader_Green_1.png"]
