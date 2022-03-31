@@ -29,3 +29,7 @@ class Alien(pytch.Sprite):
 
 class Galaxy(pytch.Stage):
     Backdrops = ["starry-sky.jpg"]
+
+    @pytch.when_green_flag_clicked
+    def run(self):
+        pytch.broadcast_and_wait("make-clones")
