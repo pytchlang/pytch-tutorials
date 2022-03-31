@@ -1,6 +1,8 @@
 import pytch
 import random
 
+score = 0
+
 
 class Alien(pytch.Sprite):
     Costumes = ["enemy-alien.png", "friendly-alien.png"]
