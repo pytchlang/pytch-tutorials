@@ -23,7 +23,7 @@ class Alien(pytch.Sprite):
     def make_sensible_size(self):
         self.set_size(0.15)
 
-    @pytch.when_green_flag_clicked
+    @pytch.when_I_receive("play-game")
     def drift_down_screen(self):
         while True:
             self.switch_costume(random.choice([0, 1]))
