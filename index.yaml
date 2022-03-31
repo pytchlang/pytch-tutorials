@@ -8,6 +8,8 @@
   tip-commit: gs/chase-04
 - name: Catch the apple
   tip-commit: bn/catch-apple-02
+- name: Blue Invaders
+  tip-commit: bn/blue-invader-01
 - name: Q*bert
   tip-commit: bn/qbert-04
 - name: Bunner
