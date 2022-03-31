@@ -31,7 +31,7 @@ class Alien(pytch.Sprite):
             global score
             score += 10
         else:
-            self.start_sound("scream")
+            self.lose_life()
         self.hide()
 
     def lose_life(self):
