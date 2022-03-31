@@ -8,6 +8,7 @@ class Stage(pytch.Stage):
     @pytch.when_green_flag_clicked
     def run(self):
         Stage.score = 0
+        pytch.show_variable(Stage, "score")
         pytch.broadcast_and_wait("make-clones")
         pytch.broadcast_and_wait("play-game")
 
