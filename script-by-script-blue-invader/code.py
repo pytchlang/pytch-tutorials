@@ -54,7 +54,7 @@ class Alien(pytch.Sprite):
     @pytch.when_I_receive("play-game")
     def drift_down_screen(self):
         self.set_size(0.15)
-        while True:
+        while Stage.lives > 0:
             costume_index = random.choice([0, 2])
             self.switch_costume(costume_index)
             self.set_y(180)
