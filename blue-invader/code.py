@@ -35,6 +35,8 @@ class Alien(pytch.Sprite):
     def handle_hit(self):
         if self.costume_number == 0:
             self.start_sound("explosion")
+            global score
+            score += 10
         else:
             self.start_sound("scream")
         self.hide()
