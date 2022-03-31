@@ -34,6 +34,7 @@ class Alien(pytch.Sprite):
             self.start_sound("explosion")
         else:
             self.start_sound("scream")
+        self.hide()
 
 
 class Galaxy(pytch.Stage):
