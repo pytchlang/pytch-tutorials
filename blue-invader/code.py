@@ -44,6 +44,7 @@ class Alien(pytch.Sprite):
         if lives == 0:
             global game_over
             game_over = True
+            pytch.broadcast("game-over")
 
 
 class Galaxy(pytch.Stage):
