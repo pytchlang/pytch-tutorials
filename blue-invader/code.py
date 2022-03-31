@@ -46,6 +46,10 @@ class Alien(pytch.Sprite):
             game_over = True
             pytch.broadcast("game-over")
 
+    @pytch.when_I_receive("game-over")
+    def do_game_over(self):
+        self.hide()
+
 
 class Galaxy(pytch.Stage):
     Backdrops = ["starry-sky.jpg"]
