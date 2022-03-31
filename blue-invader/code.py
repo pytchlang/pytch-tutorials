@@ -33,3 +33,4 @@ class Galaxy(pytch.Stage):
     @pytch.when_green_flag_clicked
     def run(self):
         pytch.broadcast_and_wait("make-clones")
+        pytch.broadcast("play-game")
