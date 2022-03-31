@@ -5,6 +5,10 @@ import random
 class Stage(pytch.Stage):
     Backdrops = ["galaxy.png"]
 
+    @pytch.when_green_flag_clicked
+    def run(self):
+        pytch.broadcast_and_wait("make-clones")
+
 
 class Alien(pytch.Sprite):
     Costumes = [
