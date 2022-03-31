@@ -38,6 +38,9 @@ class Alien(pytch.Sprite):
             self.start_sound("scream")
         self.hide()
 
+    def lose_life(self):
+        self.start_sound("scream")
+
 
 class Galaxy(pytch.Stage):
     Backdrops = ["starry-sky.jpg"]
