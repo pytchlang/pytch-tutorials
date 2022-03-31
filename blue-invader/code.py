@@ -4,6 +4,7 @@ import random
 
 class Alien(pytch.Sprite):
     Costumes = ["enemy-alien.png", "friendly-alien.png"]
+    Sounds = ["explosion.mp3", "scream.mp3"]
 
     @pytch.when_I_receive("make-clones")
     def make_clones(self):
