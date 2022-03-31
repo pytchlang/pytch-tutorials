@@ -10,6 +10,7 @@ class Stage(pytch.Stage):
         Stage.score = 0
         pytch.show_variable(Stage, "score")
         Stage.lives = 3
+        pytch.show_variable(Stage, "lives", right=236)
         pytch.broadcast_and_wait("make-clones")
         pytch.broadcast_and_wait("play-game")
 
