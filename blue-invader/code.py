@@ -2,6 +2,7 @@ import pytch
 import random
 
 score = 0
+lives = 3
 
 
 class Alien(pytch.Sprite):
