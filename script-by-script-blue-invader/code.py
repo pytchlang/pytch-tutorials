@@ -66,5 +66,7 @@ class Alien(pytch.Sprite):
     def handle_hit(self):
         if self.costume_number == 0:
             Stage.score += 10
+        if self.costume_number == 2:
+            Stage.lives -= 1
 
         self.hide()
