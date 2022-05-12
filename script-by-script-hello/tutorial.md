@@ -100,3 +100,15 @@ stage, and when you click on it, a speech balloon will appear.
 
 Congratulations on your first Pytch project!
 
+## Challenges
+
+Can you change your program to complete these challenges?
+
+* Make the Snake say `"Hi there!"` instead of `"Hello there!"`.
+
+* Make the Snake's speech balloon appear for 3&nbsp;seconds instead of
+  2&nbsp;seconds.
+
+* (More advanced:) Make the Snake say two things, one after the other.
+  Maybe it could say `"Hi there!"` for two seconds, and then `"OK,
+  bye!"` for two seconds.
