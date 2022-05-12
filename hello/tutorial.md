@@ -72,6 +72,9 @@ So, to create our `Costumes` variable we need a line like this.
 
 {{< commit snake-costume >}}
 
+If you click the green flag now, you should see the Snake appear in
+the middle of the stage.  Try it!
+
 ## Adding a script
 
 These lines add a new script (Python programmers sometimes calls these
