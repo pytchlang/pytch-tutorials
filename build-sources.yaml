@@ -1,7 +1,7 @@
 - name: Hello world!
   branch_name: bn/hello-01
   dir_name: hello
-  commit_id: b10400513e372f83c6bd3d400dac9db2f7cf49e2
+  commit_id: d3fdc6d33933ce9be8bf928c2fe6aa901fbe33fe
 - name: Shoot the fruit
   branch_name: bn/shoot-the-fruit-01
   dir_name: shoot-the-fruit
