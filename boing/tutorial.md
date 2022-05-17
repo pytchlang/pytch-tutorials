@@ -6,19 +6,6 @@ and some of the ideas, kindly made available by the [Code the
 Classics](https://wireframe.raspberrypi.org/books/code-the-classics1) book
 published by the Raspberry Pi organisation.
 
-{{< run-finished-project >}}
-
-
-## Credits
-
-Many thanks to the Raspberry Pi Press for making the contents of their
-*Code The Classics* book available under a Creative Commons licence.  We
-have used their code for inspiration, and also the images and sounds.
-
-### Detailed credits
-
-{{< asset-credits >}}
-
 
 ---
 
@@ -359,3 +346,14 @@ how to break the job down into manageable pieces.
   the computer sometimes misses!
 
 Can you think of other changes or improvements?
+
+
+## Credits
+
+Many thanks to the Raspberry Pi Press for making the contents of their
+*Code The Classics* book available under a Creative Commons licence.  We
+have used their code for inspiration, and also the images and sounds.
+
+### Detailed credits
+
+{{< asset-credits >}}
