@@ -4,10 +4,6 @@ In this game we'll defend ourselves from dangerous blue invaders, by
 clicking on them.  But don't destroy the friendly green aliens by
 mistake!
 
-### Detailed credits
-
-{{< asset-credits >}}
-
 
 ---
 
@@ -535,3 +531,14 @@ Here are some ways you could make the game even better:
 * Add a rare red alien which is worth 50 points.
 
 * Add some left-to-right randomness to where the aliens start.
+
+
+## Credits
+
+This project was loosely inspired by the *Red Alert* game in the DK
+book [*Coding Games in
+Python*](https://www.dk.com/us/book/9781465473615-coding-games-in-python/).
+
+### Detailed credits
+
+{{< asset-credits >}}
