@@ -342,3 +342,20 @@ it.  In Python, a line starting with the `#` character is a comment.
 We'll add a short comment explaining how to play Boing:
 
 {{< commit add-player-instructions >}}
+
+
+## Challenges
+
+Here are some ways you could make the game better.  Both of these
+tasks are quite advanced, so your first step should be to think about
+how to break the job down into manageable pieces.
+
+* At the moment, the human player has no chance against the computer.
+  Can you make it so the computer does *not* always win?
+
+* At the moment, the game stops once the player misses the ball.  Can
+  you instead keep score, and make it so the winner is the first to
+  get ten points?  This only makes sense if you've already made it so
+  the computer sometimes misses!
+
+Can you think of other changes or improvements?
