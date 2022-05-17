@@ -32,8 +32,8 @@ friendly visitor.
 
 ### Create Sprite with costumes
 
-Our first job is to make the `Alien` Sprite, and say what images we
-want to use for its two costumes:
+We first make the `Alien` Sprite, and say what images we want to use
+for its two costumes:
 
 {{< commit create-alien-with-costumes >}}
 
@@ -43,16 +43,17 @@ starts a Sprite off wearing the first costume in its list.
 
 ### Make the alien drift down the screen
 
-Our next job is to make the alien move.  We'll make it glide from the
-top to the bottom of the screen, then instantly go back to the top and
+Next, we will make the alien move.  We'll make it glide from the top
+to the bottom of the screen, then instantly go back to the top and
 start gliding again.
 
 This should all start happening as soon as the game starts, so we'll
-use `@pytch.when_green_flag_clicked` at the top of our code.  For the
-code itself, we want something which works the same as Scratch's
-*forever* block.  In Python, we use `while True:`, and within that,
-say what we want to keep happening.  We want the alien to go to the
-top of the screen, then glide to the bottom.
+use `@pytch.when_green_flag_clicked` at the top of the code we're
+adding.  For the code itself, we want something which works the same
+as Scratch's *forever* block.  In Python, we use `while True:`, and
+say what we want to keep happening in *indented* lines underneath.  We
+want the alien to go to the top of the screen, then glide to the
+bottom.
 
 {{< commit loop-drift-down-screen >}}
 
@@ -77,8 +78,9 @@ We do this by *importing* the `random` library:
 This is very much like adding an extension in Scratch.
 
 And now we can ask for a random costume.  Just like in Scratch, we can
-switch costume either by the costume's position in the costumes list,
-or by name.  We'll choose the costume by position.
+switch costume either by giving the costume's position in the costumes
+list, or by giving the costume's name.  We'll choose the costume by
+position.
 
 In Python, things in a list are numbered from *zero*, so the first
 thing in a list is at 'position&nbsp;0', the second thing is at
@@ -90,8 +92,8 @@ to a random costume just before jumping back to the top of the screen:
 
 {{< commit random-costume-per-descent >}}
 
-There's quite a lot going on in this one line of new code.  Starting
-from the inside:
+There's quite a lot going on in this one line of new code.  We can
+understand it by starting from the inside:
 
 * `[0, 1]` is a list with two things in it — the number zero and the
   number one.
@@ -119,17 +121,17 @@ To make sure that everything happens in the right order, we're going
 to use another part of Pytch which might be familiar from Scratch —
 *broadcasts*.  A sprite can 'shout' a message, and any sprite
 (including the same sprite that shouted!) can be listening for that
-message, and run some code whenever it hears it.
+message, and run some code whenever the sprite hears the message.
 
 ### Write code to create five clones
 
 We'll first write some code which clones the Alien five times.
-Together with the original Alien, we'll have six aliens.  I worked out
-what *x*-positions spread the aliens left to right across the screen:
--150, -90, -30, 30, 90, 150.  The idea now is to move the original
-Alien to one of those places, make a clone, then move on to the next
-place.  We'll make all of this happen when somebody broadcasts the
-message `"make-clones"`.
+Together with the original Alien, this will give us six aliens.  I
+worked out what *x*-positions spread the aliens left to right across
+the screen: -150, -90, -30, 30, 90, 150.  The idea now is to move the
+original Alien to one of those places, make a clone, then move on to
+the next place.  We'll make all of this happen when somebody
+broadcasts the message `"make-clones"`.
 
 This adds up to quite a lot of code:
 
@@ -160,9 +162,9 @@ that code runs.
 
 We'll use this to change when the aliens start gliding.  First, we'll
 say that the `drift_down_screen()` code in the `Alien` sprite should
-happen when an alien or clone hears a `"play-game"` message.  This is
-like when, in Scratch, you get rid of a script's hat block and attach
-a different one.
+happen when an alien or clone hears a `"play-game"` message (and not
+when the green flag is clicked).  This is like when, in Scratch, you
+get rid of a script's hat block and attach a different one.
 
 {{< commit descend-on-play-game-broadcast >}}
 
@@ -193,9 +195,9 @@ make some aliens move faster than others and make it more interesting.
 The `drift_down_screen()` code is where we'll need to make the change.
 
 We have already done `import random`, so we can use the
-`random.uniform()` function to get a random number anywhere from 3.0
-up to 5.0 (including fractions).  We'll store the randomly-chosen
-number in a variable:
+`random.uniform()` function to get a random number between 3.0 and 5.0
+(including fractions).  We'll store the randomly-chosen number in a
+*variable*:
 
 {{< commit define-glide-time >}}
 
@@ -236,12 +238,12 @@ want to use for costumes:
 
 We want the Aliens (original and clones) to react when they're clicked
 on by the player.  We'll write some `when_this_sprite_clicked` code
-which plays the right sound, depending on whether that clone is being
-an enemy or a friendly alien.
+which plays the right sound, depending on whether that clone is an
+enemy or a friendly alien.
 
 Remember that an alien is an enemy when wearing the blue costume
 (number&nbsp;0) and a friendly visitor when wearing the green costume
-(number&nbsp;1).  So we can use an `if` statement to test which
+(number&nbsp;1).  So we can use an `if`/`else` statement to test which
 costume the alien is wearing, and play the right sound:
 
 {{< commit start-appropriate-sound-when-hit >}}
@@ -310,9 +312,9 @@ shown.  In Pytch you do this by writing some code.  We want the
 `score` variable to be shown as soon as the game starts, so the
 `run()` code inside `Galaxy` is a good place to put this.
 
-We won't go into the details of what `None` is doing there in this
-tutorial, but you can see that we give the *name* of the variable that
-we want to show:
+In this tutorial, we won't go into the details of what `None` means.
+You can see that we give the *name* of the variable that we want to
+show:
 
 {{< commit show-score >}}
 
@@ -420,7 +422,7 @@ In Python, you can do the same thing.  You *define* a function, and can
 *call* it from elsewhere in your code.  We'll do that to gather
 together the "lose a life" behaviour.
 
-We'll copy the existing behaviour of making the *scream* sound,
+We'll copy the existing behaviour of making the *scream* sound, by
 defining a function `lose_life()`.  To define a function in Python, we
 use `def` — we've been using this already in fact, to define the code
 which happens when, say, the sprite is clicked on.
