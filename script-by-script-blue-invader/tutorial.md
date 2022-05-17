@@ -264,6 +264,8 @@ on it.  Try this!
 But now we have a different problem — once the player has clicked on
 all six aliens, no more aliens appear.
 
+### Re-appear at the top of the screen
+
 We need to make sure each alien is visible just before it starts
 gliding down the screen.  Add a line to the `drift_down_screen()` code
 to make this happen:
