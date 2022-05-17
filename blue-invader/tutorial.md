@@ -137,6 +137,8 @@ This adds up to quite a lot of code:
 
 {{< commit unrolled-make-clones >}}
 
+We'll see later how to avoid repeating ourselves like this.
+
 ### Broadcast the message to run that code
 
 We'll put the *Galaxy* stage in charge of broadcasting the
