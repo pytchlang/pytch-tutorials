@@ -74,6 +74,8 @@ We do this by *importing* the `random` library:
 
 {{< commit import-random >}}
 
+This is very much like adding an extension in Scratch.
+
 And now we can ask for a random costume.  Just like in Scratch, we can
 switch costume either by the costume's position in the costumes list,
 or by name.  We'll choose the costume by position.
