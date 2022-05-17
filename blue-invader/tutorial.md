@@ -185,7 +185,8 @@ the screen, with a mixture of blue and green.
 This is OK, but it would be better if some aliens went faster than
 others.
 
-### Randomise the glide time
+
+## Randomise the glide time
 
 At the moment, every alien clone takes exactly 3&nbsp;seconds to glide
 down the screen.  We want to add a bit of variation, by making each
