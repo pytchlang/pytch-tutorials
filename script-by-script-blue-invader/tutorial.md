@@ -28,7 +28,7 @@ feature of Pytch called *clones*.  These work the same way as clones
 in Scratch.  There will be an `Alien` Sprite which will have two
 costumes.  When a clone is wearing one costume, it counts as an enemy
 space invader, and when it's wearing the other costume, it's a
-friendly invader.
+friendly visitor.
 
 ### Create Sprite with costumes
 
@@ -104,7 +104,7 @@ from the inside:
   switch to that randomly-chosen costume.
 
 If you run the project now, you should see some blue enemy invaders
-and some green friendly invaders gliding down the screen.
+and some green friendly visitors gliding down the screen.
 
 But only one alien is on screen at a time.  We'll fix that next.
 
