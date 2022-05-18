@@ -123,10 +123,13 @@ program starts:
 
 For the next section of code I want to select the different costumes
 at random so that there is some variety. Python has some random
-number code available, we just need to import it so that it's
+number code available, we just need to *import* it so that it's
 available
 
 {{< commit import-random-module >}}
+
+(This is very similar to how you "add an extension" in Scratch to
+make more blocks available.)
 
 My plan is to use the original `Car` sprite as a sort of
 *template*. Every time I want to add a new car to a lane of traffic
