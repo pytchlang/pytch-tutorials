@@ -6,11 +6,6 @@ how we'd create it in Scratch.
 
 ![screenshot](screenshot.png#img-center)
 
-
-### Acknowledgements for images
-
-{{< asset-credits >}}
-
 ---
 
 ## Create a stage with backdrop
@@ -411,3 +406,11 @@ Can you change your program to solve these challenges?
 * Harder challenge: Make the fruit smaller if the player has more
   points.  This makes the game get more difficult as the player gets
   better at it.
+
+
+## Credits
+
+We have used various freely-available resources to create this
+project:
+
+{{< asset-credits >}}
