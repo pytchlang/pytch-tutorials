@@ -206,6 +206,9 @@ project to get them included:
 
 {{< commit import-random >}}
 
+(This is very similar to how you "add an extension" in Scratch to make
+more blocks available.)
+
 If you try the project out now you'll see it's almost complete! The
 Star glides around and the Bird can chase it. The only thing we need
 to do is have something happen when the bird catches the Star!
