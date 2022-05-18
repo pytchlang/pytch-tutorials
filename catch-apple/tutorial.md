@@ -366,7 +366,9 @@ the `random` module in our program by _importing_ it:
 {{< commit import-random >}}
 
 (This is how we’ve been using the `pytch` functions like
-`pytch.broadcast()` already.)
+`pytch.broadcast()` already.  When we `import` Python code like this,
+we're doing something very similar to "adding an extension" in Scratch
+to make more blocks available.)
 
 Now we can use the function in the `random` module which picks a
 random whole number.  This is called `randint` (for _random integer_).
