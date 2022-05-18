@@ -3,8 +3,6 @@
 In this tutorial we will make a complete
 [Frogger](https://en.wikipedia.org/wiki/Frogger)-style arcade game.
 
-{{< run-finished-project >}}
-
 ## Credits
 
 Many thanks to the Raspberry Pi Press for making the contents of their
