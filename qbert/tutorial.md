@@ -12,9 +12,6 @@ magazine](https://wireframe.raspberrypi.org/issues/42):
 In this tutorial we'll follow Mark's example and create the basics of
 this classic arcade game.
 
-{{< run-finished-project >}}
-
-
 ## Credits
 
 Many thanks to the Raspberry Pi Press for making the contents of their
