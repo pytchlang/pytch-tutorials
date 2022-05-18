@@ -165,7 +165,8 @@ reappears.
 
 To do this, we will use some code that the Python team have written
 which picks random numbers.  We first need to say that we want to use
-this code:
+this code.  In Scratch, we can "add an extension" to be able to use
+more blocks.  In Python, we use an *import* statement:
 
 {{< commit import-random >}}
 
