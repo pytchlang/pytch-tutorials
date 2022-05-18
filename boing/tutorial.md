@@ -313,6 +313,9 @@ bringing in the `random` module:
 
 {{< commit import-random-module >}}
 
+(This is very similar to how you "add an extension" in Scratch to
+make more blocks available.)
+
 Now we have this, we can test if the ball's `y_speed` is zero, and if
 so, use the `random.choice()` function to make Pytch randomly choose
 between the two `y_speed` values we want:
