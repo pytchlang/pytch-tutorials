@@ -501,3 +501,10 @@ Here are some ideas on how you could make this game more fun:
   of 8".  You can use "f-strings" ([read about them in the Python
   documentation](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings))
   to get the scorekeeper to say this.
+
+
+## Credits
+
+We have used various freely-available resources to make this project:
+
+{{< asset-credits >}}
