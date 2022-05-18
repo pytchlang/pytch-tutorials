@@ -6,11 +6,6 @@ chases a star around the stage.
 In this project you will learn about making multiple Sprites, making
 them move, and detecting when they come close together.
 
-### Detailed credits
-
-{{< asset-credits >}}
-
-
 ---
 
 ## Setting up Pytch
@@ -306,3 +301,11 @@ it can be joined with another string using `+`.
    variable). After a while you might like to have the Bird speed up
    again (maybe after some time passes, or after it catches the star
    again).
+
+
+## Credits
+
+We have used various freely-available resources to help make this
+project:
+
+{{< asset-credits >}}
