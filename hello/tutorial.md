@@ -112,3 +112,8 @@ Can you change your program to complete these challenges?
 * (More advanced:) Make the Snake say two things, one after the other.
   Maybe it could say `"Hi there!"` for two seconds, and then `"OK,
   bye!"` for two seconds.
+
+
+## Credits
+
+{{< asset-credits >}}

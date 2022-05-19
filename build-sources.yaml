@@ -1,31 +1,35 @@
 - name: Hello world!
-  branch_name: bn/hello-01
+  branch_name: bn/hello-02
   dir_name: hello
-  commit_id: d3fdc6d33933ce9be8bf928c2fe6aa901fbe33fe
+  commit_id: 2df6f528a770a96e3f34fd271cd30a6657af2ce3
 - name: Shoot the fruit
   branch_name: bn/shoot-the-fruit-01
   dir_name: shoot-the-fruit
-  commit_id: ea19c92d5e22806ce16a828ab601d546e3463271
+  commit_id: addae805da592a03844e2dd1f92eebed2a7520db
 - name: Chase!
-  branch_name: gs/chase-04
+  branch_name: gs/chase-05
   dir_name: chase
-  commit_id: 6a2a2edc9f668b816b683eb91582dac3bbfd7f05
+  commit_id: 693366c03779aa38a30124497f8a2ba4d75e9d2b
 - name: Catch the apple
-  branch_name: bn/catch-apple-02
+  branch_name: bn/catch-apple-03
   dir_name: catch-apple
-  commit_id: 11b93c92f0d2626ed686a0f41c3042ca13bda9d3
+  commit_id: 28f5919c031711566b3710aff56be9f614598e9d
+- name: Blue Invaders
+  branch_name: bn/blue-invader-01
+  dir_name: blue-invader
+  commit_id: 4c0050b90887de68ab458372b7c746d3547b6afe
 - name: Q*bert
   branch_name: bn/qbert-04
   dir_name: qbert
-  commit_id: c86350ac8fc0880fb4c662a86e2445b49b882404
+  commit_id: af51b233d46d1ddac07137ad27756ef57d017248
 - name: Bunner
   branch_name: gs/bunner-04
   dir_name: bunner
-  commit_id: 8e2bc20572e01601a94a726ade4d1a33c6afa34b
+  commit_id: 1c71029da05de9e3154f107efaf19bce65267c63
 - name: Boing
   branch_name: bn/boing-05
   dir_name: boing
-  commit_id: f65290c8055053d694b277369748ab2bffffd814
+  commit_id: 7b379ad72885f744e8b4dc6b2fefc86b6e707c03
 - name: Ticket vending machine
   branch_name: bn/ticket-vending-machine-01
   dir_name: ticket-vending-machine

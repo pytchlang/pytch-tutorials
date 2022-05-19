@@ -6,13 +6,6 @@ chases a star around the stage.
 In this project you will learn about making multiple Sprites, making
 them move, and detecting when they come close together.
 
-{{< run-finished-project >}}
-
-### Detailed credits
-
-{{< asset-credits >}}
-
-
 ---
 
 ## Setting up Pytch
@@ -66,8 +59,8 @@ will be run.
 If you try this code now — click the green flag to run your program —
 you will see that the bird costume is actually rather too big for the
 stage. I can fix this by telling the sprite to pick a smaller size
-before it appears, using the ``set_size`` command. The number given to
-``set_size`` controls the size, from 1 (full size) to 0 (so small you
+before it appears, using the `set_size` command. The number given to
+`set_size` controls the size, from 1 (full size) to 0 (so small you
 can't see it).
 
 {{< commit set-bird-size >}}
@@ -94,9 +87,9 @@ make a script (I have to give it a name, Python needs that), and I
 mark it with some code that lets Pytch know this script gets run when
 the right-arrow key is pressed.
 
-I can make the Bird sprite move using the ``change_x`` function.
-Notice how I'm using the ``speed`` variable that's defined as part of
-the Bird to say how far the bird will move.
+I can make the Bird sprite move using the `change_x` function.  Notice
+how I'm using the `speed` variable that's defined as part of the Bird
+to say how far the bird will move.
 
 {{< commit bird-move-right >}}
 
@@ -105,10 +98,9 @@ in one direction by pressing the right arrow key. Excellent, we are
 well on the way!
 
 Now we should add three move methods for the other three
-directions. We can make the bird move to the left by changing the
-``x`` value in the negative direction (just put a minus sign in front
-of the variable). To move up and down we change the ``y`` value of the
-Sprite.
+directions. We can make the bird move to the left by changing the `x`
+value in the negative direction (just put a minus sign in front of the
+variable). To move up and down we change the `y` value of the Sprite.
 
 One thing to watch out for is that each method needs to have a
 different name, or the later ones replace the earlier ones in the
@@ -121,10 +113,10 @@ If you try the project out now then you should be able to move the
 bird in all four directions.
 
 If you think the bird is moving a little slowly then you could try
-changing the number we store in the ``speed`` variable. Because each
-of the moving methods uses the number they will all change ``x`` or
-``y`` by the amount stored in the variable. Remember, you have to
-build and run the project after making any changes.
+changing the number we store in the `speed` variable. Because each of
+the moving methods uses the number they will all change `x` or `y` by
+the amount stored in the variable. Remember, you have to build and run
+the project after making any changes.
 
 ## Giving the Bird something to chase
 
@@ -153,15 +145,15 @@ moving from place to place. When it gets caught we can hide it for a
 while and then have it reappear at whatever position it's randomly
 moved to so that the bird can continue to chase it.
 
-To make some code that repeats I can use the Python ``while``
-command. A ``while`` loop has something it checks each time, and it
-will repeat its code as long as that thing is true. Normally you put
-something that could be different each time it's checked (for example,
-something that checks the ``x`` position of a Sprite) but if you want
-the code to repeat forever you can just write ``True`` there and it
-will always be true!
+To make some code that repeats I can use the Python `while` command. A
+`while` loop has something it checks each time, and it will repeat its
+code as long as that thing is true. Normally you put something that
+could be different each time it's checked (for example, something that
+checks the `x` position of a Sprite) but if you want the code to
+repeat forever you can just write `True` there and it will always be
+true!
 
-Notice the ``:`` at the end of the line. Like classes and script
+Notice the `:` at the end of the line. Like classes and script
 definitions, this loop will have more commands inside it (which will
 be the stuff to be repeated over and over).  For now, we'll just make
 sure the Star is visible, because we know that our program soon will
@@ -175,8 +167,8 @@ make random numbers, so if I just pick two `x` and `y` numbers they
 can be the destination for the star to move towards. When the star
 gets there the loop will repeat and a new destination will be chosen.
 
-The ``random.randint()`` function in Python selects a random number
-between two points (so ``random.randint(10, 20)`` will pick a number
+The `random.randint()` function in Python selects a random number
+between two points (so `random.randint(10, 20)` will pick a number
 between 10 and 20). The Pytch Stage has x coordinates from -240 to
 +240, so we'll choose a random number in that range for `x`.  This
 will allow the Star to stick out beyond the edge of the stage
@@ -194,18 +186,21 @@ won't have any chance to catch it. Instead I want it to move smoothly
 to the point over a few seconds.
 
 Scratch has a handy block called "glide to" which does this. Pytch has
-the same thing, in a method called ``glide_to_xy()``.  We'll use this,
+the same thing, in a method called `glide_to_xy()`.  We'll use this,
 asking Pytch to make the Star take 2 seconds to glide to its
 destination.
 
 {{< commit call-glide-to >}}
 
-There is one bit of housekeeping to attend to. The ``random``
-functions are not actually built-in to Python, like Pytch they are a
-kind of add-on (called a "library"). We need to add a line to the top
-of the project to get them included:
+There is one bit of housekeeping to attend to. The `random` functions
+are not actually built-in to Python, like Pytch they are a kind of
+add-on (called a "library"). We need to add a line to the top of the
+project to get them included:
 
 {{< commit import-random >}}
+
+(This is very similar to how you "add an extension" in Scratch to make
+more blocks available.)
 
 If you try the project out now you'll see it's almost complete! The
 Star glides around and the Bird can chase it. The only thing we need
@@ -213,7 +208,7 @@ to do is have something happen when the bird catches the Star!
 
 ## Catching the Star
 
-Pytch has a method called ``touching`` that checkes to see if two
+Pytch has a method called `touching` that checkes to see if two
 Sprites are touching each other.
 
 We could check this every time the Bird moves to see if it has caught
@@ -224,11 +219,11 @@ it!
 Instead I will write a Script that does nothing except continuously
 check to see if the Star has collided with the bird. That way no
 matter which Sprite was moving we will detect it in one bit of
-code. I'll use the same idea that the ``play`` method had to keep
+code. I'll use the same idea that the `play` method had to keep
 checking.
 
 This script should start up as soon as the game begins, so I give it
-the same "green flag" hat as the ``start`` and ``play`` methods.
+the same "green flag" hat as the `start` and `play` methods.
 
 {{< commit bird-checks-for-catching-says-gotcha >}}
 
@@ -244,9 +239,9 @@ catch it.
 
 One way we could do this is to have the Star also constantly check to
 see whether it's been caught, and hide itself as soon as it
-is. Because the loop in ``play`` starts with ``show`` the Star will
-reappear when it has finished gliding to its destination, and the
-game can continue.
+is. Because the loop in `play` starts with `show` the Star will
+reappear when it has finished gliding to its destination, and the game
+can continue.
 
 {{< commit star-checks-for-catching >}}
 
@@ -270,10 +265,10 @@ We can add _sounds_ to a Sprite using the Sounds variable.
 
 {{< commit add-bird-sounds >}}
 
-And we can add a line to the bird's ``check_catch`` method that plays
+And we can add a line to the bird's `check_catch` method that plays
 this sound when the star is caught. The script will go on to the next
-command immediately, but because of the ``say`` command it will
-wait for about the right amount of time for the sound to finish.
+command immediately, but because of the `say` command it will wait for
+about the right amount of time for the sound to finish.
 
 {{< commit play-caught-sound >}}
 
@@ -295,14 +290,22 @@ the bird, using a comment line:
 1. You could add a score to the game so that the bird says things like
 "Got you 5 times". Create a variable in the Bird sprite, and add one
 to it every time the star is caught. You can use a variable called
-"score" in the say command like this: ``self.say("Score is " +
-str(score))``. The ``str`` command converts a number to a string so
-that it can be joined with another string using ``+``.
+"score" in the say command like this: `self.say("Score is " +
+str(score))`. The `str` command converts a number to a string so that
+it can be joined with another string using `+`.
 
 2. You could add a second Sprite to chase, which moves faster.
 
 3. You could make the game harder by having the Bird slow down a
-   little after it catches 5 stars (by changing the ``speed``
+   little after it catches 5 stars (by changing the `speed`
    variable). After a while you might like to have the Bird speed up
    again (maybe after some time passes, or after it catches the star
    again).
+
+
+## Credits
+
+We have used various freely-available resources to help make this
+project:
+
+{{< asset-credits >}}

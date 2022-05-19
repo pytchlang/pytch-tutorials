@@ -4,7 +4,7 @@ This tutorial will show you how to make a simple game in Pytch.  The
 player will move a basket to try to catch apples which fall down the
 stage.
 
-![Screenshot](screenshot-w480.png)
+![Screenshot](screenshot-w240-darker-bg.png#img-center)
 
 We'll develop the game in stages, showing how knowledge of Scratch
 helps with understanding how things work in Python.
@@ -366,7 +366,9 @@ the `random` module in our program by _importing_ it:
 {{< commit import-random >}}
 
 (This is how we’ve been using the `pytch` functions like
-`pytch.broadcast()` already.)
+`pytch.broadcast()` already.  When we `import` Python code like this,
+we're doing something very similar to "adding an extension" in Scratch
+to make more blocks available.)
 
 Now we can use the function in the `random` module which picks a
 random whole number.  This is called `randint` (for _random integer_).
@@ -499,3 +501,10 @@ Here are some ideas on how you could make this game more fun:
   of 8".  You can use "f-strings" ([read about them in the Python
   documentation](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings))
   to get the scorekeeper to say this.
+
+
+## Credits
+
+We have used various freely-available resources to make this project:
+
+{{< asset-credits >}}

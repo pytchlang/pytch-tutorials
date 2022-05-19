@@ -12,24 +12,6 @@ magazine](https://wireframe.raspberrypi.org/issues/42):
 In this tutorial we'll follow Mark's example and create the basics of
 this classic arcade game.
 
-{{< run-finished-project >}}
-
-
-## Credits
-
-Many thanks to the Raspberry Pi Press for making the contents of their
-*Wireframe* magazine available under a Creative Commons licence.  We
-have used their code for inspiration, and also the images.
-
-Many thanks to Freesound users *greenvwbeetle*, *Robinhood76*, and
-*InspectorJ* for making their sound effects available under friendly
-licences.
-
-### Detailed credits
-
-{{< asset-credits >}}
-
-
 
 ---
 
@@ -510,3 +492,15 @@ of it!  There's lots more you could do with it:
 - Add the safety discs of the original, which transport Q\*bert back
   to the top of the pyramid.
 
+
+## Credits
+
+Many thanks to the Raspberry Pi Press for making the contents of their
+*Wireframe* magazine available under a Creative Commons licence.  We
+have used their code for inspiration, and also the images.
+
+Many thanks to Freesound users *greenvwbeetle*, *Robinhood76*, and
+*InspectorJ* for making their sound effects available under friendly
+licences.
+
+{{< asset-credits >}}

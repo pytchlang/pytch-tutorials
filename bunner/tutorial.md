@@ -3,18 +3,6 @@
 In this tutorial we will make a complete
 [Frogger](https://en.wikipedia.org/wiki/Frogger)-style arcade game.
 
-{{< run-finished-project >}}
-
-## Credits
-
-Many thanks to the Raspberry Pi Press for making the contents of their
-*Code The Classics* book available under a Creative Commons licence.  We
-have used their code for inspiration, and also the images and sounds.
-
-### Detailed credits
-
-{{< asset-credits >}}
-
 
 ---
 
@@ -123,10 +111,13 @@ program starts:
 
 For the next section of code I want to select the different costumes
 at random so that there is some variety. Python has some random
-number code available, we just need to import it so that it's
+number code available, we just need to *import* it so that it's
 available
 
 {{< commit import-random-module >}}
+
+(This is very similar to how you "add an extension" in Scratch to
+make more blocks available.)
 
 My plan is to use the original `Car` sprite as a sort of
 *template*. Every time I want to add a new car to a lane of traffic
@@ -975,3 +966,12 @@ you could do with this project. Here are some ideas:
   `self.go_to_front_layer()` and `self.go_to_back_layer()`). Fix
   this drawing problem by moving the bunny back and forward through
   the layers.
+
+
+## Credits
+
+Many thanks to the Raspberry Pi Press for making the contents of their
+*Code The Classics* book available under a Creative Commons licence.  We
+have used their code for inspiration, and also the images and sounds.
+
+{{< asset-credits >}}

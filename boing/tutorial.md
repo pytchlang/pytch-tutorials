@@ -6,19 +6,6 @@ and some of the ideas, kindly made available by the [Code the
 Classics](https://wireframe.raspberrypi.org/books/code-the-classics1) book
 published by the Raspberry Pi organisation.
 
-{{< run-finished-project >}}
-
-
-## Credits
-
-Many thanks to the Raspberry Pi Press for making the contents of their
-*Code The Classics* book available under a Creative Commons licence.  We
-have used their code for inspiration, and also the images and sounds.
-
-### Detailed credits
-
-{{< asset-credits >}}
-
 
 ---
 
@@ -326,6 +313,9 @@ bringing in the `random` module:
 
 {{< commit import-random-module >}}
 
+(This is very similar to how you "add an extension" in Scratch to
+make more blocks available.)
+
 Now we have this, we can test if the ball's `y_speed` is zero, and if
 so, use the `random.choice()` function to make Pytch randomly choose
 between the two `y_speed` values we want:
@@ -342,3 +332,31 @@ it.  In Python, a line starting with the `#` character is a comment.
 We'll add a short comment explaining how to play Boing:
 
 {{< commit add-player-instructions >}}
+
+
+## Challenges
+
+Here are some ways you could make the game better.  Both of these
+tasks are quite advanced, so your first step should be to think about
+how to break the job down into manageable pieces.
+
+* At the moment, the human player has no chance against the computer.
+  Can you make it so the computer does *not* always win?
+
+* At the moment, the game stops once the player misses the ball.  Can
+  you instead keep score, and make it so the winner is the first to
+  get ten points?  This only makes sense if you've already made it so
+  the computer sometimes misses!
+
+Can you think of other changes or improvements?
+
+
+## Credits
+
+Many thanks to the Raspberry Pi Press for making the contents of their
+*Code The Classics* book available under a Creative Commons licence.  We
+have used their code for inspiration, and also the images and sounds.
+
+### Detailed credits
+
+{{< asset-credits >}}
