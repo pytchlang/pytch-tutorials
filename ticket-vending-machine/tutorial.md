@@ -120,7 +120,11 @@ ticket.  This is centred left-to-right, and quite near the top.  This
 should happen when the program starts.  In Scratch, we would put
 together a script like this:
 
-![When-green-flag-clicked for child ticket](child-ticket-green-flag.png#img-center)
+``` { .scratch .scratchblocks-source}
+when green flag clicked
+switch costume to (child v)
+go to x: [0] y: [120]
+```
 
 And in Pytch we do something very similar — add this code to your
 program:
@@ -227,7 +231,10 @@ its own cost into that global variable.  We can use the value of each
 ticket's own `cost` variable.  We will write a method and ask Pytch to
 run it when the sprite is clicked.  In Scratch, this would look like:
 
-![Set global ticket-cost when Ticket clicked](set-ticket-cost.png#img-center)
+``` { .scratch .scratchblocks-source }
+when this sprite clicked
+set [ticket-cost] to [cost]
+```
 
 And in Pytch, we have to give this method a name, and then the idea is
 the same:
@@ -251,7 +258,9 @@ Temporarily, we will *show* this variable once we've set it, just to
 be able to test our program.  In Scratch we would either tick the box
 next to the variable, or include the block
 
-![Show global ticket-cost](show-ticket-cost.png#img-center)
+``` { .scratch .scratchblocks-source }
+show variable [ticket-cost v]
+```
 
 in a script.  In Pytch, we'll add this line to the `choose_ticket()`
 method:
