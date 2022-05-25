@@ -231,7 +231,7 @@ its own cost into that global variable.  We can use the value of each
 ticket's own `cost` variable.  We will write a method and ask Pytch to
 run it when the sprite is clicked.  In Scratch, this would look like:
 
-``` { .scratch .scratchblocks-source }
+``` scratch
 when this sprite clicked
 set [ticket-cost] to [cost]
 ```
@@ -258,7 +258,7 @@ Temporarily, we will *show* this variable once we've set it, just to
 be able to test our program.  In Scratch we would either tick the box
 next to the variable, or include the block
 
-``` { .scratch .scratchblocks-source }
+``` scratch
 show variable [ticket-cost v]
 ```
 
