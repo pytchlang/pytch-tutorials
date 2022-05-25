@@ -120,7 +120,7 @@ ticket.  This is centred left-to-right, and quite near the top.  This
 should happen when the program starts.  In Scratch, we would put
 together a script like this:
 
-``` { .scratch .scratchblocks-source}
+``` scratch
 when green flag clicked
 switch costume to (child v)
 go to x: [0] y: [120]
