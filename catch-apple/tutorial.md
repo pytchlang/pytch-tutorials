@@ -82,8 +82,6 @@ the ‘holes’ in the block:
 go to x: [0] y: [-145]
 ```
 
-![Scratch: go-to-xy](go-to-xy.png)
-
 In Python, you provide these extra pieces of information (called
 “arguments”) in brackets “`()`” after the method name:
 
@@ -251,8 +249,6 @@ if < touching (Bowl v)?> then
 stop [this script v]
 ```
 
-![Scratch: if-touching-Bowl stop-this-script](if-touching-Bowl-stop-this-script.png)
-
 In Pytch, the code we need is:
 
 {{< commit stop-falling-if-caught-in-bowl >}}
@@ -350,8 +346,6 @@ and a `when I receive` hat-block:
 when I receive [award-point v]
 ```
 
-![Scratch: broadcast and receive](broadcast-and-receive.png)
-
 And just like in Scratch, we have to choose a good message.  In Pytch,
 a message can be any string — we'll use `"award-point"`.
 
@@ -406,8 +400,6 @@ thing would look like
 set [drop_x v] to (pick random [-145] to [190])
 ```
 
-![Scratch: set-drop-x-to-random](set-drop-x-to-random.png)
-
 and in Python it looks like this:
 
 {{< commit choose-random-drop-x >}}
@@ -461,8 +453,6 @@ bottom of the stage.  In Scratch, the code would be
 forever
 broadcast (drop-apple v) and wait
 ```
-
-![Scratch: forever-drop-apple](forever-drop-apple.png)
 
 and in Pytch it's
 
