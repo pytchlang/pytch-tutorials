@@ -73,6 +73,11 @@ We need to make something happen when the player clicks on the apple —
 we'll make the fruit disappear.  In Scratch you would do something
 like
 
+```scratch
+when this sprite clicked
+hide
+```
+
 ![Scratch: when-sprite-clicked-hide](when-sprite-clicked-hide.png#img-center)
 
 This has two parts:
@@ -122,6 +127,11 @@ reappear so the player can keep playing.
 After the fruit has hidden itself, we want it to wait for a short
 time, and then show itself again.  In Scratch, we would add these
 blocks to the bottom of the 'when this sprite clicked' script:
+
+```scratch
+wait [1] seconds
+show
+```
 
 ![Scratch: wait-1-second-then-show](wait-1-second-then-show.png#img-center)
 
@@ -177,6 +187,10 @@ we want.
 In Scratch you would put this information into the 'holes' of
 the block.  For example, to roll a dice you might say:
 
+```scratch
+pick random [1] to [6]
+```
+
 ![Scratch: pick-random-1-to-6](pick-random-1-to-6.png#img-center)
 
 In Python, we put the pieces of information between brackets `(` and
@@ -218,6 +232,10 @@ it go there just before showing itself.
 
 In Scratch, we can use variables to 'fill in holes' in blocks, like:
 
+```scratch
+go to x: (appear_x) y: (appear_y)
+```
+
 ![Scratch: go-to-appear-x-appear-y](go-to-appear-x-appear-y.png#img-center)
 
 In Python, we put the variables in `()`s:
@@ -239,6 +257,10 @@ the fruit.
 We will set this variable at the top of our program.  When the game
 starts, the player has no points, so we set our new `score` variable
 to zero.  In Scratch we would say
+
+```scratch
+set [score v] to [0]
+```
 
 ![Scratch: set-score-to-zero](set-score-to-zero.png#img-center)
 
@@ -269,6 +291,10 @@ score will be stuck at zero.  We will fix this next.
 ## Give the player points
 
 To increase the player's score, in Scratch we would do
+
+```scratch
+change [score v] by [1]
+```
 
 ![Scratch: change-score-by-1](change-score-by-1.png#img-center)
 
