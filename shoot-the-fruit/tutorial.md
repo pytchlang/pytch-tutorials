@@ -374,13 +374,13 @@ the Fruit's costumes:
 {{< commit add-orange-costume >}}
 
 The box explains this change as deleting the `Costumes` line and
-adding a replacement, but you can just type in the new part —
+adding a replacement, but you can just type in the new part
 
 ```
 , "orange.png"
 ```
 
-— if that's easier for you.
+if that's easier for you.
 
 ### Choose a random costume
 
