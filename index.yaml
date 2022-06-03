@@ -3,11 +3,11 @@
 - name: Hello world!
   tip-commit: bn/hello-02
 - name: Shoot the fruit
-  tip-commit: bn/shoot-the-fruit-01
+  tip-commit: bn/shoot-the-fruit-02
 - name: Chase!
   tip-commit: gs/chase-05
 - name: Catch the apple
-  tip-commit: bn/catch-apple-03
+  tip-commit: bn/catch-apple-04
 - name: Blue Invaders
   tip-commit: bn/blue-invader-01
 - name: Q*bert
@@ -17,4 +17,4 @@
 - name: Boing
   tip-commit: bn/boing-05
 - name: Ticket vending machine
-  tip-commit: bn/ticket-vending-machine-01
+  tip-commit: bn/ticket-vending-machine-02

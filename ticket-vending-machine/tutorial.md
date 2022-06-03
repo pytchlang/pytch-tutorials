@@ -120,7 +120,11 @@ ticket.  This is centred left-to-right, and quite near the top.  This
 should happen when the program starts.  In Scratch, we would put
 together a script like this:
 
-![When-green-flag-clicked for child ticket](child-ticket-green-flag.png#img-center)
+```scratch
+when green flag clicked
+switch costume to (child v)
+go to x: [0] y: [120]
+```
 
 And in Pytch we do something very similar — add this code to your
 program:
@@ -227,7 +231,10 @@ its own cost into that global variable.  We can use the value of each
 ticket's own `cost` variable.  We will write a method and ask Pytch to
 run it when the sprite is clicked.  In Scratch, this would look like:
 
-![Set global ticket-cost when Ticket clicked](set-ticket-cost.png#img-center)
+```scratch
+when this sprite clicked
+set [ticket-cost v] to (cost)
+```
 
 And in Pytch, we have to give this method a name, and then the idea is
 the same:
@@ -251,7 +258,9 @@ Temporarily, we will *show* this variable once we've set it, just to
 be able to test our program.  In Scratch we would either tick the box
 next to the variable, or include the block
 
-![Show global ticket-cost](show-ticket-cost.png#img-center)
+```scratch
+show variable [ticket-cost v]
+```
 
 in a script.  In Pytch, we'll add this line to the `choose_ticket()`
 method:
@@ -312,7 +321,10 @@ The program does in fact *not* yet hide the other tickets, because we
 have not said when we want our new `hide_if_not_chosen()` method to
 run.  It is exactly as if we had built this Scratch script:
 
-![Hide Ticket if not chosen](hide-ticket-if-not-chosen.png#img-center)
+```scratch
+if <not <(cost) = (ticket-cost) >> then
+hide
+```
 
 but not put a 'hat block' on top.
 
@@ -436,7 +448,9 @@ When a `Money` clone is clicked, it should increase this
 `money_received` variable by the clicked clone's own `value`.  In
 Scratch, we could use a 'change variable' block, like:
 
-![Accumulate value into money-received](accumulate-value-into-money-received.png#img-center)
+```scratch
+change [money-received v] by (value)
+```
 
 In Python, we can use the `+=` operator, which does the same job.
 Remember we need to declare `global money_received` to tell Python we
@@ -516,7 +530,10 @@ In terms of the variables of our program, we ask
 In Scratch, you cannot ask 'greater than or equal to' in one step.
 You would have to use one of these two pieces of code:
 
-![money-received >= ticket-cost](money-received-GE-ticket-cost.png#img-center)
+```scratch
+not <(money-received) < (ticket-cost)>
+< < (money-received) > (ticket-cost) > or < (money-received) = (ticket-cost) > >
+```
 
 Python has the `>=` operator to mean 'greater than or equal to', so we
 can translate the question into Python code as

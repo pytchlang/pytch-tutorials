@@ -73,7 +73,10 @@ We need to make something happen when the player clicks on the apple —
 we'll make the fruit disappear.  In Scratch you would do something
 like
 
-![Scratch: when-sprite-clicked-hide](when-sprite-clicked-hide.png#img-center)
+```scratch
+when this sprite clicked
+hide
+```
 
 This has two parts:
 
@@ -123,7 +126,10 @@ After the fruit has hidden itself, we want it to wait for a short
 time, and then show itself again.  In Scratch, we would add these
 blocks to the bottom of the 'when this sprite clicked' script:
 
-![Scratch: wait-1-second-then-show](wait-1-second-then-show.png#img-center)
+```scratch
+wait [1] seconds
+show
+```
 
 In Python, we add two lines to our code:
 
@@ -177,7 +183,9 @@ we want.
 In Scratch you would put this information into the 'holes' of
 the block.  For example, to roll a dice you might say:
 
-![Scratch: pick-random-1-to-6](pick-random-1-to-6.png#img-center)
+```scratch
+pick random [1] to [6]
+```
 
 In Python, we put the pieces of information between brackets `(` and
 `)`.  This Scratch block would look like this in Python:
@@ -218,7 +226,9 @@ it go there just before showing itself.
 
 In Scratch, we can use variables to 'fill in holes' in blocks, like:
 
-![Scratch: go-to-appear-x-appear-y](go-to-appear-x-appear-y.png#img-center)
+```scratch
+go to x: (appear_x) y: (appear_y)
+```
 
 In Python, we put the variables in `()`s:
 
@@ -240,7 +250,9 @@ We will set this variable at the top of our program.  When the game
 starts, the player has no points, so we set our new `score` variable
 to zero.  In Scratch we would say
 
-![Scratch: set-score-to-zero](set-score-to-zero.png#img-center)
+```scratch
+set [score v] to [0]
+```
 
 and in Python, we use this code, which creates the variable and sets
 it to zero:
@@ -270,7 +282,9 @@ score will be stuck at zero.  We will fix this next.
 
 To increase the player's score, in Scratch we would do
 
-![Scratch: change-score-by-1](change-score-by-1.png#img-center)
+```scratch
+change [score v] by [1]
+```
 
 Python has `+=` ('change by adding'), which works very much the same.
 The code we want is
@@ -360,13 +374,13 @@ the Fruit's costumes:
 {{< commit add-orange-costume >}}
 
 The box explains this change as deleting the `Costumes` line and
-adding a replacement, but you can just type in the new part —
+adding a replacement, but you can just type in the new part
 
 ```
 , "orange.png"
 ```
 
-— if that's easier for you.
+if that's easier for you.
 
 ### Choose a random costume
 

@@ -3,17 +3,17 @@
   dir_name: hello
   commit_id: 2df6f528a770a96e3f34fd271cd30a6657af2ce3
 - name: Shoot the fruit
-  branch_name: bn/shoot-the-fruit-01
+  branch_name: bn/shoot-the-fruit-02
   dir_name: shoot-the-fruit
-  commit_id: addae805da592a03844e2dd1f92eebed2a7520db
+  commit_id: b9b79fa943f7ea2b42a7d0afbd7e9dcb5f7146d3
 - name: Chase!
   branch_name: gs/chase-05
   dir_name: chase
   commit_id: 693366c03779aa38a30124497f8a2ba4d75e9d2b
 - name: Catch the apple
-  branch_name: bn/catch-apple-03
+  branch_name: bn/catch-apple-04
   dir_name: catch-apple
-  commit_id: 28f5919c031711566b3710aff56be9f614598e9d
+  commit_id: e67e89d15f0bfd98c68970bb467be4eecaef33e5
 - name: Blue Invaders
   branch_name: bn/blue-invader-01
   dir_name: blue-invader
@@ -31,6 +31,6 @@
   dir_name: boing
   commit_id: 7b379ad72885f744e8b4dc6b2fefc86b6e707c03
 - name: Ticket vending machine
-  branch_name: bn/ticket-vending-machine-01
+  branch_name: bn/ticket-vending-machine-02
   dir_name: ticket-vending-machine
-  commit_id: 3939be18d4601f395e336d7ca0a4419307fce947
+  commit_id: 646eac1f7d85cd34a8d21ca340b8aa7f64f32bf0
