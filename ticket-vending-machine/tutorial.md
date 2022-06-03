@@ -120,6 +120,12 @@ ticket.  This is centred left-to-right, and quite near the top.  This
 should happen when the program starts.  In Scratch, we would put
 together a script like this:
 
+```scratch
+when green flag clicked
+switch costume to (child v)
+go to x: [0] y: [120]
+```
+
 ![When-green-flag-clicked for child ticket](child-ticket-green-flag.png#img-center)
 
 And in Pytch we do something very similar — add this code to your
@@ -227,6 +233,11 @@ its own cost into that global variable.  We can use the value of each
 ticket's own `cost` variable.  We will write a method and ask Pytch to
 run it when the sprite is clicked.  In Scratch, this would look like:
 
+```scratch
+when this sprite clicked
+set [ticket-cost v] to (cost)
+```
+
 ![Set global ticket-cost when Ticket clicked](set-ticket-cost.png#img-center)
 
 And in Pytch, we have to give this method a name, and then the idea is
@@ -250,6 +261,10 @@ correctly.
 Temporarily, we will *show* this variable once we've set it, just to
 be able to test our program.  In Scratch we would either tick the box
 next to the variable, or include the block
+
+```scratch
+show variable [ticket-cost v]
+```
 
 ![Show global ticket-cost](show-ticket-cost.png#img-center)
 
@@ -311,6 +326,11 @@ a ticket?  Try it and see, then read on.
 The program does in fact *not* yet hide the other tickets, because we
 have not said when we want our new `hide_if_not_chosen()` method to
 run.  It is exactly as if we had built this Scratch script:
+
+```scratch
+if <not <(cost) = (ticket-cost) >> then
+hide
+```
 
 ![Hide Ticket if not chosen](hide-ticket-if-not-chosen.png#img-center)
 
@@ -436,6 +456,10 @@ When a `Money` clone is clicked, it should increase this
 `money_received` variable by the clicked clone's own `value`.  In
 Scratch, we could use a 'change variable' block, like:
 
+```scratch
+change [money-received v] by (value)
+```
+
 ![Accumulate value into money-received](accumulate-value-into-money-received.png#img-center)
 
 In Python, we can use the `+=` operator, which does the same job.
@@ -515,6 +539,11 @@ In terms of the variables of our program, we ask
 
 In Scratch, you cannot ask 'greater than or equal to' in one step.
 You would have to use one of these two pieces of code:
+
+```scratch
+not <(money-received) < (ticket-cost)>
+< < (money-received) > (ticket-cost) > or < (money-received) = (ticket-cost) > >
+```
 
 ![money-received >= ticket-cost](money-received-GE-ticket-cost.png#img-center)
 
