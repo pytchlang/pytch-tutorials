@@ -78,8 +78,6 @@ when this sprite clicked
 hide
 ```
 
-![Scratch: when-sprite-clicked-hide](when-sprite-clicked-hide.png#img-center)
-
 This has two parts:
 
 * We say *when* we want something to happen using a "hat block" — when
@@ -132,8 +130,6 @@ blocks to the bottom of the 'when this sprite clicked' script:
 wait [1] seconds
 show
 ```
-
-![Scratch: wait-1-second-then-show](wait-1-second-then-show.png#img-center)
 
 In Python, we add two lines to our code:
 
@@ -191,8 +187,6 @@ the block.  For example, to roll a dice you might say:
 pick random [1] to [6]
 ```
 
-![Scratch: pick-random-1-to-6](pick-random-1-to-6.png#img-center)
-
 In Python, we put the pieces of information between brackets `(` and
 `)`.  This Scratch block would look like this in Python:
 
@@ -236,8 +230,6 @@ In Scratch, we can use variables to 'fill in holes' in blocks, like:
 go to x: (appear_x) y: (appear_y)
 ```
 
-![Scratch: go-to-appear-x-appear-y](go-to-appear-x-appear-y.png#img-center)
-
 In Python, we put the variables in `()`s:
 
 {{< commit go-to-random-x-y >}}
@@ -261,8 +253,6 @@ to zero.  In Scratch we would say
 ```scratch
 set [score v] to [0]
 ```
-
-![Scratch: set-score-to-zero](set-score-to-zero.png#img-center)
 
 and in Python, we use this code, which creates the variable and sets
 it to zero:
@@ -295,8 +285,6 @@ To increase the player's score, in Scratch we would do
 ```scratch
 change [score v] by [1]
 ```
-
-![Scratch: change-score-by-1](change-score-by-1.png#img-center)
 
 Python has `+=` ('change by adding'), which works very much the same.
 The code we want is
