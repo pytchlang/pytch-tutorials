@@ -126,8 +126,6 @@ switch costume to (child v)
 go to x: [0] y: [120]
 ```
 
-![When-green-flag-clicked for child ticket](child-ticket-green-flag.png#img-center)
-
 And in Pytch we do something very similar — add this code to your
 program:
 
@@ -238,8 +236,6 @@ when this sprite clicked
 set [ticket-cost v] to (cost)
 ```
 
-![Set global ticket-cost when Ticket clicked](set-ticket-cost.png#img-center)
-
 And in Pytch, we have to give this method a name, and then the idea is
 the same:
 
@@ -265,8 +261,6 @@ next to the variable, or include the block
 ```scratch
 show variable [ticket-cost v]
 ```
-
-![Show global ticket-cost](show-ticket-cost.png#img-center)
 
 in a script.  In Pytch, we'll add this line to the `choose_ticket()`
 method:
@@ -331,8 +325,6 @@ run.  It is exactly as if we had built this Scratch script:
 if <not <(cost) = (ticket-cost) >> then
 hide
 ```
-
-![Hide Ticket if not chosen](hide-ticket-if-not-chosen.png#img-center)
 
 but not put a 'hat block' on top.
 
@@ -460,8 +452,6 @@ Scratch, we could use a 'change variable' block, like:
 change [money-received v] by (value)
 ```
 
-![Accumulate value into money-received](accumulate-value-into-money-received.png#img-center)
-
 In Python, we can use the `+=` operator, which does the same job.
 Remember we need to declare `global money_received` to tell Python we
 want to update a global variable.
@@ -544,8 +534,6 @@ You would have to use one of these two pieces of code:
 not <(money-received) < (ticket-cost)>
 < < (money-received) > (ticket-cost) > or < (money-received) = (ticket-cost) > >
 ```
-
-![money-received >= ticket-cost](money-received-GE-ticket-cost.png#img-center)
 
 Python has the `>=` operator to mean 'greater than or equal to', so we
 can translate the question into Python code as
