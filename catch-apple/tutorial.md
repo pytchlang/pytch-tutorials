@@ -338,11 +338,15 @@ message.
 Just like in Scratch, we have to choose a good message.  In Pytch, a
 message can be any string — we'll use `"award-point"`.
 
-This is just like in Scratch, where we would use a `broadcast` block
-and a `when I receive` hat-block:
+This is just like in Scratch, where we would use a `broadcast` block:
 
 ```scratch
 broadcast (award-point v)
+```
+
+and a `when I receive` hat-block:
+
+```scratch
 when I receive [award-point v]
 ```
 
