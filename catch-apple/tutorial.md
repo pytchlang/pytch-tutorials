@@ -242,28 +242,17 @@ running again and again forever.
 Finally, we want to let the player catch the apple.  Each time the
 apple moves, it can check whether it's been caught.  This happens if
 the apple is touching the player's bowl.  If it is, then we want to
-_return_ from the method, which means that Python immediately stops
-running that method.  This is like Scratch's `stop this script` block,
-so what we're doing is the Pytch equivalent of the Scratch script
+hide the apple.  What we want to do is the Pytch equivalent of the
+Scratch script
 
 ```scratch
 if < touching (Bowl v)?> then
-stop [this script v]
+hide
 ```
 
 In Pytch, the code we need is:
 
-{{< commit stop-falling-if-caught-in-bowl >}}
-
-The apple now stops, but it stays on the stage, which looks very odd.
-We want to make the Apple _hide_ when it's caught:
-
 {{< commit hide-Apple-when-caught >}}
-
-If we had put the `self.hide()` _after_ the `return`, our code would
-not have worked.  Scratch stops you connecting blocks underneath the
-`stop this script` block, but in Python you're responsible for not having
-code which will never be run.
 
 
 ## Add the score-keeper
