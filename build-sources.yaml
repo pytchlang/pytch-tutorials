@@ -11,9 +11,9 @@
   dir_name: chase
   commit_id: 693366c03779aa38a30124497f8a2ba4d75e9d2b
 - name: Catch the apple
-  branch_name: bn/catch-apple-04
+  branch_name: bn/catch-apple-05
   dir_name: catch-apple
-  commit_id: e67e89d15f0bfd98c68970bb467be4eecaef33e5
+  commit_id: 9985625f836cd89917909546208bfa8ac2b5d738
 - name: Blue Invaders
   branch_name: bn/blue-invader-01
   dir_name: blue-invader

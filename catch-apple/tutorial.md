@@ -105,6 +105,7 @@ similar, by attaching a special marker to the top of the method:
 Now if you click the green flag, the bowl should
 move to its starting position at the bottom of the stage.
 
+
 ## Let the player move the bowl
 
 Now we're going to let the player move the bowl.  We'll start by
@@ -235,33 +236,23 @@ thing.  When we want something to happen forever, the `True` in `while
 True` acts as a test which always passes, so the indented code keeps
 running again and again forever.
 
+
 ## Catch the apple in the bowl
 
 Finally, we want to let the player catch the apple.  Each time the
 apple moves, it can check whether it's been caught.  This happens if
 the apple is touching the player's bowl.  If it is, then we want to
-_return_ from the method, which means that Python immediately stops
-running that method.  This is like Scratch's `stop this script` block,
-so what we're doing is the Pytch equivalent of the Scratch script
+hide the apple.  What we want to do is the Pytch equivalent of the
+Scratch script
 
 ```scratch
 if < touching (Bowl v)?> then
-stop [this script v]
+hide
 ```
 
 In Pytch, the code we need is:
 
-{{< commit stop-falling-if-caught-in-bowl >}}
-
-The apple now stops, but it stays on the stage, which looks very odd.
-We want to make the Apple _hide_ when it's caught:
-
 {{< commit hide-Apple-when-caught >}}
-
-If we had put the `self.hide()` _after_ the `return`, our code would
-not have worked.  Scratch stops you connecting blocks underneath the
-`stop this script` block, but in Python you're responsible for not having
-code which will never be run.
 
 
 ## Add the score-keeper
@@ -363,6 +354,7 @@ This change needs to be made inside your `Apple` sprite:
 If you try this now, you should be able to get your score from zero to
 one by catching the apple.
 
+
 ## Drop the apple from a random place
 
 So far the game drops the apple in the same place every time you play.
@@ -421,6 +413,7 @@ up our code with variables.
 Now the game is better — each time click the green flag, the
 apple falls from a different place.
 
+
 ## Make apples keep falling
 
 We're going to change the game so that the score-keeper is in charge
@@ -470,6 +463,7 @@ told it to `show` itself when it starts dropping.  We can fix that:
 {{< commit show-apple-when-fall-starts >}}
 
 and this is now a playable game written in Python — congratulations!
+
 
 ## Improve the game
 

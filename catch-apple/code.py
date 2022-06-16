@@ -31,7 +31,6 @@ class Apple(pytch.Sprite):
             if self.touching(Bowl):
                 self.hide()
                 pytch.broadcast("award-point")
-                return
 
 
 class ScoreKeeper(pytch.Sprite):
