@@ -68,3 +68,11 @@ class AnswerB(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def setup(self):
         self.go_to_xy(0, -120)
+
+
+class AnswerC(pytch.Sprite):
+    Costumes = ["button-ans-C.png"]
+
+    @pytch.when_green_flag_clicked
+    def setup(self):
+        self.go_to_xy(140, -120)
