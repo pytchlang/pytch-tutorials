@@ -42,7 +42,7 @@ class Narrator(pytch.Sprite):
 
         question_index = 1
 
-        question_info = all_questions_info[1]
+        question_info = all_questions_info[question_index]
 
         question = question_info[0]
         ans_A = "A: " + question_info[1]
