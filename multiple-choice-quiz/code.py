@@ -1,6 +1,15 @@
 import pytch
 
 
+question_info = [
+    "What is the capital of Ireland?",
+    "Dublin",
+    "Cork",
+    "Galway",
+    "A",
+]
+
+
 class Narrator(pytch.Sprite):
     Costumes = ["button-question.png"]
 
