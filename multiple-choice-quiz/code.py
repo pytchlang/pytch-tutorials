@@ -16,6 +16,13 @@ all_questions_info = [
         "1000",
         "B",
     ],
+    [
+        "What year was the Anglo-Irish Treaty signed?",
+        "1921",
+        "1922",
+        "1923",
+        "A",
+    ],
 ]
 
 n_questions = len(all_questions_info)
