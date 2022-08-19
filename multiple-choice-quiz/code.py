@@ -40,6 +40,7 @@ class Narrator(pytch.Sprite):
 
         self.say_for_seconds("Let's begin!", 3)
 
+        score = 0
         question_index = 0
 
         while question_index < n_questions:
