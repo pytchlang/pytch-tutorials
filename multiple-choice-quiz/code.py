@@ -38,7 +38,7 @@ class Narrator(pytch.Sprite):
 
         pytch.wait_seconds(2)
 
-        question_info = all_questions_info[0]
+        question_info = all_questions_info[1]
 
         question = question_info[0]
         ans_A = "A: " + question_info[1]
