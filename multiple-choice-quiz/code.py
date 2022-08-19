@@ -9,6 +9,13 @@ all_questions_info = [
         "Galway",
         "A",
     ],
+    [
+        "How many centimetres are there in one metre?",
+        "10",
+        "100",
+        "1000",
+        "B",
+    ],
 ]
 
 
