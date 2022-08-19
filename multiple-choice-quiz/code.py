@@ -40,6 +40,8 @@ class Narrator(pytch.Sprite):
 
         pytch.wait_seconds(2)
 
+        question_index = 1
+
         question_info = all_questions_info[1]
 
         question = question_info[0]
