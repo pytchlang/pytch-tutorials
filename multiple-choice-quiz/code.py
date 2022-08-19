@@ -52,3 +52,7 @@ class Narrator(pytch.Sprite):
             pytch.wait_seconds(2)
 
             question_index += 1
+
+
+class AnswerA(pytch.Sprite):
+    Costumes = ["button-ans-A.png"]
