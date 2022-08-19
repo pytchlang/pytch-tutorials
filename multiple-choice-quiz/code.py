@@ -18,6 +18,8 @@ all_questions_info = [
     ],
 ]
 
+n_questions = len(all_questions_info)
+
 
 class Narrator(pytch.Sprite):
     Costumes = ["button-question.png"]
