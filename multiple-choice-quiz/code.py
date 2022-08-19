@@ -68,6 +68,8 @@ class Narrator(pytch.Sprite):
 
             question_index += 1
 
+        text = "You got " + str(score) + " out of " + str(n_questions)
+
 
 class AnswerA(pytch.Sprite):
     Costumes = ["button-ans-A.png"]
