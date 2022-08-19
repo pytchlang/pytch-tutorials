@@ -58,6 +58,8 @@ class Narrator(pytch.Sprite):
             while not clicked:
                 pass
 
+            correct_answer = question_info[4]
+
             question_index += 1
 
 
