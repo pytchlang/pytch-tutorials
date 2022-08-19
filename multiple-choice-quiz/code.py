@@ -25,3 +25,5 @@ class Narrator(pytch.Sprite):
         ans_A = question_info[1]
         ans_B = question_info[2]
         ans_C = question_info[3]
+
+        text = question + ans_A + ans_B + ans_C
