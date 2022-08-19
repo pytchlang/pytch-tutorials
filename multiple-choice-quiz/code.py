@@ -30,6 +30,8 @@ class Narrator(pytch.Sprite):
 
         question_index = 0
 
+        while question_index < n_questions:
+
         question_info = all_questions_info[question_index]
 
         question = question_info[0]
