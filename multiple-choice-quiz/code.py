@@ -71,6 +71,7 @@ class AnswerA(pytch.Sprite):
     @pytch.when_this_sprite_clicked
     def notify_answered(self):
         global clicked, answer
+        answer = "A"
         clicked = True
 
 
