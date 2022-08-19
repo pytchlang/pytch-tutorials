@@ -80,6 +80,11 @@ class AnswerB(pytch.Sprite):
     def setup(self):
         self.go_to_xy(0, -120)
 
+    @pytch.when_this_sprite_clicked
+    def notify_answered(self):
+        global clicked
+        clicked = True
+
 
 class AnswerC(pytch.Sprite):
     Costumes = ["button-ans-C.png"]
