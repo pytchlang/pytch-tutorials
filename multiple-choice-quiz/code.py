@@ -26,6 +26,8 @@ class Narrator(pytch.Sprite):
     def play_quiz(self):
         self.say_for_seconds("Let's begin!", 3)
 
+        question_index = 0
+
         question_info = all_questions_info[0]
 
         question = question_info[0]
