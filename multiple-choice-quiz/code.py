@@ -28,6 +28,7 @@ all_questions_info = [
 n_questions = len(all_questions_info)
 
 clicked = False
+answer = None
 
 
 class Narrator(pytch.Sprite):
