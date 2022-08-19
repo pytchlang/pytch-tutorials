@@ -57,8 +57,6 @@ class Narrator(pytch.Sprite):
             while not clicked:
                 pass
 
-            pytch.wait_seconds(2)
-
             question_index += 1
 
 
