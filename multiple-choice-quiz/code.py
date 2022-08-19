@@ -2,13 +2,13 @@ import pytch
 
 
 all_questions_info = [
-[
-    "What is the capital of Ireland?",
-    "Dublin",
-    "Cork",
-    "Galway",
-    "A",
-]
+    [
+        "What is the capital of Ireland?",
+        "Dublin",
+        "Cork",
+        "Galway",
+        "A",
+    ]
 ]
 
 
