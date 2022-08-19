@@ -56,3 +56,7 @@ class Narrator(pytch.Sprite):
 
 class AnswerA(pytch.Sprite):
     Costumes = ["button-ans-A.png"]
+
+    @pytch.when_green_flag_clicked
+    def setup(self):
+        self.go_to_xy(-140, -120)
