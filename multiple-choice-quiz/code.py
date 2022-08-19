@@ -92,3 +92,8 @@ class AnswerC(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def setup(self):
         self.go_to_xy(140, -120)
+
+    @pytch.when_this_sprite_clicked
+    def notify_answered(self):
+        global clicked
+        clicked = True
