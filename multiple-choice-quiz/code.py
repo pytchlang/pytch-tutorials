@@ -8,7 +8,7 @@ all_questions_info = [
         "Cork",
         "Galway",
         "A",
-    ]
+    ],
 ]
 
 
