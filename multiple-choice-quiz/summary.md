@@ -1,3 +1,4 @@
 # Multiple choice quiz
 
-TODO: Write summary
+Make a quiz which asks the player questions.  See how many your
+friends can get right!
