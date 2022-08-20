@@ -18,3 +18,5 @@ class Narrator(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def play_quiz(self):
         self.say_for_seconds("Let's begin!", 3)
+
+        question_info = all_questions_info[0]
