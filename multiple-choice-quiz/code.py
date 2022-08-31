@@ -53,6 +53,8 @@ class Narrator(pytch.Sprite):
             text = question + "\n" + ans_A + "\n" + ans_B + "\n" + ans_C
             self.say(text)
 
+            clicked = False
+
             pytch.wait_seconds(2)
 
             question_index += 1
