@@ -1,7 +1,7 @@
 # Multiple choice quiz
 
 In this project we're going to make a quiz, where the player has to
-choose between three possible answers.
+choose between three possible answers to each question.
 
 ---
 
