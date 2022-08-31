@@ -54,6 +54,8 @@ class Narrator(pytch.Sprite):
             self.say(text)
 
             clicked = False
+            while not clicked:
+                pass
 
             pytch.wait_seconds(2)
 
