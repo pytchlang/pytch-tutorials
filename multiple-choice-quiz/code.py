@@ -69,6 +69,7 @@ class Narrator(pytch.Sprite):
             question_index += 1
 
         text = "You got " + str(score) + " out of " + str(n_questions)
+        self.say(text)
 
 
 class AnswerA(pytch.Sprite):
