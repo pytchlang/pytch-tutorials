@@ -394,13 +394,45 @@ If they get a question right, they get a point:
 
 {{< commit award-point-for-correct-answer >}}
 
-After asking all the questions, the Narrator can announce the score:
+After asking all the questions, we want the Narrator to announce the
+score.  First we'll put together the text of what the Narrator will
+say.  We have already seen how to glue strings together to make one
+big string — the `+` operator.  But this time it's more complicated,
+because the pieces we want to assemble are:
 
-Watch indentation here!
+* The string `"You got"`;
+* The number of questions the player got right — this is the value of
+  the variable `score`;
+* The string `"out of"`;
+* The total number of questions — this is the value of the variable
+  `n_questions`.
+
+But we can't just do
+``` python
+"You got" + score + "out of" + n_questions
+```
+because `score` refers to a *number* not a *string*.  Before we can
+use `+` to join `"You got"` to the score, we have to convert the value
+of `score` into a string.  Python has the built-in function `str()`
+for this.
+
+Another detail is that we need to include the space between `"You
+got"` and the score, and the spaces around `"out of"`.  Putting this
+all together, we want to compute
+``` python
+"You got " + str(score) + " out of " + str(n_questions)
+```
+
+We'll store this in the variable `text`.  Be very careful of the
+indentation of the next line of code — it needs to be level with the
+`while` at the top of the loop.
+
+{{< commit compute-final-score-text >}}
+
+And then we can make the Narrator make the announcement:
 
 {{< commit announce-final-score >}}
 
-**TODO: OK to use f-strings? Or better to use `str()` and `+`?**
 
 Finally, tidy up by putting the introductory announcement back to a
 sensible length of time:
