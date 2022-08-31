@@ -47,13 +47,6 @@ this list.  We'll use the Python built-in function `print()`.
 To see this output, go to the `Output` tab.  Come back to this
 `Tutorial` tab when you're ready to continue.
 
-Worth thinking about how to not waste our own time while we're
-developing this program.  At the moment, have to wait 3 seconds
-every time we run the program.  Adds up, no point.  So we'll shorten
-the introduction speech:
-
-{{< commit shorten-lets-play-speech >}}
-
 To get items out of a list, use `[]`s.  Number counts from zero.
 
 {{< commit print-item-0 >}}
@@ -433,11 +426,6 @@ And then we can make the Narrator make the announcement:
 
 {{< commit announce-final-score >}}
 
-
-Finally, tidy up by putting the introductory announcement back to a
-sensible length of time:
-
-{{< commit lengthen-intro-announcement >}}
 
 ## Challenges
 
