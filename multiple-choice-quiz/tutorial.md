@@ -64,6 +64,7 @@ We've finished exploring this now:
 
 {{< commit remove-print-item >}}
 
+
 ## How to store more than one question?
 
 Think ahead to asking more than one question.  Natural thing here is
@@ -91,6 +92,7 @@ Use some `print()` functions to check we know what's going on:
 Finished exploring now:
 
 {{< commit remove-print >}}
+
 
 ## Ask a question
 
@@ -142,6 +144,7 @@ And label the answers so the player knows which one is which:
 
 {{< commit label-answer-C-text >}}
 
+
 ## Add another question
 
 {{< commit add-centimetres-in-metre-question >}}
@@ -153,6 +156,7 @@ Test by adjusting the item we pull out of `all_questions_info`:
 That's working; put it back:
 
 {{< commit ask-question-0-again >}}
+
 
 ## Ask both questions
 
@@ -177,6 +181,7 @@ learner clicks "help".**
 
 {{< commit ask-question-1-after-question-0 >}}
 
+
 ## Use a loop to ask both questions
 
 This is going to get annoying when more questions.  Use the idea of a
@@ -200,6 +205,7 @@ For second, question, our index variable needs to be `1`:
 And use it:
 
 {{< commit use-question-index-when-1 >}}
+
 
 ### Loop over the questions
 
@@ -255,12 +261,14 @@ Get rid of the copy we made, since all now done in the loop:
 
 {{< commit remove-redundant-code >}}
 
+
 ## Add a third question
 
 This is now easy!  We have written our code so that the only thing
 that needs changing is the *data*.  This is a powerful idea.
 
 {{< commit add-third-question >}}
+
 
 ## Add the answer buttons
 
@@ -286,6 +294,7 @@ And "C":
 You might be thinking that there must be a better way to do this than
 copying and pasting and making small changes to the code.  You're
 right, but those ways would take us too far astray from this tutorial.
+
 
 ## Wait for player to click an answer button
 
@@ -335,6 +344,7 @@ And for C:
 Now you should be able to move onto the next question by clicking any
 answer button.
 
+
 ## Check the player's answer
 
 Nearly there.  Need to know *which* Answer button the player has
@@ -375,6 +385,7 @@ is how you ask "are these two things equal?"; it's easy to confuse
 this with `=`, which means "set a variable".
 
 {{< commit tell-user-whether-answer-correct >}}
+
 
 ## Keep track of the player's score
 
@@ -437,6 +448,7 @@ Suggested sounds included.
 Make narrator say score so far after each question has been answered.
 
 (Harder:) Make there be *four* possible answers for each question.
+
 
 ## Image and sound credits
 
