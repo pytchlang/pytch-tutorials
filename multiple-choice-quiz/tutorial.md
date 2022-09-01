@@ -32,9 +32,9 @@ question.
 
 What are the parts of a quiz question?  We need to know:
 
-* The actual question;
-* The three possible answers;
-* Something saying which answer is the correct one.
+* the actual question;
+* the three possible answers;
+* which answer is the correct one.
 
 To record all these things, we're going to use a Python feature called
 a *list*.  This is very like a Scratch list, but more powerful in ways
@@ -42,16 +42,11 @@ we'll see later on.
 
 The items in the list will be
 
-* Question
-* Answer A
-* Answer B
-* Answer C
-* Number saying which answer is correct: 0 for A, 1 for B, 2 for C
-
-(Using 0, 1, 2 to match Python convention of counting from zero.)
-
-**TODO for tutorial author: Would we be better to use "A", "B", "C" as
-the indicator for correct answer?**
+* The question;
+* answer A;
+* answer B;
+* answer C;
+* a letter saying which answer is correct (`"A"`, `"B"`, or `"C"`).
 
 In Python, the items of a list are written between square brackets
 (`[]`) and have their items separated by commas (`,`).
@@ -64,14 +59,17 @@ experience working with Python lists:
 You'll see that I've added the code spread across seven lines, to make
 it easier for a human to read.  Python lets you split code across
 lines in some situations, such as when giving the items in a list like
-this.
+this.  Python also allows you to have a comma after the last item in a
+list, which I've included here.
+
+### Working with lists in Python
 
 First we'll explore how to use the different pieces of information in
 this list.  We'll use the Python built-in function `print()`.
 
 {{< commit print-single-question-info >}}
 
-In standard Python, things you `print()` usually get printed to the
+In standard Python, things you `print()` usually get displayed on the
 screen.  In Pytch, `print()` output is recorded in the `Output` tab.
 So to see what the above code does, select the `Output` tab.  Come
 back to this `Tutorial` tab when you're ready to continue.
@@ -80,16 +78,17 @@ Often we want to get particular items out of a list.  In Scratch, you
 would use, for example, this block:
 
 ``` scratch
-(item 3 of [colours])
+(item (3) of [colours v])
 ```
 
 to get the third item of the `colours` list.  In Python, we use the
-same `[]`s as are used to write a list.  The other difference is that
-the positions are numbered starting at *zero*, so the first item in
-the list is `[0]`, the second item is `[1]`, and so on.
+same `[]`s as are used to write a list.  The other difference between
+Scratch and Python is that, in Python, the positions are numbered
+starting at *zero*, so the first item in the list is `[0]`, the second
+item is `[1]`, and so on.
 
 To see this working, we'll print the first item from our question-info
-list:
+list, by changing the `print()` line:
 
 {{< commit print-item-0 >}}
 
@@ -101,9 +100,10 @@ And the fifth:
 
 {{< commit print-item-4 >}}
 
-Just to see what happens, experiment with a position which doesn't
-make sense.  For example, our list only has five items in it, so it
-doesn't make sense to ask for the item at position 12:
+Just to see what happens, experiment with asking for the item at a
+position which doesn't make sense.  For example, our list only has
+five items in it, so it doesn't make sense to ask for the item at
+position 12:
 
 {{< commit print-item-12 >}}
 
@@ -129,20 +129,20 @@ lists, which is perfect for us.
 
 ### Make a list of lists
 
-We'll make some small changes to the code we've already written to
-have a *list of lists* to store the information about the whole quiz.
+We'll make some small changes to the code we've already written, and
+make a *list of lists* to store the information about the whole quiz.
 First remove the `question_info` variable name but keep the opening
 square bracket:
 
 {{< commit remove-question-info-assignment >}}
 
-Then add a line opening a new list `all_questions_info` and one
+Then add a line opening a new list `all_questions_info` and a line
 closing that same list:
 
 {{< commit create-all-questions-info-list >}}
 
-Indent the list we already have for storing the first question.  This
-can be done by highlighting the lines and pressing the `TAB` key.
+Indent the list we already have for storing the first question (this
+can be done by highlighting the lines and pressing the `TAB` key):
 
 {{< commit reindent-first-question-info >}}
 
@@ -150,6 +150,9 @@ We want to be able to add more questions, so add a comma after the
 closing bracket of our question's list:
 
 {{< commit add-trailing-comma-first-question-info >}}
+
+We're now ready to add more questions when we're ready, but first
+we'll get some experience working with this idea of a list of lists.
 
 ### Explore how to get items from the list of lists
 
@@ -228,8 +231,8 @@ And now the narrator can say the final text:
 {{< commit say-concatenated-text >}}
 
 This is nearly right, but needs improving.  Let's start each answer on
-a new line.  In a string, the sequence `\n` gets converted into a
-special character which starts a new line, so we want to put some of
+a new line.  In a Python string, the sequence `\n` gets converted into
+a special character which starts a new line, so we want to put some of
 those in:
 
 {{< commit interleave-newlines-in-text >}}
@@ -247,6 +250,8 @@ and `"C: "` before the third:
 
 {{< commit label-answer-C-text >}}
 
+Now what the narrator says should look much better.
+
 
 ## Add another question
 
@@ -257,12 +262,17 @@ pieces of information needed for another question:
 
 {{< commit add-centimetres-in-metre-question >}}
 
+Check you understand what the five different items in this list are.
+
 We can test this by changing which item we pull out of
 `all_questions_info`:
 
 {{< commit ask-question-1 >}}
 
-When you're happy that this is working; put the code back so it asks
+The narrator should now ask the new question instead of the original
+one.
+
+When you're happy that this is working, put the code back so it asks
 the first question:
 
 {{< commit ask-question-0-again >}}
@@ -276,8 +286,9 @@ We will need to wait after asking the first question:
 
 {{< commit add-wait-after-question-0 >}}
 
-For now, let's just copy and paste the code we already have for asking
-the first question:
+And then we want the narrator to ask the second question.  To make a
+start on this, let's just copy and paste the code we already have for
+asking the first question:
 
 {{< commit copy-paste-to-ask-question-0-again >}}
 
@@ -285,15 +296,16 @@ Try this now.  What you should find is that the game just asks the
 first question twice.  This makes sense, because we just copied the
 code.
 
-Can you work out what we need to change to ask the second question
-(which is at position `1` in the `all_questions_info` list) instead of
-the first question (which is at position `0`) in the code we've just
-copied?
+Can you work out what we need to change in this code, so that the
+narrator asks the second question (which is at position `1` in the
+`all_questions_info` list) instead of the first question (which is at
+position `0`)?
 
 This is what we need to change:
 
 {{< commit ask-question-1-after-question-0 >}}
 
+Your game should now ask both questions, one after the other.
 
 ## Use a loop to ask both questions
 
@@ -308,11 +320,12 @@ difference is that we ask for the item at a different position in the
 To see how this can be tidied up, we'll make a variable to hold the
 position of the current question.  The word *index* is often used to
 mean what position in a list we're talking about, so we'll call this
-variable `question_index`.
+variable `question_index`.  To ask the first question, we need
+`question_index` to be zero:
 
 {{< commit add-question-index-variable >}}
 
-And use it in the code:
+And we want to use this variable in the code:
 
 {{< commit use-question-index-when-0 >}}
 
@@ -324,6 +337,9 @@ And we need to use it:
 
 {{< commit use-question-index-when-1 >}}
 
+Test that your program still works.  It should ask the two questions
+one after the other.
+
 
 ### Loop over the questions
 
@@ -334,9 +350,10 @@ called `all_questions_info` by using this block:
 (length of [all_questions_info v])
 ```
 
-In Python we can do something very similar; there's a built-in `len()`
-function.  We'll use this to compute the value of a variable telling
-us how many questions there are:
+In Python we can do something very similar — there's a built-in
+`len()` function.  We'll use this to compute the value of a variable
+telling us how many questions there are.  We'll do this at the top of
+the program, just after the list of questions:
 
 {{< commit define-n-questions >}}
 
@@ -355,25 +372,26 @@ repeat ()
 
 but not quite the same.
 
-In Python, we can use a `while` loop, which keeps going as long as the
+In Python, we can use a `while` loop, which keeps going as long as a
 test gives a `True` answer.  We want to keep asking questions as long
-as the index is valid, i.e., is less than the number of questions.
+as the index makes sense, i.e., is less than the number of questions.
 
-Remember that if there are, say, 5 questions, the valid index values
-are
+To see why we need the index to be less than the number of questions,
+remember that if there are, say, 5 questions, the index values we want
+to go through one at a time are
 
     0, 1, 2, 3, 4
 
-so the test we want is `question_index < n_questions`:
+so the test we want is `question_index < n_questions`.
 
 {{< commit add-while-loop-condition-line >}}
 
 And then we need to move the code to ask the question so that it's
 "inside" the `while` loop.
 
-The following change looks fiddly, but you just need to move all of
-this code across to the right by one indentation level.  You can do
-this in the editor by highlighting the code, and pressing the `TAB`
+The following change looks fiddly, but all that's happening is that
+the code moves across to the right by one indentation level.  You can
+do this in the editor by highlighting the code, and pressing the `TAB`
 key.
 
 {{< commit indent-what-is-now-while-loop-body >}}
@@ -383,17 +401,26 @@ question by adding one to the index variable:
 
 {{< commit increment-question-index >}}
 
-Finally, we can get rid of the copy we made, since the work is now
+Finally, we can get rid of the code we copied, since the work is now
 being done in our loop:
 
 {{< commit remove-redundant-code >}}
 
+Try your program — it should *still* ask both questions, one after the
+other.
+
+It might seem like we've just done a lot of work for no real benefit,
+but we're about to see why writing this loop is so useful.
+
 
 ## Add a third question
 
-This is now easy!  We have written our code so that the only thing we
-need to change is the *data*, not the *code* itself.  This is a
-powerful idea in computer programming.
+This is now easy!  We have written our program so that, to add more
+questions, the only thing we need to change is the *data*, not the
+*code* itself.  This is a powerful idea in computer programming.
+
+To add another question, we just add it to our `all_questions_info`
+list near the top of the program:
 
 {{< commit add-third-question >}}
 
@@ -404,23 +431,24 @@ We're making good progress.  The narrator now asks all the questions,
 one after another.
 
 We now need a way for the player to answer the questions.  We'll do
-this by adding three buttons.  The player will click on the one for
+this by adding three buttons.  The player will click on the button for
 the answer they think is correct.
 
 We'll start with a button to press if the player thinks "A" is the
-right answer.  This is a new sprite, with a provided costume.
+right answer.  This is a new sprite, with a costume that's provided
+with this tutorial:
 
 {{< commit add-AnswerA-sprite >}}
 
-The new sprite starts off right on top of the narrator, which is no
-good.  Make the button move to a sensible place when the program
-starts:
+If you try this, you'll see that the new sprite starts off right on
+top of the narrator, which is no good.  Make the button move to a
+sensible place when the program starts:
 
 {{< commit init-AnswerA-position >}}
 
-Going a bit more quickly now, we can add a button for if the player
-thinks "B" is the right answer.  This is very similar to the "A"
-button; it has a different costume, and different starting
+Going a bit more quickly now, we can add a button the player can click
+if they think "B" is the right answer.  This is very similar to the
+"A" button, but it has a different costume, and different starting
 coordinates.
 
 {{< commit add-AnswerB-sprite-and-init-position >}}
@@ -441,26 +469,32 @@ We're going to use a *shared variable* which will say whether the
 player has clicked a button yet for this question.  It's *shared*
 because more than one sprite will use it.
 
-The Narrator will set the variable to `False` when asking a question,
-and the Answer buttons will set it to `True` when they're clicked.
+The narrator will set the variable to `False` when asking a question,
+and each answer button will set it to `True` when it's clicked.
 
-Because the Narrator and the three Answer sprites all need to work
+Because the narrator and the three answer sprites all need to work
 with this variable, we'll make it *global* by defining it near the top
 of the program, outside any sprite:
 
 {{< commit add-global-clicked-variable >}}
 
-The Narrator needs to work with this variable, and in Python you need
+In Python, you have to give a starting value to a variable.  We're
+using `False` here, because when the program starts, a button has not
+been clicked.
+
+The narrator needs to work with this variable, and in Python you need
 to say when you're using a global variable:
 
 {{< commit declare-global-clicked-in-Narrator-play-quiz >}}
 
-As soon as the Narrator has asked the question, it needs to record the fact
+As soon as the narrator has asked the question, it needs to record the fact
 that no button has yet been clicked:
 
 {{< commit clear-clicked-before-asking-question >}}
 
-And then wait until a button has been clicked:
+And then wait until a button has been clicked.  We want to keep doing
+nothing as long as `clicked` is `False`.  We can write this test in a
+more natural-sounding way by using the `not` operator:
 
 {{< commit busy-wait-Narrator-until-clicked >}}
 
@@ -474,10 +508,10 @@ We won't need the delay any more:
 
 This is one half of the problem — we've made the narrator wait until
 the `clicked` variable indicates that an answer button has been
-pressed.  But nothing is yet setting that variable to `True`, so the
+clicked.  But nothing is yet setting that variable to `True`, so the
 narrator will wait forever!
 
-Each Answer needs to respond to being clicked by setting the global
+Each answer needs to respond to being clicked by setting the global
 `clicked` variable to `True`.
 
 Moving a bit more quickly now, we need code which says we're using the
@@ -497,13 +531,20 @@ And for `AnswerC`:
 Now you should be able to move onto the next question by clicking any
 answer button.  Try it!
 
+(Again, if you're wondering whether there's a better way to do all
+this than copying and pasting code, you're right, but we don't have
+space in this tutorial to discuss it.)
+
 
 ## Check the player's answer
 
-We're now very close to a working quiz game.  We need to know *which*
-Answer button the player has clicked.  We'll use another global
-variable for this information, so we'll define a new variable near the
-top of the program:
+We're now very close to a working quiz game.  The narrator asks
+questions, and the player can click on buttons to answer them.  But we
+don't tell the player whether they got the questions right.
+
+We need to know *which* answer button the player has clicked.  We'll
+use another global variable for this information, so we'll define a
+new variable near the top of the program:
 
 {{< commit add-global-answer-variable >}}
 
@@ -512,28 +553,25 @@ The `None` value is a special Python value which means "nothing" or
 declaring it.
 
 Starting with the `AnswerA` sprite, within its
-when-this-sprite-clicked handler, we need to be able to work with this
+`when_this_sprite_clicked` code, we need to be able to work with this
 variable.  Add a declaration:
 
 {{< commit add-global-answer-declaration-to-AnswerA >}}
 
 And add code to set the `answer` variable to the answer chosen by the
-player if the click `AnswerA`:
+player if they click `AnswerA`:
 
-**TODO: This makes more sense if the code is "A" "B" "C" not 0
-1 2.**
-
-{{< commit assign-answer-0-in-AnswerA >}}
+{{< commit assign-answer-var-in-AnswerA >}}
 
 We can do something very similar for `AnswerB`:
 
-{{< commit assign-answer-1-in-AnswerB >}}
+{{< commit assign-answer-var-in-AnswerB >}}
 
 And for `AnswerC`:
 
-{{< commit assign-answer-2-in-AnswerC >}}
+{{< commit assign-answer-var-in-AnswerC >}}
 
-Back in the Narrator, once the `clicked` variable has turned `True`,
+Back in the narrator, once the `clicked` variable has turned `True`,
 we can use the `[4]` item in our `question_info` list to know what the
 correct answer is:
 
@@ -541,10 +579,14 @@ correct answer is:
 
 And now we can use an `if`/`else` statement to say something different
 depending on whether the player's answer is correct.  Notice that `==`
-is how you ask "are these two things equal?"; it's easy to confuse
-this with `=`, which means "set a variable".
+(two equals signs) is how you ask "are these two things equal?".  It's
+easy to confuse this with `=` (just one equals sign), which means "set
+a variable".
 
 {{< commit tell-user-whether-answer-correct >}}
+
+Try your quiz now — the narrator should tell you whether you got each
+question right or wrong.
 
 
 ## Keep track of the player's score
@@ -553,27 +595,29 @@ A nice feature would be to tell the player how many questions they got
 right.
 
 We'll keep track of the player's score as they answer the questions
-one at a time.  Only the Narrator needs to know the score, so we'll
+one at a time.  Only the narrator needs to know the score, so we'll
 use a *local* variable for this.  At the start of the quiz, the player
 has no points, so we'll start `score` off at zero:
 
 {{< commit initialise-local-score-variable >}}
 
-If the player gets a question right, they get a point:
+If the player gets a question right, they get a point.  We can add
+code inside the `if`/`else` code we used to tell the player whether
+they got the question right:
 
 {{< commit award-point-for-correct-answer >}}
 
-After asking all the questions, we want the Narrator to announce the
-score.  First we'll put together the text of what the Narrator will
+After asking all the questions, we want the narrator to announce the
+score.  First we'll put together the text of what the narrator will
 say.  We have already seen how to glue strings together to make one
-big string — the `+` operator.  But this time it's more complicated,
-because the pieces we want to assemble are:
+big string by using the `+` operator.  But this time it's more
+complicated, because the pieces we want to assemble are:
 
-* The string `"You got"`;
-* The number of questions the player got right — this is the value of
+* the string `"You got"`;
+* the number of questions the player got right — this is the value of
   the variable `score`;
-* The string `"out of"`;
-* The total number of questions — this is the value of the variable
+* the string `"out of"`;
+* the total number of questions — this is the value of the variable
   `n_questions`.
 
 But we can't just do
@@ -584,24 +628,25 @@ But we can't just do
 
 because `score` refers to a *number* not a *string*.  Before we can
 use `+` to join `"You got"` to the score, we have to convert the value
-of `score` into a string.  Python has the built-in function `str()`
-for this.
+of `score` into a string.  Python has a built-in function `str()` for
+this.
 
 Another detail is that we need to include the space between `"You
-got"` and the score, and the spaces around `"out of"`.  Putting this
-all together, we want to compute
+got"` and the score, and the spaces around `"out of"`.
+
+Putting this all together, we want to compute
 
 ``` python
 "You got " + str(score) + " out of " + str(n_questions)
 ```
 
-We'll store this in the variable `text`.  Be very careful of the
+We'll store the result in the variable `text`.  Be very careful of the
 indentation of the next line of code — it needs to be level with the
 `while` at the top of the loop.
 
 {{< commit compute-final-score-text >}}
 
-And then we can make the Narrator make the announcement:
+And then we can make the narrator make the announcement:
 
 {{< commit announce-final-score >}}
 
@@ -609,6 +654,8 @@ Congratulations!  You should now have a working quiz game!
 
 
 ## Challenges
+
+Here are some ways you could improve the quiz:
 
 * Add more questions.
 
@@ -620,6 +667,8 @@ Congratulations!  You should now have a working quiz game!
   been answered.
 
 * (Harder:) Make there be *four* possible answers for each question.
+  This tutorial comes with an image of a 'D' button you can use if you
+  like.
 
 
 ## Image and sound credits
