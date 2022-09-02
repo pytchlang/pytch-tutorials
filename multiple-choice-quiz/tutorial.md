@@ -62,10 +62,15 @@ lines in some situations, such as when giving the items in a list like
 this.  Python also allows you to have a comma after the last item in a
 list, which I've included here.
 
-### Working with lists in Python
+### Working with lists in Python: experimental code
 
 First we'll explore how to use the different pieces of information in
-this list.  We'll use the Python built-in function `print()`.
+this list.  We'll write some code which is not going to be in our
+final game.  This code will let us try out a few things and learn how
+lists work in Python.
+
+Let's start by printing out the list we've just created, using the
+Python built-in function `print()`:
 
 {{< commit print-single-question-info >}}
 
