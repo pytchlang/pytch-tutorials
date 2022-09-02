@@ -40,9 +40,9 @@ To record all these things, we're going to use a Python feature called
 a *list*.  This is very like a Scratch list, but more powerful in ways
 we'll see later on.
 
-The items in the list will be
+The five items in the list will be
 
-* The question;
+* the question;
 * answer A;
 * answer B;
 * answer C;
@@ -88,7 +88,7 @@ would use, for example, this block:
 
 to get the third item of the `colours` list.  In Python, we use the
 same `[]`s as are used to write a list.  The other difference between
-Scratch and Python is that, in Python, the positions are numbered
+Scratch and Python is that in Python, the positions are numbered
 starting at *zero*, so the first item in the list is `[0]`, the second
 item is `[1]`, and so on.
 
