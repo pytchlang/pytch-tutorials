@@ -348,6 +348,13 @@ how to break the job down into manageable pieces.
   get ten points?  This only makes sense if you've already made it so
   the computer sometimes misses!
 
+You could also experiment with changing the physics of the game, for
+example:
+
+* Add gravity, so the ball falls towards the bottom of the screen.
+  Think about how the `y_speed` of the `Ball` sprite needs to change
+  to give the right effect.
+
 Can you think of other changes or improvements?
 
 
