@@ -75,11 +75,11 @@ Python built-in function `print()`:
 {{< commit print-single-question-info >}}
 
 In standard Python, things you `print()` usually get displayed on the
-screen.  In Pytch, `print()` output is recorded in the `Output` tab.
-So to see what the above code does, select the `Output` tab.  Come
+screen.  In Pytch, `print()` output appears in the `Output` tab.  So
+to see what the above code has printed, select the `Output` tab.  Come
 back to this `Tutorial` tab when you're ready to continue.
 
-Often we want to get particular items out of a list.  In Scratch, you
+Often we want to get a particular item out of a list.  In Scratch, you
 would use, for example, this block:
 
 ``` scratch
@@ -97,7 +97,7 @@ list, by changing the `print()` line:
 
 {{< commit print-item-0 >}}
 
-And now the second item:
+Change the code again to print out the second item:
 
 {{< commit print-item-1 >}}
 
@@ -213,7 +213,8 @@ And the three different answers the player will choose from:
 {{< commit assign-answer-variables-v1 >}}
 
 (You might notice that we haven't used `question_info[4]` yet.  This
-value tells us which answer is correct.  We'll use this later.)
+is the item which tells us which answer is correct.  We'll use it
+later.)
 
 Now we want to glue these parts together into one string.  In Scratch,
 you would do something like
@@ -222,7 +223,7 @@ you would do something like
 (join (question) (join (ans_A) (join (ans_B) (ans_C))))
 ```
 
-In Python, you can join strings together using the `+` symbol; many
+In Python, you can join strings together using the `+` symbol.  Many
 programming languages use `+` for this, because joining two strings
 together is a bit like adding them together.
 
@@ -255,7 +256,8 @@ and `"C: "` before the third:
 
 {{< commit label-answer-C-text >}}
 
-Now what the narrator says should look much better.
+Now run your program and check that what the narrator says looks much
+better.
 
 
 ## Add another question
@@ -314,7 +316,7 @@ Your game should now ask both questions, one after the other.
 
 ## Use a loop to ask both questions
 
-Working like this is going to get very annoying when we have more
+Working like this is going to get annoying when we have more
 questions.  We're going to use the idea of a *loop* to fix the code
 and make it work with any number of questions.
 
@@ -392,12 +394,12 @@ so the test we want is `question_index < n_questions`.
 {{< commit add-while-loop-condition-line >}}
 
 And then we need to move the code to ask the question so that it's
-"inside" the `while` loop.
+"inside" the `while` loop.  This is the same as how, in Scratch, you
+put blocks inside the `repeat` block.
 
 The following change looks fiddly, but all that's happening is that
-the code moves across to the right by one indentation level.  You can
-do this in the editor by highlighting the code, and pressing the `TAB`
-key.
+the code moves across to the right by four spaces.  You can do this in
+the editor by highlighting the code, and pressing the `TAB` key.
 
 {{< commit indent-what-is-now-while-loop-body >}}
 
@@ -416,6 +418,9 @@ other.
 
 It might seem like we've just done a lot of work for no real benefit,
 but we're about to see why writing this loop is so useful.
+
+(There are other kinds of loops in Python.  We've picked the `while`
+loop for this tutorial.)
 
 
 ## Add a third question
@@ -497,26 +502,27 @@ that no button has yet been clicked:
 
 {{< commit clear-clicked-before-asking-question >}}
 
-And then wait until a button has been clicked.  We want to keep doing
-nothing as long as `clicked` is `False`.  We can write this test in a
-more natural-sounding way by using the `not` operator:
+And then the narrator needs to wait until a button has been clicked.
+We want to keep doing nothing as long as `clicked` is `False`.  We can
+write this test in a more natural-sounding way by using the `not`
+operator:
 
 {{< commit busy-wait-Narrator-until-clicked >}}
 
-The `pass` statement here does nothing.  Python needs *some*
-statements inside a `while` loop, even if you don't want anything to
-happen, so the `pass` statement is what we use.
+The `pass` statement here does nothing.  Unlike Scratch, Python needs
+to have *some* statements inside a `while` loop, even if you don't
+want anything to happen, so the `pass` statement is what we use.
 
-We won't need the delay any more:
+We don't need to wait any more:
 
 {{< commit remove-wait-2-seconds >}}
 
-This is one half of the problem — we've made the narrator wait until
-the `clicked` variable indicates that an answer button has been
+We have solved one half of the problem — we've made the narrator wait
+until the `clicked` variable tells us that an answer button has been
 clicked.  But nothing is yet setting that variable to `True`, so the
 narrator will wait forever!
 
-Each answer needs to respond to being clicked by setting the global
+When any answer button is clicked, it needs to set the global
 `clicked` variable to `True`.
 
 Moving a bit more quickly now, we need code which says we're using the
@@ -555,10 +561,10 @@ new variable near the top of the program:
 
 The `None` value is a special Python value which means "nothing" or
 "no value".  We have to assign *something* to a variable when
-declaring it.
+creating it.
 
 Starting with the `AnswerA` sprite, within its
-`when_this_sprite_clicked` code, we need to be able to work with this
+`when_this_sprite_clicked` code, we need to be able to use this
 variable.  Add a declaration:
 
 {{< commit add-global-answer-declaration-to-AnswerA >}}
@@ -606,9 +612,9 @@ has no points, so we'll start `score` off at zero:
 
 {{< commit initialise-local-score-variable >}}
 
-If the player gets a question right, they get a point.  We can add
-code inside the `if`/`else` code we used to tell the player whether
-they got the question right:
+If the player gets a question right, they get a point.  We already
+have the `if`/`else` code which tells the player whether they got the
+question right, so we can add some code here:
 
 {{< commit award-point-for-correct-answer >}}
 
@@ -616,7 +622,7 @@ After asking all the questions, we want the narrator to announce the
 score.  First we'll put together the text of what the narrator will
 say.  We have already seen how to glue strings together to make one
 big string by using the `+` operator.  But this time it's more
-complicated, because the pieces we want to assemble are:
+complicated, because the pieces we want to join together are:
 
 * the string `"You got"`;
 * the number of questions the player got right — this is the value of
@@ -647,7 +653,8 @@ Putting this all together, we want to compute
 
 We'll store the result in the variable `text`.  Be very careful of the
 indentation of the next line of code — it needs to be level with the
-`while` at the top of the loop.
+`while` at the top of the loop, so that the new code is *outside* the
+`while` loop.
 
 {{< commit compute-final-score-text >}}
 
