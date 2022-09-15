@@ -288,11 +288,11 @@ the bird, using a comment line:
 ## Challenges
 
 1. You could add a score to the game so that the bird says things like
-"Got you 5 times". Create a variable in the Bird sprite, and add one
-to it every time the star is caught. You can use a variable called
-"score" in the say command like this: `self.say("Score is " +
-str(score))`. The `str` command converts a number to a string so that
-it can be joined with another string using `+`.
+   "Got you 5 times". Create a variable in the Bird sprite, and add
+   one to it every time the star is caught. You can use a variable
+   called "score" in the `say()` command like this: `self.say("Score
+   is " + str(self.score))`. The `str()` command converts a number to
+   a string so that it can be joined with another string using `+`.
 
 2. You could add a second Sprite to chase, which moves faster.
 
