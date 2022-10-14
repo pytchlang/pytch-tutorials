@@ -49,3 +49,13 @@ class Mole(pytch.Sprite):
         else:
             self.start_sound("thud")
             self.score = 0
+
+    @pytch.when_key_pressed("l")
+    def hit_right(self):
+        if self.costume_number == 3:
+            self.start_sound("splat")
+            self.score += 1
+            self.switch_costume("all-empty")
+        else:
+            self.start_sound("thud")
+            self.score = 0
