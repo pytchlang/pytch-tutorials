@@ -8,6 +8,9 @@ class Field(pytch.Stage):
 class Mole(pytch.Sprite):
     Costumes = [
         "all-empty.png",
+        "left-mole.png",
+        "centre-mole.png",
+        "right-mole.png",
     ]
 
     @pytch.when_green_flag_clicked
