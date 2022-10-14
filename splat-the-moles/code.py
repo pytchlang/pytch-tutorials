@@ -23,3 +23,7 @@ class Mole(pytch.Sprite):
             pytch.wait_seconds(random.uniform(0.5, 1.0))
             self.switch_costume("all-empty")
             pytch.wait_seconds(random.uniform(0.5, 1.0))
+
+    @pytch.when_green_flag_clicked
+    def set_up_scoring(self):
+        self.score = 0
