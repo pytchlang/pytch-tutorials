@@ -43,3 +43,11 @@ TODO: Write tutorial
 {{< commit copy-paste-edit-for-centre >}}
 
 {{< commit copy-paste-edit-for-right >}}
+
+
+## Credits
+
+We have used various freely-available resources to create this
+project:
+
+{{< asset-credits >}}
