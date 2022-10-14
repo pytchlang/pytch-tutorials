@@ -37,4 +37,5 @@ class Mole(pytch.Sprite):
             self.score += 1
             self.switch_costume("all-empty")
         else:
+            self.start_sound("thud")
             self.score = 0
