@@ -21,3 +21,5 @@ class Mole(pytch.Sprite):
         while True:
             self.switch_costume(random.randint(1, 3))
             pytch.wait_seconds(random.uniform(0.5, 1.0))
+            self.switch_costume("all-empty")
+            pytch.wait_seconds(random.uniform(0.5, 1.0))
