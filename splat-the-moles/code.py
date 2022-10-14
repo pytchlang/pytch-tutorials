@@ -1,4 +1,5 @@
 import pytch
+import random
 
 
 class Field(pytch.Stage):
