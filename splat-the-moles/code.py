@@ -33,3 +33,5 @@ class Mole(pytch.Sprite):
     def hit_left(self):
         if self.costume_number == 1:
             self.score += 1
+        else:
+            self.score = 0
