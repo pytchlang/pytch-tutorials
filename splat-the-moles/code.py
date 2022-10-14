@@ -13,6 +13,7 @@ class Mole(pytch.Sprite):
         "centre-mole.png",
         "right-mole.png",
     ]
+    Sounds = ["splat.mp3", "thud.mp3"]
 
     @pytch.when_green_flag_clicked
     def pop_up_and_down(self):
