@@ -28,3 +28,6 @@ class Mole(pytch.Sprite):
     def set_up_scoring(self):
         self.score = 0
         pytch.show_variable(self, "score")
+
+    @pytch.when_key_pressed("j")
+    def hit_left(self):
