@@ -36,18 +36,17 @@ photo appear as the backdrop.
 ## Add the mole's holes
 
 Our next job is to add the mole.  There are a few different ways we
-could do this.  One way would be to have one Sprite per hole, with a
-different costume for whether the mole is hiding in the hole or
-popping its head up above ground.
-
-But we'll do it a different way.  We'll have a sprite with a costume
+could do this.  For this tutorial, we'll have a sprite with a costume
 showing a row of mole-less holes.  We'll add three more costumes, one
 with the mole popping out of the left hole, one with the mole popping
 out of the centre hole, and one with the mole popping out of the right
-hole.  By choosing different costumes, we can make it look like the
-mole is choosing different holes to pop out of.
+hole.  By making the sprite wear different costumes, we can make it
+look like the mole is choosing different holes to pop out of.
 
-So what we'll do first is add the three empty holes that the mole will
+(If you're wondering what other ways we could do this, have a look at
+the "Challenges" chapter at the end of this tutorial.)
+
+So we'll start off by adding the three empty holes that the mole will
 pop out of.
 
 Add a Sprite for the mole, with a "three empty holes" costume.  You
@@ -62,10 +61,10 @@ isn't on one big long line.)
 
 Run your program now — click the green flag.
 
-This looks just about alright, although the holes are a bit high up.
-Let's make it so they're a bit lower down the screen.  To do this, we
-want to write some code that runs as soon as the green flag is
-clicked.  In Scratch, we would do something like
+This looks alright, but the holes are a bit high up.  Let's make it so
+they're a bit lower down the screen.  To do this, we want to write
+some code that runs as soon as the green flag is clicked.  In Scratch,
+we would do something like
 
 ``` scratch
 when green flag clicked:
@@ -77,10 +76,10 @@ the `y: -70` means we want the sprite a bit lower than the centre
 top-to-bottom.
 
 In Pytch we do something very similar.  We need a line of Python code
-which works as the "hat block", and also a line of Python code which
-does the same job as the "go to" block.  One new thing in Pytch is
-that we need to give our script a _name_.  (If you want to know the
-details, what we're doing is _defining_ a Python _function_.)
+which works as the "hat block", and a line of Python code which does
+the same job as the "go to" block.  One new thing in Pytch is that we
+need to give our script a _name_.  (If you want to know the details,
+what we're doing is _defining_ a Python _function_.)
 
 We'll use the name `pop_up_and_down`, because in a minute, this script
 will also make the mole pop up from a random hole and then back down
@@ -99,8 +98,8 @@ you think it would look better a bit higher or lower.
 ## Add actual mole costumes
 
 Our Mole sprite now needs the rest of its costumes, to show it popping
-up out of each of the holes.  We add more costumes to the `Costumes`
-list:
+up out of each of the holes.  We can add more costumes to the `Mole`'s
+`Costumes` list like this:
 
 {{< commit add-Mole-other-costumes >}}
 
@@ -122,8 +121,8 @@ pick random (2) to (4)
 ### Saying we want to use random-number functions
 
 The Scratch `pick random` block is always available, but in Python we
-have to say we want to use the Python equivalent.  This is a bit like
-how in Scratch we need to turn on extensions like the _Music_ or _Pen_
+have to say we want to use the Python equivalent.  This is like how in
+Scratch we need to turn on extensions like the _Music_ or _Pen_
 blocks.
 
 In Python, we _import_ the functions that let us choose different
@@ -151,9 +150,9 @@ the 'body' of the `while` loop are `pytch.wait_seconds()` and
 `self.switch_costume()`, and then also the functions to get a random
 number.  There are some important differences:
 
-* Scratch guesses (usually correctly!) whether you want whole-number
-  random numbers or numbers which can have a fractional part.  Python
-  has separate functions for the two jobs:
+* Scratch works out whether you want whole-number random numbers or
+  numbers which can have a fractional part.  Python has separate
+  functions for the two jobs:
 
     * `random.randint(lowest, highest)` chooses a random whole number
       from `lowest` to `highest` inclusive.
@@ -162,9 +161,9 @@ number.  There are some important differences:
       anywhere between `lowest` and `highest`, not necessarily a whole
       number.
 
-* In Scratch, you give the position of a thing in a list by calling
+* In Scratch, you give the position of an item in a list by calling
   the first one _position 1_, the second one _position 2_, and so on.
-  Python _counts from zero in this situation_, so in Python, the first
+  _Python counts from zero in this situation_, so in Python, the first
   thing in a list is at _position 0_.
 
 Just like Scratch, you can say which costume you want to switch to
@@ -246,26 +245,27 @@ when-green-flag script which sets the score to zero:
 
 {{< commit set-up-scoring >}}
 
-If you run the game, nothing will happen yet, because we're not doing
-anything with the `score` variable.  In Scratch we could display the
-score by checking the check-box next to the variable, or by using this
-block:
+If you run the game, you won't see anything different happen, because
+we're not doing anything with the `score` variable.  In Scratch we
+could display the score by checking the check-box next to the
+variable, or by using this block:
 
 ``` scratch
 show variable [score v]
 ```
 
 Pytch does have a command like that block, but we have to give a bit
-more information.  We have to say who owns the variable, and we can
-also, if we want, say where on the stage the variable display should
-appear.  The `score` variable belongs to the Mole, which is called
-`self` inside a script.  And we want to put the score display just a
-bit in from the top-right of the stage.
+more information: We have to say who owns the variable.  Our `score`
+variable belongs to the Mole, which is called `self` inside its
+scripts.
 
 Putting this together, we want to add this line underneath the code we
 just wrote:
 
 {{< commit show-score >}}
+
+Unusually, we give the _name_ of the `score` variable as a _string_
+here, so make sure you include the `""` characters.
 
 Try this now — you should see a `score 0` display on the stage.
 
