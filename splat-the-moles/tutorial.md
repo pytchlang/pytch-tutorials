@@ -468,6 +468,10 @@ ideas:
 
 * Make the game get more difficult as the player gets more points.
 
+* The Mole has two green-flag scripts.  Can you combine them into one
+  script?  Do you think the program is easier to understand with two
+  green-flag scripts or one?
+
 
 ### Advanced challenges
 
