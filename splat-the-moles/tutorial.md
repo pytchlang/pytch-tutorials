@@ -55,7 +55,10 @@ can check the "Images and sounds" tab to see what it looks like.
 
 {{< commit add-Mole-with-all-empty >}}
 
-    TODO: Explain why list laid out like that.
+(Python lets you write lists on more than one line like this.  We're
+doing this because in a minute we'll need to add some more costumes,
+and the code will be easier for us to read if the `Costumes` list
+isn't on one big long line.)
 
 Run your program now — click the green flag.
 
@@ -104,8 +107,6 @@ list:
 This won't make any difference to what the game does, because we
 haven't yet told the mole to switch to any of these costumes.  We'll
 do that next.
-
-    TODO: This is why we laid out the Costumes list like that.
 
 
 ## Pop out of random holes
