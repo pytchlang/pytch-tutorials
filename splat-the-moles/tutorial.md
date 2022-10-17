@@ -138,8 +138,8 @@ different holes.  In Scratch, we might do something like
 
 ``` scratch
 forever
-  wait (pick random (0.5) to (1)) seconds
   switch costume to (pick random (2) to (4))
+  wait (pick random (0.5) to (1)) seconds
 ```
 
 In Python we do something very similar.  The Python equivalent of
@@ -185,8 +185,8 @@ The final piece to make the mole hide underground in between popping
 out of random holes is to add something like the Scratch blocks
 
 ``` scratch
-wait (pick random (0.5) to (1)) seconds
 switch costume to (all-empty v)
+wait (pick random (0.5) to (1)) seconds
 ```
 
 inside the `forever` block.
