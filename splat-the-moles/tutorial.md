@@ -217,8 +217,8 @@ to `10`, to give
 self.switch_costume(random.randint(1, 10))
 ```
 
-and running your program.  If the random number Python comes up with
-is bigger than 3, you'll get an error like
+and running your program.  If Python comes up with a random number
+bigger than 3, you'll get an error like
 
 ``` text
 ValueError: could not switch to Costume number 8 in class "Mole": it only has 4 Costumes
@@ -235,8 +235,8 @@ mole.  The Mole will keep score of how many times the player has
 managed to splat it.
 
 To keep track of something, our program will use a _variable_.  It
-will be like a "this sprite only" variable in Scratch.  In Python, to
-create a variable, you just set it to a value.  There's no separate
+will be like a "For this sprite only" variable in Scratch.  In Python,
+to create a variable, you just set it to a value.  There's no separate
 step to create it.
 
 At the very start of the game, we want to set the score to zero,
@@ -245,10 +245,13 @@ when-green-flag script which sets the score to zero:
 
 {{< commit set-up-scoring >}}
 
+The `self.` at the start of `self.score` is what makes it a "For this
+sprite only" variable.
+
 If you run the game, you won't see anything different happen, because
-we're not doing anything with the `score` variable.  In Scratch we
-could display the score by checking the check-box next to the
-variable, or by using this block:
+we're not doing anything with the Mole's `score` variable.  In
+Scratch, we could display the score by checking the check-box next to
+the variable, or by using this block:
 
 ``` scratch
 show variable [score v]
@@ -256,8 +259,8 @@ show variable [score v]
 
 Pytch does have a command like that block, but we have to give a bit
 more information: We have to say who owns the variable.  Our `score`
-variable belongs to the Mole, which is called `self` inside its
-scripts.
+variable belongs to the Mole, which as we've seen, is called `self`
+inside its scripts.
 
 Putting this together, we want to add this line underneath the code we
 just wrote:
@@ -274,13 +277,13 @@ Try this now — you should see a `score 0` display on the stage.
 
 Now let's make it so the player can try to splat the mole!
 
-We'll make the game be controlled by the keyboard.  The player will:
+The game will be controlled by the keyboard.  The player will:
 
-* press `j` to aim at the left hole;
+* press `j` to hit the left hole;
 
-* press `k` to aim at the centre hole;
+* press `k` to hit the centre hole;
 
-* press `l` to aim at the right hole.
+* press `l` to hit the right hole.
 
 We'll get the code right for `j` (the left hole) first, and then see
 what changes are needed for the other two.
@@ -347,6 +350,9 @@ Remembering this, the code looks like:
 
 {{< commit add-hit-left-basic-body >}}
 
+Try it!
+
+
 ### What if the player misses?
 
 But this is now too easy.  The player can just keep pressing `j` and
@@ -355,8 +361,8 @@ point.  There needs to be a way to discourage the player from doing
 this.
 
 Let's be harsh — if the player misses, they lose all their points.
-This should happen if the player presses `j` but the mole is _not_ in
-costume number `1`.  We need something like Scratch's
+This should happen if the player presses `j` but the mole is _not_
+wearing costume number `1`.  We need something like Scratch's
 
 ``` scratch
 if <> then
@@ -374,12 +380,12 @@ _Challenges_ at the end of this tutorial for some other ideas.
 
 ### Make a splatted mole go back underground
 
-There's still a small way the player can get more points.  If they
-keep hitting `j` while the mole is popped up out of the left hole,
-they can rack up points.
+There's still a small way the player can unfairly get more points.  If
+they keep hitting `j` while the mole is popped up out of the left
+hole, they can rack up points.
 
-Let's make the mole go back underground if the player has splatted it.
-We can do this just by making it switch back to the `"all-empty"`
+Let's make the mole go back underground when the player splats it.  We
+can do this just by making it switch back to the `"all-empty"`
 costume:
 
 {{< commit left-hit-return-underground >}}
@@ -390,11 +396,9 @@ Try it now!
 ## Add sound effects
 
 Let's add some sounds to the game.  This tutorial comes with some
-examples, or you can use your own.
-
-Just as we need to list the image files we want a sprite to be able to
-use for its costumes, we need to list the sound files we want a sprite
-to be able to use.
+examples, or you can find and use your own.  Just as we need to list
+the image files we want a sprite to be able to use for its costumes,
+we need to list the sound files we want a sprite to be able to use.
 
 Add a variable `Sounds` near the top of the Mole sprite, just after
 the `Costumes`:
@@ -482,6 +486,6 @@ ideas:
 ## Credits
 
 We have used various freely-available resources to create this
-project:
+tutorial:
 
 {{< asset-credits >}}
