@@ -95,14 +95,14 @@ you think it would look better a bit higher or lower.
 
 ## Add actual mole costumes
 
-Our Mole sprite now needs the rest of its costumes, to show it popping
-up out of each of the holes.  We can add more costumes to the `Mole`'s
-`Costumes` list like this:
+Our `Mole` sprite now needs the rest of its costumes, to show it
+popping up out of each of the holes.  We can add more costumes to the
+`Mole`'s `Costumes` list like this:
 
 {{< commit add-Mole-other-costumes >}}
 
 This won't make any difference to what the game does, because we
-haven't yet told the mole to switch to any of these costumes.  We'll
+haven't yet told our `Mole` to switch to any of these costumes.  We'll
 do that next.
 
 
@@ -133,8 +133,8 @@ This lets us use Python's random-number functions.
 
 ### Choosing a random hole to pop out of
 
-And now we can write some code to get the mole to keep popping up in
-different holes.  In Scratch, we might do something like
+And now we can write some code to get the mole to keep popping up out
+of different holes.  In Scratch, we might do something like
 
 ``` scratch
 forever
@@ -231,8 +231,8 @@ After you've fixed the deliberate mistake, come back to this
 ## Set up scoring
 
 Now let's start making the code which lets the player try to splat the
-mole.  The Mole will keep score of how many times the player has
-managed to splat it.
+mole.  The `Mole` sprite will keep score of how many times the player
+has managed to splat it.
 
 To keep track of something, our program will use a _variable_.  It
 will be like a "For this sprite only" variable in Scratch.  In Python,
@@ -249,9 +249,9 @@ The `self.` at the start of `self.score` is what makes it a "For this
 sprite only" variable.
 
 If you run the game, you won't see anything different happen, because
-we're not doing anything with the Mole's `score` variable.  In
-Scratch, we could display the score by checking the check-box next to
-the variable, or by using this block:
+we're not doing anything with the `Mole` sprite's `score` variable.
+In Scratch, we could display the score by checking the check-box next
+to the variable, or by using this block:
 
 ``` scratch
 show variable [score v]
@@ -259,8 +259,8 @@ show variable [score v]
 
 Pytch does have a command like that block, but we have to give a bit
 more information: We have to say who owns the variable.  Our `score`
-variable belongs to the Mole, which as we've seen, is called `self`
-inside its scripts.
+variable belongs to the `Mole` sprite, which as we've seen, is called
+`self` inside its scripts.
 
 Putting this together, we want to add this line underneath the code we
 just wrote:
@@ -298,7 +298,7 @@ when [j v] key pressed
 
 and we can do the same thing in Pytch, remembering that we have to
 give a name to the script.  We'll add the start of a new script to our
-Mole sprite:
+`Mole` sprite:
 
 {{< commit add-hit-left-hat-block >}}
 
@@ -310,22 +310,23 @@ to have a _body_, and we haven't written it yet.
 
 There are a couple of things we need to know next:
 
-* How do we know which costume the mole is wearing?  Remember that
-  there is one costume for each hole the mole might pop out of, as
-  well as a costume for when the mole is hiding underground.
+* How do we know which costume the `Mole` sprite is wearing?  Remember
+  that there is one costume for each hole the mole might pop out of,
+  as well as a costume for when the mole is hiding underground.
 
 * How do we do different things depending on whether the mole is
   popped out of the left hole?
 
 For the first question, we can get Pytch to tell us what costume the
-mole is wearing.  In Scratch, we could use this reporter block:
+`Mole` sprite is wearing.  In Scratch, we could use this reporter
+block:
 
 ``` scratch
 (costume [number v])
 ```
 
 We can do something similar in Pytch, by using `self.costume_number`
-inside a Mole script.
+inside a `Mole` script.
 
 If the mole is popped out of the left hole, this will be `1`.  If the
 mole is popped out of another hole, it will be `2` or `3` (depending
@@ -334,7 +335,7 @@ which hole), and if the mole is hiding underground, it will be `0`
 
 So we want to ask
 
-> Is the mole's costume number equal to 1?
+> Is the `Mole` sprite's costume number equal to 1?
 
 and then only give the player a point if the answer is 'yes'.  Scratch
 has an `if` block for this, which we would use something like
@@ -361,8 +362,8 @@ point.  There needs to be a way to discourage the player from doing
 this.
 
 Let's be harsh — if the player misses, they lose all their points.
-This should happen if the player presses `j` but the mole is _not_
-wearing costume number `1`.  We need something like Scratch's
+This should happen if the player presses `j` but the `Mole` sprite is
+_not_ wearing costume number `1`.  We need something like Scratch's
 
 ``` scratch
 if <> then
@@ -400,7 +401,7 @@ examples, or you can find and use your own.  Just as we need to list
 the image files we want a sprite to be able to use for its costumes,
 we need to list the sound files we want a sprite to be able to use.
 
-Add a variable `Sounds` near the top of the Mole sprite, just after
+Add a variable `Sounds` near the top of the `Mole` sprite, just after
 the `Costumes`:
 
 {{< commit add-sounds >}}
@@ -484,11 +485,11 @@ There is often more than one way to write a program.  Here are some
 ways you could investigate writing the program differently to how this
 tutorial did it:
 
-* The Mole has two green-flag scripts.  Can you combine them into one
-  script?  Do you think the program is easier to understand with two
-  green-flag scripts or one?
+* The `Mole` sprite has two green-flag scripts.  Can you combine them
+  into one script?  Do you think the program is easier to understand
+  with two green-flag scripts or one?
 
-* **Advanced:** Instead of one Mole sprite with four costumes, we
+* **Advanced:** Instead of one `Mole` sprite with four costumes, we
   could have made three sprites: `LeftMole`, `CentreMole`, and
   `RightMole`, each with two costumes: an "empty hole" one and a "mole
   popping out of hole" one.  This tutorial comes with suitable
