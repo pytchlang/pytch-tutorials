@@ -270,7 +270,7 @@ here, so make sure you include the `""` characters.
 Try this now — you should see a `score 0` display on the stage.
 
 
-## Let player hit left hole
+## Hit the left hole
 
 Now let's make it so the player can try to splat the mole!
 
@@ -412,7 +412,7 @@ And to play a "thud" sound if they miss, add:
 {{< commit play-thud-if-miss-left >}}
 
 
-## Let player hit other holes
+## Hit the other holes
 
 We've done all the work now.  We can finish the game by copying  the
 code for the left hole, and pasting it twice — once for the centre
@@ -446,7 +446,7 @@ advanced challenges in the next chapter.)
 Try the finished game!
 
 
-## Challenges
+## Challenges and questions
 
 Maybe you can think of ways to make this game better.  Here are some
 ideas:
