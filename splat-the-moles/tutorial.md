@@ -8,8 +8,6 @@ moles to score points.  But if they miss, they lose all their points!
 
 ---
 
-TODO: Write tutorial
-
 ## Create a stage with backdrop
 
 Our first job will be to set up the Stage for our game.  This tutorial
