@@ -442,8 +442,8 @@ And along the same lines, we get this for the right hole:
 
 {{< commit copy-paste-edit-for-right >}}
 
-(If you're wondering whether there's a better way, have a look at the
-advanced challenges in the next chapter.)
+(If you're wondering whether there's a better way then copying and
+pasting, there is, but it's outside the scope of this tutorial.)
 
 ### Game complete!
 
@@ -479,7 +479,6 @@ ideas:
 
 ### Advanced challenges
 
-* Refactor to remove dup'd code.
 
 * Try implementing the "one sprite per hole" approach.
 
