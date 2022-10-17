@@ -478,6 +478,8 @@ ideas:
   hole for a longer or shorter time.  You could even make the game get
   more difficult as the player gets more points.
 
+### Other ways of doing things
+
 There is often more than one way to write a program.  Here are some
 ways you could investigate writing the program differently to how this
 tutorial did it:
