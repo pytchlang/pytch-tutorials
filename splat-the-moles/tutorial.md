@@ -499,6 +499,11 @@ tutorial did it:
     * How will you keep track of the score?  One way would be to use a
       _global variable_.
 
+    * With one sprite per mole/hole, you could let the player click or
+      tap to hit a hole, instead of using the keyboard.  Do you think
+      that would be better?  Can you change the code so it reacts to
+      the sprite being clicked?
+
 
 ## Credits
 
