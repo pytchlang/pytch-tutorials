@@ -11,19 +11,19 @@ moles to score points.  But if they miss, they lose all their points!
 ## Create a stage with backdrop
 
 Our first job will be to set up the Stage for our game.  This tutorial
-comes with a photo of a green field.  You can check what it looks like
-in the "Images and sounds" tab — come back to this "Tutorial" tab when
-you've done that.
+comes with a photo of a green field, `green-field.jpg`.  You can check
+what it looks like in the "Images and sounds" tab — come back to this
+"Tutorial" tab when you've done that.
 
 In Pytch, to make our stage, we:
 
 * give it a name (`Field`);
 
 * say what its backdrops should be, using a Python _list_.  Even
-  though there's only one backdrop, we still need to put it in a list,
-  using square bracket `[]` characters.
+  though there's only one backdrop, we still put it in a list, using
+  square bracket `[]` characters.
 
-To do these two things, we need this code:
+To do these two things, we need to add this code:
 
 {{< commit add-Field-as-stage >}}
 
@@ -34,7 +34,7 @@ photo appear as the backdrop.
 ## Add the mole's holes
 
 Our next job is to add the mole.  There are a few different ways we
-could do this.  For this tutorial, we'll have a sprite with a costume
+could do this.  For this tutorial, we'll have one sprite with a costume
 showing a row of mole-less holes.  We'll add three more costumes, one
 with the mole popping out of the left hole, one with the mole popping
 out of the centre hole, and one with the mole popping out of the right
@@ -146,23 +146,25 @@ In Python we do something very similar.  The Python equivalent of
 Scratch's `forever` is `while True:`.  The Pytch functions we need for
 the 'body' of the `while` loop are `pytch.wait_seconds()` and
 `self.switch_costume()`, and then also the functions to get a random
-number.  There are some important differences:
+number.
 
-* Scratch works out whether you want whole-number random numbers or
+There are some important differences:
+
+* Scratch works out whether you want whole-number random numbers, or
   numbers which can have a fractional part.  Python has separate
   functions for the two jobs:
 
     * `random.randint(lowest, highest)` chooses a random whole number
-      from `lowest` to `highest` inclusive.
+      ('integer') from `lowest` to `highest` inclusive.
 
     * `random.uniform(lowest, highest)` chooses a random number
       anywhere between `lowest` and `highest`, not necessarily a whole
       number.
 
-* In Scratch, you give the position of an item in a list by calling
-  the first one _position 1_, the second one _position 2_, and so on.
-  _Python counts from zero in this situation_, so in Python, the first
-  thing in a list is at _position 0_.
+* In Scratch, you give the position of an item in a list by saying the
+  first item is at _position 1_, the second one is at _position 2_,
+  and so on.  _Python counts from zero in this situation_, so in
+  Python, the first item in a list is at _position 0_.
 
 Just like Scratch, you can say which costume you want to switch to
 either by name, or by number.  We want to choose between the costumes
