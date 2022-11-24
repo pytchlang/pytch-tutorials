@@ -10,6 +10,10 @@
   tip-commit: bn/catch-apple-05
 - name: Blue Invaders
   tip-commit: bn/blue-invader-01
+- name: Multiple choice quiz
+  tip-commit: bn/multi-choice-quiz-02
+- name: Splat the moles
+  tip-commit: bn/splat-the-moles-01
 - name: Q*bert
   tip-commit: bn/qbert-04
 - name: Bunner
@@ -18,5 +22,3 @@
   tip-commit: bn/boing-05
 - name: Ticket vending machine
   tip-commit: bn/ticket-vending-machine-02
-- name: Multiple choice quiz
-  tip-commit: bn/multi-choice-quiz-02

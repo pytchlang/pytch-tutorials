@@ -18,6 +18,14 @@
   branch_name: bn/blue-invader-01
   dir_name: blue-invader
   commit_id: 4c0050b90887de68ab458372b7c746d3547b6afe
+- name: Multiple choice quiz
+  branch_name: bn/multi-choice-quiz-02
+  dir_name: multiple-choice-quiz
+  commit_id: d22294bff3e260e0bb1d81c5a90c45f4fc4a5354
+- name: Splat the moles
+  branch_name: bn/splat-the-moles-01
+  dir_name: splat-the-moles
+  commit_id: 9e506849a9cc810fdeaf426d41c3d8b77930bd1d
 - name: Q*bert
   branch_name: bn/qbert-04
   dir_name: qbert
@@ -34,7 +42,3 @@
   branch_name: bn/ticket-vending-machine-02
   dir_name: ticket-vending-machine
   commit_id: 646eac1f7d85cd34a8d21ca340b8aa7f64f32bf0
-- name: Multiple choice quiz
-  branch_name: bn/multi-choice-quiz-02
-  dir_name: multiple-choice-quiz
-  commit_id: d22294bff3e260e0bb1d81c5a90c45f4fc4a5354
