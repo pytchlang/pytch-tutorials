@@ -22,6 +22,7 @@ class Mole(pytch.Sprite):
         while True:
             chosen_costume_number = random.randint(1, 3)
             self.switch_costume(chosen_costume_number)
+            gpio_pin = 21 + chosen_costume_number
             pytch.wait_seconds(random.uniform(0.5, 1.0))
             self.switch_costume("all-empty")
             pytch.wait_seconds(random.uniform(0.5, 1.0))
