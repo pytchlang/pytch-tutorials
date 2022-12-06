@@ -30,7 +30,7 @@ class Mole(pytch.Sprite):
         self.score = 0
         pytch.show_variable(self, "score")
 
-    @pytch.when_key_pressed("j")
+    @pytch.when_gpio_goes_low(16)
     def hit_left(self):
         if self.costume_number == 1:
             self.start_sound("splat")
