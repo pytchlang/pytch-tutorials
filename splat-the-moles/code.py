@@ -54,7 +54,7 @@ class Mole(pytch.Sprite):
         if self.costume_number == 2:
             self.start_sound("splat")
             self.score += 1
-            self.switch_costume("all-empty")
+            self.hide_underground()
         else:
             self.start_sound("thud")
             self.score = 0
