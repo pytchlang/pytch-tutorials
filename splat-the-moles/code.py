@@ -20,7 +20,8 @@ class Mole(pytch.Sprite):
         self.go_to_xy(0, -70)
 
         while True:
-            self.switch_costume(random.randint(1, 3))
+            chosen_costume_number = random.randint(1, 3)
+            self.switch_costume(chosen_costume_number)
             pytch.wait_seconds(random.uniform(0.5, 1.0))
             self.switch_costume("all-empty")
             pytch.wait_seconds(random.uniform(0.5, 1.0))
