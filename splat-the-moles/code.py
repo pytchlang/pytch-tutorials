@@ -31,10 +31,7 @@ class Mole(pytch.Sprite):
             gpio_pin = 21 + chosen_costume_number
             pytch.set_gpio_output(gpio_pin, 1)
             pytch.wait_seconds(random.uniform(0.5, 1.0))
-            self.switch_costume("all-empty")
-            pytch.set_gpio_output(22, 0)
-            pytch.set_gpio_output(23, 0)
-            pytch.set_gpio_output(24, 0)
+            self.hide_underground()
             pytch.wait_seconds(random.uniform(0.5, 1.0))
 
     @pytch.when_green_flag_clicked
