@@ -15,6 +15,12 @@ class Mole(pytch.Sprite):
     ]
     Sounds = ["splat.mp3", "thud.mp3"]
 
+    def hide_underground(self):
+        self.switch_costume("all-empty")
+        pytch.set_gpio_output(22, 0)
+        pytch.set_gpio_output(23, 0)
+        pytch.set_gpio_output(24, 0)
+
     @pytch.when_green_flag_clicked
     def pop_up_and_down(self):
         self.go_to_xy(0, -70)
