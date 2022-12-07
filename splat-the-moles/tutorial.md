@@ -451,6 +451,147 @@ pasting, there is, but it's outside the scope of this tutorial.)
 Try the finished game!
 
 
+## Using real arcade buttons
+
+We now want to be able to control our game using the real physical
+buttons, and light the real physical lights.  A lot of our program
+will stay the same.
+
+### Splatting moles using the buttons
+
+At the moment, the player controls the game using the "`j`", "`k`",
+and "`l`" keys.  To change it so that the player uses the physical
+arcade buttons, we only need to change the "hat blocks".
+
+Each switch is wired up so that it connects one of the Raspberry Pi's
+"GPIO" pins to "low" (also known as "ground" or "0V") when it's
+pressed.  We can use a hat block to say we want to run our code when
+this happens.
+
+The three switches are connected as follows:
+
+* Left switch to pin 16.
+* Centre switch to pin 20.
+* Right switch to pin 21.
+
+So we can change the hat block of the `hit_left()` method like this:
+
+{{< commit control-left-with-gpio >}}
+
+And change the hat block of the `hit_centre()` method like this:
+
+{{< commit control-centre-with-gpio >}}
+
+And change the hat block of the `hit_right()` method like this:
+
+{{< commit control-right-with-gpio >}}
+
+### Lighting an LED for the mole
+
+At the moment, a mole pops up out of one of the holes, on the screen.
+We'll give the player an extra clue by lighting the matching LED.
+
+We already have some code to switch to a randomly-chosen costume:
+
+``` python
+self.switch_costume(random.randint(1, 3))
+```
+
+We now need to use that random number for *two* things:
+
+* To know what costume to switch to.
+* To know which LED to light up.
+
+So we will use a variable to store the random number, and then use it
+straight away in the ``switch_costume()`` call:
+
+{{< commit introduce-chosen-costume-number-variable >}}
+
+The LEDs are wired up like this:
+
+* The left LED is wired to pin 22.
+* The centre LED is wired to pin 23.
+* The right LED is wired to pin 24.
+
+And we know that the chosen costume number variable will have one of
+these values:
+
+* `chosen_costume_number` = 1, to make the mole appear in the left
+  hole.
+* `chosen_costume_number` = 2, to make the mole appear in the centre
+  hole.
+* `chosen_costume_number` = 3, to make the mole appear in the right
+  hole.
+
+So to know which LED to light up, we can put these together to see:
+
+* If `chosen_costume_number` is 1, light up the LED on pin 22.
+* If `chosen_costume_number` is 2, light up the LED on pin 23.
+* If `chosen_costume_number` is 3, light up the LED on pin 24.
+
+We *could* write some `if`/`else` statements, but we can also notice
+that the pin number is always 21 plus the costume number.  We'll use
+this to work out the required pin number with arithmetic:
+
+{{< commit compute-gpio-pin-number >}}
+
+And now we can turn that LED on with the `set_gpio_output()`
+function.  This needs two pieces of information: what pin to control,
+and whether to turn it on (`1`) or off (`0`).
+
+{{< commit turn-on-LED >}}
+
+When the mole goes back underground, we want to turn all LEDs off:
+
+{{< commit turn-off-all-LEDs >}}
+
+(We could instead do this with a `for` loop, but for just three lines,
+it's not clear that it's worth it.)
+
+But if you try this now, you'll see that the LED stays on after you've
+hit the right button.  The three 'hit' methods all switch to the 'all
+empty' costume, but don't turn the LEDs off.
+
+We could just copy and paste the three `pytch.set_gpio_output()` lines
+into each of those functions, but we'll do it a more tidy way.
+
+### Defining a function to hide the mole
+
+Perhaps you've used the Scratch feature which lets you define your own
+custom blocks.  We'll do something very similar here, to define a
+function which does both parts of hiding the mole underground:
+
+* Switch to the 'all holes empty' costume on the screen.
+* Turn all the LEDs off.
+
+We use `def` in the same way as always, but we do not add a "hat
+block".  The code here is copied from our existing code in
+`pop_up_and_down()`:
+
+{{< commit define-hide-underground-method >}}
+
+And now, in `pop_up_and_down()` we can just use our new "custom
+block":
+
+{{< commit use-hide-underground-method >}}
+
+The point of doing this is that it's now very easy to use this same
+behaviour in the other three places we need to make the mole hide
+underground, which are:
+
+When the player successfully hits the mole in the left hole:
+
+{{< commit use-hide-underground-when-left-hit >}}
+
+When the player successfully hits the mole in the centre hole:
+
+{{< commit use-hide-underground-when-centre-hit >}}
+
+And when the player successfully hits the mole in the right hole:
+
+{{< commit use-hide-underground-when-right-hit >}}
+
+
 ## Challenges and questions
 
 Maybe you can think of ways to make this game better.  Here are some
@@ -478,6 +619,10 @@ ideas:
 * Adjust the difficulty of the game by making the mole stay out of its
   hole for a longer or shorter time.  You could even make the game get
   more difficult as the player gets more points.
+
+* In the hardware version, make all the LEDs be *on* when the mole is
+  hiding underground, with one LED turning *off* to show which hole
+  the mole has popped out of.
 
 ### Other ways of doing things
 
