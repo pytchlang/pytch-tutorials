@@ -1,3 +1,62 @@
 {
-    "difficulty": "advanced"
+    "difficulty": "advanced",
+    "groupedProjectAssets": [
+        {
+            "name": "digits",
+            "assets": [
+                "images/digit-0.png",
+                "images/digit-1.png",
+                "images/digit-2.png",
+                "images/digit-3.png",
+                "images/digit-4.png",
+                "images/digit-5.png",
+                "images/digit-6.png",
+                "images/digit-7.png",
+                "images/digit-8.png",
+                "images/digit-9.png"
+            ]
+        },
+        {
+            "name": "splash",
+            "assets": [
+                "images/splash-0.png",
+                "images/splash-1.png",
+                "images/splash-2.png",
+                "images/splash-3.png",
+                "images/splash-4.png",
+                "images/splash-5.png",
+                "images/splash-6.png",
+                "images/splash-7.png"
+            ]
+        },
+        {
+            "name": "cars",
+            "assets": [
+                "images/car00.png",
+                "images/car01.png",
+                "images/car20.png",
+                "images/car21.png"
+            ]
+        },
+        {
+            "name": "logs",
+            "assets": [
+                "images/log0.png",
+                "images/log1.png"
+            ]
+        },
+        {
+            "name": "bunny",
+            "assets": [
+                "images/down.png",
+                "images/down_squished.png",
+                "images/left.png",
+                "images/left_squished.png",
+                "images/right.png",
+                "images/right_squished.png",
+                "images/up.png",
+                "images/up_squished.png"
+            ]
+        }
+    ]
 }
