@@ -1,3 +1,15 @@
 {
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "groupedProjectAssets": [
+        {
+            "name": "quiz buttons",
+            "assets": [
+                "button-question.png",
+                "button-ans-A.png",
+                "button-ans-B.png",
+                "button-ans-C.png",
+                "button-ans-D.png"
+            ]
+        }
+    ]
 }
