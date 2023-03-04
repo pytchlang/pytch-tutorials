@@ -1,3 +1,19 @@
 {
-    "difficulty": "advanced"
+    "difficulty": "advanced",
+    "groupedProjectAssets": [
+        {
+            "name": "Boing player bats",
+            "assets": [
+                "player-normal.png",
+                "player-flash.png"
+            ]
+        },
+        {
+            "name": "Boing robot bats",
+            "assets": [
+                "robot-normal.png",
+                "robot-flash.png"
+            ]
+        }
+    ]
 }
