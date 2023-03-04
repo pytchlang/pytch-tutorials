@@ -1,3 +1,21 @@
 {
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "groupedProjectAssets": [
+        {
+            "name": "small moles",
+            "assets": [
+                "left-mole.png",
+                "all-empty.png",
+                "centre-mole.png",
+                "right-mole.png"
+            ]
+        },
+        {
+            "name": "large moles",
+            "assets": [
+                "hole-with-mole.png",
+                "empty-hole.png"
+            ]
+        }
+    ]
 }
