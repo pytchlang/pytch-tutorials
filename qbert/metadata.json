@@ -1,3 +1,21 @@
 {
-    "difficulty": "advanced"
+    "difficulty": "advanced",
+    "groupedProjectAssets": [
+        {
+            "name": "QBert character",
+            "assets": [
+                "qbert0.png",
+                "qbert1.png",
+                "qbert2.png",
+                "qbert3.png"
+            ]
+        },
+        {
+            "name": "blocks",
+            "assets": [
+                "block-lit.png",
+                "block-unlit.png"
+            ]
+        }
+    ]
 }
