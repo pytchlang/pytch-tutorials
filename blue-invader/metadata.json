@@ -1,1 +1,13 @@
-{"difficulty": "medium"}
+{
+    "difficulty": "medium",
+    "groupedProjectAssets": [
+        {
+            "name": "space invaders",
+            "assets": [
+                "enemy-alien.png",
+                "friendly-alien.png",
+                "special-alien.png"
+            ]
+        }
+    ]
+}

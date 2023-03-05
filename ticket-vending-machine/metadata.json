@@ -1,1 +1,21 @@
-{"difficulty": "advanced"}
+{
+    "difficulty": "advanced",
+    "groupedProjectAssets": [
+        {
+            "name": "tickets",
+            "assets": [
+                "adult.png",
+                "child.png",
+                "family.png"
+            ]
+        },
+        {
+            "name": "cash",
+            "assets": [
+                "coin-1.png",
+                "coin-2.png",
+                "note-5.png"
+            ]
+        }
+    ]
+}
