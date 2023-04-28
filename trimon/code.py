@@ -6,6 +6,12 @@ pattern = [1, 2, 3, 1]
 class Background(pytch.Stage):
     Backdrops = ["blue-gradient.png"]
 
+    @pytch.when_key_pressed("p")
+    def play_pattern(self):
+        for led in pattern:
+            message = "flash-" + str(led)
+            pytch.broadcast_and_wait(message)
+
 
 class LED1(pytch.Sprite):
     Costumes = ["light-off.png", "light-on.png"]
