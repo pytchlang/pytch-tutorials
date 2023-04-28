@@ -1,4 +1,5 @@
 import pytch
+import random
 
 pattern = []
 user_attempt = []
