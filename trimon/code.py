@@ -1,5 +1,7 @@
 import pytch
 
+pattern = [1, 2, 3, 1]
+
 
 class Background(pytch.Stage):
     Backdrops = ["blue-gradient.png"]
