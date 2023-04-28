@@ -9,6 +9,13 @@ light_flashing = False
 class Background(pytch.Stage):
     Backdrops = ["blue-gradient.png"]
 
+    @pytch.when_I_receive("add-flash-and-play")
+    def add_flash_and_play(self):
+        global pattern
+        new_light = random.randint(1, 3)
+        pattern.append(new_light)
+        pytch.broadcast_and_wait("play-pattern")
+
     @pytch.when_I_receive("play-pattern")
     def play_pattern(self):
         for led in pattern:
