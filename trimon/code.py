@@ -16,10 +16,11 @@ class Background(pytch.Stage):
 
     @pytch.when_I_receive("add-flash-and-play")
     def add_flash_and_play(self):
-        global pattern
+        global pattern, pressing_allowed
         new_light = random.randint(1, 3)
         pattern.append(new_light)
         pytch.broadcast_and_wait("play-pattern")
+        pressing_allowed = True
 
     @pytch.when_I_receive("play-pattern")
     def play_pattern(self):
