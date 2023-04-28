@@ -50,3 +50,9 @@ class LED3(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def move_to_position(self):
         self.go_to_xy(140, 80)
+
+    @pytch.when_I_receive("flash-3")
+    def flash(self):
+        self.switch_costume(1)
+        self.play_sound_until_done("note-3")
+        self.switch_costume(0)
