@@ -36,6 +36,12 @@ class LED2(pytch.Sprite):
     def move_to_position(self):
         self.go_to_xy(0, 80)
 
+    @pytch.when_I_receive("flash-2")
+    def flash(self):
+        self.switch_costume(1)
+        self.play_sound_until_done("note-2")
+        self.switch_costume(0)
+
 
 class LED3(pytch.Sprite):
     Costumes = ["light-off.png", "light-on.png"]
