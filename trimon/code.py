@@ -81,3 +81,15 @@ class LED3(pytch.Sprite):
         self.switch_costume(1)
         self.play_sound_until_done("note-3")
         self.switch_costume(0)
+
+
+class Button3(pytch.Sprite):
+    Costumes = ["green-button.png"]
+
+    @pytch.when_green_flag_clicked
+    def move_to_position(self):
+        self.go_to_xy(140, -80)
+
+    @pytch.when_this_sprite_clicked
+    def press_button(self):
+        pytch.broadcast_and_wait("flash-3")
