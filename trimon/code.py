@@ -31,6 +31,7 @@ class Background(pytch.Stage):
 
     @pytch.when_I_receive("check-user-attempt")
     def check_user_attempt(self):
+        global pressing_allowed
         user_attempt_length = len(user_attempt)
         pattern_start = pattern[:user_attempt_length]
         print("pattern is", pattern)
@@ -42,6 +43,7 @@ class Background(pytch.Stage):
                 print("Whole pattern OK")
                 pytch.wait_seconds(0.25)
                 user_attempt.clear()
+                pressing_allowed = False
                 pytch.broadcast_and_wait("add-flash-and-play")
         else:
             print("FAIL")
