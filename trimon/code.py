@@ -29,6 +29,10 @@ class LED1(pytch.Sprite):
         self.switch_costume(0)
 
 
+class Button1(pytch.Sprite):
+    Costumes = ["green-button.png"]
+
+
 class LED2(pytch.Sprite):
     Costumes = ["light-off.png", "light-on.png"]
     Sounds = ["note-2.mp3"]
