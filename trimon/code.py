@@ -15,6 +15,9 @@ class Background(pytch.Stage):
             pytch.broadcast_and_wait(message)
             pytch.wait_seconds(0.1)
 
+    @pytch.when_I_receive("check-user-attempt")
+    def check_user_attempt(self):
+
 
 class LED1(pytch.Sprite):
     Costumes = ["light-off.png", "light-on.png"]
