@@ -49,6 +49,7 @@ class Background(pytch.Stage):
         else:
             print("FAIL")
             pressing_allowed = False
+            pytch.broadcast("fail")
 
 
 class LED1(pytch.Sprite):
