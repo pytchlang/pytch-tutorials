@@ -171,3 +171,8 @@ class Text(pytch.Sprite):
         self.show()
         pytch.wait_seconds(1.0)
         self.hide()
+
+    @pytch.when_I_receive("fail")
+    def flash_fail(self):
+        self.switch_costume("FAIL-neon-text")
+        self.show()
