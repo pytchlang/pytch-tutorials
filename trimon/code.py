@@ -3,6 +3,7 @@ import random
 
 pattern = []
 user_attempt = []
+pressing_allowed = False
 light_flashing = False
 
 
