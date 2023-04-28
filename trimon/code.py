@@ -40,7 +40,7 @@ class Button1(pytch.Sprite):
 
     @pytch.when_this_sprite_clicked
     def press_button(self):
-        global light_flashing
+        global light_flashing, user_attempt
         if light_flashing:
             return
         light_flashing = True
