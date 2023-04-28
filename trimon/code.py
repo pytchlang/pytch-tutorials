@@ -32,3 +32,7 @@ class LED2(pytch.Sprite):
 class LED3(pytch.Sprite):
     Costumes = ["light-off.png", "light-on.png"]
     Sounds = ["note-3.mp3"]
+
+    @pytch.when_green_flag_clicked
+    def move_to_position(self):
+        self.go_to_xy(140, 80)
