@@ -47,6 +47,7 @@ class Background(pytch.Stage):
                 pytch.broadcast_and_wait("add-flash-and-play")
         else:
             print("FAIL")
+            pressing_allowed = False
 
 
 class LED1(pytch.Sprite):
