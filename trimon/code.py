@@ -24,6 +24,8 @@ class Background(pytch.Stage):
         print("pattern_start is", pattern_start)
         if user_attempt == pattern_start:
             print("OK so far")
+            if user_attempt_length == len(pattern):
+                print("Whole pattern OK")
         else:
             print("FAIL")
 
