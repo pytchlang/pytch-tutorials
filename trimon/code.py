@@ -32,6 +32,10 @@ class LED1(pytch.Sprite):
 class Button1(pytch.Sprite):
     Costumes = ["green-button.png"]
 
+    @pytch.when_green_flag_clicked
+    def move_to_position(self):
+        self.go_to_xy(-140, -80)
+
 
 class LED2(pytch.Sprite):
     Costumes = ["light-off.png", "light-on.png"]
