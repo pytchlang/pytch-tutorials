@@ -23,3 +23,8 @@ class LED1(pytch.Sprite):
 class LED2(pytch.Sprite):
     Costumes = ["light-off.png", "light-on.png"]
     Sounds = ["note-2.mp3"]
+
+
+class LED3(pytch.Sprite):
+    Costumes = ["light-off.png", "light-on.png"]
+    Sounds = ["note-3.mp3"]
