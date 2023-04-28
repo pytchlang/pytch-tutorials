@@ -40,6 +40,8 @@ class Button1(pytch.Sprite):
     @pytch.when_this_sprite_clicked
     def press_button(self):
         global light_flashing
+        if light_flashing:
+            return
         light_flashing = True
         pytch.broadcast_and_wait("flash-1")
         light_flashing = False
