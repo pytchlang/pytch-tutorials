@@ -41,6 +41,7 @@ class Background(pytch.Stage):
             print("OK so far")
             if user_attempt_length == len(pattern):
                 print("Whole pattern OK")
+                pytch.broadcast_and_wait("correct")
                 pytch.wait_seconds(0.25)
                 user_attempt.clear()
                 pressing_allowed = False
