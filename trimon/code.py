@@ -128,4 +128,5 @@ class Button3(pytch.Sprite):
         light_flashing = True
         pytch.broadcast_and_wait("flash-3")
         user_attempt.append(3)
+        pytch.broadcast_and_wait("check-user-attempt")
         light_flashing = False
