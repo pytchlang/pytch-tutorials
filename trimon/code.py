@@ -149,6 +149,8 @@ class Button3(pytch.Sprite):
         global light_flashing, user_attempt
         if light_flashing:
             return
+        if not pressing_allowed:
+            return
         light_flashing = True
         pytch.broadcast_and_wait("flash-3")
         user_attempt.append(3)
