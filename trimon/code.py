@@ -7,6 +7,7 @@ class Background(pytch.Stage):
 
 class LED1(pytch.Sprite):
     Costumes = ["light-off.png", "light-on.png"]
+    Sounds = ["note-1.mp3"]
 
     @pytch.when_green_flag_clicked
     def move_to_position(self):
