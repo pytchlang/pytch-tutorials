@@ -9,6 +9,10 @@ light_flashing = False
 class Background(pytch.Stage):
     Backdrops = ["blue-gradient.png"]
 
+    @pytch.when_green_flag_clicked
+    def play_game(self):
+        pytch.broadcast("add-flash-and-play")
+
     @pytch.when_I_receive("add-flash-and-play")
     def add_flash_and_play(self):
         global pattern
