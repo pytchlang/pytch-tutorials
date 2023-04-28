@@ -19,6 +19,9 @@ class Background(pytch.Stage):
     def check_user_attempt(self):
         user_attempt_length = len(user_attempt)
         pattern_start = pattern[:user_attempt_length]
+        print("pattern is", pattern)
+        print("user_attempt is", user_attempt)
+        print("pattern_start is", pattern_start)
 
 
 class LED1(pytch.Sprite):
