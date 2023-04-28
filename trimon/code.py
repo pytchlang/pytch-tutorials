@@ -34,6 +34,9 @@ class Background(pytch.Stage):
             print("OK so far")
             if user_attempt_length == len(pattern):
                 print("Whole pattern OK")
+                pytch.wait_seconds(0.25)
+                user_attempt.clear()
+                pytch.broadcast_and_wait("add-flash-and-play")
         else:
             print("FAIL")
 
