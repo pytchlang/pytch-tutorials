@@ -36,6 +36,10 @@ class Button1(pytch.Sprite):
     def move_to_position(self):
         self.go_to_xy(-140, -80)
 
+    @pytch.when_this_sprite_clicked
+    def press_button(self):
+        pytch.broadcast_and_wait("flash-1")
+
 
 class LED2(pytch.Sprite):
     Costumes = ["light-off.png", "light-on.png"]
