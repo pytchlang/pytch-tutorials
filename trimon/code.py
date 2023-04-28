@@ -156,3 +156,7 @@ class Button3(pytch.Sprite):
         user_attempt.append(3)
         pytch.broadcast_and_wait("check-user-attempt")
         light_flashing = False
+
+
+class Text(pytch.Sprite):
+    Costumes = ["YES-neon-text.png", "FAIL-neon-text.png"]
