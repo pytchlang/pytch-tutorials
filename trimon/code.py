@@ -1,6 +1,7 @@
 import pytch
 
 pattern = [1, 2, 3, 1]
+light_flashing = False
 
 
 class Background(pytch.Stage):
