@@ -164,3 +164,10 @@ class Text(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def init(self):
         self.hide()
+
+    @pytch.when_I_receive("correct")
+    def flash_yes(self):
+        self.switch_costume("YES-neon-text")
+        self.show()
+        pytch.wait_seconds(1.0)
+        self.hide()
