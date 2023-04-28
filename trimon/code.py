@@ -22,6 +22,10 @@ class Background(pytch.Stage):
         print("pattern is", pattern)
         print("user_attempt is", user_attempt)
         print("pattern_start is", pattern_start)
+        if user_attempt == pattern_start:
+            print("OK so far")
+        else:
+            print("FAIL")
 
 
 class LED1(pytch.Sprite):
