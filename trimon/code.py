@@ -8,7 +8,7 @@ light_flashing = False
 class Background(pytch.Stage):
     Backdrops = ["blue-gradient.png"]
 
-    @pytch.when_key_pressed("p")
+    @pytch.when_I_receive("play-pattern")
     def play_pattern(self):
         for led in pattern:
             message = "flash-" + str(led)
