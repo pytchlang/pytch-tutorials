@@ -11,6 +11,7 @@ class Background(pytch.Stage):
         for led in pattern:
             message = "flash-" + str(led)
             pytch.broadcast_and_wait(message)
+            pytch.wait_seconds(0.1)
 
 
 class LED1(pytch.Sprite):
