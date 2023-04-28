@@ -21,7 +21,7 @@ class LED1(pytch.Sprite):
     def move_to_position(self):
         self.go_to_xy(-140, 80)
 
-    @pytch.when_this_sprite_clicked
+    @pytch.when_I_receive("flash-1")
     def flash(self):
         self.switch_costume(1)
         self.play_sound_until_done("note-1")
