@@ -18,3 +18,8 @@ class LED1(pytch.Sprite):
         self.switch_costume(1)
         self.play_sound_until_done("note-1")
         self.switch_costume(0)
+
+
+class LED2(pytch.Sprite):
+    Costumes = ["light-off.png", "light-on.png"]
+    Sounds = ["note-2.mp3"]
