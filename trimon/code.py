@@ -160,3 +160,7 @@ class Button3(pytch.Sprite):
 
 class Text(pytch.Sprite):
     Costumes = ["YES-neon-text.png", "FAIL-neon-text.png"]
+
+    @pytch.when_green_flag_clicked
+    def init(self):
+        self.hide()
