@@ -110,6 +110,7 @@ class Button2(pytch.Sprite):
         self.go_to_xy(0, -80)
 
     @pytch.when_this_sprite_clicked
+    @pytch.when_gpio_goes_low(20)
     def press_button(self):
         global light_flashing, user_attempt
         if light_flashing:
