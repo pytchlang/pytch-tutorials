@@ -57,8 +57,10 @@ class LED1(pytch.Sprite):
     @pytch.when_I_receive("flash-1")
     def flash(self):
         self.switch_costume(1)
+        pytch.set_gpio_output(22, 1)
         self.play_sound_until_done("note-1")
         self.switch_costume(0)
+        pytch.set_gpio_output(22, 0)
 
 
 class Button1(pytch.Sprite):
