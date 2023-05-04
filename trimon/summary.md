@@ -1,3 +1,3 @@
 # Trimon
 
-TODO: Write summary
+Can you remember longer and longer patterns of flashing lights?
