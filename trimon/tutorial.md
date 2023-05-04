@@ -543,6 +543,72 @@ Now everything is working, we can delete the `print()` lines:
 {{< commit remove-prints >}}
 
 
+## Play with real buttons and lights
+
+Using the GPIO ("general purpose input/output") features of the
+Raspberry Pi 400, we can make this game flash real LEDs and react to
+real buttons being pressed.  GPIOs are electrical connections which
+your program can:
+
+* measure (e.g., to tell whether a button is being pressed), or
+* control (e.g., to light up an LED).
+
+The Raspberry Pi 400 has around 25 pins which can be used like this.
+
+The electronic circuit has been set up so that pins 22, 23 and 24
+control the LEDs, and pins 16, 20, and 21 measure whether the buttons
+are pressed.
+
+### Light up the real LEDs
+
+If we go back to our `LED1` sprite, we can add statements which turn
+on the left-hand LED as the noise starts, and turn that LED off again
+once the sound has finished.  The way your LEDs are wired, to turn an
+LED on, you set the 'value' of its pin to `1`, and to turn it off, you
+set its pin's value to `0`.
+
+The left-hand real LED is connected to GPIO pin `22`, so we add these
+lines:
+
+{{< commit flash-HW-LED1 >}}
+
+We add similar code to `LED2` — if you're copying and pasting, make
+sure you update the pin number to `23`.
+
+{{< commit flash-HW-LED2 >}}
+
+And to `LED3`, whose real LED is connected to pin `24`:
+
+{{< commit flash-HW-LED3 >}}
+
+### React to the real buttons
+
+Pytch lets us 'stack' hat-blocks, to allow more than one event to
+start a script running.  The way these switch buttons are connected,
+when the button is not pressed, the pin measures a _high_ voltage, and
+when the button is pressed, the pin measures a _low_ voltage.  We want
+to run the script when the pin goes _low_.
+
+The left-hand button, `Button1`, is connected to pin `16`, so we add
+this line:
+
+{{< commit press-Button1-by-HW >}}
+
+The centre button, `Button2`, is on pin `20`:
+
+{{< commit press-Button2-by-HW >}}
+
+And the right-hand button, `Button3`, is on pin `21`:
+
+{{< commit press-Button3-by-HW >}}
+
+### Try the physical game!
+
+Play the game now, with its real buttons and lights!  You should be
+able to either click the on-screen buttons, or press the real physical
+buttons.
+
+
 ## Make your own improvements
 
 Here are some ways you could change or improve the game.  Or try out
