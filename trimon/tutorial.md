@@ -578,7 +578,7 @@ jump up and down instead of lights which flash.
 ### Add another light and button
 
 Can you see how to extend the code to have four lights and buttons?
-You’ll need to find another sound.
+There's a sound file `note-4.mp3` you can use if you like.
 
 ### Change the speed of the game
 
