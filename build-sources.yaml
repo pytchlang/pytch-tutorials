@@ -29,7 +29,7 @@
 - name: Trimon
   branch_name: bn/trimon-01
   dir_name: trimon
-  commit_id: 68986c427c6ef2f65eef4a6e77a88fdac96a4d6d
+  commit_id: c9b58e9254874e66bbbd5dcc2c4eb9382b8e1efe
 - name: Q*bert
   branch_name: bn/qbert-04
   dir_name: qbert
