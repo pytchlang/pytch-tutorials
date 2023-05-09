@@ -26,6 +26,10 @@
   branch_name: bn/splat-the-moles-01
   dir_name: splat-the-moles
   commit_id: da78891d42ecfd5cc4e76efdaa8ed0feef717e24
+- name: Trimon
+  branch_name: bn/trimon-01
+  dir_name: trimon
+  commit_id: 68986c427c6ef2f65eef4a6e77a88fdac96a4d6d
 - name: Q*bert
   branch_name: bn/qbert-04
   dir_name: qbert

@@ -14,6 +14,8 @@
   tip-commit: bn/multi-choice-quiz-02
 - name: Splat the moles
   tip-commit: bn/splat-the-moles-01
+- name: Trimon
+  tip-commit: bn/trimon-01
 - name: Q*bert
   tip-commit: bn/qbert-04
 - name: Bunner
