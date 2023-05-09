@@ -1,3 +1,19 @@
 {
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "groupedProjectAssets": [
+        {
+            "name": "green LED",
+            "assets": [
+                "light-off.png",
+                "light-on.png"
+            ]
+        },
+        {
+            "name": "neon texts",
+            "assets": [
+                "YES-neon-text.png",
+                "FAIL-neon-text.png"
+            ]
+        }
+    ]
 }
