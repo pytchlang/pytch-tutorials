@@ -575,6 +575,11 @@ need to think about how to show your lights ‘lighting up’.  Maybe the
 image could get a bit bigger, or maybe you could have characters which
 jump up and down instead of lights which flash.
 
+### Change the layout of the game
+
+Can you think of other ways of arranging the lights and buttons on the
+stage?
+
 ### Add another light and button
 
 Can you see how to extend the code to have four lights and buttons?
