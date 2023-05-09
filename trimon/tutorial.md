@@ -103,9 +103,12 @@ with:
 
 {{< commit define-pattern-global-test-value >}}
 
-When we’ve written the code, this list should play the pattern
+When we’ve written the rest of the code, this list should mean the
+pattern
 
 * left, middle, right, left.
+
+plays.
 
 
 ## Playing the pattern on the lights
@@ -259,9 +262,9 @@ game, no light is flashing, so the variable holds `False`:
 {{< commit define-global-light-flashing >}}
 
 Starting with the when-clicked script for `Button1`, we’ll set the
-variable to `True` just before the broadcast of `"flash-1"`, and
-`False` again afterwards.  We need to tell Python that we’re talking
-about the _global_ `light_flashing` variable:
+variable to `True` just before the broadcast-and-wait of `"flash-1"`,
+and `False` again afterwards.  We need to tell Python that we’re
+talking about the _global_ `light_flashing` variable:
 
 {{< commit maintain-light-flashing-in-Button1 >}}
 
@@ -343,13 +346,13 @@ section of a list.  We find out how many items are in the
 
 {{< commit compute-pattern-start >}}
 
-So we can check we’re doing this right, we’ll print the lists we’re
+So we can check our code is working, we’ll print the lists we’re
 interested in:
 
 {{< commit print-pattern-user-attempt-pattern-start >}}
 
-We can now ask whether the player’s attempt matches the first part of
-the pattern they’re meant to be copying.  For now, we’ll print a
+We can now ask whether the player’s attempt is equal to the first part
+of the pattern they’re meant to be copying.  For now, we’ll print a
 message saying whether they’re right or wrong:
 
 {{< commit print-fail-or-ok-so-far >}}
@@ -391,9 +394,9 @@ You can try this now — press `p` and check what’s printed in the
 We can now start to replace some of our ‘just for now’ code with real
 code.
 
-The code which plays the pattern is currently launched by pressing
-`p`.  Instead, it should run when it receives a `"play-pattern"`
-message:
+The code which plays the pattern is currently launched by pressing the
+`p` key.  Instead, we'll make it run when it receives a
+`"play-pattern"` message:
 
 {{< commit play-pattern-on-message-not-keypress >}}
 
@@ -413,7 +416,7 @@ extension in Scratch.  We want to use the code provided in the
 
 Now we’ll put together a function which adds a new random light to the
 pattern, then makes the new pattern play.  In the next block of code,
-you should be able to find a line which:
+you should be able to find which line:
 
 * makes sure Python knows we’re talking about the _global_ `pattern`
   variable
@@ -430,7 +433,8 @@ Jumping back to the code which tests whether the player has got the
 pattern completely right, this is exactly when we should add a new
 light-flash to the end of the pattern.  We also need to set
 `user_attempt` to the empty list, ready to build up the player’s
-attempt at the new, longer pattern.  The `clear()` method does this.
+attempt at the new, longer pattern.  The `clear()` method on a list
+does this.
 
 {{< commit next-pattern-when-success-so-far >}}
 
@@ -456,15 +460,14 @@ to keep track of the true/false information
 
 > is the player allowed to press a button right now?
 
-This starts off `False`, because the
-player isn’t allowed to press a button until the first pattern has
-been played.
+This starts off `False`, because the player isn’t allowed to press a
+button until the first pattern has been played.
 
 {{< commit define-global-pressing-allowed >}}
 
-Once the pattern has been played, the player is allowed to press
-buttons to try to copy the pattern (we tell Python we’re talking about
-the _global_ `pressing_allowed` variable):
+Once the pattern has been played, the player is allowed to press the
+buttons, to try to copy the pattern.  We tell Python we’re talking
+about the _global_ `pressing_allowed` variable.
 
 {{< commit set-pressing-allowed-after-play-pattern >}}
 
@@ -501,7 +504,7 @@ and `Button3`:
 Watching for text being printed in the `Output` tab is not great.
 We’ll add some in-game messages.
 
-A new sprite has a costume for each message we want to show:
+Add a new sprite which has a costume for each message we want to show:
 
 {{< commit add-Text-and-costumes >}}
 
@@ -520,7 +523,7 @@ and show its ‘FAIL’ costume when it receives `"fail"`:
 {{< commit flash-FAIL-on-message >}}
 
 Here there’s no need to wait and then hide, because once the player
-has failed, the whole game is over.
+has failed, the whole game is over, so the message can stay.
 
 ### Broadcasting the messages
 
@@ -542,6 +545,8 @@ Now everything is working, we can delete the `print()` lines:
 
 {{< commit remove-prints >}}
 
+Congratulations!  See how long a pattern you can remember!
+
 
 ## Make your own improvements
 
@@ -552,8 +557,10 @@ some ideas of your own!
 
 Add a variable which keeps track of how many light-flashes the player
 has got right.  You’ll need to work out what number the variable
-should hold at the start of the game, and when it changes.  You can
-show a global variable called `score` with this code:
+should hold at the start of the game, and when it changes.
+
+You can show a global variable called `score` by putting code like
+this into a green-flag script:
 
 ``` python
 pytch.show_variable(None, "score")
@@ -564,9 +571,9 @@ The name of the variable is given as a string here.
 ### Use different graphics
 
 Find some images to use instead of the lights and buttons.  You’ll
-need to think about how to show your lights ‘lighting up’ — or maybe
-you could have characters which jump up and down instead of lights
-which flash.
+need to think about how to show your lights ‘lighting up’.  Maybe the
+image could get a bit bigger, or maybe you could have characters which
+jump up and down instead of lights which flash.
 
 ### Add another light and button
 
@@ -579,12 +586,11 @@ To play the pattern more slowly, you can increase the `0.1` in the
 `pytch.wait_seconds(0.1)` line.
 
 To play the pattern more quickly, you can reduce that `0.1`, or even
-get rid of the `pytch.wait_seconds()` line altogether.  But to make
-the game faster than that, you’ll need to think harder.
+get rid of the `pytch.wait_seconds()` line altogether.  But even
+without a `pytch.wait_seconds()`, each note will still play in full.
+To make the game faster than that, you’ll need to think harder.
 
-In the code at the moment, the speed of playing the pattern is set by
-how long the sounds play for.  To cut the sound short, you might need
-to do something like
+Hint: To cut the sound short, you could do something like
 
 ``` python
 self.start_sound("note-1")
@@ -597,5 +603,5 @@ instead of the simple `self.play_sound_until_done("note-1")`.
 ### Add a time limit (advanced)
 
 Add a timer so that the player has to press the buttons quickly
-enough.  If they don't press a button for more than, let’s say two
-seconds, they lose.
+enough.  For example, you could make it so that if the player waits
+for more than two seconds before pressing a button, they lose.
