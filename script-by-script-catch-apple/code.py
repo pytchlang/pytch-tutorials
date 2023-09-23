@@ -9,3 +9,7 @@ class Stage(pytch.Stage):
 
 class Bowl(pytch.Sprite):
     Costumes = ["Bowl-1.png", "Bowl-2.png"]
+
+    @pytch.when_green_flag_clicked
+    def move_with_keys(self):
+        pass
