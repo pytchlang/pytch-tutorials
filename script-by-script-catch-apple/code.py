@@ -65,3 +65,4 @@ class ScoreKeeper(pytch.Sprite):
     @pytch.when_I_receive("award-point")
     def award_point(self):
         self.score += 1
+        self.say(self.score)
