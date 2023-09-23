@@ -38,3 +38,7 @@ class ScoreKeeper(pytch.Sprite):
         self.go_to_xy(-215, -115)
         self.score = 0
         self.say(self.score)
+
+    @pytch.when_I_receive("award-point")
+    def award_point(self):
+        pass
