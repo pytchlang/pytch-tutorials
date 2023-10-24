@@ -1,1 +1,4 @@
-{"difficulty": "medium"}
+{
+    "programKind": "per-method",
+    "difficulty": "medium"
+}
