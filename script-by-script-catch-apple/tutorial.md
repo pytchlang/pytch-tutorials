@@ -689,6 +689,8 @@ and this is now a playable game written in Python — congratulations!
 
 ## Improve the game
 
+{{< exclude-from-progress-trail >}}
+
 Here are some ideas on how you could make this game more fun:
 
 * Add a pause between one apple being caught / missed and the next one
@@ -737,6 +739,8 @@ Here are some ideas on how you could make this game more fun:
 
 
 ## Credits
+
+{{< exclude-from-progress-trail >}}
 
 We have used various freely-available resources to make this project:
 
