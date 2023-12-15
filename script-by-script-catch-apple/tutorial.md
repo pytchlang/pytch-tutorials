@@ -703,13 +703,6 @@ Here are some ideas on how you could make this game more fun:
   down the stage, the player has less time to get the bowl under the
   apple, making the game more challenging.
 
-* Play a sound when the player catches an apple.  There is an
-  apple-crunching sound as part of this tutorial.  Make this sound
-  part of the `Apple` sprite, by setting a `Sounds` variable just
-  under the `Costumes` variable: `Sounds = ["apple-crunch.wav"]`.  Use
-  the slide-out help panel to find the Pytch function for playing the
-  sound.
-
 * Change how quickly the player can move the bowl.  A bit quicker
   would make the game easier; a bit slower would make the game harder.
   The speed appears in two places: for moving left and for moving
