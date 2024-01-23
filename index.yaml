@@ -1,5 +1,7 @@
 # Which tutorials to present in the start-up "List of tutorials" tab.
 
+- name: Script-by-script catch the apple
+  tip-commit: bn/script-by-script-catch-apple-01
 - name: Hello world!
   tip-commit: bn/hello-02
 - name: Shoot the fruit
