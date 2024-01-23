@@ -13,7 +13,7 @@ helps with understanding how things work in Python.
 
 ## Add a _Sprite_ for the player's bowl
 
-We’ll start with the Bowl which the player controls.  Just like in
+We’ll start with the bowl which the player controls.  Just like in
 Scratch, we add a _Sprite_.
 
 {{< learner-task >}}
@@ -75,7 +75,7 @@ clicks the green flag.
 
 The code editing pane should now show the new (empty) script.
 
-Now you need to add the code which moves the Bowl to the right place
+Now you need to add the code which moves the bowl to the right place
 on the stage.  Pytch uses the same way of describing positions on the
 stage as Scratch.  You can use the _Show coordinates_ tool to find
 suitable coordinate values.  A `x`-coordinate of `0` puts the bowl in
@@ -118,12 +118,18 @@ starting position at the bottom of the stage.  Try it!
 Now we’re going to let the player move the bowl.  We’ll start by
 letting them move it to the right.  We’ll keep checking whether the
 player is pressing the `d` key, and if so, change the bowl’s
-`x`-coordinate.  In Scratch we could do this with a _forever_ block.
-Python has the `while True` statement to do the same job.
+`x`-coordinate.  In Scratch we could do this with a _forever_ block:
 
-In Scratch, the blocks we want to run forever are _inside_ the
-_forever_ block.  In Python, the code we want to run forever is
-_indented_ to the right _under_ the `while True`.
+``` scratch
+forever:
+  if <key [d v] pressed> then:
+    change x by (2)
+```
+
+Python has the `while True:` statement to do the same job.  In
+Scratch, the blocks we want to run forever are _inside_ the _forever_
+block.  In Python, the code we want to run forever is _indented_ to
+the right _under_ the `while True:`.
 
 Python’s _if_ statement works in the same way.  The code you want to
 run only if the condition is true is indented to the right.
@@ -132,6 +138,13 @@ run only if the condition is true is indented to the right.
 
 Add code which keeps checking whether the player is pressing the `d`
 key, and, if so, changes the bowl’s `x`-coordinate by 2.
+
+{{< learner-task-help >}}
+
+Use the Scratch/Python help (click the circled `?` icon at top-left)
+to learn how you can write '*key `d` pressed*' and '*change x by 2*'
+in Python.  Then come back to this tutorial by clicking on the circled
+book icon.
 
 {{< learner-task-help >}}
 
@@ -160,6 +173,24 @@ Change your script so that it also checks whether the bowl’s
 
 {{< learner-task-help >}}
 
+In scratch, we would move the block
+
+``` scratch
+change x by (2)
+```
+
+to be inside an 'if' block, like this:
+
+``` scratch
+if <(x position) < [190]> then:
+  change x by (2)
+```
+
+In Python, we use another `if` statement and *indent* the code to
+change x.
+
+{{< learner-task-help >}}
+
 {{< jr-commit clamp-bowl-at-right edit-script >}}
 
 {{< /learner-task >}}
@@ -170,8 +201,8 @@ rightwards, but only as far as the edge of the stage.
 ### Let the player move left too
 
 The same idea will let the player move _left_ as well.  A natural
-place for this new code is in the same `while True` loop which already
-lets the player move right.
+place for this new code is in the same `while True:` loop which
+already lets the player move right.
 
 {{< learner-task >}}
 
@@ -194,7 +225,7 @@ The differences for moving left instead of right are:
 
 * Check for the `"a"` key not the `"d"` key.
 * Check that the bowl is not too far _left_ already, by checking that
-  its `x`-coordinate is at least `-145`.  (This leaves a bit of room
+  its `x`-coordinate is more than `-145`.  (This leaves a bit of room
   at the very left for a score-keeper to stand — we'll come to the
   score-keeper later in the tutorial.)
 * Move by using a _negative_ value for the amount the bowl should
@@ -225,7 +256,7 @@ Make a new sprite called “Apple”.
 
 {{< /learner-task >}}
 
-Next is to give the Apple a costume.
+Next is to give the apple a costume.
 
 {{< learner-task >}}
 
@@ -244,10 +275,10 @@ the Stage.
 
 ## Make the apple fall down the stage
 
-To give the Apple its behaviour, we’ll add a script.  In more detail:
+To give the apple its behaviour, we’ll add a script.  In more detail:
 
 * We want this code to run when the green flag is clicked.
-* Add a line of code to the script line which moves the Apple to a
+* Add a line of code to the script line which moves the apple to a
   good starting point on the stage — I chose just off the top of the
   stage, and off-centre to the right a bit, coordinates
   (100,&nbsp;200).
@@ -255,6 +286,22 @@ To give the Apple its behaviour, we’ll add a script.  In more detail:
 {{< learner-task >}}
 
 Add a green-flag script with a line of code which does this.
+
+{{< learner-task-help >}}
+
+Add the script, and then think about what line of code you need.
+
+{{< learner-task-help >}}
+
+You need to work out what Python code will do the same job as this
+Scratch block:
+
+``` scratch
+go to x: [100] y: [200]
+```
+
+Use the Scratch/Python help, or look back at how you got the bowl to
+start at the right place.
 
 {{< learner-task-help >}}
 
@@ -290,6 +337,10 @@ Add code to your script which does this.
 
 {{< learner-task-help >}}
 
+You need to add two lines of code to the end of your script.
+
+{{< learner-task-help >}}
+
 For ‘move down’, you can use `self.change_y()` with a negative value
 for the argument.
 
@@ -302,10 +353,10 @@ for the argument.
 If you run this code, the apple should fall down the stage, and stop
 at the bottom.
 
-The `while` here might look different to when we used `while True` to
+The `while` here might look different to when we used `while True:` to
 mean “forever”, but it’s really just different ways of using the same
 part of the Python language.  When we want something to happen
-forever, the `True` in `while True` acts as a test which always
+forever, the `True` in `while True:` acts as a test which always
 passes, so the indented code keeps running again and again forever.
 
 
@@ -328,9 +379,8 @@ Add code to your script which hides the apple if it touches the bowl.
 
 {{< learner-task-help >}}
 
-You can use the blue bar at the left of the coding area to expand the
-help panel, which should help you find what Pytch functions work the
-same as the Scratch
+You can use the Scratch/Python help to find out what Pytch functions
+work the same as the Scratch
 
 ``` scratch
 touching (Bowl v)
@@ -343,6 +393,11 @@ hide
 ```
 
 blocks.
+
+{{< learner-task-help >}}
+
+You will need an `if` statement at the end of the script, still
+"inside" the `while` loop body.
 
 {{< learner-task-help >}}
 
@@ -393,6 +448,12 @@ moves the score-keeper to a suitable place on the stage.
 
 {{< learner-task-help >}}
 
+Once you've added the script, you can refer to the other two Sprites
+if you'd like to remind yourself what Python code to use to move a
+Sprite to a particular place on the stage.
+
+{{< learner-task-help >}}
+
 {{< jr-commit move-ScoreKeeper-to-right-place add-script >}}
 
 {{< /learner-task >}}
@@ -427,6 +488,12 @@ Add code to the score-keeper's script which makes a new variable
 
 {{< learner-task-help >}}
 
+You can base your code on the example in the text above.  Your
+variable should be called `score` (not `my_name`), and should be set
+to the number `0` (not the string `"Arthur"`).
+
+{{< learner-task-help >}}
+
 {{< jr-commit add-ScoreKeeper-score-attribute edit-script >}}
 
 {{< /learner-task >}}
@@ -439,15 +506,18 @@ would do this with a block
 say (score)
 ```
 
-You can use the blue bar at the left of the coding area to expand the
-help panel, which should help you find what Pytch function does the
-same job as the “say” block.  Remember you’ll need to say `self.score`
-to mean the score-keeper’s `score` variable.
+You can use the Scratch/Python help content to find what Pytch
+function does the same job as the “say” block.  Remember you’ll need
+to say `self.score` to mean the score-keeper’s `score` variable.
 
 {{< learner-task >}}
 
 Add a line of code which makes the score-keeper say the starting
 score.
+
+{{< learner-task-help >}}
+
+You'll need to add a line of code at the end of the script.
 
 {{< learner-task-help >}}
 
@@ -491,8 +561,8 @@ score-keeper’s `score` variable.  In Scratch you would say
 change [score v] by (1)
 ```
 
-Use the blue help bar to expand the help panel, and find the Python
-code which does the same job.
+Use the Scratch/Python help content to find the Python code which does
+the same job.
 
 {{< learner-task >}}
 
@@ -501,7 +571,8 @@ score-keeper’s `score` variable by one.
 
 {{< learner-task-help >}}
 
-In the help panel, look in the “Working with variables” section.
+In the Scratch/Python help content, look in the “Working with
+variables” section.
 
 {{< learner-task-help >}}
 
@@ -518,22 +589,37 @@ its `score` variable.
 
 {{< learner-task-help >}}
 
+The line will be the same as the line you added at the end of the last
+chapter (to say the score after first setting it to zero).
+
+{{< learner-task-help >}}
+
 {{< jr-commit refresh-score-speech edit-script >}}
 
 {{< /learner-task >}}
 
-### Making the Apple broadcast the message
+### Making the apple broadcast the message
 
 This code is correct, but so far nobody is broadcasting the
 `award-point` message, and so our code never runs.
 
-As we said earlier, the Apple needs to broadcast this message when
+As we said earlier, the apple needs to broadcast this message when
 it’s caught by the bowl.
 
 {{< learner-task >}}
 
-Add some code to the right script **in your Apple sprite** which
+Add some code to the right script **in your `Apple` sprite** which
 broadcasts the `award-point` message when it’s caught.
+
+{{< learner-task-help >}}
+
+Make sure you choose the `Apple` sprite!
+
+{{< learner-task-help >}}
+
+Think carefully about what section of your code runs when the apple is
+caught — remember that our code checks for this by asking whether the
+apple is touching the bowl.
 
 {{< learner-task-help >}}
 
@@ -554,7 +640,7 @@ Python — a _module_ is some code, usually written by someone else,
 which we can use in our program.
 
 We will use a function in the `random` module which picks a random
-whole number.  This function is called `randint` (for _random
+whole number.  The function we want is called `randint` (for _random
 integer_).  We need to say what the smallest and largest whole number
 allowed are.  By trial and error, I worked out:
 
@@ -573,7 +659,7 @@ set [drop_x v] to (pick random [-145] to [190])
 
 {{< learner-task >}}
 
-Add a line at the start of the Apple's script which creates a variable
+Add a line at the start of the apple's script which creates a variable
 `drop_x`, equal to the result of calling `random.randint()` with the
 argument values just described.
 
@@ -601,8 +687,7 @@ instead of using `100` for the `x`-coordinate argument, it uses the
 One thing you might notice is that we didn’t say `self.drop_x` here,
 we just said `drop_x`.  By not saying `self`, Python makes the
 `drop_x` variable only exist inside this script.  Since we won't need
-`drop_x` anywhere else, this way avoids cluttering up our project with
-variables.
+`drop_x` anywhere else, this avoids cluttering up our project.
 
 Now the game is better — each time we play the game, by clicking the
 green flag, the apple falls from a different place.
@@ -614,15 +699,21 @@ We’re going to change the game so that the score-keeper is in charge
 of making the apple fall from the sky.  It will do this by
 broadcasting a message every time the apple should fall.
 
-For the Apple script, this means that the script should _not_ run when
+For the apple script, this means that the script should _not_ run when
 the green flag is clicked.  Instead it should run when it receives a
 message, let’s say `"drop-apple"`.
 
 {{< learner-task >}}
 
-Change the hat-block of the Apple's script so that the script runs
-when the Apple receives the message `"drop-apple"` (instead of when
+Change the hat-block of the apple's script so that the script runs
+when the apple receives the message `"drop-apple"` (instead of when
 the green flag is clicked).
+
+{{< learner-task-help >}}
+
+Once you've found the right script, you can either double-click on the
+hat-block, or choose _Change hat block_ from the hat-block's drop-down
+menu.
 
 {{< learner-task-help >}}
 
@@ -648,13 +739,13 @@ is clicked.
 
 {{< /learner-task >}}
 
-This script should keep making apples drop from the top of the stage
-forever.  Just like in the code which lets the player move the bowl,
-we do this with Python’s `while True:` loop.  Inside that loop, we
-want to keep broadcasting the message `"drop-apple"`.  Here, we will
-use the `broadcast_and_wait()` function, because we don't want to drop
-the next Apple until the current one has either been caught or reached
-the bottom of the stage.  In Scratch, the code would be
+We want our new script to keep making apples drop from the top of the
+stage forever.  Just like in the code which lets the player move the
+bowl, we do this with Python’s `while True:` loop.  Inside that loop,
+we want to keep broadcasting the message `"drop-apple"`.  Here, we
+will use the `broadcast_and_wait()` function, because we don't want to
+drop the next apple until the current one has either been caught or
+reached the bottom of the stage.  In Scratch, the code would be
 
 ```scratch
 forever
@@ -668,18 +759,30 @@ Scratch blocks.
 
 {{< learner-task-help >}}
 
+You will need `while True:` followed by an _indented_ line of code.
+
+{{< learner-task-help >}}
+
 {{< jr-commit add-broadcast-drop-apple-loop edit-script >}}
 
 {{< /learner-task >}}
 
 If you try the game now, it doesn’t work!  What's happening is that
-we’ve told the Apple to `hide()` itself when it’s caught, but we
+we’ve told the apple to `hide()` itself when it’s caught, but we
 haven’t told it to `show()` itself when it starts dropping.
 
 {{< learner-task >}}
 
-Fix this!  Work out where, **in the Apple's script**, you need to add
-a line of code which makes the Apple show itself.
+Fix this!  Work out where, **in the `Apple`'s script**, you need to
+add a line of code which makes the apple show itself.
+
+{{< learner-task-help >}}
+
+In the apple's script, there are two main sections.  The first section
+chooses a random place to go to, and then goes to that place.  The
+second section is the `while` loop which moves the apple down the
+screen.  Just before the `while` loop (so at the end of the first,
+"set-up" section) is a good place to put the `self.show()` we need.
 
 {{< learner-task-help >}}
 
@@ -697,7 +800,7 @@ This is now a playable game written in Python — congratulations!
 Here are some ideas on how you could make this game more fun:
 
 * Add a pause between one apple being caught / missed and the next one
-  appearing.  Use the help sidebar to find the Pytch version of
+  appearing.  Use the Scratch/Python help to find the Pytch version of
   Scratch’s `wait () seconds` block.  (Hint: just before doing
   `pytch.broadcast_and_wait("drop-apple")` is a good place to pause.)
 
@@ -714,17 +817,17 @@ Here are some ideas on how you could make this game more fun:
   player’s speed, but it is a bit more work to write the code in the
   first place.
 
-* Add the provided `orange.png` costume to the Apple.  (Your code will
-  be clearer if you then change the name of the sprite to `Fruit`!)
-  Each time the `Fruit` appears, choose randomly which costume to
-  wear.  (Hint: a good place for this code is in the first part of the
-  apple’s script, before the `while` loop.)  The help panel will tell
-  you the Pytch version of Scratch’s `switch costume` block.
+* Add another costume to the apple — you could use `orange.png` from
+  the media library.  (Your code will be clearer if you then change
+  the name of the sprite to `Fruit`!)  Each time the `Fruit` appears,
+  choose randomly which costume to wear.  (Hint: a good place for this
+  code is in the first part of the apple’s script, before the `while`
+  loop.)  The Scratch/Python help will tell you the Pytch version of
+  Scratch’s `switch costume` block.
 
 * Make the score-keeper jump up and down in celebration when the
   player catches an apple.  In Scratch you might use the `repeat`
-  block.  Use the slide-out help panel to find how to do this in
-  Pytch.
+  block.  Use the Scratch/Python help to find how to do this in Pytch.
 
 * Make there be a fixed number of apples — maybe 8.  Advanced: At the
   end of the game, make the score-keeper say something like “You got 5
