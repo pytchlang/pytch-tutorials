@@ -792,6 +792,10 @@ screen.  Just before the `while` loop (so at the end of the first,
 
 This is now a playable game written in Python — congratulations!
 
+If you're using a shared computer, you can save your work using the
+"Export to Google Drive" or "Download as zipfile" options from the
+dropdown menu.
+
 
 ## Improve the game
 
