@@ -186,8 +186,8 @@ if <(x position) < [190]> then:
   change x by (2)
 ```
 
-In Python, we use another `if` statement and *indent* the code to
-change x.
+In Python, we use another `if` statement and *indent* the code which
+changes `x`.
 
 {{< learner-task-help >}}
 
