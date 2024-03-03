@@ -84,7 +84,7 @@ put the bowl almost at the bottom.
 
 In Scratch, we would use a block like this:
 
-```scratch
+``` scratch
 go to x: [0] y: [-145]
 ```
 
@@ -92,7 +92,7 @@ In Python, you write code to do the same job.  You provide the extra
 pieces of information (called “arguments”) in brackets “`()`” after
 the method name.  This is the code we need:
 
-```
+``` python
 self.go_to_xy(0, -145)
 ```
 
@@ -368,7 +368,7 @@ the apple is touching the bowl.  If it is, then we want to hide the
 apple.  What we want to do is the Python equivalent of the Scratch
 script
 
-```scratch
+``` scratch
 if < touching (Bowl v)?> then
 hide
 ```
@@ -653,7 +653,7 @@ So these are the arguments we want give to the `random.randint`
 function, and we set a new variable `drop_x` to the result.  In
 Scratch, this whole thing would look like
 
-```scratch
+``` scratch
 set [drop_x v] to (pick random [-145] to [190])
 ```
 
@@ -747,7 +747,7 @@ will use the `broadcast_and_wait()` function, because we don't want to
 drop the next apple until the current one has either been caught or
 reached the bottom of the stage.  In Scratch, the code would be
 
-```scratch
+``` scratch
 forever
 broadcast (drop-apple v) and wait
 ```
