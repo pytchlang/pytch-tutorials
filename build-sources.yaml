@@ -1,3 +1,7 @@
+- name: Script-by-script catch the apple
+  branch_name: bn/script-by-script-catch-apple-01
+  dir_name: script-by-script-catch-apple
+  commit_id: 5ec7d88ceaf00c72f10b937aa4cb3c9af16fee03
 - name: Hello world!
   branch_name: bn/hello-02
   dir_name: hello
