@@ -127,9 +127,9 @@ forever:
 ```
 
 Python has the `while True:` statement to do the same job.  In
-Scratch, the blocks we want to run forever are _inside_ the _forever_
-block.  In Python, the code we want to run forever is _indented_ to
-the right _under_ the `while True:`.
+Scratch, we put the blocks we want to run forever _inside_ the
+_forever_ block.  In Python, we _indent_ the code we want to run
+forever to the right _under_ the `while True:`.
 
 Python’s _if_ statement works in the same way.  The code you want to
 run only if the condition is true is indented to the right.
@@ -143,8 +143,8 @@ key, and, if so, changes the bowl’s `x`-coordinate by 2.
 
 Use the Scratch/Python help (click the circled `?` icon at top-left)
 to learn how you can write '*key `d` pressed*' and '*change x by 2*'
-in Python.  Then come back to this tutorial by clicking on the circled
-book icon.
+in Python.  Then come back to this tutorial by clicking on the book
+icon.
 
 {{< learner-task-help >}}
 
