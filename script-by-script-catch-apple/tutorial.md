@@ -438,7 +438,7 @@ media library works well, or you can choose a different one.
 
 We want to move the score-keeper to a sensible place when the green
 flag is clicked.  Using the _Show coordinates_ tool, the coordinates
-(-215,&nbsp;115) seem about right, but you can adjust the values if
+(-215,&nbsp;-115) seem about right, but you can adjust the values if
 you prefer.
 
 {{< learner-task >}}
