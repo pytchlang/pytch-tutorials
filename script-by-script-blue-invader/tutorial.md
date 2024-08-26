@@ -1,185 +1,400 @@
 # Blue Invaders
 
-In this game we'll defend ourselves from dangerous blue invaders, by
-clicking on them.  But don't destroy the friendly green aliens by
-mistake!
+In this game, the player will defend earth from dangerous blue
+invaders, by clicking on them.  But they must not destroy the friendly
+green aliens by mistake!
 
 
 ---
 
 ## Set the backdrop
 
-Our first job is to make the background for our game.  This tutorial
-includes a starry sky image for us to use.  We create a sort of
-`Stage`, calling it `Galaxy`, and say that it has one backdrop.  The
-name in `""`s there — `"starry-sky.jpg"` — is the name of the image
-file.  You can check this in the *Images and sounds* tab.
+The first job is to make the background for our game.  Pytch’s media
+library includes a galaxy image for us to use.
 
-{{< commit create-stage-with-backdrop >}}
+{{< learner-task >}}
 
-If you add this code to your project and click the green play button,
-you should see the game's background.
+Add the “starry sky” backdrop to the Stage from the media library.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-starry-backdrop add-medialib-appearance ["starry-sky.jpg"] >}}
+
+{{< /learner-task >}}
+
+If you run your game now, you won’t see your new background.  This is
+because the Stage still has the default solid white background, and
+that background is the first one, so it is the one that gets shown.
+
+{{< learner-task >}}
+
+Delete the `solid-white.png` backdrop from the stage.
+
+{{< learner-task-help >}}
+
+{{< jr-commit remove-white-backdrop delete-appearance >}}
+
+{{< /learner-task >}}
+
+Click on the green play button now — you should see the game’s
+new background.
 
 
-## Create the aliens
+## Create the first alien
 
-For the aliens which will drop down the screen, we are going to use a
-feature of Pytch called *clones*.  These work the same way as clones
-in Scratch.  There will be an `Alien` Sprite which will have two
-costumes.  When a clone is wearing one costume, it counts as an enemy
-space invader, and when it's wearing the other costume, it's a
-friendly visitor.
+When it’s finished, the game will have lots of aliens, but to start
+with, there will just be one.
 
-### Create Sprite with costumes
+There will be an `Alien` Sprite which will have different costumes.
+When this sprite is wearing one costume (a blue one), it counts as an
+enemy space invader, and when it’s wearing another costume (a green
+one), it’s a friendly visitor.
 
-We first make the `Alien` Sprite, and say what images we want to use
-for its two costumes:
+### Create _Alien_ Sprite
 
-{{< commit create-alien-with-costumes >}}
+The project needs a new sprite to be the Alien.
 
-If you add this code to your project and run it, you should see a blue
-enemy invader in the middle of the screen.  This is because Pytch
-starts a Sprite off wearing the first costume in its list.
+{{< learner-task >}}
+
+Add a Sprite called `Alien` to your project.
+
+{{< learner-task-help >}}
+
+{{< jr-commit create-alien-sprite add-sprite >}}
+
+{{< /learner-task >}}
+
+### Give the _Alien_ some costumes
+
+The new sprite then needs costumes.  There is a bundle of three
+suitable costumes in Pytch’s media library.
+
+{{< learner-task >}}
+
+Add the ‘space invaders’ bundle of images from the media library as
+costumes to the `Alien` sprite.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-alien-costumes add-medialib-appearances-entry ["space invaders"] >}}
+
+{{< /learner-task >}}
+
+If you run your project now, you should see a blue enemy invader in
+the middle of the screen.  This is because Pytch starts a Sprite off
+wearing its first costume.
 
 ### Make the alien drift down the screen
 
-Next, we will make the alien move.  We'll make it glide from the top
-to the bottom of the screen, then instantly go back to the top and
-start gliding again.
+The Alien should glide from the top to the bottom of the screen, then
+instantly go back to the top and start gliding again.
 
-This should all start happening as soon as the game starts, so we'll
-use `@pytch.when_green_flag_clicked` at the top of the code we're
-adding.  For the code itself, we want something which works the same
-as Scratch's *forever* block.  In Python, we use `while True:`, and
-say what we want to keep happening in *indented* lines underneath.  We
-want the alien to go to the top of the screen, then glide to the
-bottom.
+This should all start happening as soon as the game starts.
 
-{{< commit loop-drift-down-screen >}}
+{{< learner-task >}}
 
-You'll see that the code uses `self.x_position` — this is the same as
-the *(x&nbsp;position)* reporter block in Scratch.  For this original
-alien, this might seem over-complicated, because we know its
-*x*-position is zero.  But I'm looking ahead to when there will be
-more than one alien, each with its own *x*-position.
+Add a new empty script to the `Alien` with a “when green flag clicked”
+hat-block.
 
-### Randomly choose whether enemy or friendly
+{{< learner-task-help >}}
 
-Some of the aliens that drift down the screen will be enemies, and
-some will be friendly.  Remember that this is done by making the alien
-wear a different costume.
+{{< jr-commit add-drift-down-skeleton add-script >}}
 
-We want the costume to be random each time.  Python can generate
-random numbers, but we need to say we want to use that part of Python.
-We do this by *importing* the `random` library:
+{{< /learner-task >}}
 
-{{< commit import-random >}}
+The code of this script should work the same as Scratch’s *forever*
+block.  In Python, you can say `while True:`, and underneath put
+*indented* lines to say what should keep happening.
 
-This is very much like adding an extension in Scratch.
+For example, here’s code which moves a sprite slowly across the screen:
 
-And now we can ask for a random costume.  Just like in Scratch, we can
-switch costume either by giving the costume's position in the costumes
-list, or by giving the costume's name.  We'll choose the costume by
+``` python
+while True:
+    self.change_x(1)
+```
+
+{{< learner-task >}}
+
+Write the code in your new script which makes the alien repeatedly go
+to the top of the screen then glide to the bottom.
+
+{{< learner-task-help >}}
+
+To tell the alien to go to a particular vertical place on the screen,
+you can use something like
+
+``` python
+self.set_y(50)
+```
+
+The number `50` here is the *y* coordinate the alien should go to.
+Its *x* coordinate is not changed.  The alien will move purely up or
+down.
+
+{{< learner-task-help >}}
+
+To tell the alien to move smoothly to a different place on the screen, you can
+use something like
+
+``` python
+self.glide_to_xy(0, -50, 2.5)
+```
+
+The numbers are the *x* and *y* coordinates of the point the alien
+should go to, and how long to take (the number of seconds) to move
+there.  You might find it useful to use
+
+``` python
+self.x_position
+```
+
+instead of an actual *x* number, looking ahead to when there are lots
+of aliens, each with its own *x* position.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-drift-down-body edit-script >}}
+
+{{< /learner-task >}}
+
+
+## Mixture of enemy and friendly aliens
+
+Some of the aliens that drift down the screen need to be enemies, and
+some friendly.  Remember that this is done by making the alien wear a
+different costume.
+
+Just like in Scratch, you can switch costume either by giving the new
+costume’s position in the costumes list, or by giving its name.  In
+this case it will be slightly easier to choose the costume by
 position.
 
 In Python, things in a list are numbered from *zero*, so the first
-thing in a list is at 'position&nbsp;0', the second thing is at
-'position&nbsp;1', and so on.  So we want to randomly choose either
-the costume at position&nbsp;0 or the one at position&nbsp;1.
+thing in a list is at ‘position&nbsp;0’, the second thing is at
+‘position&nbsp;1’, and so on.  So the code should randomly choose
+either the costume at position&nbsp;0 or the one at position&nbsp;1.
 
-The `random.choice()` function will do this for us.  We want to switch
-to a random costume just before jumping back to the top of the screen:
+This *could* be done all in one line of code, but breaking the job
+into two steps will make it easier to understand:
 
-{{< commit random-costume-per-descent >}}
+* Randomly choose a costume position (0 or 1).
+* Switch to the chosen costume.
 
-There's quite a lot going on in this one line of new code.  We can
-understand it by starting from the inside:
+### Randomly choose which costume
 
-* `[0, 1]` is a list with two things in it — the number zero and the
-  number one.
+The `random.choice(list_of_choices)` function will do this job.
 
-* `random.choice([0, 1])` asks Python to choose randomly between the
-  two things in that list.  So the result of this piece of code is
-  either the number&nbsp;0 or the number&nbsp;1.
+The `random.choice()` function needs a *list* of the options it should
+choose from.  Here, the choices are `0` and `1`.  In Python, the list
+containing `0` and `1` is written `[0, 1]`.
 
-* `self.switch_costume(random.choice([0, 1]))` makes the Alien sprite
-  switch to that randomly-chosen costume.
+{{< learner-task >}}
+
+Add a line of code which randomly chooses `0` or `1` to be the
+position of the new costume, and store the choice in a variable called
+`costume_position`.
+
+{{< learner-task-help >}}
+
+The new code should go at the top of the indented body of the `while
+True` loop.
+
+{{< learner-task-help >}}
+
+{{< jr-commit choose-random-costume edit-script >}}
+
+{{< /learner-task >}}
+
+Once the chosen number is in a variable, the alien can switch to that
+costume.
+
+{{< learner-task >}}
+
+Add a line of code which switches to the costume whose position is in
+the variable `costume_position`.
+
+{{< learner-task-help >}}
+
+{{< jr-commit switch-to-chosen-costume edit-script >}}
+
+{{< /learner-task >}}
 
 If you run the project now, you should see some blue enemy invaders
-and some green friendly visitors gliding down the screen.
-
-But only one alien is on screen at a time.  We'll fix that next.
+and some green friendly visitors gliding down the screen, one at a
+time.
 
 
 ## Make lots of aliens
 
-To make more than one alien, we're going to use *clones*.  These work
-the same as in Scratch — you get more than one copy of the same
-sprite.  This is perfect for what we're trying to do.
+To make more than one alien, the program will use *clones*.  These
+work the same as in Scratch — you get more than one copy of the same
+sprite.
 
-To make sure that everything happens in the right order, we're going
-to use another part of Pytch which might be familiar from Scratch —
-*broadcasts*.  A sprite can 'shout' a message, and any sprite
+The program will clone the Alien five times.  Together with the
+original Alien, this makes six aliens altogether.
+
+Using the *x*-positions
+
+> -150, -90, -30, 30, 90, and 150
+
+will spread the aliens left to right across the screen.
+
+The idea is:
+
+* Move the original Alien to the first place (*x*-position of `-150`).
+* Make a clone at that position, then move the original to the next
+  place (`x = -90`).
+* Make another clone, and move the original to `x = -30`.
+* And so on.
+
+{{< learner-task >}}
+
+Add an empty *green-flag* script to the Alien.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-make-clones-script add-script >}}
+
+{{< /learner-task >}}
+
+This script now needs code to make and move the clones.
+
+{{< learner-task >}}
+
+Add a line of code to this script which moves the alien to the place
+on the stage with *x*-position `-150` and *y*-position `180`.
+
+{{< learner-task-help >}}
+
+{{< jr-commit move-first-alien-to-position edit-script >}}
+
+{{< /learner-task >}}
+
+{{< learner-task >}}
+
+Add two lines of code to this script.  The first line should make a
+clone of the Alien.  The second line should move the original Alien to
+the place on the stage with *x*-position `-90` and *y*-position `180`.
+
+{{< learner-task-help >}}
+
+{{< jr-commit make-first-clone edit-script >}}
+
+{{< /learner-task >}}
+
+{{< learner-task >}}
+
+Add the rest of the required code, which will be very similar to
+copies of the lines you’ve just added.  You should end up with clones
+at *x*-positions
+
+> -150, -90, -30, 30, and 90
+
+and the original Alien at *x*-position 150.
+
+{{< learner-task-help >}}
+
+{{< jr-commit make-rest-of-clones edit-script >}}
+
+{{< /learner-task >}}
+
+(You might be thinking that there must be a better way to do this than
+by copy and pasting nearly identical code.  You’re right, but that’s
+outside the scope of this tutorial!)
+
+### It doesn’t work properly!
+
+If you run the game now, it doesn’t really work.  There are more
+aliens at the top of the screen, but only one of them is gliding down.
+This is because Pytch doesn’t make any guarantees about which order
+the two *green-flag* scripts run, and the glide script is happening
+before all the clones are made.
+
+The next chapter explains how to fix this.
+
+
+## Using broadcasts to control when scripts run
+
+To make sure that everything happens in the right order, the program
+will use another part of Pytch which might be familiar from Scratch —
+*broadcasts*.  A sprite can ‘shout’ a message, and any sprite
 (including the same sprite that shouted!) can be listening for that
 message, and run some code whenever the sprite hears the message.
 
-### Write code to create five clones
+The program needs to make sure that all the clones are made before the
+gliding starts.  The Stage will be in charge of making this happen.
 
-We'll first write some code which clones the Alien five times.
-Together with the original Alien, this will give us six aliens.  I
-worked out what *x*-positions spread the aliens left to right across
-the screen: -150, -90, -30, 30, 90, 150.  The idea now is to move the
-original Alien to one of those places, make a clone, then move on to
-the next place.  We'll make all of this happen when somebody
-broadcasts the message `"make-clones"`.
+Because the program will use broadcasts to coordinate things, the
+script you just wrote, which makes all the clones, needs to run when
+it receives an appropriate broadcast message.
 
-This adds up to quite a lot of code:
+{{< learner-task >}}
 
-{{< commit unrolled-make-clones >}}
+Make the script which creates all the clones run when the Alien
+receives the `"make-clones"` message (not when green flag is clicked).
 
-We'll see later how to avoid repeating ourselves like this.
+{{< learner-task-help >}}
 
-### Broadcast the message to run that code
+The code stays the same.  You just need to change the script’s hat
+block.  This is like when, in Scratch, you get rid of a script’s hat
+block and attach a different one.
 
-We'll put the *Galaxy* stage in charge of broadcasting the
-`"make-clones"` message.  This next bit of code needs to be added to
-the `Galaxy` not the `Alien`:
+{{< learner-task-help >}}
 
-{{< commit broadcast-make-clones >}}
+{{< jr-commit make-clones-when-receive change-hat-block >}}
 
-If you run the game now, it doesn't really work.  We do get some more
-aliens at the top of the screen, but only one of them is gliding
-down.  This is because the `drift_down_screen()` code starts running
-before the `make_clones()` code has finished.  We need to make sure
-things happen in the right order — we'll fix this next.
+{{< /learner-task >}}
+
+{{< learner-task >}}
+
+Add a *green-flag* script to the stage which broadcasts this
+`"make-clones"` message, and waits for the listening scripts to finish
+running.
+
+{{< learner-task-help >}}
+
+{{< jr-commit broadcast-make-clones add-script >}}
+
+{{< /learner-task >}}
+
 
 ### Wait for all clones to exist before gliding
 
-The code we just added uses `broadcast_and_wait()`.  Just like in
-Scratch, your program doesn't go on to the next statement until
+The code you just added uses `broadcast_and_wait()`.  Just like in
+Scratch, your program doesn’t go on to the next statement until
 everybody listening for the `"make-clones"` message has finished doing
-whatever it is they do when they hear it.  So if we add code after
-`broadcast_and_wait()`, we know that all the clones will exist when
-that code runs.
+whatever it is they do when they hear it.  So any code after
+`broadcast_and_wait()` won’t run until all the clones exist.
 
-We'll use this to change when the aliens start gliding.  First, we'll
-say that the `drift_down_screen()` code in the `Alien` sprite should
-happen when an alien or clone hears a `"play-game"` message (and not
-when the green flag is clicked).  This is like when, in Scratch, you
-get rid of a script's hat block and attach a different one.
+This is how the program can control when the aliens start gliding.
 
-{{< commit descend-on-play-game-broadcast >}}
+{{< learner-task >}}
 
-(The red and green lines here mean that you delete the old code (red
-background, with `-` at the left), and add in its place the new code
-(green background, with `+` at the left).  Quite a lot of the old line
-is still in the new line, so you can just delete `green_flag_clicked`
-and replace it with `I_receive("play-game")` if you're careful!)
+Change your program so the gliding code in the `Alien` sprite runs
+when an alien or clone hears a `"play-game"` message (and not when the
+green flag is clicked).
 
-And then we'll make the `run()` code in `Galaxy` broadcast that
-message, after the clones have all been created:
+{{< learner-task-help >}}
 
-{{< commit broadcast-play-game >}}
+Just like a minute ago, the code stays the same.  You just need to
+change the script’s hat block.
+
+{{< learner-task-help >}}
+
+{{< jr-commit descend-on-play-game-broadcast change-hat-block >}}
+
+{{< /learner-task >}}
+
+{{< learner-task >}}
+
+Make the Stage broadcast that `"play-game"` message, once the clones
+have all been created.
+
+{{< learner-task-help >}}
+
+{{< jr-commit broadcast-play-game edit-script >}}
+
+{{< /learner-task >}}
 
 If you run the code now, you should see waves of aliens gliding down
 the screen, with a mixture of blue and green.
@@ -191,337 +406,420 @@ others.
 ## Randomise the glide time
 
 At the moment, every alien clone takes exactly 3&nbsp;seconds to glide
-down the screen.  We want to add a bit of variation, by making each
-alien clone take a random time to glide down the screen.  This will
-make some aliens move faster than others and make it more interesting.
+down the screen.  The game would be better with a bit of variation, by
+making each alien clone take a random time to glide down the screen.
+This will make some aliens move faster than others and make it more
+interesting.
 
-The `drift_down_screen()` code is where we'll need to make the change.
+The Alien’s `"play-game"` code needs changing so that each alien takes
+a random time between, say, 3 and 5 seconds.
 
-We have already done `import random`, so we can use the
-`random.uniform()` function to get a random number between 3.0 and 5.0
-(including fractions).  We'll store the randomly-chosen number in a
-*variable*:
+Your program already uses `random.choice()`.  Python also provides the
+`random.uniform()` function, which picks a random number anywhere
+between two limits.  Your program can use this to get a random number
+anywhere between 3.0 and 5.0 (including fractions).
 
-{{< commit define-glide-time >}}
+{{< learner-task >}}
 
-And then use this variable instead of the fixed number `3.0` in the
-`glide_to_xy()` function call:
+In the Alien’s `"play-game"` script, add a line of code just before
+the `self.glide_to_xy()` which uses `random.uniform()` to get a random
+number anywhere between 3 and 5 and assigns the result to a variable
+called `glide_time`.
 
-{{< commit use-glide-time >}}
+{{< learner-task-help >}}
 
-Just like when we change `when_green_flag_clicked` into
-`when_I_receive("play-game")` earlier, the red and green lines here
-mean that you delete the old code (red background, with `-` at the
-left), and add in its place the new code (green background, with `+`
-at the left).  Since most of the line is the same, you can just delete
-`3.0` and type in `glide_time` if you like.
+The Python expression
 
-Now if you run the game, som aliens should be faster than others, and
+``` python
+random.uniform(3.0, 5.0)
+```
+
+will generate the random number you want.
+
+{{< learner-task-help >}}
+
+Remember that the code
+
+``` python
+costume_position = random.choice([0, 1])
+```
+
+makes a random choice from the list `[0, 1]`, and assigns the result
+to the variable `costume_position`.  You want to do something very
+similar.
+
+{{< learner-task-help >}}
+
+{{< jr-commit define-glide-time edit-script >}}
+
+{{< /learner-task >}}
+
+{{< learner-task >}}
+
+Change the existing code to use this new `glide_time` variable instead
+of the fixed number `3.0` in the `glide_to_xy()` function call.
+
+{{< learner-task-help >}}
+
+{{< jr-commit use-glide-time edit-script >}}
+
+{{< /learner-task >}}
+
+Now if you run the game, some aliens should be faster than others, and
 after little while it looks almost like aliens are appearing at
 random.
 
 
 ## Click on the aliens!
 
-So far our project is quite nice to look at, but it isn't a *game*
-because there's nothing for the player to do.  We'll fix that now.
-
-### Add sound effects
-
-We want there to be sound effects when the player clicks on the alien.
-We'll have one sound effect when they click on an enemy alien, and a
-different one when they click on a friendly one.  This tutorial comes
-with an explosion and a scream, and we tell the `Alien` sprite that we
-want to use these sounds in a similar way to how we say what images we
-want to use for costumes:
-
-{{< commit add-alien-sounds >}}
+Now your project is quite nice to look at, but it isn’t a *game*
+because there’s nothing for the player to do.  That’s the next job.
 
 ### React when hit
 
-We want the Aliens (original and clones) to react when they're clicked
-on by the player.  We'll write some `when_this_sprite_clicked` code
-which plays the right sound, depending on whether that clone is an
-enemy or a friendly alien.
+The Aliens (original and clones) should react when they’re clicked on
+by the player.
 
-Remember that an alien is an enemy when wearing the blue costume
-(number&nbsp;0) and a friendly visitor when wearing the green costume
-(number&nbsp;1).  So we can use an `if`/`else` statement to test which
-costume the alien is wearing, and play the right sound:
+{{< learner-task >}}
 
-{{< commit start-appropriate-sound-when-hit >}}
+Add a *when-this-sprite-clicked* script to your Alien.
 
-If you try now, you should hear the sounds when you click on the
-aliens — check you get the right sound for the right costume!
+{{< learner-task-help >}}
 
-But the player can keep clicking on the same alien.  We need the alien
-to hide itself once its been clicked on.  We can add a line to our
-`handle_hit()` code to make this happen:
+{{< jr-commit add-when-hit-skeleton add-script >}}
 
-{{< commit hide-when-hit >}}
+{{< /learner-task >}}
 
-Now each alien should disappear (with a sound) when the player clicks
-on it.  Try this!
+Now you have the script, you need to write its code.
 
-But now we have a different problem — once the player has clicked on
+{{< learner-task >}}
+
+Add code to your new script which makes the Alien hide itself.
+
+{{< learner-task-help >}}
+
+{{< jr-commit hide-when-hit edit-script >}}
+
+{{< /learner-task >}}
+
+But now there’s a different problem — once the player has clicked on
 all six aliens, no more aliens appear.
 
 ### Re-appear at the top of the screen
 
-We need to make sure each alien is visible just before it starts
-gliding down the screen.  Add a line to the `drift_down_screen()` code
-to make this happen:
+Each alien must make sure it’s visible just before it starts
+gliding down the screen.
 
-{{< commit show-when-starting-descent >}}
+{{< learner-task >}}
 
-Try your game!  It should be quite noisy now.
+Think about where in your Alien’s code you need to make sure each
+Alien is visible, and add code to do this.
 
-### Make a sound if the player misses
+{{< learner-task-help >}}
 
-For extra noise, we'll make it so that a sound effect happens if the
-player misses all the aliens when they click.  We can tell this
-happens by making the *stage* react when it's clicked.
+Remember that the Aliens’ movement is controlled by code in the
+`"play-game"` script.
 
-First we need to say that the `Galaxy` stage will use the 'fizz' sound
-effect (which comes with this tutorial):
+{{< learner-task-help >}}
 
-{{< commit add-sound-to-stage >}}
+A good place to make the Alien show itself is after it has chosen a
+random costume and moved to the top of the screen, but before the code
+which makes the Alien glide down the screen.
 
-And then we'll add some code to the `Galaxy` so it plays this sound
-when the player clicks on the stage:
+{{< learner-task-help >}}
 
-{{< commit make-miss-sound-when-stage-clicked >}}
+{{< jr-commit show-when-starting-descent edit-script >}}
 
-Try your game!  It should be even more noisy.
+{{< /learner-task >}}
+
+Try your game!  It should be more fun now.
 
 
 ## Keep score
 
-To let the player know how they're doing, we'll add score-keeping to
-the game.  Just like in Scratch, your program remembers numbers (or
-strings, or lists, or anything else) using a *variable*.  In Python,
-you don't have to explicitly make a variable.  Setting a new variable
-to a value creates that variable for you.
+To let the player know how they’re doing, the game should keep score.
+Just like in Scratch, your program remembers numbers (or strings, or
+lists, or anything else) using a *variable*.  In Python, you don’t
+have to explicitly make a variable.  Setting a new variable to a value
+creates that variable for you.
 
 ### Initialise score to zero
 
-The player's score starts off at zero, so near the top of the program,
-we'll create the `score` variable with a value of `0`:
+The Stage will keep track of the player’s score, in a variable which
+belongs to the Stage.
 
-{{< commit define-global-score >}}
+Let’s look at an example of how to do this.  To create a variable
+`time` belonging to the Stage, setting it to the value `60`, the code
+would be
+
+``` python
+Stage.time = 60
+```
+
+{{< learner-task >}}
+
+Use this example to write code which sets a Stage variable `score` to
+the value `0`.  This variable should be created when your program
+starts running, so think about where your code should be added.
+
+{{< learner-task-help >}}
+
+To make sure the new code runs at the start of the game, it should go
+at the top of the Stage’s *green-flag* script.
+
+{{< learner-task-help >}}
+
+{{< jr-commit define-global-score edit-script >}}
+
+{{< /learner-task >}}
 
 ### Show score
 
 In Scratch, you tick a box to say that you want the variable to be
-shown.  In Pytch you do this by writing some code.  We want the
-`score` variable to be shown as soon as the game starts, so the
-`run()` code inside `Galaxy` is a good place to put this.
+shown.  In Pytch you do this by writing some code.  The Stage’s
+`score` variable should be shown as soon as the game starts, just
+after the variable is created.
 
-In this tutorial, we won't go into the details of what `None` means.
-You can see that we give the *name* of the variable that we want to
-show:
+As an example, to show a variable `time` belonging to the Stage, the
+code would be
 
-{{< commit show-score >}}
+``` python
+pytch.show_variable(Stage, "time")
+```
+
+The way this works is unusual — you use the *name* of the variable,
+written as a *string*.
+
+{{< learner-task >}}
+
+Add code which shows the Stage’s `score` variable.  Think about where
+that code should go.
+
+{{< learner-task-help >}}
+
+The code should go straight after the code which creates the
+`Stage.score` variable.
+
+{{< learner-task-help >}}
+
+{{< jr-commit show-score edit-script >}}
+
+{{< /learner-task >}}
 
 ### Give points for hitting an enemy
 
-Let's give the player 10&nbsp;points when they click on an enemy
-invader.  We already have some code which makes a sound when the alien
-is clicked, so this is a good place to add the code which updates the
-score.
+Let’s give the player 10&nbsp;points when they click on an enemy
+invader.  There is already some code which makes the Aliens hide
+themselves when it’s clicked, so this is a good place to add the code
+which updates the score.
 
-We need to tell Python that it's the *global* variable `score` we want
-to change.  Without this, Python thinks you mean a *local* variable
-which exists just inside your `handle_hit()` code.  Once we've said
-which `score` we're talking about, we add 10 to it.
+{{< learner-task >}}
 
-{{< commit award-score-when-hit-enemy >}}
+Add code which gives the player ten points whenever they click on
+*any* alien.  (In a minute you’ll change this code so only enemy
+aliens give you points.)
 
-Try this — you should get 10 points for every blue enemy you click on.
+{{< learner-task-help >}}
 
-## Avoid repetitive code
+In Scratch, the code
 
-The changes we'll make in this chapter aren't essential for the game
-to work.  But they do tidy up your code and make it easier to change
-and work with.
+``` scratch
+change [score v] by (10)
+```
 
-You might have thought that the code we added, quite early on, to make
-the five Alien clones was very repetitive:
+adds `10` to a variable called `score`.  Look in the help (use the
+‘question mark in circle’ icon at the top of the activity bar to show it)
+to find how to do the same thing in Python.  Remember the variable you
+want to change is `Stage.score`.
 
-    self.go_to_xy(-150, 180)
-    pytch.create_clone_of(self)
-    self.go_to_xy(-90, 180)
-    pytch.create_clone_of(self)
-    self.go_to_xy(-30, 180)
-    pytch.create_clone_of(self)
-    self.go_to_xy(30, 180)
-    pytch.create_clone_of(self)
-    self.go_to_xy(90, 180)
-    pytch.create_clone_of(self)
+{{< learner-task-help >}}
 
-There is a pattern to these pairs of lines of code, which we can make
-clearer by writing out exactly where those `-90`, `-30`, `30`,
-and `90` number come from.  The pattern is that we're adding an extra
-`60` each time, starting from `-150`.  We can change the code to show
-this clearly:
+The Python code to do this job is
 
-{{< commit explicit-clone-start-locations >}}
+``` python
+Stage.score += 10
+```
 
-and then we can even make the `-150` and `-90` values fit the exact
-pattern, by changing:
+Think about where to add this code.
 
-{{< commit explicit-0-and-1-clone-start-locations >}}
+{{< learner-task-help >}}
 
-Now your code should look like
+{{< jr-commit award-score-on-any-hit edit-script >}}
 
-    self.go_to_xy(-150 + 0 * 60, 180)
-    pytch.create_clone_of(self)
-    self.go_to_xy(-150 + 1 * 60, 180)
-    pytch.create_clone_of(self)
-    self.go_to_xy(-150 + 2 * 60, 180)
-    pytch.create_clone_of(self)
-    self.go_to_xy(-150 + 3 * 60, 180)
-    pytch.create_clone_of(self)
-    self.go_to_xy(-150 + 4 * 60, 180)
-    pytch.create_clone_of(self)
+{{< /learner-task >}}
 
-and you can see that this is just five copies of
+{{< learner-task >}}
 
-    self.go_to_xy(-150 + SOME_NUMBER * 60, 180)
-    pytch.create_clone_of(self)
+Move this code so it is ‘inside an `if` test’ — only give the player
+points if it’s an enemy alien.
 
-with a different number in place of `SOME_NUMBER` each time, starting
-at&nbsp;0 and going up to&nbsp;4.
+{{< learner-task-help >}}
 
-We can use a *loop* to avoid all this copied code.  The *loop
-variable* `i` will take on values starting at&nbsp;0, and stopping
-just before it gets to&nbsp;5.  This "stop just before 5" way of
-saying when to stop is how Python does things — it seems strange at
-first but does make sense once you get used to it!
+You can test whether it’s an enemy alien by checking whether the
+costume number is zero.
 
-Then inside the *loop body* we have the two lines, and use the
-variable `i` where the repeated code has `0`, `1`, `2`, `3`, or `4`:
+{{< learner-task-help >}}
 
-{{< commit replace-repetition-with-loop >}}
+In Scratch, you would write code like
+
+``` scratch
+if <(costume_number) = (0)> then
+  change [score v] by (10)
+```
+
+Look in the help to find how to do the same thing in Python.
+
+{{< learner-task-help >}}
+
+{{< jr-commit award-score-just-for-enemy edit-script >}}
+
+{{< /learner-task >}}
+
+Try this — you should get 10 points for every blue enemy you click on,
+and nothing for clicking on a green alien.
 
 
 ## Count lives
 
-The game is quite good now, but there's nothing to discourage the
-player from just clicking everywhere.  There's no penalty for hitting
+The game is quite good now, but there’s nothing to discourage the
+player from just clicking everywhere.  There’s no penalty for hitting
 a friendly alien.
 
-We'll fix that by giving the player three lives, and making it so
-destroying a friendly alien costs a life.
-
-### A 'custom block'
-
-In Scratch, you can create *custom blocks* to:
-
-* give a name to a particular bit of behaviour
-
-* let you re-use that behaviour without duplicating large stacks of
-  blocks.
-
-In Python, you can do the same thing.  You *define* a function, and can
-*call* it from elsewhere in your code.  We'll do that to gather
-together the "lose a life" behaviour.
-
-We'll copy the existing behaviour of making the *scream* sound, by
-defining a function `lose_life()`.  To define a function in Python, we
-use `def` — we've been using this already in fact, to define the code
-which happens when, say, the sprite is clicked on.
-
-Here's the start of our new `lose_life()` function:
-
-{{< commit extract-lose-life-method >}}
-
-Now we have the function, but nobody is using it.  This is like the
-situation in Scratch where you have made a custom block, but not used
-it anywhere.
-
-We'll change the `handle_hit()` function to use our new function:
-
-{{< commit call-lose-life-method >}}
-
-Test this now — the game should work exactly as before.  (So you might
-wonder why we're making these changes.  As your projects get bigger,
-it becomes more important that a human can read and understand the
-program, and one way to make this easier is by giving names to parts
-of the behaviour.)
+The player will have three lives.  Destroying a friendly alien will
+cost a life.
 
 ### Keeping track of lives
 
-We need a variable to store how many lives the player has.  The
-changes are very similar to when we brought in the `score` variable.
-First we create the variable near the top of our program:
+A variable will store how many lives the player has.  The changes will
+be very similar to what you did to make and show the `score` variable.
 
-{{< commit define-global-lives >}}
+{{< learner-task >}}
 
-Then we want the variable to be shown on the stage.  We don't want the
-display to be right on top of where the score is, so we provide extra
-information saying that we want the right-hand edge of the display to
-be a little bit in from the right-hand edge of the stage.  This is
-what the `right=236` code is doing here:
+Using the `Stage.score` variable as an example, create a variable
+`Stage.lives` which has the value `3` at the start of the game.
 
-{{< commit show-lives >}}
+{{< learner-task-help >}}
 
-And finally we then want to take one life away whenever the player
-clicks on a friendly alien.  We say we want to work with the *global*
-`lives` variable, and then subtract one from it:
+{{< jr-commit define-global-lives edit-script >}}
 
-{{< commit decrement-lives >}}
+{{< /learner-task >}}
+
+The player needs to be able to see how many lives they have.  The
+‘lives’ display must not be on top of where the ‘score’ display is,
+though.  The `pytch.show_variable()` function can be told where to put
+the display.
+
+For example, to show a variable `Stage.time` at the top right of the
+stage, the code would be
+
+``` python
+pytch.show_variable(Stage, "time", right=236)
+```
+
+{{< learner-task >}}
+
+Show the `Stage.lives` variable at the top right of the stage.
+
+{{< learner-task-help >}}
+
+{{< jr-commit show-lives edit-script >}}
+
+{{< /learner-task >}}
+
+And finally your program should take one life away whenever the player
+clicks on a friendly alien.
+
+{{< learner-task >}}
+
+In its *when clicked* script, your Alien already has code which gives
+the player points but only if that Alien is wearing the ‘enemy’
+costume (i.e., costume number `0`).
+
+Add similar code which subtracts one life but only if that Alien is
+wearing the ‘friendly’ costume (i.e., costume number `1`).
+
+{{< learner-task-help >}}
+
+{{< jr-commit decrement-lives-if-friendly edit-script >}}
+
+{{< /learner-task >}}
 
 Try this now — you should see the `lives` display go down each time
-you click on a green alien.  But the game doesn't stop when you run
-out of lives.  We'll fix this next.
+you click on a green alien.  But the game doesn’t stop when you run
+out of lives.
+
+The next chapter explains how to fix this.
 
 
 ## End game when no lives left
 
-Our last piece of work is to make the game stop when the player has
-used all their lives.  We *could* just ask 'is `lives` zero?' at
-different places in the code, but it will be clearer to give a name to
-this idea, with a `game_over` variable.  This will be either `True` or
-`False`, and when the game starts up, the game is *not* over, so we want:
+The last piece of work is to make the game stop when the player has
+used all their lives.  Your program can tell when this has happened
+because the `Stage.lives` variable will be zero.
 
-{{< commit define-global-game-over >}}
+### Stop aliens gliding when game is over
 
-### All lives gone means game is over
+First, aliens should stop gliding down the screen once the game is
+over.  At the moment, they glide forever, because of the `while True`.
+Instead, they should only glide while the player has some lives left.
 
-The only time that `game_over` might change is when the player has
-lost a life.  So, inside `lose_life()`, we'll ask whether subtracting
-a life has left `lives` equal to zero.  If so, we update the global
-`game_over` variable to be `True`:
+{{< learner-task >}}
 
-{{< commit set-game-over-when-no-lives >}}
+The ‘condition’ of the `while` loop is currently just the constant
+`True`, which means the `while` loop runs forever.  Replace `True`
+with a comparison which tests whether the player has more than zero
+lives left.
 
-### Stop the aliens when game is over
+{{< learner-task-help >}}
 
-We now have to make sure no more aliens glide down the screen once the
-game is over.  We'll change the `forever`-like loop inside
-`drift_down_screen()` so that each alien (clone or original) keeps
-going as long as the game is not over:
+You can find out whether the number of lives is greater than zero with
+the Python expression
 
-{{< commit stop-descent-loop-when-game-over >}}
+``` python
+Stage.lives > 0
+```
+
+{{< learner-task-help >}}
+
+{{< jr-commit stop-descent-loop-when-game-over edit-script >}}
+
+{{< /learner-task >}}
 
 Try this now — deliberately click on three green aliens.  You should
-see that no more aliens appear, but any aliens which are part-way down
-the screen keep going until they reach the bottom.  We'll tidy this
-last part up now.
+see that no more aliens appear.
 
-We want all aliens to disappear immediately the game is over.  We'll
-make this happen with a message which `lose_life()` will broadcast
-after setting `game_over` to `True`:
+But any aliens which are part-way down the screen keep going until
+they reach the bottom.  This needs fixing too.
 
-{{< commit broadcast-game-over >}}
+All aliens should disappear immediately when the player’s lives goes
+to zero.  Broadcasting a message when all the player’s lives are gone
+will achieve this.
+
+{{< learner-task >}}
+
+After subtracting one from `Stage.lives`, check whether `Stage.lives`
+is zero.  If it is, broadcast the message `"game-over"`.
+
+{{< learner-task-help >}}
+
+{{< jr-commit broadcast-game-over edit-script >}}
+
+{{< /learner-task >}}
 
 If you try this now, nothing will happen because nobody is *listening*
-to this message.  We'll add a last piece of code to the `Alien` so
-that all aliens (clones or the original) hide when they hear that
-message:
+for this message.
 
-{{< commit hide-when-receive-game-over >}}
+{{< learner-task >}}
+
+Add a script to the Alien which runs when the message `"game-over"` is
+broadcast.  Inside that script, write a line of code to hide the
+alien.
+
+{{< learner-task-help >}}
+
+{{< jr-commit hide-when-receive-game-over add-script >}}
+
+{{< /learner-task >}}
 
 ### Game complete!
 
@@ -532,12 +830,11 @@ Test your game now and make sure it works properly.
 
 Here are some ways you could make the game even better:
 
-* Once the game is over, the player still hears the *fizz* noise if
-  they click on the stage.  Stop this from happening.
+* Make the aliens move more quickly as the player’s score goes up.
 
-* Make the aliens move more quickly as the player's score goes up.
-
-* Add a rare red alien which is worth 50 points.
+* Add a rare red alien which is worth 50 points.  The “space invaders”
+  bundle of images, which you added to the project, includes a red
+  alien.
 
 * Add some left-to-right randomness to where the aliens start.
 
