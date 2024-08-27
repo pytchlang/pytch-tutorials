@@ -31,3 +31,6 @@ class Alien(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def drift_down_screen(self):
         self.set_size(0.15)
+        while True:
+            self.set_y(180)
+            self.glide_to_xy(self.x_position, -180, 3.0)
