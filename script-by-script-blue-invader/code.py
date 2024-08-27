@@ -7,4 +7,23 @@ class Stage(pytch.Stage):
 
 
 class Alien(pytch.Sprite):
-    Costumes = []
+    Costumes = [
+        "Invader_Navy_1.png",
+        "Invader_Navy_2.png",
+        "Invader_Green_1.png",
+        "Invader_Green_2.png",
+        "Invader_DarkRed_1.png",
+        "Invader_DarkRed_2.png",
+        "Invader_Blue_1.png",
+        "Invader_Blue_2.png",
+        "Invader_Cyan_1.png",
+        "Invader_Cyan_2.png",
+        "Invader_Orange_1.png",
+        "Invader_Orange_2.png",
+        "Invader_Pink_1.png",
+        "Invader_Pink_2.png",
+        "Invader_Red_1.png",
+        "Invader_Red_2.png",
+        "Invader_Yellow_1.png",
+        "Invader_Yellow_2.png"
+    ]
