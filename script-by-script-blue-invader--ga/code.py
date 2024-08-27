@@ -27,3 +27,7 @@ class Alien(pytch.Sprite):
         "Invader_Yellow_1.png",
         "Invader_Yellow_2.png"
     ]
+
+    @pytch.when_green_flag_clicked
+    def drift_down_screen(self):
+        pass
