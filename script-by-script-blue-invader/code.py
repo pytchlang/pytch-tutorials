@@ -56,3 +56,7 @@ class Alien(pytch.Sprite):
             self.set_y(180)
             glide_time = random.uniform(3.0, 5.0)
             self.glide_to_xy(self.x_position, -180, glide_time)
+
+    @pytch.when_this_sprite_clicked
+    def handle_hit(self):
+        pass
