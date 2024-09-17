@@ -62,6 +62,7 @@ class Alien(pytch.Sprite):
 
     @pytch.when_this_sprite_clicked
     def handle_hit(self):
-        Stage.score += 10
+        if self.costume_number == 0:
+            Stage.score += 10
 
         self.hide()
