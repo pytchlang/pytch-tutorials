@@ -3,4 +3,4 @@ import random
 
 
 class Stage(pytch.Stage):
-    Backdrops = ["solid-white.png", "galaxy.png"]
+    Backdrops = ["galaxy.png"]
