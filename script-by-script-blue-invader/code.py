@@ -28,7 +28,7 @@ class Alien(pytch.Sprite):
         "Invader_Yellow_2.png"
     ]
 
-    @pytch.when_green_flag_clicked
+    @pytch.when_I_receive("make-clones")
     def make_clones(self):
         self.go_to_xy(-150, 180)
         self.create_clone()
