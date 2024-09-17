@@ -32,5 +32,6 @@ class Alien(pytch.Sprite):
     def drift_down_screen(self):
         self.set_size(0.15)
         while True:
+            costume_index = random.choice([0, 2])
             self.set_y(180)
             self.glide_to_xy(self.x_position, -180, 3.0)
