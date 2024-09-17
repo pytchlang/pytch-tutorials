@@ -31,6 +31,8 @@ class Alien(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def make_clones(self):
         self.go_to_xy(-150, 180)
+        self.create_clone()
+        self.go_to_xy(-90, 180)
 
     @pytch.when_green_flag_clicked
     def drift_down_screen(self):
