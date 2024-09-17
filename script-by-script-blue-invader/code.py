@@ -59,4 +59,4 @@ class Alien(pytch.Sprite):
 
     @pytch.when_this_sprite_clicked
     def handle_hit(self):
-        pass
+        self.hide()
