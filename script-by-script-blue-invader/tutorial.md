@@ -828,6 +828,8 @@ Test your game now and make sure it works properly.
 
 ## Challenges
 
+{{< exclude-from-progress-trail >}}
+
 Here are some ways you could make the game even better:
 
 * Make the aliens move more quickly as the player’s score goes up.
@@ -840,6 +842,8 @@ Here are some ways you could make the game even better:
 
 
 ## Credits
+
+{{< exclude-from-progress-trail >}}
 
 This project was loosely inspired by the *Red Alert* game in the DK
 book [*Coding Games in
