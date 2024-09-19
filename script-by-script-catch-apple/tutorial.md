@@ -43,7 +43,7 @@ library.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-Bowl-costume add-medialib-appearance ["bowl"] >}}
+{{< jr-commit add-Bowl-costume add-medialib-appearance ["bowl.png"] >}}
 
 {{< /learner-task >}}
 
@@ -265,7 +265,7 @@ sprite.
 
 {{< learner-task-help >}}
 
-{{< jr-commit give-Apple-costume add-medialib-appearance ["apple"] >}}
+{{< jr-commit give-Apple-costume add-medialib-appearance ["apple.png"] >}}
 
 {{< /learner-task >}}
 
@@ -430,7 +430,7 @@ media library works well, or you can choose a different one.
 
 {{< learner-task-help >}}
 
-{{< jr-commit give-ScoreKeeper-costume add-medialib-appearance ["Dani"] >}}
+{{< jr-commit give-ScoreKeeper-costume add-medialib-appearance ["Dani.png"] >}}
 
 {{< /learner-task >}}
 
