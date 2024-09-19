@@ -260,7 +260,7 @@ Next is to give the apple a costume.
 
 {{< learner-task >}}
 
-Add the `"Apple.png"` costume from the media library to this new
+Add the `"apple.png"` costume from the media library to this new
 sprite.
 
 {{< learner-task-help >}}
