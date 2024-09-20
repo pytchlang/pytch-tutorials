@@ -26,3 +26,4 @@ class Mole(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def init_score(self):
         self.score = 0
+        pytch.show_variable(self, "score")
