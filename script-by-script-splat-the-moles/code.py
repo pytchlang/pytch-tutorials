@@ -27,3 +27,7 @@ class Mole(pytch.Sprite):
     def init_score(self):
         self.score = 0
         self.show_variable("score")
+
+    @pytch.when_key_pressed("j")
+    def hit_left(self):
+        pass
