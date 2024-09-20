@@ -4,6 +4,8 @@
   tip-commit: bn/script-by-script-catch-apple-01
 - name: Script-by-script blue invaders
   tip-commit: bn/sbs-blue-invader-01
+- name: Script-by-script splat the moles
+  tip-commit: bn/sbs-splat-the-moles-01
 - name: Hello world!
   tip-commit: bn/hello-02
 - name: Shoot the fruit
