@@ -22,3 +22,7 @@ class Mole(pytch.Sprite):
             self.switch_costume("no-moles.png")
             under_ground_time = random.uniform(0.5, 1.0)
             self.wait_seconds(under_ground_time)
+
+    @pytch.when_green_flag_clicked
+    def init_score(self):
+        pass
