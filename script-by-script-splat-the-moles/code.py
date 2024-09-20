@@ -13,3 +13,5 @@ class Mole(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def run(self):
         self.go_to_xy(0, -100)
+
+        costume_index = random.randint(1, 3)
