@@ -30,4 +30,5 @@ class Mole(pytch.Sprite):
 
     @pytch.when_key_pressed("j")
     def hit_left(self):
-        pass
+        if self.costume_number == 1:
+            self.score += 1
