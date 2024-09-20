@@ -1,4 +1,15 @@
 {
+    "groupedProjectAssets": [
+        {
+            "name": "cartoon moles",
+            "assets": [
+                "no-moles.png",
+                "mole-left.png",
+                "mole-centre.png",
+                "mole-right.png"
+            ]
+        }
+    ],
     "programKind": "per-method",
     "difficulty": "medium"
 }
