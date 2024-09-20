@@ -9,3 +9,7 @@ class Stage(pytch.Stage):
 
 class Mole(pytch.Sprite):
     Costumes = ["no-moles.png", "mole-left.png", "mole-centre.png", "mole-right.png"]
+
+    @pytch.when_green_flag_clicked
+    def run(self):
+        pass
