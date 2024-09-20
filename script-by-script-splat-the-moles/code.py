@@ -17,3 +17,4 @@ class Mole(pytch.Sprite):
         while True:
             costume_index = random.randint(1, 3)
             self.switch_costume(costume_index)
+            above_ground_time = random.uniform(0.5, 1.0)
