@@ -8,4 +8,4 @@ class Stage(pytch.Stage):
 
 
 class Mole(pytch.Sprite):
-    Costumes = []
+    Costumes = ["no-moles.png", "mole-left.png", "mole-centre.png", "mole-right.png"]
