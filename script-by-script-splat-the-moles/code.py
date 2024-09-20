@@ -19,3 +19,6 @@ class Mole(pytch.Sprite):
             self.switch_costume(costume_index)
             above_ground_time = random.uniform(0.5, 1.0)
             self.wait_seconds(above_ground_time)
+            self.switch_costume("no-moles.png")
+            under_ground_time = random.uniform(0.5, 1.0)
+            self.wait_seconds(under_ground_time)
