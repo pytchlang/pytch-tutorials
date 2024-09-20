@@ -35,3 +35,11 @@ class Mole(pytch.Sprite):
             self.switch_costume("no-moles.png")
         else:
             self.score = 0
+
+    @pytch.when_key_pressed("k")
+    def hit_centre(self):
+        if self.costume_number == 2:
+            self.score += 1
+            self.switch_costume("no-moles.png")
+        else:
+            self.score = 0
