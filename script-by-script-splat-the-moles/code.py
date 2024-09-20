@@ -14,5 +14,6 @@ class Mole(pytch.Sprite):
     def run(self):
         self.go_to_xy(0, -100)
 
-        costume_index = random.randint(1, 3)
-        self.switch_costume(costume_index)
+        while True:
+            costume_index = random.randint(1, 3)
+            self.switch_costume(costume_index)
