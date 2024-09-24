@@ -9,3 +9,7 @@ class Stage(pytch.Stage):
 
 class PlayerBat(pytch.Sprite):
     Costumes = ["player-bat-smile.png", "player-bat-wince.png"]
+
+    @pytch.when_green_flag_clicked
+    def play(self):
+        pass
