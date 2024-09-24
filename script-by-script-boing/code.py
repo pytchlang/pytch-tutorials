@@ -5,3 +5,7 @@ import math
 
 class Stage(pytch.Stage):
     Backdrops = ["table.png"]
+
+
+class PlayerBat(pytch.Sprite):
+    Costumes = []
