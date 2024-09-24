@@ -49,5 +49,6 @@ class Ball(pytch.Sprite):
                 if self.touching(PlayerBat):
                     self.change_x(-x_velocity)
                     x_velocity = -x_velocity
+                    y_velocity = random.randint(-4, 4)
 
             self.change_y(y_velocity)
