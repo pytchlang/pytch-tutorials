@@ -12,4 +12,4 @@ class PlayerBat(pytch.Sprite):
 
     @pytch.when_green_flag_clicked
     def play(self):
-        pass
+        self.go_to_xy(-212, 0)
