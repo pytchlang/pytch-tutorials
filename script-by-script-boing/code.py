@@ -8,4 +8,4 @@ class Stage(pytch.Stage):
 
 
 class PlayerBat(pytch.Sprite):
-    Costumes = []
+    Costumes = ["player-bat-smile.png", "player-bat-wince.png"]
