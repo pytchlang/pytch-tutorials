@@ -9,329 +9,954 @@ published by the Raspberry Pi organisation.
 
 ---
 
-## Make the playing area
+## Set up the playing area
 
-We first set up the _Stage_, which, like Scratch, is where the action takes
-place.  We're going to use the same image as the version in _Code the Classics_.
-We define a `class` which is based on the built-in `pytch.Stage`, and say what
-_Backdrops_ we want it to have.  In Pytch we can do this by giving a _list_ of
-backdrop filenames.  Here we only have one backdrop, so our list just has one
-entry.
+The game needs a better backdrop than the plain one it has by default.
+Pytch’s media library has the image used in _Code the Classics_.
 
-{{< commit add-stage-with-background >}}
+{{< learner-task >}}
+
+Add the “table” image as a new Backdrop for the stage.  You can find
+it in the media library.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-table-backdrop add-medialib-appearance ["table.png"] >}}
+
+{{< /learner-task >}}
+
+You don’t need the default plain backdrop any more.
+
+{{< learner-task >}}
+
+Delete the plain white backdrop from the stage.
+
+{{< learner-task-help >}}
+
+{{< jr-commit remove-default-backdrop delete-appearance >}}
+
+{{< /learner-task >}}
 
 
-## Add the player's bat
+## Add the player’s bat
 
-Now we have the background, we want to put the player's bat into the
-game.  The first part of this is similar to how we introduced the
-_BoingBackground_.  We define _PlayerBat_, which we say is a kind of
-_Sprite_.  Again, its _Costumes_ list only has one entry.
+Next, the game needs a bat for the player to control.
 
-{{< commit add-Player-with-costume >}}
+{{< learner-task >}}
 
-When the green flag is clicked, we want the player's bat to go to its
-starting position:
+Add a sprite called `PlayerBat` to your game.
 
-{{< commit init-Player-on-green-flag >}}
+{{< learner-task-help >}}
 
-Once the game has started, the person playing the game needs to be
-able to move the bat.  We do this by continually checking whether the
-person is pressing the `W` key to move up, or the `S` key to move
-down.  If they are, we change the bat's _y_ coordinate:
+{{< jr-commit add-PlayerBat-sprite add-sprite >}}
 
-{{< commit move-Player-with-W-and-S >}}
+{{< /learner-task >}}
 
-If you play the game now, you'll see a problem.  You can move the bat
-right off the top of the stage.  To stop this, we'll only move if
-you're pressing `W` and you're low enough that moving up is allowed.
-We'll make the same change to the 'move down' part of the code:
+The sprite needs a costume.  There is a bundle of two costumes in
+Pytch’s media library — one “normal” and one “flashing”, which will be
+used later in this tutorial.
 
-{{< commit limit-Player-y-coord >}}
+{{< learner-task >}}
+
+Add the “Boing player bat” bundle of images as Costumes for the
+`PlayerBat` sprite.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-PlayerBat-costumes add-medialib-appearances-entry ["Boing player bat"] >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+Test your game!  You should see the player’s bat in the middle of the
+playing table background.
+
+{{< /learner-task >}}
+
+
+## Let the player control their bat
+
+The player bat needs some scripts to control its behaviour.
+
+When the green flag is clicked, the player’s bat needs to go to its
+starting position at the left of the stage.
+
+{{< learner-task >}}
+
+Add a “when green flag clicked” script to the `PlayerBat` sprite.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-empty-PlayerBat-play-script add-script >}}
+
+{{< /learner-task >}}
+
+You can use the “Show coordinates” helper to check that `(-215, 0)` is
+a reasonable guess for the player’s bat’s starting position.
+
+{{< learner-task >}}
+
+Add a line of code to the script which moves the player’s bat to the
+position with coordinates `(-215, 0)`.
+
+{{< learner-task-help >}}
+
+{{< jr-commit centre-PlayerBat-on-start edit-script >}}
+
+{{< /learner-task >}}
+
+Once the game has started, the player needs to be able to move the
+bat, either up or down.
+
+### Moving up
+
+The program should continually check whether the person is
+pressing the `w` key to move up.  If they are, your code needs to
+change the bat’s `y` coordinate.
+
+In Scratch, this would look like:
+
+``` scratch
+forever
+  if <key (w v) pressed> then
+    change y by (3)
+```
+
+{{< learner-task >}}
+
+Work out the Python code which does this job.  You can use the help
+`(?)` to find how to do “forever”, “if”, “key pressed”, and “change y”
+in Pytch.
+
+You’ll also need to know how to put Python code “inside” things like
+“forever” and “if”.  There are examples in the help.
+
+{{< learner-task-help >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit move-PlayerBat-up-with-W edit-script >}}
+
+{{< /learner-task >}}
+
+### Moving down
+
+This is similar.
+
+{{< learner-task >}}
+
+Add similar lines of code, to make the player’s bat move down when the
+`s` key is pressed.
+
+{{< learner-task-help >}}
+
+**Important:** You do **not** want another `while True` loop.  The new
+code can go “inside” the `while True` loop you already have.
+
+{{< learner-task-help >}}
+
+You can copy and paste the two lines of code you already have, then
+change the copy, if you think that will save time.
+
+{{< learner-task-help >}}
+
+{{< jr-commit move-PlayerBat-down-with-S edit-script >}}
+
+{{< /learner-task >}}
+
+### Test it!
+
+{{< learner-task >}}
+
+Try your game.  Hold down the `w` key and check the bat moves up.
+Hold down the `s` key and check it moves down.
+
+**There is a bug — what is it?**
+
+{{< learner-task-help >}}
+
+The player can move the bat right off the top or bottom of the table.
+
+{{< /learner-task >}}
+
+### Staying on the table
+
+If you play the game now, you’ll see a bug.  You can move the bat
+right off the top or bottom of the table.  To stop this, you need to
+add checks to your code.
+
+At the moment, the code only checks whether the player is pressing `w`
+before deciding it should move the bat up.  But there are *two* things
+that *both* must be true for the bat to move up:
+
+* The `w` key must be pressed.
+* The bat must be low enough that moving up is allowed.
+
+{{< learner-task >}}
+
+Extend the
+
+``` python-expression
+pytch.key_pressed("w")
+```
+
+test in your code to *also* test whether the bat is low enough.
+
+{{< learner-task-help >}}
+
+To test whether the bat is low enough, you can ask whether its _y_
+coordinate is less than some fixed value: you can experiment to check
+that `120` works for this.
+
+{{< learner-task-help >}}
+
+The expression
+
+``` python-expression
+self.y_position < 120
+```
+
+will test whether the bat is low enough.
+
+{{< learner-task-help >}}
+
+You can join these tests together with Python’s `and` operator.  This
+works the same as Scratch’s
+
+``` scratch
+< <> and <> >
+```
+
+block.
+
+{{< learner-task-help >}}
+
+The new test expression for your `if` statement is
+
+``` python-expression
+pytch.key_pressed("w") and self.y_position < 120
+```
+
+{{< learner-task-help >}}
+
+{{< jr-commit clamp-PlayerBat-y-high edit-script >}}
+
+{{< /learner-task >}}
+
+The same problem happens for moving down.  The player bat can go right
+off the bottom of the screen.
+
+{{< learner-task >}}
+
+Make a similar change to the “move down” code.
+
+{{< learner-task-help >}}
+
+The extra part of the test in the `if` statement this time will be to
+test whether the _y_ coordinate is _greater than_ some fixed value.
+Everything is symmetrical, so -120 will do the job.
+
+{{< learner-task-help >}}
+
+{{< jr-commit clamp-PlayerBat-y-low edit-script >}}
+
+{{< /learner-task >}}
 
 
 ## Add the ball
 
-The next thing to add is the ball.  We do this in a very similar way
-to how we added the player's bat.  The ball only has one costume, and
-we tell Pytch which file to use:
+The next thing to add is the ball.  You do this in a very similar way
+to how you added the player’s bat.
 
-{{< commit add-Ball-with-costume >}}
+{{< learner-task >}}
+
+Add a `Ball` sprite to your project.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-Ball-sprite add-sprite >}}
+
+{{< /learner-task >}}
+
+And it needs a costume.
+
+{{< learner-task >}}
+
+Add the `ball.png` costume from Pytch’s media library to your sprite.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-Ball-costume add-medialib-appearance ["ball.png"] >}}
+
+{{< /learner-task >}}
 
 When the green flag is clicked, the ball should go to the very centre
-of the screen:
+of the screen.
 
-{{< commit centre-Ball-on-green-flag >}}
+{{< learner-task >}}
+
+Add a “when green flag clicked” script to your `Ball` sprite, with
+code to move it to the centre of the screen.
+
+{{< learner-task-help >}}
+
+The centre of the screen is at coordinates `(0, 0)`.  You can check
+this with the “Show coordinates” tool.
+
+{{< learner-task-help >}}
+
+{{< jr-commit centre-Ball-on-green-flag add-script >}}
+
+{{< /learner-task >}}
 
 Then it should straight away start moving away from the player, to
-give them time to get ready.  We do this by continually changing the
-ball's _x_ coordinate:
+give them time to get ready.  This means moving to the right.
 
-{{< commit move-Ball-across-screen >}}
+It’s useful to think ahead a bit here.  The ball won’t always be
+moving to the right.  Once the robot has hit the ball, the ball will
+move to the left.  To remember the direction the ball is travelling
+in, you can use a _variable_.  Choosing a good name for variables is
+important.  This variable will remember the *velocity* of the ball in
+the *x* direction, so `x_velocity` is a good name.
 
-The problem here is that the ball of course just keeps going right
-off the edge of the screen.  We know we're going to need to keep track
-of which direction the ball is going, so we bring in a *local variable*
-`x_speed`.  This variable only exists inside the `play()` method.
+(You might have thought of “speed” — the difference is that “velocity”
+includes information about direction but “speed” doesn’t.)
 
-{{< commit add-Ball-state-x-speed >}}
+{{< learner-task >}}
 
-We'll leave the ball here until there is a robot bat for the player to
-play against, which is what we'll do next.
+Add code which sets the variable `x_velocity` to the value `3`.  This
+value was chosen by experiments to make the ball move at a good speed.
+
+{{< learner-task-help >}}
+
+{{< jr-commit define-Ball-x-velocity edit-script >}}
+
+{{< /learner-task >}}
+
+Now you can write code to move the ball.
+
+{{< learner-task >}}
+
+Add a `while True` loop which moves the ball horizontally with the
+right velocity.
+
+{{< learner-task-help >}}
+
+Moving the ball horizontally is done by changing its _x_ coordinate by
+the value of the `x_velocity` variable.
+
+{{< learner-task-help >}}
+
+You will need the code
+
+``` python
+self.change_x(x_velocity)
+```
+
+inside a `while True` loop.
+
+{{< learner-task-help >}}
+
+{{< jr-commit move-Ball-with-x-velocity edit-script >}}
+
+{{< /learner-task >}}
+
+### Test it!
+
+{{< learner-task >}}
+
+Try your game.  You should still be able to move the player bat up and
+down (`w` and `s` keys) while the ball moves to the right.
+
+**There is a bug — what is it?**
+
+{{< learner-task-help >}}
+
+The ball just keeps going off the right of the stage.
+
+{{< /learner-task >}}
+
+The problem here is that the ball of course just keeps going right,
+off the edge of the screen.
+
+The next chapter will add the robot bat for the player to play
+against, and which will give the ball something to bounce off.
 
 
 ## Add the robot opponent
 
-This is familiar by now.  We add _RobotBat_, which is a sort of
-_Sprite_, with a costume:
+This should be familiar by now!
 
-{{< commit add-Robot-with-costume >}}
+{{< learner-task >}}
 
-When the green flag is clicked, the robot bat will go to the right
-place on the screen, which is at the right, vertically centred:
+Add a _RobotBat_ sprite to your program.
 
-{{< commit centre-Robot-on-green-flag >}}
+{{< learner-task-help >}}
 
-Shortly we'll give the robot bat some intelligence, but next we'll
-return to making the ball bounce.
+{{< jr-commit add-RobotBat-sprite add-sprite >}}
+
+{{< /learner-task >}}
+
+There are some “robot bat” costumes in the media library.
+
+{{< learner-task >}}
+
+Add the right costumes to this new sprite.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-RobotBat-costumes add-medialib-appearances-entry ["Boing robot bat"] >}}
+
+{{< /learner-task >}}
+
+At the start of the game, the robot bat needs to go to the right
+place on the screen.
+
+{{< learner-task >}}
+
+Add a “when green flag script” to your `RobotBat` sprite, with code
+which moves it to the correct starting point — at the right,
+vertically centred.
+
+{{< learner-task-help >}}
+
+The coordinates `(215, 0)` are a reasonable guess for this.
+
+{{< learner-task-help >}}
+
+{{< jr-commit centre-RobotBat-on-green-flag add-script >}}
+
+{{< /learner-task >}}
+
+The robot bat needs some intelligence, but next you’ll go back to the
+`Ball` sprite, and make it bounce.
 
 
 ## Bounce the ball off the bats: simple version
 
-The ball can tell if it's moved far enough to the right that it should
-bounce off the robot.  Straight after the ball has moved, we want
-check if it's moved too far.  If it has, we want to move _back_ the
-same amount we just moved, and then change our `x_speed` to be the
-_opposite_ of what it just was:
+You’ll develop the “bounce off bats” code in stages.  To start with,
+the ball will always bounce off the left and right edges, taking no
+notice of where the bats are.
 
-{{< commit bounce-Ball-off-Robot >}}
+The ball can tell if it’s moved far enough to the right that it should
+bounce off the robot.  It does this by looking at its *x* coordinate.
+If it has moved too far, it needs to move _back_ the same amount it just
+moved, and then change its `x_velocity` to be the _opposite_ of what
+it just was.
 
-We can do the same to make the ball check if it's bounced off the
-player's bat:
+{{< learner-task >}}
 
-{{< commit bounce-Ball-off-Player >}}
+Add code to the `Ball` which:
 
-If you run this now, it looks good but boring.  The ball just bounces
-backwards and forwards between the player and the robot.  But!  If you
-move the player up or down, you'll see that the ball bounces even it
-the player misses it.  We'll fix this next.
+* Checks whether its *x* coordinate is greater than some fixed value;
+  you can check that `200` is a reasonable guess for this.
+* If so, you need to do two things:
+    * Change the ball’s *x* coordinate by the opposite (i.e., negative)
+      of the `x_velocity`.  This puts the ball back where it was before
+      it moved.
+    * Set the `x_velocity` to the opposite of what it currently is.
+
+{{< learner-task-help >}}
+
+You will need an `if` statement.  The test will be
+
+``` python-expression
+self.x_position > 200
+```
+
+{{< learner-task-help >}}
+
+To find the negative of the value in the variable `x_velocity`, you
+can use the Python expression
+
+``` python-expression
+-x_velocity
+```
+
+{{< learner-task-help >}}
+
+{{< jr-commit bounce-Ball-off-RobotBat edit-script >}}
+
+{{< /learner-task >}}
+
+You can do something very similar to make the ball bounce when it’s at
+the left edge of the screen — remember for this first stage, it
+doesn’t matter where the bat is.
+
+{{< learner-task >}}
+
+Add code to the `Ball` which makes it bounce at the left edge.  The
+code will be very similar to the three lines you just added.
+
+{{< learner-task-help >}}
+
+The test in the `if` statement needs to check whether the ball is ‘too
+far’ left, using the Python expression
+
+``` python-expression
+self.x_position < -200
+```
+
+{{< learner-task-help >}}
+
+But the code “inside the `if`” to actually make the bounce happen is
+exactly the same.
+
+{{< learner-task-help >}}
+
+{{< jr-commit bounce-Ball-off-PlayerBat edit-script >}}
+
+{{< /learner-task >}}
+
+### Test it!
+
+{{< learner-task >}}
+
+Try your game.  You should still be able to move the player bat up and
+down (`w` and `s` keys).  The ball should bounce back and forth.
+
+**There is a bug (which we were expecting) — what is it?**
+
+{{< learner-task-help >}}
+
+The ball bounces even if the player misses it.
+
+{{< /learner-task >}}
+
+The next chapter will fix this.
 
 
-## Bounce properly off the player's bat
+## Bounce properly off the player’s bat
 
-What we want to do is measure how far up or down on the player's bat
-the ball has hit, if it hits the bat at all.  We'll call the centre of
-the bat 'zero', with positive positions towards the top of the bat,
-and negative positions towards the bottom.  We can work this out by
-finding the vertical position — the _y_ coordinate — of the player's
-bat, and subtracting that from the ball's _y_ coordinate:
+Once the code knows the ball is far enough left that it might bounce
+off the player’s bat, it should then also check whether the ball is
+touching the bat.
 
-{{< commit compute-position-on-Player >}}
+{{< learner-task >}}
 
-By experimenting with the '45' in the following code, we can see what
-a fair number to use so the ball bounces when it looks like it should
-bounce, and misses when it looks like it should miss.  The ball only
-bounces if the position on the bat is 'higher than the bottom of the
-bat' and also 'lower than the top of the bat':
+Move the “bounce at left” lines of code inside another `if` statement,
+inside the
 
-{{< commit check-Player-has-hit-Ball >}}
+``` python
+if self.x_position < -200:
+```
 
-This is better.  The ball bounces when it should, but if the player is
-too high or too low, the ball sails right past, off to the left.  But
-this does not make for an interesting game.
+one.  The new `if` statement should test whether the ball is touching
+the player bat.
 
-We'll make the ball bounce off in different directions, depending
-where on the bat the player hits it.  If the player hits the ball with
-the top of their bat, the ball will bounce off upwards, and similarly
-for the bottom of their bat.
+**Why not use `and` like before?**  Looking ahead, we want to do
+something different if the ball is far enough left but the player
+misses it.
 
-To let us work with this, the ball needs to remember how quickly it's
-moving _vertically_, i.e., in the _y_ direction.  So we add another
-local variable, `y_speed`.  It starts off as zero, because the ball is
-moving neither up nor down, just straight across:
+{{< learner-task-help >}}
 
-{{< commit add-Ball-state-y-speed >}}
+The help bar will show you some examples of testing for one sprite
+touching another.  Look for the Python equivalent of the Scratch
 
-Every step, the ball should change its _y_ position by this amount:
+``` scratch
+< touching [PlayerBat v] >
+```
 
-{{< commit change-Ball-y >}}
+{{< learner-task-help >}}
+
+{{< jr-commit check-hit-PlayerBat edit-script >}}
+
+{{< /learner-task >}}
+
+Now the ball bounces when it should.  If the player is too high or too
+low, the ball sails right past, off to the left.
+
+But it’s not an interesting game because the ball only moves exactly
+left and right.  The ball needs to bounce off in different directions.
+
+The ball needs to remember how quickly it’s moving _vertically_, i.e.,
+in the _y_ direction.
+
+{{< learner-task >}}
+
+Add a variable `y_velocity` which will store how quickly (and in which
+direction) the ball is moving in the *y* direction.  Think about what
+its starting value should be.
+
+{{< learner-task-help >}}
+
+The ball starts off moving exactly horizontally, so its *y*-velocity
+should start at zero.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-Ball-state-y-velocity edit-script >}}
+
+{{< /learner-task >}}
+
+Now the code needs to *use* this variable.
+
+{{< learner-task >}}
+
+Add code at the end of the “body” of the `while True` loop which
+changes the ball’s *y* coordinate by its `y_velocity`.
+
+{{< learner-task-help >}}
+
+{{< jr-commit change-Ball-y edit-script >}}
+
+{{< /learner-task >}}
 
 At the moment this makes no difference, because changing something by
 zero leaves it alone.
 
-We can now make the ball fly off in different directions, depending on
-where on the bat the player hit it.  We worked out that the 'position
-on bat' goes from about `-45` at the bottom to `45` at the top.
-We'll divide this by ten to get the ball's new _y_-speed, but ignoring
-any remainder by telling Pytch to turn the answer of the division into
-an _integer_ (whole number) using `int()`:
+{{< learner-task >}}
 
-{{< commit make-Ball-y-speed-depend-on-Player-position >}}
+Give the ball a random `y_velocity` when it bounces off the player’s
+bat.
 
-If you try this now, you can check that the ball bounces off the
-player's bat as it should.  But the ball then just keeps flying off
-the top or bottom of the screen.
+{{< learner-task-help >}}
 
-## Bounce the ball off the top and bottom of the court
+Good values for `y_velocity` are whole numbers from `-4` to `4`
+(inclusive).  Look in the help to find out how to choose a random
+number in this range.
 
-We can tell if the ball has gone too high or too low by comparing its
-_y_ coordinate to numbers chosen by experiment.  If it has gone too
-high or too low, we undo the last _y_ change, and make the _y_-speed
-be the opposite of what it was:
+{{< learner-task-help >}}
 
-{{< commit make-Ball-bounce-vertically >}}
+The Python expression
 
-If you play the game now, it sort of works, but there are two obvious
-problems:
+``` python-expression
+random.randint(-4, 4)
+```
 
-* The ball keeps going past the player's bat if you miss and then
-  after a short while mysteriously re-appears.
+will do this.
 
-* The robot player never moves but still the ball bounces off the
-  right-hand edge of the screen.
+{{< learner-task-help >}}
 
-We'll fix these things next.
+{{< jr-commit random-Ball-y-velocity-PlayerBat-bounce edit-script >}}
+
+{{< /learner-task >}}
+
+The ball needs to do the same when it bounces off the robot bat.
+
+{{< learner-task >}}
+
+Give the ball a random `y_velocity` when it bounces off the robot
+bat.
+
+{{< learner-task-help >}}
+
+{{< jr-commit random-Ball-y-velocity-RobotBat-bounce edit-script >}}
+
+{{< /learner-task >}}
+
+### Test it!
+
+{{< learner-task >}}
+
+Try your game.  You should still be able to move the player bat up and
+down (`w` and `s` keys).  The ball should bounce back and forth, and
+when the player hits it, it should go in a random direction.
+
+**There is a bug — what is it?**
+
+{{< learner-task-help >}}
+
+The ball goes off the top or bottom of the table.
+
+{{< /learner-task >}}
+
+The next chapter will fix this.
+
+
+## Bounce the ball off the top and bottom of the table
+
+This is a similar problem to bouncing the ball off a bat, except the
+code needs to check the *y* coordinate, and work with `y_velocity`.
+
+{{< learner-task >}}
+
+Add code after the `change_y()` code which makes the ball check if it
+has gone too high or too low, and react correctly if so.
+
+{{< learner-task-help >}}
+
+You can use an `if` statement with a test which asks whether either of
+the following is true:
+
+* the *y* coordinate is “too big” (meaning the ball is about to go off
+  the top of the stage); greater than `158` counts as too big
+* the *y* coordinate is “too small” (meaning the ball is about to go off
+  the bottom of the stage); smaller than `-158` counts as too small.
+
+You can join these individual tests with Python’s `or` operator.
+
+{{< learner-task-help >}}
+
+If the ball is too high or too low, you need code which:
+
+* changes the ball’s *y* coordinate by the opposite of the change it
+  just made;
+* makes the `y_velocity` be the opposite of what it currently is.
+
+{{< learner-task-help >}}
+
+{{< jr-commit make-Ball-bounce-vertically edit-script >}}
+
+{{< /learner-task >}}
+
+### Test it!
+
+{{< learner-task >}}
+
+Try your game.
+
+**There are some bugs left — what are they?**
+
+{{< learner-task-help >}}
+
+* The game is too generous about letting the player hit the ball — the
+  player can “hit” the ball after it’s gone past the bat.
+
+* The robot player never moves, but the ball bounces off the
+  right-hand edge of the screen anyway.
+
+{{< /learner-task >}}
+
+The next chapters will fix these.
 
 
 ## End the game if the player misses
 
-The code we added to bounce the ball off the player's bat checked if
-the _position on the bat_ was not too high or too low, and then
-bounced the ball if it was OK.  But it did nothing if the ball _was_
-too high or too low.  We need to add an `else` clause, saying that if
-the player misses, that's the end of the game.  The ball should hide,
-and we `break` out of the `while True` loop, to finish the game:
+The code to bounce the ball off the player’s bat checked if the ball
+was touching the bat, and bounced the ball if so.  But it does nothing
+if the ball is _not_ touching the bat.
 
-{{< commit hide-Ball-if-Player-misses >}}
+{{< learner-task >}}
+
+Add an `else` clause to the
+
+``` python
+if self.touching(PlayerBat):
+    # [code to bounce ball]
+```
+
+statement, so that if the player misses, that's the end of the
+game.
+
+{{< learner-task-help >}}
+
+You can use the help to see how `if`/`else` statements work in Python.
+
+{{< learner-task-help >}}
+
+The `else` code should make the ball hide, and use the Python `break`
+statement to jump out of the `while True` loop and finish the game.
+
+{{< jr-commit hide-Ball-if-PlayerBat-misses edit-script >}}
+
+{{< /learner-task >}}
+
+**TODO: Can we do without this next bit?**
 
 This is better, but looks odd because the ball just vanishes.  We can
 fix this by moving the ball for another few steps once we know the
 player has missed it:
 
-{{< commit continue-Ball-briefly-if-Player-misses >}}
+{{< learner-task >}}
 
-(This still isn't quite right if the ball should bounce vertically,
-but we'll ignore that.)
+{{< learner-task-help >}}
+
+{{< jr-commit continue-Ball-briefly-if-Player-misses edit-script >}}
+
+{{< /learner-task >}}
+
+(This still isn’t quite right if the ball should bounce vertically.
+Fix this if you like!)
 
 
-## Move the robot's bat automatically
+## Move the robot’s bat automatically
 
 Returning to the robot player, at the moment it just moves to the
-centre at the start of the game and stays there.  We want it to then
-keep its vertical position (_y_ coordinate) matching the ball's.  This
-will make it follow the ball up and down:
+centre at the start of the game and stays there.  It needs to
+keep its vertical position (_y_ coordinate) matching the ball’s.  This
+will make it follow the ball up and down.
 
-{{< commit make-Robot-track-Ball >}}
+{{< learner-task >}}
+
+Add code to the `RobotBat` sprite which makes it forever make its *y*
+coordinate match the Ball’s.
+
+{{< learner-task-help >}}
+
+**TODO: This might need breaking down.  Students might wonder why
+we’re bothering with a variable.  And the “get the original ball
+instance” has quite a lot going on behind the scenes.**
+
+{{< learner-task-help >}}
+
+{{< jr-commit make-RobotBat-track-Ball edit-script >}}
+
+{{< /learner-task >}}
 
 This is much better, but still not quite right.  The robot can go off
-the top of the court or off the bottom.  If moving to the ball's
-position has taken the bat off the top of the court, we set the bat to
-be at the top of the court instead.  And similarly for the bottom:
+the top of the court or off the bottom.
 
-{{< commit ensure-Robot-stays-in-court >}}
+The problem is that `target_y` can be too big or too small.
 
+{{< learner-task >}}
 
-## Make some noise
+Add code just before the `set_y()` call which tests whether `target_y`
+is too big, and if so, sets it to the maximum allowed value.  “Too
+big” means greater than `120`.
 
-We want to bring in some sounds for the game:
+{{< learner-task-help >}}
 
-* Different bounce noises for bouncing off a bat compared to the top
-  or bottom of the court.
+{{< jr-commit clamp-RobotBat-y-high edit-script >}}
 
-* Make a sound when the player loses.  (The robot never loses!)
+{{< /learner-task >}}
 
-We define these in a similar way to costumes.  We say what the
-`Sounds` for a sprite are.  We say which filename each sound comes
-from:
+Now if you test this, you should see that the robot bat stops at the
+top of the table.
 
-{{< commit define-Sounds-for-Ball >}}
+{{< learner-task >}}
 
-To make the 'a bat hit the ball' sound, we start the `hit` sound just
-after changing the ball's `x_speed`, which we do here for if it hits
-the robot's bat:
+Add code just before the `set_y()` call which tests whether the
+`target_y` is too small, and if so, sets it to the minimum allowed
+value.  “Too big” means less than `-120`.
 
-{{< commit play-hit-sound-for-Robot-hit >}}
+**TODO: Or should we use `tgt = min(tgt, 120)` etc.?**
 
-and here if the ball has bounced off the player's bat:
+{{< learner-task-help >}}
 
-{{< commit play-hit-sound-for-Player-hit >}}
+{{< jr-commit clamp-RobotBat-y-low edit-script >}}
 
-If the ball bounces off the top or bottom of the court, we start the
-`bounce` sound straight after flipping the ball's `y_speed`:
-
-{{< commit play-bounce-sound >}}
-
-And we can start the `lost` sound once the ball has gone past the
-player's bat and hidden itself:
-
-{{< commit play-lost-sound >}}
+{{< /learner-task >}}
 
 
 ## Add effects when a bat hits the ball
 
-To make the game look better, we'll add a flash effect when either the
-player or the robots hits the ball.  We'll need to add a costume to
-the player bat Sprite:
+The game would look better with flash effects when the player or the
+robots hits the ball.  This is what the costumes with “flash” in their
+name are for.
 
-{{< commit declare-Player-hit-flash-costume >}}
+**TODO: Explain coordination between ball and bats via bcast/recv.**
 
-Next we say how we want the flash to happen.  We want to switch to the
-`hit-flash` costume, wait a short time, then switch back to `normal`.
-We'll do this when the player's bat sprite receives a message
-`player-hit`:
+{{< learner-task >}}
 
-{{< commit define-Player-hit-handler >}}
+Add a script **to the `PlayerBat` sprite** which runs when the sprite
+receives a `"player-hit"` message, with code which:
 
-To make this actually happen, we want to broadcast that message when
-the ball bounces off the  player's bat:
+* switches to the `"player-flash.png"` costume;
+* waits a short time;
+* switches back to the `"player-normal.png"` costume.
 
-{{< commit trigger-Player-flash-on-hit >}}
+{{< learner-task-help >}}
 
-Now we do something very similar for the robot.  First add a costume:
+To switch costume, you can either explicitly say
 
-{{< commit declare-Robot-hit-flash-costume >}}
+``` python
+self.switch_costume("player-flash.png")
+```
 
-Define what needs to happen to make the robot bat flash:
-
-{{< commit define-Robot-hit-handler >}}
-
-And then trigger this action when the ball bounces off the robot's
-bat:
-
-{{< commit trigger-Robot-flash-on-hit >}}
+or, because there are only two costumes, you can say
 
 
-## Avoid a stalemate
+``` python
+self.next_costume()
+```
 
-The game can get 'stuck' with the ball bouncing just straight left and
-right between the bats.  This is boring.  We'll make it so that if the
-ball bounces off the robot bat and is going purely horizontally, we'll
-change it to go either gently up or gently down at random.
+both times.  Which do you prefer?
 
-To do this, we need to use the random number part of Pytch, by
-bringing in the `random` module:
+{{< learner-task-help >}}
 
-{{< commit import-random-module >}}
+{{< jr-commit define-PlayerBat-hit-handler add-script >}}
 
-(This is very similar to how you "add an extension" in Scratch to
-make more blocks available.)
+{{< /learner-task >}}
 
-Now we have this, we can test if the ball's `y_speed` is zero, and if
-so, use the `random.choice()` function to make Pytch randomly choose
-between the two `y_speed` values we want:
+To make this actually happen, the ball needs to broadcast that message
+when it bounces off the player’s bat.
 
-{{< commit ensure-nonzero-y-speed-on-Robot-hit >}}
+{{< learner-task >}}
+
+Add code **to the `Ball` sprite** which broadcasts the message as part
+of the “bounce off player’s bat” section.
+
+{{< learner-task-help >}}
+
+{{< jr-commit trigger-PlayerBat-flash-on-hit edit-script >}}
+
+{{< /learner-task >}}
+
+Now do something very similar for the robot.
+
+{{< learner-task >}}
+
+Add a script **to the `RobotBat` sprite** which runs when the sprite
+receives a `"robot-hit"` message, and which switches briefly to its
+`"robot-flash.png"` costume.
+
+{{< learner-task-help >}}
+
+{{< jr-commit define-RobotBat-hit-handler add-script >}}
+
+{{< /learner-task >}}
+
+To make this actually happen, the ball must broadcast `"robot-hit"` at
+the right time.
+
+{{< learner-task >}}
+
+Add code **to the `Ball` sprite** which broadcasts the message as part
+of the “bounce off robot’s bat” section.
+
+{{< learner-task-help >}}
+
+{{< jr-commit trigger-RobotBat-flash-on-hit edit-script >}}
+
+{{< /learner-task >}}
 
 
-## Add instructions
+## Make fine adjustments to positions
 
-To tell the player how to use our game, we'll add some instructions at
-the top of our code.  We'll do this using a Python *comment*, which is
-a part of your program meant just for human readers — Python ignores
-it.  In Python, a line starting with the `#` character is a comment.
-We'll add a short comment explaining how to play Boing:
+Some of the numbers the code uses for things like the *x* positions of
+the bats and the bounce positions of the balls are not *quite* right.
+If you experiment carefully, you’ll see that they need adjusting.
 
-{{< commit add-player-instructions >}}
+The player’s bat needs to move left a tiny amount:
+
+{{< learner-task >}}
+
+Move the player’s bat so that its *x* coordinate is `-219`.
+
+{{< learner-task-help >}}
+
+{{< jr-commit adjust-PlayerBat-position edit-script >}}
+
+{{< /learner-task >}}
+
+The robot bat needs to move right a tiny amount:
+
+{{< learner-task >}}
+
+Move the robot bat so that its *x* coordinate is `217`.
+
+{{< learner-task-help >}}
+
+{{< jr-commit adjust-RobotBat-position edit-script >}}
+
+{{< /learner-task >}}
+
+And the values the ball compares its *x* position to need to be
+changed to match.
+
+{{< learner-task >}}
+
+Make the ball use `202` as the value to know when it’s too far to the
+right, and `-203` for testing whether it’s too far to the left.
+
+{{< learner-task-help >}}
+
+{{< jr-commit adjust-Ball-thresholds edit-script >}}
+
+{{< /learner-task >}}
 
 
 ## Challenges
@@ -345,24 +970,30 @@ how to break the job down into manageable pieces.
 
 * At the moment, the game stops once the player misses the ball.  Can
   you instead keep score, and make it so the winner is the first to
-  get ten points?  This only makes sense if you've already made it so
+  get ten points?  This only makes sense if you’ve already made it so
   the computer sometimes misses!
 
 You could also experiment with changing the physics of the game, for
 example:
 
 * Add gravity, so the ball falls towards the bottom of the screen.
-  Think about how the `y_speed` of the `Ball` sprite needs to change
+  Think about how the `y_velocity` of the `Ball` sprite needs to change
   to give the right effect.
 
 Can you think of other changes or improvements?
+
+**TODO FOR TUTORIAL AUTHOR: Use underscores or asterisks consistently
+for italics.  Check all numbers (eg thresholds for “off the edge”)
+match text/code.  Use “table” or “court” or “stage” or “screen”
+consistently; maybe even say at start what term we’ll use.  Review
+other TODOs in text.**
 
 
 ## Credits
 
 Many thanks to the Raspberry Pi Press for making the contents of their
 *Code The Classics* book available under a Creative Commons licence.  We
-have used their code for inspiration, and also the images and sounds.
+have used their code for inspiration, and also their images and sounds.
 
 ### Detailed credits
 
