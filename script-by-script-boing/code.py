@@ -17,5 +17,5 @@ class PlayerBat(pytch.Sprite):
         while True:
             if self.key_pressed("w") and self.y_position < 112:
                 self.change_y(3)
-            if self.key_pressed("s"):
+            if self.key_pressed("s") and self.y_position > -112:
                 self.change_y(-3)
