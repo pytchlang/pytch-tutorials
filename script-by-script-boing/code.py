@@ -22,7 +22,7 @@ class PlayerBat(pytch.Sprite):
 
 
 class RobotBat(pytch.Sprite):
-    Costumes = []
+    Costumes = ["robot-bat-smile.png", "robot-bat-wince.png"]
 
 
 class Ball(pytch.Sprite):
