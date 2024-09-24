@@ -17,3 +17,5 @@ class PlayerBat(pytch.Sprite):
         while True:
             if pytch.key_pressed("w"):
                 self.change_y(3)
+            if pytch.key_pressed("s"):
+                self.change_y(-3)
