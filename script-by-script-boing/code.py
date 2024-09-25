@@ -32,7 +32,7 @@ class RobotBat(pytch.Sprite):
 
     @pytch.when_green_flag_clicked
     def play(self):
-        self.go_to_xy(215, 0)
+        self.go_to_xy(217, 0)
 
         while True:
             target_y = Ball.the_original().y_position
