@@ -32,6 +32,8 @@ class RobotBat(pytch.Sprite):
             target_y = Ball.the_original().y_position
             if target_y > 112:
                 target_y = 112
+            if target_y < -112:
+                target_y = -112
             self.set_y(target_y)
 
 
