@@ -12,7 +12,7 @@ class PlayerBat(pytch.Sprite):
 
     @pytch.when_green_flag_clicked
     def play(self):
-        self.go_to_xy(-215, 0)
+        self.go_to_xy(-219, 0)
 
         while True:
             if pytch.key_pressed("w") and self.y_position < 120:
