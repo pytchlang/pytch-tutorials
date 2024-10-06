@@ -6,6 +6,10 @@ import math
 class Stage(pytch.Stage):
     Backdrops = ["solid-green.png"]
 
+    @pytch.when_green_flag_clicked
+    def setup(self):
+        pass
+
 
 class Fruit(pytch.Sprite):
     Costumes = ["apple.png"]
