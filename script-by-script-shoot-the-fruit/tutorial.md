@@ -8,6 +8,188 @@ how we'd create it in Scratch.
 
 ---
 
+## EVERYTHING TOGETHER SCRIPT-BY-SCRIPT
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-green-Backdrop add-medialib-appearance ["solid-green.png"] >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit remove-default-backdrop delete-appearance >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-Fruit-sprite add-sprite >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit Costume-for-Fruit add-medialib-appearance ["apple.png"] >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-Fruit-when-clicked-script add-script >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit hide-when-hit edit-script >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit wait-then-show edit-script >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit assign-new-x edit-script >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit assign-new-y edit-script >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit go-to-random-x-y edit-script >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-Stage-setup-script add-script >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit init-Stage-score edit-script >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit show-score edit-script >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit award-point-when-hit edit-script >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-stage-clicked-script add-script >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit lose-points-on-miss edit-script >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit clamp-score-at-zero edit-script >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-orange-costume add-medialib-appearance ["orange.png"] >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit choose-random-new-costume edit-script >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+{{< learner-task-help >}}
+
+{{< jr-commit switch-to-random-costume edit-script >}}
+
+{{< /learner-task >}}
+
+
 ## Create a stage with backdrop
 
 The first thing we'll do is to create a *Stage* for the game.  To keep
