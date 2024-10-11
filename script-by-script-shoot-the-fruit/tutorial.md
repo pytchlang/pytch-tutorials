@@ -20,7 +20,7 @@ and we need to say that it's the `Stage` for our game.
 In this tutorial, we'll show the code we need in boxes like this — the
 blue `?` will show help on what to do:
 
-{{< commit empty-GameBackground >}}
+{{ < commit empty-GameBackground >}}
 
 Here, we need to add two blank lines under the `import pytch` line
 which is already there, and then the line starting `class
@@ -38,7 +38,7 @@ stage.  If you look in the *Images and sounds* tab, you'll see an
 image called `"solid-green.png"`.  We'll use this by adding a line of
 code to our program:
 
-{{< commit Backdrop-for-GameBackground >}}
+{{ < commit Backdrop-for-GameBackground >}}
 
 The square brackets `[` and `]` mean that this is a *list* of
 backdrops.  Our stage here only has one backdrop, but we still
@@ -55,13 +55,13 @@ In Scratch you would click on the "add Sprite" button.  In Python we
 add some code to our program.  We'll call our new Sprite `Fruit`, and
 we need to say that it's a Sprite.  This is the code we need:
 
-{{< commit empty-Fruit >}}
+{{ < commit empty-Fruit >}}
 
 Just like in Scratch, Sprites in Pytch have *costumes*.  We set a
 variable to the list of costumes we want our Sprite to have.  For now,
 we only have one costume, `"apple.png"`.
 
-{{< commit Costume-for-Fruit >}}
+{{ < commit Costume-for-Fruit >}}
 
 Try your program — if you click on the green flag, you should see an
 apple in the middle of the stage.
@@ -89,13 +89,13 @@ This has two parts:
 Things work nearly the same in Pytch.  To say *when* we want something
 to happen, we use a special marker in the code:
 
-{{< commit Fruit-when-clicked-decorator >}}
+{{ < commit Fruit-when-clicked-decorator >}}
 
 In Python, we need to give a name to the section of code we want to
 run.  This piece of code will run when the fruit is hit, so we'll call
 it `hit_fruit`.
 
-{{< commit hit-fruit-method-def >}}
+{{ < commit hit-fruit-method-def >}}
 
 (The `def` is short for *define* — we're about to define the section
 of code called `hit_fruit`.  The `self` is like a variable which will
@@ -104,7 +104,7 @@ refer to the Sprite being clicked.)
 Finally, we say what we want to happen when the Sprite is clicked — we
 want it to *hide*:
 
-{{< commit hide-when-hit >}}
+{{ < commit hide-when-hit >}}
 
 The `self` means that we want *this* Sprite to hide.
 
@@ -133,7 +133,7 @@ show
 
 In Python, we add two lines to our code:
 
-{{< commit wait-then-show >}}
+{{ < commit wait-then-show >}}
 
 Try the program now!  The apple should disappear when you click it,
 then reappear one second later.
@@ -169,7 +169,7 @@ which picks random numbers.  We first need to say that we want to use
 this code.  In Scratch, we can "add an extension" to be able to use
 more blocks.  In Python, we use an *import* statement:
 
-{{< commit import-random >}}
+{{ < commit import-random >}}
 
 (You might notice that our program starts off with `import pytch` —
 this is what tells Python that we want to be able to use things like
@@ -205,7 +205,7 @@ variable to something and it is created for you.
 We will make a variable called `appear_x` to hold the `x` number for
 where we want the apple to reappear:
 
-{{< commit assign-new-x >}}
+{{ < commit assign-new-x >}}
 
 The `-200` and `200` don't go all the way to the edges of the stage,
 because we want the apple to always definitely be completely on the
@@ -214,7 +214,7 @@ for.
 
 We will set another variable, `appear_y`, to hold the `y` number:
 
-{{< commit assign-new-y >}}
+{{ < commit assign-new-y >}}
 
 We use `-140` and `140` rather than `-180` and `180` to make sure the
 apple doesn't go off the top or off the bottom of the stage.
@@ -232,7 +232,7 @@ go to x: (appear_x) y: (appear_y)
 
 In Python, we put the variables in `()`s:
 
-{{< commit go-to-random-x-y >}}
+{{ < commit go-to-random-x-y >}}
 
 ### Try it!
 
@@ -257,7 +257,7 @@ set [score v] to [0]
 and in Python, we use this code, which creates the variable and sets
 it to zero:
 
-{{< commit define-score-global >}}
+{{ < commit define-score-global >}}
 
 ### Showing the score
 
@@ -267,12 +267,12 @@ green flag is clicked, so we'll need code to act like Scratch's "when
 green flag clicked" hat block.  We'll put this in the `GameBackground`
 (our stage), because it's part of the overall game.
 
-{{< commit GameBackground-when-green-flag-decorator >}}
+{{ < commit GameBackground-when-green-flag-decorator >}}
 
 Showing a variable in Pytch uses a couple of more advanced ideas, so
 for this tutorial, we won't go into the details.  The code we need is:
 
-{{< commit show-score >}}
+{{ < commit show-score >}}
 
 So far our program has no way for the player to get points, so the
 score will be stuck at zero.  We will fix this next.
@@ -299,7 +299,7 @@ that we want to change the *global* variable `score`.  A 'global'
 variable is very like a "for all sprites" variable in Scratch.  Add
 these lines to the `hit_fruit` code:
 
-{{< commit award-point-when-hit >}}
+{{ < commit award-point-when-hit >}}
 
 Try it!  The score should now count how many times the player has
 hit the fruit.
@@ -314,13 +314,13 @@ We can tell if the player misses by making our stage run some code
 when *it* is clicked.  We'll start by adding code to act like
 Scratch's "when stage clicked" hat block:
 
-{{< commit when-stage-clicked-decorator >}}
+{{ < commit when-stage-clicked-decorator >}}
 
 We need a name for the chunk of code we're about to write.  The code
 will run when the player misses the fruit, so `missed_fruit` is a good
 name:
 
-{{< commit missed-fruit-def >}}
+{{ < commit missed-fruit-def >}}
 
 And now we can knock off points if a click gets through to the stage.
 Just as when we gave the player points, we need to tell Python that we
@@ -329,7 +329,7 @@ want to change the global `score` variable.  And this time, instead of
 so we use `-=` ('change by subtracting').  This code knocks off five
 points when the player misses:
 
-{{< commit lose-points-on-miss >}}
+{{ < commit lose-points-on-miss >}}
 
 ### Stopping the score going negative
 
@@ -343,7 +343,7 @@ whether the score has become negative.  If so, we want to set `score`
 to zero.  Python has an `if` statement which works the same as
 Scratch's *if* block.  This is the code we need:
 
-{{< commit clamp-score-at-zero >}}
+{{ < commit clamp-score-at-zero >}}
 
 The `score < 0` part is the test — it asks whether the `score`
 variable is less than zero.  If it is, the *indented* (pushed to the
@@ -371,7 +371,7 @@ Fruit's `Costumes` list.  In Python, the things in a list are written
 with commas between them.  So we need to change the line which sets
 the Fruit's costumes:
 
-{{< commit add-orange-costume >}}
+{{ < commit add-orange-costume >}}
 
 The box explains this change as deleting the `Costumes` line and
 adding a replacement, but you can just type in the new part
@@ -392,7 +392,7 @@ want the Fruit to wear when it reappears.
 
 Find the right place in `hit_fruit` to add this code:
 
-{{< commit choose-random-new-costume >}}
+{{ < commit choose-random-new-costume >}}
 
 ### Switch to the chosen costume
 
@@ -400,7 +400,7 @@ And just like Scratch has a *switch costume to* block, Pytch has a way
 to get a Sprite to wear a different costume.  We'll use this to switch
 to the costume we just randomly picked:
 
-{{< commit switch-to-random-costume >}}
+{{ < commit switch-to-random-costume >}}
 
 
 ## Challenges
