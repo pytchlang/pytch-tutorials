@@ -144,7 +144,7 @@ The numbers are the *x* and *y* coordinates of the point the alien
 should go to, and how long to take (the number of seconds) to move
 there.  You might find it useful to use
 
-``` python
+``` python-expression
 self.x_position
 ```
 
@@ -430,7 +430,7 @@ called `glide_time`.
 
 The Python expression
 
-``` python
+``` python-expression
 random.uniform(3.0, 5.0)
 ```
 
@@ -775,7 +775,7 @@ lives left.
 You can find out whether the number of lives is greater than zero with
 the Python expression
 
-``` python
+``` python-expression
 Stage.lives > 0
 ```
 
