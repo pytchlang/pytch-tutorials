@@ -43,7 +43,7 @@ library.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-Bowl-costume add-medialib-appearance bowl >}}
+{{< jr-commit add-Bowl-costume add-medialib-appearance ["bowl.png"] >}}
 
 {{< /learner-task >}}
 
@@ -260,12 +260,12 @@ Next is to give the apple a costume.
 
 {{< learner-task >}}
 
-Add the `"Apple.png"` costume from the media library to this new
+Add the `"apple.png"` costume from the media library to this new
 sprite.
 
 {{< learner-task-help >}}
 
-{{< jr-commit give-Apple-costume add-medialib-appearance apple >}}
+{{< jr-commit give-Apple-costume add-medialib-appearance ["apple.png"] >}}
 
 {{< /learner-task >}}
 
@@ -430,7 +430,7 @@ media library works well, or you can choose a different one.
 
 {{< learner-task-help >}}
 
-{{< jr-commit give-ScoreKeeper-costume add-medialib-appearance Dani >}}
+{{< jr-commit give-ScoreKeeper-costume add-medialib-appearance ["Dani.png"] >}}
 
 {{< /learner-task >}}
 
@@ -438,7 +438,7 @@ media library works well, or you can choose a different one.
 
 We want to move the score-keeper to a sensible place when the green
 flag is clicked.  Using the _Show coordinates_ tool, the coordinates
-(-215,&nbsp;115) seem about right, but you can adjust the values if
+(-215,&nbsp;-115) seem about right, but you can adjust the values if
 you prefer.
 
 {{< learner-task >}}

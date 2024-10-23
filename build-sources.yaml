@@ -1,7 +1,7 @@
 - name: Script-by-script catch the apple
   branch_name: bn/script-by-script-catch-apple-01
   dir_name: script-by-script-catch-apple
-  commit_id: 22aa54696af7b05de52a21422670fadad4f8a287
+  commit_id: 9f1231d2667de5db76c2e581483fa24fdfdb2042
 - name: Hello world!
   branch_name: bn/hello-02
   dir_name: hello
@@ -29,7 +29,7 @@
 - name: Splat the moles
   branch_name: bn/splat-the-moles-01
   dir_name: splat-the-moles
-  commit_id: da78891d42ecfd5cc4e76efdaa8ed0feef717e24
+  commit_id: 369c72a2e03c114e89e5f585a5249f64f13683df
 - name: Trimon
   branch_name: bn/trimon-01
   dir_name: trimon

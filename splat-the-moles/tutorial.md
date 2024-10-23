@@ -443,7 +443,7 @@ And along the same lines, we get this for the right hole:
 
 {{< commit copy-paste-edit-for-right >}}
 
-(If you're wondering whether there's a better way then copying and
+(If you're wondering whether there's a better way than copying and
 pasting, there is, but it's outside the scope of this tutorial.)
 
 ### Game complete!
