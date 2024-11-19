@@ -79,7 +79,7 @@ court background.
 The player bat needs some scripts to control its behaviour.
 
 When the green flag is clicked, the player’s bat needs to go to its
-starting position at the left of the stage.
+starting position at the left of the court.
 
 {{< learner-task >}}
 
@@ -687,7 +687,7 @@ right off the top or bottom of the court.  The next chapter will fix
 this.
 
 
-## Bounce the ball off the top and bottom of the table
+## Bounce the ball off the top and bottom of the court
 
 This is a similar problem to bouncing the ball off a bat, except the
 code needs to check the _y_ coordinate, and work with the `y_velocity`
@@ -704,9 +704,9 @@ You can use an `if` statement with a test which asks whether either of
 the following is true:
 
 * the _y_ coordinate is “too big” (meaning the ball is about to go off
-  the top of the stage); greater than `150` counts as too big
+  the top of the court); greater than `150` counts as too big
 * the _y_ coordinate is “too small” (meaning the ball is about to go off
-  the bottom of the stage); smaller than `-150` counts as too small.
+  the bottom of the court); smaller than `-150` counts as too small.
 
 You can join these individual tests with Python’s `or` operator,
 because the behaviour in both cases is the same.
@@ -962,9 +962,7 @@ example:
 Can you think of other changes or improvements?
 
 **TODO FOR TUTORIAL AUTHOR: Check all numbers (eg thresholds for “off
-the edge”) match text/code.  Use “table” or “court” or “stage” or
-“screen” consistently; maybe even say at start what term we’ll use.
-Review other TODOs in text.**
+the edge”) match text/code.  Review other TODOs in text.**
 
 
 ### Credits
