@@ -9,7 +9,7 @@ In this tutorial we will make a version of the classic game
 ## Set up the playing area
 
 The game needs a better backdrop than the plain one it has by default.
-Pytch’s media library has one we can use.
+Pytch’s media library has an image for the court we can use.
 
 {{< learner-task >}}
 
@@ -50,7 +50,7 @@ Add a sprite called `PlayerBat` to your game.
 {{< /learner-task >}}
 
 The sprite needs a costume.  There is a bundle of two costumes in
-Pytch’s media library with — one “smiling” and one “wincing”.  We will
+Pytch’s media library, one “smiling” and one “wincing”.  We will
 use the “smiling” one now, and the “wincing” one later on in this
 tutorial.
 
@@ -110,7 +110,7 @@ bat, either up or down.
 
 ### Moving up
 
-The program should continually check whether the person is
+The program should continually check whether the player is
 pressing the `w` key to move up.  If they are, your code needs to
 change the bat’s `y` coordinate.
 
@@ -150,7 +150,7 @@ Add similar lines of code, to make the player’s bat move down when the
 
 {{< learner-task-help >}}
 
-**Important:** You do **not** want another `while True` loop.  The new
+**Important:** You do **not** need another `while True` loop.  The new
 code can go “inside” the same `while True` loop you already have.
 
 {{< learner-task-help >}}
@@ -254,7 +254,8 @@ Make a similar change to the “move down” code.
 
 The extra part of the test in the `if` statement this time will be to
 test whether the _y_ coordinate is _greater than_ some fixed value.
-Everything is symmetrical up/down, so -112 will do the job.
+Everything is symmetrical up/down, so -112 will work for the value to
+compare the _y_ coordinate against.
 
 {{< learner-task-help >}}
 
@@ -284,7 +285,8 @@ TODO: There are two balls; distinguish them by filename?  "yellow-ball.png"?
 
 {{< learner-task >}}
 
-Add the `ball.png` costume from Pytch’s media library to your sprite.
+Add the `yellow-ball.png` costume from Pytch’s media library to your
+sprite.
 
 {{< learner-task-help >}}
 
@@ -293,16 +295,16 @@ Add the `ball.png` costume from Pytch’s media library to your sprite.
 {{< /learner-task >}}
 
 When the green flag is clicked, the ball should go to the very centre
-of the screen.
+of the court.
 
 {{< learner-task >}}
 
 Add a “when green flag clicked” script to your `Ball` sprite, with
-code to move it to the centre of the screen.
+code to move it to the centre of the court.
 
 {{< learner-task-help >}}
 
-The centre of the screen is at coordinates `(0, 0)`.  You can check
+The centre of the court is at coordinates `(0, 0)`.  You can check
 this with the “Show coordinates” tool.
 
 {{< learner-task-help >}}
@@ -326,8 +328,9 @@ includes information about direction but “speed” doesn’t.)
 
 {{< learner-task >}}
 
-Add code which sets the variable `x_velocity` to the value `3`.  This
-value was chosen by experiments to make the ball move at a good speed.
+Add code which sets a variable `x_velocity` to the value `3`.  This
+value seems about right to make the ball move at a good speed, but you
+can experiment.
 
 {{< learner-task-help >}}
 
@@ -374,14 +377,14 @@ down (`w` and `s` keys) while the ball moves to the right.
 
 {{< learner-task-help >}}
 
-The ball just keeps going off the right of the stage.
+The ball just keeps going to the right, all the way off the court.
 
 TODO: Pick consistent word for stage / court / screen.
 
 {{< /learner-task >}}
 
-The problem here is that the ball of course just keeps going right,
-off the edge of the screen.
+The problem is that, because of the `while True`, the ball just keeps
+going right, off the edge of the court.
 
 The next chapter will add the robot bat for the player to play
 against.  This will give the ball something to bounce off.
@@ -389,7 +392,7 @@ against.  This will give the ball something to bounce off.
 
 ## Add the robot opponent
 
-This should be familiar by now!
+Adding a sprite should be familiar by now!
 
 {{< learner-task >}}
 
@@ -401,7 +404,7 @@ Add a _RobotBat_ sprite to your program.
 
 {{< /learner-task >}}
 
-There are some “robot bat” costumes in the media library.
+There are some “Boing robot bat” costumes in the media library.
 
 {{< learner-task >}}
 
@@ -413,7 +416,7 @@ Add the right costumes to this new sprite.
 
 {{< /learner-task >}}
 
-At the start of the game, the robot bat needs to go to the right
+At the start of the game, the robot bat needs to go to the correct
 place on the screen.
 
 {{< learner-task >}}
@@ -432,8 +435,8 @@ The coordinates `(212, 0)` are a reasonable guess for this.
 
 {{< /learner-task >}}
 
-The robot bat needs some intelligence, but next you’ll go back to the
-`Ball` sprite, and make it bounce.
+The robot bat will need some intelligence, but next you’ll go back to
+the `Ball` sprite, and make it bounce.
 
 
 ## Bounce the ball off the bats: simple version
@@ -477,6 +480,9 @@ can use the Python expression
 -x_velocity
 ```
 
+You can use this expression both to change the ball’s _x_ coordinate,
+and to update the value of the `x_velocity` variable.
+
 {{< learner-task-help >}}
 
 {{< jr-commit bounce-Ball-off-RobotBat edit-script >}}
@@ -484,8 +490,8 @@ can use the Python expression
 {{< /learner-task >}}
 
 You can do something very similar to make the ball bounce when it’s at
-the left edge of the screen — remember for this first stage, it
-doesn’t matter where the bat is.
+the left edge of the court — remember, at this point in making the
+game, it doesn’t matter where the bat is.
 
 {{< learner-task >}}
 
@@ -506,7 +512,10 @@ self.x_position < -200
 But the code “inside the `if`” to actually make the bounce happen is
 exactly the same.
 
-TODO: Should we combine those `if` statements then?
+(You might be wondering whether we should combine these `if`
+statements, if their bodies are the same.  We keep them separate
+because we will soon need to do different things depending on whether
+the ball has reached the player’s bat or the robot’s bat.)
 
 {{< learner-task-help >}}
 
@@ -529,7 +538,8 @@ The ball bounces even if the player misses it.
 
 {{< /learner-task >}}
 
-The next chapter will fix this.
+The problem is that the ball bounces even if the player’s bat is
+nowhere near the ball.  The next chapter will fix this.
 
 
 ## Bounce properly off the player’s bat
@@ -557,7 +567,8 @@ misses it.
 {{< learner-task-help >}}
 
 The help bar will show you some examples of testing for one sprite
-touching another.  Look for the Python equivalent of the Scratch
+touching another.  Look for the Python equivalent of this Scratch
+block:
 
 ``` scratch
 < touching [PlayerBat v] >
@@ -570,13 +581,13 @@ touching another.  Look for the Python equivalent of the Scratch
 {{< /learner-task >}}
 
 Now the ball bounces when it should.  If the player is too high or too
-low, the ball sails right past, off to the left.
+low, the ball carries on past, off to the left of the court.
 
 But it’s not an interesting game because the ball only moves exactly
 left and right.  The ball needs to bounce off in different directions.
 
-The ball _also_ needs to remember how quickly it’s moving
-_vertically_, i.e., in the _y_ direction.
+To make this work, the ball _also_ needs to remember how quickly it’s
+moving _vertically_, i.e., in the _y_ direction.
 
 {{< learner-task >}}
 
@@ -663,17 +674,20 @@ when the player hits it, it should go in a random direction.
 
 {{< learner-task-help >}}
 
-The ball goes off the top or bottom of the table.
+The ball goes off the top or bottom of the court.
 
 {{< /learner-task >}}
 
-The next chapter will fix this.
+If the ball goes off the bat at a steep enough angle, the ball goes
+right off the top or bottom of the court.  The next chapter will fix
+this.
 
 
 ## Bounce the ball off the top and bottom of the table
 
 This is a similar problem to bouncing the ball off a bat, except the
-code needs to check the *y* coordinate, and work with `y_velocity`.
+code needs to check the *y* coordinate, and work with the `y_velocity`
+variable.
 
 {{< learner-task >}}
 
@@ -729,14 +743,16 @@ Try your game.
 
 {{< /learner-task >}}
 
-The next chapters will fix these.
+Click “Show me” to see what the bugs are.  The next chapters will fix
+them.
 
 
 ## End the game if the player misses
 
 The code to bounce the ball off the player’s bat checked if the ball
-was touching the bat, and bounced the ball if so.  But it does nothing
-if the ball is _not_ touching the bat.
+was touching the bat, and bounced the ball if so.  But it needs to
+also do something if the ball is _not_ touching the bat — it needs to
+end the game in this case.
 
 {{< learner-task >}}
 
@@ -768,7 +784,7 @@ statement to jump out of the `while True` loop and finish the game.
 
 ## Move the robot’s bat automatically
 
-Returning to the robot player, at the moment it just moves to the
+Returning to the robot player, at the moment it just goes to the
 centre at the start of the game and stays there.  It needs to
 keep its vertical position (_y_ coordinate) matching the ball’s.  This
 will make it follow the ball up and down.
@@ -810,7 +826,7 @@ big” means greater than `120`.
 {{< /learner-task >}}
 
 Now if you test this, you should see that the robot bat stops at the
-top of the table.
+top of the court.
 
 {{< learner-task >}}
 
@@ -829,7 +845,7 @@ value.  “Too big” means less than `-120`.
 
 ## Add effects when a bat hits the ball
 
-The game would look better with animation effects when the player or the
+The game would look better with an effect when the player or the
 robots hits the ball.  This is what the costumes with “wince” in their
 name are for.
 
@@ -846,7 +862,7 @@ receives a `"player-hit"` message, with code which:
 
 {{< learner-task-help >}}
 
-To switch costume, you can either explicitly say
+To switch costume, you can either give the costume name, like
 
 ``` python
 self.switch_costume("player-bat-wince.png")
@@ -859,7 +875,7 @@ or, because there are only two costumes, you can say
 self.next_costume()
 ```
 
-both times.  This works because if a Sprite is wearing its last
+for both switches.  This works because if a sprite is wearing its last
 costume, `self.next_costume()` moves back to the first costume.
 
 Which way do you prefer?
@@ -870,8 +886,8 @@ Which way do you prefer?
 
 {{< /learner-task >}}
 
-To make this actually happen, the ball needs to broadcast that message
-when it bounces off the player’s bat.
+To make this animation actually happen, the ball needs to broadcast
+the `"player-hit"` message when it bounces off the player’s bat.
 
 {{< learner-task >}}
 
@@ -914,6 +930,8 @@ of the “bounce off robot’s bat” section.
 
 {{< /learner-task >}}
 
+Congratulation!  The game is complete!
+
 
 ## Challenges
 
@@ -929,7 +947,7 @@ how to break the job down into manageable pieces.
   get ten points?  This only makes sense if you’ve already made it so
   the computer sometimes misses!
 
-You could also experiment with changing the physics of the game, for
+You could experiment with changing the physics of the game, for
 example:
 
 * Add gravity, so the ball falls towards the bottom of the screen.
