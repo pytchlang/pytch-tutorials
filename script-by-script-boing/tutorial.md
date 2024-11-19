@@ -133,8 +133,6 @@ You’ll also need to know how to put Python code “inside” things like
 
 {{< learner-task-help >}}
 
-{{< learner-task-help >}}
-
 {{< jr-commit move-PlayerBat-up-with-W edit-script >}}
 
 {{< /learner-task >}}
