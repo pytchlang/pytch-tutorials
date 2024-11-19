@@ -707,13 +707,10 @@ has gone too high or too low, and react correctly if so.
 You can use an `if` statement with a test which asks whether either of
 the following is true:
 
-TODO: Think the 158 values need to be smaller in magnitude.  The ball
-enters the top/bottom boundaries of the court with 158.
-
 * the _y_ coordinate is “too big” (meaning the ball is about to go off
-  the top of the stage); greater than `158` counts as too big
+  the top of the stage); greater than `150` counts as too big
 * the _y_ coordinate is “too small” (meaning the ball is about to go off
-  the bottom of the stage); smaller than `-158` counts as too small.
+  the bottom of the stage); smaller than `-150` counts as too small.
 
 You can join these individual tests with Python’s `or` operator.
 
