@@ -289,8 +289,6 @@ Add a `Ball` sprite to your project.
 
 And it needs a costume.
 
-TODO: There are two balls; distinguish them by filename?  "yellow-ball.png"?
-
 {{< learner-task >}}
 
 Add the `yellow-ball.png` costume from Pytch’s media library to your
@@ -386,8 +384,6 @@ down (`w` and `s` keys) while the ball moves to the right.
 {{< learner-task-help >}}
 
 The ball just keeps going to the right, all the way off the court.
-
-TODO: Pick consistent word for stage / court / screen.
 
 {{< /learner-task >}}
 
@@ -830,8 +826,6 @@ is too big, and if so, sets it to the maximum allowed value.  “Too
 big” means greater than `112`, the same value as we used to stop the
 player’s bat going off the top of the court.
 
-**TODO: Check that 120 for new assets.  Where does player bat hit its stops?**
-
 {{< learner-task-help >}}
 
 {{< jr-commit clamp-RobotBat-y-high edit-script >}}
@@ -846,8 +840,6 @@ top of the court.
 Add code just before the `set_y()` call which tests whether the
 `target_y` is too small, and if so, sets it to the minimum allowed
 value.  “Too small” means less than `-112`.
-
-**TODO: Or should we use `tgt = min(tgt, 120)` etc.?**
 
 {{< learner-task-help >}}
 
@@ -917,8 +909,6 @@ of the “bounce off player’s bat” section.
 
 Now do something very similar for the robot.
 
-**TODO: Costume names need fixing in code.**
-
 {{< learner-task >}}
 
 Add a script **to the `RobotBat` sprite** which runs when the sprite
@@ -971,11 +961,10 @@ example:
 
 Can you think of other changes or improvements?
 
-**TODO FOR TUTORIAL AUTHOR: Use underscores or asterisks consistently
-for italics.  Check all numbers (eg thresholds for “off the edge”)
-match text/code.  Use “table” or “court” or “stage” or “screen”
-consistently; maybe even say at start what term we’ll use.  Review
-other TODOs in text.**
+**TODO FOR TUTORIAL AUTHOR: Check all numbers (eg thresholds for “off
+the edge”) match text/code.  Use “table” or “court” or “stage” or
+“screen” consistently; maybe even say at start what term we’ll use.
+Review other TODOs in text.**
 
 
 ### Credits
