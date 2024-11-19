@@ -184,8 +184,8 @@ right off the top or bottom of the court.  To stop this, you need to
 add checks to your code.
 
 At the moment, the code only checks whether the player is pressing `w`
-before deciding it should move the bat up.  But there are *two* things
-that *both* must be true for the bat to move up:
+before deciding it should move the bat up.  But there are _two_ things
+that _both_ must be true for the bat to move up:
 
 * The `w` key must be pressed.
 * The bat must be low enough that moving up is allowed.
@@ -198,7 +198,7 @@ Extend the
 pytch.key_pressed("w")
 ```
 
-test in your code to *also* test whether the bat is low enough.
+test in your code to _also_ test whether the bat is low enough.
 
 {{< learner-task-help >}}
 
@@ -318,8 +318,8 @@ It’s useful to think ahead a bit here.  The ball won’t always be
 moving to the right.  Once the robot has hit the ball, the ball will
 move to the left.  To remember the direction the ball is travelling
 in, you can use a _variable_.  Choosing a good name for variables is
-important.  This variable will remember the *velocity* of the ball in
-the *x* direction, so `x_velocity` is a good name.
+important.  This variable will remember the _velocity_ of the ball in
+the _x_ direction, so `x_velocity` is a good name.
 
 (You might have thought of “speed” — the difference is that “velocity”
 includes information about direction but “speed” doesn’t.)
@@ -444,7 +444,7 @@ the ball will always bounce off the left and right edges, taking no
 notice of where the bats are.
 
 The ball can tell if it’s moved far enough to the right that it should
-bounce off the robot.  It does this by looking at its *x* coordinate.
+bounce off the robot.  It does this by looking at its _x_ coordinate.
 If it has moved too far, it needs to move _back_ the same amount it just
 moved, and then change its `x_velocity` to be the _opposite_ of what
 it just was.
@@ -453,10 +453,10 @@ it just was.
 
 Add code to the `Ball` which:
 
-* Checks whether its *x* coordinate is greater than some fixed value;
+* Checks whether its _x_ coordinate is greater than some fixed value;
   you can check that `200` is a reasonable guess for this.
 * If so, you need to do two things:
-    * Change the ball’s *x* coordinate by the opposite (i.e., negative)
+    * Change the ball’s _x_ coordinate by the opposite (i.e., negative)
       of the `x_velocity`.  This puts the ball back where it was before
       it moved.
     * Set the `x_velocity` to the opposite of what it currently is.
@@ -590,12 +590,12 @@ moving _vertically_, i.e., in the _y_ direction.
 {{< learner-task >}}
 
 Add a variable `y_velocity` which will store how quickly (and in which
-direction) the ball is moving in the *y* direction.  Think about what
+direction) the ball is moving in the _y_ direction.  Think about what
 its starting value should be.
 
 {{< learner-task-help >}}
 
-The ball starts off moving exactly horizontally, so its *y*-velocity
+The ball starts off moving exactly horizontally, so its _y_-velocity
 should start at zero.
 
 {{< learner-task-help >}}
@@ -604,12 +604,12 @@ should start at zero.
 
 {{< /learner-task >}}
 
-Now the code needs to *use* this variable.
+Now the code needs to _use_ this variable.
 
 {{< learner-task >}}
 
 Add code at the end of the “body” of the `while True` loop which
-changes the ball’s *y* coordinate by its `y_velocity`.
+changes the ball’s _y_ coordinate by its `y_velocity`.
 
 {{< learner-task-help >}}
 
@@ -684,7 +684,7 @@ this.
 ## Bounce the ball off the top and bottom of the table
 
 This is a similar problem to bouncing the ball off a bat, except the
-code needs to check the *y* coordinate, and work with the `y_velocity`
+code needs to check the _y_ coordinate, and work with the `y_velocity`
 variable.
 
 {{< learner-task >}}
@@ -700,9 +700,9 @@ the following is true:
 TODO: Think the 158 values need to be smaller in magnitude.  The ball
 enters the top/bottom boundaries of the court with 158.
 
-* the *y* coordinate is “too big” (meaning the ball is about to go off
+* the _y_ coordinate is “too big” (meaning the ball is about to go off
   the top of the stage); greater than `158` counts as too big
-* the *y* coordinate is “too small” (meaning the ball is about to go off
+* the _y_ coordinate is “too small” (meaning the ball is about to go off
   the bottom of the stage); smaller than `-158` counts as too small.
 
 You can join these individual tests with Python’s `or` operator.
@@ -711,7 +711,7 @@ You can join these individual tests with Python’s `or` operator.
 
 If the ball is too high or too low, you need code which:
 
-* changes the ball’s *y* coordinate by the opposite of the change it
+* changes the ball’s _y_ coordinate by the opposite of the change it
   just made;
 * makes the `y_velocity` be the opposite of what it currently is.
 
@@ -789,7 +789,7 @@ will make it follow the ball up and down.
 
 {{< learner-task >}}
 
-Add code to the `RobotBat` sprite which makes it forever make its *y*
+Add code to the `RobotBat` sprite which makes it forever make its _y_
 coordinate match the Ball’s.
 
 {{< learner-task-help >}}
@@ -938,8 +938,7 @@ tasks are quite advanced, so your first step should be to think about
 how to break the job down into manageable pieces.
 
 * At the moment, the human player has no chance against the computer.
-  Can you make it so the computer does *not* always win?
-
+  Can you make it so the computer does _not_ always win?
 * At the moment, the game stops once the player misses the ball.  Can
   you instead keep score, and make it so the winner is the first to
   get ten points?  This only makes sense if you’ve already made it so
