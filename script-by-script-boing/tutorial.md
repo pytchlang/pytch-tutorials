@@ -899,6 +899,12 @@ Which way do you prefer?
 
 {{< learner-task-help >}}
 
+To wait a short time, you can use the ``pytch.wait_seconds()``
+function.  You can wait for less than a whole second by using a
+decimal fraction, such as `0.5` for half a second.
+
+{{< learner-task-help >}}
+
 {{< jr-commit define-PlayerBat-hit-handler add-script >}}
 
 {{< /learner-task >}}
