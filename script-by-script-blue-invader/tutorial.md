@@ -69,6 +69,8 @@ Add a Sprite called `Alien` to your project.
 The new sprite then needs costumes.  There is a bundle of three
 suitable costumes in Pytch’s media library.
 
+**TODO: Remove duplicate "space invaders" group in media lib.**
+
 {{< learner-task >}}
 
 Add the ‘space invaders’ bundle of images from the media library as
@@ -193,6 +195,10 @@ containing `0` and `1` is written `[0, 1]`.
 Add a line of code which randomly chooses `0` or `1` to be the
 position of the new costume, and store the choice in a variable called
 `costume_position`.
+
+**TODO: Is “position” a helpful word?  Might people think we’re
+talking about position on the stage, i.e., coordinates?  Could we
+introduce the word “index”?**
 
 {{< learner-task-help >}}
 
@@ -368,6 +374,10 @@ block and attach a different one.
 Add a *green-flag* script to the stage which broadcasts this
 `"make-clones"` message, and waits for the listening scripts to finish
 running.
+
+**TODO: It doesn’t actually have to be the stage.  Motivation is to
+keep all the “control” stuff in the stage.  Is that enough
+justification?  Should we add some explanation?**
 
 {{< learner-task-help >}}
 
