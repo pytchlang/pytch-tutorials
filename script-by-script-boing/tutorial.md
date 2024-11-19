@@ -888,7 +888,6 @@ self.switch_costume("player-bat-smile.png")
 
 or, because there are only two costumes, you can say
 
-
 ``` python
 self.next_costume()
 ```
