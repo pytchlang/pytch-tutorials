@@ -872,6 +872,8 @@ To switch costume, you can either give the costume name, like
 
 ``` python
 self.switch_costume("player-bat-wince.png")
+# or
+self.switch_costume("player-bat-smile.png")
 ```
 
 or, because there are only two costumes, you can say
