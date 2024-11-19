@@ -128,6 +128,14 @@ Add code to this script to move the Mole to `(0, -100)`.
 
 {{< /learner-task >}}
 
+### Test it!
+
+{{< learner-task >}}
+
+Run your project.  Check the row of mole-holes is in a good position.
+
+{{< /learner-task >}}
+
 
 ## Pop out of random holes
 
@@ -193,7 +201,7 @@ costume the Mole should switch to.
 
 {{< /learner-task >}}
 
-Time to test again!
+### Test it!
 
 {{< learner-task >}}
 
@@ -239,7 +247,13 @@ There is an example of what this looks like in the help.
 
 {{< /learner-task >}}
 
-Test it!
+### Test it!
+
+{{< learner-task >}}
+
+Run your program.  What happens?
+
+{{< /learner-task >}}
 
 It *sort of* works.  The problem is that it’s switching costume so
 quickly, the player would have no chance.
@@ -298,6 +312,15 @@ block.
 
 {{< /learner-task >}}
 
+### Test it!
+
+{{< learner-task >}}
+
+Run your program.  You should see the mole randomly switching between
+holes, waiting a short time above ground each time.
+
+{{< /learner-task >}}
+
 
 ## Hide underground before popping back up
 
@@ -326,7 +349,16 @@ costume, choose a random over-ground time, and wait for that time.
 
 {{< /learner-task >}}
 
-Test it!
+### Test it!
+
+{{< learner-task >}}
+
+Run your program.  You should see the mole popping out of a random
+hole for a short while, then hiding underground for a short while,
+then doing this again and again.
+
+{{< /learner-task >}}
+
 
 
 ## Scoring
@@ -401,7 +433,7 @@ do here.
 
 {{< /learner-task >}}
 
-Test it!
+### Test it!
 
 {{< learner-task >}}
 
@@ -475,12 +507,14 @@ self.health += 1
 
 {{< /learner-task >}}
 
-Test it!
+### Test it!
 
 {{< learner-task >}}
 
 Run your program.  You should see the score go up if you press `j`
-while the mole is popped out of the left hole.
+while the mole is popped out of the left hole.  But if the mole is
+_not_ popped out of the left-hand hole, nothing should happen when you
+press `j`.
 
 {{< /learner-task >}}
 
