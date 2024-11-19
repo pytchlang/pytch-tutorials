@@ -820,7 +820,8 @@ The problem is that `target_y` can be too big or too small.
 
 Add code just before the `set_y()` call which tests whether `target_y`
 is too big, and if so, sets it to the maximum allowed value.  “Too
-big” means greater than `120`.
+big” means greater than `112`, the same value as we used to stop the
+player’s bat going off the top of the court.
 
 **TODO: Check that 120 for new assets.  Where does player bat hit its stops?**
 
@@ -837,7 +838,7 @@ top of the court.
 
 Add code just before the `set_y()` call which tests whether the
 `target_y` is too small, and if so, sets it to the minimum allowed
-value.  “Too big” means less than `-120`.
+value.  “Too small” means less than `-112`.
 
 **TODO: Or should we use `tgt = min(tgt, 120)` etc.?**
 
