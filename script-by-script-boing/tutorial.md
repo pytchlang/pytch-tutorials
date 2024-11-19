@@ -280,6 +280,8 @@ Add a `Ball` sprite to your project.
 
 And it needs a costume.
 
+TODO: There are two balls; distinguish them by filename?  "yellow-ball.png"?
+
 {{< learner-task >}}
 
 Add the `ball.png` costume from Pytch’s media library to your sprite.
@@ -373,6 +375,8 @@ down (`w` and `s` keys) while the ball moves to the right.
 {{< learner-task-help >}}
 
 The ball just keeps going off the right of the stage.
+
+TODO: Pick consistent word for stage / court / screen.
 
 {{< /learner-task >}}
 
@@ -501,6 +505,8 @@ self.x_position < -200
 
 But the code “inside the `if`” to actually make the bounce happen is
 exactly the same.
+
+TODO: Should we combine those `if` statements then?
 
 {{< learner-task-help >}}
 
@@ -679,6 +685,9 @@ has gone too high or too low, and react correctly if so.
 You can use an `if` statement with a test which asks whether either of
 the following is true:
 
+TODO: Think the 158 values need to be smaller in magnitude.  The ball
+enters the top/bottom boundaries of the court with 158.
+
 * the *y* coordinate is “too big” (meaning the ball is about to go off
   the top of the stage); greater than `158` counts as too big
 * the *y* coordinate is “too small” (meaning the ball is about to go off
@@ -754,7 +763,7 @@ statement to jump out of the `while True` loop and finish the game.
 
 {{< /learner-task >}}
 
-**TODO: Can we do without this next bit?**
+**TODO: Can we do without this next bit?  Make it a challenge**
 
 This is better, but looks odd because the ball just vanishes.  We can
 fix this by moving the ball for another few steps once we know the
@@ -806,6 +815,8 @@ The problem is that `target_y` can be too big or too small.
 Add code just before the `set_y()` call which tests whether `target_y`
 is too big, and if so, sets it to the maximum allowed value.  “Too
 big” means greater than `120`.
+
+**TODO: Check that 120 for new assets.  Where does player bat hit its stops?**
 
 {{< learner-task-help >}}
 
@@ -889,6 +900,8 @@ of the “bounce off player’s bat” section.
 {{< /learner-task >}}
 
 Now do something very similar for the robot.
+
+**TODO: Costume names need fixing in code.**
 
 {{< learner-task >}}
 
@@ -995,6 +1008,11 @@ other TODOs in text.**
 
 ## Credits
 
+**TODO: Take fresh screenshot.**
+
+**TODO: Check progress trail doesn’t make the colun too wide on narrow
+viewports.  What about “hidden from progress” chapters?  How are we
+meant to navigate to them?**
 
 ### Detailed credits
 
