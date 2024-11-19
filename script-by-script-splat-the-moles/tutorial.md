@@ -1,10 +1,12 @@
 # Script-by-script splat the moles
 
-We're going to write a game in Python where the player has to splat
-moles to score points.  But if they miss, they lose all their points!
+In this tutorial, you’ll write a game in Python where the player has
+to splat moles to score points.  But if they miss, they lose all their
+points!
+
 (Don't worry, no real moles will be harmed in making this game.)
 
-![screenshot](screenshot-w360.jpg#img-center)
+![screenshot](screenshot-w360.png#img-center)
 
 ---
 
