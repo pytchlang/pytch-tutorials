@@ -975,6 +975,13 @@ example:
   change to give the right effect.  You might then also want to change
   the random velocity the ball gets when it bounces off a bat.
 
+You could give the player more control, to add some skill to the game:
+
+* Instead of giving the ball a random _y_-velocity when it bounces off
+  a bat, make it so the angle depends on where on the bat the ball
+  hit.  For instance, the ball could go up if it hits near the top of
+  the bat.
+
 Can you think of other changes or improvements?
 
 **TODO FOR TUTORIAL AUTHOR: Check all numbers (eg thresholds for “off
