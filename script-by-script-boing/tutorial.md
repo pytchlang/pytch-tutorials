@@ -338,7 +338,7 @@ Now you can write code to move the ball.
 {{< learner-task >}}
 
 Add a `while True` loop which moves the ball horizontally with the
-right velocity.
+correct velocity.
 
 {{< learner-task-help >}}
 
@@ -380,7 +380,7 @@ The problem here is that the ball of course just keeps going right,
 off the edge of the screen.
 
 The next chapter will add the robot bat for the player to play
-against, and which will give the ball something to bounce off.
+against.  This will give the ball something to bounce off.
 
 
 ## Add the robot opponent
@@ -569,8 +569,8 @@ low, the ball sails right past, off to the left.
 But it’s not an interesting game because the ball only moves exactly
 left and right.  The ball needs to bounce off in different directions.
 
-The ball needs to remember how quickly it’s moving _vertically_, i.e.,
-in the _y_ direction.
+The ball _also_ needs to remember how quickly it’s moving
+_vertically_, i.e., in the _y_ direction.
 
 {{< learner-task >}}
 
@@ -713,6 +713,8 @@ Try your game.
 * The game is too generous about letting the player hit the ball — the
   player can “hit” the ball after it’s gone past the bat.
 
+* The ball can “get stuck” in the player’s bat.
+
 * The robot player never moves, but the ball bounces off the
   right-hand edge of the screen anyway.
 
@@ -831,8 +833,8 @@ value.  “Too big” means less than `-120`.
 
 ## Add effects when a bat hits the ball
 
-The game would look better with flash effects when the player or the
-robots hits the ball.  This is what the costumes with “flash” in their
+The game would look better with animation effects when the player or the
+robots hits the ball.  This is what the costumes with “wince” in their
 name are for.
 
 **TODO: Explain coordination between ball and bats via bcast/recv.**
@@ -842,16 +844,16 @@ name are for.
 Add a script **to the `PlayerBat` sprite** which runs when the sprite
 receives a `"player-hit"` message, with code which:
 
-* switches to the `"player-flash.png"` costume;
+* switches to the `"player-bat-wince.png"` costume;
 * waits a short time;
-* switches back to the `"player-normal.png"` costume.
+* switches back to the `"player-bat-smile.png"` costume.
 
 {{< learner-task-help >}}
 
 To switch costume, you can either explicitly say
 
 ``` python
-self.switch_costume("player-flash.png")
+self.switch_costume("player-bat-wince.png")
 ```
 
 or, because there are only two costumes, you can say
@@ -861,7 +863,10 @@ or, because there are only two costumes, you can say
 self.next_costume()
 ```
 
-both times.  Which do you prefer?
+both times.  This works because if a Sprite is wearing its last
+costume, `self.next_costume()` moves back to the first costume.
+
+Which way do you prefer?
 
 {{< learner-task-help >}}
 
@@ -889,7 +894,7 @@ Now do something very similar for the robot.
 
 Add a script **to the `RobotBat` sprite** which runs when the sprite
 receives a `"robot-hit"` message, and which switches briefly to its
-`"robot-flash.png"` costume.
+`"robot-bat-wince.png"` costume.
 
 {{< learner-task-help >}}
 
@@ -975,8 +980,9 @@ You could also experiment with changing the physics of the game, for
 example:
 
 * Add gravity, so the ball falls towards the bottom of the screen.
-  Think about how the `y_velocity` of the `Ball` sprite needs to change
-  to give the right effect.
+  Think about how the `y_velocity` of the `Ball` sprite needs to
+  change to give the right effect.  You might then also want to change
+  the random velocity the ball gets when it bounces off a bat.
 
 Can you think of other changes or improvements?
 
