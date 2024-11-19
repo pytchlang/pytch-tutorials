@@ -257,6 +257,16 @@ compare the _y_ coordinate against.
 
 {{< learner-task-help >}}
 
+The expression
+
+``` python-expression
+self.y_position > -112
+```
+
+will test whether the bat is high enough.
+
+{{< learner-task-help >}}
+
 {{< jr-commit clamp-PlayerBat-y-low edit-script >}}
 
 {{< /learner-task >}}
