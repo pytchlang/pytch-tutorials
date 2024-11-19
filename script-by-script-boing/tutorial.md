@@ -759,6 +759,8 @@ You can use the help to see how `if`/`else` statements work in Python.
 The `else` code should make the ball hide, and use the Python `break`
 statement to jump out of the `while True` loop and finish the game.
 
+{{< learner-task-help >}}
+
 {{< jr-commit hide-Ball-if-PlayerBat-misses edit-script >}}
 
 {{< /learner-task >}}
