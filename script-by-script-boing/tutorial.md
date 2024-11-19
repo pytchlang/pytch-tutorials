@@ -785,6 +785,17 @@ statement to jump out of the `while True` loop and finish the game.
 
 {{< learner-task-help >}}
 
+To learn how to make the ball hide, look in the help for the Python
+version of the Scratch block
+
+``` scratch
+hide
+```
+
+This block is in the _Looks_ section.
+
+{{< learner-task-help >}}
+
 {{< jr-commit hide-Ball-if-PlayerBat-misses edit-script >}}
 
 {{< /learner-task >}}
