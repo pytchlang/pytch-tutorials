@@ -464,7 +464,7 @@ it just was.
 Add code to the `Ball` which:
 
 * Checks whether its _x_ coordinate is greater than some fixed value;
-  you can check that `200` is a reasonable guess for this.
+  you can check that `195` is a reasonable guess for this.
 * If so, you need to do two things:
     * Change the ball’s _x_ coordinate by the opposite (i.e., negative)
       of the `x_velocity`.  This puts the ball back where it was before
@@ -476,7 +476,7 @@ Add code to the `Ball` which:
 You will need an `if` statement.  The test will be
 
 ``` python-expression
-self.x_position > 200
+self.x_position > 195
 ```
 
 {{< learner-task-help >}}
@@ -512,7 +512,7 @@ The test in the `if` statement needs to check whether the ball is ‘too
 far’ left, using the Python expression
 
 ``` python-expression
-self.x_position < -200
+self.x_position < -195
 ```
 
 {{< learner-task-help >}}
