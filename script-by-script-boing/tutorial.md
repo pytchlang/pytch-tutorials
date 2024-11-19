@@ -1008,7 +1008,7 @@ consistently; maybe even say at start what term we’ll use.  Review
 other TODOs in text.**
 
 
-## Credits
+### Credits
 
 **TODO: Take fresh screenshot.**
 
