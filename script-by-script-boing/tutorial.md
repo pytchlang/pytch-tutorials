@@ -252,8 +252,8 @@ Make a similar change to the “move down” code.
 
 The extra part of the test in the `if` statement this time will be to
 test whether the _y_ coordinate is _greater than_ some fixed value.
-Everything is symmetrical up/down, so -112 will work for the value to
-compare the _y_ coordinate against.
+Everything is symmetrical up/down, so `-112` will work for the value
+to compare the _y_ coordinate against.
 
 {{< learner-task-help >}}
 
@@ -460,7 +460,7 @@ it just was.
 Add code to the `Ball` which:
 
 * Checks whether its _x_ coordinate is greater than some fixed value;
-  you can check that `195` is a reasonable guess for this.
+  you can check that `195` works for this.
 * If so, you need to do two things:
     * Change the ball’s _x_ coordinate by the opposite (i.e., negative)
       of the `x_velocity`.  This puts the ball back where it was before
@@ -703,10 +703,10 @@ has gone too high or too low, and react correctly if so.
 You can use an `if` statement with a test which asks whether either of
 the following is true:
 
-* the _y_ coordinate is “too big” (meaning the ball is about to go off
-  the top of the court); greater than `150` counts as too big
-* the _y_ coordinate is “too small” (meaning the ball is about to go off
-  the bottom of the court); smaller than `-150` counts as too small.
+* the _y_ coordinate is “too big” (meaning the ball has gone off the
+  top of the court); greater than `150` counts as too big
+* the _y_ coordinate is “too small” (meaning the ball has gone off the
+  bottom of the court); smaller than `-150` counts as too small.
 
 You can join these individual tests with Python’s `or` operator,
 because the behaviour in both cases is the same.
