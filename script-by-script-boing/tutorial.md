@@ -765,23 +765,6 @@ statement to jump out of the `while True` loop and finish the game.
 
 {{< /learner-task >}}
 
-**TODO: Can we do without this next bit?  Make it a challenge**
-
-This is better, but looks odd because the ball just vanishes.  We can
-fix this by moving the ball for another few steps once we know the
-player has missed it:
-
-{{< learner-task >}}
-
-{{< learner-task-help >}}
-
-{{< jr-commit continue-Ball-briefly-if-Player-misses edit-script >}}
-
-{{< /learner-task >}}
-
-(This still isn’t quite right if the ball should bounce vertically.
-Fix this if you like!)
-
 
 ## Move the robot’s bat automatically
 
