@@ -594,6 +594,7 @@ which switches the Mole’s costume to the `"no-moles.png"` one.
 
 {{< /learner-task >}}
 
+
 ## Let the player splat the centre and right holes
 
 To finish the game, you just need to make two more scripts, very
