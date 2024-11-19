@@ -659,8 +659,6 @@ How many points can you get?
 
 ## Challenges and questions
 
-{{< exclude-from-progress-trail >}}
-
 Maybe you can think of ways to make this game better.  Here are some
 ideas:
 
