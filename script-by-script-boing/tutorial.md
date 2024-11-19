@@ -409,7 +409,7 @@ Add the right costumes to this new sprite.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-RobotBat-costumes add-medialib-appearances-entry ["Boing robot bat"] >}}
+{{< jr-commit add-RobotBat-costumes add-medialib-appearances-entry ["Boing robot bats"] >}}
 
 {{< /learner-task >}}
 
