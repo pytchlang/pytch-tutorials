@@ -465,9 +465,7 @@ Run your program.  You should see the score displayed on the stage.
 The game will be controlled by the keyboard.  The player will:
 
 * press `j` to hit the left hole;
-
 * press `k` to hit the centre hole;
-
 * press `l` to hit the right hole.
 
 You’ll write code for `j` (the left hole) first, and then adapt it for
@@ -664,19 +662,16 @@ ideas:
 
 * Find and use a different backdrop.  Add more than one backdrop, and
   change between them randomly, or as the player gets more points.
-
 * Perhaps it’s a bit harsh for the player to lose all their points
   when they miss.  Maybe they should lose some fixed number of points
   instead.  Change the code (in three places!) so that the player
   loses five points if they miss.  You can use the Python operator
   `-=` to subtract points.  What happens if they only have three
   points when they miss?
-
 * Instead of losing points, the player could start with three lives,
   and they lose a life every time they miss.  Hint: You can show a
   variable at the _right_ of the screen with the code
   `pytch.show_variable(self, "lives", right=236)`.
-
 * Adjust the difficulty of the game by making the mole stay out of its
   hole for a longer or shorter time.  You could even make the game get
   more difficult as the player gets more points.
@@ -689,20 +684,16 @@ ways you could investigate writing the program differently.
 * The `Mole` sprite has two green-flag scripts.  Can you combine them
   into one script?  Do you think the program is easier to understand
   with two green-flag scripts or one?
-
 * **Advanced:** Instead of one `Mole` sprite with four costumes, we
   could have made three sprites: `LeftMole`, `CentreMole`, and
   `RightMole`, each with two costumes: an “empty hole” one and a “mole
   popping out of hole” one.  This tutorial comes with suitable
   graphics files.  **TODO: It does not yet!**  See if you can re-write
   the game this way.  Some questions you might want to think about:
-
     * Should it be possible for more than one mole to be out of its
       hole at the same time?
-
     * How will you keep track of the score?  One way would be to use a
       variable which belongs to the stage.
-
     * With one sprite per mole/hole, you could let the player click or
       tap to hit a hole, instead of using the keyboard.  Do you think
       that would be better?  Can you change the code so it reacts to
