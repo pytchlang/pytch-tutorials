@@ -424,7 +424,7 @@ vertically centred.
 
 {{< learner-task-help >}}
 
-The coordinates `(215, 0)` are a reasonable guess for this.
+The coordinates `(212, 0)` are a reasonable guess for this.
 
 {{< learner-task-help >}}
 
