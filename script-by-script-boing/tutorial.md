@@ -712,7 +712,16 @@ the following is true:
 * the _y_ coordinate is “too small” (meaning the ball is about to go off
   the bottom of the stage); smaller than `-150` counts as too small.
 
-You can join these individual tests with Python’s `or` operator.
+You can join these individual tests with Python’s `or` operator,
+because the behaviour in both cases is the same.
+
+{{< learner-task-help >}}
+
+The test in your `if` statement will be
+
+``` python-expression
+self.y_position > 150 or self.y_position < -150
+```
 
 {{< learner-task-help >}}
 
