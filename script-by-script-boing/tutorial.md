@@ -932,51 +932,6 @@ of the “bounce off robot’s bat” section.
 {{< /learner-task >}}
 
 
-## Make fine adjustments to positions
-
-Some of the numbers the code uses for things like the *x* positions of
-the bats and the bounce positions of the balls are not *quite* right.
-If you experiment carefully, you’ll see that they need adjusting.
-
-The player’s bat needs to move left a tiny amount:
-
-{{< learner-task >}}
-
-Move the player’s bat so that its *x* coordinate is `-219`.
-
-{{< learner-task-help >}}
-
-{{< jr-commit adjust-PlayerBat-position edit-script >}}
-
-{{< /learner-task >}}
-
-The robot bat needs to move right a tiny amount:
-
-{{< learner-task >}}
-
-Move the robot bat so that its *x* coordinate is `217`.
-
-{{< learner-task-help >}}
-
-{{< jr-commit adjust-RobotBat-position edit-script >}}
-
-{{< /learner-task >}}
-
-And the values the ball compares its *x* position to need to be
-changed to match.
-
-{{< learner-task >}}
-
-Make the ball use `202` as the value to know when it’s too far to the
-right, and `-203` for testing whether it’s too far to the left.
-
-{{< learner-task-help >}}
-
-{{< jr-commit adjust-Ball-thresholds edit-script >}}
-
-{{< /learner-task >}}
-
-
 ## Challenges
 
 Here are some ways you could make the game better.  Both of these
