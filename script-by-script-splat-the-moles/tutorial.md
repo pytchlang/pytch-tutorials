@@ -124,6 +124,17 @@ Add code to this script to move the Mole to `(0, -100)`.
 
 {{< learner-task-help >}}
 
+You can use the help bar at the left to learn what the Pytch
+equivalent of Scratch's
+
+``` scratch
+go to x: () y: ()
+```
+
+block is, and how to say what _x_ and _y_ values you want.
+
+{{< learner-task-help >}}
+
 {{< jr-commit init-Mole-position edit-script >}}
 
 {{< /learner-task >}}
@@ -342,6 +353,12 @@ Add three lines of code which:
 
 The code will be similar to the lines we just wrote which switch to a
 costume, choose a random over-ground time, and wait for that time.
+
+{{< learner-task-help >}}
+
+There are two ways to switch to the no-moles costume.  You can either
+give the _name_ of the costume (`"no-moles.png"`) or its _index_
+(`0`).  Which do you prefer?
 
 {{< learner-task-help >}}
 
@@ -593,6 +610,11 @@ Make a script which:
 * runs when the player presses the `k` key;
 * has code which is almost the same as the `j` key script, but checks
   that the mole is popped up in the centre hole.
+
+{{< learner-task-help >}}
+
+You can use the “Duplicate script” entry in the dropdown menu of your
+`j` script if you think that will be quicker than copying and pasting.
 
 {{< learner-task-help >}}
 
