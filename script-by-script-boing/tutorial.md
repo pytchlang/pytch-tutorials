@@ -740,9 +740,7 @@ Try your game.
 
 * The game is too generous about letting the player hit the ball — the
   player can “hit” the ball after it’s gone past the bat.
-
 * The ball can “get stuck” in the player’s bat.
-
 * The robot player never moves, but the ball bounces off the
   right-hand edge of the screen anyway.
 
