@@ -71,7 +71,7 @@ library.
 
 {{< learner-task >}}
 
-Add the “cartoon mole” image bundle as costumes of your new Mole
+Add the “cartoon moles” image bundle as costumes of your new Mole
 sprite.
 
 {{< learner-task-help >}}
