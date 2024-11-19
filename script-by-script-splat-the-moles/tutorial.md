@@ -160,7 +160,7 @@ number used to point at an entry of a list is often called an *index*.
 So you need to choose a “costume index” randomly between `1` and `3`
 (inclusive).
 
-One good use of *variables* is to give things names so that your
+One good use of *variables* is to give things names, so that your
 program is easier to understand when a human is reading it.
 
 {{< learner-task >}}
@@ -250,7 +250,8 @@ inside a `while True:` loop.
 
 {{< learner-task-help >}}
 
-There is an example of what this looks like in the help.
+There is an example of what this looks like in the help.  You will
+need to add a line, and _re-indent_ two existing lines.
 
 {{< learner-task-help >}}
 
@@ -281,8 +282,8 @@ Add code, just below where you switch costume, which chooses a random
 number between `0.5` and `1.0` (inclusive), and stores it in a
 variable `above_ground_time`.
 
-Instead of `random.randint(⋯)`, you can use `random.uniform(⋯)` to
-allow Python to randomly choose a number with a fractional part.
+Instead of `random.randint()`, you can use `random.uniform()` to ask
+Python to randomly choose a number with a fractional part.
 
 {{< learner-task-help >}}
 
@@ -385,9 +386,9 @@ mole.  The `Mole` sprite will keep score — how many times the player
 has managed to splat it.
 
 To keep track of something, your program will use a *variable*.  It
-will be like a “For this sprite only” variable in Scratch.  Remember,
-in Python, to create a variable, you just set it to a value.  There’s
-no separate step to create it.
+will be like a “For this sprite only” variable in Scratch.  In Python,
+to create a variable, you just set it to a value.  There’s no separate
+step to create a variable.
 
 At the very start of the game, the score should be set to zero,
 because the player hasn’t splatted any moles yet.
@@ -436,7 +437,7 @@ variable belongs to the `Mole` sprite, which as you’ve seen, is called
 
 {{< learner-task >}}
 
-Add a line of code which uses Pytch’s `pytch.show_variable(⋯)` to
+Add a line of code which uses Pytch’s `pytch.show_variable()` to
 display the score.
 
 {{< learner-task-help >}}
