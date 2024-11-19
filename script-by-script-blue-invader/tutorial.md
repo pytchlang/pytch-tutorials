@@ -169,7 +169,8 @@ different costume.
 Just like in Scratch, you can switch costume either by giving the new
 costume’s position in the costumes list, or by giving its name.  In
 this case it will be slightly easier to choose the costume by
-position.
+position.  You can look in the “Costumes” tab to see what costumes are
+available and what their positions are.
 
 In Python, things in a list are numbered from *zero*, so the first
 thing in a list is at ‘position&nbsp;0’, the second thing is at
@@ -193,8 +194,8 @@ containing `0` and `1` is written `[0, 1]`.
 {{< learner-task >}}
 
 Add a line of code which randomly chooses `0` or `1` to be the
-position of the new costume, and store the choice in a variable called
-`costume_position`.
+position of the new costume, and stores the choice in a variable
+called `costume_position`.
 
 **TODO: Is “position” a helpful word?  Might people think we’re
 talking about position on the stage, i.e., coordinates?  Could we
@@ -371,7 +372,7 @@ block and attach a different one.
 
 {{< learner-task >}}
 
-Add a *green-flag* script to the stage which broadcasts this
+Add a *green-flag* script **to the stage** which broadcasts this
 `"make-clones"` message, and waits for the listening scripts to finish
 running.
 
@@ -426,6 +427,9 @@ only runs when somebody broadcasts the `"play-game"` message, and
 nobody is doing that.
 
 {{< /learner-task >}}
+
+Now you can add code to the correct place which broadcasts the message
+the aliens are waiting for.
 
 {{< learner-task >}}
 
@@ -487,21 +491,34 @@ will generate the random number you want.
 
 {{< learner-task-help >}}
 
-Remember that the code
+Remember you used the code
 
 ``` python
 costume_position = random.choice([0, 1])
 ```
 
-makes a random choice from the list `[0, 1]`, and assigns the result
-to the variable `costume_position`.  You want to do something very
-similar.
+to make a random choice from the list `[0, 1]`, and assigns the result
+to the variable `costume_position`.  You want to do something similar.
+
+{{< learner-task-help >}}
+
+Here you want a random number anywhere between 3 and 5, including
+fractional part.  The
+
+``` python-expression
+random.uniform()
+```
+
+function will do this for you.  Look in the help to see how to use it.
 
 {{< learner-task-help >}}
 
 {{< jr-commit define-glide-time edit-script >}}
 
 {{< /learner-task >}}
+
+Now you can use this variable to say how long the gliding motion
+should take.
 
 {{< learner-task >}}
 
@@ -567,7 +584,7 @@ disappear.
 {{< /learner-task >}}
 
 But now there’s a different problem — once the player has clicked on
-all six aliens, no more aliens appear.
+an alien, that alien doesn’t appear again.
 
 ### Re-appear at the top of the screen
 
@@ -619,9 +636,8 @@ creates that variable for you.
 The Stage will keep track of the player’s score, in a variable which
 belongs to the Stage.
 
-Let’s look at an example of how to do this.  To create a variable
-`time` belonging to the Stage, setting it to the value `60`, the code
-would be
+For example, to create a variable `time` belonging to the Stage,
+setting it to the value `60`, the code would be
 
 ``` python
 Stage.time = 60
@@ -651,7 +667,7 @@ shown.  In Pytch you do this by writing some code.  The Stage’s
 `score` variable should be shown as soon as the game starts, just
 after the variable is created.
 
-As an example, to show a variable `time` belonging to the Stage, the
+For example, to show a variable `time` belonging to the Stage, the
 code would be
 
 ``` python
@@ -659,7 +675,8 @@ pytch.show_variable(Stage, "time")
 ```
 
 The way this works is unusual — you use the *name* of the variable,
-written as a *string*.
+written as a *string*.  The reason for this is outside the scope of
+this tutorial!
 
 {{< learner-task >}}
 
@@ -777,8 +794,9 @@ cost a life.
 
 ### Keeping track of lives
 
-A variable will store how many lives the player has.  The changes will
-be very similar to what you did to make and show the `score` variable.
+A variable will store how many lives the player has.  The code will be
+very similar to the code you wrote to make and show the `score`
+variable.
 
 {{< learner-task >}}
 
@@ -866,9 +884,10 @@ Instead, they should only glide while the player has some lives left.
 {{< learner-task >}}
 
 The ‘condition’ of the `while` loop is currently just the constant
-`True`, which means the `while` loop runs forever.  Replace `True`
-with a comparison which tests whether the player has more than zero
-lives left.
+`True`, which means the `while` loop runs forever.
+
+Replace `True` with a comparison which tests whether the player has
+more than zero lives left.
 
 {{< learner-task-help >}}
 
@@ -906,6 +925,17 @@ will achieve this.
 
 After subtracting one from `Stage.lives`, check whether `Stage.lives`
 is zero.  If it is, broadcast the message `"game-over"`.
+
+{{< learner-task-help >}}
+
+You will need an `if` statement.  For the “condition”, you can ask
+whether the player’s lives are all gone with the test
+
+``` python-expression
+Stage.lives == 0
+```
+
+Notice there are two equals signs there!
 
 {{< learner-task-help >}}
 
