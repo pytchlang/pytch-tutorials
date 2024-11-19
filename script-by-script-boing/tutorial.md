@@ -558,7 +558,7 @@ Move the “bounce at left” lines of code inside another `if` statement,
 inside the
 
 ``` python
-if self.x_position < -200:
+if self.x_position < -195:
 ```
 
 one.  The new `if` statement should test whether the ball is touching
