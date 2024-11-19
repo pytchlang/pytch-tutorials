@@ -289,7 +289,7 @@ allow Python to randomly choose a number with a fractional part.
 To choose a random number between `0.5` and `1.0`, you can use the
 Python expression
 
-``` python
+``` python-expression
 random.uniform(0.5, 1.0)
 ```
 
@@ -505,7 +505,7 @@ In Python, you need *two* equals signs to test whether two things are
 the same.  So to ask whether the Mole’s costume-number is `1`, you can
 use the Python expression
 
-``` python
+``` python-expression
 self.costume_number == 1
 ```
 
