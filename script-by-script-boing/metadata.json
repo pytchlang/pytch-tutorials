@@ -5,15 +5,15 @@
         {
             "name": "Boing player bats",
             "assets": [
-                "player-normal.png",
-                "player-flash.png"
+                "player-bat-smile.png",
+                "player-bat-wince.png"
             ]
         },
         {
             "name": "Boing robot bats",
             "assets": [
-                "robot-normal.png",
-                "robot-flash.png"
+                "robot-bat-smile.png",
+                "robot-bat-wince.png"
             ]
         }
     ]
