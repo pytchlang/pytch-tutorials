@@ -296,7 +296,7 @@ sprite.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-Ball-costume add-medialib-appearance ["ball.png"] >}}
+{{< jr-commit add-Ball-costume add-medialib-appearance ["yellow-ball.png"] >}}
 
 {{< /learner-task >}}
 
