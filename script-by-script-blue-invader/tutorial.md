@@ -219,9 +219,15 @@ the variable `costume_position`.
 
 {{< /learner-task >}}
 
-If you run the project now, you should see some blue enemy invaders
-and some green friendly visitors gliding down the screen, one at a
-time.
+### Test it!
+
+{{< learner-task >}}
+
+Try your game.  If you run the project, you should see aliens gliding
+down the screen.  There should be a random mixture of blue ones and
+green ones.
+
+{{< /learner-task >}}
 
 
 ## Make lots of aliens
@@ -301,6 +307,18 @@ and the original Alien at *x*-position 150.
 (You might be thinking that there must be a better way to do this than
 by copy and pasting nearly identical code.  You’re right, but that’s
 outside the scope of this tutorial!)
+
+### Test it!
+
+{{< learner-task >}}
+
+Try your game.  What happens?
+
+{{< learner-task-help >}}
+
+More aliens do appear, but only one of them moves.
+
+{{< /learner-task >}}
 
 ### It doesn’t work properly!
 
@@ -385,6 +403,20 @@ change the script’s hat block.
 
 {{< /learner-task >}}
 
+### Test it!
+
+{{< learner-task >}}
+
+Try your game.  What happens?  Why?
+
+{{< learner-task-help >}}
+
+_All_ the aliens just stay at the top of the screen.  The gliding code
+only runs when somebody broadcasts the `"play-game"` message, and
+nobody is doing that.
+
+{{< /learner-task >}}
+
 {{< learner-task >}}
 
 Make the Stage broadcast that `"play-game"` message, once the clones
@@ -396,8 +428,15 @@ have all been created.
 
 {{< /learner-task >}}
 
-If you run the code now, you should see waves of aliens gliding down
-the screen, with a mixture of blue and green.
+### Test it!
+
+{{< learner-task >}}
+
+Run your project.  You should see waves of aliens gliding down the
+screen, a mixture of blue and green each time.  (Sometimes, just by
+chance, you’ll get an all-blue wave or an all-green one.)
+
+{{< /learner-task >}}
 
 This is OK, but it would be better if some aliens went faster than
 others.
@@ -465,9 +504,15 @@ of the fixed number `3.0` in the `glide_to_xy()` function call.
 
 {{< /learner-task >}}
 
-Now if you run the game, some aliens should be faster than others, and
-after little while it looks almost like aliens are appearing at
-random.
+### Test it!
+
+{{< learner-task >}}
+
+Run your project.  You should see some aliens falling faster than
+others, and after little while it looks almost like aliens are
+appearing at random.
+
+{{< /learner-task >}}
 
 
 ## Click on the aliens!
@@ -502,6 +547,15 @@ Add code to your new script which makes the Alien hide itself.
 
 {{< /learner-task >}}
 
+### Test it!
+
+{{< learner-task >}}
+
+Run your game.  Check you can click on the aliens to make them
+disappear.
+
+{{< /learner-task >}}
+
 But now there’s a different problem — once the player has clicked on
 all six aliens, no more aliens appear.
 
@@ -532,7 +586,14 @@ which makes the Alien glide down the screen.
 
 {{< /learner-task >}}
 
-Try your game!  It should be more fun now.
+### Test it!
+
+{{< learner-task >}}
+
+Run your game.  Aliens should constantly reappear after you click on
+them.
+
+{{< /learner-task >}}
 
 
 ## Keep score
@@ -648,6 +709,16 @@ Think about where to add this code.
 
 {{< /learner-task >}}
 
+### Test it!
+
+{{< learner-task >}}
+
+Run your game.  Check you get 10 points for every alien you click.
+
+{{< /learner-task >}}
+
+### Only get points for enemy aliens
+
 {{< learner-task >}}
 
 Move this code so it is ‘inside an `if` test’ — only give the player
@@ -675,8 +746,14 @@ Look in the help to find how to do the same thing in Python.
 
 {{< /learner-task >}}
 
-Try this — you should get 10 points for every blue enemy you click on,
-and nothing for clicking on a green alien.
+### Test it!
+
+{{< learner-task >}}
+
+Run your game.  You should get 10 points for every blue enemy you
+click on, and nothing for clicking on a green alien.
+
+{{< /learner-task >}}
 
 
 ## Count lives
@@ -744,11 +821,24 @@ wearing the ‘friendly’ costume (i.e., costume number `1`).
 
 {{< /learner-task >}}
 
-Try this now — you should see the `lives` display go down each time
-you click on a green alien.  But the game doesn’t stop when you run
-out of lives.
+### Test it!
 
-The next chapter explains how to fix this.
+{{< learner-task >}}
+
+Run your game.  You should see the `lives` display go down each time
+you click on a green alien.
+
+**There’s a bug — what is it?**
+
+{{< learner-task-help >}}
+
+The game doesn’t stop when you run out of lives.
+
+{{< /learner-task >}}
+
+Although the player loses a life when they click a friendly alien, the
+game keeps going even once the player has lost all their lives.  You
+will fix this in the next chapter.
 
 
 ## End game when no lives left
@@ -785,8 +875,15 @@ Stage.lives > 0
 
 {{< /learner-task >}}
 
-Try this now — deliberately click on three green aliens.  You should
-see that no more aliens appear.
+### Test it!
+
+{{< learner-task >}}
+
+Run your game.  Deliberately click on three green aliens.  You should
+see that no more aliens appear.  Instead, aliens stop at the bottom of
+the screen.
+
+{{< /learner-task >}}
 
 But any aliens which are part-way down the screen keep going until
 they reach the bottom.  This needs fixing too.
@@ -806,8 +903,20 @@ is zero.  If it is, broadcast the message `"game-over"`.
 
 {{< /learner-task >}}
 
-If you try this now, nothing will happen because nobody is *listening*
-for this message.
+### Test it!
+
+{{< learner-task >}}
+
+Run your game.  Deliberately click on three green aliens.  What happens?
+
+{{< learner-task-help >}}
+
+Nothing really!
+
+{{< /learner-task >}}
+
+Nothing really happens when this code runs, because nobody is
+*listening* for this message.
 
 {{< learner-task >}}
 
