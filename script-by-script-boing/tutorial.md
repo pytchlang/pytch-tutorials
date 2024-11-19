@@ -16,12 +16,12 @@ Pytch’s media library has the image used in _Code the Classics_.
 
 {{< learner-task >}}
 
-Add the “table” image as a new Backdrop for the stage.  You can find
+Add the “court” image as a new Backdrop for the stage.  You can find
 it in the media library.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-table-backdrop add-medialib-appearance ["table.png"] >}}
+{{< jr-commit add-table-backdrop add-medialib-appearance ["court.png"] >}}
 
 {{< /learner-task >}}
 
@@ -53,17 +53,18 @@ Add a sprite called `PlayerBat` to your game.
 {{< /learner-task >}}
 
 The sprite needs a costume.  There is a bundle of two costumes in
-Pytch’s media library — one “normal” and one “flashing”, which will be
-used later in this tutorial.
+Pytch’s media library with — one “smiling” and one “wincing”.  We will
+use the “smiling” one now, and the “wincing” one later on in this
+tutorial.
 
 {{< learner-task >}}
 
-Add the “Boing player bat” bundle of images as Costumes for the
+Add the “Boing player bats” bundle of images as Costumes for the
 `PlayerBat` sprite.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-PlayerBat-costumes add-medialib-appearances-entry ["Boing player bat"] >}}
+{{< jr-commit add-PlayerBat-costumes add-medialib-appearances-entry ["Boing player bats"] >}}
 
 {{< /learner-task >}}
 
@@ -71,7 +72,7 @@ Add the “Boing player bat” bundle of images as Costumes for the
 {{< learner-task >}}
 
 Test your game!  You should see the player’s bat in the middle of the
-playing table background.
+court background.
 
 {{< /learner-task >}}
 
@@ -93,13 +94,13 @@ Add a “when green flag clicked” script to the `PlayerBat` sprite.
 
 {{< /learner-task >}}
 
-You can use the “Show coordinates” helper to check that `(-215, 0)` is
-a reasonable guess for the player’s bat’s starting position.
+You can use the “Show coordinates” helper to check that `(-212, 0)` is
+a reasonable choice for the player’s bat’s starting position.
 
 {{< learner-task >}}
 
 Add a line of code to the script which moves the player’s bat to the
-position with coordinates `(-215, 0)`.
+position with coordinates `(-212, 0)`.
 
 {{< learner-task-help >}}
 
@@ -153,7 +154,7 @@ Add similar lines of code, to make the player’s bat move down when the
 {{< learner-task-help >}}
 
 **Important:** You do **not** want another `while True` loop.  The new
-code can go “inside” the `while True` loop you already have.
+code can go “inside” the same `while True` loop you already have.
 
 {{< learner-task-help >}}
 
@@ -177,14 +178,14 @@ Hold down the `s` key and check it moves down.
 
 {{< learner-task-help >}}
 
-The player can move the bat right off the top or bottom of the table.
+The player can move the bat right off the top or bottom of the court.
 
 {{< /learner-task >}}
 
-### Staying on the table
+### Staying on the court
 
 If you play the game now, you’ll see a bug.  You can move the bat
-right off the top or bottom of the table.  To stop this, you need to
+right off the top or bottom of the court.  To stop this, you need to
 add checks to your code.
 
 At the moment, the code only checks whether the player is pressing `w`
@@ -208,14 +209,14 @@ test in your code to *also* test whether the bat is low enough.
 
 To test whether the bat is low enough, you can ask whether its _y_
 coordinate is less than some fixed value: you can experiment to check
-that `120` works for this.
+that `112` works for this.
 
 {{< learner-task-help >}}
 
 The expression
 
 ``` python-expression
-self.y_position < 120
+self.y_position < 112
 ```
 
 will test whether the bat is low enough.
@@ -236,7 +237,7 @@ block.
 The new test expression for your `if` statement is
 
 ``` python-expression
-pytch.key_pressed("w") and self.y_position < 120
+pytch.key_pressed("w") and self.y_position < 112
 ```
 
 {{< learner-task-help >}}
@@ -246,7 +247,7 @@ pytch.key_pressed("w") and self.y_position < 120
 {{< /learner-task >}}
 
 The same problem happens for moving down.  The player bat can go right
-off the bottom of the screen.
+off the bottom of the court.
 
 {{< learner-task >}}
 
@@ -256,7 +257,7 @@ Make a similar change to the “move down” code.
 
 The extra part of the test in the `if` statement this time will be to
 test whether the _y_ coordinate is _greater than_ some fixed value.
-Everything is symmetrical, so -120 will do the job.
+Everything is symmetrical up/down, so -112 will do the job.
 
 {{< learner-task-help >}}
 
