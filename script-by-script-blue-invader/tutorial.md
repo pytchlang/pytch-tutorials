@@ -404,11 +404,8 @@ block and attach a different one.
 
 Add a *green-flag* script **to the stage** which broadcasts this
 `"make-clones"` message, and waits for the listening scripts to finish
-running.
-
-**TODO: It doesn’t actually have to be the stage.  Motivation is to
-keep all the “control” stuff in the stage.  Is that enough
-justification?  Should we add some explanation?**
+running.  Adding the script to the stage makes sense because that’s a
+central place to put all high-level control code.
 
 {{< learner-task-help >}}
 
