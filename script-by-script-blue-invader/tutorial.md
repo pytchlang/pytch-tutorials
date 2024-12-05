@@ -14,11 +14,11 @@ library includes a galaxy image for us to use.
 
 {{< learner-task >}}
 
-Add the “starry sky” backdrop to the Stage from the media library.
+Add the “galaxy” backdrop to the Stage from the media library.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-starry-backdrop add-medialib-appearance ["starry-sky.jpg"] >}}
+{{< jr-commit add-starry-backdrop add-medialib-appearance ["galaxy.png"] >}}
 
 {{< /learner-task >}}
 
@@ -66,19 +66,19 @@ Add a Sprite called `Alien` to your project.
 
 ### Give the _Alien_ some costumes
 
-The new sprite then needs costumes.  There is a bundle of three
+The new sprite then needs costumes.  There is a bundle of
 suitable costumes in Pytch’s media library.
 
 **TODO: Remove duplicate "space invaders" group in media lib.**
 
 {{< learner-task >}}
 
-Add the ‘space invaders’ bundle of images from the media library as
+Add the ‘Space aliens’ bundle of images from the media library as
 costumes to the `Alien` sprite.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-alien-costumes add-medialib-appearances-entry ["space invaders"] >}}
+{{< jr-commit add-alien-costumes add-medialib-appearances-entry ["Space aliens"] >}}
 
 {{< /learner-task >}}
 
@@ -174,13 +174,15 @@ available and what their positions are.
 
 In Python, things in a list are numbered from *zero*, so the first
 thing in a list is at ‘position&nbsp;0’, the second thing is at
-‘position&nbsp;1’, and so on.  So the code should randomly choose
-either the costume at position&nbsp;0 or the one at position&nbsp;1.
+‘position&nbsp;1’, and so on.
+
+For our aliens, the costumes at positions&nbsp;0 and&nbsp;2 are the
+ones we want, so the code should randomly choose between these two.
 
 This *could* be done all in one line of code, but breaking the job
 into two steps will make it easier to understand:
 
-* Randomly choose a costume position (0 or 1).
+* Randomly choose a costume position (0 or 2).
 * Switch to the chosen costume.
 
 ### Randomly choose which costume
@@ -189,11 +191,11 @@ The `random.choice(list_of_choices)` function will do this job.
 
 The `random.choice()` function needs a *list* of the options it should
 choose from.  Here, the choices are `0` and `1`.  In Python, the list
-containing `0` and `1` is written `[0, 1]`.
+containing `0` and `2` is written `[0, 2]`.
 
 {{< learner-task >}}
 
-Add a line of code which randomly chooses `0` or `1` to be the
+Add a line of code which randomly chooses `0` or `2` to be the
 position of the new costume, and stores the choice in a variable
 called `costume_position`.
 
@@ -494,10 +496,10 @@ will generate the random number you want.
 Remember you used the code
 
 ``` python
-costume_position = random.choice([0, 1])
+costume_position = random.choice([0, 2])
 ```
 
-to make a random choice from the list `[0, 1]`, and assigns the result
+to make a random choice from the list `[0, 2]`, and assigns the result
 to the variable `costume_position`.  You want to do something similar.
 
 {{< learner-task-help >}}
@@ -841,7 +843,7 @@ the player points but only if that Alien is wearing the ‘enemy’
 costume (i.e., costume number `0`).
 
 Add similar code which subtracts one life but only if that Alien is
-wearing the ‘friendly’ costume (i.e., costume number `1`).
+wearing the ‘friendly’ costume (i.e., costume number `2`).
 
 {{< learner-task-help >}}
 
@@ -981,9 +983,10 @@ Here are some ways you could make the game even better:
 
 * Make the aliens move more quickly as the player’s score goes up.
 
-* Add a rare red alien which is worth 50 points.  The “space invaders”
+* Add a rare red alien which is worth 50 points.  The “Space aliens”
   bundle of images, which you added to the project, includes a red
-  alien.
+  alien.  It also includes lots of other colours if you want to choose
+  a different one!
 
 * Add some left-to-right randomness to where the aliens start.
 
