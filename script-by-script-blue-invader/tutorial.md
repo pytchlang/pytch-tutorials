@@ -86,12 +86,20 @@ If you run your project now, you should see a blue enemy invader in
 the middle of the screen.  This is because Pytch starts a Sprite off
 wearing its first costume.
 
-### Make the alien drift down the screen
+{{< learner-task >}}
 
-The Alien should glide from the top to the bottom of the screen, then
-instantly go back to the top and start gliding again.
+Try your game.  What's wrong?
 
-This should all start happening as soon as the game starts.
+{{< learner-task-help >}}
+
+The alien is way too big!
+
+{{< /learner-task >}}
+
+### Make the alien a sensible size
+
+The very first thing the alien needs to do is set its size to
+something more sensible.
 
 {{< learner-task >}}
 
@@ -104,9 +112,28 @@ hat-block.
 
 {{< /learner-task >}}
 
-The code of this script should work the same as Scratch’s *forever*
-block.  In Python, you can say `while True:`, and underneath put
-*indented* lines to say what should keep happening.
+The code in this script needs to set the Alien’s size.  In Pytch, a
+size of `1` means original size, `0.5` means half size, and so on.
+You can check that a size of `0.15` is about right.
+
+{{< learner-task >}}
+
+Add code to your script which sets the Alien’s size to `0.15`.
+
+{{< learner-task-help >}}
+
+{{< jr-commit set-Alien-size edit-script >}}
+
+{{< /learner-task >}}
+
+### Make the alien drift down the screen
+
+The Alien should glide from the top to the bottom of the screen, then
+instantly go back to the top and start gliding again.
+
+You can add code to your script which works the same as Scratch’s
+*forever* block.  In Python, you can say `while True:`, and underneath
+put *indented* lines to say what should keep happening.
 
 For example, here’s code which moves a sprite slowly across the screen:
 
@@ -117,7 +144,7 @@ while True:
 
 {{< learner-task >}}
 
-Write the code in your new script which makes the alien repeatedly go
+Add code to the end of your script which makes the alien repeatedly go
 to the top of the screen then glide to the bottom.
 
 {{< learner-task-help >}}
