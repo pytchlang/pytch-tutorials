@@ -990,8 +990,6 @@ the edge”) match text/code.  Review other TODOs in text.**
 
 ### Credits
 
-**TODO: Take fresh screenshot.**
-
 **TODO: Check progress trail doesn’t make the colun too wide on narrow
 viewports.  What about “hidden from progress” chapters?  How are we
 meant to navigate to them?**
