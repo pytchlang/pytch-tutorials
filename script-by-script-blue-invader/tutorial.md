@@ -69,8 +69,6 @@ Add a Sprite called `Alien` to your project.
 The new sprite then needs costumes.  There is a bundle of
 suitable costumes in Pytch’s media library.
 
-**TODO: Remove duplicate "space invaders" group in media lib.**
-
 {{< learner-task >}}
 
 Add the ‘Space aliens’ bundle of images from the media library as
