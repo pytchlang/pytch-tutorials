@@ -240,6 +240,8 @@ True` loop.
 
 {{< /learner-task >}}
 
+### Switch to chosen costume
+
 Once the chosen number is in a variable, the alien can switch to that
 costume.
 
