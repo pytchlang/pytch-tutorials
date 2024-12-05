@@ -1002,7 +1002,7 @@ alien.
 Test your game now and make sure it works properly.
 
 
-## Challenges
+## Challenges and questions
 
 Here are some ways you could make the game even better:
 
@@ -1014,6 +1014,13 @@ Here are some ways you could make the game even better:
   a different one!
 
 * Add some left-to-right randomness to where the aliens start.
+
+You can also think about these questions:
+
+* Do you agree that the stage is the right place for the main control
+  script (the one that broadcasts the messages)?  Does the game still
+  work if this script is in the Alien?
+
 
 ### Credits
 
