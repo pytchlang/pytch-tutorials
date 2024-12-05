@@ -30,4 +30,4 @@ class Alien(pytch.Sprite):
 
     @pytch.when_green_flag_clicked
     def drift_down_screen(self):
-        pass
+        self.set_size(0.15)
