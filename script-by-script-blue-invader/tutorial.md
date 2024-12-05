@@ -192,22 +192,27 @@ some friendly.  Remember that this is done by making the alien wear a
 different costume.
 
 Just like in Scratch, you can switch costume either by giving the new
-costume’s position in the costumes list, or by giving its name.  In
-this case it will be slightly easier to choose the costume by
-position.  You can look in the “Costumes” tab to see what costumes are
-available and what their positions are.
+costume’s place in the costumes list, or by giving its name.  In this
+case it will be slightly easier to choose the costume by its place in
+the list.  You can look in the “Costumes” tab to see what costumes are
+available and in what order.
 
-In Python, things in a list are numbered from *zero*, so the first
-thing in a list is at ‘position&nbsp;0’, the second thing is at
-‘position&nbsp;1’, and so on.
+In Python:
 
-For our aliens, the costumes at positions&nbsp;0 and&nbsp;2 are the
-ones we want, so the code should randomly choose between these two.
+* people use the word _index_ to say what position something has in a
+  list;
+* things in a list are numbered from *zero*, so the first
+  thing in a list is at ‘index&nbsp;0’, the second thing is at
+  ‘index&nbsp;1’, and so on.
+
+For our aliens, the costumes at index&nbsp;0 and index&nbsp;2 are the
+right ones, so the code should randomly choose between these two
+numbers.
 
 This *could* be done all in one line of code, but breaking the job
 into two steps will make it easier to understand:
 
-* Randomly choose a costume position (0 or 2).
+* Randomly choose a costume index (0 or 2).
 * Switch to the chosen costume.
 
 ### Randomly choose which costume
@@ -221,12 +226,8 @@ containing `0` and `2` is written `[0, 2]`.
 {{< learner-task >}}
 
 Add a line of code which randomly chooses `0` or `2` to be the
-position of the new costume, and stores the choice in a variable
-called `costume_position`.
-
-**TODO: Is “position” a helpful word?  Might people think we’re
-talking about position on the stage, i.e., coordinates?  Could we
-introduce the word “index”?**
+index of the new costume, and stores the choice in a variable
+called `costume_index`.
 
 {{< learner-task-help >}}
 
@@ -244,8 +245,8 @@ costume.
 
 {{< learner-task >}}
 
-Add a line of code which switches to the costume whose position is in
-the variable `costume_position`.
+Add a line of code which switches to the costume whose index is in
+the variable `costume_index`.
 
 {{< learner-task-help >}}
 
@@ -521,11 +522,11 @@ will generate the random number you want.
 Remember you used the code
 
 ``` python
-costume_position = random.choice([0, 2])
+costume_index = random.choice([0, 2])
 ```
 
 to make a random choice from the list `[0, 2]`, and assigns the result
-to the variable `costume_position`.  You want to do something similar.
+to the variable `costume_index`.  You want to do something similar.
 
 {{< learner-task-help >}}
 
