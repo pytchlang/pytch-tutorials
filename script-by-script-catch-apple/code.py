@@ -36,3 +36,7 @@ class Apple(pytch.Sprite):
         "Orange-4.png",
         "Strawberry-1.png"
     ]
+
+    @pytch.when_green_flag_clicked
+    def move_down_stage(self):
+        pass
