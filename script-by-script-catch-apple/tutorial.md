@@ -52,6 +52,8 @@ will use by default, is of an empty bowl.
 Now, if you click the green flag, you should see the player’s bowl
 appear in the middle of the stage.  Test that now!
 
+### TODO: Set size!
+
 
 ## Start the bowl in the right place
 
@@ -275,6 +277,8 @@ sprite.  The first costume in the bundle is an apple.
 If you run the project now, an apple should appear in the middle of
 the Stage.
 
+### TODO: Set size to something useful!
+
 
 ## Make the apple fall down the stage
 
@@ -438,12 +442,16 @@ choose a different one.
 
 {{< /learner-task >}}
 
+### TODO: Fix size
+
 ### Start the score-keeper in a sensible place
 
 We want to move the score-keeper to a sensible place when the green
 flag is clicked.  Using the _Show coordinates_ tool, the coordinates
 (-215,&nbsp;-115) seem about right, but you can adjust the values if
 you prefer.
+
+**TODO FIX COORDS**
 
 {{< learner-task >}}
 
