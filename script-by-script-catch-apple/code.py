@@ -54,3 +54,7 @@ class ScoreKeeper(pytch.Sprite):
         "Pytch-snake-3.png",
         "Pytch-snake-4.png"
     ]
+
+    @pytch.when_green_flag_clicked
+    def initialise(self):
+        pass
