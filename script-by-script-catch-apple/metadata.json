@@ -29,6 +29,13 @@
                 "Pytch-snake-3.png",
                 "Pytch-snake-4.png"
             ]
+        },
+        {
+            "name": "Fruit bowl",
+            "assets": [
+                "Bowl-1.png",
+                "Bowl-2.png"
+            ]
         }
     ]
 }
