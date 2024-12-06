@@ -62,4 +62,4 @@ class ScoreKeeper(pytch.Sprite):
 
     @pytch.when_green_flag_clicked
     def initialise(self):
-        pass
+        self.set_size(0.6)
