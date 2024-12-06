@@ -12,4 +12,4 @@ class Bowl(pytch.Sprite):
 
     @pytch.when_green_flag_clicked
     def move_with_keys(self):
-        pass
+        self.set_size(0.3)
