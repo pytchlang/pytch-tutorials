@@ -39,4 +39,4 @@ class Apple(pytch.Sprite):
 
     @pytch.when_green_flag_clicked
     def move_down_stage(self):
-        pass
+        self.set_size(0.25)
