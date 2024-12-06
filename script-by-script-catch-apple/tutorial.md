@@ -6,8 +6,9 @@ stage.
 
 ![Screenshot](screenshot-w240-darker-bg.png#img-center)
 
-We’ll develop the game in stages, showing how knowledge of Scratch
-helps with understanding how things work in Python.
+You’ll develop the game in stages.  If you know Scratch, that will
+help with understanding how things work in Python, but isn’t
+essential.
 
 ---
 
