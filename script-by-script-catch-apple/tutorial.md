@@ -33,17 +33,18 @@ haven’t given our Sprite any _costumes_.
 
 Pytch sprites have _costumes_ just like Scratch sprites do.
 
-The costume we want to use is called `"bowl.png"`, and it is in the
-Pytch media library.
+The costume we want to use is part of the _Fruit bowl_ bundle of
+images in the Pytch media library.
 
 {{< learner-task >}}
 
-Add the costume `"bowl.png"` to your `Bowl` sprite from the media
-library.
+Using the media library, add the “Fruit bowl” bundle of images as
+costumes for your `Bowl` sprite.  The first costume, which the sprite
+will use by default, is of an empty bowl.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-Bowl-costume add-medialib-appearance ["bowl.png"] >}}
+{{< jr-commit add-Bowl-costumes add-medialib-appearances-entry ["Fruit bowl"] >}}
 
 {{< /learner-task >}}
 
@@ -256,16 +257,17 @@ Make a new sprite called “Apple”.
 
 {{< /learner-task >}}
 
-Next is to give the apple a costume.
+Next is to give the apple a costume.  The media library has a bundle
+of cartoon fruit which includes some apples.
 
 {{< learner-task >}}
 
-Add the `"apple.png"` costume from the media library to this new
-sprite.
+Add the _Cartoon fruit_ bundle of images from the media library to this new
+sprite.  The first costume in the bundle is an apple.
 
 {{< learner-task-help >}}
 
-{{< jr-commit give-Apple-costume add-medialib-appearance ["apple.png"] >}}
+{{< jr-commit give-Apple-costumes add-medialib-appearances-entry ["Cartoon fruit"] >}}
 
 {{< /learner-task >}}
 
@@ -425,12 +427,13 @@ Add a Sprite called `ScoreKeeper`.
 
 {{< learner-task >}}
 
-Give the score-keeper sprite a costume.  The `Dani` costume from the
-media library works well, or you can choose a different one.
+Give the score-keeper sprite a costume.  The first costume in the
+_Pytch snake_ bundle in the media library works well, or you can
+choose a different one.
 
 {{< learner-task-help >}}
 
-{{< jr-commit give-ScoreKeeper-costume add-medialib-appearance ["Dani.png"] >}}
+{{< jr-commit give-ScoreKeeper-costumes add-medialib-appearances-entry ["Pytch snake"] >}}
 
 {{< /learner-task >}}
 
