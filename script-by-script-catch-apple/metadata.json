@@ -20,6 +20,15 @@
                 "Orange-4.png",
                 "Strawberry-1.png"
             ]
+        },
+        {
+            "name": "Pytch snake",
+            "assets": [
+                "Pytch-snake-1.png",
+                "Pytch-snake-2.png",
+                "Pytch-snake-3.png",
+                "Pytch-snake-4.png"
+            ]
         }
     ]
 }
