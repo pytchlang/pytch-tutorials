@@ -1,106 +1,166 @@
 # Hello there!
 
-In this tutorial we will learn about how to create and run a Pytch project with a Sprite.
+In this tutorial, you will learn how to create and run a Pytch project
+with a _sprite_.
 
 ---
 
-## Writing a Pytch program
+## What is a Pytch program?
 
-Pytch programs are written in a programming language called Python, to
-which we have added extra commands for Sprites, sounds, and other
-things. You make a Pytch project by writing a Python program using the
-special Pytch system.
+Pytch programs are written in a programming language called _Python_.
+As well as the normal Python features, Pytch also has extra commands
+for sprites, sounds, and other things.  You make a Pytch project by
+writing a Python program in the Pytch webapp.
 
-The first line tells Python that we will be using the Pytch
-add-ons. If you leave this out then you can only write ordinary Python
-programs without Sprites, so the Pytch web site puts that line in for
-you when you make a new project.
+{{< learner-task >}}
 
-When you see a block of code like this, with some lines of text shown
-in green with "+" symbols in front of them, it's telling you to change
-your project so that it has the new lines in green added to it. Add
-them in exactly the places where they are shown.
+Although you haven't written any code yet, you can still run the
+project, by clicking the green play button.  What happens?
 
-{{< commit import-specifics >}}
+{{< learner-task-help >}}
 
-## Creating the Sprite
+Nothing!  You haven't made any sprites or written any scripts yet.
 
-We'll start with the sprite that the player will control.
+{{< /learner-task >}}
 
-To create a new sprite we need to say three things: that we are
-creating a new "thing" in the project, give the thing a name, and say
-that it is a Sprite (rather than a Background or some other sort of
-thing). In Pytch we can do that by making a new "class" and giving it
-a name.
 
-For this example I've chosen the name "Snake" but really you could
-name it nearly anything you like.
+## Create the sprite
 
-Notice that the line ends with a ":" marker. There is more to come in
-the definition of Snake, and this symbol is how we tell Pytch that
-there will be more to the Snake class.
+To start, you will make a sprite that the player will control.
 
-{{< commit create-snake-class >}}
+{{< learner-task >}}
 
-## Adding a costume
+Create a new sprite called **Snake**.
 
-Once we have created the new Sprite the next job is to say what it
-looks like and how it behaves. In this tutorial we have already added
-a picture for the snake costume to the project, so let's connect it to
-the sprite.
+{{< learner-task-help >}}
 
-We need to write a line that sets up a _variable_ in the new Sprite
-that will hold a list of the costumes.
+{{< jr-commit create-snake-class add-sprite [] >}}
 
-Pytch needs to find the list in a variable named `Costumes` (with a
-capital `C`). If we call it anything else then Pytch won't be looking
-in the right place when it goes to find the costumes.
+{{< /learner-task >}}
 
-This variable contains a list of the images in the project that will
-be used by this Sprite as costumes. In Python we create lists by
-writing things between square brackets (`[` and `]` characters). When we
-mention the file name we need to put it between double-quote
-characters (these: `"`).
+### Test it!
 
-Finally, so that the instruction is contained _within_ the Sprite —
-that is, it's pushed in from the left of the program a bit. This is
-how Python knows that this variable is part of the Sprite. Everything
-that's part of the Sprite has to be "indented" (pushed in) the same
-amount.
+{{< learner-task >}}
 
-So, to create our `Costumes` variable we need a line like this.
+Run your project, by clicking the green play button.  What happens?
 
-{{< commit snake-costume >}}
+{{< learner-task-help >}}
 
-If you click the green flag now, you should see the Snake appear in
-the middle of the stage.  Try it!
+Nothing!  You haven't given the sprite any _costumes_ yet.
 
-## Adding a script
+{{< /learner-task >}}
 
-These lines add a new script (Python programmers sometimes calls these
-"functions" or "methods" instead of scripts) to the Sprite. The word
-"def" followed by the name of the function creates it, and the lines
-that are indented more than the first line are the instructions that
-are contained within the script.
+The sprite has no _costumes_ to say what it looks like.  The next
+chapter will fix this.
 
-{{< commit snake-speak-1 >}}
 
-Now, we haven't yet told Pytch when it should run this script. We need
-to attach a "hat" block to it, something that tells Pytch to run the
-script at the right time. We can set this script to run when the Snake
-sprite is clicked on.
+## Add a costume
 
-{{< commit when-clicked >}}
+To say what a sprite looks like, you give it _costumes_.  For this
+tutorial, the sprite will only have one costume, but in general, a
+sprite can have lots of costumes, and your program can switch between
+them.
 
-## Running the Project
+{{< learner-task >}}
 
-Finally, we can press the *green flag* and see the results of this
-work! When you click the green flag, the Snake should appear on the
-stage, and when you click on it, a speech balloon will appear.
+Add a suitable costume to your sprite.  There is one called
+**Pytch-hello-snake** in the media library.
+
+{{< learner-task-help >}}
+
+{{< jr-commit snake-costume add-medialib-appearance ["Pytch-hello-snake.png"] >}}
+
+{{< /learner-task >}}
+
+### Test it!
+
+{{< learner-task >}}
+
+Run your project, by clicking the green play button.  You should see a
+snake in the middle of the stage.
+
+{{< /learner-task >}}
+
+
+## Add a script
+
+You will now make the Snake react when you click on it.  A sprite can
+have _scripts_ — these are pieces of Python code which run when
+certain things happen, for example, when the sprite is clicked, or
+when a particular key is pressed.
+
+{{< learner-task >}}
+
+Add a script which will run when the sprite is clicked.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-when-clicked-script add-script [] >}}
+
+{{< /learner-task >}}
+
+### Test it!
+
+{{< learner-task >}}
+
+Run your project, by clicking the green play button.  What happens
+when you click on the Snake?
+
+{{< learner-task-help >}}
+
+Nothing!  You have not written any Python code yet.
+
+{{< /learner-task >}}
+
+Nothing happens when you click on the Snake, because the script is
+_empty_ — it has no Python code in it.  The next chapter will fix
+this.
+
+### Write the code for the script
+
+Now you can make the Snake say something when it's clicked.
+
+{{< learner-task >}}
+
+Write Python code to make the Snake say _Hello there!_ when you click
+on it.
+
+{{< learner-task-help >}}
+
+You have already made a script, so you just need to write a line of
+Python code into that script.
+
+{{< learner-task-help >}}
+
+If you know Scratch, you might have used code like
+
+``` scratch
+say [Hello there!] for [2.0] seconds
+```
+
+Look in the help to learn how to do this in Python.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-script-body edit-script [] >}}
+
+{{< /learner-task >}}
+
+### Test it!
+
+{{< learner-task >}}
+
+Run your project, by clicking the green play button.  The Snake should
+say your message when you click on it.
+
+{{< /learner-task >}}
+
+
+## The project is finished!
 
 Congratulations on your first Pytch project!
 
-## Challenges
+### Challenges
 
 Can you change your program to complete these challenges?
 
@@ -114,6 +174,6 @@ Can you change your program to complete these challenges?
   bye!"` for two seconds.
 
 
-## Credits
+### Credits
 
 {{< asset-credits >}}
