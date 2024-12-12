@@ -808,6 +808,42 @@ centre at the start of the game and stays there.  It needs to keep its
 vertical position (_y_&nbsp;coordinate) matching the ball’s.  This
 will make it follow the ball up and down.
 
+Inside a `RobotBat` script, you can get the _y_&nbsp;coordinate of the
+`RobotBat` with the Python expression
+
+``` python-expression
+self.y_position
+```
+
+The `self` means that it's the `RobotBat` itself whose
+_y_&nbsp;coordinate you want.
+
+To get a _different sprite's_ _y_&nbsp;coordinate, you can use similar
+code, but replacing `self` with an expression for the sprite whose
+_y_&nbsp;coordinate you want.
+
+An Python expression for "the Ball" is
+
+``` python-expression
+Ball.the_original()
+```
+
+This code talks about 'the original', because sprites can have
+_clones_, and the code needs to say exactly which Ball you want.  The
+details are beyond the scope of this tutorial, so don't worry too much
+about this.
+
+Putting this together, you can use the Python expression
+
+``` python-expression
+Ball.the_original().y_position
+```
+
+to find the _y_&nbsp;coordinate of the Ball in your game.
+
+Now you’re ready to add code so the robot’s bat moves up and down to
+track the ball.
+
 {{< learner-task >}}
 
 Add code to the `RobotBat` sprite which makes it forever make its _y_
@@ -815,9 +851,19 @@ coordinate match the Ball’s.
 
 {{< learner-task-help >}}
 
-**TODO: This might need breaking down.  Students might wonder why
-we’re bothering with a variable.  And the “get the original ball
-instance” has quite a lot going on behind the scenes.**
+You can use a `while True:` loop to make the `RobotBat` constantly
+move.  The “body” of the loop should have code which moves the
+`RobotBat` up or down to match the `Ball`.
+
+{{< learner-task-help >}}
+
+To make your code easier to read, it is worth breaking the loop body
+into two separate lines of code:
+
+* Find the Ball's _y_&nbsp;coordinate and assign it to a variable; a
+  good name for this variable might be `target_y`, because it is the
+  _y_&nbsp;coordinate the `RobotBat` should aim for.
+* Set the _y_&nbsp;coordinate of the `RobotBat` to `target_y`.
 
 {{< learner-task-help >}}
 
