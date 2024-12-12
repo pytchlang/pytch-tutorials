@@ -922,7 +922,8 @@ sprite to do something.  A sprite can _broadcast a message_, and then
 any other sprite (or even the same sprite) can _receive_ that message
 and run some Python code.
 
-For example, the Scratch block
+For example, if you’ve worked with Scratch, you might know that the
+Scratch block
 
 ``` scratch
 broadcast (jump-up-and-down v)
