@@ -915,6 +915,8 @@ The game would look better with an effect when the player or the
 robots hits the ball.  This is what the costumes with “wince” in their
 name are for.
 
+### How sprites can communicate
+
 Pytch uses the same idea as Scratch to let one sprite tell another
 sprite to do something.  A sprite can _broadcast a message_, and then
 any other sprite (or even the same sprite) can _receive_ that message
@@ -941,6 +943,8 @@ pytch.broadcast("jump-up-and-down")
 ```
 
 to broadcast a message.
+
+### Make the player’s bat react when hit
 
 You can use this in your game — the Ball can broadcast a message when
 it bounces off the player’s bat, and the `PlayerBat` can run some code
@@ -1002,7 +1006,9 @@ of the “bounce off player’s bat” section.
 
 {{< /learner-task >}}
 
-Now do something very similar for the robot.
+### Make the robot’s bat react when hit
+
+You can do something very similar for the robot.
 
 {{< learner-task >}}
 
