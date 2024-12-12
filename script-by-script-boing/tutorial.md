@@ -894,7 +894,7 @@ player’s bat going off the top of the court.
 {{< /learner-task >}}
 
 Now if you test this, you should see that the robot bat stops at the
-top of the court.
+top of the court.  But it still goes off the bottom.
 
 {{< learner-task >}}
 
