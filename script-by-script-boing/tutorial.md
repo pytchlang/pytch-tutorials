@@ -1069,10 +1069,6 @@ You could give the player more control, to add some skill to the game:
 
 Can you think of other changes or improvements?
 
-**TODO FOR TUTORIAL AUTHOR: Check all numbers (eg thresholds for “off
-the edge”) match text/code.  Review other TODOs in text.**
-
-
 ### Credits
 
 **TODO: Check progress trail doesn’t make the colun too wide on narrow
