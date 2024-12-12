@@ -915,7 +915,36 @@ The game would look better with an effect when the player or the
 robots hits the ball.  This is what the costumes with “wince” in their
 name are for.
 
-**TODO: Explain coordination between ball and bats via bcast/recv.**
+Pytch uses the same idea as Scratch to let one sprite tell another
+sprite to do something.  A sprite can _broadcast a message_, and then
+any other sprite (or even the same sprite) can _receive_ that message
+and run some Python code.
+
+For example, the Scratch block
+
+``` scratch
+broadcast (jump-up-and-down v)
+```
+
+means that any Scratch code, in any sprite, under the hat block
+
+``` scratch
+when I receive [jump-up-and-down v]
+```
+
+will run.
+
+In Pytch, you use the code
+
+``` python
+pytch.broadcast("jump-up-and-down")
+```
+
+to broadcast a message.
+
+You can use this in your game — the Ball can broadcast a message when
+it bounces off the player’s bat, and the `PlayerBat` can run some code
+when it receives that message.
 
 {{< learner-task >}}
 
