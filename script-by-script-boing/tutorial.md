@@ -1070,5 +1070,4 @@ You could give the player more control, to add some skill to the game:
 Can you think of other changes or improvements?
 
 **TODO: Check progress trail doesn’t make the colun too wide on narrow
-viewports.  What about “hidden from progress” chapters?  How are we
-meant to navigate to them?**
+viewports.**
