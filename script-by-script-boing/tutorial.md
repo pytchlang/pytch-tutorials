@@ -804,8 +804,8 @@ This block is in the _Looks_ section.
 ## Move the robot’s bat automatically
 
 Returning to the robot player, at the moment it just goes to the
-centre at the start of the game and stays there.  It needs to
-keep its vertical position (_y_ coordinate) matching the ball’s.  This
+centre at the start of the game and stays there.  It needs to keep its
+vertical position (_y_&nbsp;coordinate) matching the ball’s.  This
 will make it follow the ball up and down.
 
 {{< learner-task >}}
