@@ -808,6 +808,8 @@ centre at the start of the game and stays there.  It needs to keep its
 vertical position (_y_&nbsp;coordinate) matching the ball’s.  This
 will make it follow the ball up and down.
 
+### Find the ball's _y_&nbsp;coordinate
+
 Inside a `RobotBat` script, you can get the _y_&nbsp;coordinate of the
 `RobotBat` with the Python expression
 
@@ -840,6 +842,8 @@ Ball.the_original().y_position
 ```
 
 to find the _y_&nbsp;coordinate of the Ball in your game.
+
+### Move the robot bat up or down to track the ball
 
 Now you’re ready to add code so the robot’s bat moves up and down to
 track the ball.
