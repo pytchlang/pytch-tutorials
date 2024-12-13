@@ -933,13 +933,14 @@ Here are some ideas on how you could make this game more fun:
   player’s speed, but it is a bit more work to write the code in the
   first place.
 
-* Add another costume to the apple — you could use `orange.png` from
-  the media library.  (Your code will be clearer if you then change
+* Add another costume to the apple — look in the _Costumes_ tab to see
+  what you already have available from the “Cartoon fruit” bundle, or
+  find your own images.  (Your code will be clearer if you then change
   the name of the sprite to `Fruit`!)  Each time the `Fruit` appears,
   choose randomly which costume to wear.  (Hint: a good place for this
   code is in the first part of the apple’s script, before the `while`
   loop.)  The Scratch/Python help will tell you the Pytch version of
-  Scratch’s `switch costume` block.
+  Scratch’s `switch costume` block, and how to choose things randomly.
 
 * Make the score-keeper jump up and down in celebration when the
   player catches an apple.  In Scratch you might use the `repeat`
