@@ -83,13 +83,13 @@ Now you need to add the code which moves the bowl to the right place
 on the stage.  Pytch uses the same way of describing positions on the
 stage as Scratch.  You can use the _Show coordinates_ tool to find
 suitable coordinate values.  A `x`-coordinate of `0` puts the bowl in
-the centre, left-to-right.  I picked `-145` for the `y`-coordinate, to
+the centre, left-to-right.  I picked `-150` for the `y`-coordinate, to
 put the bowl almost at the bottom.
 
 In Scratch, we would use a block like this:
 
 ``` scratch
-go to x: [0] y: [-145]
+go to x: [0] y: [-150]
 ```
 
 In Python, you write code to do the same job.  You provide the extra
@@ -97,7 +97,7 @@ pieces of information (called “arguments”) in brackets “`()`” after
 the method name.  This is the code we need:
 
 ``` python
-self.go_to_xy(0, -145)
+self.go_to_xy(0, -150)
 ```
 
 The “`self.`” part at the start means we want the Sprite itself to do
@@ -448,10 +448,9 @@ choose a different one.
 
 We want to move the score-keeper to a sensible place when the green
 flag is clicked.  Using the _Show coordinates_ tool, the coordinates
-(-215,&nbsp;-115) seem about right, but you can adjust the values if
-you prefer.
-
-**TODO FIX COORDS**
+(-260,&nbsp;-105) seem about right, but you can adjust the values if
+you prefer.  This actually makes the snake’s tail disappear off to the
+left, but it looks OK and leaves more room for the game.
 
 {{< learner-task >}}
 
