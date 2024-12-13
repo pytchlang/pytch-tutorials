@@ -4,7 +4,7 @@ This tutorial will show you how to make a simple game in Pytch.  The
 player will move a bowl to try to catch apples which fall down the
 stage.
 
-![Screenshot](screenshot-w240-darker-bg.png#img-center)
+![Screenshot](screenshot-w240.png#img-center)
 
 You’ll develop the game in stages.  If you know Scratch, that will
 help with understanding how things work in Python, but isn’t
