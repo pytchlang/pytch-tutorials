@@ -907,8 +907,6 @@ dropdown menu.
 
 ## Improve the game
 
-{{< exclude-from-progress-trail >}}
-
 Here are some ideas on how you could make this game more fun:
 
 * Add a _backdrop_ to the stage, to make the game look more
