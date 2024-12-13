@@ -911,6 +911,10 @@ dropdown menu.
 
 Here are some ideas on how you could make this game more fun:
 
+* Add a _backdrop_ to the stage, to make the game look more
+  interesting.  You can use one from Pytch’s media library, or you can
+  draw or find one of your own.
+
 * Add a pause between one apple being caught / missed and the next one
   appearing.  Use the Scratch/Python help to find the Pytch version of
   Scratch’s `wait () seconds` block.  (Hint: just before doing
