@@ -52,19 +52,25 @@ will use by default, is of an empty bowl.
 Now, if you click the green flag, you should see the player’s bowl
 appear in the middle of the stage.  Test that now!
 
-### TODO: Set size!
+### Test it!
 
+{{< learner-task >}}
 
-## Start the bowl in the right place
+Try your game.  What’s wrong?
 
-The player needs to be able to move the bowl.  We’ll let them do this
-with the keyboard, using the `a` and `d` keys.  We do this, like in
-Scratch, by adding a script to our Sprite.  The difference is that in
-Pytch, we’ll type Python code into the script, instead of clicking
-blocks together like we would do in Scratch.
+{{< learner-task-help >}}
 
-We’ll start off by making a script which moves the bowl to a sensible
-place at the bottom of the stage when the game starts.
+The bowl is huge!
+
+{{< /learner-task >}}
+
+### Set the Bowl’s size
+
+When the game first starts, the Bowl needs to run some code which sets
+its size to something more sensible.  We do this, like in Scratch, by
+adding a script to our Sprite.  The difference is that in Pytch, we’ll
+type Python code into the script, instead of clicking blocks together
+like we would do in Scratch.
 
 {{< learner-task >}}
 
@@ -77,10 +83,35 @@ clicks the green flag.
 
 {{< /learner-task >}}
 
-The code editing pane should now show the new (empty) script.
+You write Python code in this script which sets the Bowl’s size.
 
-Now you need to add the code which moves the bowl to the right place
-on the stage.  Pytch uses the same way of describing positions on the
+{{< learner-task >}}
+
+Add code to this script which sets the Bowl’s size.  The help
+information in the sidebar might be useful.  Think about what size
+would work for the game.
+
+{{< learner-task-help >}}
+
+A size of `0.3` seems about right, but you can adjust this number if
+you think the Bowl should be a bit bigger or smaller.
+
+{{< learner-task-help >}}
+
+{{< jr-commit set-Bowl-size edit-script >}}
+
+{{< /learner-task >}}
+
+
+## Start the bowl in the right place
+
+The player needs to be able to move the bowl.  We’ll let them do this
+with the keyboard, using the `a` and `d` keys.
+
+We’ll start off by adding code which moves the bowl to a sensible
+place at the bottom of the stage when the game starts.
+
+Pytch uses the same way of describing positions on the
 stage as Scratch.  You can use the _Show coordinates_ tool to find
 suitable coordinate values.  A `x`-coordinate of `0` puts the bowl in
 the centre, left-to-right.  I picked `-150` for the `y`-coordinate, to
@@ -109,7 +140,7 @@ Add this code to the script you have just made.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-move-with-keys-initial-body edit-script >}}
+{{< jr-commit move-Bowl-to-starting-point edit-script >}}
 
 {{< /learner-task >}}
 
@@ -277,7 +308,48 @@ sprite.  The first costume in the bundle is an apple.
 If you run the project now, an apple should appear in the middle of
 the Stage.
 
-### TODO: Set size to something useful!
+{{< learner-task >}}
+
+Try your game.  What’s wrong?
+
+{{< learner-task-help >}}
+
+The apple is huge!
+
+{{< /learner-task >}}
+
+### Make the apple a sensible size
+
+This is very similar to how we made the Bowl the right size.
+
+{{< learner-task >}}
+
+Add a new script to the `Apple` sprite which will run when the player
+clicks the green flag.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-empty-Apple-script add-script >}}
+
+{{< /learner-task >}}
+
+And write Python code in this script.
+
+{{< learner-task >}}
+
+Add code to this script which sets the Apple’s size.  You can use the
+code you wrote for the Bowl as a guide.
+
+{{< learner-task-help >}}
+
+A size of `0.25` seems about right, but you can adjust this number if you
+like.
+
+{{< learner-task-help >}}
+
+{{< jr-commit set-Apple-size edit-script >}}
+
+{{< /learner-task >}}
 
 
 ## Make the apple fall down the stage
@@ -292,11 +364,7 @@ To give the apple its behaviour, we’ll add a script.  In more detail:
 
 {{< learner-task >}}
 
-Add a green-flag script with a line of code which does this.
-
-{{< learner-task-help >}}
-
-Add the script, and then think about what line of code you need.
+Add a line of code to the Apple’s script which does this.
 
 {{< learner-task-help >}}
 
@@ -312,7 +380,7 @@ start at the right place.
 
 {{< learner-task-help >}}
 
-{{< jr-commit define-skeleton-apple-move-down-screen add-script >}}
+{{< jr-commit move-Apple-to-starting-point edit-script >}}
 
 {{< /learner-task >}}
 
@@ -442,7 +510,36 @@ choose a different one.
 
 {{< /learner-task >}}
 
-### TODO: Fix size
+### Set the ScoreKeeper’s size
+
+By now you might expect that we need to set the ScoreKeeper’s size!
+
+{{< learner-task >}}
+
+Add a new script to the `ScoreKeeper` sprite which will run when the player
+clicks the green flag.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-empty-ScoreKeeper-script add-script >}}
+
+{{< /learner-task >}}
+
+{{< learner-task >}}
+
+Add code to this script which sets the ScoreKeeper’s size.
+
+{{< learner-task-help >}}
+
+A size of `0.6` seems about right, but you can adjust this number if you
+like.
+
+{{< learner-task-help >}}
+
+{{< jr-commit set-ScoreKeeper-size edit-script >}}
+
+{{< /learner-task >}}
+
 
 ### Start the score-keeper in a sensible place
 
@@ -454,18 +551,18 @@ left, but it looks OK and leaves more room for the game.
 
 {{< learner-task >}}
 
-Add a script which runs when the green flag is clicked, with code that
-moves the score-keeper to a suitable place on the stage.
+Add code to the script to move the score-keeper to a suitable place on
+the stage.
 
 {{< learner-task-help >}}
 
-Once you've added the script, you can refer to the other two Sprites
-if you'd like to remind yourself what Python code to use to move a
-Sprite to a particular place on the stage.
+You can refer to the other two Sprites if you'd like to remind
+yourself what Python code to use to move a Sprite to a particular
+place on the stage.
 
 {{< learner-task-help >}}
 
-{{< jr-commit move-ScoreKeeper-to-right-place add-script >}}
+{{< jr-commit move-ScoreKeeper-to-starting-point edit-script >}}
 
 {{< /learner-task >}}
 
