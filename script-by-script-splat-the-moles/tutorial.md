@@ -42,7 +42,7 @@ It’s a good idea to test your project as you go along.
 {{< learner-task >}}
 
 Run your project using the green button above the stage.  Check that
-the backdrop is the “cartoon fields” one.
+the backdrop is the “cartoon field” one.
 
 {{< /learner-task >}}
 
