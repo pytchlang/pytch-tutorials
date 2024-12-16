@@ -8,6 +8,13 @@
                 "mole-centre.png",
                 "mole-right.png"
             ]
+        },
+        {
+            "name": "Single mole",
+            "assets": [
+                "one-hole.png",
+                "one-mole.png"
+            ]
         }
     ],
     "programKind": "per-method",
