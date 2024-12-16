@@ -689,8 +689,8 @@ ways you could investigate writing the program differently.
 * **Advanced:** Instead of one `Mole` sprite with four costumes, we
   could have made three sprites: `LeftMole`, `CentreMole`, and
   `RightMole`, each with two costumes: an “empty hole” one and a “mole
-  popping out of hole” one.  This tutorial comes with suitable
-  graphics files.  **TODO: It does not yet!**  See if you can re-write
+  popping out of hole” one.  The media library has suitable
+  graphics files, in the "Single mole" bundle.  See if you can re-write
   the game this way.  Some questions you might want to think about:
     * Should it be possible for more than one mole to be out of its
       hole at the same time?
