@@ -73,12 +73,12 @@ library.
 
 {{< learner-task >}}
 
-Add the “cartoon moles” image bundle as costumes of your new Mole
+Add the “Cartoon moles” image bundle as costumes of your new Mole
 sprite.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-Mole-costumes add-medialib-appearances-entry ["cartoon moles"] >}}
+{{< jr-commit add-Mole-costumes add-medialib-appearances-entry ["Cartoon moles"] >}}
 
 {{< /learner-task >}}
 
