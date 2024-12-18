@@ -24,3 +24,7 @@ class Fruit(pytch.Sprite):
         "Orange-4.png",
         "Strawberry-1.png"
     ]
+
+    @pytch.when_green_flag_clicked
+    def init_size(self):
+        pass
