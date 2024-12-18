@@ -2,6 +2,8 @@
 
 - name: Script-by-script Hello World
   tip-commit: bn/sbs-hello-01
+- name: Script-by-script shoot the fruit
+  tip-commit: bn/sbs-shoot-the-fruit-02
 - name: Script-by-script catch the apple
   tip-commit: bn/script-by-script-catch-apple-02
 - name: Script-by-script splat the moles
