@@ -1,4 +1,4 @@
-# Shoot the fruit
+# Script-by-script Shoot the fruit
 
 You're going to write a game in Python where the player has to click
 on fruit to score points.  If you know some Scratch, you'll see that
