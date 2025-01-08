@@ -1,7 +1,7 @@
 - name: Script-by-script Hello World
-  branch_name: bn/sbs-hello-01
+  branch_name: bn/sbs-hello-02
   dir_name: script-by-script-hello
-  commit_id: 2a3f56b67da29e3d403c41baa2a47c96e7a9a4d6
+  commit_id: 711faf60356f16c8c8a04e5d66313b5419fc42b0
 - name: Script-by-script shoot the fruit
   branch_name: bn/sbs-shoot-the-fruit-02
   dir_name: script-by-script-shoot-the-fruit
@@ -15,9 +15,9 @@
   dir_name: script-by-script-splat-the-moles
   commit_id: c3f4d36f796d481d2db3149340a5aab69197f97d
 - name: Script-by-script blue invaders
-  branch_name: bn/sbs-blue-invader-01
+  branch_name: bn/sbs-blue-invader-02
   dir_name: script-by-script-blue-invader
-  commit_id: 40c59b1fb5a5421e3c08d6a5ece23cf738e6cc6b
+  commit_id: 66ca53b0f057f435f3561bfee791d97cc8d9ab40
 - name: Script-by-script Boing
   branch_name: bn/sbs-boing-02
   dir_name: script-by-script-boing

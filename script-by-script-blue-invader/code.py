@@ -3,7 +3,7 @@ import random
 
 
 class Stage(pytch.Stage):
-    Backdrops = ["starry-sky.png"]
+    Backdrops = ["galaxy.png"]
 
     @pytch.when_green_flag_clicked
     def run(self):
