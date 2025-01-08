@@ -1,7 +1,17 @@
 # Which tutorials to present in the start-up "List of tutorials" tab.
 
+- name: Script-by-script Hello World
+  tip-commit: bn/sbs-hello-01
+- name: Script-by-script shoot the fruit
+  tip-commit: bn/sbs-shoot-the-fruit-02
 - name: Script-by-script catch the apple
-  tip-commit: bn/script-by-script-catch-apple-01
+  tip-commit: bn/script-by-script-catch-apple-02
+- name: Script-by-script splat the moles
+  tip-commit: bn/sbs-splat-the-moles-01
+- name: Script-by-script blue invaders
+  tip-commit: bn/sbs-blue-invader-01
+- name: Script-by-script Boing
+  tip-commit: bn/sbs-boing-02
 - name: Hello world!
   tip-commit: bn/hello-02
 - name: Shoot the fruit

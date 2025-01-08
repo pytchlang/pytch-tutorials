@@ -4,10 +4,11 @@ This tutorial will show you how to make a simple game in Pytch.  The
 player will move a bowl to try to catch apples which fall down the
 stage.
 
-![Screenshot](screenshot-w240-darker-bg.png#img-center)
+![Screenshot](screenshot-w240.png#img-center)
 
-We’ll develop the game in stages, showing how knowledge of Scratch
-helps with understanding how things work in Python.
+You’ll develop the game in stages.  If you know Scratch, that will
+help with understanding how things work in Python, but isn’t
+essential.
 
 ---
 
@@ -33,34 +34,43 @@ haven’t given our Sprite any _costumes_.
 
 Pytch sprites have _costumes_ just like Scratch sprites do.
 
-The costume we want to use is called `"bowl.png"`, and it is in the
-Pytch media library.
+The costume we want to use is part of the _Fruit bowl_ bundle of
+images in the Pytch media library.
 
 {{< learner-task >}}
 
-Add the costume `"bowl.png"` to your `Bowl` sprite from the media
-library.
+Using the media library, add the “Fruit bowl” bundle of images as
+costumes for your `Bowl` sprite.  The first costume, which the sprite
+will use by default, is of an empty bowl.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-Bowl-costume add-medialib-appearance ["bowl.png"] >}}
+{{< jr-commit add-Bowl-costumes add-medialib-appearances-entry ["Fruit bowl"] >}}
 
 {{< /learner-task >}}
 
 Now, if you click the green flag, you should see the player’s bowl
 appear in the middle of the stage.  Test that now!
 
+### Test it!
 
-## Start the bowl in the right place
+{{< learner-task >}}
 
-The player needs to be able to move the bowl.  We’ll let them do this
-with the keyboard, using the `a` and `d` keys.  We do this, like in
-Scratch, by adding a script to our Sprite.  The difference is that in
-Pytch, we’ll type Python code into the script, instead of clicking
-blocks together like we would do in Scratch.
+Try your game.  What’s wrong?
 
-We’ll start off by making a script which moves the bowl to a sensible
-place at the bottom of the stage when the game starts.
+{{< learner-task-help >}}
+
+The bowl is huge!
+
+{{< /learner-task >}}
+
+### Set the Bowl’s size
+
+When the game first starts, the Bowl needs to run some code which sets
+its size to something more sensible.  We do this, like in Scratch, by
+adding a script to our Sprite.  The difference is that in Pytch, we’ll
+type Python code into the script, instead of clicking blocks together
+like we would do in Scratch.
 
 {{< learner-task >}}
 
@@ -73,19 +83,44 @@ clicks the green flag.
 
 {{< /learner-task >}}
 
-The code editing pane should now show the new (empty) script.
+You write Python code in this script which sets the Bowl’s size.
 
-Now you need to add the code which moves the bowl to the right place
-on the stage.  Pytch uses the same way of describing positions on the
+{{< learner-task >}}
+
+Add code to this script which sets the Bowl’s size.  The help
+information in the sidebar might be useful.  Think about what size
+would work for the game.
+
+{{< learner-task-help >}}
+
+A size of `0.3` seems about right, but you can adjust this number if
+you think the Bowl should be a bit bigger or smaller.
+
+{{< learner-task-help >}}
+
+{{< jr-commit set-Bowl-size edit-script >}}
+
+{{< /learner-task >}}
+
+
+## Start the bowl in the right place
+
+The player needs to be able to move the bowl.  We’ll let them do this
+with the keyboard, using the `a` and `d` keys.
+
+We’ll start off by adding code which moves the bowl to a sensible
+place at the bottom of the stage when the game starts.
+
+Pytch uses the same way of describing positions on the
 stage as Scratch.  You can use the _Show coordinates_ tool to find
 suitable coordinate values.  A `x`-coordinate of `0` puts the bowl in
-the centre, left-to-right.  I picked `-145` for the `y`-coordinate, to
+the centre, left-to-right.  I picked `-150` for the `y`-coordinate, to
 put the bowl almost at the bottom.
 
 In Scratch, we would use a block like this:
 
 ``` scratch
-go to x: [0] y: [-145]
+go to x: [0] y: [-150]
 ```
 
 In Python, you write code to do the same job.  You provide the extra
@@ -93,7 +128,7 @@ pieces of information (called “arguments”) in brackets “`()`” after
 the method name.  This is the code we need:
 
 ``` python
-self.go_to_xy(0, -145)
+self.go_to_xy(0, -150)
 ```
 
 The “`self.`” part at the start means we want the Sprite itself to do
@@ -105,7 +140,7 @@ Add this code to the script you have just made.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-move-with-keys-initial-body edit-script >}}
+{{< jr-commit move-Bowl-to-starting-point edit-script >}}
 
 {{< /learner-task >}}
 
@@ -256,21 +291,65 @@ Make a new sprite called “Apple”.
 
 {{< /learner-task >}}
 
-Next is to give the apple a costume.
+Next is to give the apple a costume.  The media library has a bundle
+of cartoon fruit which includes some apples.
 
 {{< learner-task >}}
 
-Add the `"apple.png"` costume from the media library to this new
-sprite.
+Add the _Cartoon fruit_ bundle of images from the media library to this new
+sprite.  The first costume in the bundle is an apple.
 
 {{< learner-task-help >}}
 
-{{< jr-commit give-Apple-costume add-medialib-appearance ["apple.png"] >}}
+{{< jr-commit give-Apple-costumes add-medialib-appearances-entry ["Cartoon fruit"] >}}
 
 {{< /learner-task >}}
 
 If you run the project now, an apple should appear in the middle of
 the Stage.
+
+{{< learner-task >}}
+
+Try your game.  What’s wrong?
+
+{{< learner-task-help >}}
+
+The apple is huge!
+
+{{< /learner-task >}}
+
+### Make the apple a sensible size
+
+This is very similar to how we made the Bowl the right size.
+
+{{< learner-task >}}
+
+Add a new script to the `Apple` sprite which will run when the player
+clicks the green flag.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-empty-Apple-script add-script >}}
+
+{{< /learner-task >}}
+
+And write Python code in this script.
+
+{{< learner-task >}}
+
+Add code to this script which sets the Apple’s size.  You can use the
+code you wrote for the Bowl as a guide.
+
+{{< learner-task-help >}}
+
+A size of `0.25` seems about right, but you can adjust this number if you
+like.
+
+{{< learner-task-help >}}
+
+{{< jr-commit set-Apple-size edit-script >}}
+
+{{< /learner-task >}}
 
 
 ## Make the apple fall down the stage
@@ -285,11 +364,7 @@ To give the apple its behaviour, we’ll add a script.  In more detail:
 
 {{< learner-task >}}
 
-Add a green-flag script with a line of code which does this.
-
-{{< learner-task-help >}}
-
-Add the script, and then think about what line of code you need.
+Add a line of code to the Apple’s script which does this.
 
 {{< learner-task-help >}}
 
@@ -305,7 +380,7 @@ start at the right place.
 
 {{< learner-task-help >}}
 
-{{< jr-commit define-skeleton-apple-move-down-screen add-script >}}
+{{< jr-commit move-Apple-to-starting-point edit-script >}}
 
 {{< /learner-task >}}
 
@@ -425,36 +500,69 @@ Add a Sprite called `ScoreKeeper`.
 
 {{< learner-task >}}
 
-Give the score-keeper sprite a costume.  The `Dani` costume from the
-media library works well, or you can choose a different one.
+Give the score-keeper sprite a costume.  The first costume in the
+_Pytch snake_ bundle in the media library works well, or you can
+choose a different one.
 
 {{< learner-task-help >}}
 
-{{< jr-commit give-ScoreKeeper-costume add-medialib-appearance ["Dani.png"] >}}
+{{< jr-commit give-ScoreKeeper-costumes add-medialib-appearances-entry ["Pytch snake"] >}}
 
 {{< /learner-task >}}
+
+### Set the ScoreKeeper’s size
+
+By now you might expect that we need to set the ScoreKeeper’s size!
+
+{{< learner-task >}}
+
+Add a new script to the `ScoreKeeper` sprite which will run when the player
+clicks the green flag.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-empty-ScoreKeeper-script add-script >}}
+
+{{< /learner-task >}}
+
+{{< learner-task >}}
+
+Add code to this script which sets the ScoreKeeper’s size.
+
+{{< learner-task-help >}}
+
+A size of `0.6` seems about right, but you can adjust this number if you
+like.
+
+{{< learner-task-help >}}
+
+{{< jr-commit set-ScoreKeeper-size edit-script >}}
+
+{{< /learner-task >}}
+
 
 ### Start the score-keeper in a sensible place
 
 We want to move the score-keeper to a sensible place when the green
 flag is clicked.  Using the _Show coordinates_ tool, the coordinates
-(-215,&nbsp;-115) seem about right, but you can adjust the values if
-you prefer.
+(-260,&nbsp;-105) seem about right, but you can adjust the values if
+you prefer.  This actually makes the snake’s tail disappear off to the
+left, but it looks OK and leaves more room for the game.
 
 {{< learner-task >}}
 
-Add a script which runs when the green flag is clicked, with code that
-moves the score-keeper to a suitable place on the stage.
+Add code to the script to move the score-keeper to a suitable place on
+the stage.
 
 {{< learner-task-help >}}
 
-Once you've added the script, you can refer to the other two Sprites
-if you'd like to remind yourself what Python code to use to move a
-Sprite to a particular place on the stage.
+You can refer to the other two Sprites if you'd like to remind
+yourself what Python code to use to move a Sprite to a particular
+place on the stage.
 
 {{< learner-task-help >}}
 
-{{< jr-commit move-ScoreKeeper-to-right-place add-script >}}
+{{< jr-commit move-ScoreKeeper-to-starting-point edit-script >}}
 
 {{< /learner-task >}}
 
@@ -799,9 +907,11 @@ dropdown menu.
 
 ## Improve the game
 
-{{< exclude-from-progress-trail >}}
-
 Here are some ideas on how you could make this game more fun:
+
+* Add a _backdrop_ to the stage, to make the game look more
+  interesting.  You can use one from Pytch’s media library, or you can
+  draw or find one of your own.
 
 * Add a pause between one apple being caught / missed and the next one
   appearing.  Use the Scratch/Python help to find the Pytch version of
@@ -821,13 +931,14 @@ Here are some ideas on how you could make this game more fun:
   player’s speed, but it is a bit more work to write the code in the
   first place.
 
-* Add another costume to the apple — you could use `orange.png` from
-  the media library.  (Your code will be clearer if you then change
+* Add another costume to the apple — look in the _Costumes_ tab to see
+  what you already have available from the “Cartoon fruit” bundle, or
+  find your own images.  (Your code will be clearer if you then change
   the name of the sprite to `Fruit`!)  Each time the `Fruit` appears,
   choose randomly which costume to wear.  (Hint: a good place for this
   code is in the first part of the apple’s script, before the `while`
   loop.)  The Scratch/Python help will tell you the Pytch version of
-  Scratch’s `switch costume` block.
+  Scratch’s `switch costume` block, and how to choose things randomly.
 
 * Make the score-keeper jump up and down in celebration when the
   player catches an apple.  In Scratch you might use the `repeat`
@@ -839,12 +950,3 @@ Here are some ideas on how you could make this game more fun:
   the Python
   documentation](https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings))
   to get the score-keeper to say this.
-
-
-## Credits
-
-{{< exclude-from-progress-trail >}}
-
-We have used various freely-available resources to make this project:
-
-{{< asset-credits >}}

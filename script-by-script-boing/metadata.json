@@ -1,0 +1,20 @@
+{
+    "programKind": "per-method",
+    "difficulty": "advanced",
+    "groupedProjectAssets": [
+        {
+            "name": "Boing player bats",
+            "assets": [
+                "player-bat-smile.png",
+                "player-bat-wince.png"
+            ]
+        },
+        {
+            "name": "Boing robot bats",
+            "assets": [
+                "robot-bat-smile.png",
+                "robot-bat-wince.png"
+            ]
+        }
+    ]
+}

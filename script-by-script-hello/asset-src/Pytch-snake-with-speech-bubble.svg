@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 314.55869 293.77451"
+   version="1.1"
+   id="svg47"
+   sodipodi:docname="Pytch-snake-with-speech-bubble.svg"
+   width="314.55869"
+   height="293.77451"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview49"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:showpageshadow="false"
+     lock-margins="true"
+     fit-margin-top="1"
+     fit-margin-left="1"
+     fit-margin-right="1"
+     fit-margin-bottom="1"
+     inkscape:zoom="1.0333333"
+     inkscape:cx="-84.193551"
+     inkscape:cy="38.225808"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg47" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">
+      .cls-1 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        mix-blend-mode: multiply;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: none;
+        stroke: #f281b3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 4.5px;
+      }
+
+      .cls-5 {
+        fill: #006837;
+      }
+
+      .cls-6 {
+        fill: #c7ab3e;
+      }
+
+      .cls-7 {
+        fill: #999;
+      }
+    </style>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter1171"
+       x="-0.086197607"
+       y="-0.12193263"
+       width="1.1804762"
+       height="1.2438653">
+      <feFlood
+         flood-opacity="1"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood1161" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite1163" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="10"
+         result="blur"
+         id="feGaussianBlur1165" />
+      <feOffset
+         dx="0"
+         dy="0"
+         result="offset"
+         id="feOffset1167" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite1169" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter1201"
+       x="-0.093904167"
+       y="-0.27890667"
+       width="1.1878083"
+       height="1.5440061">
+      <feFlood
+         flood-opacity="1"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood1191" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite1193" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="10"
+         result="blur"
+         id="feGaussianBlur1195" />
+      <feOffset
+         dx="0"
+         dy="0"
+         result="offset"
+         id="feOffset1197" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite1199" />
+    </filter>
+  </defs>
+  <g
+     id="g1099">
+    <line
+       class="cls-4"
+       x1="244.48001"
+       y1="113.3245"
+       x2="274.10001"
+       y2="113.3245"
+       id="line10"
+       style="isolation:isolate" />
+    <path
+       class="cls-4"
+       d="m 279.43,107.9845 c 0,2.95 -2.39,5.34 -5.34,5.34"
+       id="path12"
+       style="isolation:isolate" />
+    <path
+       class="cls-4"
+       d="m 279.43,118.6645 c 0,-2.95 -2.39,-5.34 -5.34,-5.34"
+       id="path14"
+       style="isolation:isolate" />
+    <g
+       class="cls-2"
+       id="g18"
+       style="isolation:isolate"
+       transform="translate(-8.43,34.8245)">
+      <circle
+         class="cls-7"
+         cx="268.35001"
+         cy="67.209999"
+         r="2.53"
+         id="circle16" />
+    </g>
+    <path
+       class="cls-6"
+       d="m 266.95,95.9445 h -37.27 v 0.11 c -20.61,0 -37.33,16.67 -37.41,37.27 v 0 122.04 c 0,-20.66 -16.75,-37.41 -37.41,-37.41 -20.66,0 -37.41,16.75 -37.41,37.41 H 1 c 0,20.61 16.67,37.33 37.27,37.41 v 0 c 0,0 79.17,0 79.17,0 20.66,0 37.41,-16.75 37.41,-37.41 0,20.66 16.75,37.41 37.41,37.41 20.66,0 37.41,-16.75 37.41,-37.41 v -122.01 c 20.6,-0.08 37.27,-16.79 37.27,-37.41 z"
+       id="path20"
+       style="isolation:isolate" />
+    <path
+       class="cls-5"
+       d="m 38.27,255.3645 c 0,8.75 7.09,15.83 15.83,15.83 8.74,0 15.83,-7.09 15.83,-15.83"
+       id="path22"
+       style="isolation:isolate" />
+    <path
+       class="cls-5"
+       d="m 117.44,292.7745 c 0,-8.75 -7.09,-15.83 -15.83,-15.83 -8.75,0 -15.83,7.09 -15.83,15.83"
+       id="path24"
+       style="isolation:isolate" />
+    <path
+       class="cls-5"
+       d="m 192.27,192.5145 c 8.75,0 15.83,-7.09 15.83,-15.83 0,-8.74 -7.09,-15.83 -15.83,-15.83"
+       id="path26"
+       style="isolation:isolate" />
+    <path
+       class="cls-5"
+       d="m 229.54,224.1845 c -8.75,0 -15.83,7.09 -15.83,15.83 0,8.75 7.09,15.83 15.83,15.83"
+       id="path28"
+       style="isolation:isolate" />
+    <path
+       class="cls-5"
+       d="m 154.85,236.6645 c 8.53,0 15.47,-6.75 15.8,-15.2 -4.8,-2.24 -10.15,-3.5 -15.8,-3.5 -5.65,0 -11,1.26 -15.8,3.5 0.33,8.45 7.27,15.2 15.8,15.2 z"
+       id="path30"
+       style="isolation:isolate" />
+    <path
+       class="cls-5"
+       d="m 192.27,274.0745 c -8.53,0 -15.47,6.75 -15.8,15.2 4.8,2.24 10.15,3.5 15.8,3.5 5.65,0 11,-1.26 15.8,-3.5 -0.33,-8.45 -7.27,-15.2 -15.8,-15.2 z"
+       id="path32"
+       style="isolation:isolate" />
+    <circle
+       class="cls-3"
+       cx="234.78001"
+       cy="113.3245"
+       r="13.16"
+       id="circle34"
+       style="isolation:isolate" />
+    <circle
+       cx="234.78001"
+       cy="113.3245"
+       r="3.7"
+       id="circle36"
+       style="isolation:isolate" />
+    <circle
+       class="cls-3"
+       cx="234.78001"
+       cy="113.3245"
+       r="13.16"
+       id="circle38"
+       style="isolation:isolate" />
+    <circle
+       cx="235.11"
+       cy="113.3245"
+       r="6.1199999"
+       id="circle40"
+       style="isolation:isolate" />
+  </g>
+  <g
+     id="g10694"
+     transform="translate(11.950303,83.240593)">
+    <g
+       id="g10687">
+      <rect
+         style="fill:#e8e8e8;fill-opacity:1;stroke:#cccccc;stroke-width:2.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+         id="rect1105"
+         width="268.89114"
+         height="56.470406"
+         x="31.467249"
+         y="-80.990593"
+         ry="10.417077" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+         x="48.988991"
+         y="-37.843281"
+         id="text3001"><tspan
+           sodipodi:role="line"
+           id="tspan2999"
+           x="48.988991"
+           y="-37.843281">Hello there!</tspan></text>
+    </g>
+    <path
+       style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 228.83938,-24.570104 9.77529,34.1115924 9.77529,-34.1115924 z"
+       id="path10037"
+       sodipodi:nodetypes="cccc" />
+  </g>
+</svg>

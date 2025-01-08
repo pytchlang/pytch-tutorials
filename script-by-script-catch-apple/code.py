@@ -3,10 +3,11 @@ import random
 
 
 class Bowl(pytch.Sprite):
-    Costumes = ["bowl.png"]
+    Costumes = ["Bowl-1.png", "Bowl-2.png"]
 
     @pytch.when_green_flag_clicked
     def move_with_keys(self):
+        self.set_size(0.3)
         self.go_to_xy(0, -145)
 
         while True:
@@ -19,10 +20,26 @@ class Bowl(pytch.Sprite):
 
 
 class Apple(pytch.Sprite):
-    Costumes = ["apple.png"]
+    Costumes = [
+        "Apple-1.png",
+        "Apple-2.png",
+        "Apple-3.png",
+        "Apple-4.png",
+        "GoldApple-1.png",
+        "Lemon-1.png",
+        "Lemon-2.png",
+        "Lemon-3.png",
+        "Lemon-4.png",
+        "Orange-1.png",
+        "Orange-2.png",
+        "Orange-3.png",
+        "Orange-4.png",
+        "Strawberry-1.png"
+    ]
 
     @pytch.when_I_receive("drop-apple")
     def move_down_stage(self):
+        self.set_size(0.25)
         drop_x = random.randint(-145, 190)
         self.go_to_xy(drop_x, 200)
         self.show()
@@ -34,11 +51,17 @@ class Apple(pytch.Sprite):
 
 
 class ScoreKeeper(pytch.Sprite):
-    Costumes = ["Dani.png"]
+    Costumes = [
+        "Pytch-snake-1.png",
+        "Pytch-snake-2.png",
+        "Pytch-snake-3.png",
+        "Pytch-snake-4.png"
+    ]
 
     @pytch.when_green_flag_clicked
     def initialise(self):
-        self.go_to_xy(-215, -115)
+        self.set_size(0.6)
+        self.go_to_xy(-260, -105)
         self.score = 0
         self.say(self.score)
 
