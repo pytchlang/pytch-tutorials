@@ -1,5 +1,16 @@
 {
     "difficulty": "advanced",
+    "orderedProjectAssets": [
+        "images/table.png",
+        "images/ball.png",
+        "images/player-normal.png",
+        "images/player-flash.png",
+        "images/robot-normal.png",
+        "images/robot-flash.png",
+        "sounds/hit.mp3",
+        "sounds/bounce.mp3",
+        "sounds/lost.mp3"
+    ],
     "groupedProjectAssets": [
         {
             "name": "Boing bats",
