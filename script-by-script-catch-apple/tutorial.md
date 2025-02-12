@@ -20,6 +20,12 @@ Scratch, we add a _Sprite_.
 
 Add a Sprite called `Bowl` to your project.
 
+{{< parsons-puzzle >}}
+
+- 7
+- 2
+- 8
+
 {{< learner-task-help >}}
 
 {{< jr-commit add-empty-Bowl add-sprite >}}
