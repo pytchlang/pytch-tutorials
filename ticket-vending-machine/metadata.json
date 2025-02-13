@@ -1,5 +1,13 @@
 {
     "difficulty": "advanced",
+    "orderedProjectAssets": [
+        "child.png",
+        "adult.png",
+        "family.png",
+        "coin-1.png",
+        "coin-2.png",
+        "note-5.png"
+    ],
     "groupedProjectAssets": [
         {
             "name": "tickets",
