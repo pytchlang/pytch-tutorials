@@ -17,7 +17,7 @@
 - name: Script-by-script blue invaders
   branch_name: bn/sbs-blue-invader-02
   dir_name: script-by-script-blue-invader
-  commit_id: 66ca53b0f057f435f3561bfee791d97cc8d9ab40
+  commit_id: 5ab0e9f2e1a7065c207b3438f035f0c0978dc3f8
 - name: Script-by-script Boing
   branch_name: bn/sbs-boing-02
   dir_name: script-by-script-boing
