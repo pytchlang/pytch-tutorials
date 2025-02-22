@@ -1,5 +1,16 @@
 {
     "difficulty": "medium",
+    "orderedProjectAssets": [
+        "green-field.jpg",
+        "all-empty.png",
+        "left-mole.png",
+        "centre-mole.png",
+        "right-mole.png",
+        "empty-hole.png",
+        "hole-with-mole.png",
+        "splat.mp3",
+        "thud.mp3"
+    ],
     "groupedProjectAssets": [
         {
             "name": "small moles",

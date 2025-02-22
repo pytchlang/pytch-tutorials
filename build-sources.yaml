@@ -25,48 +25,48 @@
 - name: Hello world!
   branch_name: bn/hello-02
   dir_name: hello
-  commit_id: 2df6f528a770a96e3f34fd271cd30a6657af2ce3
+  commit_id: cce89620a30ac18a127122df8b0bb8dd3cb036ca
 - name: Shoot the fruit
   branch_name: bn/shoot-the-fruit-02
   dir_name: shoot-the-fruit
-  commit_id: b9b79fa943f7ea2b42a7d0afbd7e9dcb5f7146d3
+  commit_id: 306e7281b72c68ab585e6984e434bf4413a1dcf5
 - name: Chase!
   branch_name: gs/chase-05
   dir_name: chase
-  commit_id: 9919ab8701e5ab044c809d513ed90a4f7b55801b
+  commit_id: ad288b73f56149fbd0c5447757ac8fd0ca24d6e7
 - name: Catch the apple
   branch_name: bn/catch-apple-05
   dir_name: catch-apple
-  commit_id: 9985625f836cd89917909546208bfa8ac2b5d738
+  commit_id: 0891242bfe372d9612b34da5efd1ab04760f3758
 - name: Blue Invaders
   branch_name: bn/blue-invader-02
   dir_name: blue-invader
-  commit_id: 1415eedfbc8fc6d6dad661d6421ad19260fc35c9
+  commit_id: 64e61c5ff7b2a5876701cde5d19a7c4a817b3a4b
 - name: Multiple choice quiz
   branch_name: bn/multi-choice-quiz-02
   dir_name: multiple-choice-quiz
-  commit_id: 97659d5a9b3574215163425998935493415e3382
+  commit_id: 51785e69de3a95ec7b35c75f5998e704b4dd022d
 - name: Splat the moles
   branch_name: bn/splat-the-moles-01
   dir_name: splat-the-moles
-  commit_id: 369c72a2e03c114e89e5f585a5249f64f13683df
+  commit_id: dc1d7a02c8550c14a87e63fbd347ec80045f1a00
 - name: Trimon
   branch_name: bn/trimon-01
   dir_name: trimon
-  commit_id: c9b58e9254874e66bbbd5dcc2c4eb9382b8e1efe
+  commit_id: 29eaa5ac20602fcafadb053c505cce9affccdd45
 - name: Q*bert
   branch_name: bn/qbert-04
   dir_name: qbert
-  commit_id: beb03493c2130e154530692c4ed4b1e009c9eb39
+  commit_id: ce4f8dfcf22d6baa4a906fda1e2bdc15d42a7d13
 - name: Bunner
   branch_name: gs/bunner-04
   dir_name: bunner
-  commit_id: 6d038a6f469ada25b445f53a4848dbe8c9407bba
+  commit_id: be0f7f13bbbbb5d8661e43ab00d8c9432452754a
 - name: Boing
   branch_name: bn/boing-05
   dir_name: boing
-  commit_id: 6290e7b396a295c1ec55fd7852f9afb43bcdcd2b
+  commit_id: f9f72bff956549aefff6c41e41de070cb6f8eafd
 - name: Ticket vending machine
   branch_name: bn/ticket-vending-machine-03
   dir_name: ticket-vending-machine
-  commit_id: aeb9a4be1e6318b141f58fc1bec5faad7510a670
+  commit_id: bcaf588b7baa1ece714fe24666a9bec1b379dea7

@@ -1,5 +1,14 @@
 {
     "difficulty": "medium",
+    "orderedProjectAssets": [
+        "starry-sky.jpg",
+        "enemy-alien.png",
+        "friendly-alien.png",
+        "special-alien.png",
+        "explosion.mp3",
+        "scream.mp3",
+        "fizz.mp3"
+    ],
     "groupedProjectAssets": [
         {
             "name": "space invaders",

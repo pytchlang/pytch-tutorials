@@ -1,1 +1,10 @@
-{"difficulty": "medium"}
+{
+    "difficulty": "medium",
+    "orderedProjectAssets": [
+        "bowl.png",
+        "apple.png",
+        "Dani.png",
+        "orange.png",
+        "apple-crunch.wav"
+    ]
+}

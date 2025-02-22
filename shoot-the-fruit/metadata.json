@@ -1,1 +1,8 @@
-{"difficulty": "beginner"}
+{
+    "difficulty": "beginner",
+    "orderedProjectAssets": [
+        "solid-green.png",
+        "apple.png",
+        "orange.png"
+    ]
+}

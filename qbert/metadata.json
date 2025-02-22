@@ -1,5 +1,18 @@
 {
     "difficulty": "advanced",
+    "orderedProjectAssets": [
+        "background.png",
+        "block-unlit.png",
+        "block-lit.png",
+        "qbert0.png",
+        "qbert1.png",
+        "qbert2.png",
+        "qbert3.png",
+        "level-cleared-text.png",
+        "fanfare.mp3",
+        "pop.mp3",
+        "bell-ping.mp3"
+    ],
     "groupedProjectAssets": [
         {
             "name": "QBert character",

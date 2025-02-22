@@ -1,1 +1,9 @@
-{"difficulty": "beginner"}
+{
+    "difficulty": "beginner",
+    "orderedProjectAssets": [
+        "images/clouds.jpg",
+        "images/bird.png",
+        "images/star.png",
+        "sounds/honk.wav"
+    ]
+}
