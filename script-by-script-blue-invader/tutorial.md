@@ -220,7 +220,7 @@ into two steps will make it easier to understand:
 The `random.choice(list_of_choices)` function will do this job.
 
 The `random.choice()` function needs a *list* of the options it should
-choose from.  Here, the choices are `0` and `1`.  In Python, the list
+choose from.  Here, the choices are `0` and `2`.  In Python, the list
 containing `0` and `2` is written `[0, 2]`.
 
 {{< learner-task >}}
