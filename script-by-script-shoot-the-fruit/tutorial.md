@@ -668,7 +668,7 @@ Scratch's `if` block.
 
 {{< learner-task >}}
 
-Add an `if` statement under the `Stage.score += 5` line.  The `if`
+Add an `if` statement under the `Stage.score -= 5` line.  The `if`
 statement should test whether `Stage.score` is negative, and, if so,
 set `Stage.score` to zero.
 
