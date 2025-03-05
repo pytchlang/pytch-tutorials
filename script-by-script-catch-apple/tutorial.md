@@ -43,6 +43,7 @@ green-flag
   - 4
   - 1
   - ```self.change_y(-3) # 4```
+- ```javascript {"id": 6, "index": 5, "indent": 0, "code": "drop_x = random.randint(-145, 190)"}```
 
 {{< learner-task-help >}}
 
