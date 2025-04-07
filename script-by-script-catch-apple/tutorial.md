@@ -24,11 +24,11 @@ Add a Sprite called `Bowl` to your project.
 
 green-flag
 
-- 1 3 0 while self.y_position > -140: # 3
-- 2 1 0 self.go_to_xy(drop_x, 200) # 1
-- 3 2 0 self.show() # 2
-- 4 0 0 drop_x = random.randint(-145, 190) # 0
-- 5 4 1 self.change_y(-3) # 4
+- 1 3 0 ```while self.y_position &gt; -140: # 3```
+- 2 1 0 ```self.go_to_xy(drop_x, 200) # 1```
+- 3 2 0 ```self.show() # 2```
+- 4 0 0 ```drop_x = random.randint(-145, 190) # 0```
+- 5 4 1 ```self.change_y(-3) # 4```
 
 {{< learner-task-help >}}
 
