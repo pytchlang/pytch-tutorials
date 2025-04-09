@@ -78,17 +78,6 @@ We'll do all of this inside a function. Let's call it `move_with_keys`.
 
 {{< learner-task >}}
 
-Put the script together using the code blocks provided! You can move
-the blocks by clicking them or dragging and dropping them into the
-provided script. You can reorder them using the reorder buttons or by
-dragging them and droping them into position.
-
-NOTE: Use the indentation buttons on the left of any block placed in 
-the script to change their indentation. Remember, indentation is very
-important in Python
-
-Click the `Start Puzzle` button when you are ready to begin!
-
 {{< parsons-puzzle >}}
 
 green-flag
