@@ -71,8 +71,8 @@ First, we'll place the bowl in a sensible start position
 at the bottom of the screen when the game starts.
 
 Next, we’re going to let the player move the bowl.  We’ll let them
-move it to the right by pressing the `d` key, and to the left by 
-pressing the `a` key.
+move it to the left by pressing the `a` key, and to the right by 
+pressing the `d` key.
 
 We'll do all of this inside a function. Let's call it `move_with_keys`.
 
