@@ -83,7 +83,7 @@ We'll do all of this inside a function. Let's call it `move_with_keys`.
 green-flag
 
 - 0 8 4 self.change_x(2)
-- 1 6 2 if pytch.key_pressed("d"):
+- 1 6 2 elif pytch.key_pressed("d"):
 - 2 1 1 self.go_to_xy(0, -145)
 - 3 2 1 while True:
 - 4 0 0 def move_with_keys(self):
