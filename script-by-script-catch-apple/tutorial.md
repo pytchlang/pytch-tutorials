@@ -61,74 +61,52 @@ Now, if you click the green flag, you should see the player’s bowl
 appear in the middle of the stage.  Test that now!
 
 
-## Start the bowl in the right place
+## Start the bowl in the right place and let the player move it
 
-The player needs to be able to move the bowl.  We’ll let them do this
-with the keyboard, using the `a` and `d` keys.  We do this, like in
-Scratch, by adding a script to our Sprite.  The difference is that in
-Pytch, we’ll type Python code into the script, instead of clicking
-blocks together like we would do in Scratch.
+We'll need to add code to to bowl to control where it appears on the
+stage. Just like in Scratch, we do this by adding a script to our 
+Sprite.
 
-We’ll start off by making a script which moves the bowl to a sensible
-place at the bottom of the stage when the game starts.
+First, we'll place the bowl in a sensible start position
+at the bottom of the screen when the game starts.
 
-{{< learner-task >}}
+Next, we’re going to let the player move the bowl.  We’ll let them
+move it to the right by pressing the `d` key, and to the left by 
+pressing the `a` key.
 
-Add a new script to the `Bowl` sprite which will run when the player
-clicks the green flag.
+We'll do all of this inside a function. Let's call it `move_with_keys`.
 
-{{< learner-task-help >}}
+{{< parsons-puzzle >}}
 
-{{< jr-commit add-empty-move-with-keys-handler add-script >}}
+green-flag
 
-{{< /learner-task >}}
-
-The code editing pane should now show the new (empty) script.
-
-Now you need to add the code which moves the bowl to the right place
-on the stage.  Pytch uses the same way of describing positions on the
-stage as Scratch.  You can use the _Show coordinates_ tool to find
-suitable coordinate values.  A `x`-coordinate of `0` puts the bowl in
-the centre, left-to-right.  I picked `-145` for the `y`-coordinate, to
-put the bowl almost at the bottom.
-
-In Scratch, we would use a block like this:
-
-``` scratch
-go to x: [0] y: [-145]
-```
-
-In Python, you write code to do the same job.  You provide the extra
-pieces of information (called “arguments”) in brackets “`()`” after
-the method name.  This is the code we need:
-
-``` python
-self.go_to_xy(0, -145)
-```
-
-The “`self.`” part at the start means we want the Sprite itself to do
-something.
+- 0 8 4 self.change_x(2)
+- 1 6 2 if pytch.key_pressed("d"):
+- 2 1 1 self.go_to_xy(0, -145)
+- 3 2 1 while True:
+- 4 0 0 def move_with_keys(self):
+- 5 4 3 if self.x_position > -145:
+- 6 5 4 self.change_x(-2)
+- 7 3 2 if pytch.key_pressed("a"):
+- 8 7 3 if self.x_position < 190:
 
 {{< learner-task >}}
 
-Add this code to the script you have just made.
+Put the script together using the code blocks provided! You can move
+the blocks by clicking them or dragging and dropping them into the
+provided script. You can reorder them using the reorder buttons or by
+dragging them and droping them into position.
+
+NOTE: Use the indentation buttons on the left of any block placed in 
+the script to change their indentation. Remember, indentation is very
+important in Python
+
+Click the `Start Puzzle` button when you are ready to begin!
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-move-with-keys-initial-body edit-script >}}
-
-{{< /learner-task >}}
-
-Now, when you click the green flag, the bowl should move to its
-starting position at the bottom of the stage.  Try it!
-
-
-## Let the player move the bowl
-
-Now we’re going to let the player move the bowl.  We’ll start by
-letting them move it to the right.  We’ll keep checking whether the
-player is pressing the `d` key, and if so, change the bowl’s
-`x`-coordinate.  In Scratch we could do this with a _forever_ block:
+Python has the `while True:` statement to allow us to keep checking
+if aomething is true. This is like the _forever_ block in Scratch:
 
 ``` scratch
 forever:
@@ -136,25 +114,8 @@ forever:
     change x by (2)
 ```
 
-Python has the `while True:` statement to do the same job.  In
-Scratch, we put the blocks we want to run forever _inside_ the
-_forever_ block.  In Python, we _indent_ the code we want to run
-forever to the right _under_ the `while True:`.
-
 Python’s _if_ statement works in the same way.  The code you want to
-run only if the condition is true is indented to the right.
-
-{{< learner-task >}}
-
-Add code which keeps checking whether the player is pressing the `d`
-key, and, if so, changes the bowl’s `x`-coordinate by 2.
-
-{{< learner-task-help >}}
-
-Use the Scratch/Python help (click the circled `?` icon at top-left)
-to learn how you can write '*key `d` pressed*' and '*change x by 2*'
-in Python.  Then come back to this tutorial by clicking on the book
-icon.
+run only if the condition is true is placed under the _if_.
 
 {{< learner-task-help >}}
 
