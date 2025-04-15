@@ -24,11 +24,11 @@ Add a Sprite called `Bowl` to your project.
 
 green-flag
 
-- 1 3 0 while self.y_position > -140: # 3
-- 2 1 0 self.go_to_xy(drop_x, 200) # 1
-- 3 2 0 self.show() # 2
-- 4 0 0 drop_x = random.randint(-145, 190) # 0
-- 5 4 1 self.change_y(-3) # 4
+- 3 0 while self.y_position > -140: # 3
+- 1 0 self.go_to_xy(drop_x, 200) # 1
+- 2 0 self.show() # 2
+- 0 0 drop_x = random.randint(-145, 190) # 0
+- 4 1 self.change_y(-3) # 4
 
 {{< learner-task-help >}}
 
@@ -82,15 +82,15 @@ We'll do all of this inside a function. Let's call it `move_with_keys`.
 
 green-flag
 
-- 0 8 4 self.change_x(2)
-- 1 6 2 elif pytch.key_pressed("d"):
-- 2 1 1 self.go_to_xy(0, -145)
-- 3 2 1 while True:
-- 4 0 0 def move_with_keys(self):
-- 5 4 3 if self.x_position > -145:
-- 6 5 4 self.change_x(-2)
-- 7 3 2 if pytch.key_pressed("a"):
-- 8 7 3 if self.x_position < 190:
+- 8 4 self.change_x(2)
+- 6 2 elif pytch.key_pressed("d"):
+- 1 1 self.go_to_xy(0, -145)
+- 2 1 while True:
+- 0 0 def move_with_keys(self):
+- 4 3 if self.x_position > -145:
+- 5 4 self.change_x(-2)
+- 3 2 if pytch.key_pressed("a"):
+- 7 3 if self.x_position < 190:
 
 {{< learner-task-help >}}
 
