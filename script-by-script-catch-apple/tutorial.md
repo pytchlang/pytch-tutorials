@@ -20,16 +20,6 @@ Scratch, we add a _Sprite_.
 
 Add a Sprite called `Bowl` to your project.
 
-{{< parsons-puzzle >}}
-
-green-flag
-
-- 3 0 while self.y_position > -140: # 3
-- 1 0 self.go_to_xy(drop_x, 200) # 1
-- 2 0 self.show() # 2
-- 0 0 drop_x = random.randint(-145, 190) # 0
-- 4 1 self.change_y(-3) # 4
-
 {{< learner-task-help >}}
 
 {{< jr-commit add-empty-Bowl add-sprite >}}
