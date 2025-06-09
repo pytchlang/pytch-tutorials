@@ -113,7 +113,7 @@ Nothing!  You have not written any Python code yet.
 {{< /learner-task >}}
 
 Nothing happens when you click on the Snake, because the script is
-_empty_ — it has no Python code in it.  The next chapter will fix
+_empty_ — it has no Python code in it.  The next section will fix
 this.
 
 ### Write the code for the script

@@ -1,7 +1,7 @@
 - name: Script-by-script Hello World
   branch_name: bn/sbs-hello-02
   dir_name: script-by-script-hello
-  commit_id: 711faf60356f16c8c8a04e5d66313b5419fc42b0
+  commit_id: 5b4673fdb9ed0cbcad408d2b16060691225c8686
 - name: Script-by-script shoot the fruit
   branch_name: bn/sbs-shoot-the-fruit-02
   dir_name: script-by-script-shoot-the-fruit
