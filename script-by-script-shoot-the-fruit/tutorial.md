@@ -439,8 +439,9 @@ The method
 self.go_to_xy()
 ```
 
-is what you want.  In the `()`s, you need to give expression for the
-`x` and `y` coordinates, separated by a comma (`,`).
+is what you want.  In the `()`s, you need to give an expression for
+the `x` coordinate and one for the `y` coordinate, separated by a
+comma (`,`).
 
 {{< learner-task-help >}}
 
