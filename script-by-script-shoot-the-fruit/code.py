@@ -9,7 +9,7 @@ class Stage(pytch.Stage):
     @pytch.when_green_flag_clicked
     def setup(self):
         Stage.score = 0
-        pytch.show_variable(Stage, "score")
+        self.show_variable("score")
 
     @pytch.when_stage_clicked
     def missed_fruit(self):
@@ -46,7 +46,7 @@ class Fruit(pytch.Sprite):
 
         Stage.score += 1
 
-        pytch.wait_seconds(1)
+        self.wait_seconds(1)
 
         appear_x = random.randint(-200, 200)
         appear_y = random.randint(-140, 140)

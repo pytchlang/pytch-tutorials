@@ -262,11 +262,11 @@ Use the help to find what Pytch statements will:
 To wait for some amount of time, you can use the
 
 ``` python-expression
-pytch.wait_seconds()
+self.wait_seconds()
 ```
 
 method, and put the number of seconds you want to wait between the
-`()`s.  Notice how this code uses `pytch.` at the start.
+`()`s.
 
 {{< learner-task-help >}}
 
@@ -378,7 +378,7 @@ Think about where this line of code should go!
 
 {{< learner-task-help >}}
 
-The code should go after the `pytch.wait_seconds(1)` line and before
+The code should go after the `self.wait_seconds(1)` line and before
 the `self.show()` line, because the code should choose a position to
 appear just before showing the Fruit.
 
@@ -526,7 +526,7 @@ Look in the help to see what Pytch method does this.
 
 {{< learner-task-help >}}
 
-Here, the 'owner' is `Stage`, and the variable's name is `"score"`.
+Here, the variable's name is `"score"`.
 
 {{< learner-task-help >}}
 
@@ -680,8 +680,8 @@ the _Control_ section.  Notice how in Python, the _body_ of the `if`
 statement is _indented_ — moved across from the left margin by four
 spaces.
 
-You need to work out the _test_, and work out what code goes in the
-body of the `if` statement.
+You need to work out what Python expression to use for the _test_, and
+work out what code goes in the _body_ of the `if` statement.
 
 {{< learner-task-help >}}
 
