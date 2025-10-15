@@ -680,8 +680,8 @@ the _Control_ section.  Notice how in Python, the _body_ of the `if`
 statement is _indented_ — moved across from the left margin by four
 spaces.
 
-You need to work out the _test_, and work out what code goes in the
-body of the `if` statement.
+You need to work out what Python expression to use for the _test_, and
+work out what code goes in the _body_ of the `if` statement.
 
 {{< learner-task-help >}}
 
