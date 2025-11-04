@@ -166,7 +166,6 @@ a more sensibly-sized apple on the leafy background.
 {{< /learner-task >}}
 
 
-
 ## Let the player click the fruit
 
 You need to make something happen when the player clicks on the Fruit
@@ -463,6 +462,7 @@ Fruit, it should disappear, then after a second, reappear in a random
 place.
 
 {{< /learner-task >}}
+
 
 ## Show the player's score
 
