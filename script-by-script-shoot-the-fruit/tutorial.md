@@ -302,6 +302,37 @@ The game is better now, but still not very exciting.  The player knows
 where the apple is going to appear.  We want the apple to reappear at
 a random place on on the Stage.
 
+Scratch has the block
+
+``` scratch
+go to (random position v)
+```
+
+and Pytch has something similar.  You can say
+
+``` python
+self.go_to_random_position()
+```
+
+to make your sprite move to a random position on the stage.
+
+{{< learner-task >}}
+
+Add this line of code to your Fruit's _when this Sprite clicked_
+script.  Think about where the new line of code should go into the
+sequence of lines of code that are already there.
+
+{{< learner-task-help >}}
+
+A sensible place is after the `self.wait_seconds(1)` line but before
+the `self.show()` line.
+
+{{< learner-task-help >}}
+
+{{< jr-commit go-to-random-position edit-script >}}
+
+{{< /learner-task >}}
+
 ### Try it!
 
 {{< learner-task >}}
