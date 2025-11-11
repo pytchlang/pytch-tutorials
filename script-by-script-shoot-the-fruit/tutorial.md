@@ -369,6 +369,14 @@ your program needs a script which runs when the game starts.
 
 {{< learner-task >}}
 
+Make sure you're working with **the Stage** — click on the Stage in
+the Stage and Sprites pane, and make sure the coding area has tabs
+"Code", "Backdrops", and "Sounds".
+
+{{< /learner-task >}}
+
+{{< learner-task >}}
+
 Add a script to the Stage which runs when the game starts.
 
 {{< learner-task-help >}}
@@ -459,6 +467,14 @@ Stage.health += 5
 
 {{< learner-task >}}
 
+Make sure you're working with **the Fruit sprite** — click on the
+Fruit sprite in the Stage and Sprites pane, and make sure the coding
+area has tabs "Code", "Costumes", and "Sounds".
+
+{{< /learner-task >}}
+
+{{< learner-task >}}
+
 **In the Fruit sprite**, add a line of code to the script which runs
 when the Fruit is clicked, making it so the player gets one point.
 
@@ -495,6 +511,14 @@ they miss the Fruit.
 
 Your program can react if the player misses by making the Stage run
 some code when *it* is clicked.
+
+{{< learner-task >}}
+
+Make sure you're working with **the Stage** — click on the Stage in
+the Stage and Sprites pane, and make sure the coding area has tabs
+"Code", "Backdrops", and "Sounds".
+
+{{< /learner-task >}}
 
 {{< learner-task >}}
 
