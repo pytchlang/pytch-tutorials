@@ -377,7 +377,7 @@ the Stage and Sprites pane, and make sure the coding area has tabs
 
 {{< learner-task >}}
 
-Add a script to the Stage which runs when the game starts.
+Add a script **to the Stage** which runs when the game starts.
 
 {{< learner-task-help >}}
 
@@ -522,7 +522,7 @@ the Stage and Sprites pane, and make sure the coding area has tabs
 
 {{< learner-task >}}
 
-Add a _when stage clicked_ script to the stage.
+Add a _when stage clicked_ script **to the Stage**.
 
 {{< learner-task-help >}}
 
