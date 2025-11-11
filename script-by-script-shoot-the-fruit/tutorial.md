@@ -350,14 +350,22 @@ It would be good if the player knew how well they were doing.  The
 game should keep a *score*, and give the player a point every time
 they shoot a Fruit.
 
-### Create a variable to hold the score
+### Create a **variable** to hold the score
 
-The game should set the score to zero at the start of the game, so
-your program needs a script which runs when the game starts.
+Your code will remember the score in a *variable*.  These work very
+much like Scratch variables.  In Python, you don't need to explicitly
+'make a variable' — you just set a variable to a value, and the
+variable is created for you.
+
+In Python, it's more common to use variables which 'belong to' the
+Stage or to a particular sprite.
 
 The score is something which the Fruit and the Stage both need to work
 with.  There's not a very strong reason to set up the score in one or
-the other.  This tutorial gives the job to the Stage.
+the other.  We'll give the job to the Stage.
+
+The game should set the score to zero at the start of the game, so
+your program needs a script which runs when the game starts.
 
 {{< learner-task >}}
 
