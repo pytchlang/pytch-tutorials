@@ -575,9 +575,11 @@ be `-5`.  This is not very sensible.
 
 After subtracting five points, the code needs to test whether the
 score has become negative.  If so, the score should be set to zero
-instead.  To only run some code if some condition is met, Python has
-the `if` statement.  If you know Scratch, it works the same as
-Scratch's `if` block.
+instead.
+
+To only run some code if some condition is met, Python has the `if`
+statement.  If you know Scratch, it works the same as Scratch's `if`
+block.
 
 {{< learner-task >}}
 
