@@ -47,10 +47,7 @@ class Fruit(pytch.Sprite):
         Stage.score += 1
 
         self.wait_seconds(1)
-
-        appear_x = random.randint(-200, 200)
-        appear_y = random.randint(-140, 140)
-        self.go_to_xy(appear_x, appear_y)
+        self.go_to_random_position()
 
         new_costume = random.choice(
             ["Apple-1.png", "Orange-1.png"]

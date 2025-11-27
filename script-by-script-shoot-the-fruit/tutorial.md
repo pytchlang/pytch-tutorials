@@ -166,7 +166,6 @@ a more sensibly-sized apple on the leafy background.
 {{< /learner-task >}}
 
 
-
 ## Let the player click the fruit
 
 You need to make something happen when the player clicks on the Fruit
@@ -303,154 +302,34 @@ The game is better now, but still not very exciting.  The player knows
 where the apple is going to appear.  We want the apple to reappear at
 a random place on on the Stage.
 
-This chapter is quite long.  Go carefully!
+Scratch has the block
 
-### Saying where to go on the stage
-
-Positions on the Stage are described by two numbers, `x` and `y`:
-
-* The `x` number says how far right of the centre we are (and so `x`
-  is negative if we are *left* of the centre).
-* The left-right centre of the Stage is `x = 0`, far left is `x =
-  -240`, and far right is `x = 240`.
-* The `y` number says how far above the centre we are (and so `y` is
-  negative if we are *below* the centre).
-* The up-down centre of the Stage is `y = 0`, the very bottom is `y =
-  -180`, and the very top is `y = 180`.
-
-If you know Scratch, you might notice that this is exactly the same
-system Scratch uses.
-
-{{< learner-task >}}
-
-Choose the **Show coordinates** entry from the drop-down menu at the
-top right of the Stage.  Move the cross-hairs around the Stage and
-check you're happy with how Pytch's `x` and `y` coordinates work.
-Close the coordinate display when you're done.
-
-{{< /learner-task >}}
-
-### Picking a random number
-
-We'll need to randomly pick `x` and `y` numbers for where the apple
-reappears.
-
-{{< learner-task >}}
-
-Open the help, and look in the _Operators_ section for the methods
-which give you random numbers.  There is more than one.  Which do you
-think is best for choosing random `x` and `y` coordinates?  Come back
-to this tutorial when you've looked at this.
-
-{{< /learner-task >}}
-
-The `random.randint()` function will work well.  You need to give the
-lowest and highest possible numbers.
-
-{{< learner-task >}}
-
-Use the **Show coordinates** tool to choose the leftmost and rightmost
-`x` coordinate, and the lowest and highest `y` coordinate, that the
-apple should appear at.  Remember them or write them down!
-
-{{< /learner-task >}}
-
-These values will work, but you might want to adjust them:
-
-* The random `x` coordinate should be between `-200` and `200`.
-* The random `y` coordinate should be between `-140` and `140`.
-
-### Pick a random place to appear
-
-The game needs to pick a random `x` number and a random `y` number for
-where the apple should reappear.  Your code will store these values in
-*variables*.  These work very much like Scratch variables.  In Python,
-you don't need to explicitly 'make a variable' — you just set a
-variable to a value, and the variable is created for you.
-
-{{< learner-task >}}
-
-Add a line of code to the Fruit's _when this sprite clicked_ script to
-choose a random number between `-200` and `200` and set a variable
-`appear_x` to this value.
-
-Think about where this line of code should go!
-
-{{< learner-task-help >}}
-
-The code should go after the `self.wait_seconds(1)` line and before
-the `self.show()` line, because the code should choose a position to
-appear just before showing the Fruit.
-
-{{< learner-task-help >}}
-
-Check the help for _Working with variables_ to see how to set a
-variable to a value.
-
-{{< learner-task-help >}}
-
-{{< jr-commit assign-new-x edit-script >}}
-
-{{< /learner-task >}}
-
-You need to do something similar for the `y` coordinate.
-
-{{< learner-task >}}
-
-Add another line of code which chooses a random number between `-140`
-and `140`, and sets a variable `appear_y` to the chosen value.
-
-{{< learner-task-help >}}
-
-{{< jr-commit assign-new-y edit-script >}}
-
-{{< /learner-task >}}
-
-### Appear at the random location
-
-Now the code has randomly chosen where the apple should reappear, you
-can add the line of code to send the apple there just before showing
-itself.
-
-If you know Scratch, you might have used variables to 'fill in holes'
-in blocks, like:
-
-```scratch
-go to x: (appear_x) y: (appear_y)
+``` scratch
+go to (random position v)
 ```
 
-You can do the same thing in Python.
+and Pytch has something similar.  You can say
+
+``` python
+self.go_to_random_position()
+```
+
+to make your sprite move to a random position on the stage.
 
 {{< learner-task >}}
 
-Add a line of code which makes the Fruit go to the random position
-just chosen.
+Add this line of code to your Fruit's _when this Sprite clicked_
+script.  Think about where the new line of code should go into the
+sequence of lines of code that are already there.
 
 {{< learner-task-help >}}
 
-Check the help to find out how to send a sprite to a position on the
-Stage.
+A sensible place is after the `self.wait_seconds(1)` line but before
+the `self.show()` line.
 
 {{< learner-task-help >}}
 
-The method
-
-``` python-expression
-self.go_to_xy()
-```
-
-is what you want.  In the `()`s, you need to give an expression for
-the `x` coordinate and one for the `y` coordinate, separated by a
-comma (`,`).
-
-{{< learner-task-help >}}
-
-Remember that the `x` coordinate to go to is stored in the variable
-`appear_x`, and the `y` coordinate in the variable `appear_y`.
-
-{{< learner-task-help >}}
-
-{{< jr-commit go-to-random-x-y edit-script >}}
+{{< jr-commit go-to-random-position edit-script >}}
 
 {{< /learner-task >}}
 
@@ -464,24 +343,41 @@ place.
 
 {{< /learner-task >}}
 
+
 ## Show the player's score
 
 It would be good if the player knew how well they were doing.  The
 game should keep a *score*, and give the player a point every time
 they shoot a Fruit.
 
-### Create a variable to hold the score
+### Create a **variable** to hold the score
+
+Your code will remember the score in a *variable*.  These work very
+much like Scratch variables.  In Python, you don't need to explicitly
+'make a variable' — you just set a variable to a value, and the
+variable is created for you.
+
+In Python, it's more common to use variables which 'belong to' the
+Stage or to a particular sprite.
+
+The score is something which the Fruit and the Stage both need to work
+with.  There's not a very strong reason to set up the score in one or
+the other.  We'll give the job to the Stage.
 
 The game should set the score to zero at the start of the game, so
 your program needs a script which runs when the game starts.
 
-The score is something which the Fruit and the Stage both need to work
-with.  There's not a very strong reason to set up the score in one or
-the other.  This tutorial gives the job to the Stage.
+{{< learner-task >}}
+
+Make sure you're working with **the Stage** — click on the Stage in
+the Stage and Sprites pane, and make sure the coding area has tabs
+"Code", "Backdrops", and "Sounds".
+
+{{< /learner-task >}}
 
 {{< learner-task >}}
 
-Add a script to the Stage which runs when the game starts.
+Add a script **to the Stage** which runs when the game starts.
 
 {{< learner-task-help >}}
 
@@ -571,6 +467,14 @@ Stage.health += 5
 
 {{< learner-task >}}
 
+Make sure you're working with **the Fruit sprite** — click on the
+Fruit sprite in the Stage and Sprites pane, and make sure the coding
+area has tabs "Code", "Costumes", and "Sounds".
+
+{{< /learner-task >}}
+
+{{< learner-task >}}
+
 **In the Fruit sprite**, add a line of code to the script which runs
 when the Fruit is clicked, making it so the player gets one point.
 
@@ -610,7 +514,15 @@ some code when *it* is clicked.
 
 {{< learner-task >}}
 
-Add a _when stage clicked_ script to the stage.
+Make sure you're working with **the Stage** — click on the Stage in
+the Stage and Sprites pane, and make sure the coding area has tabs
+"Code", "Backdrops", and "Sounds".
+
+{{< /learner-task >}}
+
+{{< learner-task >}}
+
+Add a _when stage clicked_ script **to the Stage**.
 
 {{< learner-task-help >}}
 
@@ -663,9 +575,11 @@ be `-5`.  This is not very sensible.
 
 After subtracting five points, the code needs to test whether the
 score has become negative.  If so, the score should be set to zero
-instead.  To only run some code if some condition is met, Python has
-the `if` statement.  If you know Scratch, it works the same as
-Scratch's `if` block.
+instead.
+
+To only run some code if some condition is met, Python has the `if`
+statement.  If you know Scratch, it works the same as Scratch's `if`
+block.
 
 {{< learner-task >}}
 
