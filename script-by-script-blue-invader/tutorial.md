@@ -66,8 +66,8 @@ Add a Sprite called `Alien` to your project.
 
 ### Give the _Alien_ some costumes
 
-The new sprite then needs costumes.  There is a bundle of
-suitable costumes in Pytch’s media library.
+The new sprite then needs costumes.  There is a bundle of suitable
+costumes in Pytch’s media library.
 
 {{< learner-task >}}
 
@@ -615,8 +615,8 @@ an alien, that alien doesn’t appear again.
 
 ### Re-appear at the top of the screen
 
-Each alien must make sure it’s visible just before it starts
-gliding down the screen.
+Each alien must make sure it’s visible just before it starts gliding
+down the screen.
 
 {{< learner-task >}}
 
