@@ -694,11 +694,11 @@ shown.  In Pytch you do this by writing some code.  The Stage’s
 `score` variable should be shown as soon as the game starts, just
 after the variable is created.
 
-For example, to show a variable `time` belonging to the Stage, the
-code would be
+For example, to show a variable `time` belonging to the Stage, you
+could add this code to a script in the Stage:
 
 ``` python
-pytch.show_variable(Stage, "time")
+self.show_variable("time")
 ```
 
 The way this works is unusual — you use the *name* of the variable,
@@ -838,14 +838,14 @@ Using the `Stage.score` variable as an example, create a variable
 
 The player needs to be able to see how many lives they have.  The
 ‘lives’ display must not be on top of where the ‘score’ display is,
-though.  The `pytch.show_variable()` function can be told where to put
+though.  The `self.show_variable()` function can be told where to put
 the display.
 
 For example, to show a variable `Stage.time` at the top right of the
-stage, the code would be
+stage, a script in the Stage could use the code
 
 ``` python
-pytch.show_variable(Stage, "time", right=236)
+self.show_variable("time", right=236)
 ```
 
 {{< learner-task >}}
