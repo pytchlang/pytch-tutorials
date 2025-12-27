@@ -1015,6 +1015,9 @@ Here are some ways you could make the game even better:
 
 * Add some left-to-right randomness to where the aliens start.
 
+* At the very start of the game, you see the aliens cloning themselves
+  while they are still too big.  Can you get rid of this glitch?
+
 You can also think about these questions:
 
 * Do you agree that the stage is the right place for the main control
