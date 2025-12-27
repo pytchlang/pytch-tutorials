@@ -1,8 +1,8 @@
 # Blue Invaders
 
 In this game, the player will defend earth from dangerous blue
-invaders, by clicking on them.  But they must not destroy the friendly
-green aliens by mistake!
+invaders, by clicking on them.  But the player must not destroy the
+friendly green aliens by mistake!
 
 
 ---
@@ -86,7 +86,7 @@ wearing its first costume.
 
 {{< learner-task >}}
 
-Try your game.  What's wrong?
+Try your game.  What’s wrong?
 
 {{< learner-task-help >}}
 
@@ -361,7 +361,7 @@ More aliens do appear, but only one of them moves.
 
 If you run the game now, it doesn’t really work.  There are more
 aliens at the top of the screen, but only one of them is gliding down.
-This is because Pytch doesn’t make any guarantees about which order
+This is because Pytch doesn’t make any promises about which order
 the two *green-flag* scripts run, and the glide script is happening
 before all the clones are made.
 
@@ -427,8 +427,8 @@ This is how the program can control when the aliens start gliding.
 {{< learner-task >}}
 
 Change your program so the gliding code in the `Alien` sprite runs
-when an alien or clone hears a `"play-game"` message (and not when the
-green flag is clicked).
+when an alien (original or clone) hears a `"play-game"` message (and
+not when the green flag is clicked).
 
 {{< learner-task-help >}}
 
@@ -494,7 +494,7 @@ interesting.
 The Alien’s `"play-game"` code needs changing so that each alien takes
 a random time between, say, 3 and 5 seconds.
 
-Your program already uses `random.choice()`.  Python also provides the
+Your program already uses `random.choice()`.  Python also has the
 `random.uniform()` function, which picks a random number anywhere
 between two limits.  Your program can use this to get a random number
 anywhere between 3.0 and 5.0 (including fractions).
@@ -524,7 +524,7 @@ Remember you used the code
 costume_index = random.choice([0, 2])
 ```
 
-to make a random choice from the list `[0, 2]`, and assigns the result
+to make a random choice from the list `[0, 2]`, and assign the result
 to the variable `costume_index`.  You want to do something similar.
 
 {{< learner-task-help >}}
@@ -620,8 +620,8 @@ down the screen.
 
 {{< learner-task >}}
 
-Think about where in your Alien’s code you need to make sure each
-Alien is visible, and add code to do this.
+Think about where in your `Alien` sprite’s code you should make sure each
+alien is visible, and add code to do this.
 
 {{< learner-task-help >}}
 
@@ -630,9 +630,9 @@ Remember that the Aliens’ movement is controlled by code in the
 
 {{< learner-task-help >}}
 
-A good place to make the Alien show itself is after it has chosen a
-random costume and moved to the top of the screen, but before the code
-which makes the Alien glide down the screen.
+A good place to make the alien show itself is after it has chosen a
+random costume and moved to the top of the screen, but before it
+glides down the screen.
 
 {{< learner-task-help >}}
 
@@ -724,9 +724,9 @@ The code should go straight after the code which creates the
 ### Give points for hitting an enemy
 
 Let’s give the player 10&nbsp;points when they click on an enemy
-invader.  There is already some code which makes the Aliens hide
-themselves when it’s clicked, so this is a good place to add the code
-which updates the score.
+invader.  There is already some code which makes an Alien hide itself
+when it’s clicked, so this is a good place to add the code which
+updates the score.
 
 {{< learner-task >}}
 
@@ -911,7 +911,7 @@ Instead, they should only glide while the player has some lives left.
 {{< learner-task >}}
 
 The ‘condition’ of the `while` loop is currently just the constant
-`True`, which means the `while` loop runs forever.
+`True`, so the `while` loop runs forever.
 
 Replace `True` with a comparison which tests whether the player has
 more than zero lives left.
