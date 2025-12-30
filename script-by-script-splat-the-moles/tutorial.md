@@ -439,7 +439,7 @@ variable belongs to the `Mole` sprite, which as you’ve seen, is called
 
 {{< learner-task >}}
 
-Add a line of code which uses Pytch’s `pytch.show_variable()` to
+Add a line of code which uses Pytch’s `self.show_variable()` to
 display the score.
 
 {{< learner-task-help >}}
@@ -673,7 +673,7 @@ ideas:
 * Instead of losing points, the player could start with three lives,
   and they lose a life every time they miss.  Hint: You can show a
   variable at the _right_ of the screen with the code
-  `pytch.show_variable(self, "lives", right=236)`.
+  `self.show_variable("lives", right=236)`.
 * Adjust the difficulty of the game by making the mole stay out of its
   hole for a longer or shorter time.  You could even make the game get
   more difficult as the player gets more points.
