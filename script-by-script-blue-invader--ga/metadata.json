@@ -35,5 +35,12 @@
                 "Explosion_5.png"
             ]
         }
+    ],
+    "intentionallyUnusedAssets": [
+      "Explosion_1.png",
+      "Explosion_2.png",
+      "Explosion_3.png",
+      "Explosion_4.png",
+      "Explosion_5.png"
     ]
 }
