@@ -11,7 +11,7 @@
 - name: Script-by-script blue invaders
   tip-commit: bn/sbs-blue-invader-03
 - name: Script-by-script Boing
-  tip-commit: bn/sbs-boing-02
+  tip-commit: bn/sbs-boing-03
 - name: Hello world!
   tip-commit: bn/hello-02
 - name: Shoot the fruit
