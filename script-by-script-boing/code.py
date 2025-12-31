@@ -15,15 +15,15 @@ class PlayerBat(pytch.Sprite):
         self.go_to_xy(-212, 0)
 
         while True:
-            if pytch.key_pressed("w") and self.y_position < 112:
+            if self.key_pressed("w") and self.y_position < 112:
                 self.change_y(3)
-            if pytch.key_pressed("s") and self.y_position > -112:
+            if self.key_pressed("s") and self.y_position > -112:
                 self.change_y(-3)
 
     @pytch.when_I_receive("player-hit")
     def flash_briefly(self):
         self.switch_costume("player-bat-wince.png")
-        pytch.wait_seconds(0.3)
+        self.wait_seconds(0.3)
         self.switch_costume("player-bat-smile.png")
 
 
@@ -45,7 +45,7 @@ class RobotBat(pytch.Sprite):
     @pytch.when_I_receive("robot-hit")
     def flash_briefly(self):
         self.switch_costume("robot-bat-wince.png")
-        pytch.wait_seconds(0.3)
+        self.wait_seconds(0.3)
         self.switch_costume("robot-bat-smile.png")
 
 
@@ -65,14 +65,14 @@ class Ball(pytch.Sprite):
                 self.change_x(-x_velocity)
                 x_velocity = -x_velocity
                 y_velocity = random.randint(-4, 4)
-                pytch.broadcast("robot-hit")
+                self.broadcast("robot-hit")
 
             if self.x_position < -195:
                 if self.touching(PlayerBat):
                     self.change_x(-x_velocity)
                     x_velocity = -x_velocity
                     y_velocity = random.randint(-4, 4)
-                    pytch.broadcast("player-hit")
+                    self.broadcast("player-hit")
                 else:
                     self.hide()
                     break

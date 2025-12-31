@@ -1,5 +1,10 @@
 import pytch
 import random
+import math
+
+
+class Stage(pytch.Stage):
+    Backdrops = ["solid-white.png"]
 
 
 class Bowl(pytch.Sprite):
@@ -11,10 +16,10 @@ class Bowl(pytch.Sprite):
         self.go_to_xy(0, -145)
 
         while True:
-            if pytch.key_pressed("a"):
+            if self.key_pressed("a"):
                 if self.x_position > -145:
                     self.change_x(-2)
-            if pytch.key_pressed("d"):
+            if self.key_pressed("d"):
                 if self.x_position < 190:
                     self.change_x(2)
 
@@ -47,7 +52,7 @@ class Apple(pytch.Sprite):
             self.change_y(-3)
             if self.touching(Bowl):
                 self.hide()
-                pytch.broadcast("award-point")
+                self.broadcast("award-point")
 
 
 class ScoreKeeper(pytch.Sprite):
@@ -73,4 +78,4 @@ class ScoreKeeper(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def drop_apples(self):
         while True:
-            pytch.broadcast_and_wait("drop-apple")
+            self.broadcast_and_wait("drop-apple")

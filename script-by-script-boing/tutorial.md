@@ -195,7 +195,7 @@ that _both_ must be true for the bat to move up:
 Extend the
 
 ``` python-expression
-pytch.key_pressed("w")
+self.key_pressed("w")
 ```
 
 test in your code to _also_ test whether the bat is low enough.
@@ -232,7 +232,7 @@ block.
 The new test expression for your `if` statement is
 
 ``` python-expression
-pytch.key_pressed("w") and self.y_position < 112
+self.key_pressed("w") and self.y_position < 112
 ```
 
 {{< learner-task-help >}}
@@ -940,7 +940,7 @@ will run.
 In Pytch, you use the code
 
 ``` python
-pytch.broadcast("jump-up-and-down")
+self.broadcast("jump-up-and-down")
 ```
 
 to broadcast a message.
@@ -983,7 +983,7 @@ Which way do you prefer?
 
 {{< learner-task-help >}}
 
-To wait a short time, you can use the ``pytch.wait_seconds()``
+To wait a short time, you can use the ``self.wait_seconds()``
 function.  You can wait for less than a whole second by using a
 decimal fraction, such as `0.5` for half a second.
 

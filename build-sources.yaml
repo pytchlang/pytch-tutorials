@@ -7,21 +7,21 @@
   dir_name: script-by-script-shoot-the-fruit
   commit_id: 83f8461057c3ce832ec6ee2cfdaa0c8eadd3284a
 - name: Script-by-script catch the apple
-  branch_name: bn/script-by-script-catch-apple-02
+  branch_name: bn/sbs-catch-apple-03
   dir_name: script-by-script-catch-apple
-  commit_id: 904bf85f4bb0677362f0598c5f936d371547d61f
+  commit_id: f7bb73dc16a218c06f7970cb457d728270a6b6a9
 - name: Script-by-script splat the moles
-  branch_name: bn/sbs-splat-the-moles-01
+  branch_name: bn/sbs-splat-the-moles-02
   dir_name: script-by-script-splat-the-moles
-  commit_id: c3f4d36f796d481d2db3149340a5aab69197f97d
+  commit_id: e5a99a0c97f50023cc23a9e72af7887986071dce
 - name: Script-by-script blue invaders
-  branch_name: bn/sbs-blue-invader-02
+  branch_name: bn/sbs-blue-invader-03
   dir_name: script-by-script-blue-invader
-  commit_id: 5ab0e9f2e1a7065c207b3438f035f0c0978dc3f8
+  commit_id: cbb4d50585a1a068e047747d8e6620c60f085251
 - name: Script-by-script Boing
-  branch_name: bn/sbs-boing-02
+  branch_name: bn/sbs-boing-03
   dir_name: script-by-script-boing
-  commit_id: 357692c9c16e76ed3021bfff7679fd8b9811422a
+  commit_id: caade93b9848f62bb8d606b7042c88620042eba7
 - name: Hello world!
   branch_name: bn/hello-02
   dir_name: hello

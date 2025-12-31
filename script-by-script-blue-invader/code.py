@@ -8,11 +8,11 @@ class Stage(pytch.Stage):
     @pytch.when_green_flag_clicked
     def run(self):
         Stage.score = 0
-        pytch.show_variable(Stage, "score")
+        self.show_variable("score")
         Stage.lives = 3
-        pytch.show_variable(Stage, "lives", right=236)
-        pytch.broadcast_and_wait("make-clones")
-        pytch.broadcast_and_wait("play-game")
+        self.show_variable("lives", right=236)
+        self.broadcast_and_wait("make-clones")
+        self.broadcast_and_wait("play-game")
 
 
 class Alien(pytch.Sprite):
@@ -40,15 +40,15 @@ class Alien(pytch.Sprite):
     @pytch.when_I_receive("make-clones")
     def make_clones(self):
         self.go_to_xy(-150, 180)
-        pytch.create_clone_of(self)
+        self.create_clone()
         self.go_to_xy(-90, 180)
-        pytch.create_clone_of(self)
+        self.create_clone()
         self.go_to_xy(-30, 180)
-        pytch.create_clone_of(self)
+        self.create_clone()
         self.go_to_xy(30, 180)
-        pytch.create_clone_of(self)
+        self.create_clone()
         self.go_to_xy(90, 180)
-        pytch.create_clone_of(self)
+        self.create_clone()
         self.go_to_xy(150, 180)
 
     @pytch.when_I_receive("play-game")
@@ -69,7 +69,7 @@ class Alien(pytch.Sprite):
         if self.costume_number == 2:
             Stage.lives -= 1
             if Stage.lives == 0:
-                pytch.broadcast("game-over")
+                self.broadcast("game-over")
 
         self.hide()
 

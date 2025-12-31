@@ -916,7 +916,7 @@ Here are some ideas on how you could make this game more fun:
 * Add a pause between one apple being caught / missed and the next one
   appearing.  Use the Scratch/Python help to find the Pytch version of
   Scratch’s `wait () seconds` block.  (Hint: just before doing
-  `pytch.broadcast_and_wait("drop-apple")` is a good place to pause.)
+  `self.broadcast_and_wait("drop-apple")` is a good place to pause.)
 
 * The `x`-coordinate where the apple starts is already random.  Make
   the starting `y`-coordinate be random too.  If an apple starts lower

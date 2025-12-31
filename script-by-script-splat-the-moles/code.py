@@ -18,15 +18,15 @@ class Mole(pytch.Sprite):
             costume_index = random.randint(1, 3)
             self.switch_costume(costume_index)
             above_ground_time = random.uniform(0.5, 1.0)
-            pytch.wait_seconds(above_ground_time)
+            self.wait_seconds(above_ground_time)
             self.switch_costume("no-moles.png")
             under_ground_time = random.uniform(0.5, 1.0)
-            pytch.wait_seconds(under_ground_time)
+            self.wait_seconds(under_ground_time)
 
     @pytch.when_green_flag_clicked
     def init_score(self):
         self.score = 0
-        pytch.show_variable(self, "score")
+        self.show_variable("score")
 
     @pytch.when_key_pressed("j")
     def hit_left(self):

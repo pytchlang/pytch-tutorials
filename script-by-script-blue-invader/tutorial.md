@@ -1,8 +1,8 @@
 # Blue Invaders
 
 In this game, the player will defend earth from dangerous blue
-invaders, by clicking on them.  But they must not destroy the friendly
-green aliens by mistake!
+invaders, by clicking on them.  But the player must not destroy the
+friendly green aliens by mistake!
 
 
 ---
@@ -45,18 +45,18 @@ new background.
 When it’s finished, the game will have lots of aliens, but to start
 with, there will just be one.
 
-There will be an `Alien` Sprite which will have different costumes.
+There will be an `Alien` sprite which will have different costumes.
 When this sprite is wearing one costume (a blue one), it counts as an
 enemy space invader, and when it’s wearing another costume (a green
 one), it’s a friendly visitor.
 
-### Create _Alien_ Sprite
+### Create _Alien_ sprite
 
-The project needs a new sprite to be the Alien.
+The project needs a new sprite to be the alien.
 
 {{< learner-task >}}
 
-Add a Sprite called `Alien` to your project.
+Add a sprite called `Alien` to your project.
 
 {{< learner-task-help >}}
 
@@ -66,8 +66,8 @@ Add a Sprite called `Alien` to your project.
 
 ### Give the _Alien_ some costumes
 
-The new sprite then needs costumes.  There is a bundle of
-suitable costumes in Pytch’s media library.
+The new sprite then needs costumes.  There is a bundle of suitable
+costumes in Pytch’s media library.
 
 {{< learner-task >}}
 
@@ -81,12 +81,12 @@ costumes to the `Alien` sprite.
 {{< /learner-task >}}
 
 If you run your project now, you should see a blue enemy invader in
-the middle of the screen.  This is because Pytch starts a Sprite off
+the middle of the screen.  This is because Pytch starts a sprite off
 wearing its first costume.
 
 {{< learner-task >}}
 
-Try your game.  What's wrong?
+Try your game.  What’s wrong?
 
 {{< learner-task-help >}}
 
@@ -101,8 +101,8 @@ something more sensible.
 
 {{< learner-task >}}
 
-Add a new empty script to the `Alien` with a “when green flag clicked”
-hat-block.
+Add a new empty script to the `Alien` sprite with a “when green flag
+clicked” hat-block.
 
 {{< learner-task-help >}}
 
@@ -110,13 +110,13 @@ hat-block.
 
 {{< /learner-task >}}
 
-The code in this script needs to set the Alien’s size.  In Pytch, a
+The code in this script needs to set the alien’s size.  In Pytch, a
 size of `1` means original size, `0.5` means half size, and so on.
 You can check that a size of `0.15` is about right.
 
 {{< learner-task >}}
 
-Add code to your script which sets the Alien’s size to `0.15`.
+Add code to your script which sets the alien’s size to `0.15`.
 
 {{< learner-task-help >}}
 
@@ -126,7 +126,7 @@ Add code to your script which sets the Alien’s size to `0.15`.
 
 ### Make the alien drift down the screen
 
-The Alien should glide from the top to the bottom of the screen, then
+The alien should glide from the top to the bottom of the screen, then
 instantly go back to the top and start gliding again.
 
 You can add code to your script which works the same as Scratch’s
@@ -273,8 +273,8 @@ To make more than one alien, the program will use *clones*.  These
 work the same as in Scratch — you get more than one copy of the same
 sprite.
 
-The program will clone the Alien five times.  Together with the
-original Alien, this makes six aliens altogether.
+The program will clone the alien five times.  Together with the
+original alien, this makes six aliens altogether.
 
 Using the *x*-positions
 
@@ -284,7 +284,7 @@ will spread the aliens left to right across the screen.
 
 The idea is:
 
-* Move the original Alien to the first place (*x*-position of `-150`).
+* Move the original alien to the first place (*x*-position of `-150`).
 * Make a clone at that position, then move the original to the next
   place (`x = -90`).
 * Make another clone, and move the original to `x = -30`.
@@ -292,7 +292,7 @@ The idea is:
 
 {{< learner-task >}}
 
-Add an empty *green-flag* script to the Alien.
+Add an empty *green-flag* script to the alien.
 
 {{< learner-task-help >}}
 
@@ -316,7 +316,7 @@ on the stage with *x*-position `-150` and *y*-position `180`.
 {{< learner-task >}}
 
 Add two lines of code to this script.  The first line should make a
-clone of the Alien.  The second line should move the original Alien to
+clone of the alien.  The second line should move the original alien to
 the place on the stage with *x*-position `-90` and *y*-position `180`.
 
 {{< learner-task-help >}}
@@ -333,7 +333,7 @@ at *x*-positions
 
 > -150, -90, -30, 30, and 90
 
-and the original Alien at *x*-position 150.
+and the original alien at *x*-position 150.
 
 {{< learner-task-help >}}
 
@@ -361,7 +361,7 @@ More aliens do appear, but only one of them moves.
 
 If you run the game now, it doesn’t really work.  There are more
 aliens at the top of the screen, but only one of them is gliding down.
-This is because Pytch doesn’t make any guarantees about which order
+This is because Pytch doesn’t make any promises about which order
 the two *green-flag* scripts run, and the glide script is happening
 before all the clones are made.
 
@@ -385,7 +385,7 @@ it receives an appropriate broadcast message.
 
 {{< learner-task >}}
 
-Make the script which creates all the clones run when the Alien
+Make the script which creates all the clones run when the alien
 receives the `"make-clones"` message (not when green flag is clicked).
 
 {{< learner-task-help >}}
@@ -427,8 +427,8 @@ This is how the program can control when the aliens start gliding.
 {{< learner-task >}}
 
 Change your program so the gliding code in the `Alien` sprite runs
-when an alien or clone hears a `"play-game"` message (and not when the
-green flag is clicked).
+when an alien (original or clone) hears a `"play-game"` message (and
+not when the green flag is clicked).
 
 {{< learner-task-help >}}
 
@@ -491,17 +491,17 @@ making each alien clone take a random time to glide down the screen.
 This will make some aliens move faster than others and make it more
 interesting.
 
-The Alien’s `"play-game"` code needs changing so that each alien takes
+The alien’s `"play-game"` code needs changing so that each alien takes
 a random time between, say, 3 and 5 seconds.
 
-Your program already uses `random.choice()`.  Python also provides the
+Your program already uses `random.choice()`.  Python also has the
 `random.uniform()` function, which picks a random number anywhere
 between two limits.  Your program can use this to get a random number
 anywhere between 3.0 and 5.0 (including fractions).
 
 {{< learner-task >}}
 
-In the Alien’s `"play-game"` script, add a line of code just before
+In the alien’s `"play-game"` script, add a line of code just before
 the `self.glide_to_xy()` which uses `random.uniform()` to get a random
 number anywhere between 3 and 5 and assigns the result to a variable
 called `glide_time`.
@@ -524,7 +524,7 @@ Remember you used the code
 costume_index = random.choice([0, 2])
 ```
 
-to make a random choice from the list `[0, 2]`, and assigns the result
+to make a random choice from the list `[0, 2]`, and assign the result
 to the variable `costume_index`.  You want to do something similar.
 
 {{< learner-task-help >}}
@@ -576,12 +576,12 @@ because there’s nothing for the player to do.  That’s the next job.
 
 ### React when hit
 
-The Aliens (original and clones) should react when they’re clicked on
+The aliens (original and clones) should react when they’re clicked on
 by the player.
 
 {{< learner-task >}}
 
-Add a *when-this-sprite-clicked* script to your Alien.
+Add a *when-this-sprite-clicked* script to your `Alien` sprite.
 
 {{< learner-task-help >}}
 
@@ -593,7 +593,7 @@ Now you have the script, you need to write its code.
 
 {{< learner-task >}}
 
-Add code to your new script which makes the Alien hide itself.
+Add code to your new script which makes the alien hide itself.
 
 {{< learner-task-help >}}
 
@@ -615,24 +615,24 @@ an alien, that alien doesn’t appear again.
 
 ### Re-appear at the top of the screen
 
-Each alien must make sure it’s visible just before it starts
-gliding down the screen.
+Each alien must make sure it’s visible just before it starts gliding
+down the screen.
 
 {{< learner-task >}}
 
-Think about where in your Alien’s code you need to make sure each
-Alien is visible, and add code to do this.
+Think about where in your `Alien` sprite’s code you should make sure each
+alien is visible, and add code to do this.
 
 {{< learner-task-help >}}
 
-Remember that the Aliens’ movement is controlled by code in the
+Remember that the aliens’ movement is controlled by code in the
 `"play-game"` script.
 
 {{< learner-task-help >}}
 
-A good place to make the Alien show itself is after it has chosen a
-random costume and moved to the top of the screen, but before the code
-which makes the Alien glide down the screen.
+A good place to make the alien show itself is after it has chosen a
+random costume and moved to the top of the screen, but before it
+glides down the screen.
 
 {{< learner-task-help >}}
 
@@ -694,11 +694,11 @@ shown.  In Pytch you do this by writing some code.  The Stage’s
 `score` variable should be shown as soon as the game starts, just
 after the variable is created.
 
-For example, to show a variable `time` belonging to the Stage, the
-code would be
+For example, to show a variable `time` belonging to the Stage, you
+could add this code to a script in the Stage:
 
 ``` python
-pytch.show_variable(Stage, "time")
+self.show_variable("time")
 ```
 
 The way this works is unusual — you use the *name* of the variable,
@@ -724,9 +724,9 @@ The code should go straight after the code which creates the
 ### Give points for hitting an enemy
 
 Let’s give the player 10&nbsp;points when they click on an enemy
-invader.  There is already some code which makes the Aliens hide
-themselves when it’s clicked, so this is a good place to add the code
-which updates the score.
+invader.  There is already some code which makes an alien hide itself
+when it’s clicked, so this is a good place to add the code which
+updates the score.
 
 {{< learner-task >}}
 
@@ -838,14 +838,14 @@ Using the `Stage.score` variable as an example, create a variable
 
 The player needs to be able to see how many lives they have.  The
 ‘lives’ display must not be on top of where the ‘score’ display is,
-though.  The `pytch.show_variable()` function can be told where to put
+though.  The `self.show_variable()` function can be told where to put
 the display.
 
 For example, to show a variable `Stage.time` at the top right of the
-stage, the code would be
+stage, a script in the Stage could use the code
 
 ``` python
-pytch.show_variable(Stage, "time", right=236)
+self.show_variable("time", right=236)
 ```
 
 {{< learner-task >}}
@@ -863,11 +863,11 @@ clicks on a friendly alien.
 
 {{< learner-task >}}
 
-In its *when clicked* script, your Alien already has code which gives
-the player points but only if that Alien is wearing the ‘enemy’
+In its *when clicked* script, your alien already has code which gives
+the player points but only if that alien is wearing the ‘enemy’
 costume (i.e., costume number `0`).
 
-Add similar code which subtracts one life but only if that Alien is
+Add similar code which subtracts one life but only if that alien is
 wearing the ‘friendly’ costume (i.e., costume number `2`).
 
 {{< learner-task-help >}}
@@ -911,7 +911,7 @@ Instead, they should only glide while the player has some lives left.
 {{< learner-task >}}
 
 The ‘condition’ of the `while` loop is currently just the constant
-`True`, which means the `while` loop runs forever.
+`True`, so the `while` loop runs forever.
 
 Replace `True` with a comparison which tests whether the player has
 more than zero lives left.
@@ -987,7 +987,7 @@ Nothing really happens when this code runs, because nobody is
 
 {{< learner-task >}}
 
-Add a script to the Alien which runs when the message `"game-over"` is
+Add a script to the alien which runs when the message `"game-over"` is
 broadcast.  Inside that script, write a line of code to hide the
 alien.
 
@@ -1015,11 +1015,14 @@ Here are some ways you could make the game even better:
 
 * Add some left-to-right randomness to where the aliens start.
 
+* At the very start of the game, you see the aliens cloning themselves
+  while they are still too big.  Can you get rid of this glitch?
+
 You can also think about these questions:
 
 * Do you agree that the stage is the right place for the main control
   script (the one that broadcasts the messages)?  Does the game still
-  work if this script is in the Alien?
+  work if this script is in the `Alien` sprite?
 
 
 ### Credits
