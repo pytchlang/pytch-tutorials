@@ -7,7 +7,7 @@
 - name: Script-by-script catch the apple
   tip-commit: bn/sbs-catch-apple-03
 - name: Script-by-script splat the moles
-  tip-commit: bn/sbs-splat-the-moles-01
+  tip-commit: bn/sbs-splat-the-moles-02
 - name: Script-by-script blue invaders
   tip-commit: bn/sbs-blue-invader-03
 - name: Script-by-script Boing
