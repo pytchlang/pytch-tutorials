@@ -9,7 +9,7 @@
 - name: Script-by-script splat the moles
   tip-commit: bn/sbs-splat-the-moles-01
 - name: Script-by-script blue invaders
-  tip-commit: bn/sbs-blue-invader-02
+  tip-commit: bn/sbs-blue-invader-03
 - name: Script-by-script Boing
   tip-commit: bn/sbs-boing-02
 - name: Hello world!
