@@ -17,6 +17,10 @@
             ]
         }
     ],
+    "intentionallyUnusedAssets": [
+      "one-hole.png",
+      "one-mole.png"
+    ],
     "programKind": "per-method",
     "difficulty": "medium"
 }
