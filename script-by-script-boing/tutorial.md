@@ -1084,4 +1084,12 @@ You could give the player more control, to add some skill to the game:
   hit.  For instance, the ball could go up if it hits near the top of
   the bat.
 
+You could remove the robot player:
+
+* Make the player control *both* bats.  You could control the bats
+  together, so they are always at the same height.  Or you could use
+  separate controls for each bat.  You will need to think about what
+  happens if the right-hand player misses the ball, which used to be
+  impossible when that bat was the robot bat.
+
 Can you think of other changes or improvements?
