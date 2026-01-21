@@ -5,7 +5,7 @@
 - name: Script-by-script shoot the fruit
   branch_name: bn/sbs-shoot-the-fruit-04
   dir_name: script-by-script-shoot-the-fruit
-  commit_id: 83f8461057c3ce832ec6ee2cfdaa0c8eadd3284a
+  commit_id: 3e8cadb914155b556b05aee5913dbda72c7895a2
 - name: Script-by-script catch the apple
   branch_name: bn/sbs-catch-apple-03
   dir_name: script-by-script-catch-apple
