@@ -634,10 +634,7 @@ fruit.
 
 ### Choose a random costume
 
-You have already used the Python function `random.randint()` to pick
-random numbers for where the Fruit should appear on the screen.
-
-The function
+The Python function
 
 ``` python-expression
 random.choice()
