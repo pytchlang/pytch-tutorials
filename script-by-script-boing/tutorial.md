@@ -1061,11 +1061,35 @@ example:
   change to give the right effect.  You might then also want to change
   the random velocity the ball gets when it bounces off a bat.
 
+You could change how the player controls the bat:
+
+* Change the game so the player uses the mouse to control their bat.
+  Look in the help sidebar to see what Python code tells you where the
+  mouse is.
+
+    Hint: You will only need to know the mouse’s *y* position, because
+    the bat can only move up and down.
+
+    There are at least two ways you could go about this:
+
+    * Make the bat track the mouse’s *y* position.  This lets the player
+      move the bat as quickly as they want to.
+    * Make the bat move at a fixed speed towards the mouse’s *y*
+      position.  This would be more challenging for the player.
+
 You could give the player more control, to add some skill to the game:
 
 * Instead of giving the ball a random _y_-velocity when it bounces off
   a bat, make it so the angle depends on where on the bat the ball
   hit.  For instance, the ball could go up if it hits near the top of
   the bat.
+
+You could remove the robot player:
+
+* Make the player control *both* bats.  You could control the bats
+  together, so they are always at the same height.  Or you could use
+  separate controls for each bat.  You will need to think about what
+  happens if the right-hand player misses the ball, which used to be
+  impossible when that bat was the robot bat.
 
 Can you think of other changes or improvements?
