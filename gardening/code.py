@@ -10,4 +10,17 @@ class Stage(pytch.Stage):
 
 class Soil(pytch.Sprite):
     Costumes = [
+        'tree_seedling.png',
+        'tree_small.png',
+        'tree.png',
+        'tree_with_fruits.png',
+        'rose_seed.png',
+        'rose_1.png',
+        'rose_2.png',
+        'rose.png',
+        'daisy_seed.png',
+        'daisy_1.png',
+        'daisy_2.png',
+        'daisy.png',
+        'empty.png',
     ]
