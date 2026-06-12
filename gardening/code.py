@@ -28,3 +28,6 @@ class Soil(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def spawn_soil(self):
         Stage.flower_patch_locations = [-2, -1, 0, 1, 2]
+
+        for flower_patch_location in Stage.flower_patch_locations:
+            self.create_clone()
