@@ -24,3 +24,7 @@ class Soil(pytch.Sprite):
         'daisy.png',
         'empty.png',
     ]
+
+    @pytch.when_green_flag_clicked
+    def spawn_soil(self):
+        pass
