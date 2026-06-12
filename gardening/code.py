@@ -6,3 +6,8 @@ class Stage(pytch.Stage):
         'garden.png',
         'tall_garden.png',
     ]
+
+
+class Soil(pytch.Sprite):
+    Costumes = [
+    ]
