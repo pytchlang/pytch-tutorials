@@ -27,4 +27,4 @@ class Soil(pytch.Sprite):
 
     @pytch.when_green_flag_clicked
     def spawn_soil(self):
-        pass
+        Stage.flower_patch_locations = [-2, -1, 0, 1, 2]
