@@ -78,6 +78,9 @@ class Soil(pytch.Sprite):
                 self.wait_seconds(2)
                 self.next_costume()
                 self.wait_seconds(2)
+            elif self.costume_name == "tree_seedling.png":
+                pass
+
 
     @pytch.when_key_pressed(" ")
     def shake_down_apples(self):
