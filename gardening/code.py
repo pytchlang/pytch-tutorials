@@ -46,3 +46,5 @@ class Soil(pytch.Sprite):
                 self.switch_costume("empty.png")
 
             self.create_clone()
+
+        self.hide()
