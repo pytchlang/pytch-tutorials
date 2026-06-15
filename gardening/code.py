@@ -78,7 +78,8 @@ class Water(pytch.Sprite):
 
     @pytch.when_green_flag_clicked
     def spawn_water(self):
-        pass
+        Stage.water_locations = [-3, 3]
+
 
 
 class Hover(pytch.Sprite):
