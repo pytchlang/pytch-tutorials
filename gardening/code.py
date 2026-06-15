@@ -7,6 +7,9 @@ class Stage(pytch.Stage):
         'tall_garden.png',
     ]
 
+    @pytch.when_green_flag_clicked
+    def set_global_variable(self):
+        pass
 
 class Soil(pytch.Sprite):
     Costumes = [
