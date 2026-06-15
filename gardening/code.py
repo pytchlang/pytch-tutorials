@@ -51,4 +51,5 @@ class Soil(pytch.Sprite):
 
 class Hover(pytch.Sprite):
     Costumes = [
+        'hover.png'
     ]
