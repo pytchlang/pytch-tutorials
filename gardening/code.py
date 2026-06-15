@@ -46,16 +46,19 @@ class Soil(pytch.Sprite):
 
             self.go_to_xy(soil_xpos, 0)
 
-            rng = random.randint(0, 4)
-            if rng < 1:
-                # pick rose seed (25% chance)
-                self.switch_costume("rose_seed.png")
-            elif rng < 2:
-                # pick daisy seed (25% chance)
-                self.switch_costume("daisy_seed.png")
+            if flower_patch_location == Stage.tree_location:
+                pass
             else:
-                # pick nothing
-                self.switch_costume("empty.png")
+                rng = random.randint(0, 4)
+                if rng < 1:
+                    # pick rose seed (25% chance)
+                    self.switch_costume("rose_seed.png")
+                elif rng < 2:
+                    # pick daisy seed (25% chance)
+                    self.switch_costume("daisy_seed.png")
+                else:
+                    # pick nothing
+                    self.switch_costume("empty.png")
 
             self.create_clone()
 
