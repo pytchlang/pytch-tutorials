@@ -14,6 +14,9 @@ class Stage(pytch.Stage):
         Stage.MAX_COLUMN = 3
         Stage.MIN_COLUMN = -3
 
+        Stage.apples = 0
+        self.show_variable("apples")
+
         Stage.water_level = 3
         self.show_variable("water_level", right=236)
 
