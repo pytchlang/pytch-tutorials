@@ -93,6 +93,9 @@ class Water(pytch.Sprite):
     def get_water(self):
         Stage.water_level = 3
 
+        if self.touching(Hover):
+            pass
+
 
 
 
