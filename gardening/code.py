@@ -77,6 +77,10 @@ class Water(pytch.Sprite):
         'water_empty.png'
     ]
 
+    @pytch.when_green_flag_clicked
+    def spawn_water(self):
+        pass
+
 
 class Hover(pytch.Sprite):
     Costumes = [
