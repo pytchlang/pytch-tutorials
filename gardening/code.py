@@ -73,6 +73,8 @@ class Soil(pytch.Sprite):
 
 class Water(pytch.Sprite):
     Costumes = [
+        'water.png',
+        'water_empty.png'
     ]
 
 
