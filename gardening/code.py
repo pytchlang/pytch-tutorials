@@ -91,7 +91,7 @@ class Water(pytch.Sprite):
     @pytch.when_I_receive("get_water")
     def get_water(self):
         if self.costume_name == "water.png" and self.touching(Hover):
-            pass
+            Stage.water_level = 3
 
 
 
