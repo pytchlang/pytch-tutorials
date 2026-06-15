@@ -81,6 +81,8 @@ class Water(pytch.Sprite):
     def spawn_water(self):
         Stage.water_locations = [-3, 3]
 
+        for water_location in Stage.water_locations:
+            pass
 
 
 class Hover(pytch.Sprite):
