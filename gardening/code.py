@@ -84,3 +84,7 @@ class Hover(pytch.Sprite):
             self.broadcast("move")
 
 
+    @pytch.when_key_pressed("ArrowUp")
+    def move_up(self):
+        pass
+
