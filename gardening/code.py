@@ -90,7 +90,8 @@ class Water(pytch.Sprite):
 
     @pytch.when_I_receive("get_water")
     def get_water(self):
-        pass
+        if self.costume_name == "water.png" and self.touching(Hover):
+            pass
 
 
 
