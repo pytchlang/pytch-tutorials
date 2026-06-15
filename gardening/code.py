@@ -65,5 +65,6 @@ class Hover(pytch.Sprite):
     def move_left(self):
 
         Stage.current_column -= 1
+        self.broadcast("move")
 
 
