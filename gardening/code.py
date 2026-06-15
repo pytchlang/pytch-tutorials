@@ -93,6 +93,10 @@ class Water(pytch.Sprite):
         if self.costume_name == "water.png" and self.touching(Hover):
             Stage.water_level = 3
 
+            self.next_costume()
+            self.wait_seconds(10)
+            self.next_costume()
+
 
 
 class Hover(pytch.Sprite):
