@@ -9,7 +9,7 @@ class Stage(pytch.Stage):
 
     @pytch.when_green_flag_clicked
     def set_global_variable(self):
-        pass
+        Stage.current_column = 0
 
 class Soil(pytch.Sprite):
     Costumes = [
