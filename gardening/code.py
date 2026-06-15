@@ -11,6 +11,10 @@ class Stage(pytch.Stage):
     def set_global_variable(self):
         Stage.current_column = 0
 
+        Stage.MAX_COLUMN = 3
+        Stage.MIN_COLUMN = -3
+
+
 class Soil(pytch.Sprite):
     Costumes = [
         'tree_seedling.png',
