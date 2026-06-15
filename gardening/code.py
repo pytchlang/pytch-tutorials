@@ -63,7 +63,8 @@ class Soil(pytch.Sprite):
     @pytch.when_I_receive("water_soil")
     def water_soil(self):
         if self.touching(Hover):
-            pass
+            if self.costume_name == "rose_seed.png" or self.costume_name == "daisy_seed.png":
+                pass
 
 class Hover(pytch.Sprite):
     Costumes = [
