@@ -8,7 +8,7 @@ class Stage(pytch.Stage):
     ]
 
     @pytch.when_green_flag_clicked
-    def set_global_variable(self):
+    def set_global_variables(self):
         Stage.current_column = 0
 
         Stage.MAX_COLUMN = 3
