@@ -66,6 +66,10 @@ class Soil(pytch.Sprite):
             if self.costume_name == "rose_seed.png" or self.costume_name == "daisy_seed.png":
                 self.next_costume()
                 self.wait_seconds(2)
+                self.next_costume()
+                self.wait_seconds(2)
+                self.next_costume()
+                self.wait_seconds(2)
 
 class Hover(pytch.Sprite):
     Costumes = [
