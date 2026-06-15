@@ -87,4 +87,5 @@ class Hover(pytch.Sprite):
     @pytch.when_key_pressed("ArrowUp")
     def move_up(self):
 
-        Stage.water_level -= 1
+        if Stage.water_level > 0 and Stage.current_column in Stage.flower_patch_locations:
+            Stage.water_level -= 1
