@@ -87,6 +87,8 @@ class Water(pytch.Sprite):
             self.go_to_xy(water_xpos, 0)
             self.create_clone()
 
+        self.hide()
+
 
 
 class Hover(pytch.Sprite):
