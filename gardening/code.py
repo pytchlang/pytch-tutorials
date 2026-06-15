@@ -48,3 +48,7 @@ class Soil(pytch.Sprite):
             self.create_clone()
 
         self.hide()
+
+class Hover(pytch.Sprite):
+    Costumes = [
+    ]
