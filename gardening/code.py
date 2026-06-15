@@ -31,4 +31,6 @@ class Soil(pytch.Sprite):
 
         for flower_patch_location in Stage.flower_patch_locations:
             soil_xpos = flower_patch_location * 48
+
+            self.go_to_xy(soil_xpos, 0)
             self.create_clone()
