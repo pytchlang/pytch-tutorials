@@ -91,7 +91,8 @@ class Water(pytch.Sprite):
 
     @pytch.when_I_receive("get_water")
     def get_water(self):
-        pass
+        Stage.water_level = 3
+
 
 
 
