@@ -81,7 +81,11 @@ class Water(pytch.Sprite):
         Stage.water_locations = [-3, 3]
 
         for water_location in Stage.water_locations:
-            pass
+            water_xpos = water_location * 48
+
+            self.go_to_xy(water_xpos, 0)
+            self.create_clone()
+
 
 
 class Hover(pytch.Sprite):
