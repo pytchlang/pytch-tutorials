@@ -89,6 +89,10 @@ class Water(pytch.Sprite):
 
         self.hide()
 
+    @pytch.when_I_receive("get_water")
+    def get_water(self):
+        pass
+
 
 
 class Hover(pytch.Sprite):
