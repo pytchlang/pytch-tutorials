@@ -70,6 +70,11 @@ class Soil(pytch.Sprite):
                 self.wait_seconds(2)
                 self.next_costume()
 
+class Water(pytch.Sprite):
+    Costumes = [
+    ]
+
+
 class Hover(pytch.Sprite):
     Costumes = [
         'hover.png'
