@@ -15,6 +15,8 @@ class Stage(pytch.Stage):
         Stage.MIN_COLUMN = -3
 
         Stage.water_level = 3
+        self.show_variable("water_level", right=236)
+
 
 
 class Soil(pytch.Sprite):
