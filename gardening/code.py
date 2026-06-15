@@ -86,5 +86,5 @@ class Hover(pytch.Sprite):
 
     @pytch.when_key_pressed("ArrowUp")
     def move_up(self):
-        pass
 
+        Stage.water_level -= 1
