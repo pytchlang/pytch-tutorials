@@ -67,4 +67,8 @@ class Hover(pytch.Sprite):
         Stage.current_column -= 1
         self.broadcast("move")
 
+    @pytch.when_key_pressed("ArrowRight")
+    def move_right(self):
+        pass
+
 
