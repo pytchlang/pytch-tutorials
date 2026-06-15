@@ -14,6 +14,8 @@ class Stage(pytch.Stage):
         Stage.MAX_COLUMN = 3
         Stage.MIN_COLUMN = -3
 
+        Stage.water_level = 3
+
 
 class Soil(pytch.Sprite):
     Costumes = [
