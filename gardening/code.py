@@ -33,4 +33,6 @@ class Soil(pytch.Sprite):
             soil_xpos = flower_patch_location * 48
 
             self.go_to_xy(soil_xpos, 0)
+
+            rng = random.randint(0, 4)
             self.create_clone()
