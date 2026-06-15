@@ -78,7 +78,12 @@ class Soil(pytch.Sprite):
                 self.wait_seconds(2)
                 self.next_costume()
             elif self.costume_name == "tree_seedling.png":
-                pass
+                self.next_costume()
+                self.wait_seconds(3)
+                self.next_costume()
+                self.wait_seconds(3)
+                self.next_costume()
+
 
 
     @pytch.when_key_pressed(" ")
