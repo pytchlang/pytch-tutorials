@@ -60,6 +60,10 @@ class Soil(pytch.Sprite):
 
         self.hide()
 
+    @pytch.when_I_receive("water_soil")
+    def water_soil(self):
+        pass
+
 class Hover(pytch.Sprite):
     Costumes = [
         'hover.png'
