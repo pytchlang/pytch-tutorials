@@ -68,8 +68,9 @@ class Hover(pytch.Sprite):
     @pytch.when_key_pressed("ArrowLeft")
     def move_left(self):
 
-        Stage.current_column -= 1
-        self.broadcast("move")
+        if Stage.current_column > Stage.MIN_COLUMN:
+            Stage.current_column -= 1
+            self.broadcast("move")
 
     @pytch.when_key_pressed("ArrowRight")
     def move_right(self):
