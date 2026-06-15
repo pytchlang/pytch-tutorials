@@ -56,3 +56,7 @@ class Hover(pytch.Sprite):
     Costumes = [
         'hover.png'
     ]
+
+    @pytch.when_I_receive("move")
+    def move(self):
+        pass
