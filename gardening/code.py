@@ -145,6 +145,9 @@ class Player(pytch.Sprite):
         self.set_size(0.075)
         self.set_y(-8)
 
+    @pytch.when_I_receive("move")
+    def move(self):
+        pass
 
 
 
