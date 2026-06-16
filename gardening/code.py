@@ -150,6 +150,9 @@ class Player(pytch.Sprite):
     def move(self):
         new_x = Stage.current_column * 48
 
+        if Stage.current_column < Stage.old_column:
+            pass
+
         self.glide_to_xy(new_x, -8, 0.25)
         Stage.old_column = Stage.current_column
 
