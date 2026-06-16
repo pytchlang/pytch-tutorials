@@ -150,6 +150,7 @@ class Player(pytch.Sprite):
         new_x = Stage.current_column * 48
 
         self.glide_to_xy(new_x, -8, 0.25)
+        Stage.old_column = Stage.current_column
 
 
 class Hover(pytch.Sprite):
