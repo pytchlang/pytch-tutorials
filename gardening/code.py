@@ -139,6 +139,10 @@ class Player(pytch.Sprite):
         'player_sideways_right.png',
     ]
 
+    @pytch.when_green_flag_clicked
+    def spawn_player(self):
+        pass
+
 
 
 class Hover(pytch.Sprite):
