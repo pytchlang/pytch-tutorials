@@ -91,6 +91,7 @@ class Soil(pytch.Sprite):
     def plant_tree(self):
         if Stage.apples > 0 and self.touching(Hover):
             Stage.apples -= 1
+            self.switch_costume("tree_seedling.png")
 
 
 class Water(pytch.Sprite):
