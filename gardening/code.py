@@ -146,7 +146,7 @@ class Player(pytch.Sprite):
 
     @pytch.when_I_receive("move")
     def move(self):
-        pass
+        new_x = Stage.current_column * 48
 
 
 class Hover(pytch.Sprite):
