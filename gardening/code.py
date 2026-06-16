@@ -89,7 +89,8 @@ class Soil(pytch.Sprite):
 
     @pytch.when_key_pressed("p")
     def plant_tree(self):
-        pass
+        if Stage.apples > 0 and self.touching(Hover):
+            pass
 
 
 class Water(pytch.Sprite):
