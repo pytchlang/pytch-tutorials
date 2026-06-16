@@ -79,6 +79,10 @@ class Soil(pytch.Sprite):
                 self.next_costume()
                 self.wait_seconds(2)
 
+    @pytch.when_key_pressed(" ")
+    def shake_down_apples(self):
+        pass
+
 class Water(pytch.Sprite):
     Costumes = [
         'water.png',
