@@ -158,6 +158,7 @@ class Player(pytch.Sprite):
             self.switch_costume("player_right.png")
 
         self.glide_to_xy(new_x, -8, 0.25)
+        self.switch_costume(0)
         Stage.old_column = Stage.current_column
 
 
