@@ -81,7 +81,8 @@ class Soil(pytch.Sprite):
 
     @pytch.when_key_pressed(" ")
     def shake_down_apples(self):
-        pass
+        if self.costume_name == "tree_with_fruits.png" and self.touching(Hover):
+            pass
 
 class Water(pytch.Sprite):
     Costumes = [
