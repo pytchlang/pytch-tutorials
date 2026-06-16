@@ -154,6 +154,7 @@ class Player(pytch.Sprite):
             self.switch_costume("player_left.png")
 
         self.glide_to_xy(new_x, -8, 0.25)
+        self.switch_costume("player_front.png")
 
 class Hover(pytch.Sprite):
     Costumes = [
