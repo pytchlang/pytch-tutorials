@@ -130,6 +130,13 @@ class Water(pytch.Sprite):
 
 class Player(pytch.Sprite):
     Costumes = [
+        'player_front.png',
+        'player_back.png',
+        'player_left.png',
+        'player_right.png',
+        'player_happy.png',
+        'player_sideways_left.png',
+        'player_sideways_right.png',
     ]
 
 
