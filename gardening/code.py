@@ -128,6 +128,10 @@ class Water(pytch.Sprite):
             self.wait_seconds(10)
             self.next_costume()
 
+class Player(pytch.Sprite):
+    Costumes = [
+    ]
+
 
 
 class Hover(pytch.Sprite):
