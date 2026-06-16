@@ -116,7 +116,7 @@ class Hover(pytch.Sprite):
     @pytch.when_key_pressed("ArrowDown")
     def move_down(self):
         if Stage.current_column in Stage.water_locations:
-            pass
+            self.broadcast("get_water")
 
     @pytch.when_key_pressed("ArrowUp")
     def move_up(self):
