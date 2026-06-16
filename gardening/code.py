@@ -87,6 +87,11 @@ class Soil(pytch.Sprite):
             self.wait_seconds(3)
             self.switch_costume("tree_with_fruits.png")
 
+    @pytch.when_key_pressed("p")
+    def plant_tree(self):
+        pass
+
+
 class Water(pytch.Sprite):
     Costumes = [
         'water.png',
