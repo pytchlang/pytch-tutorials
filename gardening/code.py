@@ -142,6 +142,7 @@ class Player(pytch.Sprite):
     @pytch.when_green_flag_clicked
     def spawn_player(self):
         self.set_size(0.075)
+        self.set_y(-8)
 
 
 
