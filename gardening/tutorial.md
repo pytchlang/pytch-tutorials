@@ -1,21 +1,40 @@
 # Gardening
-This is my cool thing
+For this tutorial, we will attempt to make a gardening simulation. 
+To do that, we will write a script that will randomly place flower seeds at the start of the game,
+a grid-based movement system that the player can use to select different tiles of soil, 
+a water bucket for collecting water and watering soil and water sources.
+We will also add animations to highlight the growing of plants, water levels and a moving gardener character.
+
 
 ---
 
 
-## Everything
+## Use a nicer background
+
+If you click the green flag button now, you will see that nothing interesting will happen. To change, we will start by
+adding a more interesting background.
+
+### Add garden backgrounds
 
 {{< learner-task >}}
 
+Add a more interesting background for your garden simulation game. In the media library there are two images called garden.png and tall_garden.png that you can choose.
+
 {{< learner-task-help >}}
 
-{{< jr-commit add-garden-backgrounds add-medialib-appearances-entry ["TODO-ENTRY-NAME"] >}}
+{{< jr-commit add-garden-backgrounds add-medialib-appearances-entry ["garden.png", "tall_garden.png"] >}}
 
 {{< /learner-task >}}
 
 
+### Remove default background
+
+If you try pressing the green flag now, you will see that, still, nothing has changed. 
+That is because the stage only shows the first background by default. One way to solve this is to
+manually delete the old background.
+
 {{< learner-task >}}
+Delete the white_solid.png backdrop from the Stage.
 
 {{< learner-task-help >}}
 
@@ -23,6 +42,9 @@ This is my cool thing
 
 {{< /learner-task >}}
 
+## Spawn flower seeds
+
+### Add soil sprite
 
 {{< learner-task >}}
 
@@ -32,6 +54,7 @@ This is my cool thing
 
 {{< /learner-task >}}
 
+### Add soil costumes
 
 {{< learner-task >}}
 
@@ -41,6 +64,7 @@ This is my cool thing
 
 {{< /learner-task >}}
 
+## Spawn the soil
 
 {{< learner-task >}}
 
@@ -69,6 +93,8 @@ This is my cool thing
 {{< /learner-task >}}
 
 
+### Set soil locations
+
 {{< learner-task >}}
 
 {{< learner-task-help >}}
@@ -86,6 +112,7 @@ This is my cool thing
 
 {{< /learner-task >}}
 
+## Randomly select a flower seed
 
 {{< learner-task >}}
 
@@ -113,6 +140,7 @@ This is my cool thing
 
 {{< /learner-task >}}
 
+## Add movement
 
 {{< learner-task >}}
 
@@ -167,6 +195,7 @@ This is my cool thing
 
 {{< /learner-task >}}
 
+### Add keyboard controls
 
 {{< learner-task >}}
 
@@ -212,6 +241,7 @@ This is my cool thing
 
 {{< /learner-task >}}
 
+## Add invisible walls
 
 {{< learner-task >}}
 
@@ -239,6 +269,7 @@ This is my cool thing
 
 {{< /learner-task >}}
 
+## Add water bucket
 
 {{< learner-task >}}
 
@@ -347,6 +378,7 @@ This is my cool thing
 
 {{< /learner-task >}}
 
+## Add water source
 
 {{< learner-task >}}
 
@@ -365,6 +397,8 @@ This is my cool thing
 
 {{< /learner-task >}}
 
+
+### Spawn water
 
 {{< learner-task >}}
 
@@ -410,6 +444,7 @@ This is my cool thing
 
 {{< /learner-task >}}
 
+## Animate water
 
 {{< learner-task >}}
 
@@ -473,6 +508,7 @@ This is my cool thing
 
 {{< /learner-task >}}
 
+## Spawn trees
 
 {{< learner-task >}}
 
@@ -500,6 +536,7 @@ This is my cool thing
 
 {{< /learner-task >}}
 
+## Grow trees
 
 {{< learner-task >}}
 
@@ -509,7 +546,6 @@ This is my cool thing
 
 {{< /learner-task >}}
 
-
 {{< learner-task >}}
 
 {{< learner-task-help >}}
@@ -518,6 +554,8 @@ This is my cool thing
 
 {{< /learner-task >}}
 
+
+## Shake down apples
 
 {{< learner-task >}}
 
@@ -564,6 +602,9 @@ This is my cool thing
 {{< /learner-task >}}
 
 
+## Plant trees
+
+
 {{< learner-task >}}
 
 {{< learner-task-help >}}
@@ -600,6 +641,8 @@ This is my cool thing
 {{< /learner-task >}}
 
 
+## Store position
+
 {{< learner-task >}}
 
 {{< learner-task-help >}}
@@ -625,6 +668,9 @@ This is my cool thing
 {{< jr-commit update-old_column-variable edit-script [] >}}
 
 {{< /learner-task >}}
+
+
+## Add gardener sprite
 
 
 {{< learner-task >}}
@@ -672,6 +718,9 @@ This is my cool thing
 {{< /learner-task >}}
 
 
+## Move gardener
+
+
 {{< learner-task >}}
 
 {{< learner-task-help >}}
@@ -706,6 +755,9 @@ This is my cool thing
 {{< jr-commit update-old_column-variable-to-be-fixed edit-script [] >}}
 
 {{< /learner-task >}}
+
+
+## Animate gardener movement
 
 
 {{< learner-task >}}
@@ -744,3 +796,4 @@ This is my cool thing
 {{< /learner-task >}}
 
 
+## Questions and challenges
