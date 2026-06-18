@@ -10,7 +10,7 @@ This is my cool thing
 
 {{< learner-task-help >}}
 
-{{< jr-commit remove-default-background delete-appearance [] >}}
+{{< jr-commit add-garden-backgrounds add-medialib-appearances-entry ["TODO-ENTRY-NAME"] >}}
 
 {{< /learner-task >}}
 
@@ -19,7 +19,7 @@ This is my cool thing
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-garden-backgrounds add-medialib-appearances-entry ["TODO-ENTRY-NAME"] >}}
+{{< jr-commit remove-default-background delete-appearance [] >}}
 
 {{< /learner-task >}}
 
