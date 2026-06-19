@@ -73,11 +73,30 @@ From the media library, add the "Garden plants" bundle of images as costumes for
 
 {{< /learner-task >}}
 
-Now, when you run your project, you should see a tree seedling in the center of your garden
-
-## Place the soil
+Now, when you run your project, the `Soil` sprite should be included in your simulation.
 
 {{< learner-task >}}
+
+Try running the project again! Click the green flag button and see if anything has changed in your project.
+
+**What is different?**
+
+{{< learner-task-help >}}
+
+You should now see a tree seedling in the center of your garden.
+
+{{< /learner-task >}}
+
+## Place multiple plant seeds
+
+When we start our simulation, we want different types of flower seeds to be in our garden so that they can grow into 
+different flowers.
+On top off that, we also want the placement of the flower seeds to be different every time we run the project.
+To do that, we can start by creating clones from our `Soil` sprite and then placing them next to each other in a row on the stage.
+
+{{< learner-task >}}
+
+Add a new script to the `Soil` sprite which runs when you click on the green button.
 
 {{< learner-task-help >}}
 
@@ -86,7 +105,16 @@ Now, when you run your project, you should see a tree seedling in the center of 
 {{< /learner-task >}}
 
 
+Next, we need to write a line of code that allows to store where on the stage we want our clones to be placed.
+To do that, we will define a variable called `Stage.soil_locations`and set it to an list. Lists are used to contain
+multiple numbers, strings or other types of data inside one variable.
+Our variable will only need to store the numbers `-2`, `-1`, `0`, `1`, and `2` to show five clones in a row.
+
+
 {{< learner-task >}}
+
+Add a line of code to the `Soil` script which sets the `Stage.soil_locations` variable to a list which has the values 
+`-2`, `-1`, `0`, `1`, and `2`. 
 
 {{< learner-task-help >}}
 
@@ -94,8 +122,22 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< /learner-task >}}
 
+Next, we want to create a clone of the `Soil`sprite for all five numbers in our `Stage.soil_locations` variable. 
+We can use a for-loop in this case, because it will allow us to use same line of code five times.
 
 {{< learner-task >}}
+
+Add two lines of code that will create five clone of the `soil` sprite, one for every number in `Stage.soil_locations`.
+
+{{< learner-task-help >}}
+
+One line of code is needed to create a clone of your sprite. 
+Another line of code is needed above that one to repeat the cloning four more times. 
+
+{{< learner-task-help >}}
+
+Look in the Scratch/Python help to see which lines of code you can use to repeat a code block, 
+get the length of a list and clone a sprite. 
 
 {{< learner-task-help >}}
 
@@ -103,10 +145,37 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< /learner-task >}}
 
+If you run the project now, you will see that nothing has changed yet. 
+That is, because we still need to give our clones a unique location.
+
 
 ### Set soil locations
 
+After we create our `Soil` clones, we want to calculate a unique x-position for them based on the values in our `Stage.soil_locations` variable. 
+This way, every tile of soil will be displayed in a different location in our garden.
+
+Since the images we are using for the `Soil` sprite all have a width of 48 pixels, 
+we need to make sure that there are at least 48 pixels of space between the x-positions of our clones.
+To compute unique x-positions for all the clones, we can use a different value from our `Stage.soil_locations` 
+list for each clone.
+
 {{< learner-task >}}
+
+Add a variable `soil_xpos` inside of the for-loop which calculates a unique x-position for every clone using the
+values inside of the `Stage.soil_locations` list.
+
+{{< learner-task-help >}}
+
+To get a different elements from a list you need to use an index. 
+You can find out how to use an index in the Python/Scratch help section.
+
+{{< learner-task-help >}}
+
+A formula you can use to calculate a different x-position for every clone is: 
+
+48 * a number in `Stage.soil_locations` 
+
+(for example, 48 * -2, 48 * -1, 48 * 0, ...).
 
 {{< learner-task-help >}}
 
@@ -114,8 +183,16 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< /learner-task >}}
 
+Now that we have our unique x-positions stored in `soil_xpos`, we can apply them to our `Soil` sprite before cloning it.
 
 {{< learner-task >}}
+
+Add a line of code inside the for-loop which will set the x-position of our `Soil` sprite to `soil-xpos` and its 
+y-position to the number `0`.  
+
+{{< learner-task-help >}}
+
+Look in the help area to see which Pytch method will do exactly this.
 
 {{< learner-task-help >}}
 
@@ -123,9 +200,36 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< /learner-task >}}
 
-## Randomly select a flower seed
+### Try it!
 
 {{< learner-task >}}
+
+Run your project with the green flag button. 
+
+What is different? 
+
+{{< learner-task-help >}}
+
+There are now five different tree seedlings on the stage.
+
+{{< /learner-task >}}
+
+
+## Randomly select a flower seed
+
+Now that we have five different soil clones visible on the stage, we can start to randomly change how each clone starts
+in the simulation. To do that, we can use a randomly generated number change the costume of our sprite right before 
+we clone it to look like either daisy seeds, rose seeds or an empty piece of soil. 
+This way, everytime we run our project, each `Soil` clone has a chance to start with one of these three costumes.  
+
+{{< learner-task >}}
+
+Add a new variable called `rng` which will store a randomly generated number between `0` and `100` as its value. 
+
+{{< learner-task-help >}}
+
+Python has a library called `random` which has very useful methods for this task. You can find example for how to use 
+them in the Python/Scratch help.
 
 {{< learner-task-help >}}
 
@@ -133,8 +237,19 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< /learner-task >}}
 
+To choose a seed with our random number, we now need to add conditions to our script which check the value of our `rng` 
+variable against possible numbers. Depending on which numbers we use here, we can change the odds of a certain costume
+being chosen.
 
 {{< learner-task >}}
+
+Check whether the value in `rng` is within a certain range, for example, between `0` and `24`. 
+If it is, then switch the soil's costume to `rose_seed.png`. 
+
+Otherwise, check if `rng` is in a different range,
+for instance, between `25` and `49`. In that case, switch the costume `daisy_seed.png`. 
+
+If `rng` is outside of both of these ranges, switch the soil's costume to `empty.png`.    
 
 {{< learner-task-help >}}
 
@@ -142,8 +257,14 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< /learner-task >}}
 
+### Hide the original `Soil` sprite
+
+We still need to hide the original soil, which we used to generate our five clones, since for this tutorial,
+we only need the soil's clones.
 
 {{< learner-task >}}
+
+Add a line of code at the end of the script which will hide the original `Soil` sprite.
 
 {{< learner-task-help >}}
 
@@ -153,7 +274,12 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 ## Add movement
 
+To add some interactivity, we want our player to be able to hover over and eventually water the plants in our garden.
+Before we can do that, however, we need to add a sprite that will control our movement within the row we soil tiles. 
+
 {{< learner-task >}}
+
+Add a new sprite called `hover` to the project.
 
 {{< learner-task-help >}}
 
@@ -164,6 +290,8 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< learner-task >}}
 
+From the media library, add the image "hover.png" as a costume for your `Hover` sprite.
+
 {{< learner-task-help >}}
 
 {{< jr-commit add-hover-costumes add-medialib-appearance ["TODO-DISPLAY-IDENTIFIER"] >}}
@@ -173,14 +301,19 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< learner-task >}}
 
+Add a new script to the `Hover` sprite which runs when you click on the green button.
+
 {{< learner-task-help >}}
 
 {{< jr-commit create-empty-stage-green-flag-script add-script [] >}}
 
 {{< /learner-task >}}
 
+To track our player's movement, we need to define variable which stores which column we are currently hovering over.
 
 {{< learner-task >}}
+
+Add a new variable called `Stage.current_column` and set it to `0`.
 
 {{< learner-task-help >}}
 
@@ -188,8 +321,12 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< /learner-task >}}
 
+Next, we want to define a script that will be triggered everytime we want the player to move and update the x- and 
+y-positions of our `Hover` sprite accordingly.
 
 {{< learner-task >}}
+
+Add a new script to the `Hover` sprite that will be run everytime the message "move" is broadcasted.
 
 {{< learner-task-help >}}
 
@@ -200,6 +337,8 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< learner-task >}}
 
+Inside of the new script, move the `Hover` sprite based on the value in `Stage.current_column`.
+
 {{< learner-task-help >}}
 
 {{< jr-commit move-hover-to-current-column edit-script [] >}}
@@ -208,7 +347,11 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 ### Add keyboard controls
 
+We want to be able to update the position of the `Hover` sprite every time we press the left or right arrow key.
+
 {{< learner-task >}}
+
+Add a new script that will be triggered when the left arrow key is pressed. 
 
 {{< learner-task-help >}}
 
@@ -219,6 +362,8 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< learner-task >}}
 
+Add a line of code to the new script which reduces the current column by `1`.
+
 {{< learner-task-help >}}
 
 {{< jr-commit update-current-column-left edit-script [] >}}
@@ -228,14 +373,19 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< learner-task >}}
 
+Add a new line below which broadcasts the "move" message to update the x- and y-position of the `Hover` sprite.
+
 {{< learner-task-help >}}
 
 {{< jr-commit broadcast-move-left edit-script [] >}}
 
 {{< /learner-task >}}
 
+We can now repeat the previous steps for the right arrow key. 
 
 {{< learner-task >}}
+
+Add a new script which will be called whenever the right arrow key is pressed.
 
 {{< learner-task-help >}}
 
@@ -246,6 +396,8 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< learner-task >}}
 
+Update the `Stage.current_column` variable and broadcast the "move" message whenever the right arrow key is pressed.
+
 {{< learner-task-help >}}
 
 {{< jr-commit update-current-column-and-broadcast-move-right edit-script [] >}}
@@ -254,7 +406,13 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 ## Add invisible walls
 
+While our player can now move horizontally, we still need to make sure that they won't move out of the boundaries of the stage.
+We can use two new variables to specify the left and right boundary of our garden and check against those before moving.
+
 {{< learner-task >}}
+
+Add to new variables called `Stage.MAX_COLUMN` and `Stage.MIN_COLUMN`
+ and set them to sensible values. For this tutorial we would suggest using the values `3` and `-3` respectively.
 
 {{< learner-task-help >}}
 
@@ -265,6 +423,13 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< learner-task >}}
 
+Add a condition such to the "when left arrow key pressed" script so that the `Stage.current_column` variable is only 
+updated when we are not outside of the boundary defined by `Stage.MIN_COLUMN`.
+
+{{< learner-task-help >}}
+
+`Stage.current_column` should only be reduced if it is larger than the minimum value we want for it.
+
 {{< learner-task-help >}}
 
 {{< jr-commit add-condition-for-min-column-arrow-left edit-script [] >}}
@@ -274,9 +439,28 @@ Now, when you run your project, you should see a tree seedling in the center of 
 
 {{< learner-task >}}
 
+Add a condition such to the "when right arrow key pressed" script so that the `Stage.current_column` variable is only
+updated when we are not outside of the boundary defined by `Stage.MAX_COLUMN`.
+
+{{< learner-task-help >}}
+
+`Stage.current_column` should only be increased if it is smaller than the maximum value we want for it.
+
 {{< learner-task-help >}}
 
 {{< jr-commit add-condition-for-max-column-arrow-right edit-script [] >}}
+
+{{< /learner-task >}}
+
+### Try it!
+
+{{< learner-task >}}
+
+Try running your project again. Has anything changed?
+
+{{< learner-task-help >}}
+
+You can now no longer move out of frame.
 
 {{< /learner-task >}}
 
