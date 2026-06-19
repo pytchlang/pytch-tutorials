@@ -22,7 +22,7 @@ Add a more interesting background for your garden simulation game. In the media 
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-garden-backgrounds add-medialib-appearances-entry ["garden.png", "tall_garden.png"] >}}
+{{< jr-commit add-garden-backgrounds add-medialib-appearances-entry ["garden.png"] >}}
 
 {{< /learner-task >}}
 
@@ -34,7 +34,8 @@ That is because the stage only shows the first background by default. One way to
 manually delete the old background.
 
 {{< learner-task >}}
-Delete the white_solid.png backdrop from the Stage.
+
+Delete the _white_solid.png_ backdrop from the Stage.
 
 {{< learner-task-help >}}
 
@@ -46,7 +47,11 @@ Delete the white_solid.png backdrop from the Stage.
 
 ### Add soil sprite
 
+Now, you need a _sprite_ to use as the soil on which the player can grow plants.
+
 {{< learner-task >}}
+
+Add a new sprite called `Soil` to your project.
 
 {{< learner-task-help >}}
 
