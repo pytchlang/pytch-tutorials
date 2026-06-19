@@ -1,3 +1,3 @@
 # Gardening Simulation
 
-Hello, Ben!
+Build a simulated garden, move along a grid, plant trees, collect water and watch your plants grow.
