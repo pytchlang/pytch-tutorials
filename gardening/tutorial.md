@@ -35,7 +35,7 @@ manually delete the old background.
 
 {{< learner-task >}}
 
-Delete the _white_solid.png_ backdrop from the Stage.
+Delete the `solid-white.png` backdrop from the Stage.
 
 {{< learner-task-help >}}
 
@@ -61,7 +61,11 @@ Add a new sprite called `Soil` to your project.
 
 ### Add soil costumes
 
+Next, your new `Soil` sprite needs some costumes to decide what it should look like when you run the project.   
+
 {{< learner-task >}}
+
+From the media library, add the "Garden plants" bundle of images as costumes for your `Soil` sprite.
 
 {{< learner-task-help >}}
 
@@ -69,7 +73,9 @@ Add a new sprite called `Soil` to your project.
 
 {{< /learner-task >}}
 
-## Spawn the soil
+Now, when you run your project, you should see a tree seedling in the center of your garden
+
+## Place the soil
 
 {{< learner-task >}}
 
