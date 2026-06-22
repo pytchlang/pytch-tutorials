@@ -456,7 +456,9 @@ updated when we are not outside of the boundary defined by `Stage.MAX_COLUMN`.
 
 {{< learner-task >}}
 
-Try running your project again. Has anything changed?
+Try running your project again. 
+
+**Has anything changed?**
 
 {{< learner-task-help >}}
 
@@ -464,9 +466,18 @@ You can now no longer move out of frame.
 
 {{< /learner-task >}}
 
-## Add water bucket
+## Add a watering can
+
+With our player now being able to move around safely, we can add a new mechanic that allows the player to collect, 
+carry and use water in their garden. 
+To start off, we need to a new variable to track the amount of water that currently in our can.
+We can use that variable in a new script to decide if the player is currently able to water a plant or pick up more water.
+In that case, we can then update the remaining water.
 
 {{< learner-task >}}
+
+Add a variable to the Stage's "when green flag clicked script" called `Stage.water_level` and set it to a number larger than `0`.
+For this tutorial, we chose `3` as the starting value.
 
 {{< learner-task-help >}}
 
@@ -477,6 +488,8 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add a line of code that will show the `Stage.water_level` Stage variable on screen when we run the project. 
+
 {{< learner-task-help >}}
 
 {{< jr-commit show-water_level-variable edit-script [] >}}
@@ -485,6 +498,8 @@ You can now no longer move out of frame.
 
 
 {{< learner-task >}}
+
+Add a new script to the `Hover` sprite that is run everytime the Arrow Up key is pressed.
 
 {{< learner-task-help >}}
 
@@ -495,15 +510,37 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add a line of code to our new script that reduces the `Stage.water_level` by a small amount. 
+In our case, we chose to reduce the water level by `1`.
+
+{{< learner-task-help >}}
+
+Similar to how we have previously updated the Stage.current_column variable, here we are looking for one line of code
+that will decrease the value of our variable. You can find it in the Scratch/Python help area in the top left of this page.
+
 {{< learner-task-help >}}
 
 {{< jr-commit decrement-water_level-variable edit-script [] >}}
 
 {{< /learner-task >}}
 
-
 {{< learner-task >}}
 
+Add another line of code to the "when Arrow Up key is pressed" script of the `Hover` sprite that will check if our
+watering can has water and if the column the player is currently standing in is part of the `Stage.soil_locations` list.
+For this tutorial, we will assume that `0` is the smallest possible value for `Stage.water_level`.
+
+{{< learner-task-help >}}
+
+To complete this task with one line of code, you have to use a Python keyword that allows you to connect multiple tests in one check. 
+
+{{< learner-task-help >}}
+
+Python has a keyword called `and` that you can use for this purpose:
+```python
+ if your_test and your_second_test:
+  code_to_run_if_both_tests_true`
+```
 {{< learner-task-help >}}
 
 {{< jr-commit add-condition-arrow-up edit-script [] >}}
@@ -513,14 +550,37 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Broadcast the message "water_soil" right after decreasing the value in `Stage.water_level`.
+
 {{< learner-task-help >}}
 
 {{< jr-commit broadcast-water_soil-arrow-up edit-script [] >}}
 
 {{< /learner-task >}}
 
+### Try it!
 
 {{< learner-task >}}
+
+Try running your project again.
+
+**What has changed?**
+
+{{< learner-task-help >}}
+
+You can now pour water onto soil and the `Stage.water_level` variable shown on the screen will change, but the soil itself stays the same.
+
+{{< /learner-task >}}
+
+## Grow flowers
+
+While we can now pour water onto the soil, we still need to get plant seeds to react to the water and grow into flowers.
+To simulate this, we can change the costume of one of our `Soil` sprite clones whenever the player is hovering over it 
+and the "water_soil" message is received.
+
+{{< learner-task >}}
+
+Add a new script to the `Soil` sprite that will be run when the "water_soil" message is received.
 
 {{< learner-task-help >}}
 
@@ -531,6 +591,8 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add some code that checks if the `Soil` clone is currently touching the `Hover` sprite. 
+
 {{< learner-task-help >}}
 
 {{< jr-commit flower-create-condition-for-touching-hover edit-script [] >}}
@@ -540,14 +602,37 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add another piece of code that checks if the current Soil's costume is either `rose_seed.png` or `daisy_seed.png`.
+
+{{< learner-task-help >}}
+
+To complete this task with one line of code, you have to use a Python keyword that allows you to connect multiple tests in one check.
+
+{{< learner-task-help >}}
+
+Python has a keyword called `or` that you can use for this purpose:
+```python
+ if your_test or your_second_test:
+  code_to_run_if_one_of_these_tests_true`
+```
 {{< learner-task-help >}}
 
 {{< jr-commit create-condition-for-seed-costume-check edit-script [] >}}
 
 {{< /learner-task >}}
 
+### Animate the flower growing
+
+While we could just switch the soil's costume to that of a flower, it would be a nice touch to slowly animate the 
+flower growing into a flower. In Pytch, we can do this by switching our soil's costume and briefly pausing our code until we have reached the flower's final costume.   
 
 {{< learner-task >}}
+
+Switch to the `Soil`'s next costume if it is being hovered over and if its current costume is a seed.  
+
+{{< learner-task-help >}}
+
+You will need to add one line of code inside the innermost if/then code block in your new script.
 
 {{< learner-task-help >}}
 
@@ -558,6 +643,8 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+After switching costume, pause the code for one second.
+
 {{< learner-task-help >}}
 
 {{< jr-commit wait edit-script [] >}}
@@ -567,15 +654,36 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Repeat the previous two tasks, switching to the next costume and pausing the codem two more times.
+
 {{< learner-task-help >}}
 
 {{< jr-commit repeat-flower-costume-change-and-wait edit-script [] >}}
 
 {{< /learner-task >}}
 
-## Add water source
+### Try it!
 
 {{< learner-task >}}
+
+Try running your project again.
+
+**Has anything changed?**
+
+{{< learner-task-help >}}
+
+You will see that now, whenever the player pours water onto flower seeds, they will slowly turn into flowers.
+
+{{< /learner-task >}}
+
+## Add water source
+
+Now that we can water our flowers, it would be nice to be able to refill our watering can. 
+For that, we can create a new sprite for watering holes and place them in different locations in our garden.
+
+{{< learner-task >}}
+
+Add a new sprite called `Water` to your project.
 
 {{< learner-task-help >}}
 
@@ -586,16 +694,22 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add the "Water hole" bundle of images as costumes to the `Water` sprite.
+
 {{< learner-task-help >}}
 
-{{< jr-commit add-water-costumes add-medialib-appearances-entry ["TODO-ENTRY-NAME"] >}}
+{{< jr-commit add-water-costumes add-medialib-appearances-entry ["Water hole"] >}}
 
 {{< /learner-task >}}
 
 
-### Spawn water
+### Place water sources
+
+Like we did with the `Soil` sprite, we are now creating a script that will place clones of the `Water` into the game.
 
 {{< learner-task >}}
+
+Add a new "when green flag is clicked" script to the `Water` sprite.
 
 {{< learner-task-help >}}
 
@@ -606,14 +720,7 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
-{{< learner-task-help >}}
-
-{{< jr-commit add-water-clone-loop edit-script [] >}}
-
-{{< /learner-task >}}
-
-
-{{< learner-task >}}
+Create a new variable called `Stage.water_locations` and set its value to a list with the numbers `-3` and `3`.
 
 {{< learner-task-help >}}
 
@@ -624,6 +731,19 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add a for-loop to the script that will run some code once for every element in the `Stage,water_locations` list.
+
+{{< learner-task-help >}}
+
+{{< jr-commit add-water-clone-loop edit-script [] >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+Add multiple lines of code inside of the for-loop that calculates an x-position every clone, sets the `Water`'s x-position to that calculated value and then creates a new clone. 
+
 {{< learner-task-help >}}
 
 {{< jr-commit add-and-implement-water-clone-loop edit-script [] >}}
@@ -633,15 +753,37 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Hide the original `Water` sprite after every clone was created.
+
 {{< learner-task-help >}}
 
 {{< jr-commit hide-original-water edit-script [] >}}
 
 {{< /learner-task >}}
 
-## Animate water
+### Try it!
 
 {{< learner-task >}}
+
+Try running your project again.
+
+**Has anything changed?**
+
+{{< learner-task-help >}}
+
+When you run the project now, water holes will appear left and right of your garden.
+
+{{< /learner-task >}}
+
+
+## Refill can and water sources
+
+Next, we want the player to be able to use the water holes to refill their water levels.
+When the player does that, we also want the water source to be empty right afterwards and to refill itself after a few seconds.
+
+{{< learner-task >}}
+
+Create a new script in the `Hover` sprite that will run when the _Down Arrow_ key is pressed.
 
 {{< learner-task-help >}}
 
@@ -652,6 +794,9 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add a line of code to the new script that will check if the value of `Stage.current_column` is an item in
+the `Stage.water_locations` list.
+
 {{< learner-task-help >}}
 
 {{< jr-commit add-condition-for-current_column edit-script [] >}}
@@ -660,6 +805,8 @@ You can now no longer move out of frame.
 
 
 {{< learner-task >}}
+
+Add some code to the if/then code block that broadcasts the message "get_water". 
 
 {{< learner-task-help >}}
 
@@ -670,6 +817,8 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add a new script to the `Water` sprite that will be run whenever the message "get_water" is received.
+
 {{< learner-task-help >}}
 
 {{< jr-commit create-empty-get_water-script add-script [] >}}
@@ -678,6 +827,12 @@ You can now no longer move out of frame.
 
 
 {{< learner-task >}}
+
+Add code to the script that will reset the value of `Stage.water_level` to its starting/maximum value.
+
+{{< learner-task-help >}}
+
+For this tutorial, the starting value we chose is `3`.
 
 {{< learner-task-help >}}
 
@@ -688,6 +843,8 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add a line of code in front of the previous line that checks if the current `Water` clone is touching the `Hover` sprite.
+
 {{< learner-task-help >}}
 
 {{< jr-commit water-create-condition-for-touching-hover edit-script [] >}}
@@ -697,15 +854,46 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add a code block, meaning multiple lines of code, that will switch the `Water` sprite's costume to `water_empty.png`, 
+pause the code for ten seconds, and then switch its costume back to `water.png`. 
+
 {{< learner-task-help >}}
+
+This code block needs to contain three lines of code: two are responsible for switching the costumes and one will be needed to wait for ten seconds.
+
+{{< learner-task-help >}}
+
+Since there are only two costumes in our `Water` sprite and Pytch will automatically loop our list of available costumes,
+we can use the `self.next_costume()` command twice to get back to our original costume.
 
 {{< jr-commit animate-water-refill edit-script [] >}}
 
 {{< /learner-task >}}
 
-## Spawn trees
+### Try it!
 
 {{< learner-task >}}
+
+Try running your project again.
+
+**Has anything changed?**
+
+{{< learner-task-help >}}
+
+Water holes will now refill themselves ten seconds after using them.
+
+{{< /learner-task >}}
+
+## Spawn trees
+
+In this chapter, we will increase the variety of plants in our garden by adding trees. 
+Since trees will also have a unique mechanic to them, we want to make sure that every time we run the simulation,
+we will start with one tree.
+
+{{< learner-task >}}
+
+Add a new variable called `Stage.tree_location` that stores a value which is currently in our Stage.soil_locations, 
+like the center of our garden, for example.
 
 {{< learner-task-help >}}
 
@@ -716,7 +904,13 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add a new block of code to the for-loop that checks if the value at index `ì` of `Stage.soil_locations` is equal to the value stored in `Stage.tree_location`.
+For now, if it is, nothing new needs to happen. If it isn't, then the if/elif/else block from before should be followed.
+
 {{< learner-task-help >}}
+
+You need to wrap the current if/elif/else block into another if/then/else block, 
+where the then part will stay empty for now and the else part will keep the code from before.
 
 {{< jr-commit create-condition-for-tree_location-variable-check edit-script [] >}}
 
@@ -725,34 +919,36 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add code to the new if/then/else code block, that will switch the soil's costume to "tree_with_fruits.png" 
+if the soil's location is that of a tree.
+
 {{< learner-task-help >}}
 
 {{< jr-commit switch-soil-costume-to-tree_with_fruits edit-script [] >}}
 
 {{< /learner-task >}}
 
-## Grow trees
+### Try it!
 
 {{< learner-task >}}
 
-{{< learner-task-help >}}
+Try running your project again.
 
-{{< jr-commit add-condition-to-check-for-tree_seedling edit-script [] >}}
-
-{{< /learner-task >}}
-
-{{< learner-task >}}
+**Has anything changed?**
 
 {{< learner-task-help >}}
 
-{{< jr-commit animate-tree-growing edit-script [] >}}
+When you run the project now, water holes will appear left and right of your garden.
 
 {{< /learner-task >}}
-
 
 ## Shake down apples
 
+Now that we have a tree in our game, it's time for our new mechanic: the player's ability to pick apples from the tree. 
+
 {{< learner-task >}}
+
+Add a new variable that tracks the amount of apples the player has collected. 
 
 {{< learner-task-help >}}
 
@@ -763,6 +959,8 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add an empty script to the `Soil` script that is run when the _Space_ key is pressed.
+
 {{< learner-task-help >}}
 
 {{< jr-commit create-empty-space-key-script add-script [] >}}
@@ -771,6 +969,9 @@ You can now no longer move out of frame.
 
 
 {{< learner-task >}}
+
+Add a new line of code to the script that checks if the current soil's costume is "tree_with_fruits.png" and 
+if it is touching the `Hover` sprite.
 
 {{< learner-task-help >}}
 
@@ -781,6 +982,8 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add a line of code that increments the `Stage.apples` variable to the `Soil`'s script if the player is picking an apple.
+
 {{< learner-task-help >}}
 
 {{< jr-commit increment-apples-variable edit-script [] >}}
@@ -790,17 +993,34 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add a block of code in the new if/then block that switches the costume of the `Soil` to "tree.png", waits for three seconds, and then switches it back to "tree_with_fruits.png".
+
 {{< learner-task-help >}}
 
 {{< jr-commit animate-tree-to-tree_with_fruits edit-script [] >}}
 
 {{< /learner-task >}}
 
+### Try it!
+
+{{< learner-task >}}
+
+Try running your project again.
+
+**Has anything changed?**
+
+{{< learner-task-help >}}
+
+When you run the project now, water holes will appear left and right of your garden.
+
+{{< /learner-task >}}
 
 ## Plant trees
 
 
 {{< learner-task >}}
+
+Add a new script to the `Soil` sprite that runs everytime the _P_ key is pressed.
 
 {{< learner-task-help >}}
 
@@ -811,6 +1031,8 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add an if/then code block that checks if the `Stage.apples` variable is larger than `0` and if the `Soil` sprite is touching the `Hover` sprite.
+
 {{< learner-task-help >}}
 
 {{< jr-commit add-condition-for-apples-variable-and-touching edit-script [] >}}
@@ -819,6 +1041,8 @@ You can now no longer move out of frame.
 
 
 {{< learner-task >}}
+
+Add a line of code that will reduce the `Stage.apples` variable by one if the test inside the new if/then block is true.
 
 {{< learner-task-help >}}
 
@@ -829,38 +1053,99 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add code to the new if/then block that will switch the costume of the `Soil` sprite to "tree_seedling.png". 
+
 {{< learner-task-help >}}
 
 {{< jr-commit switch-soil-costume-to-tree_seedling edit-script [] >}}
 
 {{< /learner-task >}}
 
-
-## Store position
+### Try it!
 
 {{< learner-task >}}
 
+Try running your project again. In what ways can you now interact with the garden?
+
 {{< learner-task-help >}}
 
-{{< jr-commit define-old_column-variable edit-script [] >}}
+You can now move around and  collect apples from trees by pressing the spacebar in front of a tree with fruits 
+and plant them by pressing p onto soil tile without a tree.
 
 {{< /learner-task >}}
 
 
+## Grow trees
+
+In this chapter, we are going to animate the tree seedling growing into a tree with fruits when it is watered.
+
 {{< learner-task >}}
+
+Add an else-statement to the if/then code block in the "when I receive 'water_soil'" in the `Soil` sprite.
 
 {{< learner-task-help >}}
 
-{{< jr-commit create-empty-save_position-script add-script [] >}}
+{{< jr-commit add-condition-to-check-for-tree_seedling edit-script [] >}}
+
+{{< /learner-task >}}
+
+{{< learner-task >}}
+
+Add a code block to the if/then/else block that switches the costume of the soil and waits for two seconds repeatedly, 
+until the soil is using the "tree_with_fruits.png" costume.
+
+{{< learner-task-help >}}
+
+The soil's sprite will need to be changed three times.
+
+{{< learner-task-help >}}
+
+{{< jr-commit animate-tree-growing edit-script [] >}}
 
 {{< /learner-task >}}
 
 
+
+
+[//]: # ({{< learner-task >}})
+
+[//]: # ()
+[//]: # (Create a new script that is run when the "save_position" message is received.)
+
+[//]: # ()
+[//]: # ({{< learner-task-help >}})
+
+[//]: # ()
+[//]: # ({{< jr-commit create-empty-save_position-script add-script [] >}})
+
+[//]: # ()
+[//]: # ({{< /learner-task >}})
+
+[//]: # ()
+[//]: # ()
+[//]: # ({{< learner-task >}})
+
+[//]: # ()
+[//]: # (Add a line of code that will update the `Stage.old_column` variable to the value of the `Stage.current_column` variable.)
+
+[//]: # ()
+[//]: # ({{< learner-task-help >}})
+
+[//]: # ()
+[//]: # ({{< jr-commit update-old_column-variable edit-script [] >}})
+
+[//]: # ()
+[//]: # ({{< /learner-task >}})
+
+### Try it!
+
 {{< learner-task >}}
+
+Try running your project again. In what ways can you now interact with the garden?
 
 {{< learner-task-help >}}
 
-{{< jr-commit update-old_column-variable edit-script [] >}}
+When you water a tree seedling after planting it, it now grows into a tree with fruits.
 
 {{< /learner-task >}}
 
@@ -869,6 +1154,8 @@ You can now no longer move out of frame.
 
 
 {{< learner-task >}}
+
+Create a new sprite called `Player` in your project.
 
 {{< learner-task-help >}}
 
@@ -879,6 +1166,8 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+From the media library, add the "Hijabi" bundle of images as costumes for your `Player` sprite.
+
 {{< learner-task-help >}}
 
 {{< jr-commit add-player-costumes add-medialib-appearances-entry ["TODO-ENTRY-NAME"] >}}
@@ -888,14 +1177,45 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Create a "when green flag is clicked" script in your new `Player` sprite.
+
 {{< learner-task-help >}}
 
 {{< jr-commit create-empty-spawn-player-script add-script [] >}}
 
 {{< /learner-task >}}
 
+### Make the gardener fit on the stage
+
+Feel free to try running your project now. You will notice that while the Player sprite is now visible on stage,
+it is quite large and obstructing our view. To fix that, we will need to add some code to our script that reduces the
+size of our sprite and moves it downwards along the y-axis. The idea is to set to make our gardener move with the player,
+while also letting the player see the sprite they are hovering over.
 
 {{< learner-task >}}
+
+Add a line of code that sets the size of the player sprite to something more sensible. 
+We suggest setting it to about 7.5% of its original size.
+
+{{< learner-task-help >}}
+
+Use the help to find what Pytch statements will set the size of a sprite.
+
+{{< learner-task-help >}}
+
+You might know that, to make a sprite smaller in Scratch, you can use something like:
+
+```scratch
+set size to (7.5) %
+```
+
+To make the same happen for our gardener in Pytch, you can say
+
+```python
+self.set_size()
+```
+
+and put a value larger than `0` and smaller than `1` between the `()`s. 
 
 {{< learner-task-help >}}
 
@@ -903,8 +1223,24 @@ You can now no longer move out of frame.
 
 {{< /learner-task >}}
 
+Now, that the gardener should have a better size, we just need to adjust y-position so the soil the gardener is standing 
+on remains visible.
 
 {{< learner-task >}}
+
+Add a line of code that will set the `Player`'s y-position downwards by a few pixels.
+
+{{< learner-task-help >}}
+
+We suggest moving the `Player` sprite downwards by around 8 pixels.
+
+To move a sprite below the center of the stage in Pytch, you can say 
+
+```python
+self.set_y()
+```
+
+and enter a negative number between 0 and -180.
 
 {{< learner-task-help >}}
 
@@ -913,10 +1249,9 @@ You can now no longer move out of frame.
 {{< /learner-task >}}
 
 
-## Move gardener
+## Move the gardener
 
-
-{{< learner-task >}}
+Add a new script to the `Player` sprite that is run when the "move" message is received.
 
 {{< learner-task-help >}}
 
@@ -927,6 +1262,9 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add a line of code to the new script that calculates the x-position of our gardener based on the `Stage.current_column`
+variable and the 48 pixel width of our soil sprites and assign it to a new variable called `new_x`. 
+
 {{< learner-task-help >}}
 
 {{< jr-commit compute-player-x-position edit-script [] >}}
@@ -934,7 +1272,18 @@ You can now no longer move out of frame.
 {{< /learner-task >}}
 
 
+With Pytch you can say the following to smoothly move between two locations:
+
+```python
+self.glide_to_xy(,,)
+```
+
+You will need to add the x-position, the y-position and the amount of seconds it should take to move between 
+the brackets and separated by commas.
+
 {{< learner-task >}}
+
+Add a line of code that smoothly glides the `Player` sprite to the new x-position in about 0.25 seconds. 
 
 {{< learner-task-help >}}
 
@@ -943,7 +1292,11 @@ You can now no longer move out of frame.
 {{< /learner-task >}}
 
 
+
 {{< learner-task >}}
+
+Add a line of code that sets the variable `Stage.old_column` to the value of the `Stage.current_column` variable 
+after the `Player` sprite has moved.
 
 {{< learner-task-help >}}
 
@@ -951,11 +1304,39 @@ You can now no longer move out of frame.
 
 {{< /learner-task >}}
 
+### Try it!
+
+{{< learner-task >}}
+
+Once again, try running your project. Has anything changed?
+
+{{< learner-task-help >}}
+
+Whenever the player changes its position in the garden, the gardener should smoothly follow and move to a nearby location.
+
+{{< /learner-task >}}
+
+
 
 ## Animate gardener movement
 
+### Store the player's last position
 
 {{< learner-task >}}
+
+Add a `Stage.old_column` variable to the Stage's "when green flag is clicked" script and set it to `0`.
+
+{{< learner-task-help >}}
+
+{{< jr-commit define-old_column-variable edit-script [] >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+Add a line of code to the "move" script of your `Player` sprite to check if the player has moved left by testing if
+the `Stage.current_column` variable is smaller then the `Stage.old_column` variable.
 
 {{< learner-task-help >}}
 
@@ -966,6 +1347,8 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Add some code inside the new if/then code block to switch the `Player` sprite's costume to "player_left.png".
+
 {{< learner-task-help >}}
 
 {{< jr-commit switch-player-costume-left edit-script [] >}}
@@ -974,6 +1357,8 @@ You can now no longer move out of frame.
 
 
 {{< learner-task >}}
+
+Add an else statement to your script that switches the `Player` sprite's costume to "player_right.png".
 
 {{< learner-task-help >}}
 
@@ -984,11 +1369,33 @@ You can now no longer move out of frame.
 
 {{< learner-task >}}
 
+Finally, add one more line of code that sets the costume of the `Player` sprite to "player_front.png".
+
 {{< learner-task-help >}}
 
 {{< jr-commit end-move-player-animation edit-script [] >}}
 
 {{< /learner-task >}}
 
+### Try it!
+
+{{< learner-task >}}
+
+Try running your project again. In what ways can you now interact with the garden?
+
+{{< learner-task-help >}}
+
+When the gardener moves, their costume should be updated according to the direction they are moving in.
+
+{{< /learner-task >}}
+
+
 
 ## Questions and challenges
+
+Can you change your program to solve these challenges?
+
+Add another type of plant that can grow in the garden besides daisies and roses.
+Add sound effects to the game.
+Also, consider how you could use a micro:bit and its features (microphone, gyrosensor, LED display) in this game/simulation.
+Very difficult: Make the player move in four directions (Feel to use the "tall_garden.png" backdrop).
