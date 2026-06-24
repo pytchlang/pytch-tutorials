@@ -153,6 +153,9 @@ class Player(pytch.Sprite):
         if Stage.current_column < Stage.old_column:
             # moving left
             self.switch_costume("player_left.png")
+        elif Stage.current_column > Stage.old_column:
+            # moving right
+            self.switch_costume("player_right.png")
 
         self.glide_to_xy(new_x, -8, 0.25)
         Stage.old_column = Stage.current_column
