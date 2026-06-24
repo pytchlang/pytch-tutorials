@@ -47,7 +47,8 @@ class Soil(pytch.Sprite):
             self.go_to_xy(soil_xpos, 0)
 
             if flower_patch_location == Stage.tree_location:
-                pass
+                # spawn grown tree
+                self.switch_costume("tree_with_fruits.png")
             else:
                 rng = random.randint(0, 4)
                 if rng < 1:
