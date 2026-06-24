@@ -18,7 +18,7 @@ adding a more interesting background.
 
 {{< learner-task >}}
 
-Add a more interesting background for your garden simulation game. In the media library there are two images called garden.png and tall_garden.png that you can choose.
+Add a more interesting background for your garden simulation game. In the media library there are two images called "garden.png" and "tall_garden.png" that you can choose.
 
 {{< learner-task-help >}}
 
@@ -43,11 +43,20 @@ Delete the `solid-white.png` backdrop from the Stage.
 
 {{< /learner-task >}}
 
-## Spawn flower seeds
+Now, your game should have a more interesting background.
 
-### Add soil sprite
+{{< learner-task >}}
 
-Now, you need a _sprite_ to use as the soil on which the player can grow plants.
+Try it! Click the green play button to run your game. 
+You should see the new garden background.
+
+{{< /learner-task >}}
+
+## Spawn a plant
+
+Now that we have a new background, we want to add a plant to the flower patch that is shown in our background image. 
+For that, we need to create a new sprite called `Soil` which will act as the soil in our flower patch and decide when a 
+plant is growing in it and which plant it will be.
 
 {{< learner-task >}}
 
@@ -69,7 +78,7 @@ From the media library, add the "Garden plants" bundle of images as costumes for
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-soil-costumes add-medialib-appearances-entry ["TODO-ENTRY-NAME"] >}}
+{{< jr-commit add-soil-costumes add-medialib-appearances-entry ["Garden plants"] >}}
 
 {{< /learner-task >}}
 
@@ -89,10 +98,24 @@ You should now see a tree seedling in the center of your garden.
 
 ## Place multiple plant seeds
 
-When we start our simulation, we want different types of flower seeds to be in our garden so that they can grow into 
-different flowers.
-On top off that, we also want the placement of the flower seeds to be different every time we run the project.
-To do that, we can start by creating clones from our `Soil` sprite and then placing them next to each other in a row on the stage.
+Now that we have a plant in the center of our flower patch, we might want to add more variety to our garden by adding different flower seeds to different parts of the patch.
+We also want the placement of the flower seeds to be different every time we run the project.
+Pytch has a very useful feature for this purpose called _clones_. 
+Clones are exact copies of a sprite that can be created while the project is running. 
+
+Clones are very similar to the clones you can create in Scratch by saying
+
+```scratch
+create clone of [myself v]
+```
+
+except in Pytch you would say
+
+```python
+self.create_clone()
+```
+
+We can use clones to create enough copies of our `Soil` sprite to fill out our entire flower patch without having to copy and paste the code that every piece of soil needs.
 
 {{< learner-task >}}
 
@@ -105,16 +128,30 @@ Add a new script to the `Soil` sprite which runs when you click on the green but
 {{< /learner-task >}}
 
 
-Next, we need to write a line of code that allows to store where on the stage we want our clones to be placed.
-To do that, we will define a variable called `Stage.soil_locations`and set it to an list. Lists are used to contain
-multiple numbers, strings or other types of data inside one variable.
-Our variable will only need to store the numbers `-2`, `-1`, `0`, `1`, and `2` to show five clones in a row.
+Next, we can write a line of code in our new script that defines where on the stage we want all of our `Soil` clones to be placed.
+To do that, we can define a variable called `Stage.flower_patch_locations`and set its value to a list of numbers. 
 
+Lists are used in Python to contain multiple numbers, strings or other types of data inside one variable.
+
+To create a list with, for example, three values, in Python you can write
+
+```python
+variable_name = [value_1, value_2, value_3]
+```
+and replace `variable_name` with the name of your variable and `value_1`, `value_2` and `value_3` with the values 
+you would like to refer to.
+
+Since we will use a formula to calculate where exactly our `Soil` clones should be, 
+this variable only needs to contain the numbers `-2`, `-1`, `0`, `1`, and `2` to help us place five pieces of soil into our project.
 
 {{< learner-task >}}
 
-Add a line of code to the `Soil` script which sets the `Stage.soil_locations` variable to a list which has the values 
+Add a line of code to the `Soil` script which makes the `Stage.flower_patch_locations` variable refer to a list with the values 
 `-2`, `-1`, `0`, `1`, and `2`. 
+
+{{< learner-task-help >}}
+
+You can look into the Scratch/Python help to find out more about how to make a variable refer to a value.
 
 {{< learner-task-help >}}
 
@@ -122,17 +159,25 @@ Add a line of code to the `Soil` script which sets the `Stage.soil_locations` va
 
 {{< /learner-task >}}
 
-Next, we want to create a clone of the `Soil`sprite for all five numbers in our `Stage.soil_locations` variable. 
-We can use a for-loop in this case, because it will allow us to use same line of code five times.
+Next, we want to create a clone of the `Soil` sprite for all five numbers in our `Stage.flower_patch_locations` variable. 
+We can use a for-loop in this case.
+
+For-loops are common in programming languages and allow us to repeat a line of code, which 
+is very useful because then we don't have to write the same code over and over again.
+
+For this next task, a for-loop will help us use same line of code five times, once for every clone we want to create for our flower patch.
+
+In Python, for-loops are provided with a list so that the code block inside of it is run for the number elements inside the list.
 
 {{< learner-task >}}
 
-Add two lines of code that will create five clone of the `soil` sprite, one for every number in `Stage.soil_locations`.
+Add two lines of code that will create five clones of the `Soil` sprite, one for every number in `Stage.flower_patch_locations`.
 
 {{< learner-task-help >}}
 
-One line of code is needed to create a clone of your sprite. 
-Another line of code is needed above that one to repeat the cloning four more times. 
+The first line of code will create a for-loop that runs once for every element in the `Stage.flower_patch_locations` list.
+The second line underneath it needs to be indented and create a clone of the `Soil` sprite. 
+That way, the second line of code will be used multiple times to create all the clones we need.
 
 {{< learner-task-help >}}
 
@@ -151,31 +196,34 @@ That is, because we still need to give our clones a unique location.
 
 ### Set soil locations
 
-After we create our `Soil` clones, we want to calculate a unique x-position for them based on the values in our `Stage.soil_locations` variable. 
-This way, every tile of soil will be displayed in a different location in our garden.
+After we create our `Soil` clones, we want to calculate a unique x-position for them based on the values in our `Stage.flower_patch_locations` variable. 
+This way, every piece of soil will be displayed in a different location in our garden.
 
-Since the images we are using for the `Soil` sprite all have a width of 48 pixels, 
-we need to make sure that there are at least 48 pixels of space between the x-positions of our clones.
-To compute unique x-positions for all the clones, we can use a different value from our `Stage.soil_locations` 
-list for each clone.
+To do this, we can make use of all the values inside our list in our for-loop by using the loop variable. With loop variables we can use a different element everytime the code inside of the for loop is run.
+By using together with lists, we can write what would 
+otherwise be many lines of code which would do very similar but different things in way fewer lines.
+
+The code that we want to add to our for-loop needs to calculate a different position for each clone of our `Soil` sprite, 
+so that a plant can grow everywhere in our patch.
+Since the images we are using for the `Soil` sprite all have a width of 48 pixels, and exactly five `Soil` pieces fit into the flower patch,
+we want our formula to create five positions that are exactly 48 pixels apart on the stage's x-axis. 
+
+To compute unique x-positions for all the clones, we can use all of the five values in our `Stage.flower_patch_locations`, one for each clone.
 
 {{< learner-task >}}
 
-Add a variable `soil_xpos` inside of the for-loop which calculates a unique x-position for every clone using the
-values inside of the `Stage.soil_locations` list.
+Add a variable called `soil_xpos` inside the for-loop. 
+Calculate each clone's x-position using a different value in the `Stage.flower_patch_locations` list and set it to the value of `soil_xpos` 
+with this formula:
+
+48 * _a number in `Stage.flower_patch_locations`_
+
+The result should be that the first clone will receive the x-position `-96`, the second clone will receive `-48`, the third one `0`, and so on.
 
 {{< learner-task-help >}}
 
 To get a different elements from a list you need to use an index. 
 You can find out how to use an index in the Python/Scratch help section.
-
-{{< learner-task-help >}}
-
-A formula you can use to calculate a different x-position for every clone is: 
-
-48 * a number in `Stage.soil_locations` 
-
-(for example, 48 * -2, 48 * -1, 48 * 0, ...).
 
 {{< learner-task-help >}}
 
@@ -224,7 +272,7 @@ This way, everytime we run our project, each `Soil` clone has a chance to start 
 
 {{< learner-task >}}
 
-Add a new variable called `rng` which will store a randomly generated number between `0` and `100` as its value. 
+Add a new variable called `rng` to the for-loop which will store a randomly generated number between `0` and `100` as its value. 
 
 {{< learner-task-help >}}
 
@@ -279,7 +327,7 @@ Before we can do that, however, we need to add a sprite that will control our mo
 
 {{< learner-task >}}
 
-Add a new sprite called `hover` to the project.
+Add a new sprite called `Hover` to the project.
 
 {{< learner-task-help >}}
 
@@ -294,14 +342,14 @@ From the media library, add the image "hover.png" as a costume for your `Hover` 
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-hover-costumes add-medialib-appearance ["TODO-DISPLAY-IDENTIFIER"] >}}
+{{< jr-commit add-hover-costumes add-medialib-appearance ["hover.png"] >}}
 
 {{< /learner-task >}}
 
 
 {{< learner-task >}}
 
-Add a new script to the `Hover` sprite which runs when you click on the green button.
+Add a new script to the stage which runs when you click on the green button.
 
 {{< learner-task-help >}}
 
@@ -313,7 +361,7 @@ To track our player's movement, we need to define variable which stores which co
 
 {{< learner-task >}}
 
-Add a new variable called `Stage.current_column` and set it to `0`.
+In the stage, add a new variable called `Stage.current_column` and set it to `0`.
 
 {{< learner-task-help >}}
 
@@ -321,8 +369,8 @@ Add a new variable called `Stage.current_column` and set it to `0`.
 
 {{< /learner-task >}}
 
-Next, we want to define a script that will be triggered everytime we want the player to move and update the x- and 
-y-positions of our `Hover` sprite accordingly.
+Next, we want to have a script that is run everytime the player wants to move so we can update the x- and 
+y-positions of our `Hover` sprite.
 
 {{< learner-task >}}
 
@@ -337,7 +385,10 @@ Add a new script to the `Hover` sprite that will be run everytime the message "m
 
 {{< learner-task >}}
 
-Inside of the new script, move the `Hover` sprite based on the value in `Stage.current_column`.
+Inside of the new script, move the `Hover` sprite based on the value in `Stage.current_column`. 
+The formula for calculating the new x-position of the `Hover` sprite, similar to the one from chapter 3 is
+
+48 * _the value in Stage.current_column_
 
 {{< learner-task-help >}}
 
@@ -373,7 +424,7 @@ Add a line of code to the new script which reduces the current column by `1`.
 
 {{< learner-task >}}
 
-Add a new line below which broadcasts the "move" message to update the x- and y-position of the `Hover` sprite.
+Add a new line below which broadcasts the "move" message.
 
 {{< learner-task-help >}}
 
@@ -411,7 +462,7 @@ We can use two new variables to specify the left and right boundary of our garde
 
 {{< learner-task >}}
 
-Add to new variables called `Stage.MAX_COLUMN` and `Stage.MIN_COLUMN`
+In the stage, add two new variables called `Stage.MAX_COLUMN` and `Stage.MIN_COLUMN`
  and set them to sensible values. For this tutorial we would suggest using the values `3` and `-3` respectively.
 
 {{< learner-task-help >}}
@@ -423,8 +474,8 @@ Add to new variables called `Stage.MAX_COLUMN` and `Stage.MIN_COLUMN`
 
 {{< learner-task >}}
 
-Add a condition such to the "when left arrow key pressed" script so that the `Stage.current_column` variable is only 
-updated when we are not outside of the boundary defined by `Stage.MIN_COLUMN`.
+Add a condition to the "when left arrow key pressed" script in the `Hover` sprite so that the sprite only moves when
+we are inside the boundary set by `Stage.MIN_COLUMN`.
 
 {{< learner-task-help >}}
 
@@ -485,10 +536,20 @@ For this tutorial, we chose `3` as the starting value.
 
 {{< /learner-task >}}
 
+Since we want to show multiple variables later, we want this one to appear on the right side of the screen.
+You can do this by writing something like this
+
+```python
+self.show_variable("variable_name", right=236)
+```
+
+and replace _variable_name_ with the variable you want to show.
+
+Leaving out the `, right=236` puts the variable at the top left of the screen. 
 
 {{< learner-task >}}
 
-Add a line of code that will show the `Stage.water_level` Stage variable on screen when we run the project. 
+Add a line of code that will show the `Stage.water_level` Stage variable on the top right of the screen when we run the project. 
 
 {{< learner-task-help >}}
 
@@ -526,9 +587,8 @@ that will decrease the value of our variable. You can find it in the Scratch/Pyt
 
 {{< learner-task >}}
 
-Add another line of code to the "when Arrow Up key is pressed" script of the `Hover` sprite that will check if our
-watering can has water and if the column the player is currently standing in is part of the `Stage.soil_locations` list.
-For this tutorial, we will assume that `0` is the smallest possible value for `Stage.water_level`.
+Add another line of code above our last one which will check if the `Stage.current_column` variable is
+part of the `Stage.flower_patch_locations` list and if `Stage.water_level` is larger than `0`.
 
 {{< learner-task-help >}}
 
@@ -654,7 +714,7 @@ After switching costume, pause the code for one second.
 
 {{< learner-task >}}
 
-Repeat the previous two tasks, switching to the next costume and pausing the codem two more times.
+Switching to the next costume and pause the code two more times.
 
 {{< learner-task-help >}}
 
@@ -731,7 +791,7 @@ Create a new variable called `Stage.water_locations` and set its value to a list
 
 {{< learner-task >}}
 
-Add a for-loop to the script that will run some code once for every element in the `Stage,water_locations` list.
+Add a for-loop to the script that will run some code once for every element in the `Stage.water_locations` list.
 
 {{< learner-task-help >}}
 
@@ -742,7 +802,7 @@ Add a for-loop to the script that will run some code once for every element in t
 
 {{< learner-task >}}
 
-Add multiple lines of code inside of the for-loop that calculates an x-position every clone, sets the `Water`'s x-position to that calculated value and then creates a new clone. 
+Add multiple lines of code inside of the for-loop that calculate the x-position of every clone, sets the `Water`'s x-position to that calculated value and then creates a new clone. 
 
 {{< learner-task-help >}}
 
@@ -828,7 +888,7 @@ Add a new script to the `Water` sprite that will be run whenever the message "ge
 
 {{< learner-task >}}
 
-Add code to the script that will reset the value of `Stage.water_level` to its starting/maximum value.
+Add code to the script that will reset the value of `Stage.water_level` to its starting number (or any other positive number).
 
 {{< learner-task-help >}}
 
@@ -854,7 +914,7 @@ Add a line of code in front of the previous line that checks if the current `Wat
 
 {{< learner-task >}}
 
-Add a code block, meaning multiple lines of code, that will switch the `Water` sprite's costume to `water_empty.png`, 
+Add code to the if/then-block that will switch the `Water` sprite's costume to `water_empty.png`, 
 pause the code for ten seconds, and then switch its costume back to `water.png`. 
 
 {{< learner-task-help >}}
@@ -892,8 +952,8 @@ we will start with one tree.
 
 {{< learner-task >}}
 
-Add a new variable called `Stage.tree_location` that stores a value which is currently in our Stage.soil_locations, 
-like the center of our garden, for example.
+Add a new variable called `Stage.tree_location` to the Stage's "when green flag is clicked" script which stores a value 
+in our Stage.flower_patch_locations, like `0`, for example.
 
 {{< learner-task-help >}}
 
@@ -904,8 +964,9 @@ like the center of our garden, for example.
 
 {{< learner-task >}}
 
-Add a new block of code to the for-loop that checks if the value at index `ì` of `Stage.soil_locations` is equal to the value stored in `Stage.tree_location`.
-For now, if it is, nothing new needs to happen. If it isn't, then the if/elif/else block from before should be followed.
+Add a new block of code to the for-loop in the `Soil` sprite that checks if the value at index `ì` of `Stage.flower_patch_locations` 
+is equal to `Stage.tree_location`.
+For now, if it is, nothing new needs to happen. If it isn't, then the script should choose between a seed and an empty costume, like before.
 
 {{< learner-task-help >}}
 
@@ -948,7 +1009,8 @@ Now that we have a tree in our game, it's time for our new mechanic: the player'
 
 {{< learner-task >}}
 
-Add a new variable that tracks the amount of apples the player has collected. 
+Add a new variable called `Stage.apples` to the stage that tracks the amount of apples the player has collected and set it to `0`.
+Show it on the stage.
 
 {{< learner-task-help >}}
 
@@ -1081,7 +1143,8 @@ In this chapter, we are going to animate the tree seedling growing into a tree w
 
 {{< learner-task >}}
 
-Add an else-statement to the if/then code block in the "when I receive 'water_soil'" in the `Soil` sprite.
+Add an elif-statement to the inner if/then code block in the "when I receive 'water_soil'" in the `Soil` sprite.
+In it, check if the soil's costume name is "tree_seedling.png".
 
 {{< learner-task-help >}}
 
@@ -1091,8 +1154,8 @@ Add an else-statement to the if/then code block in the "when I receive 'water_so
 
 {{< learner-task >}}
 
-Add a code block to the if/then/else block that switches the costume of the soil and waits for two seconds repeatedly, 
-until the soil is using the "tree_with_fruits.png" costume.
+Add a code block to the if/then/else block that switches to the next costume of the soil and waits for two seconds 
+twice, so that the soil is using the "tree_with_fruits.png" costume.
 
 {{< learner-task-help >}}
 
@@ -1170,7 +1233,7 @@ From the media library, add the "Hijabi" bundle of images as costumes for your `
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-player-costumes add-medialib-appearances-entry ["TODO-ENTRY-NAME"] >}}
+{{< jr-commit add-player-costumes add-medialib-appearances-entry ["Hijabi"] >}}
 
 {{< /learner-task >}}
 
@@ -1250,6 +1313,8 @@ and enter a negative number between 0 and -180.
 
 
 ## Move the gardener
+
+{{< learner-task >}}
 
 Add a new script to the `Player` sprite that is run when the "move" message is received.
 
