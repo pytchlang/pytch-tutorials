@@ -28,7 +28,7 @@
       ]
     },
     {
-      "name": "Dress Hijabi",
+      "name": "Hijabi",
       "assets": [
         "player_front.png",
         "player_back.png",
@@ -37,6 +37,13 @@
         "player_happy.png",
         "player_sideways_left.png",
         "player_sideways_right.png"
+      ]
+    },
+    {
+      "name": "Garden",
+      "assets": [
+        "garden.png",
+        "tall_garden.png"
       ]
     }
   ]
