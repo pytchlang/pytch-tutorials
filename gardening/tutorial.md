@@ -18,7 +18,7 @@ adding a more interesting background.
 
 {{< learner-task >}}
 
-Add a more interesting background for your garden simulation game. In the media library there are two images called "garden.png" and "tall_garden.png" that you can choose.
+Add a more interesting background for your garden simulation game. In the media library there are two images called `garden.png` and `tall_garden.png` that you can choose.
 
 {{< learner-task-help >}}
 
@@ -338,7 +338,7 @@ Add a new sprite called `Hover` to the project.
 
 {{< learner-task >}}
 
-From the media library, add the image "hover.png" as a costume for your `Hover` sprite.
+From the media library, add the image `hover.png` as a costume for your `Hover` sprite.
 
 {{< learner-task-help >}}
 
@@ -692,7 +692,7 @@ Switch to the `Soil`'s next costume if it is being hovered over and if its curre
 
 {{< learner-task-help >}}
 
-You will need to add one line of code inside the innermost if/then code block in your new script.
+You will need to add one line of code inside the innermost if statement in your new script.
 
 {{< learner-task-help >}}
 
@@ -866,7 +866,7 @@ the `Stage.water_locations` list.
 
 {{< learner-task >}}
 
-Add some code to the if/then code block that broadcasts the message "get_water". 
+Add some code to the if statement that broadcasts the message "get_water". 
 
 {{< learner-task-help >}}
 
@@ -914,7 +914,7 @@ Add a line of code in front of the previous line that checks if the current `Wat
 
 {{< learner-task >}}
 
-Add code to the if/then-block that will switch the `Water` sprite's costume to `water_empty.png`, 
+Add code to the if statement that will switch the `Water` sprite's costume to `water_empty.png`, 
 pause the code for ten seconds, and then switch its costume back to `water.png`. 
 
 {{< learner-task-help >}}
@@ -970,7 +970,7 @@ For now, if it is, nothing new needs to happen. If it isn't, then the script sho
 
 {{< learner-task-help >}}
 
-You need to wrap the current if/elif/else block into another if/then/else block, 
+You need to wrap the current if-elif-else block into another if-then-else block, 
 where the then part will stay empty for now and the else part will keep the code from before.
 
 {{< jr-commit create-condition-for-tree_location-variable-check edit-script [] >}}
@@ -980,7 +980,7 @@ where the then part will stay empty for now and the else part will keep the code
 
 {{< learner-task >}}
 
-Add code to the new if/then/else code block, that will switch the soil's costume to "tree_with_fruits.png" 
+Add code to the new if-then-else block, that will switch the soil's costume to `tree_with_fruits.png` 
 if the soil's location is that of a tree.
 
 {{< learner-task-help >}}
@@ -1032,7 +1032,7 @@ Add an empty script to the `Soil` script that is run when the _Space_ key is pre
 
 {{< learner-task >}}
 
-Add a new line of code to the script that checks if the current soil's costume is "tree_with_fruits.png" and 
+Add a new line of code to the script that checks if the current soil's costume is `tree_with_fruits.png` and 
 if it is touching the `Hover` sprite.
 
 {{< learner-task-help >}}
@@ -1055,7 +1055,7 @@ Add a line of code that increments the `Stage.apples` variable to the `Soil`'s s
 
 {{< learner-task >}}
 
-Add a block of code in the new if/then block that switches the costume of the `Soil` to "tree.png", waits for three seconds, and then switches it back to "tree_with_fruits.png".
+Add a block of code in the new if statement that switches the costume of the `Soil` to `tree.png`, waits for three seconds, and then switches it back to `tree_with_fruits.png`.
 
 {{< learner-task-help >}}
 
@@ -1093,7 +1093,7 @@ Add a new script to the `Soil` sprite that runs everytime the _P_ key is pressed
 
 {{< learner-task >}}
 
-Add an if/then code block that checks if the `Stage.apples` variable is larger than `0` and if the `Soil` sprite is touching the `Hover` sprite.
+Add an if statement that checks if the `Stage.apples` variable is larger than `0` and if the `Soil` sprite is touching the `Hover` sprite.
 
 {{< learner-task-help >}}
 
@@ -1104,7 +1104,7 @@ Add an if/then code block that checks if the `Stage.apples` variable is larger t
 
 {{< learner-task >}}
 
-Add a line of code that will reduce the `Stage.apples` variable by one if the test inside the new if/then block is true.
+Add a line of code that will reduce the `Stage.apples` variable by one if the test inside the new if statement is true.
 
 {{< learner-task-help >}}
 
@@ -1115,7 +1115,7 @@ Add a line of code that will reduce the `Stage.apples` variable by one if the te
 
 {{< learner-task >}}
 
-Add code to the new if/then block that will switch the costume of the `Soil` sprite to "tree_seedling.png". 
+Add code to the new if statement that will switch the costume of the `Soil` sprite to `tree_seedling.png`. 
 
 {{< learner-task-help >}}
 
@@ -1143,8 +1143,8 @@ In this chapter, we are going to animate the tree seedling growing into a tree w
 
 {{< learner-task >}}
 
-Add an elif-statement to the inner if/then code block in the "when I receive 'water_soil'" in the `Soil` sprite.
-In it, check if the soil's costume name is "tree_seedling.png".
+Add an elif-statement to the inner if statement in the "when I receive 'water_soil'" in the `Soil` sprite.
+In it, check if the soil's costume name is `tree_seedling.png`.
 
 {{< learner-task-help >}}
 
@@ -1155,7 +1155,7 @@ In it, check if the soil's costume name is "tree_seedling.png".
 {{< learner-task >}}
 
 Add a code block to the if/then/else block that switches to the next costume of the soil and waits for two seconds 
-twice, so that the soil is using the "tree_with_fruits.png" costume.
+twice, so that the soil is using the `tree_with_fruits.png` costume.
 
 {{< learner-task-help >}}
 
@@ -1412,7 +1412,7 @@ the `Stage.current_column` variable is smaller then the `Stage.old_column` varia
 
 {{< learner-task >}}
 
-Add some code inside the new if/then code block to switch the `Player` sprite's costume to "player_left.png".
+Add some code inside the new if statement to switch the `Player` sprite's costume to `player_left.png`.
 
 {{< learner-task-help >}}
 
@@ -1423,7 +1423,7 @@ Add some code inside the new if/then code block to switch the `Player` sprite's 
 
 {{< learner-task >}}
 
-Add an else statement to your script that switches the `Player` sprite's costume to "player_right.png".
+Add an else statement to your script that switches the `Player` sprite's costume to `player_right.png`.
 
 {{< learner-task-help >}}
 
@@ -1434,7 +1434,7 @@ Add an else statement to your script that switches the `Player` sprite's costume
 
 {{< learner-task >}}
 
-Finally, add one more line of code that sets the costume of the `Player` sprite to "player_front.png".
+Finally, add one more line of code that sets the costume of the `Player` sprite to `player_front.png`.
 
 {{< learner-task-help >}}
 
@@ -1460,7 +1460,11 @@ When the gardener moves, their costume should be updated according to the direct
 
 Can you change your program to solve these challenges?
 
-Add another type of plant that can grow in the garden besides daisies and roses.
-Add sound effects to the game.
-Also, consider how you could use a micro:bit and its features (microphone, gyrosensor, LED display) in this game/simulation.
-Very difficult: Make the player move in four directions (Feel to use the "tall_garden.png" backdrop).
+- Customise your character's look. Feel free to find an import images from the internet as new costumes using a search engine of your choice. 
+- Add sound effects to the game.
+- Add another type of plant that can grow in the garden.
+- Harder challenge: Make the player move in four directions (Feel to use the `tall_garden.png` backdrop).
+- Harder challenge: Make flowers randomly grow in neighbouring spots 
+- Harder challenge: Add a day and night cycle to your simulation. Think about how that could change the way your plants grow. 
+
+Also, feel free to think about how you could use the features of a micro:bit controller (microphone, gyrosensor, LED display) in your project.
