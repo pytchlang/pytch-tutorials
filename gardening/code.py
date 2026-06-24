@@ -150,6 +150,8 @@ class Player(pytch.Sprite):
 
         if new_x > self.x_position:
             self.switch_costume("player_right.png")
+        if new_x < self.x_position:
+            self.switch_costume("player_left.png")
 
         self.glide_to_xy(new_x, -8, 0.25)
 
