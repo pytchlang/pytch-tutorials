@@ -149,7 +149,7 @@ class Player(pytch.Sprite):
         new_x = Stage.current_column * 48
 
         if new_x > self.x_position:
-            pass
+            self.switch_costume("player_right.png")
 
         self.glide_to_xy(new_x, -8, 0.25)
 
