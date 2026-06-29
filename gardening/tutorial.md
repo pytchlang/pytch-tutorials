@@ -18,11 +18,11 @@ adding a more interesting background.
 
 {{< learner-task >}}
 
-Add a more interesting background for your garden simulation game. In the media library there are two images called `garden.png` and `tall_garden.png` that you can choose.
+Add a more interesting background for your garden simulation game. In the media library there is a bundle of two images called `Garden` that you can choose.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-garden-backgrounds add-medialib-appearances-entry ["garden.png"] >}}
+{{< jr-commit add-garden-backgrounds add-medialib-appearances-entry ["Garden"] >}}
 
 {{< /learner-task >}}
 
