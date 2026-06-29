@@ -160,22 +160,25 @@ You can look into the Scratch/Python help to find out more about how to make a v
 {{< /learner-task >}}
 
 Next, we want to create a clone of the `Soil` sprite for all five numbers in our `Stage.flower_patch_locations` variable. 
-We can use a for-loop in this case.
+We can use a for loop in this case.
 
-For-loops are common in programming languages and allow us to repeat a line of code, which 
-is very useful because then we don't have to write the same code over and over again.
+for loops are common in programming languages because they allow us to repeat a line of code without having 
+to write the same code over and over again. 
 
-For this next task, a for-loop will help us use same line of code five times, once for every clone we want to create for our flower patch.
+For this next task, a for loop will help us use the same line of code five times, once for every clone we want to create for our flower patch.
 
-In Python, for-loops are provided with a list so that the code block inside of it is run for the number elements inside the list.
+In Python, a for loop uses a so-called iterable object, which is an object (e.g. lists, ranges) which contains a countable number of objects (e.g. numbers, strings).
+The loop then runs the code block inside of it one time for every element inside the iterable object. 
+for loops also have a loop variable which will become useful to us later. 
 
 {{< learner-task >}}
 
 Add two lines of code that will create five clones of the `Soil` sprite, one for every number in `Stage.flower_patch_locations`.
+Make sure to use a for loop and to give its loop variable the name `flower_patch_location`.
 
 {{< learner-task-help >}}
 
-The first line of code will create a for-loop that runs once for every element in the `Stage.flower_patch_locations` list.
+The first line of code will create a for loop that runs once for every element in the `Stage.flower_patch_locations` list.
 The second line underneath it needs to be indented and create a clone of the `Soil` sprite. 
 That way, the second line of code will be used multiple times to create all the clones we need.
 
@@ -199,11 +202,11 @@ That is, because we still need to give our clones a unique location.
 After we create our `Soil` clones, we want to calculate a unique x-position for them based on the values in our `Stage.flower_patch_locations` variable. 
 This way, every piece of soil will be displayed in a different location in our garden.
 
-To do this, we can make use of all the values inside our list in our for-loop by using the loop variable. With loop variables we can use a different element everytime the code inside of the for loop is run.
-By using together with lists, we can write what would 
+To do this, we can make use of all the values inside our list in our for loop by using the loop variable. With loop variables we can use a different element everytime the code inside of the for loop is run.
+By using loop variables together with lists, we can write what would 
 otherwise be many lines of code which would do very similar but different things in way fewer lines.
 
-The code that we want to add to our for-loop needs to calculate a different position for each clone of our `Soil` sprite, 
+The code that we want to add to our for loop needs to calculate a different position for each clone of our `Soil` sprite, 
 so that a plant can grow everywhere in our patch.
 Since the images we are using for the `Soil` sprite all have a width of 48 pixels, and exactly five `Soil` pieces fit into the flower patch,
 we want our formula to create five positions that are exactly 48 pixels apart on the stage's x-axis. 
@@ -212,7 +215,7 @@ To compute unique x-positions for all the clones, we can use all of the five val
 
 {{< learner-task >}}
 
-Add a variable called `soil_xpos` inside the for-loop. 
+Add a variable called `soil_xpos` inside the for loop. 
 Calculate each clone's x-position using a different value in the `Stage.flower_patch_locations` list and set it to the value of `soil_xpos` 
 with this formula:
 
@@ -235,7 +238,7 @@ Now that we have our unique x-positions stored in `soil_xpos`, we can apply them
 
 {{< learner-task >}}
 
-Add a line of code inside the for-loop which will set the x-position of our `Soil` sprite to `soil-xpos` and its 
+Add a line of code inside the for loop which will set the x-position of our `Soil` sprite to `soil-xpos` and its 
 y-position to the number `0`.  
 
 {{< learner-task-help >}}
@@ -272,7 +275,7 @@ This way, everytime we run our project, each `Soil` clone has a chance to start 
 
 {{< learner-task >}}
 
-Add a new variable called `rng` to the for-loop which will store a randomly generated number between `0` and `100` as its value. 
+Add a new variable called `rng` to the for loop which will store a randomly generated number between `0` and `100` as its value. 
 
 {{< learner-task-help >}}
 
@@ -791,7 +794,7 @@ Create a new variable called `Stage.water_locations` and set its value to a list
 
 {{< learner-task >}}
 
-Add a for-loop to the script that will run some code once for every element in the `Stage.water_locations` list.
+Add a for loop to the script that will run some code once for every element in the `Stage.water_locations` list.
 
 {{< learner-task-help >}}
 
@@ -802,7 +805,7 @@ Add a for-loop to the script that will run some code once for every element in t
 
 {{< learner-task >}}
 
-Add multiple lines of code inside of the for-loop that calculate the x-position of every clone, sets the `Water`'s x-position to that calculated value and then creates a new clone. 
+Add multiple lines of code inside of the for loop that calculate the x-position of every clone, sets the `Water`'s x-position to that calculated value and then creates a new clone. 
 
 {{< learner-task-help >}}
 
@@ -964,7 +967,7 @@ in our Stage.flower_patch_locations, like `0`, for example.
 
 {{< learner-task >}}
 
-Add a new block of code to the for-loop in the `Soil` sprite that checks if the value at index `ì` of `Stage.flower_patch_locations` 
+Add a new block of code to the for loop in the `Soil` sprite that checks if the value at index `ì` of `Stage.flower_patch_locations` 
 is equal to `Stage.tree_location`.
 For now, if it is, nothing new needs to happen. If it isn't, then the script should choose between a seed and an empty costume, like before.
 
