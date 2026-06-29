@@ -1171,38 +1171,6 @@ The soil's sprite will need to be changed three times.
 {{< /learner-task >}}
 
 
-
-
-[//]: # ({{< learner-task >}})
-
-[//]: # ()
-[//]: # (Create a new script that is run when the "save_position" message is received.)
-
-[//]: # ()
-[//]: # ({{< learner-task-help >}})
-
-[//]: # ()
-[//]: # ({{< jr-commit create-empty-save_position-script add-script [] >}})
-
-[//]: # ()
-[//]: # ({{< /learner-task >}})
-
-[//]: # ()
-[//]: # ()
-[//]: # ({{< learner-task >}})
-
-[//]: # ()
-[//]: # (Add a line of code that will update the `Stage.old_column` variable to the value of the `Stage.current_column` variable.)
-
-[//]: # ()
-[//]: # ({{< learner-task-help >}})
-
-[//]: # ()
-[//]: # ({{< jr-commit update-old_column-variable edit-script [] >}})
-
-[//]: # ()
-[//]: # ({{< /learner-task >}})
-
 ### Try it!
 
 {{< learner-task >}}
