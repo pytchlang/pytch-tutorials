@@ -908,7 +908,7 @@ Add an if statement to the new script that tests if the current `Water` clone ha
 
 {{< learner-task-help >}}
 
-{{< jr-commit water-create-condition-for-costume-water edit-script [] >}}
+{{< jr-commit water-create-condition-for-costume-water-and-touching-hover edit-script [] >}}
 
 {{< /learner-task >}}
 
