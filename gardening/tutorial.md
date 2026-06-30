@@ -904,7 +904,18 @@ Add a new script to the `Water` sprite that will be run whenever the message "ge
 
 {{< learner-task >}}
 
-Add code to the script that will reset the value of `Stage.water_level` to its starting number (or any other positive number).
+Add an if statement to the new script that tests if the current `Water` clone has the `water.png` costume on.
+
+{{< learner-task-help >}}
+
+{{< jr-commit water-create-condition-for-costume-water edit-script [] >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+Add code to the new if statement that resets the value of `Stage.water_level` to its starting number (or any other positive number).
 
 {{< learner-task-help >}}
 
@@ -913,17 +924,6 @@ For this tutorial, the starting value we chose is `3`.
 {{< learner-task-help >}}
 
 {{< jr-commit reset-water_level-variable edit-script [] >}}
-
-{{< /learner-task >}}
-
-
-{{< learner-task >}}
-
-Add a line of code in front of the previous line that checks if the current `Water` clone is touching the `Hover` sprite.
-
-{{< learner-task-help >}}
-
-{{< jr-commit water-create-condition-for-touching-hover edit-script [] >}}
 
 {{< /learner-task >}}
 
