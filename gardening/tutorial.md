@@ -904,7 +904,18 @@ Add a new script to the `Water` sprite that will be run whenever the message "ge
 
 {{< learner-task >}}
 
-Add code to the script that will reset the value of `Stage.water_level` to its starting number (or any other positive number).
+Add an if statement to the new script that tests if the current `Water` clone has the `water.png` costume on.
+
+{{< learner-task-help >}}
+
+{{< jr-commit water-create-condition-for-costume-water-and-touching-hover edit-script [] >}}
+
+{{< /learner-task >}}
+
+
+{{< learner-task >}}
+
+Add code to the new if statement that resets the value of `Stage.water_level` to its starting number (or any other positive number).
 
 {{< learner-task-help >}}
 
@@ -913,17 +924,6 @@ For this tutorial, the starting value we chose is `3`.
 {{< learner-task-help >}}
 
 {{< jr-commit reset-water_level-variable edit-script [] >}}
-
-{{< /learner-task >}}
-
-
-{{< learner-task >}}
-
-Add a line of code in front of the previous line that checks if the current `Water` clone is touching the `Hover` sprite.
-
-{{< learner-task-help >}}
-
-{{< jr-commit water-create-condition-for-touching-hover edit-script [] >}}
 
 {{< /learner-task >}}
 
@@ -1299,6 +1299,9 @@ and enter a negative number between 0 and -180.
 
 ## Move the gardener
 
+Now that we have a sprite for our gardener, it would be nice if they could follow our player around to wherever they
+are currently hovering over in our garden.
+
 {{< learner-task >}}
 
 Add a new script to the `Player` sprite that is run when the "move" message is received.
@@ -1341,19 +1344,6 @@ Add a line of code that smoothly glides the `Player` sprite to the new x-positio
 
 {{< /learner-task >}}
 
-
-
-{{< learner-task >}}
-
-Add a line of code that sets the variable `Stage.old_column` to the value of the `Stage.current_column` variable 
-after the `Player` sprite has moved.
-
-{{< learner-task-help >}}
-
-{{< jr-commit update-old_column-variable-to-be-fixed edit-script [] >}}
-
-{{< /learner-task >}}
-
 ### Try it!
 
 {{< learner-task >}}
@@ -1370,49 +1360,42 @@ Whenever the player changes its position in the garden, the gardener should smoo
 
 ## Animate gardener movement
 
+While our gardener can now move around smoothly and follow our player, we can still add an animation for direction that our gardener can walk in so that their movement feels a bit more natural.
+To do that, however, we first need to have a way of testing which direction our gardener is currently walking in.
+
 ### Store the player's last position
 
 {{< learner-task >}}
 
-Add a `Stage.old_column` variable to the Stage's "when green flag is clicked" script and set it to `0`.
-
-{{< learner-task-help >}}
-
-{{< jr-commit define-old_column-variable edit-script [] >}}
-
-{{< /learner-task >}}
-
-
-{{< learner-task >}}
-
 Add a line of code to the "move" script of your `Player` sprite to check if the player has moved left by testing if
-the `Stage.current_column` variable is smaller then the `Stage.old_column` variable.
+the `new_x` variable is larger than the sprite's current x-position.
 
 {{< learner-task-help >}}
 
-{{< jr-commit add-condition-checking-player-moved-left edit-script [] >}}
+{{< jr-commit add-condition-checking-player-moved-right edit-script [] >}}
 
 {{< /learner-task >}}
 
 
 {{< learner-task >}}
 
-Add some code inside the new if statement to switch the `Player` sprite's costume to `player_left.png`.
+Add some code inside the new if statement to switch the `Player` sprite's costume to `player_right.png`.
 
 {{< learner-task-help >}}
 
-{{< jr-commit switch-player-costume-left edit-script [] >}}
+{{< jr-commit switch-player-costume-right edit-script [] >}}
 
 {{< /learner-task >}}
 
 
 {{< learner-task >}}
 
-Add an else statement to your script that switches the `Player` sprite's costume to `player_right.png`.
+Add another if statement underneath (but outside) the previous if statement to switch the `Player` sprite's costume to 
+`player_left.png` if `new_x` is smaller than the sprite's current x-position.
 
 {{< learner-task-help >}}
 
-{{< jr-commit animate-move-player-right edit-script [] >}}
+{{< jr-commit animate-move-player-left edit-script [] >}}
 
 {{< /learner-task >}}
 

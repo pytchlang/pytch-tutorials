@@ -23,9 +23,9 @@
   dir_name: script-by-script-boing
   commit_id: 0c93cc20403d22440f3bdd5bd3f08eb90de718da
 - name: Gardening
-  branch_name: mn/gardening-01
+  branch_name: mn/gardening-02
   dir_name: gardening
-  commit_id: f3227af4b74b2aeb3e8304f03231763cbd56eeb4
+  commit_id: baa028ddc3318c091714700e6397096162ed151b
 - name: Hello world!
   branch_name: bn/hello-02
   dir_name: hello

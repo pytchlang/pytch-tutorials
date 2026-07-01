@@ -9,7 +9,6 @@ class Stage(pytch.Stage):
 
     @pytch.when_green_flag_clicked
     def set_global_variables(self):
-        Stage.old_column = 0
         Stage.current_column = 0
 
         Stage.MAX_COLUMN = 3
@@ -78,7 +77,6 @@ class Soil(pytch.Sprite):
                 self.next_costume()
                 self.wait_seconds(2)
                 self.next_costume()
-                self.wait_seconds(2)
             elif self.costume_name == "tree_seedling.png":
                 self.next_costume()
                 self.wait_seconds(3)
@@ -123,9 +121,9 @@ class Water(pytch.Sprite):
 
     @pytch.when_I_receive("get_water")
     def get_water(self):
-        Stage.water_level = 3
+        if self.costume_name == "water.png" and self.touching(Hover):
+            Stage.water_level = 3
 
-        if self.touching(Hover):
             self.next_costume()
             self.wait_seconds(10)
             self.next_costume()
@@ -150,17 +148,13 @@ class Player(pytch.Sprite):
     def move(self):
         new_x = Stage.current_column * 48
 
-        if Stage.current_column < Stage.old_column:
-            # moving left
-            self.switch_costume("player_left.png")
-        elif Stage.current_column > Stage.old_column:
-            # moving right
+        if new_x > self.x_position:
             self.switch_costume("player_right.png")
+        if new_x < self.x_position:
+            self.switch_costume("player_left.png")
 
         self.glide_to_xy(new_x, -8, 0.25)
-        self.switch_costume(0)
-        Stage.old_column = Stage.current_column
-
+        self.switch_costume("player_front.png")
 
 class Hover(pytch.Sprite):
     Costumes = [
