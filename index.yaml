@@ -13,7 +13,7 @@
 - name: Script-by-script Boing
   tip-commit: bn/sbs-boing-04
 - name: Gardening
-  tip-commit: mn/gardening-01
+  tip-commit: mn/gardening-02
 - name: Hello world!
   tip-commit: bn/hello-02
 - name: Shoot the fruit
