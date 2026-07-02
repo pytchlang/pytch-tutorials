@@ -2,20 +2,86 @@
 
 ## Project assets
 
-- `car00.png`, `car01.png`, `car20.png`, `car21.png` — The car costume images come from [*the Code The Classics project 'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images) and are copyright Raspberry Pi Trading Ltd, 2019. We use them under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
-- `digit-0.png`, `digit-1.png`, `digit-2.png`, `digit-3.png`, `digit-4.png`, `digit-5.png`, `digit-6.png`, `digit-7.png`, `digit-8.png`, `digit-9.png` — The digit images are `digit00.png` up to `digit09.png` from [*the Code The Classics project 'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images) and is copyright Raspberry Pi Trading Ltd, 2019. We use them under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
-- `down.png`, `left.png`, `right.png`, `up.png` — The bunny costume images are the `sit0.png`, `sit1.png`, `sit2.png`, and `sit3.png` images in [*the Code The Classics project 'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images) and are copyright Raspberry Pi Trading Ltd, 2019. We use them under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
-- `down_squished.png`, `left_squished.png`, `right_squished.png`, `up_squished.png` — The 'squished' bunny costume images are the `splat0.png`, `splat1.png`, `splat2.png`, and `splat3.png` images in [*the Code The Classics project 'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images) and are copyright Raspberry Pi Trading Ltd, 2019. We use them under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
-- `gameover.png` — The 'game over' image is from [*the Code The Classics project 'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images) and is copyright Raspberry Pi Trading Ltd, 2019. We use it under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence. We have cropped it to fit the Pytch stage dimensions.
-- `log0.png`, `log1.png` — The log images are from [*the Code The Classics project 'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images) and is copyright Raspberry Pi Trading Ltd, 2019. We use them under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
-- `splash-0.png`, `splash-1.png`, `splash-2.png`, `splash-3.png`, `splash-4.png`, `splash-5.png`, `splash-6.png`, `splash-7.png` — The 'sinking bunny' images are `splash0.png` up to `splash7.png` from [*the Code The Classics project 'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images) and is copyright Raspberry Pi Trading Ltd, 2019. We use them under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
-- `start.png` — The 'start' image is `start0.png` from [*the Code The Classics project 'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images) and is copyright Raspberry Pi Trading Ltd, 2019. We use it under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
-- `world.png` — The images used to assemble the backdrop are those in [*the Code The Classics project 'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images) and are copyright Raspberry Pi Trading Ltd, 2019. We use them under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence. We have cropped and assembled the original images into the one used here.
-- `README.md` — TODO: credit needed.
-- `README.md` — TODO: credit needed.
+- `car00.png`, `car01.png`, `car20.png`, `car21.png` — The car costume
+  images come from [*the Code The Classics project
+  'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images)
+  and are copyright Raspberry Pi Trading Ltd, 2019.  We use them under
+  the [Creative Commons Attribution-NonCommercial-ShareAlike
+  3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
+
+- `digit-0.png`, `digit-1.png`, `digit-2.png`, `digit-3.png`,
+  `digit-4.png`, `digit-5.png`, `digit-6.png`, `digit-7.png`,
+  `digit-8.png`, `digit-9.png` — The digit images are `digit00.png` up
+  to `digit09.png` from [*the Code The Classics project
+  'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images)
+  and is copyright Raspberry Pi Trading Ltd, 2019.  We use them under
+  the [Creative Commons Attribution-NonCommercial-ShareAlike
+  3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
+
+- `down.png`, `left.png`, `right.png`, `up.png` — The bunny costume
+  images are the `sit0.png`, `sit1.png`, `sit2.png`, and `sit3.png`
+  images in [*the Code The Classics project
+  'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images)
+  and are copyright Raspberry Pi Trading Ltd, 2019.  We use them under
+  the [Creative Commons Attribution-NonCommercial-ShareAlike
+  3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
+
+- `down_squished.png`, `left_squished.png`, `right_squished.png`,
+  `up_squished.png` — The 'squished' bunny costume images are the
+  `splat0.png`, `splat1.png`, `splat2.png`, and `splat3.png` images in
+  [*the Code The Classics project
+  'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images)
+  and are copyright Raspberry Pi Trading Ltd, 2019.  We use them under
+  the [Creative Commons Attribution-NonCommercial-ShareAlike
+  3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
+
+- `gameover.png` — The 'game over' image is from [*the Code The
+  Classics project
+  'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images)
+  and is copyright Raspberry Pi Trading Ltd, 2019.  We use it under
+  the [Creative Commons Attribution-NonCommercial-ShareAlike
+  3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
+  We have cropped it to fit the Pytch stage dimensions.
+
+- `log0.png`, `log1.png` — The log images are from [*the Code The
+  Classics project
+  'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images)
+  and is copyright Raspberry Pi Trading Ltd, 2019.  We use them under
+  the [Creative Commons Attribution-NonCommercial-ShareAlike
+  3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
+
+- `splash-0.png`, `splash-1.png`, `splash-2.png`, `splash-3.png`,
+  `splash-4.png`, `splash-5.png`, `splash-6.png`, `splash-7.png` — The
+  'sinking bunny' images are `splash0.png` up to `splash7.png` from
+  [*the Code The Classics project
+  'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images)
+  and is copyright Raspberry Pi Trading Ltd, 2019.  We use them under
+  the [Creative Commons Attribution-NonCommercial-ShareAlike
+  3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
+
+- `start.png` — The 'start' image is `start0.png` from [*the Code The
+  Classics project
+  'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images)
+  and is copyright Raspberry Pi Trading Ltd, 2019.  We use it under
+  the [Creative Commons Attribution-NonCommercial-ShareAlike
+  3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
+
+- `world.png` — The images used to assemble the backdrop are those in
+  [*the Code The Classics project
+  'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images)
+  and are copyright Raspberry Pi Trading Ltd, 2019.  We use them under
+  the [Creative Commons Attribution-NonCommercial-ShareAlike
+  3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
+  We have cropped and assembled the original images into the one used
+  here.
 
 ## Tutorial assets
 
-- `summary-screenshot.png` — The screenshot is a montage of images from [*the Code The Classics project 'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images) and is copyright Raspberry Pi Trading Ltd, 2019. We use the contributing images under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence. We have assembled them into the screenshot.
-- `README.md` — TODO: credit needed.
-
+- `summary-screenshot.png` — The screenshot is a montage of images
+  from [*the Code The Classics project
+  'Bunner'*](https://github.com/Wireframe-Magazine/Code-the-Classics/tree/master/bunner-master/images)
+  and is copyright Raspberry Pi Trading Ltd, 2019.  We use the
+  contributing images under the [Creative Commons
+  Attribution-NonCommercial-ShareAlike
+  3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) licence.
+  We have assembled them into the screenshot.
