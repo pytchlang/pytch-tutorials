@@ -20,7 +20,6 @@
 - `rose_1.png` — TODO: credit needed.
 - `rose_2.png` — TODO: credit needed.
 - `rose_seed.png` — TODO: credit needed.
-- `solid-white.png` — TODO: credit needed.
 - `tall_garden.png` — TODO: credit needed.
 - `tree.png` — TODO: credit needed.
 - `tree_seedling.png` — TODO: credit needed.
@@ -29,7 +28,11 @@
 - `water.png` — TODO: credit needed.
 - `water_empty.png` — TODO: credit needed.
 
+- `solid-white.png` — The solid white rectangle was created by the
+  Pytch team, and to the extent that it is a creative work, the Pytch
+  team hereby place it into the Public Domain.
+
+
 ## Tutorial assets
 
 - `screenshot.png` — TODO: credit needed.
-
