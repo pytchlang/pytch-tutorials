@@ -8,7 +8,7 @@ game_over = False
 
 
 class Alien(pytch.Sprite):
-    Costumes = ["enemy-alien.png", "friendly-alien.png"]
+    Costumes = ["Invader_Navy_1.png", "Invader_Green_1.png"]
     Sounds = ["explosion.mp3", "scream.mp3"]
 
     @pytch.when_I_receive("make-clones")
@@ -17,6 +17,10 @@ class Alien(pytch.Sprite):
             self.go_to_xy(-150 + i * 60, 180)
             pytch.create_clone_of(self)
         self.go_to_xy(150, 180)
+
+    @pytch.when_green_flag_clicked
+    def make_sensible_size(self):
+        self.set_size(0.15)
 
     @pytch.when_I_receive("play-game")
     def drift_down_screen(self):

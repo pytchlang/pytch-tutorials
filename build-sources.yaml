@@ -1,76 +1,76 @@
 - name: Script-by-script Hello World
   branch_name: bn/sbs-hello-02
   dir_name: script-by-script-hello
-  commit_id: 5b4673fdb9ed0cbcad408d2b16060691225c8686
+  commit_id: bad8e2fd3d157727a6b5e0d591608e5fe74d434d
 - name: Script-by-script shoot the fruit
   branch_name: bn/sbs-shoot-the-fruit-04
   dir_name: script-by-script-shoot-the-fruit
-  commit_id: 3e8cadb914155b556b05aee5913dbda72c7895a2
+  commit_id: 04b7c04af63d0797c579ed563cef365cdf67e305
 - name: Script-by-script catch the apple
   branch_name: bn/sbs-catch-apple-03
   dir_name: script-by-script-catch-apple
-  commit_id: f7bb73dc16a218c06f7970cb457d728270a6b6a9
+  commit_id: e8ebf4bc5bc3fd2c4fa21b6c06987c5251dc5486
 - name: Script-by-script splat the moles
   branch_name: bn/sbs-splat-the-moles-02
   dir_name: script-by-script-splat-the-moles
-  commit_id: e5a99a0c97f50023cc23a9e72af7887986071dce
+  commit_id: 1887938050a84262a2db1955aa4fb2c2694cfa18
 - name: Script-by-script blue invaders
   branch_name: bn/sbs-blue-invader-03
   dir_name: script-by-script-blue-invader
-  commit_id: cbb4d50585a1a068e047747d8e6620c60f085251
+  commit_id: c8d51d3a4fa9f241ad4e561aff966386d9ff5c28
 - name: Script-by-script Boing
   branch_name: bn/sbs-boing-04
   dir_name: script-by-script-boing
-  commit_id: 0c93cc20403d22440f3bdd5bd3f08eb90de718da
+  commit_id: 0650d13c58a1ff0a5fd08b751788c6ac07149162
 - name: Gardening
   branch_name: mn/gardening-02
   dir_name: gardening
-  commit_id: baa028ddc3318c091714700e6397096162ed151b
+  commit_id: 05aff655f6467e3a1fe9f938899af44e1af58c4f
 - name: Hello world!
   branch_name: bn/hello-02
   dir_name: hello
-  commit_id: cce89620a30ac18a127122df8b0bb8dd3cb036ca
+  commit_id: a4e622bf581bd3974987ddbb21c51328d27c304f
 - name: Shoot the fruit
   branch_name: bn/shoot-the-fruit-02
   dir_name: shoot-the-fruit
-  commit_id: 306e7281b72c68ab585e6984e434bf4413a1dcf5
+  commit_id: b0bba5e4a86b35a7fc967e2a606942b4dd3b6f5f
 - name: Chase!
   branch_name: gs/chase-05
   dir_name: chase
-  commit_id: ad288b73f56149fbd0c5447757ac8fd0ca24d6e7
+  commit_id: 23df30ef62c93c312381f513a41112500095fd48
 - name: Catch the apple
   branch_name: bn/catch-apple-05
   dir_name: catch-apple
-  commit_id: 0891242bfe372d9612b34da5efd1ab04760f3758
+  commit_id: 6dee88e1d0a5e7d3359c856ecf5690bdff09548b
 - name: Blue Invaders
-  branch_name: bn/blue-invader-02
+  branch_name: bn/blue-invader-03
   dir_name: blue-invader
-  commit_id: 64e61c5ff7b2a5876701cde5d19a7c4a817b3a4b
+  commit_id: 38aa5da3740b773c91d422dd7381b83b840aec88
 - name: Multiple choice quiz
   branch_name: bn/multi-choice-quiz-02
   dir_name: multiple-choice-quiz
-  commit_id: 51785e69de3a95ec7b35c75f5998e704b4dd022d
+  commit_id: 9c8bbc6c59f974e9f7057fde016fb4d36f652893
 - name: Splat the moles
   branch_name: bn/splat-the-moles-01
   dir_name: splat-the-moles
-  commit_id: dc1d7a02c8550c14a87e63fbd347ec80045f1a00
+  commit_id: 7140e7b1f8c4a4918229458451a11f35ba4d6e96
 - name: Trimon
   branch_name: bn/trimon-01
   dir_name: trimon
-  commit_id: 29eaa5ac20602fcafadb053c505cce9affccdd45
+  commit_id: 0a6d951bc3e918484f26f935c34e4fdfba6dc228
 - name: Q*bert
   branch_name: bn/qbert-04
   dir_name: qbert
-  commit_id: ce4f8dfcf22d6baa4a906fda1e2bdc15d42a7d13
+  commit_id: feca56474943b99da036cff7c432d6644e82067b
 - name: Bunner
   branch_name: gs/bunner-04
   dir_name: bunner
-  commit_id: be0f7f13bbbbb5d8661e43ab00d8c9432452754a
+  commit_id: 17e05519418a00772f57a50acf61e9a1e7d31933
 - name: Boing
   branch_name: bn/boing-05
   dir_name: boing
-  commit_id: f9f72bff956549aefff6c41e41de070cb6f8eafd
+  commit_id: d9b7e1eb4ff38fbb93b99cc24351a7bd7d264c63
 - name: Ticket vending machine
   branch_name: bn/ticket-vending-machine-03
   dir_name: ticket-vending-machine
-  commit_id: bcaf588b7baa1ece714fe24666a9bec1b379dea7
+  commit_id: c017531d9dea20638c58df30e15afd70807d1eb7

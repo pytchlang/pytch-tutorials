@@ -37,9 +37,31 @@ for its two costumes:
 
 {{< commit create-alien-with-costumes >}}
 
+We've chosen two of the images you can find in the “Images and Sounds”
+tab.  You can choose different ones if you like.
+
 If you add this code to your project and run it, you should see a blue
 enemy invader in the middle of the screen.  This is because Pytch
 starts a Sprite off wearing the first costume in its list.
+
+You should also see that the alien takes up the whole screen!  We'll
+fix this next.
+
+### Make the alien a sensible size
+
+At the very start of the game, we want the alien to set its size.  We
+can make this happen with a "when green flag clicked" script.  For the
+code within that script, we will use the
+
+``` python-expression
+self.set_size()
+```
+
+method, with a `size` argument of 0.15.
+
+{{< commit set-initial-alien-size >}}
+
+Try your program again now.  The alien should be the right size.
 
 ### Make the alien drift down the screen
 
