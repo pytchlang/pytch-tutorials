@@ -41,6 +41,25 @@ If you add this code to your project and run it, you should see a blue
 enemy invader in the middle of the screen.  This is because Pytch
 starts a Sprite off wearing the first costume in its list.
 
+You should also see that the alien takes up the whole screen!  We'll
+fix this next.
+
+### Make the alien a sensible size
+
+At the very start of the game, we want the alien to set its size.  We
+can make this happen with a "when green flag clicked" script.  For the
+code within that script, we will use the
+
+``` python-expression
+self.set_size()
+```
+
+method, with a `size` argument of 0.15.
+
+{{< commit set-initial-alien-size >}}
+
+Try your program again now.  The alien should be the right size.
+
 ### Make the alien drift down the screen
 
 Next, we will make the alien move.  We'll make it glide from the top
