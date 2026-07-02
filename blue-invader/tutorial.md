@@ -37,6 +37,9 @@ for its two costumes:
 
 {{< commit create-alien-with-costumes >}}
 
+We've chosen two of the images you can find in the “Images and Sounds”
+tab.  You can choose different ones if you like.
+
 If you add this code to your project and run it, you should see a blue
 enemy invader in the middle of the screen.  This is because Pytch
 starts a Sprite off wearing the first costume in its list.
