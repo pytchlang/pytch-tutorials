@@ -610,3 +610,7 @@ instead of the simple `self.play_sound_until_done("note-1")`.
 Add a timer so that the player has to press the buttons quickly
 enough.  For example, you could make it so that if the player waits
 for more than two seconds before pressing a button, they lose.
+
+### Credits for this tutorial's assets
+
+{{< asset-credits >}}
