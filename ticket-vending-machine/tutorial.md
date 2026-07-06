@@ -693,3 +693,7 @@ and/or
     self.play_sound_until_done("coin-insertion")
 
 to do this.
+
+### Credits for this tutorial's assets
+
+{{< asset-credits >}}
