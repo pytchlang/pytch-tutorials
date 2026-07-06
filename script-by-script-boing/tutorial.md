@@ -1093,3 +1093,7 @@ You could remove the robot player:
   impossible when that bat was the robot bat.
 
 Can you think of other changes or improvements?
+
+### Credits for this tutorial's assets
+
+{{< asset-credits >}}
