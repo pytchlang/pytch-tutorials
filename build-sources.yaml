@@ -5,15 +5,15 @@
 - name: Script-by-script shoot the fruit
   branch_name: bn/sbs-shoot-the-fruit-04
   dir_name: script-by-script-shoot-the-fruit
-  commit_id: 04b7c04af63d0797c579ed563cef365cdf67e305
+  commit_id: e49c30cc2492125c63cfe27838329b1f7d75659c
 - name: Script-by-script catch the apple
   branch_name: bn/sbs-catch-apple-03
   dir_name: script-by-script-catch-apple
-  commit_id: e8ebf4bc5bc3fd2c4fa21b6c06987c5251dc5486
+  commit_id: fe32b8344922ed3e3f9cbe9d0c2d7244ab84cd02
 - name: Script-by-script splat the moles
   branch_name: bn/sbs-splat-the-moles-02
   dir_name: script-by-script-splat-the-moles
-  commit_id: 1887938050a84262a2db1955aa4fb2c2694cfa18
+  commit_id: 2e036103211dab24b26e9c0d42e8be19406c8ed9
 - name: Script-by-script blue invaders
   branch_name: bn/sbs-blue-invader-03
   dir_name: script-by-script-blue-invader
@@ -21,7 +21,7 @@
 - name: Script-by-script Boing
   branch_name: bn/sbs-boing-04
   dir_name: script-by-script-boing
-  commit_id: 0650d13c58a1ff0a5fd08b751788c6ac07149162
+  commit_id: 11ed1dce51515c22d13ac721dd3ad059fb61cab0
 - name: Gardening
   branch_name: mn/gardening-02
   dir_name: gardening
@@ -57,7 +57,7 @@
 - name: Trimon
   branch_name: bn/trimon-01
   dir_name: trimon
-  commit_id: 0a6d951bc3e918484f26f935c34e4fdfba6dc228
+  commit_id: c4bd6e2a766382ca5915d362eeaad0c2dafa726f
 - name: Q*bert
   branch_name: bn/qbert-04
   dir_name: qbert
@@ -73,4 +73,4 @@
 - name: Ticket vending machine
   branch_name: bn/ticket-vending-machine-03
   dir_name: ticket-vending-machine
-  commit_id: c017531d9dea20638c58df30e15afd70807d1eb7
+  commit_id: b2f694e519a8a5d9b5ef5456cbbd2cb46a81c2b1

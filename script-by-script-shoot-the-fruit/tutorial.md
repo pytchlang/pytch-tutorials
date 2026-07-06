@@ -724,3 +724,7 @@ Can you change your program to solve these challenges?
 * _Harder challenge:_ Make the Fruit smaller if the player has more
   points.  This makes the game get more difficult as the player gets
   better at it.
+
+### Credits for this tutorial's assets
+
+{{< asset-credits >}}

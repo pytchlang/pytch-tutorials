@@ -700,3 +700,7 @@ ways you could investigate writing the program differently.
       tap to hit a hole, instead of using the keyboard.  Do you think
       that would be better?  Can you change the code so it reacts to
       the sprite being clicked?
+
+### Credits for this tutorial's assets
+
+{{< asset-credits >}}
