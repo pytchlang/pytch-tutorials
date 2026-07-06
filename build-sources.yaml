@@ -33,7 +33,7 @@
 - name: Shoot the fruit
   branch_name: bn/shoot-the-fruit-02
   dir_name: shoot-the-fruit
-  commit_id: b0bba5e4a86b35a7fc967e2a606942b4dd3b6f5f
+  commit_id: 89ad297ae21907f95d1a41437c44a6c9a4e37bca
 - name: Chase!
   branch_name: gs/chase-05
   dir_name: chase
