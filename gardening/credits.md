@@ -5,7 +5,7 @@
 - `daisy.png`, `daisy_1.png`, `daisy_2.png`, `daisy_seed.png`,
   `rose.png`, `rose_1.png`, `rose_2.png`, `rose_seed.png` — The
   [flower
-  graphics](https://kathychow.itch.io/16×16-tiny-garden-free-pack)
+  graphics](https://kathychow.itch.io/16x16-tiny-garden-free-pack)
   were created by user kathychow on `itch.io`.
 
 - `garden.png`, `tall_garden.png`, `tree.png`, `tree_seedling.png`,
