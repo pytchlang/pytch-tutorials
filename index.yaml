@@ -11,7 +11,7 @@
 - name: Script-by-script blue invaders
   tip-commit: bn/sbs-blue-invader-03
 - name: Script-by-script Boing
-  tip-commit: bn/sbs-boing-04
+  tip-commit: bn/sbs-boing-05
 - name: Gardening
   tip-commit: mn/gardening-02
 - name: Hello world!
@@ -35,6 +35,6 @@
 - name: Bunner
   tip-commit: gs/bunner-04
 - name: Boing
-  tip-commit: bn/boing-05
+  tip-commit: bn/boing-06
 - name: Ticket vending machine
   tip-commit: bn/ticket-vending-machine-03

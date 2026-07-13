@@ -19,13 +19,13 @@
   dir_name: script-by-script-blue-invader
   commit_id: c8d51d3a4fa9f241ad4e561aff966386d9ff5c28
 - name: Script-by-script Boing
-  branch_name: bn/sbs-boing-04
+  branch_name: bn/sbs-boing-05
   dir_name: script-by-script-boing
-  commit_id: 11ed1dce51515c22d13ac721dd3ad059fb61cab0
+  commit_id: e94d74e767954d419226c51634c24893a6d1c5b4
 - name: Gardening
   branch_name: mn/gardening-02
   dir_name: gardening
-  commit_id: 05aff655f6467e3a1fe9f938899af44e1af58c4f
+  commit_id: 178c58a205ca9b6ec7b075a793b03f7c13154e12
 - name: Hello world!
   branch_name: bn/hello-02
   dir_name: hello
@@ -67,9 +67,9 @@
   dir_name: bunner
   commit_id: 17e05519418a00772f57a50acf61e9a1e7d31933
 - name: Boing
-  branch_name: bn/boing-05
+  branch_name: bn/boing-06
   dir_name: boing
-  commit_id: d9b7e1eb4ff38fbb93b99cc24351a7bd7d264c63
+  commit_id: 79df14f58fb8679d6b7a745a79e2b7e75ee15b36
 - name: Ticket vending machine
   branch_name: bn/ticket-vending-machine-03
   dir_name: ticket-vending-machine

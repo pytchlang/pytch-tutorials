@@ -36,7 +36,7 @@ class RobotBat(pytch.Sprite):
         self.go_to_xy(215, 0)
 
         while True:
-            target_y = Ball.the_original().y_position
+            target_y = Ball.y_position
             if target_y < -117:
                 target_y = -117
             if target_y > 117:
@@ -74,7 +74,7 @@ class Ball(pytch.Sprite):
                 self.start_sound("hit")
 
             if self.x_position < -203:
-                player_y = PlayerBat.the_original().y_position
+                player_y = PlayerBat.y_position
                 position_on_bat = self.y_position - player_y
                 if (position_on_bat >= -45) and (position_on_bat <= 45):
                     y_speed = int(position_on_bat / 10)
