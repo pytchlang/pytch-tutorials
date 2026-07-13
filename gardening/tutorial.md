@@ -1436,3 +1436,7 @@ Can you change your program to solve these challenges?
 - Harder challenge: Add a day and night cycle to your simulation. Think about how that could change the way your plants grow. 
 
 Also, feel free to think about how you could use the features of a micro:bit controller (microphone, gyrosensor, LED display) in your project.
+
+### Credits
+
+{{< asset-credits >}}
