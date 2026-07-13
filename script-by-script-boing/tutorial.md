@@ -830,6 +830,11 @@ Ball.y_position
 
 to find the _y_&nbsp;coordinate of the Ball in your game.
 
+(This is not quite standard Python behaviour.  There is some special
+handling going on behind the scenes to make `Ball.y_position` work.
+You don't have to worry about the details, but if you have done some
+Python before and think this is slightly odd, you're right.)
+
 ### Move the robot bat up or down to track the ball
 
 Now you’re ready to add code so the robot’s bat moves up and down to
