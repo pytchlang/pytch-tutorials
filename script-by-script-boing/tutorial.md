@@ -821,24 +821,11 @@ The `self` means that it's the `RobotBat` itself whose
 _y_&nbsp;coordinate you want.
 
 To get a _different sprite's_ _y_&nbsp;coordinate, you can use similar
-code, but replacing `self` with an expression for the sprite whose
-_y_&nbsp;coordinate you want.
-
-An Python expression for "the Ball" is
+code, but instead of `self`, you say which sprite's
+_y_&nbsp;coordinate you want.  The Python expression
 
 ``` python-expression
-Ball.the_original()
-```
-
-This code talks about 'the original', because sprites can have
-_clones_, and the code needs to say exactly which Ball you want.  The
-details are beyond the scope of this tutorial, so don't worry too much
-about this.
-
-Putting this together, you can use the Python expression
-
-``` python-expression
-Ball.the_original().y_position
+Ball.y_position
 ```
 
 to find the _y_&nbsp;coordinate of the Ball in your game.
