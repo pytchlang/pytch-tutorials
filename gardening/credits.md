@@ -12,14 +12,15 @@
   `tree_small.png`, `tree_with_fruits.png`, `water.png`,
   `water_empty.png` — The [graphics used for the background
   images](https://opengameart.org/content/berry-garden), soil, water,
-  trees and fruits were created by user Bart Kelsey on
-  `opengameart.org`.
+  trees and fruits are part of *Berry Garden*, created by user Bart
+  Kelsey on `opengameart.org`.
 
 - `player_back.png`, `player_front.png`, `player_happy.png`,
   `player_left.png`, `player_right.png`, `player_sideways_left.png`,
   `player_sideways_right.png` — The [character
   sprites](https://caniaeast.itch.io/dress-hijabi-pixel-sprites) were
-  created by user CaniaEast on `itch.io`.
+  created by user CaniaEast on `itch.io`.  We use them under the [CC
+  BY-NC 4.0 licence](https://creativecommons.org/licenses/by-nc/4.0/).
 
 - `solid-white.png`, `empty.png`, `hover.png` — The solid white
   rectangle, blank image and the purple frame used by the Hover sprite
