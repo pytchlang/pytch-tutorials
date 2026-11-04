@@ -1,6 +1,6 @@
 ![Screenshot](screenshot.png)
 
-# Script-by-script Shoot the fruit
+# Script-ar-script Buail an t-úll
 
-Score points by clicking on the fruit.  If you miss you will lose
-points!
+Faigh pointí trí chliceáil ar na torthaí.  Má theipeann ort, caillfidh
+tú pointí!
