@@ -240,7 +240,6 @@ Bain triail as! Cliceáil an cnaipe seinnte glas chun do chluiche a rith, ansin:
 
 * D'aon ghnó, ná cliceáil ar an úll, ach cliceáil ar an gcúlra ina
   ionad sin. _Níor_ chóir go n-imeodh an t-úll as radharc.
-
 * Cliceáil ar an úll. Ba chóir go n-imeodh sé as radharc.
 
 {{< /learner-task >}}
@@ -271,7 +270,6 @@ Bain úsáid as an gcabhair chun a fháil amach cé na ráitis in Pytch a
 dhéanfaidh an méid seo a leanas:
 
 * An script a chur ag fanacht ar feadh soicind amháin.
-
 * A dhéanfaidh an t-úll é féin a thaispeáint.
 
 {{< learner-task-help >}}
@@ -400,7 +398,7 @@ códaithe.
 
 {{< learner-task >}}
 
-Cuir script ** leis an Ardán** a rithfidh nuair a thosóidh an cluiche.
+Cuir script **leis an Ardán** a rithfidh nuair a thosóidh an cluiche.
 
 {{< learner-task-help >}}
 
@@ -690,9 +688,9 @@ Toraidh. Ba ba chóir don chód:
   _Cultacha_ chun roghanna eile cultacha eile a fheiceáil, más fearr
   leat iad.
 
-* Socraigh athróg `new_costume` ar ainm na culaithe a
-  roghnaíodh. (Caithfidh new_costume a bheith i mBéarla toisc gur cód
-  atá ann seachas culaith_nua)
+* Socraigh athróg `new_costume` ar ainm na culaithe a roghnaíodh.
+  (Caithfidh `new_costume` a bheith i mBéarla toisc gur cód atá ann
+  seachas `culaith_nua`.)
 
 {{< learner-task-help >}}
 
@@ -701,8 +699,8 @@ rannóg _Oibreoirí_ le haghaidh `random.choice()`.
 
 {{< learner-task-help >}}
 
-Ní mór duit _liosta_ roghanna a thabhairt do
-`random.choice()`. Ciallaíonn an abairt Python
+Ní mór duit _liosta_ roghanna a thabhairt do `random.choice()`.
+Ciallaíonn an abairt Python
 
 ``` python-expression
 ["Apple-1.png", "Orange-1.png"]
@@ -758,17 +756,13 @@ chineálacha torthaí.
 An féidir leat do chlár a athrú chun na dúshláin seo a réiteach?
 
 * Roghnaigh ó roghanna de níos mó cultacha, ní hamháin úll nó oráiste.
-
 * Tabhair 10 bpointe don imreoir as gach toradh a bhuaileann siad in
   ionad 1 phointe amháin.
-
 * Tabhair 5 phointe don imreoir as úll a bhualadh agus 10 bpointe as
   oráiste a bhualadh.  (_Leid:_ Is féidir leat an abairt
   `self.costume_name` a úsáid chun ainm na culaithe atá ar an sprid
   faoi láthair a aimsiú.)
-
 * Déan an Toradh níos lú, ionas go mbeidh sé níos deacra é a bhualadh.
-
 * _Dúshlán níos deacra:_ Déan an Toradh níos lú má tá níos mó pointí
   ag an imreoir. Fágann sé sin go mbíonn an cluiche níos deacra de
   réir mar a éiríonn an t-imreoir níos fearr aige.
