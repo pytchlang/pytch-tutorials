@@ -1,7 +1,11 @@
 - name: Script-by-script Hello World
   branch_name: bn/sbs-hello-02
   dir_name: script-by-script-hello
-  commit_id: bad8e2fd3d157727a6b5e0d591608e5fe74d434d
+  commit_id: fda998b572757611a46068d59e5b8e806d3498c7
+- name: "Script-ar-script Buail an t-\xFAll"
+  branch_name: bn/sbs-shoot-the-fruit--ga-01
+  dir_name: script-by-script-shoot-the-fruit--ga
+  commit_id: 416c5561f2df9a35ad256f6f680286432e202ef5
 - name: Script-by-script shoot the fruit
   branch_name: bn/sbs-shoot-the-fruit-04
   dir_name: script-by-script-shoot-the-fruit
@@ -29,7 +33,7 @@
 - name: Hello world!
   branch_name: bn/hello-02
   dir_name: hello
-  commit_id: a4e622bf581bd3974987ddbb21c51328d27c304f
+  commit_id: 3df850c9ad99298c1c7c997dfc760f4376cc0ccb
 - name: Shoot the fruit
   branch_name: bn/shoot-the-fruit-02
   dir_name: shoot-the-fruit
