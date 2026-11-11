@@ -2,7 +2,7 @@
   branch_name: bn/sbs-hello-02
   dir_name: script-by-script-hello
   commit_id: fda998b572757611a46068d59e5b8e806d3498c7
-- name: "Script-ar-script Buail an t-\xFAll"
+- name: Script-ar-script Buail an t-úll
   branch_name: bn/sbs-shoot-the-fruit--ga-01
   dir_name: script-by-script-shoot-the-fruit--ga
   commit_id: 416c5561f2df9a35ad256f6f680286432e202ef5
