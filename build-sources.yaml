@@ -18,6 +18,10 @@
   branch_name: bn/sbs-splat-the-moles-02
   dir_name: script-by-script-splat-the-moles
   commit_id: 2e036103211dab24b26e9c0d42e8be19406c8ed9
+- name: Script-ar-script ionróirí gorma
+  branch_name: bn/sbs-blue-invader--ga-01
+  dir_name: script-by-script-blue-invader--ga
+  commit_id: 15117506270a6266a88660bdc28a398bd2d9df3d
 - name: Script-by-script blue invaders
   branch_name: bn/sbs-blue-invader-03
   dir_name: script-by-script-blue-invader
