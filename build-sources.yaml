@@ -5,7 +5,7 @@
 - name: Script-ar-script Buail an t-úll
   branch_name: bn/sbs-shoot-the-fruit--ga-01
   dir_name: script-by-script-shoot-the-fruit--ga
-  commit_id: 416c5561f2df9a35ad256f6f680286432e202ef5
+  commit_id: 4a5679091b9326de8437ac13e8ff9afc92696d78
 - name: Script-by-script shoot the fruit
   branch_name: bn/sbs-shoot-the-fruit-04
   dir_name: script-by-script-shoot-the-fruit

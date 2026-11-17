@@ -8,6 +8,10 @@ roimhe seo.
 
 ![screenshot](screenshot.png#img-center)
 
+Ba mhaith linn buíochas a ghabháil leis an [gComhairle um Oideachas
+Gaeltachta agus Gaelscolaíochta](https://cogg.ie/) (COGG) as an rang
+teagaisc seo a aistriú go Gaeilge.
+
 ---
 
 ## Bain úsáid as cúlra níos suimiúla
