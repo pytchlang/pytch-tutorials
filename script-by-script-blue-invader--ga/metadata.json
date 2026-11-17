@@ -1,4 +1,6 @@
 {
+    "tutorialId": "script-by-script-blue-invader",
+    "language": "ga",
     "programKind": "per-method",
     "difficulty": "medium",
     "groupedProjectAssets": [
