@@ -4,6 +4,10 @@ Sa chluiche seo, déanfaidh an t-imreoir an domhan a chosaint ó
 ionróirí gorma contúirteacha trí chliceáil orthu. Ach ní féidir leis
 an imreoir na heachtráin ghlasa chairdiúla a mharú trí dhearmad!
 
+Ba mhaith linn buíochas a ghabháil leis an [gComhairle um Oideachas
+Gaeltachta agus Gaelscolaíochta](https://cogg.ie/) (COGG) as an rang
+teagaisc seo a aistriú go Gaeilge.
+
 ---
 
 ## Socraigh an cúlra
